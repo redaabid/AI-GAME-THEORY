@@ -1,5 +1,8 @@
 # Project scope and next milestone
 
+See [the team progress update](PROGRESS.md) for the latest implementation status,
+measured results, and concrete next tasks.
+
 We are a four-person team with an approximately two-month project window. The
 goal is to develop an opponent-aware AI, compare approaches on diverse maps,
 and select a strong tournament agent using reproducible results.

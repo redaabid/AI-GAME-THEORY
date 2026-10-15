@@ -7,6 +7,11 @@ adversarial MCTS agent, and portable training exports. Neural training comes nex
 The simulator and MCTS work is on **`feat/adversarial-mcts`** pending integration
 into `main`. Collaborators should use that branch for the commands below.
 
+**Team update (15 October 2026):** see [Progress and next tasks](docs/PROGRESS.md)
+for completed work, measured results, commands to try, and suggested tasks for
+the four teammates. The next milestone is stronger CPU search and a first
+policy/value training prototype.
+
 ## What runs during a game?
 
 | Program | Job |
