@@ -10,6 +10,15 @@ python -m unittest discover -s tests -v
 python simulate.py --games 20 --seed 42
 ```
 
+Search is also ready on the CPU. Export search decisions with:
+
+```sh
+python simulate.py --agent mcts --opponent baseline --games 4 --iterations 128 --seed 42
+```
+
+Use `--opponent mcts` for search self-play. Read [MCTS.md](MCTS.md) for the
+visit-target fields, fallback filtering, search configuration, and measured limits.
+
 The runner prints a fresh `.local/simulations/` directory. A completed run contains:
 
 | File | Purpose |
@@ -119,25 +128,26 @@ Each transition has these fields:
 | Field | Meaning |
 | --- | --- |
 | `game_id`, `seed` | Match identity and reproducibility metadata |
-| `teacher` | `baseline` or `random` |
+| `teacher` | `baseline`, `random`, or `mcts` |
 | `state`, `next_state` | Versioned positions before and after the move |
-| `candidate_set` | `single_full_group_v1` for this first exporter |
+| `candidate_set` | `single_full_group_v1` for baseline/random; `recruitment_turns_v1` for MCTS |
 | `candidate_actions` | List of turn plans; each plan is a list of five-integer moves |
 | `action` | The turn plan that was played |
-| `policy_target_kind` | `behavior_one_hot` |
-| `policy_target` | One-hot vector aligned with `candidate_actions` |
+| `policy_target_kind` | `behavior_one_hot`, `mcts_visits`, or `fallback_one_hot` |
+| `policy_target` | One-hot behavior/fallback, or normalized MCTS visits, aligned with candidates |
 | `value_target` | Final outcome from `state.to_play`'s perspective: -1, 0, or +1 |
 | `termination` | How the match ended |
+| `search` | MCTS metadata: visits, completed iterations, seed, action values, fallback |
 
-These are **pipeline examples from baseline/random play**. They contain no MCTS
-visit counts, expert-policy guarantee, or trained network. Filter by `teacher`
-when testing imitation learning; random-agent decisions are not expert labels.
-The current candidate set covers one full-group move per turn, a subset of legal
-turns. A later search generator can provide split and joint turn plans.
+Default runs remain **pipeline examples from baseline/random play**. Search runs
+also contain MCTS visit targets. Filter by both `teacher` and `policy_target_kind`:
+random decisions and deadline fallbacks are not search targets. The search policy
+is limited by its candidate set, horizon, and budget; visits are not a guarantee
+of expert strength. No neural network is trained by these commands.
 
-The GPU colleague can now implement parsing, variable-size/candidate masking, and
-a small policy/value training loop. Competitive training should use the later
-search-generated targets and population opponents. Keep rule profiles and horizon
+The GPU colleague can implement parsing, variable-size/candidate masking, and
+a small policy/value training loop with the search-generated targets. Compare
+search budgets and add diverse opponents before large training runs. Keep rule profiles and horizon
 settings explicit, and split datasets by whole games/map families so related
 states do not leak across training, validation, and final test sets.
 

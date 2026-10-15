@@ -35,34 +35,37 @@ Completion criteria:
 - [ ] Expand reference coverage and investigate populations beyond one-byte limits.
 
 See [CPU_GPU_HANDOFF.md](CPU_GPU_HANDOFF.md) for the API, dataset schema, exact
-reference DLL, and supported limits. The current exporter uses baseline/random
-agents; search-generated learning targets are the next stage.
+reference DLL, and supported limits. The exporter supports baseline/random agents
+and MCTS visit targets.
 
-## Next: recruitment-aware adversarial MCTS
+## Implemented: recruitment-aware adversarial MCTS
 
-- Generate a useful, validated set of whole-turn plans, including coordinated
+- [x] Generate a bounded, validated set of whole-turn plans, including coordinated
   movement and selected splits, and expand candidates as the budget permits.
-- Model enemy decisions adversarially and battle outcomes probabilistically.
-- Use a bounded search budget with a validated fallback before the two-second deadline.
-- Compare against existing agents on held-out maps, both species and first-player roles.
-- Export search-policy targets before starting competitive neural training.
+- [x] Model enemy decisions adversarially and battle outcomes probabilistically.
+- [x] Use a cooperative time budget with a validated fallback and server-time reserve.
+- [x] Compare against the baseline on four development maps, balancing all roles.
+- [x] Export root visits separately from behavior and fallback labels.
+- [ ] Expand candidate coverage, assess larger budgets, and test unseen map families/opponents.
+
+See [MCTS.md](MCTS.md) for commands, algorithm details, initial results, and limits.
 
 Suggested parallel work for the four teammates:
 
 | Area | First deliverable |
 | --- | --- |
-| Search core | Adversarial MCTS over the immutable simulator with a deadline and fallback |
-| Candidate turns | Recruitment races, coordinated moves, and useful split sizes |
-| Evaluation | Additional reference scenarios, map families, and repeated match comparisons |
-| GPU pipeline | Parse exported records and prepare policy/value training batches |
+| Search core | Improve rollouts, leaf evaluation, and search-budget comparisons |
+| Candidate turns | Improve recruitment races and split coverage; measure ablations |
+| Evaluation | Add unseen map families and stronger opponents; repeat balanced comparisons |
+| GPU pipeline | Parse search visits and train a first small policy/value network offline |
 
 Use the simulator interface and schema in the handoff document when splitting
 these tasks into separate branches and pull requests.
 
 ## Later milestones
 
-1. **Evaluation harness:** repeated matches on multiple map families, both sides,
-   fixed seeds where supported, timing, invalid-move counts, and outcome tables.
+1. **Evaluation:** expand the balanced harness to unseen map families and stronger
+   opponents, with repeated seeds, timing, and per-map outcome tables.
 2. **Search:** compare expectiminimax and MCTS under the two-second turn budget.
    Explore opponent recruitment races and useful splitting decisions.
 3. **Offline learning:** train small policy/value networks using search-generated

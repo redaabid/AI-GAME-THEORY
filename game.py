@@ -53,8 +53,9 @@ class GameState:
         kind = species or self.species
         if kind not in ("vampires", "werewolves", "humans"):
             raise ValueError("Our species is not known yet.")
-        return [(position, getattr(cell, kind)) for position, cell in self.cells.items()
-                if getattr(cell, kind)]
+        # Stable tie-breaking across network updates, XML, and JSON snapshots.
+        return sorted((position, getattr(cell, kind)) for position, cell in self.cells.items()
+                      if getattr(cell, kind))
 
     @property
     def enemy_species(self):

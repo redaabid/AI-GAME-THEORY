@@ -6,9 +6,10 @@ search for later, while providing a replaceable baseline for experiments.
 
 from game import Cell, distance
 from combat import DEFAULT_RULES_PROFILE, win_probability
+import time
 
 
-def choose_moves(state):
+def choose_moves(state, *, deadline=None):
     """Return one legal full-group move, balancing growth, travel, and threats.
 
     Scores are heuristics, not a full game simulation. Counterattack estimates
@@ -20,6 +21,8 @@ def choose_moves(state):
     rules_profile = getattr(state, "rules_profile", DEFAULT_RULES_PROFILE)
     best_move, best_score = None, float("-inf")
     for source, count in own:
+        if deadline is not None and time.perf_counter() >= deadline:
+            raise TimeoutError("Strategy deadline reached.")
         affordable = [(p, h) for p, h in humans if h <= count]
         if affordable:
             goal = max(affordable, key=lambda item: item[1] / (1 + distance(source, item[0])))[0]
@@ -31,6 +34,8 @@ def choose_moves(state):
             goal = source
 
         for target in state.neighbors(source):
+            if deadline is not None and time.perf_counter() >= deadline:
+                raise TimeoutError("Strategy deadline reached.")
             cell = state.cells.get(target, Cell())
             enemy_count = getattr(cell, state.enemy_species)
             friendly_count = getattr(cell, state.species)

@@ -189,7 +189,7 @@ class StrategyTests(unittest.TestCase):
 
 
 class CommandLineTests(unittest.TestCase):
-    def run_session(self, serve):
+    def run_session(self, serve, options=()):
         errors = []
         with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as listener:
             listener.bind(("127.0.0.1", 0))
@@ -212,7 +212,7 @@ class CommandLineTests(unittest.TestCase):
             worker = threading.Thread(target=server, daemon=True)
             worker.start()
             result = subprocess.run(
-                [sys.executable, "main.py", "--name", "SmokeTest", "127.0.0.1", str(port)],
+                [sys.executable, "main.py", "--name", "SmokeTest", *options, "127.0.0.1", str(port)],
                 cwd=ROOT, capture_output=True, text=True, timeout=10,
             )
             worker.join(timeout=5)
@@ -268,8 +268,36 @@ class CommandLineTests(unittest.TestCase):
         self.assertIn("Server closed the connection", result.stderr)
         self.assertNotIn("Traceback", result.stderr)
 
+    def test_mcts_sends_joint_turns_and_resets_for_both_species(self):
+        from simulator import Position, simulate_turn, get_outcome
+        import random
+
+        def serve(connection):
+            for species in ("vampires", "werewolves"):
+                records = [(0, 0, 0, 3, 0), (0, 2, 0, 3, 0), (1, 1, 0, 0, 4)]
+                if species == "werewolves":
+                    records = [(x, y, h, w, v) for x, y, h, v, w in records]
+                state = board(records, rows=3, columns=3)
+                connection.sendall(b"SET\x03\x03HUM\x00HME\x00\x00" + packet(b"MAP", records)
+                                   + packet(b"UPD", []))
+                self.assertEqual(receive_exactly(connection, 3), b"MOV")
+                count = receive_exactly(connection, 1)[0]
+                data = receive_exactly(connection, count * 5)
+                moves = [tuple(data[i:i + 5]) for i in range(0, len(data), 5)]
+                final = simulate_turn(Position.from_game_state(state), moves, random.Random(0))
+                self.assertEqual(get_outcome(final).winner, species)
+                connection.sendall(b"END")
+            connection.sendall(b"BYE")
+
+        result = self.run_session(serve, options=("--agent", "mcts", "--iterations", "64", "--move-time", "0.2"))
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertIn("Agent: mcts", result.stderr)
+        self.assertIn("Search:", result.stderr)
+
     def test_invalid_arguments_do_not_attempt_a_connection(self):
-        for arguments in (["127.0.0.1", "70000"], ["--name", "\u00e9"], ["--rules-profile", "unknown"]):
+        for arguments in (["127.0.0.1", "70000"], ["--name", "\u00e9"], ["--rules-profile", "unknown"],
+                          ["--agent", "unknown"], ["--move-time", "nan"], ["--move-time", "2"],
+                          ["--iterations", "0"]):
             result = subprocess.run([sys.executable, "main.py", *arguments], cwd=ROOT,
                                     capture_output=True, text=True, timeout=5)
             self.assertEqual(result.returncode, 2, result.stderr)
