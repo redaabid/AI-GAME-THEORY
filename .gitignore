@@ -21,3 +21,7 @@ __pycache__/
 build/
 dist/
 *.log
+
+# Prepared game server, local maps, and downloaded course archives
+/.local/
+/*.zip

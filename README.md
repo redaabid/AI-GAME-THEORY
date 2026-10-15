@@ -1,15 +1,148 @@
-# AI Game Theory
+# AI Game Theory: Vampires vs Werewolves
 
-A collaborative project exploring artificial intelligence and game theory.
+A four-person team project to build an AI for the Vampires vs Werewolves game.
+The current milestone is a working Python benchmark bot. Next we will build a
+validated simulator, compare search strategies, and train neural agents offline.
+
+## What runs during a game?
+
+| Program | Job |
+| --- | --- |
+| Game server | Shows the map, alternates turns, and resolves battles |
+| Bot A | Controls one species |
+| Bot B | Controls the other species, initially using the same Python code |
+
+The server chooses which species each bot controls. Start the server first, then
+both bots. The first bot can wait while the second connects.
 
 ## Get started
+
+Install Git and Python 3.10 or newer, then open a terminal:
 
 ```sh
 git clone https://github.com/redaabid/AI-GAME-THEORY.git
 cd AI-GAME-THEORY
+python --version
+python -m unittest discover -s tests -v
 ```
 
-Project code and setup instructions will be added as the team starts development.
+If you already cloned the repository, commit your work and run `git switch main`
+followed by `git pull --ff-only origin main` to update it.
+
+The bot, setup command, and tests use only the Python standard library. You can
+run them directly without installing packages. A GPU is for later training work.
+On macOS or Linux, use `python3` if that is your interpreter's command name.
+
+## Prepare the Windows server
+
+Get **`Softwares-20261008.zip`** from the course materials or a teammate. Keep the
+outer ZIP intact: it contains `Server v3.2.1.zip` and `Map generator.zip`.
+Your colleagues need their own copy of this course archive.
+
+From the repository folder in **PowerShell**, run this command if the ZIP is in
+your Downloads folder:
+
+```powershell
+python scripts/setup_server.py "$env:USERPROFILE\Downloads\Softwares-20261008.zip"
+```
+
+If you saved it elsewhere, replace the quoted path with its actual location.
+The script creates `.local/server/` with the executable, DLLs, map, and config.
+It prepares a two-player demo on **127.0.0.1:5555**, with a two-second move limit
+and a 40-ply or 30-second game limit. These generated files are ignored by Git.
+
+Re-running setup with `--force` replaces the generated files and resets the demo
+settings. Use `--map testmap2.xml` to select the other supplied map, or
+`--port 5556` to change ports. Use that same port in both bot commands below.
+
+The graphical server is a Windows .NET Framework application. The Python bot and
+tests also run on macOS and Linux; for a full match, use an accessible Windows
+server. Hosting for other computers requires configuring the server's `ServerIP`
+for that network and giving both bots the host's address.
+
+## Start a match
+
+Open `.local/server/` in File Explorer and double-click
+**`VampiresVSWerewolvesGameServer.exe`**. Leave its window open to watch the board.
+Alternatively, from the repository folder in PowerShell:
+
+```powershell
+Start-Process -FilePath ".\.local\server\VampiresVSWerewolvesGameServer.exe" -WorkingDirectory ".\.local\server"
+```
+
+Open **two separate terminals** in the repository folder. In VS Code, use
+**Terminal > New Terminal**, then the terminal panel's **+** button for another.
+
+In terminal A:
+
+```sh
+python main.py --name Bot-A 127.0.0.1 5555
+```
+
+In terminal B:
+
+```sh
+python main.py --name Bot-B 127.0.0.1 5555
+```
+
+The bots play automatically. Terminals log the assigned species, moves, and
+decision times. `Game ended` and `Server finished the session` indicate a
+completed match. The server window shows the board.
+
+To play again, close and reopen the server, then re-run both bot commands. To
+stop early, press **Ctrl+C** in each bot terminal and close the server window.
+
+For longer matches, edit `MaxPlays` and `MaxGameDuration` in
+`.local/server/VampiresVSWerewolvesGameServer.exe.config` before starting it.
+Keep `MaxPlayDuration` at `00:00:02` to match the brief.
+
+## Code and checks
+
+The benchmark bot moves one whole group per turn. It seeks humans it can convert,
+considers friendly merging and enemy targets, and penalizes exposure to immediate
+enemy counterattacks. It provides a baseline for later search and learning work.
+
+The client handles TCP messages split across reads, board updates, game resets
+(`END`), and session endings (`BYE`). Logs show the selected move and decision time.
+
+| File | Responsibility |
+| --- | --- |
+| `client.py` | TCP connection and binary protocol |
+| `game.py` | Board state, species identification, and movement validation |
+| `strategy.py` | Baseline move selection and combat probability calculation |
+| `main.py` | Command-line entry point and game loop |
+| `config.py` | Default server address and port |
+| `scripts/setup_server.py` | Prepare the course server and a map locally |
+| `tests/` | Protocol, board, strategy, setup, and mock-server checks |
+
+Run the checks with:
+
+```sh
+python -m unittest discover -s tests -v
+```
+
+The checks include a local mock server to verify communication and game resets.
+The bot has also completed a two-bot compatibility match on the supplied Server
+v3.2.1 using `thetrap.xml`, a two-second move limit, and a 40-ply test cap.
+Splitting, a full simulator, deeper search, and neural training are future
+milestones. See [docs/ROADMAP.md](docs/ROADMAP.md) for the next tasks.
+
+## Configuration and troubleshooting
+
+Running `python main.py` uses `config.py` (127.0.0.1, port 5555). Command-line IP
+and port override those defaults. Both bots must use the address and port of the
+server you started. Tournament launchers can append them after your options.
+
+| What you see | What to check |
+| --- | --- |
+| `python` is unavailable | Install Python or select the correct interpreter; on Windows, try `py -3` instead of `python` |
+| `can't open file main.py` | Run commands from the cloned `AI-GAME-THEORY` folder |
+| Setup cannot find the ZIP | Check the path; supply the outer `Softwares-20261008.zip` archive |
+| `Connection refused` / error 10061 | Start the server and match its configured port in both bot commands |
+| One bot waits without moving | Start the second bot in a separate terminal |
+| Server cannot bind its port | Close the previous server, or prepare a different port and use it in both bot commands |
+| Server does not open | Check its Windows .NET Framework runtime and keep both DLLs beside the executable |
+| Game ends after a short time | The demo caps play at 40 individual turns or 30 seconds |
 
 ## How to collaborate
 
