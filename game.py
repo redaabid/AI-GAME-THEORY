@@ -2,6 +2,8 @@
 
 from dataclasses import dataclass
 
+from combat import DEFAULT_RULES_PROFILE, RULES_PROFILES
+
 
 @dataclass(frozen=True)
 class Cell:
@@ -23,7 +25,10 @@ def distance(first, second):
 
 
 class GameState:
-    def __init__(self):
+    def __init__(self, *, rules_profile=DEFAULT_RULES_PROFILE):
+        if rules_profile not in RULES_PROFILES:
+            raise ValueError("Unknown battle rules profile.")
+        self.rules_profile = rules_profile
         self.rows = 0
         self.columns = 0
         self.home = None
@@ -62,7 +67,7 @@ class GameState:
             rows, columns = payload
             if not 1 <= rows <= 255 or not 1 <= columns <= 255:
                 raise ValueError("Board dimensions must be between 1 and 255.")
-            self.__init__()
+            self.__init__(rules_profile=self.rules_profile)
             self.rows, self.columns = rows, columns
         elif command == "hum":
             if any(not self.in_bounds(position) for position in payload):
@@ -97,8 +102,11 @@ class GameState:
             raise ValueError(f"Unexpected board command: {command}")
 
     def validate_moves(self, moves):
-        if not 1 <= len(moves) <= min(255, len(self.groups())):
-            raise ValueError("Send at least one move and no more moves than groups.")
+        if self.species not in ("vampires", "werewolves"):
+            raise ValueError("Our species is not known yet.")
+        # Server v3.2.1 accepts multiple moves from a single group (splitting).
+        if not 1 <= len(moves) <= 255:
+            raise ValueError("Send between 1 and 255 moves.")
         sources, targets, outgoing = set(), set(), {}
         for move in moves:
             if len(move) != 5 or any(type(n) is not int or not 0 <= n <= 255 for n in move):

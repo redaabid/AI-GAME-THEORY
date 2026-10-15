@@ -1,0 +1,12 @@
+[
+  {"name":"split_single_group","cells":[[1,1,0,6,0],[6,4,0,0,1]],"moves":[[1,1,2,0,1],[1,1,4,2,1]],"expected":[[0,1,0,2,0],[2,1,0,4,0],[6,4,0,0,1]]},
+  {"name":"combined_human_capture","cells":[[0,0,0,3,0],[0,2,0,3,0],[1,1,6,0,0],[6,4,0,0,1]],"moves":[[0,0,3,1,1],[0,2,3,1,1]],"expected":[[1,1,0,12,0],[6,4,0,0,1]]},
+  {"name":"human_equality","cells":[[0,0,0,6,0],[1,1,6,0,0],[6,4,0,0,1]],"moves":[[0,0,6,1,1]],"expected":[[1,1,0,12,0],[6,4,0,0,1]]},
+  {"name":"guaranteed_enemy_victory","cells":[[0,0,0,15,0],[1,1,0,0,10]],"moves":[[0,0,15,1,1]],"expected":[[1,1,0,15,0]]},
+  {"name":"merge_existing_friendly","cells":[[0,0,0,3,0],[1,1,0,4,0],[6,4,0,0,1]],"moves":[[0,0,3,1,1]],"expected":[[1,1,0,7,0],[6,4,0,0,1]]},
+  {"name":"duplicate_arrival_from_same_source","cells":[[0,0,0,6,0],[6,4,0,0,1]],"moves":[[0,0,2,1,1],[0,0,4,1,1]],"expected":[[1,1,0,6,0],[6,4,0,0,1]]},
+  {"name":"partial_move","cells":[[0,0,0,6,0],[6,4,0,0,1]],"moves":[[0,0,2,1,1]],"expected":[[0,0,0,4,0],[1,1,0,2,0],[6,4,0,0,1]]},
+  {"name":"source_target_chain","cells":[[0,0,0,3,0],[1,0,0,4,0],[6,4,0,0,1]],"moves":[[0,0,3,1,0],[1,0,4,2,0]],"rejected":true},
+  {"name":"overspend_split","cells":[[0,0,0,6,0],[6,4,0,0,1]],"moves":[[0,0,4,1,0],[0,0,4,0,1]],"rejected":true},
+  {"name":"non_adjacent_move","cells":[[0,0,0,6,0],[6,4,0,0,1]],"moves":[[0,0,6,2,0]],"rejected":true}
+]

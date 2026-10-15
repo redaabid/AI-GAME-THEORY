@@ -16,36 +16,48 @@ and select a strong tournament agent using reproducible results.
 The current strategy provides a benchmark. Its score estimates do not constitute
 a complete stochastic simulator or a deeper adversarial search.
 
-## Next: implement and validate the simulator
+## Implemented: CPU simulator and first data export
 
-Build an in-process model that accepts a board and a legal turn, resolves its
-outcomes, and returns a new board. Search and training will use this model.
+`simulator.py` accepts a board, a legal turn, and an explicit RNG, then returns
+a new immutable board. `simulate.py` runs baseline/random games and exports
+versioned JSONL records for the GPU colleague's pipeline.
 
 Completion criteria:
 
-- Apply empty-cell moves, friendly merges, human conversion, and enemy battles.
-- Resolve a whole turn consistently, including groups arriving together.
-- Model battle winners and conditional survivor counts, with seedable randomness.
-- Preserve the input state so competing search branches remain independent.
-- Test deterministic thresholds and survivor distributions against the brief.
-- Compare deterministic scenarios and repeated random-battle outcomes with the
-  supplied Server v3.2.1. A shared random seed does not imply identical random
-  draws across different server implementations.
-- Investigate the brief's splitting ambiguity: its rules allow splitting, while
-  the protocol text caps move count by group count. Verify accepted behavior
-  before broadening `GameState.validate_moves` or generating split turns.
+- [x] Apply empty-cell moves, friendly merges, human conversion, and enemy battles.
+- [x] Resolve combined arrivals before battle and preserve independent branches.
+- [x] Model battle winners and conditional survivors with seedable randomness.
+- [x] Test thresholds, empty outcomes, conservation, replay, and distributions.
+- [x] Compare movement cases and four sampled combat scenarios with the supplied DLL.
+- [x] Verify that the supplied model accepts splitting one group into multiple moves.
+- [x] Document the stronger-defender discrepancy and separate the two rule profiles.
+- [x] Export labeled, reproducible pipeline examples with map and code fingerprints.
+- [ ] Expand reference coverage and investigate populations beyond one-byte limits.
+
+See [CPU_GPU_HANDOFF.md](CPU_GPU_HANDOFF.md) for the API, dataset schema, exact
+reference DLL, and supported limits. The current exporter uses baseline/random
+agents; search-generated learning targets are the next stage.
+
+## Next: recruitment-aware adversarial MCTS
+
+- Generate a useful, validated set of whole-turn plans, including coordinated
+  movement and selected splits, and expand candidates as the budget permits.
+- Model enemy decisions adversarially and battle outcomes probabilistically.
+- Use a bounded search budget with a validated fallback before the two-second deadline.
+- Compare against existing agents on held-out maps, both species and first-player roles.
+- Export search-policy targets before starting competitive neural training.
 
 Suggested parallel work for the four teammates:
 
 | Area | First deliverable |
 | --- | --- |
-| Board transitions | Movement, merging, immutable search-state transitions |
-| Combat | Seeded battle resolution and probability/distribution checks |
-| Server validation | Small scenario maps and comparisons with the supplied server |
-| Evaluation | Match-record format, map families, and baseline result collection |
+| Search core | Adversarial MCTS over the immutable simulator with a deadline and fallback |
+| Candidate turns | Recruitment races, coordinated moves, and useful split sizes |
+| Evaluation | Additional reference scenarios, map families, and repeated match comparisons |
+| GPU pipeline | Parse exported records and prepare policy/value training batches |
 
-Agree on the simulator interface together before splitting these tasks into
-separate branches and pull requests.
+Use the simulator interface and schema in the handoff document when splitting
+these tasks into separate branches and pull requests.
 
 ## Later milestones
 

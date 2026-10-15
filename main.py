@@ -6,6 +6,7 @@ import time
 
 import config
 from client import ByeException, ClientSocket, EndException
+from combat import DEFAULT_RULES_PROFILE, RULES_PROFILES
 from game import GameState
 from strategy import choose_moves
 
@@ -13,16 +14,17 @@ LOGGER = logging.getLogger(__name__)
 
 
 def play_game(args):
-    state = GameState()
+    state = GameState(rules_profile=args.rules_profile)
     with ClientSocket(args.ip, args.port) as client:
         client.send_nme(args.name)
         LOGGER.info("Connected to %s:%s as %s", args.ip, args.port, args.name)
+        LOGGER.info("Rules profile: %s", args.rules_profile)
         while True:
             try:
                 command, payload = client.get_message()
             except EndException:
                 LOGGER.info("Game ended; waiting for the next game.")
-                state = GameState()
+                state = GameState(rules_profile=args.rules_profile)
                 continue
             except ByeException:
                 LOGGER.info("Server finished the session.")
@@ -42,6 +44,7 @@ def play_game(args):
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--name", default="AI-GAME-THEORY", help="ASCII name sent to the server")
+    parser.add_argument("--rules-profile", choices=RULES_PROFILES, default=DEFAULT_RULES_PROFILE)
     parser.add_argument("ip", nargs="?", default=config.SERVER_IP, help="Server IP or hostname")
     parser.add_argument("port", nargs="?", default=config.SERVER_PORT, type=int, help="Server TCP port")
     args = parser.parse_args(argv)

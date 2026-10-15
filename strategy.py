@@ -5,22 +5,7 @@ search for later, while providing a replaceable baseline for experiments.
 """
 
 from game import Cell, distance
-
-
-def win_probability(attackers, defenders, *, humans=False):
-    """Battle win probability, including deterministic thresholds (brief pp. 3-4)."""
-    if attackers <= 0 or defenders <= 0:
-        raise ValueError("Battle populations must be positive.")
-    if humans and attackers >= defenders:
-        return 1.0
-    if not humans:
-        if 2 * attackers >= 3 * defenders:
-            return 1.0
-        if 2 * defenders >= 3 * attackers:
-            return 0.0
-    if attackers <= defenders:
-        return attackers / (2 * defenders)
-    return attackers / defenders - 0.5
+from combat import DEFAULT_RULES_PROFILE, win_probability
 
 
 def choose_moves(state):
@@ -32,6 +17,7 @@ def choose_moves(state):
     own = state.groups()
     enemies = state.groups(state.enemy_species)
     humans = state.groups("humans")
+    rules_profile = getattr(state, "rules_profile", DEFAULT_RULES_PROFILE)
     best_move, best_score = None, float("-inf")
     for source, count in own:
         affordable = [(p, h) for p, h in humans if h <= count]
@@ -51,7 +37,8 @@ def choose_moves(state):
             strength, enemy_removed = float(count + friendly_count), 0.0
             if cell.humans or enemy_count:
                 defenders = cell.humans or enemy_count
-                probability = win_probability(count, defenders, humans=bool(cell.humans))
+                probability = win_probability(count, defenders, humans=bool(cell.humans),
+                                              rules_profile=rules_profile)
                 # Win probability times the conditional expected number alive.
                 strength = (count + cell.humans) * probability ** 2
                 if enemy_count:
@@ -60,7 +47,7 @@ def choose_moves(state):
             threat = sum(n for p, n in enemies if p != target and distance(p, target) == 1)
             reply_loss = 0.0
             if threat and strength:
-                probability = win_probability(threat, strength)
+                probability = win_probability(threat, strength, rules_profile=rules_profile)
                 reply_loss = strength * (1 - (1 - probability) ** 2)
 
             gain = strength - count - friendly_count

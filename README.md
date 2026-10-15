@@ -1,8 +1,9 @@
 # AI Game Theory: Vampires vs Werewolves
 
 A four-person team project to build an AI for the Vampires vs Werewolves game.
-The current milestone is a working Python benchmark bot. Next we will build a
-validated simulator, compare search strategies, and train neural agents offline.
+The current milestone includes a working Python benchmark bot, a CPU simulator,
+and a portable data export for the team's training pipeline. Next we will add
+adversarial search and train neural agents offline.
 
 ## What runs during a game?
 
@@ -32,6 +33,49 @@ followed by `git pull --ff-only origin main` to update it.
 The bot, setup command, and tests use only the Python standard library. You can
 run them directly without installing packages. A GPU is for later training work.
 On macOS or Linux, use `python3` if that is your interpreter's command name.
+
+## Run CPU games without the graphical server
+
+From the repository folder:
+
+```sh
+python simulate.py --games 20 --seed 42
+```
+
+This runs the baseline against a random agent on `maps/demo.xml`, rotating species
+and the first player in four-game blocks. It needs Python only: no GPU, server,
+course ZIP, or extra packages. It prints the results folder under `.local/simulations/`.
+
+Each run exports `manifest.json`, `games.jsonl`, and `transitions.jsonl`. These
+baseline/random examples let your colleague build and test a GPU data loader;
+search-generated training targets will come after MCTS is implemented.
+
+Use `--map path/to/map.xml`, `--max-plies 100`, or `--output .local/my-new-run` to
+choose the map, turn cap, and a new output folder. Existing runs are preserved.
+See [docs/CPU_GPU_HANDOFF.md](docs/CPU_GPU_HANDOFF.md) for the simulator API and data contract.
+
+### Rule profiles
+
+The supplied v3.2.1 model differs from the written brief: an attack against a
+defender at least 1.5 times stronger remains random. Its human-conversion and
+attacker-victory thresholds agree with the brief. Both the live benchmark and
+simulator default to `server-v3.2.1`; every exported state records that profile.
+Use `--rules-profile brief` with `main.py` or `simulate.py` to use the written
+guaranteed-defender rule. Confirm which server/rules the instructor will grade.
+
+The simulator explicitly rejects turns whose possible resulting population
+exceeds 255 on one cell. Byte-overflow behavior is outside the current model.
+
+To repeat the optional Windows reference checks after preparing the course server:
+
+```powershell
+.\scripts\check_server_model.ps1
+```
+
+This checks the supplied model DLL directly, without launching its GUI, and writes
+`.local/server-model-check.json`. The reference checks cover ten movement/rule
+cases and four combat distributions with 20,000 samples each. The portable Python
+test suite uses the same movement fixtures plus independent probability tests.
 
 ## Prepare the Windows server
 
@@ -110,6 +154,9 @@ The client handles TCP messages split across reads, board updates, game resets
 | `client.py` | TCP connection and binary protocol |
 | `game.py` | Board state, species identification, and movement validation |
 | `strategy.py` | Baseline move selection and combat probability calculation |
+| `combat.py` | Shared probability rules and integer battle sampling |
+| `simulator.py` | Immutable states, complete-turn transitions, outcomes, XML loading |
+| `simulate.py` | CPU games and versioned JSONL export |
 | `main.py` | Command-line entry point and game loop |
 | `config.py` | Default server address and port |
 | `scripts/setup_server.py` | Prepare the course server and a map locally |
@@ -124,7 +171,8 @@ python -m unittest discover -s tests -v
 The checks include a local mock server to verify communication and game resets.
 The bot has also completed a two-bot compatibility match on the supplied Server
 v3.2.1 using `thetrap.xml`, a two-second move limit, and a 40-ply test cap.
-Splitting, a full simulator, deeper search, and neural training are future
+The simulator supports splitting and combined arrivals. The benchmark agent still
+moves one full group per turn. Deeper search and neural training are the next
 milestones. See [docs/ROADMAP.md](docs/ROADMAP.md) for the next tasks.
 
 ## Configuration and troubleshooting

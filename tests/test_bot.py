@@ -154,13 +154,14 @@ class BoardTests(unittest.TestCase):
 
 
 class StrategyTests(unittest.TestCase):
-    def test_battle_thresholds_and_random_probabilities(self):
+    def test_brief_battle_thresholds_and_random_probabilities(self):
         cases = [(6, 6, True, 1), (4, 8, True, 0.25),
                  (15, 10, False, 1), (10, 15, False, 0),
                  (10, 10, False, 0.5), (12, 10, False, 0.7), (10, 12, False, 10 / 24)]
         for attackers, defenders, humans, expected in cases:
             with self.subTest(attackers=attackers, defenders=defenders, humans=humans):
-                self.assertAlmostEqual(win_probability(attackers, defenders, humans=humans), expected)
+                self.assertAlmostEqual(win_probability(attackers, defenders, humans=humans,
+                                                       rules_profile="brief"), expected)
 
     def test_captures_affordable_humans(self):
         state = board([(0, 0, 0, 5, 0), (1, 1, 4, 0, 0), (6, 4, 0, 0, 4)])
@@ -268,7 +269,7 @@ class CommandLineTests(unittest.TestCase):
         self.assertNotIn("Traceback", result.stderr)
 
     def test_invalid_arguments_do_not_attempt_a_connection(self):
-        for arguments in (["127.0.0.1", "70000"], ["--name", "\u00e9"]):
+        for arguments in (["127.0.0.1", "70000"], ["--name", "\u00e9"], ["--rules-profile", "unknown"]):
             result = subprocess.run([sys.executable, "main.py", *arguments], cwd=ROOT,
                                     capture_output=True, text=True, timeout=5)
             self.assertEqual(result.returncode, 2, result.stderr)
