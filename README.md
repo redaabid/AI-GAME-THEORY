@@ -56,6 +56,10 @@ timeouts, and faults. To add a model, create `agents/<name>.py`; see
 [docs/COMMON_BASE.md](docs/COMMON_BASE.md). Any registered agent plays live with
 `python main.py --agent <spec> IP PORT`.
 
+Registered engines: `baseline`, `random`, `mcts`, `portfolio` (Portfolio Greedy
+Search), `alphabeta` (iterative deepening with chance nodes), and `oep` (online
+evolutionary planning). `tune.py` tunes their parameters offline.
+
 ## Run CPU games without the graphical server
 
 From the repository folder:
@@ -216,6 +220,8 @@ The client handles TCP messages split across reads, board updates, game resets
 | `macro.py` | Orders per group (macro-actions) turned into legal moves |
 | `evaluation.py` | Human-race evaluation with tunable weights |
 | `playbook.py` | Scripted group behaviours and deterministic playouts |
+| `lookahead.py` | Candidate turns and win/loss branches of uncertain battles |
+| `tune.py` | Offline tuning: SPSA, genetic search, Texel |
 | `config.py` | Default server address and port |
 | `scripts/setup_server.py` | Prepare the course server and a map locally |
 | `tests/` | Protocol, board, strategy, setup, and mock-server checks |

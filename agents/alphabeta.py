@@ -49,6 +49,7 @@ class AlphaBeta(Agent):
             turns = candidate_turns(node, extra=self.extra)
             scored = []
             for moves in turns:
+                check()
                 child = outcomes(node, moves, 0)[0][1]
                 scored.append((-leaf(child), moves))
             scored.sort(key=lambda item: -item[0])
@@ -62,8 +63,7 @@ class AlphaBeta(Agent):
         def negamax(node, depth, alpha, beta):
             nonlocal nodes
             nodes += 1
-            if nodes % 64 == 0:
-                check()
+            check()
             outcome = get_outcome(node, max_plies=max_plies)
             if outcome is not None or depth == 0:
                 return leaf(node)
