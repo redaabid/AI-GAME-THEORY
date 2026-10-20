@@ -6,12 +6,14 @@ small policy/value network using the exported search decisions.
 
 ## Get the latest work
 
-The current work is on **`feat/adversarial-mcts`**, pending integration into
-`main`. From an existing clone, save or commit your own work first, then run:
+> Update (20 October 2026): this work is merged into `main`, with the common
+> base and new engines ([COMMON_BASE.md](COMMON_BASE.md), [RESULTS.md](RESULTS.md)).
+
+From an existing clone, save or commit your own work first, then run:
 
 ```sh
 git fetch origin
-git switch feat/adversarial-mcts
+git switch main
 git pull --ff-only
 python -m unittest discover -s tests -v
 ```
@@ -108,11 +110,10 @@ against the existing MCTS before adopting it.
 
 ## Work together
 
-Until this branch is merged, create related task branches from
-`feat/adversarial-mcts` and target it in pull requests:
+Create task branches from `main` and target it in pull requests:
 
 ```sh
-git switch feat/adversarial-mcts
+git switch main
 git pull --ff-only
 git switch -c your-name/task-name
 ```

@@ -1,16 +1,13 @@
 # AI Game Theory: Vampires vs Werewolves
 
 A four-person team project to build an AI for the Vampires vs Werewolves game.
-The current milestone includes a Python benchmark bot, a CPU simulator, an
-adversarial MCTS agent, and portable training exports. Neural training comes next.
+`main` contains a Python benchmark bot, a CPU simulator, and six engines behind
+one interface: `alphabeta`, `oep`, `portfolio`, `mcts`, `baseline`, and `random`.
+A round-robin tournament compares them, and `tune.py` tunes them offline.
 
-The simulator and MCTS work is on **`feat/adversarial-mcts`** pending integration
-into `main`. Collaborators should use that branch for the commands below.
-
-**Team update (15 October 2026):** see [Progress and next tasks](docs/PROGRESS.md)
-for completed work, measured results, commands to try, and suggested tasks for
-the four teammates. The next milestone is stronger CPU search and a first
-policy/value training prototype.
+**Current best engine: `alphabeta`** (simulator results in
+[docs/RESULTS.md](docs/RESULTS.md)). Earlier progress notes:
+[docs/PROGRESS.md](docs/PROGRESS.md) (15 October 2026).
 
 ## What runs during a game?
 
@@ -30,13 +27,12 @@ Install Git and Python 3.10 or newer, then open a terminal:
 ```sh
 git clone https://github.com/redaabid/AI-GAME-THEORY.git
 cd AI-GAME-THEORY
-git switch feat/adversarial-mcts
 python --version
 python -m unittest discover -s tests -v
 ```
 
-If you already cloned the repository, save your work, run `git fetch origin`,
-then `git switch feat/adversarial-mcts` and `git pull --ff-only` to update it.
+If you already cloned the repository, save your work, then run
+`git switch main` and `git pull --ff-only` to update it.
 
 The bot, setup command, and tests use only the Python standard library. You can
 run them directly without installing packages. A GPU is for later training work.
@@ -48,10 +44,11 @@ Every model implements one `Agent` interface (`agents/`), and a round-robin
 tournament compares them all in the simulator, on fair generated maps:
 
 ```sh
-python tournament.py --agents baseline mcts "mcts:iterations=64" --random-maps 6 --rounds 2
+python tournament.py --agents baseline portfolio alphabeta oep mcts --random-maps 6 --family large --move-time 0
 ```
 
-It prints a score matrix (who beats whom), an Elo ranking, decision times,
+`--move-time 0` gives fast, reproducible untimed games; the default (2 s per move,
+as on the server) is realistic but slow. It prints a score matrix (who beats whom), an Elo ranking, decision times,
 timeouts, and faults. To add a model, create `agents/<name>.py`; see
 [docs/COMMON_BASE.md](docs/COMMON_BASE.md). Any registered agent plays live with
 `python main.py --agent <spec> IP PORT`.
@@ -176,15 +173,18 @@ The bots play automatically. Terminals log the assigned species, moves, and
 decision times. `Game ended` and `Server finished the session` indicate a
 completed match. The server window shows the board.
 
-To use MCTS in terminal A instead, run:
+Both bots use the `baseline` engine by default. To play the best engine in
+terminal A instead, run:
 
 ```sh
-python main.py --agent mcts --move-time 0.15 --iterations 128 --name Search 127.0.0.1 5555
+python main.py --agent alphabeta --max-plies 40 --move-time 0.15 --name AlphaBeta 127.0.0.1 5555
 ```
 
-The short budget suits the demo's 30-second game cap. The live MCTS default is
-1.5 seconds with a 10,000-iteration cap; use it after increasing the game-duration
-limit for longer matches. The two-second server turn limit stays unchanged.
+The short budget suits the demo's 30-second game cap, and `--max-plies` must match
+the server's `MaxPlays` (40 in the demo, 200 by default): the engines plan the
+endgame with it. For real matches, keep the defaults (`--move-time 1.5`,
+`--max-plies 200`): `python main.py --agent alphabeta IP PORT`. Any spec works,
+for example `--agent oep` or `--agent "mcts:iterations=512"`.
 
 To play again, close and reopen the server, then re-run both bot commands. To
 stop early, press **Ctrl+C** in each bot terminal and close the server window.
@@ -222,9 +222,10 @@ The client handles TCP messages split across reads, board updates, game resets
 | `playbook.py` | Scripted group behaviours and deterministic playouts |
 | `lookahead.py` | Candidate turns and win/loss branches of uncertain battles |
 | `tune.py` | Offline tuning: SPSA, genetic search, Texel |
+| `agents/alphabeta.py`, `agents/oep.py`, `agents/portfolio.py` | Search engines built on the shared modules |
 | `config.py` | Default server address and port |
 | `scripts/setup_server.py` | Prepare the course server and a map locally |
-| `tests/` | Protocol, board, strategy, setup, and mock-server checks |
+| `tests/` | Protocol, board, simulator, engines, tournament, and mock-server checks |
 
 Run the checks with:
 
@@ -236,8 +237,9 @@ The checks include a local mock server to verify communication and game resets.
 The bot has also completed a two-bot compatibility match on the supplied Server
 v3.2.1 using `thetrap.xml`, a two-second move limit, and a 40-ply test cap.
 The simulator supports splitting and combined arrivals. The benchmark agent still
-moves one full group per turn; MCTS considers a larger candidate set. Neural
-training and broader evaluation are next. See [docs/ROADMAP.md](docs/ROADMAP.md).
+moves one full group per turn; the search engines also split and coordinate groups.
+The engines have not yet played a full match on the Windows server: run one before
+the tournament. See [docs/ROADMAP.md](docs/ROADMAP.md).
 
 ## Configuration and troubleshooting
 
@@ -257,10 +259,6 @@ server you started. Tournament launchers can append them after your options.
 | Game ends after a short time | The demo caps play at 40 individual turns or 30 seconds |
 
 ## How to collaborate
-
-Until the simulator/search branch is merged, base related task branches on
-`feat/adversarial-mcts` and target it in pull requests. The commands below show
-the normal workflow after integration into `main`.
 
 1. **Pick a task.** Check the [GitHub issues](https://github.com/redaabid/AI-GAME-THEORY/issues) or create one. Comment on the issue to let the team know you are working on it.
 

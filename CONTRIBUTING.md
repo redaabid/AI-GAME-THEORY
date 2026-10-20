@@ -4,9 +4,8 @@ Start with the setup and test commands in [README.md](README.md). Discuss your
 task with the team or create a GitHub issue before starting. The next milestone
 is described in [docs/ROADMAP.md](docs/ROADMAP.md).
 
-The simulator/search work currently lives on `feat/adversarial-mcts`. Until it
-is merged into `main`, create related task branches from that branch and target
-it in pull requests. The workflow below applies after integration into `main`.
+To add a model, create `agents/<name>.py` and compare it with `tournament.py`;
+see [docs/COMMON_BASE.md](docs/COMMON_BASE.md).
 
 1. Get the latest changes and create a branch:
 
