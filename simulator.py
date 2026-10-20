@@ -6,7 +6,7 @@ from types import MappingProxyType
 from typing import Mapping
 import xml.etree.ElementTree as ET
 
-from combat import DEFAULT_RULES_PROFILE, RULES_PROFILES, sample_battle
+from combat import DEFAULT_RULES_PROFILE, RULES_PROFILES, expected_battle, sample_battle
 from game import Cell, GameState
 
 SPECIES = ("vampires", "werewolves")
@@ -122,6 +122,7 @@ def simulate_turn(position, moves, rng):
     Debit all sources, combine arrivals at each destination, then resolve each
     destination once. Sorted destinations make seeded results independent of
     move-list order. Populations beyond the one-byte protocol are rejected.
+    rng=None resolves battles deterministically (combat.expected_battle) for look-ahead.
     """
     if get_outcome(position) is not None:
         raise ValueError("Cannot move after the game has ended.")
@@ -154,8 +155,12 @@ def simulate_turn(position, moves, rng):
         else:
             humans = bool(cell.humans)
             defending_species = "humans" if humans else opponent(actor)
-            battle = sample_battle(count, getattr(cell, defending_species), rng, humans=humans,
-                                   rules_profile=position.rules_profile)
+            if rng is None:
+                battle = expected_battle(count, getattr(cell, defending_species), humans=humans,
+                                         rules_profile=position.rules_profile)
+            else:
+                battle = sample_battle(count, getattr(cell, defending_species), rng, humans=humans,
+                                       rules_profile=position.rules_profile)
             winner = actor if battle.attacker_won else defending_species
             replacement = Cell(**{winner: battle.survivors})
         if replacement == Cell():

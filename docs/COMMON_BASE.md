@@ -8,6 +8,8 @@ and in the round-robin tournament, so results are directly comparable.
 | --- | --- |
 | `agents/__init__.py` | `Agent` interface, registry, spec strings, safety net (`safe_choose`) |
 | `agents/builtin.py` | `random`, `baseline`, `mcts` adapters |
+| `agents/portfolio.py` | Portfolio Greedy Search (`portfolio`) |
+| `macro.py`, `evaluation.py`, `playbook.py` | Shared building blocks (see below) |
 | `tournament.py` | Round-robin in the simulator: score matrix, Elo, timing, faults |
 | `mapgen.py` | Fair (point-symmetric) random maps with train/val/test splits |
 | `main.py` | Live client; `--agent` accepts any registered spec |
@@ -95,11 +97,21 @@ use disjoint seeds:
 
 `tournament.py --random-maps` uses the `val` split by default.
 
-## Next shared pieces
+## Shared building blocks for the search engines
 
-The alpha-beta, OEP, and Portfolio Greedy Search all need the same building
-blocks. Write them once, in shared modules, rather than once per model:
+The alpha-beta, OEP, and Portfolio Greedy Search reuse the same pieces. Use
+them instead of rewriting your own, so the engines differ only by their search:
 
-- macro-actions per group ("go to target", minimal split): partly in `candidates.py`;
-- the human-race evaluation (who reaches each human group first, with enough troops);
-- the Portfolio scripts (eat, attack, flee, merge), reused by OEP as its opponent model.
+| Module | What it gives | Typical use |
+| --- | --- | --- |
+| `macro.py` | `Order(source, count, goal)` and `orders_to_moves`: one legal step per order, rules 3 and 5 enforced; `needed()` = humans h or ceil(1.5 × enemy) | Action space: "this group sends N toward that target" |
+| `evaluation.py` | `evaluate(position, species)`: material + human race (who converts each group first) + immediate threats; `WEIGHTS` for Texel | Leaf evaluation for alpha-beta, OEP fitness, PGS |
+| `playbook.py` | Scripts `eat`, `attack`, `flee`, `merge`, `split`; `play_turn`, `playout` | PGS portfolio, OEP opponent model and population seeds |
+| `simulate_turn(position, moves, None)` | Deterministic battles (likely winner keeps its mean survivors) | Noise-free look-ahead; pass an RNG for real games |
+
+Example: an OEP genome can be a list of `Order`s. Turn it into moves with
+`orders_to_moves`, play the opponent with `playout`, and score with `evaluate`.
+
+`portfolio` (agents/portfolio.py) is built only from these modules: start there
+to see how they fit together. Its parameters are `horizon` (plies simulated),
+`passes`, `default` script, `scripts`, and `weights`.

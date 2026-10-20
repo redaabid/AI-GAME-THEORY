@@ -55,3 +55,19 @@ def sample_battle(attackers, defenders, rng, *, humans=False, rules_profile=DEFA
     survival_probability = probability if attacker_won else 1 - probability
     survivors = sum(rng.random() < survival_probability for _ in range(population))
     return BattleResult(attacker_won, survivors, probability)
+
+
+def expected_battle(attackers, defenders, *, humans=False, rules_profile=DEFAULT_RULES_PROFILE):
+    """Deterministic stand-in for look-ahead: the likelier side wins with its mean survivors.
+
+    Not a server rule. Use it for noise-free playouts; use sample_battle for real games.
+    """
+    if any(type(n) is not int or n <= 0 for n in (attackers, defenders)):
+        raise ValueError("Simulated battle populations must be positive integers.")
+    probability = win_probability(attackers, defenders, humans=humans, rules_profile=rules_profile)
+    population = attackers + (defenders if humans else 0)
+    if probability == 1:
+        return BattleResult(True, population, probability)
+    if probability >= 0.5:
+        return BattleResult(True, round(population * probability), probability)
+    return BattleResult(False, round(defenders * (1 - probability)), probability)

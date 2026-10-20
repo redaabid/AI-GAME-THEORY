@@ -213,6 +213,9 @@ The client handles TCP messages split across reads, board updates, game resets
 | `agents/` | Shared `Agent` interface, registry, safety net, built-in agents |
 | `tournament.py` | Round-robin tournament: score matrix, Elo, timing, faults |
 | `mapgen.py` | Fair symmetric random maps with train/val/test splits |
+| `macro.py` | Orders per group (macro-actions) turned into legal moves |
+| `evaluation.py` | Human-race evaluation with tunable weights |
+| `playbook.py` | Scripted group behaviours and deterministic playouts |
 | `config.py` | Default server address and port |
 | `scripts/setup_server.py` | Prepare the course server and a map locally |
 | `tests/` | Protocol, board, strategy, setup, and mock-server checks |
