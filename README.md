@@ -42,6 +42,20 @@ The bot, setup command, and tests use only the Python standard library. You can
 run them directly without installing packages. A GPU is for later training work.
 On macOS or Linux, use `python3` if that is your interpreter's command name.
 
+## Compare models: the common base
+
+Every model implements one `Agent` interface (`agents/`), and a round-robin
+tournament compares them all in the simulator, on fair generated maps:
+
+```sh
+python tournament.py --agents baseline mcts "mcts:iterations=64" --random-maps 6 --rounds 2
+```
+
+It prints a score matrix (who beats whom), an Elo ranking, decision times,
+timeouts, and faults. To add a model, create `agents/<name>.py`; see
+[docs/COMMON_BASE.md](docs/COMMON_BASE.md). Any registered agent plays live with
+`python main.py --agent <spec> IP PORT`.
+
 ## Run CPU games without the graphical server
 
 From the repository folder:
@@ -195,7 +209,10 @@ The client handles TCP messages split across reads, board updates, game resets
 | `candidates.py` | Bounded whole-turn generation, recruitment splits, coordinated moves |
 | `search.py` | Adversarial UCT, sampled battles, deadline, root visit targets |
 | `evaluate.py` | Balanced multi-map comparisons and decision timing |
-| `main.py` | Command-line entry point and game loop |
+| `main.py` | Command-line entry point and game loop; `--agent` takes any registered agent |
+| `agents/` | Shared `Agent` interface, registry, safety net, built-in agents |
+| `tournament.py` | Round-robin tournament: score matrix, Elo, timing, faults |
+| `mapgen.py` | Fair symmetric random maps with train/val/test splits |
 | `config.py` | Default server address and port |
 | `scripts/setup_server.py` | Prepare the course server and a map locally |
 | `tests/` | Protocol, board, strategy, setup, and mock-server checks |
