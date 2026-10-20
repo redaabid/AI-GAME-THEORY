@@ -27,13 +27,27 @@ def arrival(army, target, population):
     return min(times) if times else None
 
 
-def race_owners(position, species):
+def turns_left(position, species, max_plies):
+    """Turns `species` still plays before the ply limit (None: no limit)."""
+    if max_plies is None:
+        return None
+    remaining = max(0, max_plies - position.ply)
+    return (remaining + 1) // 2 if position.to_play == species else remaining // 2
+
+
+def race_owners(position, species, max_plies=None):
     """{human cell: (winner or None, turns)}: the side that converts each group first."""
     own, enemy = groups(position, species), groups(position, opponent(species))
     we_move_first = position.to_play == species
+    ours_left = turns_left(position, species, max_plies)
+    theirs_left = turns_left(position, opponent(species), max_plies)
     owners = {}
     for cell, h in groups(position, "humans"):
         ours, theirs = arrival(own, cell, h), arrival(enemy, cell, h)
+        if ours is not None and ours_left is not None and ours > ours_left:
+            ours = None
+        if theirs is not None and theirs_left is not None and theirs > theirs_left:
+            theirs = None
         if ours is None and theirs is None:
             owners[cell] = (None, None)
         elif theirs is None or (ours is not None and (ours < theirs or (ours == theirs and we_move_first))):
@@ -43,7 +57,7 @@ def race_owners(position, species):
     return owners
 
 
-def evaluate(position, species, weights=WEIGHTS):
+def evaluate(position, species, weights=WEIGHTS, max_plies=None):
     other = opponent(species)
     own, enemy = groups(position, species), groups(position, other)
     own_total, enemy_total = sum(n for _, n in own), sum(n for _, n in enemy)
@@ -51,10 +65,13 @@ def evaluate(position, species, weights=WEIGHTS):
         if own_total == enemy_total:
             return 0.0
         return WIN + own_total if own_total else -WIN - enemy_total
+    if max_plies is not None and position.ply >= max_plies:
+        margin = own_total - enemy_total
+        return 0.0 if not margin else (WIN if margin > 0 else -WIN) + margin
 
     humans = {cell: h for cell, h in groups(position, "humans")}
     race = 0.0
-    for cell, (winner, turns) in race_owners(position, species).items():
+    for cell, (winner, turns) in race_owners(position, species, max_plies).items():
         if winner is not None:
             race += (1 if winner == species else -1) * humans[cell] * weights["discount"] ** turns
 

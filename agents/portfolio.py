@@ -37,7 +37,7 @@ class PortfolioGreedySearch(Agent):
         def value(ours, theirs):
             final = playout(position, {me: ours, them: theirs}, horizon=self.horizon, default=self.default,
                             max_plies=context.max_plies, deadline_check=check)
-            return evaluate(final, me, self.weights)
+            return evaluate(final, me, self.weights, context.max_plies)
 
         def improve(assignment, other, side_is_me, current):
             for cell in sorted(assignment):

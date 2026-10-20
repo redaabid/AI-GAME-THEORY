@@ -89,11 +89,32 @@ def available_agents():
     return sorted(_REGISTRY)
 
 
+def _split_top_level(raw):
+    """Split on commas outside brackets and quotes, so dict and tuple values survive."""
+    parts, depth, quote, start = [], 0, None, 0
+    for index, char in enumerate(raw):
+        if quote:
+            quote = None if char == quote else quote
+        elif char in "'\"":
+            quote = char
+        elif char in "([{":
+            depth += 1
+        elif char in ")]}":
+            depth -= 1
+        elif char == "," and depth == 0:
+            parts.append(raw[start:index])
+            start = index + 1
+    return parts + [raw[start:]]
+
+
 def parse_spec(spec):
-    """'mcts:iterations=256,exploration=1.0' -> ('mcts', {...}). Values are Python literals."""
+    """'mcts:iterations=256,exploration=1.0' -> ('mcts', {...}). Values are Python literals.
+
+    Nested values work: "alphabeta:weights={'humans':0.9,'threat':0.5}".
+    """
     name, _, raw = spec.partition(":")
     params = {}
-    for item in filter(None, (part.strip() for part in raw.split(","))):
+    for item in filter(None, (part.strip() for part in _split_top_level(raw))):
         key, sep, value = item.partition("=")
         if not sep or not key.strip().isidentifier():
             raise ValueError(f"Bad agent parameter {item!r} in {spec!r}; use key=value.")
