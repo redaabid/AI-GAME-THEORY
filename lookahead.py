@@ -10,8 +10,8 @@ from dataclasses import replace
 
 from candidates import generate_candidates
 from combat import win_probability
-from game import Cell
-from macro import groups
+from game import Cell, distance
+from macro import groups, neighbors
 from playbook import SCRIPTS, play_turn
 from simulator import opponent, simulate_turn
 
@@ -43,6 +43,23 @@ def candidate_turns(position, *, extra=0, default="eat"):
         for script in SCRIPTS:
             if script != default:
                 add(play_turn(position, {cell: script}, default)[0])
+    # Gambles: a whole group attacks an adjacent enemy it cannot surely kill. No
+    # script does this, but real opponents do, so the search must see it coming.
+    enemy = groups(position, opponent(position.to_play))
+    for cell, n in groups(position, position.to_play):
+        for target, m in enemy:
+            if distance(cell, target) == 1 and 0 < win_probability(
+                    n, m, rules_profile=position.rules_profile) < 1:
+                add([(*cell, n, *target)])
+    # Keep away: a group steps out of reach of enemies it cannot surely kill. With
+    # a lead and the clock running, avoiding a coin flip is often the winning plan.
+    center = ((position.columns - 1) / 2, (position.rows - 1) / 2)
+    for cell, n in groups(position, position.to_play):
+        rivals = [p for p, m in enemy if 2 * n < 3 * m]
+        if rivals and min(distance(cell, p) for p in rivals) <= 3:
+            target = max(neighbors(cell, position.rows, position.columns),
+                         key=lambda q: (min(distance(q, p) for p in rivals), -distance(q, center), q))
+            add([(*cell, n, *target)])
     if extra:
         for moves in generate_candidates(position, limit=max(2, extra)):
             add(moves)
