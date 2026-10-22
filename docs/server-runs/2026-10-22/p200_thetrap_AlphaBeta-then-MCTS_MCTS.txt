@@ -1,0 +1,26 @@
+INFO: Connected to 127.0.0.1:5555 as MCTS
+INFO: Rules profile: server-v3.2.1
+INFO: Agent: mcts:iterations=10000
+INFO: Board: 10 columns x 5 rows; playing werewolves
+INFO: Search: 2356 iterations; fallback=False
+INFO: Turn 1: [(4, 1, 4, 3, 2)] (1.502 seconds)
+INFO: Search: 1403 iterations; fallback=False
+INFO: Turn 2: [(3, 2, 4, 2, 2)] (1.503 seconds)
+INFO: Search: 1117 iterations; fallback=False
+INFO: Turn 3: [(2, 2, 8, 3, 3)] (1.502 seconds)
+INFO: Search: 1140 iterations; fallback=False
+INFO: Turn 4: [(3, 3, 8, 4, 4)] (1.502 seconds)
+INFO: Search: 1024 iterations; fallback=False
+INFO: Turn 5: [(4, 4, 8, 5, 4)] (1.502 seconds)
+INFO: Search: 1106 iterations; fallback=False
+INFO: Turn 6: [(5, 4, 8, 6, 4)] (1.502 seconds)
+INFO: Search: 1048 iterations; fallback=False
+INFO: Turn 7: [(6, 4, 8, 7, 3)] (1.502 seconds)
+INFO: Search: 1172 iterations; fallback=False
+INFO: Turn 8: [(7, 3, 2, 8, 3), (7, 3, 6, 8, 2)] (1.502 seconds)
+INFO: Search: 1032 iterations; fallback=False
+INFO: Turn 9: [(8, 2, 6, 8, 1)] (1.502 seconds)
+INFO: Search: 2244 iterations; fallback=False
+INFO: Turn 10: [(8, 1, 3, 8, 0), (8, 3, 2, 9, 4)] (1.502 seconds)
+INFO: Game ended; waiting for the next game.
+INFO: Server finished the session.

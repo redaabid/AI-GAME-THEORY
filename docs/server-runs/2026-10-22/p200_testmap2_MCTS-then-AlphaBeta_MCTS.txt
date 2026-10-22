@@ -1,0 +1,206 @@
+INFO: Connected to 127.0.0.1:5555 as MCTS
+INFO: Rules profile: server-v3.2.1
+INFO: Agent: mcts:iterations=10000
+INFO: Board: 29 columns x 15 rows; playing vampires
+INFO: Search: 1691 iterations; fallback=False
+INFO: Turn 1: [(28, 14, 10, 27, 13)] (1.502 seconds)
+INFO: Search: 945 iterations; fallback=False
+INFO: Turn 2: [(27, 13, 10, 26, 12)] (1.502 seconds)
+INFO: Search: 898 iterations; fallback=False
+INFO: Turn 3: [(26, 12, 10, 25, 11)] (1.502 seconds)
+INFO: Search: 906 iterations; fallback=False
+INFO: Turn 4: [(25, 11, 10, 24, 12)] (1.502 seconds)
+INFO: Search: 907 iterations; fallback=False
+INFO: Turn 5: [(24, 12, 10, 23, 13)] (1.502 seconds)
+INFO: Search: 873 iterations; fallback=False
+INFO: Turn 6: [(23, 13, 10, 22, 13)] (1.502 seconds)
+INFO: Search: 884 iterations; fallback=False
+INFO: Turn 7: [(22, 13, 10, 21, 12)] (1.502 seconds)
+INFO: Search: 923 iterations; fallback=False
+INFO: Turn 8: [(21, 12, 10, 20, 12)] (1.502 seconds)
+INFO: Search: 940 iterations; fallback=False
+INFO: Turn 9: [(20, 12, 10, 19, 12)] (1.501 seconds)
+INFO: Search: 818 iterations; fallback=False
+INFO: Turn 10: [(19, 12, 10, 18, 11)] (1.501 seconds)
+INFO: Search: 812 iterations; fallback=False
+INFO: Turn 11: [(18, 11, 14, 18, 12)] (1.501 seconds)
+INFO: Search: 933 iterations; fallback=False
+INFO: Turn 12: [(18, 12, 14, 17, 13)] (1.502 seconds)
+INFO: Search: 1024 iterations; fallback=False
+INFO: Turn 13: [(17, 13, 14, 16, 14)] (1.501 seconds)
+INFO: Search: 968 iterations; fallback=False
+INFO: Turn 14: [(16, 14, 14, 17, 13)] (1.501 seconds)
+INFO: Search: 1030 iterations; fallback=False
+INFO: Turn 15: [(17, 13, 14, 16, 12)] (1.501 seconds)
+INFO: Search: 1094 iterations; fallback=False
+INFO: Turn 16: [(16, 12, 14, 15, 13)] (1.501 seconds)
+INFO: Search: 1135 iterations; fallback=False
+INFO: Turn 17: [(15, 13, 14, 14, 12)] (1.502 seconds)
+INFO: Search: 1159 iterations; fallback=False
+INFO: Turn 18: [(14, 12, 14, 13, 11)] (1.501 seconds)
+INFO: Search: 1183 iterations; fallback=False
+INFO: Turn 19: [(13, 11, 14, 12, 10)] (1.501 seconds)
+INFO: Search: 1169 iterations; fallback=False
+INFO: Turn 20: [(12, 10, 14, 11, 10)] (1.501 seconds)
+INFO: Search: 1178 iterations; fallback=False
+INFO: Turn 21: [(11, 10, 14, 10, 10)] (1.501 seconds)
+INFO: Search: 1182 iterations; fallback=False
+INFO: Turn 22: [(10, 10, 14, 11, 10)] (1.501 seconds)
+INFO: Search: 1182 iterations; fallback=False
+INFO: Turn 23: [(11, 10, 14, 10, 10)] (1.501 seconds)
+INFO: Search: 1185 iterations; fallback=False
+INFO: Turn 24: [(10, 10, 14, 11, 10)] (1.501 seconds)
+INFO: Search: 1182 iterations; fallback=False
+INFO: Turn 25: [(11, 10, 14, 10, 10)] (1.501 seconds)
+INFO: Search: 1184 iterations; fallback=False
+INFO: Turn 26: [(10, 10, 14, 11, 10)] (1.501 seconds)
+INFO: Search: 1186 iterations; fallback=False
+INFO: Turn 27: [(11, 10, 14, 10, 10)] (1.501 seconds)
+INFO: Search: 1204 iterations; fallback=False
+INFO: Turn 28: [(10, 10, 14, 11, 10)] (1.501 seconds)
+INFO: Search: 1240 iterations; fallback=False
+INFO: Turn 29: [(11, 10, 14, 10, 10)] (1.501 seconds)
+INFO: Search: 1200 iterations; fallback=False
+INFO: Turn 30: [(10, 10, 14, 11, 10)] (1.502 seconds)
+INFO: Search: 1236 iterations; fallback=False
+INFO: Turn 31: [(11, 10, 14, 10, 10)] (1.502 seconds)
+INFO: Search: 1205 iterations; fallback=False
+INFO: Turn 32: [(10, 10, 14, 11, 10)] (1.502 seconds)
+INFO: Search: 1236 iterations; fallback=False
+INFO: Turn 33: [(11, 10, 14, 10, 10)] (1.502 seconds)
+INFO: Search: 1205 iterations; fallback=False
+INFO: Turn 34: [(10, 10, 14, 11, 10)] (1.502 seconds)
+INFO: Search: 1228 iterations; fallback=False
+INFO: Turn 35: [(11, 10, 14, 10, 10)] (1.501 seconds)
+INFO: Search: 1205 iterations; fallback=False
+INFO: Turn 36: [(10, 10, 14, 11, 10)] (1.502 seconds)
+INFO: Search: 1242 iterations; fallback=False
+INFO: Turn 37: [(11, 10, 14, 10, 10)] (1.501 seconds)
+INFO: Search: 1190 iterations; fallback=False
+INFO: Turn 38: [(10, 10, 14, 11, 10)] (1.502 seconds)
+INFO: Search: 1242 iterations; fallback=False
+INFO: Turn 39: [(11, 10, 14, 10, 10)] (1.502 seconds)
+INFO: Search: 1203 iterations; fallback=False
+INFO: Turn 40: [(10, 10, 14, 11, 10)] (1.502 seconds)
+INFO: Search: 1241 iterations; fallback=False
+INFO: Turn 41: [(11, 10, 14, 10, 10)] (1.501 seconds)
+INFO: Search: 1200 iterations; fallback=False
+INFO: Turn 42: [(10, 10, 14, 11, 10)] (1.502 seconds)
+INFO: Search: 1237 iterations; fallback=False
+INFO: Turn 43: [(11, 10, 14, 10, 10)] (1.501 seconds)
+INFO: Search: 1197 iterations; fallback=False
+INFO: Turn 44: [(10, 10, 14, 11, 10)] (1.502 seconds)
+INFO: Search: 1234 iterations; fallback=False
+INFO: Turn 45: [(11, 10, 14, 10, 10)] (1.502 seconds)
+INFO: Search: 1201 iterations; fallback=False
+INFO: Turn 46: [(10, 10, 14, 11, 10)] (1.502 seconds)
+INFO: Search: 1238 iterations; fallback=False
+INFO: Turn 47: [(11, 10, 14, 10, 10)] (1.502 seconds)
+INFO: Search: 1203 iterations; fallback=False
+INFO: Turn 48: [(10, 10, 14, 11, 10)] (1.502 seconds)
+INFO: Search: 1218 iterations; fallback=False
+INFO: Turn 49: [(11, 10, 14, 10, 10)] (1.502 seconds)
+INFO: Search: 1201 iterations; fallback=False
+INFO: Turn 50: [(10, 10, 14, 11, 10)] (1.502 seconds)
+INFO: Search: 1236 iterations; fallback=False
+INFO: Turn 51: [(11, 10, 14, 10, 10)] (1.501 seconds)
+INFO: Search: 1204 iterations; fallback=False
+INFO: Turn 52: [(10, 10, 14, 11, 10)] (1.502 seconds)
+INFO: Search: 1234 iterations; fallback=False
+INFO: Turn 53: [(11, 10, 14, 10, 10)] (1.501 seconds)
+INFO: Search: 1204 iterations; fallback=False
+INFO: Turn 54: [(10, 10, 14, 11, 10)] (1.502 seconds)
+INFO: Search: 1240 iterations; fallback=False
+INFO: Turn 55: [(11, 10, 14, 10, 10)] (1.501 seconds)
+INFO: Search: 1203 iterations; fallback=False
+INFO: Turn 56: [(10, 10, 14, 11, 10)] (1.502 seconds)
+INFO: Search: 1240 iterations; fallback=False
+INFO: Turn 57: [(11, 10, 14, 10, 10)] (1.501 seconds)
+INFO: Search: 1203 iterations; fallback=False
+INFO: Turn 58: [(10, 10, 14, 11, 10)] (1.502 seconds)
+INFO: Search: 1142 iterations; fallback=False
+INFO: Turn 59: [(11, 10, 14, 10, 10)] (1.501 seconds)
+INFO: Search: 1201 iterations; fallback=False
+INFO: Turn 60: [(10, 10, 14, 11, 10)] (1.502 seconds)
+INFO: Search: 1240 iterations; fallback=False
+INFO: Turn 61: [(11, 10, 14, 10, 10)] (1.501 seconds)
+INFO: Search: 1203 iterations; fallback=False
+INFO: Turn 62: [(10, 10, 14, 11, 10)] (1.502 seconds)
+INFO: Search: 1165 iterations; fallback=False
+INFO: Turn 63: [(11, 10, 14, 10, 10)] (1.501 seconds)
+INFO: Search: 1195 iterations; fallback=False
+INFO: Turn 64: [(10, 10, 14, 11, 10)] (1.502 seconds)
+INFO: Search: 1233 iterations; fallback=False
+INFO: Turn 65: [(11, 10, 14, 10, 10)] (1.501 seconds)
+INFO: Search: 1200 iterations; fallback=False
+INFO: Turn 66: [(10, 10, 14, 11, 10)] (1.502 seconds)
+INFO: Search: 1151 iterations; fallback=False
+INFO: Turn 67: [(11, 10, 14, 10, 10)] (1.502 seconds)
+INFO: Search: 1150 iterations; fallback=False
+INFO: Turn 68: [(10, 10, 14, 11, 10)] (1.502 seconds)
+INFO: Search: 1178 iterations; fallback=False
+INFO: Turn 69: [(11, 10, 14, 10, 10)] (1.501 seconds)
+INFO: Search: 1172 iterations; fallback=False
+INFO: Turn 70: [(10, 10, 14, 11, 10)] (1.502 seconds)
+INFO: Search: 1227 iterations; fallback=False
+INFO: Turn 71: [(11, 10, 14, 10, 10)] (1.502 seconds)
+INFO: Search: 1195 iterations; fallback=False
+INFO: Turn 72: [(10, 10, 14, 11, 10)] (1.502 seconds)
+INFO: Search: 1222 iterations; fallback=False
+INFO: Turn 73: [(11, 10, 14, 10, 10)] (1.501 seconds)
+INFO: Search: 1195 iterations; fallback=False
+INFO: Turn 74: [(10, 10, 14, 11, 10)] (1.502 seconds)
+INFO: Search: 1234 iterations; fallback=False
+INFO: Turn 75: [(11, 10, 14, 10, 10)] (1.502 seconds)
+INFO: Search: 1202 iterations; fallback=False
+INFO: Turn 76: [(10, 10, 14, 11, 10)] (1.502 seconds)
+INFO: Search: 1227 iterations; fallback=False
+INFO: Turn 77: [(11, 10, 14, 10, 10)] (1.501 seconds)
+INFO: Search: 1195 iterations; fallback=False
+INFO: Turn 78: [(10, 10, 14, 11, 10)] (1.502 seconds)
+INFO: Search: 1224 iterations; fallback=False
+INFO: Turn 79: [(11, 10, 14, 10, 10)] (1.502 seconds)
+INFO: Search: 1203 iterations; fallback=False
+INFO: Turn 80: [(10, 10, 14, 11, 10)] (1.502 seconds)
+INFO: Search: 1236 iterations; fallback=False
+INFO: Turn 81: [(11, 10, 14, 10, 10)] (1.501 seconds)
+INFO: Search: 1194 iterations; fallback=False
+INFO: Turn 82: [(10, 10, 14, 11, 10)] (1.502 seconds)
+INFO: Search: 1238 iterations; fallback=False
+INFO: Turn 83: [(11, 10, 14, 10, 10)] (1.502 seconds)
+INFO: Search: 1193 iterations; fallback=False
+INFO: Turn 84: [(10, 10, 14, 11, 10)] (1.502 seconds)
+INFO: Search: 1230 iterations; fallback=False
+INFO: Turn 85: [(11, 10, 14, 10, 10)] (1.502 seconds)
+INFO: Search: 1206 iterations; fallback=False
+INFO: Turn 86: [(10, 10, 14, 11, 10)] (1.502 seconds)
+INFO: Search: 1241 iterations; fallback=False
+INFO: Turn 87: [(11, 10, 14, 10, 10)] (1.502 seconds)
+INFO: Search: 1202 iterations; fallback=False
+INFO: Turn 88: [(10, 10, 14, 11, 10)] (1.502 seconds)
+INFO: Search: 1222 iterations; fallback=False
+INFO: Turn 89: [(11, 10, 14, 10, 10)] (1.501 seconds)
+INFO: Search: 1192 iterations; fallback=False
+INFO: Turn 90: [(10, 10, 14, 11, 10)] (1.502 seconds)
+INFO: Search: 1233 iterations; fallback=False
+INFO: Turn 91: [(11, 10, 14, 10, 10)] (1.501 seconds)
+INFO: Search: 1194 iterations; fallback=False
+INFO: Turn 92: [(10, 10, 14, 11, 10)] (1.502 seconds)
+INFO: Search: 1222 iterations; fallback=False
+INFO: Turn 93: [(11, 10, 14, 10, 10)] (1.502 seconds)
+INFO: Search: 1193 iterations; fallback=False
+INFO: Turn 94: [(10, 10, 14, 11, 10)] (1.502 seconds)
+INFO: Search: 1233 iterations; fallback=False
+INFO: Turn 95: [(11, 10, 14, 10, 10)] (1.502 seconds)
+INFO: Search: 1233 iterations; fallback=False
+INFO: Turn 96: [(10, 10, 2, 11, 9)] (1.502 seconds)
+INFO: Search: 1089 iterations; fallback=False
+INFO: Turn 97: [(10, 10, 12, 11, 9)] (1.502 seconds)
+INFO: Search: 1648 iterations; fallback=False
+INFO: Turn 98: [(11, 9, 2, 12, 8)] (1.503 seconds)
+INFO: Search: 2469 iterations; fallback=False
+INFO: Turn 99: [(11, 9, 12, 12, 9), (12, 8, 2, 13, 7)] (1.503 seconds)
+INFO: Search: 8504 iterations; fallback=False
+INFO: Turn 100: [(12, 9, 12, 13, 8), (13, 7, 2, 14, 6)] (1.501 seconds)
+INFO: Game ended; waiting for the next game.
+INFO: Server finished the session.
