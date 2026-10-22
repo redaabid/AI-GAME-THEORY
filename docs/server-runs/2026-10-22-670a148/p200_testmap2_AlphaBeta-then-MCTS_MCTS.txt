@@ -1,0 +1,204 @@
+INFO: Connected to 127.0.0.1:5555 as MCTS
+INFO: Rules profile: server-v3.2.1
+INFO: Agent: mcts:iterations=10000
+INFO: Board: 29 columns x 15 rows; playing werewolves
+INFO: Search: 1371 iterations; fallback=False
+INFO: Turn 1: [(0, 0, 10, 1, 1)] (1.502 seconds)
+INFO: Search: 1239 iterations; fallback=False
+INFO: Turn 2: [(1, 1, 10, 2, 2)] (1.503 seconds)
+INFO: Search: 1379 iterations; fallback=False
+INFO: Turn 3: [(2, 2, 10, 3, 3)] (1.503 seconds)
+INFO: Search: 1321 iterations; fallback=False
+INFO: Turn 4: [(3, 3, 10, 4, 4)] (1.503 seconds)
+INFO: Search: 1461 iterations; fallback=False
+INFO: Turn 5: [(4, 4, 10, 5, 5)] (1.502 seconds)
+INFO: Search: 1210 iterations; fallback=False
+INFO: Turn 6: [(5, 5, 10, 6, 5)] (1.502 seconds)
+INFO: Search: 1182 iterations; fallback=False
+INFO: Turn 7: [(6, 5, 10, 7, 4)] (1.503 seconds)
+INFO: Search: 1054 iterations; fallback=False
+INFO: Turn 8: [(7, 4, 10, 8, 3)] (1.502 seconds)
+INFO: Search: 1110 iterations; fallback=False
+INFO: Turn 9: [(8, 3, 2, 9, 2)] (1.502 seconds)
+INFO: Search: 1042 iterations; fallback=False
+INFO: Turn 10: [(8, 3, 8, 8, 2)] (1.502 seconds)
+INFO: Search: 1010 iterations; fallback=False
+INFO: Turn 11: [(8, 2, 8, 8, 3)] (1.502 seconds)
+INFO: Search: 1142 iterations; fallback=False
+INFO: Turn 12: [(8, 3, 8, 9, 4)] (1.502 seconds)
+INFO: Search: 1088 iterations; fallback=False
+INFO: Turn 13: [(9, 4, 8, 8, 3)] (1.502 seconds)
+INFO: Search: 1261 iterations; fallback=False
+INFO: Turn 14: [(8, 3, 8, 7, 2)] (1.503 seconds)
+INFO: Search: 1159 iterations; fallback=False
+INFO: Turn 15: [(7, 2, 8, 7, 1)] (1.502 seconds)
+INFO: Search: 1178 iterations; fallback=False
+INFO: Turn 16: [(7, 1, 4, 8, 1)] (1.502 seconds)
+INFO: Search: 1130 iterations; fallback=False
+INFO: Turn 17: [(7, 1, 4, 7, 0)] (1.502 seconds)
+INFO: Search: 1343 iterations; fallback=False
+INFO: Turn 18: [(7, 0, 4, 7, 1), (8, 1, 4, 7, 1)] (1.503 seconds)
+INFO: Search: 1362 iterations; fallback=False
+INFO: Turn 19: [(7, 1, 8, 7, 2)] (1.502 seconds)
+INFO: Search: 1375 iterations; fallback=False
+INFO: Turn 20: [(9, 2, 2, 9, 3)] (1.502 seconds)
+INFO: Search: 1339 iterations; fallback=False
+INFO: Turn 21: [(9, 3, 2, 9, 2)] (1.503 seconds)
+INFO: Search: 1399 iterations; fallback=False
+INFO: Turn 22: [(9, 2, 2, 10, 1)] (1.502 seconds)
+INFO: Search: 1285 iterations; fallback=False
+INFO: Turn 23: [(10, 1, 2, 9, 2)] (1.502 seconds)
+INFO: Search: 1383 iterations; fallback=False
+INFO: Turn 24: [(7, 2, 8, 7, 1)] (1.503 seconds)
+INFO: Search: 1408 iterations; fallback=False
+INFO: Turn 25: [(7, 1, 8, 7, 2)] (1.502 seconds)
+INFO: Search: 1424 iterations; fallback=False
+INFO: Turn 26: [(7, 2, 8, 7, 1)] (1.502 seconds)
+INFO: Search: 1501 iterations; fallback=False
+INFO: Turn 27: [(7, 1, 8, 7, 2)] (1.502 seconds)
+INFO: Search: 1488 iterations; fallback=False
+INFO: Turn 28: [(7, 2, 8, 8, 2), (9, 2, 2, 8, 3)] (1.502 seconds)
+INFO: Search: 1397 iterations; fallback=False
+INFO: Turn 29: [(8, 2, 8, 9, 2)] (1.502 seconds)
+INFO: Search: 1435 iterations; fallback=False
+INFO: Turn 30: [(9, 2, 8, 10, 3)] (1.505 seconds)
+INFO: Search: 1996 iterations; fallback=False
+INFO: Turn 31: [(10, 3, 12, 11, 3)] (1.505 seconds)
+INFO: Search: 2172 iterations; fallback=False
+INFO: Turn 32: [(8, 3, 2, 7, 4)] (1.502 seconds)
+INFO: Search: 1677 iterations; fallback=False
+INFO: Turn 33: [(7, 4, 2, 6, 5)] (1.502 seconds)
+INFO: Search: 1162 iterations; fallback=False
+INFO: Turn 34: [(6, 5, 2, 5, 6)] (1.502 seconds)
+INFO: Search: 1137 iterations; fallback=False
+INFO: Turn 35: [(5, 6, 2, 4, 7)] (1.502 seconds)
+INFO: Search: 1074 iterations; fallback=False
+INFO: Turn 36: [(4, 7, 2, 3, 8)] (1.502 seconds)
+INFO: Search: 1015 iterations; fallback=False
+INFO: Turn 37: [(3, 8, 2, 2, 9)] (1.502 seconds)
+INFO: Search: 1103 iterations; fallback=False
+INFO: Turn 38: [(2, 9, 2, 1, 10)] (1.502 seconds)
+INFO: Search: 1179 iterations; fallback=False
+INFO: Turn 39: [(1, 10, 2, 0, 11)] (1.502 seconds)
+INFO: Search: 1369 iterations; fallback=False
+INFO: Turn 40: [(0, 11, 2, 0, 10)] (1.502 seconds)
+INFO: Search: 1219 iterations; fallback=False
+INFO: Turn 41: [(0, 10, 2, 1, 9)] (1.502 seconds)
+INFO: Search: 1048 iterations; fallback=False
+INFO: Turn 42: [(1, 9, 2, 2, 8)] (1.502 seconds)
+INFO: Search: 1140 iterations; fallback=False
+INFO: Turn 43: [(2, 8, 2, 1, 9)] (1.502 seconds)
+INFO: Search: 1034 iterations; fallback=False
+INFO: Turn 44: [(1, 9, 2, 2, 8)] (1.502 seconds)
+INFO: Search: 1039 iterations; fallback=False
+INFO: Turn 45: [(2, 8, 2, 1, 9)] (1.502 seconds)
+INFO: Search: 1041 iterations; fallback=False
+INFO: Turn 46: [(1, 9, 2, 2, 8)] (1.502 seconds)
+INFO: Search: 1065 iterations; fallback=False
+INFO: Turn 47: [(2, 8, 2, 1, 9)] (1.502 seconds)
+INFO: Search: 1093 iterations; fallback=False
+INFO: Turn 48: [(1, 9, 2, 2, 8)] (1.502 seconds)
+INFO: Search: 1083 iterations; fallback=False
+INFO: Turn 49: [(2, 8, 2, 1, 9)] (1.502 seconds)
+INFO: Search: 1141 iterations; fallback=False
+INFO: Turn 50: [(1, 9, 2, 1, 10)] (1.502 seconds)
+INFO: Search: 1223 iterations; fallback=False
+INFO: Turn 51: [(1, 10, 2, 0, 9)] (1.502 seconds)
+INFO: Search: 1227 iterations; fallback=False
+INFO: Turn 52: [(0, 9, 2, 0, 8)] (1.501 seconds)
+INFO: Search: 1194 iterations; fallback=False
+INFO: Turn 53: [(0, 8, 2, 1, 9)] (1.502 seconds)
+INFO: Search: 1153 iterations; fallback=False
+INFO: Turn 54: [(1, 9, 2, 2, 8)] (1.502 seconds)
+INFO: Search: 1160 iterations; fallback=False
+INFO: Turn 55: [(2, 8, 2, 1, 9)] (1.502 seconds)
+INFO: Search: 1158 iterations; fallback=False
+INFO: Turn 56: [(1, 9, 2, 2, 8)] (1.502 seconds)
+INFO: Search: 1175 iterations; fallback=False
+INFO: Turn 57: [(2, 8, 2, 1, 9)] (1.502 seconds)
+INFO: Search: 1157 iterations; fallback=False
+INFO: Turn 58: [(1, 9, 2, 2, 8)] (1.502 seconds)
+INFO: Search: 1163 iterations; fallback=False
+INFO: Turn 59: [(2, 8, 2, 1, 9)] (1.502 seconds)
+INFO: Search: 1121 iterations; fallback=False
+INFO: Turn 60: [(1, 9, 2, 2, 8)] (1.503 seconds)
+INFO: Search: 978 iterations; fallback=False
+INFO: Turn 61: [(2, 8, 2, 1, 9)] (1.502 seconds)
+INFO: Search: 1101 iterations; fallback=False
+INFO: Turn 62: [(1, 9, 2, 2, 8)] (1.502 seconds)
+INFO: Search: 1123 iterations; fallback=False
+INFO: Turn 63: [(2, 8, 2, 1, 9)] (1.502 seconds)
+INFO: Search: 1123 iterations; fallback=False
+INFO: Turn 64: [(1, 9, 2, 2, 8)] (1.502 seconds)
+INFO: Search: 1118 iterations; fallback=False
+INFO: Turn 65: [(2, 8, 2, 1, 9)] (1.502 seconds)
+INFO: Search: 1131 iterations; fallback=False
+INFO: Turn 66: [(1, 9, 2, 0, 10)] (1.502 seconds)
+INFO: Search: 1178 iterations; fallback=False
+INFO: Turn 67: [(0, 10, 2, 1, 9)] (1.502 seconds)
+INFO: Search: 1131 iterations; fallback=False
+INFO: Turn 68: [(1, 9, 2, 2, 8)] (1.502 seconds)
+INFO: Search: 1070 iterations; fallback=False
+INFO: Turn 69: [(2, 8, 2, 1, 9)] (1.502 seconds)
+INFO: Search: 1138 iterations; fallback=False
+INFO: Turn 70: [(1, 9, 2, 2, 8)] (1.502 seconds)
+INFO: Search: 1139 iterations; fallback=False
+INFO: Turn 71: [(2, 8, 2, 1, 9)] (1.502 seconds)
+INFO: Search: 1175 iterations; fallback=False
+INFO: Turn 72: [(1, 9, 2, 2, 8)] (1.502 seconds)
+INFO: Search: 1134 iterations; fallback=False
+INFO: Turn 73: [(2, 8, 2, 1, 9)] (1.502 seconds)
+INFO: Search: 1131 iterations; fallback=False
+INFO: Turn 74: [(1, 9, 2, 2, 8)] (1.502 seconds)
+INFO: Search: 1111 iterations; fallback=False
+INFO: Turn 75: [(2, 8, 2, 1, 9)] (1.502 seconds)
+INFO: Search: 1097 iterations; fallback=False
+INFO: Turn 76: [(1, 9, 2, 2, 8)] (1.502 seconds)
+INFO: Search: 1125 iterations; fallback=False
+INFO: Turn 77: [(2, 8, 2, 1, 9)] (1.502 seconds)
+INFO: Search: 1121 iterations; fallback=False
+INFO: Turn 78: [(1, 9, 2, 2, 8)] (1.502 seconds)
+INFO: Search: 1101 iterations; fallback=False
+INFO: Turn 79: [(2, 8, 2, 1, 9)] (1.502 seconds)
+INFO: Search: 1129 iterations; fallback=False
+INFO: Turn 80: [(1, 9, 2, 2, 8)] (1.502 seconds)
+INFO: Search: 1112 iterations; fallback=False
+INFO: Turn 81: [(2, 8, 2, 1, 9)] (1.502 seconds)
+INFO: Search: 892 iterations; fallback=False
+INFO: Turn 82: [(1, 9, 2, 2, 8)] (1.502 seconds)
+INFO: Search: 1092 iterations; fallback=False
+INFO: Turn 83: [(2, 8, 2, 1, 9)] (1.502 seconds)
+INFO: Search: 1090 iterations; fallback=False
+INFO: Turn 84: [(1, 9, 2, 2, 8)] (1.502 seconds)
+INFO: Search: 1095 iterations; fallback=False
+INFO: Turn 85: [(2, 8, 2, 1, 9)] (1.502 seconds)
+INFO: Search: 1118 iterations; fallback=False
+INFO: Turn 86: [(1, 9, 2, 2, 8)] (1.503 seconds)
+INFO: Search: 1104 iterations; fallback=False
+INFO: Turn 87: [(2, 8, 2, 1, 9)] (1.502 seconds)
+INFO: Search: 1111 iterations; fallback=False
+INFO: Turn 88: [(1, 9, 2, 2, 8)] (1.502 seconds)
+INFO: Search: 1073 iterations; fallback=False
+INFO: Turn 89: [(2, 8, 2, 1, 9)] (1.502 seconds)
+INFO: Search: 1082 iterations; fallback=False
+INFO: Turn 90: [(1, 9, 2, 2, 8)] (1.503 seconds)
+INFO: Search: 1061 iterations; fallback=False
+INFO: Turn 91: [(2, 8, 2, 1, 9)] (1.502 seconds)
+INFO: Search: 1051 iterations; fallback=False
+INFO: Turn 92: [(1, 9, 2, 2, 8)] (1.507 seconds)
+INFO: Search: 1065 iterations; fallback=False
+INFO: Turn 93: [(2, 8, 2, 1, 9)] (1.502 seconds)
+INFO: Search: 984 iterations; fallback=False
+INFO: Turn 94: [(1, 9, 2, 2, 8)] (1.502 seconds)
+INFO: Search: 1062 iterations; fallback=False
+INFO: Turn 95: [(2, 8, 2, 1, 9)] (1.502 seconds)
+INFO: Search: 1161 iterations; fallback=False
+INFO: Turn 96: [(1, 9, 2, 2, 10)] (1.502 seconds)
+INFO: Search: 1522 iterations; fallback=False
+INFO: Turn 97: [(2, 10, 2, 1, 11)] (1.503 seconds)
+INFO: Search: 2804 iterations; fallback=False
+INFO: Turn 98: [(1, 11, 2, 1, 12)] (1.504 seconds)
+INFO: Search: 9588 iterations; fallback=False
+INFO: Turn 99: [(1, 12, 2, 1, 13)] (1.501 seconds)
+INFO: Game ended; waiting for the next game.
+INFO: Server finished the session.

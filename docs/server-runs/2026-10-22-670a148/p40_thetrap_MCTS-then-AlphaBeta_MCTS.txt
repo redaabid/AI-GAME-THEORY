@@ -1,0 +1,44 @@
+INFO: Connected to 127.0.0.1:5555 as MCTS
+INFO: Rules profile: server-v3.2.1
+INFO: Agent: mcts:iterations=10000
+INFO: Board: 10 columns x 5 rows; playing vampires
+INFO: Search: 1770 iterations; fallback=False
+INFO: Turn 1: [(4, 3, 4, 3, 2)] (1.502 seconds)
+INFO: Search: 1069 iterations; fallback=False
+INFO: Turn 2: [(3, 2, 4, 2, 2)] (1.502 seconds)
+INFO: Search: 1044 iterations; fallback=False
+INFO: Turn 3: [(2, 2, 8, 3, 3)] (1.502 seconds)
+INFO: Search: 1051 iterations; fallback=False
+INFO: Turn 4: [(3, 3, 8, 4, 4)] (1.502 seconds)
+INFO: Search: 1075 iterations; fallback=False
+INFO: Turn 5: [(4, 4, 8, 5, 4)] (1.502 seconds)
+INFO: Search: 1007 iterations; fallback=False
+INFO: Turn 6: [(5, 4, 8, 6, 3)] (1.502 seconds)
+INFO: Search: 1083 iterations; fallback=False
+INFO: Turn 7: [(6, 3, 8, 7, 2)] (1.502 seconds)
+INFO: Search: 1378 iterations; fallback=False
+INFO: Turn 8: [(7, 2, 8, 7, 3)] (1.502 seconds)
+INFO: Search: 1477 iterations; fallback=False
+INFO: Turn 9: [(7, 3, 8, 7, 4)] (1.502 seconds)
+INFO: Search: 1698 iterations; fallback=False
+INFO: Turn 10: [(7, 4, 8, 6, 4)] (1.502 seconds)
+INFO: Search: 1334 iterations; fallback=False
+INFO: Turn 11: [(6, 4, 8, 5, 4)] (1.503 seconds)
+INFO: Search: 1405 iterations; fallback=False
+INFO: Turn 12: [(5, 4, 8, 4, 3)] (1.502 seconds)
+INFO: Search: 1294 iterations; fallback=False
+INFO: Turn 13: [(4, 3, 8, 5, 3)] (1.502 seconds)
+INFO: Search: 1314 iterations; fallback=False
+INFO: Turn 14: [(5, 3, 8, 4, 4)] (1.502 seconds)
+INFO: Search: 1337 iterations; fallback=False
+INFO: Turn 15: [(4, 4, 8, 4, 3)] (1.502 seconds)
+INFO: Search: 1496 iterations; fallback=False
+INFO: Turn 16: [(4, 3, 8, 5, 3)] (1.502 seconds)
+INFO: Search: 1820 iterations; fallback=False
+INFO: Turn 17: [(5, 3, 8, 6, 3)] (1.502 seconds)
+INFO: Search: 4940 iterations; fallback=False
+INFO: Turn 18: [(6, 3, 8, 7, 4)] (1.502 seconds)
+INFO: Search: 10000 iterations; fallback=False
+INFO: Turn 19: [(7, 4, 8, 8, 4)] (1.431 seconds)
+INFO: Game ended; waiting for the next game.
+INFO: Server finished the session.

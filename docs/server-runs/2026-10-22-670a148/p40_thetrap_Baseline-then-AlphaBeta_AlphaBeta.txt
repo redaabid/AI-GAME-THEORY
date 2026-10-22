@@ -1,0 +1,26 @@
+INFO: Connected to 127.0.0.1:5555 as AlphaBeta
+INFO: Rules profile: server-v3.2.1
+INFO: Agent: alphabeta
+INFO: Board: 10 columns x 5 rows; playing werewolves
+INFO: Turn 1: [(4, 1, 2, 5, 0), (4, 1, 2, 5, 2)] (1.500 seconds)
+INFO: Turn 2: [(5, 2, 2, 6, 3)] (1.500 seconds)
+INFO: Turn 3: [(5, 0, 2, 6, 1), (6, 3, 2, 7, 2)] (1.500 seconds)
+INFO: Turn 4: [(6, 1, 2, 7, 0), (7, 2, 2, 8, 1)] (1.500 seconds)
+INFO: Turn 5: [(8, 1, 2, 9, 2)] (1.500 seconds)
+INFO: Turn 6: [(7, 0, 2, 8, 1)] (1.500 seconds)
+INFO: Turn 7: [(8, 1, 2, 8, 2), (9, 2, 3, 8, 2)] (1.500 seconds)
+INFO: Turn 8: [(8, 2, 5, 9, 1)] (1.234 seconds)
+INFO: Turn 9: [(9, 1, 2, 9, 0), (9, 1, 3, 9, 2)] (0.437 seconds)
+INFO: Turn 10: [(9, 2, 3, 9, 3)] (1.041 seconds)
+INFO: Turn 11: [(9, 3, 3, 9, 4)] (0.832 seconds)
+INFO: Turn 12: [(9, 0, 4, 9, 1), (9, 4, 5, 9, 3)] (0.582 seconds)
+INFO: Turn 13: [(9, 1, 4, 9, 2), (9, 3, 5, 9, 2)] (0.859 seconds)
+INFO: Turn 14: [(9, 2, 9, 8, 3)] (0.128 seconds)
+INFO: Turn 15: [(8, 3, 9, 7, 4)] (0.041 seconds)
+INFO: Turn 16: [(7, 4, 9, 8, 4)] (0.002 seconds)
+INFO: Turn 17: [(8, 4, 9, 9, 4)] (0.017 seconds)
+INFO: Turn 18: [(9, 4, 9, 8, 4)] (0.015 seconds)
+INFO: Turn 19: [(8, 4, 9, 9, 4)] (0.002 seconds)
+INFO: Turn 20: [(9, 4, 9, 8, 3)] (0.001 seconds)
+INFO: Game ended; waiting for the next game.
+INFO: Server finished the session.

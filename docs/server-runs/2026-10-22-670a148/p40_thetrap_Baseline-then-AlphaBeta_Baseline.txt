@@ -1,0 +1,26 @@
+INFO: Connected to 127.0.0.1:5555 as Baseline
+INFO: Rules profile: server-v3.2.1
+INFO: Agent: baseline
+INFO: Board: 10 columns x 5 rows; playing vampires
+INFO: Turn 1: [(4, 3, 4, 3, 3)] (0.000 seconds)
+INFO: Turn 2: [(3, 3, 4, 2, 2)] (0.000 seconds)
+INFO: Turn 3: [(2, 2, 8, 3, 1)] (0.000 seconds)
+INFO: Turn 4: [(3, 1, 8, 4, 0)] (0.000 seconds)
+INFO: Turn 5: [(4, 0, 8, 5, 0)] (0.000 seconds)
+INFO: Turn 6: [(5, 0, 8, 5, 1)] (0.000 seconds)
+INFO: Turn 7: [(5, 1, 8, 6, 0)] (0.000 seconds)
+INFO: Turn 8: [(6, 0, 8, 7, 0)] (0.000 seconds)
+INFO: Turn 9: [(7, 0, 8, 7, 1)] (0.000 seconds)
+INFO: Turn 10: [(7, 1, 8, 7, 2)] (0.000 seconds)
+INFO: Turn 11: [(7, 2, 8, 7, 3)] (0.000 seconds)
+INFO: Turn 12: [(7, 3, 8, 7, 2)] (0.000 seconds)
+INFO: Turn 13: [(7, 2, 8, 7, 1)] (0.000 seconds)
+INFO: Turn 14: [(7, 1, 8, 7, 0)] (0.000 seconds)
+INFO: Turn 15: [(7, 0, 8, 6, 1)] (0.000 seconds)
+INFO: Turn 16: [(6, 1, 8, 5, 2)] (0.000 seconds)
+INFO: Turn 17: [(5, 2, 8, 6, 2)] (0.000 seconds)
+INFO: Turn 18: [(6, 2, 8, 7, 2)] (0.000 seconds)
+INFO: Turn 19: [(7, 2, 8, 6, 2)] (0.000 seconds)
+INFO: Turn 20: [(6, 2, 8, 7, 2)] (0.000 seconds)
+INFO: Game ended; waiting for the next game.
+INFO: Server finished the session.
