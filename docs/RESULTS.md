@@ -69,3 +69,11 @@ Check in the simulator, `--move-time 0.5 --margin 0.1`, same seeds, before → a
 
 Head to head on 8 generated medium maps plus the course maps (200 plies, 40 games),
 new against old: 0.57.
+
+Second server series on `670a148` (`docs/server-runs/2026-10-22-670a148/` on `server-runs`):
+alpha-beta 14 W, 3 D, 7 L (was 10 W, 3 D, 11 L); thetrap 6 W, 6 L (was 2 W, 10 L).
+It showed one more gap: two groups next to the same enemy attacked one at a time
+(4 at 25%) instead of together (9 at 62%). `candidate_turns` now adds the joint
+attack. In the simulator the change is neutral on average (0.52 against the
+previous version on the course maps, 0.45 ± 0.17 on 8 medium maps), as the
+position is rare; the regression test replays it.

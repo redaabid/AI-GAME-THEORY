@@ -51,6 +51,12 @@ def candidate_turns(position, *, extra=0, default="eat"):
             if distance(cell, target) == 1 and 0 < win_probability(
                     n, m, rules_profile=position.rules_profile) < 1:
                 add([(*cell, n, *target)])
+    # Joint attack: every adjacent group strikes the same enemy (9 at 62% beats 4 at 25%).
+    own = groups(position, position.to_play)
+    for target, m in enemy:
+        attackers = [(cell, n) for cell, n in own if distance(cell, target) == 1]
+        if len(attackers) > 1:
+            add([(*cell, n, *target) for cell, n in attackers])
     # Keep away: a group steps out of reach of enemies it cannot surely kill. With
     # a lead and the clock running, avoiding a coin flip is often the winning plan.
     center = ((position.columns - 1) / 2, (position.rows - 1) / 2)

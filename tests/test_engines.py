@@ -99,6 +99,13 @@ class EngineTests(unittest.TestCase):
         moves, _ = safe_choose(make_agent("alphabeta:depth=12"), position, TurnContext(None, 40))
         self.assertTrue(all(max(abs(m[3] - 6), abs(m[4] - 1)) > 1 for m in moves), moves)
 
+    def test_alphabeta_attacks_with_all_adjacent_groups(self):
+        # Course server, thetrap, ply 15: it sent the 4 alone (25%) instead of the 9 together (62%).
+        position = board([(9, 1, 0, 0, 4), (9, 2, 0, 0, 5), (8, 2, 0, 8, 0)], rows=5, columns=10,
+                         to_play="werewolves", ply=15)
+        moves, _ = safe_choose(make_agent("alphabeta:depth=12"), position, TurnContext(None, 40))
+        self.assertEqual(sorted(moves), [(9, 1, 4, 8, 2), (9, 2, 5, 8, 2)])
+
     def test_oep_coordinates_several_groups(self):
         position = board([(0, 0, 0, 4, 0), (6, 0, 0, 4, 0), (1, 1, 3, 0, 0), (5, 1, 3, 0, 0), (3, 4, 0, 0, 6)])
         agent = make_agent("oep")
