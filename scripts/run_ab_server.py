@@ -80,7 +80,8 @@ def main():
         settings = {e.get('key'): e for e in tree.findall('./appSettings/add')}
         for key, value in values.items():
             settings[key].set('value', value)
-        tree.write(config_path, encoding='utf8', xml_declaration=True)
+        # .NET's XML configuration reader rejects the Python alias "utf8".
+        tree.write(config_path, encoding='utf-8', xml_declaration=True)
         shutil.copy2(config_path, game / config_path.name)
         order = [challenger, 'ab3'] if reverse else ['ab3', challenger]
         commands = [[sys.executable, '-B', 'main.py', '--name', name.upper(), '--agent', specs[name],
