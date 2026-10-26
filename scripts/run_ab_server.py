@@ -54,22 +54,46 @@ def main():
     p.add_argument('--ui-timeout', type=float, default=180)
     p.add_argument('--max-games', type=int, default=32)
     p.add_argument('--offset', type=int, default=0)
+    p.add_argument('--ids', help='Comma-separated, one-based job IDs; overrides the offset range')
+    p.add_argument('--legacy-control', action='store_true',
+                   help='Append original alphabeta versus AB3 at 40 plies (IDs 65-68, name AB90)')
+    p.add_argument('--baseline-control', action='store_true',
+                   help='With legacy-control, append baseline controls (IDs 69-72, name AB91)')
     p.add_argument('--allow-200', action='store_true',
                    help='Explicitly enable the separate 200-ply phase')
     args = p.parse_args()
+    if args.offset < 0 or args.max_games < 1:
+        p.error('offset must be nonnegative and max-games positive')
     args.output.mkdir(parents=True, exist_ok=True)
     selection = json.loads(args.selection.read_text(encoding='utf8'))
     specs = {name: data['selected'] for name, data in selection['architectures'].items()}
     jobs = [(n, m, plays, reverse) for plays in (40, 200)
             for m in ('thetrap.xml', 'testmap2.xml')
             for n in specs if n != 'ab3' for reverse in (False, True)]
-    requested = jobs[args.offset:args.offset + args.max_games]
+    if args.legacy_control:
+        specs['ab90'] = 'alphabeta'
+        jobs += [('ab90', m, 40, reverse) for m in ('thetrap.xml', 'testmap2.xml')
+                 for reverse in (False, True)]
+    if args.baseline_control:
+        if not args.legacy_control:
+            p.error('baseline-control requires legacy-control to preserve job IDs')
+        specs['ab91'] = 'baseline'
+        jobs += [('ab91', m, 40, reverse) for m in ('thetrap.xml', 'testmap2.xml')
+                 for reverse in (False, True)]
+    try:
+        selected_ids = ({int(x) for x in args.ids.split(',')} if args.ids else
+                        set(range(args.offset+1, min(len(jobs), args.offset+args.max_games)+1)))
+    except ValueError:
+        p.error('ids must contain integers')
+    if not selected_ids or min(selected_ids) < 1 or max(selected_ids) > len(jobs):
+        p.error('Requested job IDs are outside the defined campaign')
+    requested = [job for i, job in enumerate(jobs, 1) if i in selected_ids]
     if any(job[2] == 200 for job in requested) and not args.allow_200:
         p.error('The 200-ply phase is paused; an explicit --allow-200 is required')
     sha = subprocess.check_output(['git', '-c', 'safe.directory=*', 'rev-parse', 'HEAD'],
                                   cwd=ROOT, text=True).strip()
     for index, (challenger, map_name, plays, reverse) in enumerate(jobs):
-        if index < args.offset or index >= args.offset + args.max_games:
+        if index+1 not in selected_ids:
             continue
         game = args.output / f'{index+1:03d}-{challenger}-{Path(map_name).stem}-{plays}-{int(reverse)}'
         if game.exists():
@@ -140,7 +164,7 @@ def main():
             while not (game/'ui-evidence.json').exists():
                 if time.monotonic() > limit:
                     (game/'ui-missing.txt').write_text('UI evidence not captured; winner unconfirmed.\n')
-                    break
+                    raise TimeoutError('Final UI evidence missing; stopping before the next game')
                 time.sleep(.2)
             print('FINISHED', index+1, challenger, map_name, plays,
                   json.dumps(result['bots']), flush=True)
