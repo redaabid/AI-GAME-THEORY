@@ -1,0 +1,57 @@
+{
+  "id": 26,
+  "sha": "d22df256127f7799d1b8c8d951b420d3eed94efe",
+  "map": "testmap2.xml",
+  "max_plies": 200,
+  "order": [
+    "ab0",
+    "ab3"
+  ],
+  "specs": {
+    "ab0": "ab0:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+    "ab3": "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000"
+  },
+  "commands": [
+    [
+      "C:\\Users\\sebju\\miniconda3\\python.exe",
+      "-B",
+      "main.py",
+      "--name",
+      "AB0",
+      "--agent",
+      "ab0:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+      "--move-time",
+      "1.5",
+      "--max-plies",
+      "200",
+      "--rules-profile",
+      "server-v3.2.1",
+      "--seed",
+      "42",
+      "127.0.0.1",
+      "5555"
+    ],
+    [
+      "C:\\Users\\sebju\\miniconda3\\python.exe",
+      "-B",
+      "main.py",
+      "--name",
+      "AB3",
+      "--agent",
+      "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+      "--move-time",
+      "1.5",
+      "--max-plies",
+      "200",
+      "--rules-profile",
+      "server-v3.2.1",
+      "--seed",
+      "42",
+      "127.0.0.1",
+      "5555"
+    ]
+  ],
+  "map_sha256": "e6d200ed046c62b42f71cfde13f11231bcdc4d7d256c9593938d0b05d55ede10",
+  "started": "2026-10-26T23:09:08.592601+00:00",
+  "move_time": 1.5
+}
