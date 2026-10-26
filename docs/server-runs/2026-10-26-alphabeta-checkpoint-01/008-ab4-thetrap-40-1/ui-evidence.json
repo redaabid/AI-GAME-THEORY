@@ -1,0 +1,19 @@
+{
+  "captured": "2026-10-26T13:40:05.115Z",
+  "request": {
+    "game": "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Année scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\research\\server-validation\\implementation-2026-10-26\\live-v3\\008-ab4-thetrap-40-1",
+    "server_pid": 29020,
+    "index": 8
+  },
+  "captures": [
+    {
+      "window": {
+        "app": "process:C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Année scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\research\\server-validation\\implementation-2026-10-26\\server-inspection\\VampiresVSWerewolvesGameServer.exe",
+        "id": 856354,
+        "title": "Vampires versus Werewolves"
+      },
+      "tree": "Window: \"Vampires versus Werewolves\", App: VampiresVSWerewolvesGameServer.exe.\n\t0 fenêtre Vampires versus Werewolves Secondary Actions: Raise\n\t\t1 barre de titre (settable, string) Value: Vampires versus Werewolves\n\t\t\t2 barre de menus Système ID: MenuBar\n\t\t\t\t3 élément de menu Système\n\t\t\t4 Bouton Réduire\n\t\t\t5 Bouton Agrandir\n\t\t\t6 Bouton Fermer\n\t\t7 personnalisé ID: mainControl\n\t\t\t8 texte Vampires versus Werewolves\n\t\t\t\t9 texte Vampires versus Werewolves\n\t\t\t10 texte 00:09:33 ID: countdown\n\t\t\t\t713 texte 00:09:33\n\t\t\t12 texte AB4\n\t\t\t\t13 texte AB4\n\t\t\t14 image\n\t\t\t15 texte AB3\n\t\t\t\t16 texte AB3\n\t\t\t17 image\n\t\t\t18 personnalisé ID: Board\n\t\t\t\t714 personnalisé\n\t\t\t\t\t715 texte 0\n\t\t\t\t\t\t716 texte 0\n\t\t\t\t717 personnalisé\n\t\t\t\t\t718 texte 0\n\t\t\t\t\t\t719 texte 0\n\t\t\t\t720 personnalisé\n\t\t\t\t\t721 texte 0\n\t\t\t\t\t\t722 texte 0\n\t\t\t\t723 personnalisé\n\t\t\t\t\t724 texte 0\n\t\t\t\t\t\t725 texte 0\n\t\t\t\t726 personnalisé\n\t\t\t\t\t727 texte 9\n\t\t\t\t\t\t728 texte 9\n\t\t\t\t729 personnalisé\n\t\t\t\t\t730 texte 0\n\t\t\t\t\t\t731 texte 0\n\t\t\t\t732 personnalisé\n\t\t\t\t\t733 texte 0\n\t\t\t\t\t\t734 texte 0\n\t\t\t\t735 personnalisé\n\t\t\t\t\t736 texte 0\n\t\t\t\t\t\t737 texte 0\n\t\t\t\t738 personnalisé\n\t\t\t\t\t739 texte 0\n\t\t\t\t\t\t740 texte 0\n\t\t\t\t741 personnalisé\n\t\t\t\t\t742 texte 0\n\t\t\t\t\t\t743 texte 0\n\t\t\t169 texte Human(s) left:\n\t\t\t\t170 texte Human(s) left:\n\t\t\t171 texte 0\n\t\t\t\t744 texte 0\n\t\t\t173 barre de progression Value: 8\n\t\t\t174 barre de progression Value: 9\n\t\t\t175 texte 8\n\t\t\t\t745 texte 8\n\t\t\t177 texte 9\n\t\t\t\t746 texte 9\n\t\t\t179 personnalisé ID: messVw\n\nDocument text: ```\nVampires versus Werewolves\n00:09:31\n00:09:33\nAB4\nAB3\n{DisconnectedItem}\n0\n8\n9\nHuman(s) left:\n```",
+      "document_text": "Vampires versus Werewolves\n00:09:31\n00:09:33\nAB4\nAB3\n{DisconnectedItem}\n0\n8\n9\nHuman(s) left:"
+    }
+  ]
+}

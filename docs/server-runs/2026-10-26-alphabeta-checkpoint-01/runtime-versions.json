@@ -1,0 +1,20 @@
+[
+  {
+    "Name": "VampiresVSWerewolvesGameServer.exe",
+    "FileVersion": "1.0.0.0",
+    "ProductVersion": "1.0.0.0",
+    "SHA256": "314E3BD026824A9FEEF7149CB9F96EA522A9137DA160D692F0E44E256F17FE07"
+  },
+  {
+    "Name": "VVSW.Model.dll",
+    "FileVersion": "1.0.0.0",
+    "ProductVersion": "1.0.0.0",
+    "SHA256": "A8AD22443DA5D6456D1A7365E15783AFBA1D7A73F2C51B395972192C70022929"
+  },
+  {
+    "Name": "VVSW.Controls.dll",
+    "FileVersion": "1.0.0.0",
+    "ProductVersion": "1.0.0.0",
+    "SHA256": "26F20D59B254353EA7199F3B1098FB78EAE68C125B991C641E2E3D3203EBBB7C"
+  }
+]

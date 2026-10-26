@@ -1,0 +1,18 @@
+{
+  "captured_utc": "2026-10-26T13:49:10.6712337Z",
+  "cpu": {
+    "Name": "Intel(R) Core(TM) i7-10875H CPU @ 2.30GHz",
+    "NumberOfCores": 8,
+    "NumberOfLogicalProcessors": 16
+  },
+  "windows": {
+    "Caption": "Microsoft Windows 11 Famille",
+    "Version": "10.0.26200",
+    "OSArchitecture": "64 bits"
+  },
+  "python": "Python 3.14.3",
+  "framework": {
+    "Release": 533509,
+    "Version": "4.8.09221"
+  }
+}

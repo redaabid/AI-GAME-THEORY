@@ -1,0 +1,8077 @@
+{
+  "generated": "2026-10-26T14:12:55.524634+00:00",
+  "games": [
+    {
+      "id": 1,
+      "sha": "dc51ffb79ab1d283fd70bc6a70cfd6b6f7051a56",
+      "map": "thetrap.xml",
+      "max_plies": 40,
+      "order": [
+        "ab3",
+        "ab0"
+      ],
+      "specs": {
+        "ab3": "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+        "ab0": "ab0:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000"
+      },
+      "commands": [
+        [
+          "C:\\Users\\sebju\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+          "-B",
+          "main.py",
+          "--name",
+          "AB3",
+          "--agent",
+          "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+          "--move-time",
+          "1.5",
+          "--max-plies",
+          "40",
+          "--rules-profile",
+          "server-v3.2.1",
+          "--seed",
+          "42",
+          "127.0.0.1",
+          "5555"
+        ],
+        [
+          "C:\\Users\\sebju\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+          "-B",
+          "main.py",
+          "--name",
+          "AB0",
+          "--agent",
+          "ab0:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+          "--move-time",
+          "1.5",
+          "--max-plies",
+          "40",
+          "--rules-profile",
+          "server-v3.2.1",
+          "--seed",
+          "42",
+          "127.0.0.1",
+          "5555"
+        ]
+      ],
+      "map_sha256": "4a5bee60b38e3d8741f12d6ca1ac70a2d564a4420196bd11e71af8d90c09e7fe",
+      "started": "2026-10-26T13:25:01.267664+00:00",
+      "move_time": 1.5,
+      "exit_codes": [
+        0,
+        0
+      ],
+      "bots": {
+        "ab3": {
+          "turns": 18,
+          "max_seconds": 1.502,
+          "mean_seconds": 0.7137777777777778,
+          "alerts_1_8": 0,
+          "violations_2": 0,
+          "faults": 0,
+          "new_game_failures": 0,
+          "bootstraps": 0,
+          "completed_depths": [
+            7,
+            7,
+            7,
+            7,
+            7,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8
+          ],
+          "ended": true,
+          "bye": true,
+          "species": "vampires",
+          "errors": [],
+          "fallback_occurrences": 0
+        },
+        "ab0": {
+          "turns": 18,
+          "max_seconds": 0.003,
+          "mean_seconds": 0.002111111111111111,
+          "alerts_1_8": 0,
+          "violations_2": 0,
+          "faults": 0,
+          "new_game_failures": 0,
+          "bootstraps": 0,
+          "completed_depths": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "ended": true,
+          "bye": true,
+          "species": "werewolves",
+          "errors": [],
+          "fallback_occurrences": 0
+        }
+      },
+      "ui": {
+        "winner": null,
+        "confirmed": false,
+        "populations": {},
+        "reason": "Empty UI capture"
+      },
+      "directory": "001-ab0-thetrap-40-0",
+      "server_trace_files": [
+        "trace_2026-10-26-14-25-02.txt"
+      ]
+    },
+    {
+      "id": 2,
+      "sha": "dc51ffb79ab1d283fd70bc6a70cfd6b6f7051a56",
+      "map": "thetrap.xml",
+      "max_plies": 40,
+      "order": [
+        "ab0",
+        "ab3"
+      ],
+      "specs": {
+        "ab0": "ab0:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+        "ab3": "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000"
+      },
+      "commands": [
+        [
+          "C:\\Users\\sebju\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+          "-B",
+          "main.py",
+          "--name",
+          "AB0",
+          "--agent",
+          "ab0:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+          "--move-time",
+          "1.5",
+          "--max-plies",
+          "40",
+          "--rules-profile",
+          "server-v3.2.1",
+          "--seed",
+          "42",
+          "127.0.0.1",
+          "5555"
+        ],
+        [
+          "C:\\Users\\sebju\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+          "-B",
+          "main.py",
+          "--name",
+          "AB3",
+          "--agent",
+          "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+          "--move-time",
+          "1.5",
+          "--max-plies",
+          "40",
+          "--rules-profile",
+          "server-v3.2.1",
+          "--seed",
+          "42",
+          "127.0.0.1",
+          "5555"
+        ]
+      ],
+      "map_sha256": "4a5bee60b38e3d8741f12d6ca1ac70a2d564a4420196bd11e71af8d90c09e7fe",
+      "started": "2026-10-26T13:27:41.126956+00:00",
+      "move_time": 1.5,
+      "exit_codes": [
+        0,
+        0
+      ],
+      "bots": {
+        "ab0": {
+          "turns": 20,
+          "max_seconds": 0.007,
+          "mean_seconds": 0.0018499999999999999,
+          "alerts_1_8": 0,
+          "violations_2": 0,
+          "faults": 0,
+          "new_game_failures": 0,
+          "bootstraps": 0,
+          "completed_depths": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "ended": true,
+          "bye": true,
+          "species": "vampires",
+          "errors": [],
+          "fallback_occurrences": 0
+        },
+        "ab3": {
+          "turns": 20,
+          "max_seconds": 1.501,
+          "mean_seconds": 0.61805,
+          "alerts_1_8": 0,
+          "violations_2": 0,
+          "faults": 0,
+          "new_game_failures": 0,
+          "bootstraps": 0,
+          "completed_depths": [
+            7,
+            7,
+            7,
+            7,
+            7,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8
+          ],
+          "ended": true,
+          "bye": true,
+          "species": "werewolves",
+          "errors": [],
+          "fallback_occurrences": 0
+        }
+      },
+      "ui": {
+        "winner": "ab3",
+        "confirmed": true,
+        "populations": {
+          "ab0": 8,
+          "ab3": 9
+        },
+        "observed_order": [
+          "ab0",
+          "ab3"
+        ],
+        "reason": "WPF names winner explicitly"
+      },
+      "directory": "002-ab0-thetrap-40-1",
+      "server_trace_files": [
+        "trace_2026-10-26-14-27-41.txt"
+      ]
+    },
+    {
+      "id": 3,
+      "sha": "dc51ffb79ab1d283fd70bc6a70cfd6b6f7051a56",
+      "map": "thetrap.xml",
+      "max_plies": 40,
+      "order": [
+        "ab3",
+        "ab1"
+      ],
+      "specs": {
+        "ab3": "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+        "ab1": "ab1:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000"
+      },
+      "commands": [
+        [
+          "C:\\Users\\sebju\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+          "-B",
+          "main.py",
+          "--name",
+          "AB3",
+          "--agent",
+          "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+          "--move-time",
+          "1.5",
+          "--max-plies",
+          "40",
+          "--rules-profile",
+          "server-v3.2.1",
+          "--seed",
+          "42",
+          "127.0.0.1",
+          "5555"
+        ],
+        [
+          "C:\\Users\\sebju\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+          "-B",
+          "main.py",
+          "--name",
+          "AB1",
+          "--agent",
+          "ab1:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+          "--move-time",
+          "1.5",
+          "--max-plies",
+          "40",
+          "--rules-profile",
+          "server-v3.2.1",
+          "--seed",
+          "42",
+          "127.0.0.1",
+          "5555"
+        ]
+      ],
+      "map_sha256": "4a5bee60b38e3d8741f12d6ca1ac70a2d564a4420196bd11e71af8d90c09e7fe",
+      "started": "2026-10-26T13:28:22.331869+00:00",
+      "move_time": 1.5,
+      "exit_codes": [
+        0,
+        0
+      ],
+      "bots": {
+        "ab3": {
+          "turns": 18,
+          "max_seconds": 1.502,
+          "mean_seconds": 0.6993333333333333,
+          "alerts_1_8": 0,
+          "violations_2": 0,
+          "faults": 0,
+          "new_game_failures": 0,
+          "bootstraps": 0,
+          "completed_depths": [
+            7,
+            7,
+            7,
+            6,
+            7,
+            7,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8
+          ],
+          "ended": true,
+          "bye": true,
+          "species": "vampires",
+          "errors": [],
+          "fallback_occurrences": 0
+        },
+        "ab1": {
+          "turns": 18,
+          "max_seconds": 1.501,
+          "mean_seconds": 0.6264444444444445,
+          "alerts_1_8": 0,
+          "violations_2": 0,
+          "faults": 0,
+          "new_game_failures": 0,
+          "bootstraps": 0,
+          "completed_depths": [
+            7,
+            8,
+            7,
+            8,
+            7,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8
+          ],
+          "ended": true,
+          "bye": true,
+          "species": "werewolves",
+          "errors": [],
+          "fallback_occurrences": 0
+        }
+      },
+      "ui": {
+        "winner": "ab1",
+        "confirmed": true,
+        "populations": {
+          "ab3": 0,
+          "ab1": 4
+        },
+        "observed_order": [
+          "ab3",
+          "ab1"
+        ],
+        "reason": "WPF names winner explicitly"
+      },
+      "directory": "003-ab1-thetrap-40-0",
+      "server_trace_files": [
+        "trace_2026-10-26-14-28-23.txt"
+      ]
+    },
+    {
+      "id": 4,
+      "sha": "dc51ffb79ab1d283fd70bc6a70cfd6b6f7051a56",
+      "map": "thetrap.xml",
+      "max_plies": 40,
+      "order": [
+        "ab1",
+        "ab3"
+      ],
+      "specs": {
+        "ab1": "ab1:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+        "ab3": "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000"
+      },
+      "commands": [
+        [
+          "C:\\Users\\sebju\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+          "-B",
+          "main.py",
+          "--name",
+          "AB1",
+          "--agent",
+          "ab1:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+          "--move-time",
+          "1.5",
+          "--max-plies",
+          "40",
+          "--rules-profile",
+          "server-v3.2.1",
+          "--seed",
+          "42",
+          "127.0.0.1",
+          "5555"
+        ],
+        [
+          "C:\\Users\\sebju\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+          "-B",
+          "main.py",
+          "--name",
+          "AB3",
+          "--agent",
+          "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+          "--move-time",
+          "1.5",
+          "--max-plies",
+          "40",
+          "--rules-profile",
+          "server-v3.2.1",
+          "--seed",
+          "42",
+          "127.0.0.1",
+          "5555"
+        ]
+      ],
+      "map_sha256": "4a5bee60b38e3d8741f12d6ca1ac70a2d564a4420196bd11e71af8d90c09e7fe",
+      "started": "2026-10-26T13:30:44.440965+00:00",
+      "move_time": 1.5,
+      "exit_codes": [
+        0,
+        0
+      ],
+      "bots": {
+        "ab1": {
+          "turns": 20,
+          "max_seconds": 1.501,
+          "mean_seconds": 0.6315,
+          "alerts_1_8": 0,
+          "violations_2": 0,
+          "faults": 0,
+          "new_game_failures": 0,
+          "bootstraps": 0,
+          "completed_depths": [
+            7,
+            6,
+            7,
+            8,
+            7,
+            7,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8
+          ],
+          "ended": true,
+          "bye": true,
+          "species": "vampires",
+          "errors": [],
+          "fallback_occurrences": 0
+        },
+        "ab3": {
+          "turns": 20,
+          "max_seconds": 1.501,
+          "mean_seconds": 0.63785,
+          "alerts_1_8": 0,
+          "violations_2": 0,
+          "faults": 0,
+          "new_game_failures": 0,
+          "bootstraps": 0,
+          "completed_depths": [
+            6,
+            7,
+            7,
+            7,
+            6,
+            7,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8
+          ],
+          "ended": true,
+          "bye": true,
+          "species": "werewolves",
+          "errors": [],
+          "fallback_occurrences": 0
+        }
+      },
+      "ui": {
+        "winner": null,
+        "confirmed": false,
+        "populations": {},
+        "reason": "UI missing"
+      },
+      "directory": "004-ab1-thetrap-40-1",
+      "server_trace_files": [
+        "trace_2026-10-26-14-30-45.txt"
+      ]
+    },
+    {
+      "id": 5,
+      "sha": "dc51ffb79ab1d283fd70bc6a70cfd6b6f7051a56",
+      "map": "thetrap.xml",
+      "max_plies": 40,
+      "order": [
+        "ab3",
+        "ab2"
+      ],
+      "specs": {
+        "ab3": "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+        "ab2": "ab2:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000"
+      },
+      "commands": [
+        [
+          "C:\\Users\\sebju\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+          "-B",
+          "main.py",
+          "--name",
+          "AB3",
+          "--agent",
+          "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+          "--move-time",
+          "1.5",
+          "--max-plies",
+          "40",
+          "--rules-profile",
+          "server-v3.2.1",
+          "--seed",
+          "42",
+          "127.0.0.1",
+          "5555"
+        ],
+        [
+          "C:\\Users\\sebju\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+          "-B",
+          "main.py",
+          "--name",
+          "AB2",
+          "--agent",
+          "ab2:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+          "--move-time",
+          "1.5",
+          "--max-plies",
+          "40",
+          "--rules-profile",
+          "server-v3.2.1",
+          "--seed",
+          "42",
+          "127.0.0.1",
+          "5555"
+        ]
+      ],
+      "map_sha256": "4a5bee60b38e3d8741f12d6ca1ac70a2d564a4420196bd11e71af8d90c09e7fe",
+      "started": "2026-10-26T13:34:31.295236+00:00",
+      "move_time": 1.5,
+      "exit_codes": [
+        0,
+        0
+      ],
+      "bots": {
+        "ab3": {
+          "turns": 20,
+          "max_seconds": 1.502,
+          "mean_seconds": 0.6295499999999999,
+          "alerts_1_8": 0,
+          "violations_2": 0,
+          "faults": 0,
+          "new_game_failures": 0,
+          "bootstraps": 0,
+          "completed_depths": [
+            7,
+            7,
+            7,
+            7,
+            7,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8
+          ],
+          "ended": true,
+          "bye": true,
+          "species": "vampires",
+          "errors": [],
+          "fallback_occurrences": 0
+        },
+        "ab2": {
+          "turns": 20,
+          "max_seconds": 1.502,
+          "mean_seconds": 0.454,
+          "alerts_1_8": 0,
+          "violations_2": 0,
+          "faults": 0,
+          "new_game_failures": 0,
+          "bootstraps": 0,
+          "completed_depths": [
+            7,
+            7,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8
+          ],
+          "ended": true,
+          "bye": true,
+          "species": "werewolves",
+          "errors": [],
+          "fallback_occurrences": 0
+        }
+      },
+      "ui": {
+        "winner": "ab2",
+        "confirmed": true,
+        "populations": {
+          "ab3": 8,
+          "ab2": 9
+        },
+        "observed_order": [
+          "ab3",
+          "ab2"
+        ],
+        "reason": "WPF names winner explicitly"
+      },
+      "directory": "005-ab2-thetrap-40-0",
+      "server_trace_files": [
+        "trace_2026-10-26-14-34-32.txt"
+      ]
+    },
+    {
+      "id": 6,
+      "sha": "dc51ffb79ab1d283fd70bc6a70cfd6b6f7051a56",
+      "map": "thetrap.xml",
+      "max_plies": 40,
+      "order": [
+        "ab2",
+        "ab3"
+      ],
+      "specs": {
+        "ab2": "ab2:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+        "ab3": "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000"
+      },
+      "commands": [
+        [
+          "C:\\Users\\sebju\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+          "-B",
+          "main.py",
+          "--name",
+          "AB2",
+          "--agent",
+          "ab2:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+          "--move-time",
+          "1.5",
+          "--max-plies",
+          "40",
+          "--rules-profile",
+          "server-v3.2.1",
+          "--seed",
+          "42",
+          "127.0.0.1",
+          "5555"
+        ],
+        [
+          "C:\\Users\\sebju\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+          "-B",
+          "main.py",
+          "--name",
+          "AB3",
+          "--agent",
+          "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+          "--move-time",
+          "1.5",
+          "--max-plies",
+          "40",
+          "--rules-profile",
+          "server-v3.2.1",
+          "--seed",
+          "42",
+          "127.0.0.1",
+          "5555"
+        ]
+      ],
+      "map_sha256": "4a5bee60b38e3d8741f12d6ca1ac70a2d564a4420196bd11e71af8d90c09e7fe",
+      "started": "2026-10-26T13:37:32.975341+00:00",
+      "move_time": 1.5,
+      "exit_codes": [
+        0,
+        0
+      ],
+      "bots": {
+        "ab2": {
+          "turns": 20,
+          "max_seconds": 1.501,
+          "mean_seconds": 0.5315000000000001,
+          "alerts_1_8": 0,
+          "violations_2": 0,
+          "faults": 0,
+          "new_game_failures": 0,
+          "bootstraps": 0,
+          "completed_depths": [
+            7,
+            7,
+            7,
+            8,
+            7,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8
+          ],
+          "ended": true,
+          "bye": true,
+          "species": "vampires",
+          "errors": [],
+          "fallback_occurrences": 0
+        },
+        "ab3": {
+          "turns": 20,
+          "max_seconds": 1.501,
+          "mean_seconds": 0.567,
+          "alerts_1_8": 0,
+          "violations_2": 0,
+          "faults": 0,
+          "new_game_failures": 0,
+          "bootstraps": 0,
+          "completed_depths": [
+            7,
+            7,
+            6,
+            6,
+            7,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8
+          ],
+          "ended": true,
+          "bye": true,
+          "species": "werewolves",
+          "errors": [],
+          "fallback_occurrences": 0
+        }
+      },
+      "ui": {
+        "winner": "ab3",
+        "confirmed": true,
+        "populations": {
+          "ab2": 8,
+          "ab3": 9
+        },
+        "observed_order": [
+          "ab2",
+          "ab3"
+        ],
+        "reason": "WPF names winner explicitly"
+      },
+      "directory": "006-ab2-thetrap-40-1",
+      "server_trace_files": [
+        "trace_2026-10-26-14-37-33.txt"
+      ]
+    },
+    {
+      "id": 7,
+      "sha": "dc51ffb79ab1d283fd70bc6a70cfd6b6f7051a56",
+      "map": "thetrap.xml",
+      "max_plies": 40,
+      "order": [
+        "ab3",
+        "ab4"
+      ],
+      "specs": {
+        "ab3": "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+        "ab4": "ab4:width=10,depth=2,max_depth=8,extra=4,tt_size=50000,qdepth=2,qwidth=3,aspiration=50000"
+      },
+      "commands": [
+        [
+          "C:\\Users\\sebju\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+          "-B",
+          "main.py",
+          "--name",
+          "AB3",
+          "--agent",
+          "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+          "--move-time",
+          "1.5",
+          "--max-plies",
+          "40",
+          "--rules-profile",
+          "server-v3.2.1",
+          "--seed",
+          "42",
+          "127.0.0.1",
+          "5555"
+        ],
+        [
+          "C:\\Users\\sebju\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+          "-B",
+          "main.py",
+          "--name",
+          "AB4",
+          "--agent",
+          "ab4:width=10,depth=2,max_depth=8,extra=4,tt_size=50000,qdepth=2,qwidth=3,aspiration=50000",
+          "--move-time",
+          "1.5",
+          "--max-plies",
+          "40",
+          "--rules-profile",
+          "server-v3.2.1",
+          "--seed",
+          "42",
+          "127.0.0.1",
+          "5555"
+        ]
+      ],
+      "map_sha256": "4a5bee60b38e3d8741f12d6ca1ac70a2d564a4420196bd11e71af8d90c09e7fe",
+      "started": "2026-10-26T13:38:44.013622+00:00",
+      "move_time": 1.5,
+      "exit_codes": [
+        0,
+        0
+      ],
+      "bots": {
+        "ab3": {
+          "turns": 20,
+          "max_seconds": 1.502,
+          "mean_seconds": 0.56475,
+          "alerts_1_8": 0,
+          "violations_2": 0,
+          "faults": 0,
+          "new_game_failures": 0,
+          "bootstraps": 0,
+          "completed_depths": [
+            7,
+            7,
+            7,
+            7,
+            6,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8
+          ],
+          "ended": true,
+          "bye": true,
+          "species": "vampires",
+          "errors": [],
+          "fallback_occurrences": 0
+        },
+        "ab4": {
+          "turns": 20,
+          "max_seconds": 1.501,
+          "mean_seconds": 0.6623,
+          "alerts_1_8": 0,
+          "violations_2": 0,
+          "faults": 0,
+          "new_game_failures": 0,
+          "bootstraps": 0,
+          "completed_depths": [
+            6,
+            6,
+            6,
+            6,
+            6,
+            7,
+            7,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8
+          ],
+          "ended": true,
+          "bye": true,
+          "species": "werewolves",
+          "errors": [],
+          "fallback_occurrences": 0
+        }
+      },
+      "ui": {
+        "winner": null,
+        "confirmed": false,
+        "populations": {
+          "ab3": 8,
+          "ab4": 9
+        },
+        "observed_order": [
+          "ab3",
+          "ab4"
+        ],
+        "reason": "No explicit winner/draw found in captured UI"
+      },
+      "directory": "007-ab4-thetrap-40-0",
+      "server_trace_files": [
+        "trace_2026-10-26-14-38-44.txt"
+      ]
+    },
+    {
+      "id": 8,
+      "sha": "dc51ffb79ab1d283fd70bc6a70cfd6b6f7051a56",
+      "map": "thetrap.xml",
+      "max_plies": 40,
+      "order": [
+        "ab4",
+        "ab3"
+      ],
+      "specs": {
+        "ab4": "ab4:width=10,depth=2,max_depth=8,extra=4,tt_size=50000,qdepth=2,qwidth=3,aspiration=50000",
+        "ab3": "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000"
+      },
+      "commands": [
+        [
+          "C:\\Users\\sebju\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+          "-B",
+          "main.py",
+          "--name",
+          "AB4",
+          "--agent",
+          "ab4:width=10,depth=2,max_depth=8,extra=4,tt_size=50000,qdepth=2,qwidth=3,aspiration=50000",
+          "--move-time",
+          "1.5",
+          "--max-plies",
+          "40",
+          "--rules-profile",
+          "server-v3.2.1",
+          "--seed",
+          "42",
+          "127.0.0.1",
+          "5555"
+        ],
+        [
+          "C:\\Users\\sebju\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+          "-B",
+          "main.py",
+          "--name",
+          "AB3",
+          "--agent",
+          "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+          "--move-time",
+          "1.5",
+          "--max-plies",
+          "40",
+          "--rules-profile",
+          "server-v3.2.1",
+          "--seed",
+          "42",
+          "127.0.0.1",
+          "5555"
+        ]
+      ],
+      "map_sha256": "4a5bee60b38e3d8741f12d6ca1ac70a2d564a4420196bd11e71af8d90c09e7fe",
+      "started": "2026-10-26T13:39:23.752703+00:00",
+      "move_time": 1.5,
+      "exit_codes": [
+        0,
+        0
+      ],
+      "bots": {
+        "ab4": {
+          "turns": 20,
+          "max_seconds": 1.501,
+          "mean_seconds": 0.76725,
+          "alerts_1_8": 0,
+          "violations_2": 0,
+          "faults": 0,
+          "new_game_failures": 0,
+          "bootstraps": 0,
+          "completed_depths": [
+            5,
+            6,
+            5,
+            5,
+            6,
+            6,
+            7,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8
+          ],
+          "ended": true,
+          "bye": true,
+          "species": "vampires",
+          "errors": [],
+          "fallback_occurrences": 0
+        },
+        "ab3": {
+          "turns": 20,
+          "max_seconds": 1.501,
+          "mean_seconds": 0.6054,
+          "alerts_1_8": 0,
+          "violations_2": 0,
+          "faults": 0,
+          "new_game_failures": 0,
+          "bootstraps": 0,
+          "completed_depths": [
+            7,
+            7,
+            7,
+            8,
+            7,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8
+          ],
+          "ended": true,
+          "bye": true,
+          "species": "werewolves",
+          "errors": [],
+          "fallback_occurrences": 0
+        }
+      },
+      "ui": {
+        "winner": null,
+        "confirmed": false,
+        "populations": {
+          "ab4": 8,
+          "ab3": 9
+        },
+        "observed_order": [
+          "ab4",
+          "ab3"
+        ],
+        "reason": "No explicit winner/draw found in captured UI"
+      },
+      "directory": "008-ab4-thetrap-40-1",
+      "server_trace_files": [
+        "trace_2026-10-26-14-39-24.txt"
+      ]
+    },
+    {
+      "id": 9,
+      "sha": "dc51ffb79ab1d283fd70bc6a70cfd6b6f7051a56",
+      "map": "thetrap.xml",
+      "max_plies": 40,
+      "order": [
+        "ab3",
+        "ab5"
+      ],
+      "specs": {
+        "ab3": "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+        "ab5": "ab5:width=10,depth=2,max_depth=8,extra=4,tt_size=50000,qdepth=2,qwidth=3,aspiration=50000"
+      },
+      "commands": [
+        [
+          "C:\\Users\\sebju\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+          "-B",
+          "main.py",
+          "--name",
+          "AB3",
+          "--agent",
+          "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+          "--move-time",
+          "1.5",
+          "--max-plies",
+          "40",
+          "--rules-profile",
+          "server-v3.2.1",
+          "--seed",
+          "42",
+          "127.0.0.1",
+          "5555"
+        ],
+        [
+          "C:\\Users\\sebju\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+          "-B",
+          "main.py",
+          "--name",
+          "AB5",
+          "--agent",
+          "ab5:width=10,depth=2,max_depth=8,extra=4,tt_size=50000,qdepth=2,qwidth=3,aspiration=50000",
+          "--move-time",
+          "1.5",
+          "--max-plies",
+          "40",
+          "--rules-profile",
+          "server-v3.2.1",
+          "--seed",
+          "42",
+          "127.0.0.1",
+          "5555"
+        ]
+      ],
+      "map_sha256": "4a5bee60b38e3d8741f12d6ca1ac70a2d564a4420196bd11e71af8d90c09e7fe",
+      "started": "2026-10-26T13:40:05.879665+00:00",
+      "move_time": 1.5,
+      "exit_codes": [
+        0,
+        0
+      ],
+      "bots": {
+        "ab3": {
+          "turns": 20,
+          "max_seconds": 1.501,
+          "mean_seconds": 0.55965,
+          "alerts_1_8": 0,
+          "violations_2": 0,
+          "faults": 0,
+          "new_game_failures": 0,
+          "bootstraps": 0,
+          "completed_depths": [
+            7,
+            7,
+            7,
+            7,
+            6,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8
+          ],
+          "ended": true,
+          "bye": true,
+          "species": "vampires",
+          "errors": [],
+          "fallback_occurrences": 0
+        },
+        "ab5": {
+          "turns": 20,
+          "max_seconds": 1.502,
+          "mean_seconds": 0.74565,
+          "alerts_1_8": 0,
+          "violations_2": 0,
+          "faults": 0,
+          "new_game_failures": 0,
+          "bootstraps": 0,
+          "completed_depths": [
+            4,
+            5,
+            5,
+            5,
+            5,
+            6,
+            6,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8
+          ],
+          "ended": true,
+          "bye": true,
+          "species": "werewolves",
+          "errors": [],
+          "fallback_occurrences": 0
+        }
+      },
+      "ui": {
+        "winner": null,
+        "confirmed": false,
+        "populations": {
+          "ab3": 8,
+          "ab5": 9
+        },
+        "observed_order": [
+          "ab3",
+          "ab5"
+        ],
+        "reason": "No explicit winner/draw found in captured UI"
+      },
+      "directory": "009-ab5-thetrap-40-0",
+      "server_trace_files": [
+        "trace_2026-10-26-14-40-06.txt"
+      ]
+    },
+    {
+      "id": 10,
+      "sha": "dc51ffb79ab1d283fd70bc6a70cfd6b6f7051a56",
+      "map": "thetrap.xml",
+      "max_plies": 40,
+      "order": [
+        "ab5",
+        "ab3"
+      ],
+      "specs": {
+        "ab5": "ab5:width=10,depth=2,max_depth=8,extra=4,tt_size=50000,qdepth=2,qwidth=3,aspiration=50000",
+        "ab3": "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000"
+      },
+      "commands": [
+        [
+          "C:\\Users\\sebju\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+          "-B",
+          "main.py",
+          "--name",
+          "AB5",
+          "--agent",
+          "ab5:width=10,depth=2,max_depth=8,extra=4,tt_size=50000,qdepth=2,qwidth=3,aspiration=50000",
+          "--move-time",
+          "1.5",
+          "--max-plies",
+          "40",
+          "--rules-profile",
+          "server-v3.2.1",
+          "--seed",
+          "42",
+          "127.0.0.1",
+          "5555"
+        ],
+        [
+          "C:\\Users\\sebju\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+          "-B",
+          "main.py",
+          "--name",
+          "AB3",
+          "--agent",
+          "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+          "--move-time",
+          "1.5",
+          "--max-plies",
+          "40",
+          "--rules-profile",
+          "server-v3.2.1",
+          "--seed",
+          "42",
+          "127.0.0.1",
+          "5555"
+        ]
+      ],
+      "map_sha256": "4a5bee60b38e3d8741f12d6ca1ac70a2d564a4420196bd11e71af8d90c09e7fe",
+      "started": "2026-10-26T13:40:46.419317+00:00",
+      "move_time": 1.5,
+      "exit_codes": [
+        0,
+        0
+      ],
+      "bots": {
+        "ab5": {
+          "turns": 20,
+          "max_seconds": 1.501,
+          "mean_seconds": 0.8411,
+          "alerts_1_8": 0,
+          "violations_2": 0,
+          "faults": 0,
+          "new_game_failures": 0,
+          "bootstraps": 0,
+          "completed_depths": [
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            6,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8
+          ],
+          "ended": true,
+          "bye": true,
+          "species": "vampires",
+          "errors": [],
+          "fallback_occurrences": 0
+        },
+        "ab3": {
+          "turns": 20,
+          "max_seconds": 1.501,
+          "mean_seconds": 0.58005,
+          "alerts_1_8": 0,
+          "violations_2": 0,
+          "faults": 0,
+          "new_game_failures": 0,
+          "bootstraps": 0,
+          "completed_depths": [
+            7,
+            7,
+            6,
+            7,
+            7,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8
+          ],
+          "ended": true,
+          "bye": true,
+          "species": "werewolves",
+          "errors": [],
+          "fallback_occurrences": 0
+        }
+      },
+      "ui": {
+        "winner": null,
+        "confirmed": false,
+        "populations": {
+          "ab5": 8,
+          "ab3": 9
+        },
+        "observed_order": [
+          "ab5",
+          "ab3"
+        ],
+        "reason": "No explicit winner/draw found in captured UI"
+      },
+      "directory": "010-ab5-thetrap-40-1",
+      "server_trace_files": [
+        "trace_2026-10-26-14-40-47.txt"
+      ]
+    },
+    {
+      "id": 11,
+      "sha": "dc51ffb79ab1d283fd70bc6a70cfd6b6f7051a56",
+      "map": "thetrap.xml",
+      "max_plies": 40,
+      "order": [
+        "ab3",
+        "ab6"
+      ],
+      "specs": {
+        "ab3": "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+        "ab6": "ab6:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000"
+      },
+      "commands": [
+        [
+          "C:\\Users\\sebju\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+          "-B",
+          "main.py",
+          "--name",
+          "AB3",
+          "--agent",
+          "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+          "--move-time",
+          "1.5",
+          "--max-plies",
+          "40",
+          "--rules-profile",
+          "server-v3.2.1",
+          "--seed",
+          "42",
+          "127.0.0.1",
+          "5555"
+        ],
+        [
+          "C:\\Users\\sebju\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+          "-B",
+          "main.py",
+          "--name",
+          "AB6",
+          "--agent",
+          "ab6:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+          "--move-time",
+          "1.5",
+          "--max-plies",
+          "40",
+          "--rules-profile",
+          "server-v3.2.1",
+          "--seed",
+          "42",
+          "127.0.0.1",
+          "5555"
+        ]
+      ],
+      "map_sha256": "4a5bee60b38e3d8741f12d6ca1ac70a2d564a4420196bd11e71af8d90c09e7fe",
+      "started": "2026-10-26T13:41:28.596334+00:00",
+      "move_time": 1.5,
+      "exit_codes": [
+        0,
+        0
+      ],
+      "bots": {
+        "ab3": {
+          "turns": 17,
+          "max_seconds": 1.502,
+          "mean_seconds": 0.7253529411764705,
+          "alerts_1_8": 0,
+          "violations_2": 0,
+          "faults": 0,
+          "new_game_failures": 0,
+          "bootstraps": 0,
+          "completed_depths": [
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8
+          ],
+          "ended": true,
+          "bye": true,
+          "species": "vampires",
+          "errors": [],
+          "fallback_occurrences": 0
+        },
+        "ab6": {
+          "turns": 17,
+          "max_seconds": 1.501,
+          "mean_seconds": 1.500470588235294,
+          "alerts_1_8": 0,
+          "violations_2": 0,
+          "faults": 0,
+          "new_game_failures": 0,
+          "bootstraps": 0,
+          "completed_depths": [
+            4,
+            4,
+            4,
+            4,
+            4,
+            5,
+            5,
+            6,
+            7,
+            7,
+            6,
+            7,
+            6,
+            6,
+            6,
+            6,
+            6
+          ],
+          "ended": true,
+          "bye": true,
+          "species": "werewolves",
+          "errors": [],
+          "fallback_occurrences": 0
+        }
+      },
+      "ui": {
+        "winner": null,
+        "confirmed": false,
+        "populations": {
+          "ab3": 8,
+          "ab6": 9
+        },
+        "observed_order": [
+          "ab3",
+          "ab6"
+        ],
+        "reason": "No explicit winner/draw found in captured UI"
+      },
+      "directory": "011-ab6-thetrap-40-0",
+      "server_trace_files": [
+        "trace_2026-10-26-14-41-29.txt"
+      ]
+    },
+    {
+      "id": 12,
+      "sha": "dc51ffb79ab1d283fd70bc6a70cfd6b6f7051a56",
+      "map": "thetrap.xml",
+      "max_plies": 40,
+      "order": [
+        "ab6",
+        "ab3"
+      ],
+      "specs": {
+        "ab6": "ab6:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+        "ab3": "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000"
+      },
+      "commands": [
+        [
+          "C:\\Users\\sebju\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+          "-B",
+          "main.py",
+          "--name",
+          "AB6",
+          "--agent",
+          "ab6:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+          "--move-time",
+          "1.5",
+          "--max-plies",
+          "40",
+          "--rules-profile",
+          "server-v3.2.1",
+          "--seed",
+          "42",
+          "127.0.0.1",
+          "5555"
+        ],
+        [
+          "C:\\Users\\sebju\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+          "-B",
+          "main.py",
+          "--name",
+          "AB3",
+          "--agent",
+          "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+          "--move-time",
+          "1.5",
+          "--max-plies",
+          "40",
+          "--rules-profile",
+          "server-v3.2.1",
+          "--seed",
+          "42",
+          "127.0.0.1",
+          "5555"
+        ]
+      ],
+      "map_sha256": "4a5bee60b38e3d8741f12d6ca1ac70a2d564a4420196bd11e71af8d90c09e7fe",
+      "started": "2026-10-26T13:42:19.833403+00:00",
+      "move_time": 1.5,
+      "exit_codes": [
+        0,
+        0
+      ],
+      "bots": {
+        "ab6": {
+          "turns": 18,
+          "max_seconds": 1.501,
+          "mean_seconds": 1.4729444444444444,
+          "alerts_1_8": 0,
+          "violations_2": 0,
+          "faults": 0,
+          "new_game_failures": 0,
+          "bootstraps": 0,
+          "completed_depths": [
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            5,
+            6,
+            7,
+            7,
+            6,
+            7,
+            6,
+            7,
+            6,
+            7,
+            8
+          ],
+          "ended": true,
+          "bye": true,
+          "species": "vampires",
+          "errors": [],
+          "fallback_occurrences": 0
+        },
+        "ab3": {
+          "turns": 17,
+          "max_seconds": 1.501,
+          "mean_seconds": 0.7270588235294118,
+          "alerts_1_8": 0,
+          "violations_2": 0,
+          "faults": 0,
+          "new_game_failures": 0,
+          "bootstraps": 0,
+          "completed_depths": [
+            7,
+            7,
+            7,
+            7,
+            7,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8
+          ],
+          "ended": true,
+          "bye": true,
+          "species": "werewolves",
+          "errors": [],
+          "fallback_occurrences": 0
+        }
+      },
+      "ui": {
+        "winner": "ab6",
+        "confirmed": true,
+        "populations": {
+          "ab6": 3,
+          "ab3": 0
+        },
+        "observed_order": [
+          "ab6",
+          "ab3"
+        ],
+        "reason": "WPF names winner explicitly"
+      },
+      "directory": "012-ab6-thetrap-40-1",
+      "server_trace_files": [
+        "trace_2026-10-26-14-42-20.txt"
+      ]
+    },
+    {
+      "id": 13,
+      "sha": "dc51ffb79ab1d283fd70bc6a70cfd6b6f7051a56",
+      "map": "thetrap.xml",
+      "max_plies": 40,
+      "order": [
+        "ab3",
+        "ab7"
+      ],
+      "specs": {
+        "ab3": "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+        "ab7": "ab7:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000,weights={'material': 1.0, 'humans': 0.8, 'discount': 0.9, 'threat': 0.7, 'groups': 0.1}"
+      },
+      "commands": [
+        [
+          "C:\\Users\\sebju\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+          "-B",
+          "main.py",
+          "--name",
+          "AB3",
+          "--agent",
+          "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+          "--move-time",
+          "1.5",
+          "--max-plies",
+          "40",
+          "--rules-profile",
+          "server-v3.2.1",
+          "--seed",
+          "42",
+          "127.0.0.1",
+          "5555"
+        ],
+        [
+          "C:\\Users\\sebju\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+          "-B",
+          "main.py",
+          "--name",
+          "AB7",
+          "--agent",
+          "ab7:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000,weights={'material': 1.0, 'humans': 0.8, 'discount': 0.9, 'threat': 0.7, 'groups': 0.1}",
+          "--move-time",
+          "1.5",
+          "--max-plies",
+          "40",
+          "--rules-profile",
+          "server-v3.2.1",
+          "--seed",
+          "42",
+          "127.0.0.1",
+          "5555"
+        ]
+      ],
+      "map_sha256": "4a5bee60b38e3d8741f12d6ca1ac70a2d564a4420196bd11e71af8d90c09e7fe",
+      "started": "2026-10-26T13:43:21.853499+00:00",
+      "move_time": 1.5,
+      "exit_codes": [
+        0,
+        0
+      ],
+      "bots": {
+        "ab3": {
+          "turns": 20,
+          "max_seconds": 1.501,
+          "mean_seconds": 0.6404,
+          "alerts_1_8": 0,
+          "violations_2": 0,
+          "faults": 0,
+          "new_game_failures": 0,
+          "bootstraps": 0,
+          "completed_depths": [
+            7,
+            7,
+            7,
+            6,
+            7,
+            7,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8
+          ],
+          "ended": true,
+          "bye": true,
+          "species": "vampires",
+          "errors": [],
+          "fallback_occurrences": 0
+        },
+        "ab7": {
+          "turns": 20,
+          "max_seconds": 1.502,
+          "mean_seconds": 0.6139,
+          "alerts_1_8": 0,
+          "violations_2": 0,
+          "faults": 0,
+          "new_game_failures": 0,
+          "bootstraps": 0,
+          "completed_depths": [
+            7,
+            7,
+            7,
+            7,
+            7,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8
+          ],
+          "ended": true,
+          "bye": true,
+          "species": "werewolves",
+          "errors": [],
+          "fallback_occurrences": 0
+        }
+      },
+      "ui": {
+        "winner": "ab7",
+        "confirmed": true,
+        "populations": {
+          "ab3": 8,
+          "ab7": 9
+        },
+        "observed_order": [
+          "ab3",
+          "ab7"
+        ],
+        "reason": "WPF names winner explicitly"
+      },
+      "directory": "013-ab7-thetrap-40-0",
+      "server_trace_files": [
+        "trace_2026-10-26-14-43-22.txt"
+      ]
+    },
+    {
+      "id": 14,
+      "sha": "dc51ffb79ab1d283fd70bc6a70cfd6b6f7051a56",
+      "map": "thetrap.xml",
+      "max_plies": 40,
+      "order": [
+        "ab7",
+        "ab3"
+      ],
+      "specs": {
+        "ab7": "ab7:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000,weights={'material': 1.0, 'humans': 0.8, 'discount': 0.9, 'threat': 0.7, 'groups': 0.1}",
+        "ab3": "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000"
+      },
+      "commands": [
+        [
+          "C:\\Users\\sebju\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+          "-B",
+          "main.py",
+          "--name",
+          "AB7",
+          "--agent",
+          "ab7:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000,weights={'material': 1.0, 'humans': 0.8, 'discount': 0.9, 'threat': 0.7, 'groups': 0.1}",
+          "--move-time",
+          "1.5",
+          "--max-plies",
+          "40",
+          "--rules-profile",
+          "server-v3.2.1",
+          "--seed",
+          "42",
+          "127.0.0.1",
+          "5555"
+        ],
+        [
+          "C:\\Users\\sebju\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+          "-B",
+          "main.py",
+          "--name",
+          "AB3",
+          "--agent",
+          "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+          "--move-time",
+          "1.5",
+          "--max-plies",
+          "40",
+          "--rules-profile",
+          "server-v3.2.1",
+          "--seed",
+          "42",
+          "127.0.0.1",
+          "5555"
+        ]
+      ],
+      "map_sha256": "4a5bee60b38e3d8741f12d6ca1ac70a2d564a4420196bd11e71af8d90c09e7fe",
+      "started": "2026-10-26T13:44:03.565356+00:00",
+      "move_time": 1.5,
+      "exit_codes": [
+        0,
+        0
+      ],
+      "bots": {
+        "ab7": {
+          "turns": 20,
+          "max_seconds": 1.501,
+          "mean_seconds": 0.6325999999999999,
+          "alerts_1_8": 0,
+          "violations_2": 0,
+          "faults": 0,
+          "new_game_failures": 0,
+          "bootstraps": 0,
+          "completed_depths": [
+            7,
+            7,
+            7,
+            6,
+            7,
+            6,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8
+          ],
+          "ended": true,
+          "bye": true,
+          "species": "vampires",
+          "errors": [],
+          "fallback_occurrences": 0
+        },
+        "ab3": {
+          "turns": 20,
+          "max_seconds": 1.502,
+          "mean_seconds": 0.61185,
+          "alerts_1_8": 0,
+          "violations_2": 0,
+          "faults": 0,
+          "new_game_failures": 0,
+          "bootstraps": 0,
+          "completed_depths": [
+            7,
+            7,
+            7,
+            7,
+            7,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8
+          ],
+          "ended": true,
+          "bye": true,
+          "species": "werewolves",
+          "errors": [],
+          "fallback_occurrences": 0
+        }
+      },
+      "ui": {
+        "winner": "ab3",
+        "confirmed": true,
+        "populations": {
+          "ab7": 8,
+          "ab3": 9
+        },
+        "observed_order": [
+          "ab7",
+          "ab3"
+        ],
+        "reason": "WPF names winner explicitly"
+      },
+      "directory": "014-ab7-thetrap-40-1",
+      "server_trace_files": [
+        "trace_2026-10-26-14-44-04.txt"
+      ]
+    },
+    {
+      "id": 15,
+      "sha": "dc51ffb79ab1d283fd70bc6a70cfd6b6f7051a56",
+      "map": "thetrap.xml",
+      "max_plies": 40,
+      "order": [
+        "ab3",
+        "ab8"
+      ],
+      "specs": {
+        "ab3": "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+        "ab8": "ab8:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000"
+      },
+      "commands": [
+        [
+          "C:\\Users\\sebju\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+          "-B",
+          "main.py",
+          "--name",
+          "AB3",
+          "--agent",
+          "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+          "--move-time",
+          "1.5",
+          "--max-plies",
+          "40",
+          "--rules-profile",
+          "server-v3.2.1",
+          "--seed",
+          "42",
+          "127.0.0.1",
+          "5555"
+        ],
+        [
+          "C:\\Users\\sebju\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+          "-B",
+          "main.py",
+          "--name",
+          "AB8",
+          "--agent",
+          "ab8:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+          "--move-time",
+          "1.5",
+          "--max-plies",
+          "40",
+          "--rules-profile",
+          "server-v3.2.1",
+          "--seed",
+          "42",
+          "127.0.0.1",
+          "5555"
+        ]
+      ],
+      "map_sha256": "4a5bee60b38e3d8741f12d6ca1ac70a2d564a4420196bd11e71af8d90c09e7fe",
+      "started": "2026-10-26T13:44:48.092682+00:00",
+      "move_time": 1.5,
+      "exit_codes": [
+        0,
+        0
+      ],
+      "bots": {
+        "ab3": {
+          "turns": 19,
+          "max_seconds": 1.502,
+          "mean_seconds": 0.6308947368421053,
+          "alerts_1_8": 0,
+          "violations_2": 0,
+          "faults": 0,
+          "new_game_failures": 0,
+          "bootstraps": 0,
+          "completed_depths": [
+            7,
+            7,
+            7,
+            7,
+            7,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8
+          ],
+          "ended": true,
+          "bye": true,
+          "species": "vampires",
+          "errors": [],
+          "fallback_occurrences": 0
+        },
+        "ab8": {
+          "turns": 19,
+          "max_seconds": 1.501,
+          "mean_seconds": 0.4797894736842105,
+          "alerts_1_8": 0,
+          "violations_2": 0,
+          "faults": 0,
+          "new_game_failures": 0,
+          "bootstraps": 0,
+          "completed_depths": [
+            7,
+            6,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8
+          ],
+          "ended": true,
+          "bye": true,
+          "species": "werewolves",
+          "errors": [],
+          "fallback_occurrences": 0
+        }
+      },
+      "ui": {
+        "winner": "ab3",
+        "confirmed": true,
+        "populations": {
+          "ab3": 4,
+          "ab8": 0
+        },
+        "observed_order": [
+          "ab3",
+          "ab8"
+        ],
+        "reason": "WPF names winner explicitly"
+      },
+      "directory": "015-ab8-thetrap-40-0",
+      "server_trace_files": [
+        "trace_2026-10-26-14-44-48.txt"
+      ]
+    },
+    {
+      "id": 16,
+      "sha": "dc51ffb79ab1d283fd70bc6a70cfd6b6f7051a56",
+      "map": "thetrap.xml",
+      "max_plies": 40,
+      "order": [
+        "ab8",
+        "ab3"
+      ],
+      "specs": {
+        "ab8": "ab8:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+        "ab3": "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000"
+      },
+      "commands": [
+        [
+          "C:\\Users\\sebju\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+          "-B",
+          "main.py",
+          "--name",
+          "AB8",
+          "--agent",
+          "ab8:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+          "--move-time",
+          "1.5",
+          "--max-plies",
+          "40",
+          "--rules-profile",
+          "server-v3.2.1",
+          "--seed",
+          "42",
+          "127.0.0.1",
+          "5555"
+        ],
+        [
+          "C:\\Users\\sebju\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+          "-B",
+          "main.py",
+          "--name",
+          "AB3",
+          "--agent",
+          "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+          "--move-time",
+          "1.5",
+          "--max-plies",
+          "40",
+          "--rules-profile",
+          "server-v3.2.1",
+          "--seed",
+          "42",
+          "127.0.0.1",
+          "5555"
+        ]
+      ],
+      "map_sha256": "4a5bee60b38e3d8741f12d6ca1ac70a2d564a4420196bd11e71af8d90c09e7fe",
+      "started": "2026-10-26T13:45:34.049062+00:00",
+      "move_time": 1.5,
+      "exit_codes": [
+        0,
+        0
+      ],
+      "bots": {
+        "ab8": {
+          "turns": 20,
+          "max_seconds": 1.501,
+          "mean_seconds": 0.5558,
+          "alerts_1_8": 0,
+          "violations_2": 0,
+          "faults": 0,
+          "new_game_failures": 0,
+          "bootstraps": 0,
+          "completed_depths": [
+            7,
+            7,
+            7,
+            8,
+            7,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8
+          ],
+          "ended": true,
+          "bye": true,
+          "species": "vampires",
+          "errors": [],
+          "fallback_occurrences": 0
+        },
+        "ab3": {
+          "turns": 20,
+          "max_seconds": 1.502,
+          "mean_seconds": 0.5992999999999999,
+          "alerts_1_8": 0,
+          "violations_2": 0,
+          "faults": 0,
+          "new_game_failures": 0,
+          "bootstraps": 0,
+          "completed_depths": [
+            7,
+            7,
+            6,
+            6,
+            7,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8
+          ],
+          "ended": true,
+          "bye": true,
+          "species": "werewolves",
+          "errors": [],
+          "fallback_occurrences": 0
+        }
+      },
+      "ui": {
+        "winner": "ab3",
+        "confirmed": true,
+        "populations": {
+          "ab8": 8,
+          "ab3": 9
+        },
+        "observed_order": [
+          "ab8",
+          "ab3"
+        ],
+        "reason": "WPF names winner explicitly"
+      },
+      "directory": "016-ab8-thetrap-40-1",
+      "server_trace_files": [
+        "trace_2026-10-26-14-45-34.txt"
+      ]
+    },
+    {
+      "id": 17,
+      "sha": "dc51ffb79ab1d283fd70bc6a70cfd6b6f7051a56",
+      "map": "testmap2.xml",
+      "max_plies": 40,
+      "order": [
+        "ab3",
+        "ab0"
+      ],
+      "specs": {
+        "ab3": "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+        "ab0": "ab0:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000"
+      },
+      "commands": [
+        [
+          "C:\\Users\\sebju\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+          "-B",
+          "main.py",
+          "--name",
+          "AB3",
+          "--agent",
+          "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+          "--move-time",
+          "1.5",
+          "--max-plies",
+          "40",
+          "--rules-profile",
+          "server-v3.2.1",
+          "--seed",
+          "42",
+          "127.0.0.1",
+          "5555"
+        ],
+        [
+          "C:\\Users\\sebju\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+          "-B",
+          "main.py",
+          "--name",
+          "AB0",
+          "--agent",
+          "ab0:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+          "--move-time",
+          "1.5",
+          "--max-plies",
+          "40",
+          "--rules-profile",
+          "server-v3.2.1",
+          "--seed",
+          "42",
+          "127.0.0.1",
+          "5555"
+        ]
+      ],
+      "map_sha256": "e6d200ed046c62b42f71cfde13f11231bcdc4d7d256c9593938d0b05d55ede10",
+      "started": "2026-10-26T13:46:25.788924+00:00",
+      "move_time": 1.5,
+      "exit_codes": [
+        0,
+        0
+      ],
+      "bots": {
+        "ab3": {
+          "turns": 20,
+          "max_seconds": 1.501,
+          "mean_seconds": 1.2978999999999998,
+          "alerts_1_8": 0,
+          "violations_2": 0,
+          "faults": 0,
+          "new_game_failures": 0,
+          "bootstraps": 0,
+          "completed_depths": [
+            7,
+            7,
+            7,
+            7,
+            6,
+            6,
+            5,
+            6,
+            5,
+            6,
+            6,
+            7,
+            7,
+            7,
+            7,
+            8,
+            7,
+            8,
+            8,
+            8
+          ],
+          "ended": true,
+          "bye": true,
+          "species": "vampires",
+          "errors": [],
+          "fallback_occurrences": 0
+        },
+        "ab0": {
+          "turns": 20,
+          "max_seconds": 0.004,
+          "mean_seconds": 0.0028,
+          "alerts_1_8": 0,
+          "violations_2": 0,
+          "faults": 0,
+          "new_game_failures": 0,
+          "bootstraps": 0,
+          "completed_depths": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "ended": true,
+          "bye": true,
+          "species": "werewolves",
+          "errors": [],
+          "fallback_occurrences": 0
+        }
+      },
+      "ui": {
+        "winner": null,
+        "confirmed": false,
+        "populations": {},
+        "reason": "UI missing"
+      },
+      "directory": "017-ab0-testmap2-40-0",
+      "server_trace_files": [
+        "trace_2026-10-26-14-46-26.txt"
+      ]
+    },
+    {
+      "id": 18,
+      "sha": "dc51ffb79ab1d283fd70bc6a70cfd6b6f7051a56",
+      "map": "testmap2.xml",
+      "max_plies": 40,
+      "order": [
+        "ab0",
+        "ab3"
+      ],
+      "specs": {
+        "ab0": "ab0:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+        "ab3": "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000"
+      },
+      "commands": [
+        [
+          "C:\\Users\\sebju\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+          "-B",
+          "main.py",
+          "--name",
+          "AB0",
+          "--agent",
+          "ab0:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+          "--move-time",
+          "1.5",
+          "--max-plies",
+          "40",
+          "--rules-profile",
+          "server-v3.2.1",
+          "--seed",
+          "42",
+          "127.0.0.1",
+          "5555"
+        ],
+        [
+          "C:\\Users\\sebju\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+          "-B",
+          "main.py",
+          "--name",
+          "AB3",
+          "--agent",
+          "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+          "--move-time",
+          "1.5",
+          "--max-plies",
+          "40",
+          "--rules-profile",
+          "server-v3.2.1",
+          "--seed",
+          "42",
+          "127.0.0.1",
+          "5555"
+        ]
+      ],
+      "map_sha256": "e6d200ed046c62b42f71cfde13f11231bcdc4d7d256c9593938d0b05d55ede10",
+      "started": "2026-10-26T13:50:33.874724+00:00",
+      "move_time": 1.5,
+      "exit_codes": [
+        0,
+        0
+      ],
+      "bots": {
+        "ab0": {
+          "turns": 20,
+          "max_seconds": 0.005,
+          "mean_seconds": 0.0030499999999999998,
+          "alerts_1_8": 0,
+          "violations_2": 0,
+          "faults": 0,
+          "new_game_failures": 0,
+          "bootstraps": 0,
+          "completed_depths": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "ended": true,
+          "bye": true,
+          "species": "vampires",
+          "errors": [],
+          "fallback_occurrences": 0
+        },
+        "ab3": {
+          "turns": 20,
+          "max_seconds": 1.503,
+          "mean_seconds": 1.2641499999999999,
+          "alerts_1_8": 0,
+          "violations_2": 0,
+          "faults": 0,
+          "new_game_failures": 0,
+          "bootstraps": 0,
+          "completed_depths": [
+            6,
+            6,
+            6,
+            6,
+            6,
+            5,
+            5,
+            5,
+            6,
+            6,
+            7,
+            7,
+            7,
+            7,
+            7,
+            8,
+            8,
+            8,
+            8,
+            8
+          ],
+          "ended": true,
+          "bye": true,
+          "species": "werewolves",
+          "errors": [],
+          "fallback_occurrences": 0
+        }
+      },
+      "ui": {
+        "winner": "draw",
+        "confirmed": true,
+        "populations": {
+          "ab0": 16,
+          "ab3": 16
+        },
+        "observed_order": [
+          "ab0",
+          "ab3"
+        ],
+        "reason": "WPF displays draw"
+      },
+      "directory": "018-ab0-testmap2-40-1",
+      "server_trace_files": [
+        "trace_2026-10-26-14-50-34.txt"
+      ]
+    },
+    {
+      "id": 19,
+      "sha": "dc51ffb79ab1d283fd70bc6a70cfd6b6f7051a56",
+      "map": "testmap2.xml",
+      "max_plies": 40,
+      "order": [
+        "ab3",
+        "ab1"
+      ],
+      "specs": {
+        "ab3": "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+        "ab1": "ab1:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000"
+      },
+      "commands": [
+        [
+          "C:\\Users\\sebju\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+          "-B",
+          "main.py",
+          "--name",
+          "AB3",
+          "--agent",
+          "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+          "--move-time",
+          "1.5",
+          "--max-plies",
+          "40",
+          "--rules-profile",
+          "server-v3.2.1",
+          "--seed",
+          "42",
+          "127.0.0.1",
+          "5555"
+        ],
+        [
+          "C:\\Users\\sebju\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+          "-B",
+          "main.py",
+          "--name",
+          "AB1",
+          "--agent",
+          "ab1:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+          "--move-time",
+          "1.5",
+          "--max-plies",
+          "40",
+          "--rules-profile",
+          "server-v3.2.1",
+          "--seed",
+          "42",
+          "127.0.0.1",
+          "5555"
+        ]
+      ],
+      "map_sha256": "e6d200ed046c62b42f71cfde13f11231bcdc4d7d256c9593938d0b05d55ede10",
+      "started": "2026-10-26T13:52:51.577585+00:00",
+      "move_time": 1.5,
+      "exit_codes": [
+        0,
+        0
+      ],
+      "bots": {
+        "ab3": {
+          "turns": 20,
+          "max_seconds": 1.501,
+          "mean_seconds": 1.3007499999999999,
+          "alerts_1_8": 0,
+          "violations_2": 0,
+          "faults": 0,
+          "new_game_failures": 0,
+          "bootstraps": 0,
+          "completed_depths": [
+            7,
+            7,
+            7,
+            6,
+            6,
+            6,
+            5,
+            6,
+            5,
+            6,
+            6,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            8,
+            8,
+            8
+          ],
+          "ended": true,
+          "bye": true,
+          "species": "vampires",
+          "errors": [],
+          "fallback_occurrences": 0
+        },
+        "ab1": {
+          "turns": 20,
+          "max_seconds": 1.502,
+          "mean_seconds": 1.12175,
+          "alerts_1_8": 0,
+          "violations_2": 0,
+          "faults": 0,
+          "new_game_failures": 0,
+          "bootstraps": 0,
+          "completed_depths": [
+            7,
+            7,
+            7,
+            7,
+            6,
+            5,
+            6,
+            6,
+            6,
+            7,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8
+          ],
+          "ended": true,
+          "bye": true,
+          "species": "werewolves",
+          "errors": [],
+          "fallback_occurrences": 0
+        }
+      },
+      "ui": {
+        "winner": "draw",
+        "confirmed": true,
+        "populations": {
+          "ab3": 16,
+          "ab1": 16
+        },
+        "observed_order": [
+          "ab3",
+          "ab1"
+        ],
+        "reason": "WPF displays draw"
+      },
+      "directory": "019-ab1-testmap2-40-0",
+      "server_trace_files": [
+        "trace_2026-10-26-14-52-52.txt"
+      ]
+    },
+    {
+      "id": 20,
+      "sha": "dc51ffb79ab1d283fd70bc6a70cfd6b6f7051a56",
+      "map": "testmap2.xml",
+      "max_plies": 40,
+      "order": [
+        "ab1",
+        "ab3"
+      ],
+      "specs": {
+        "ab1": "ab1:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+        "ab3": "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000"
+      },
+      "commands": [
+        [
+          "C:\\Users\\sebju\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+          "-B",
+          "main.py",
+          "--name",
+          "AB1",
+          "--agent",
+          "ab1:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+          "--move-time",
+          "1.5",
+          "--max-plies",
+          "40",
+          "--rules-profile",
+          "server-v3.2.1",
+          "--seed",
+          "42",
+          "127.0.0.1",
+          "5555"
+        ],
+        [
+          "C:\\Users\\sebju\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+          "-B",
+          "main.py",
+          "--name",
+          "AB3",
+          "--agent",
+          "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+          "--move-time",
+          "1.5",
+          "--max-plies",
+          "40",
+          "--rules-profile",
+          "server-v3.2.1",
+          "--seed",
+          "42",
+          "127.0.0.1",
+          "5555"
+        ]
+      ],
+      "map_sha256": "e6d200ed046c62b42f71cfde13f11231bcdc4d7d256c9593938d0b05d55ede10",
+      "started": "2026-10-26T13:55:19.880722+00:00",
+      "move_time": 1.5,
+      "exit_codes": [
+        0,
+        0
+      ],
+      "bots": {
+        "ab1": {
+          "turns": 20,
+          "max_seconds": 1.502,
+          "mean_seconds": 1.1333499999999999,
+          "alerts_1_8": 0,
+          "violations_2": 0,
+          "faults": 0,
+          "new_game_failures": 0,
+          "bootstraps": 0,
+          "completed_depths": [
+            7,
+            7,
+            7,
+            7,
+            7,
+            6,
+            5,
+            6,
+            6,
+            7,
+            7,
+            7,
+            7,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8
+          ],
+          "ended": true,
+          "bye": true,
+          "species": "vampires",
+          "errors": [],
+          "fallback_occurrences": 0
+        },
+        "ab3": {
+          "turns": 20,
+          "max_seconds": 1.501,
+          "mean_seconds": 1.2541499999999999,
+          "alerts_1_8": 0,
+          "violations_2": 0,
+          "faults": 0,
+          "new_game_failures": 0,
+          "bootstraps": 0,
+          "completed_depths": [
+            6,
+            6,
+            6,
+            6,
+            6,
+            5,
+            5,
+            5,
+            6,
+            6,
+            7,
+            8,
+            8,
+            7,
+            7,
+            7,
+            8,
+            8,
+            8,
+            8
+          ],
+          "ended": true,
+          "bye": true,
+          "species": "werewolves",
+          "errors": [],
+          "fallback_occurrences": 0
+        }
+      },
+      "ui": {
+        "winner": "draw",
+        "confirmed": true,
+        "populations": {
+          "ab1": 16,
+          "ab3": 16
+        },
+        "observed_order": [
+          "ab1",
+          "ab3"
+        ],
+        "reason": "WPF displays draw"
+      },
+      "directory": "020-ab1-testmap2-40-1",
+      "server_trace_files": [
+        "trace_2026-10-26-14-55-20.txt"
+      ]
+    },
+    {
+      "id": 21,
+      "sha": "dc51ffb79ab1d283fd70bc6a70cfd6b6f7051a56",
+      "map": "testmap2.xml",
+      "max_plies": 40,
+      "order": [
+        "ab3",
+        "ab2"
+      ],
+      "specs": {
+        "ab3": "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+        "ab2": "ab2:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000"
+      },
+      "commands": [
+        [
+          "C:\\Users\\sebju\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+          "-B",
+          "main.py",
+          "--name",
+          "AB3",
+          "--agent",
+          "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+          "--move-time",
+          "1.5",
+          "--max-plies",
+          "40",
+          "--rules-profile",
+          "server-v3.2.1",
+          "--seed",
+          "42",
+          "127.0.0.1",
+          "5555"
+        ],
+        [
+          "C:\\Users\\sebju\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+          "-B",
+          "main.py",
+          "--name",
+          "AB2",
+          "--agent",
+          "ab2:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+          "--move-time",
+          "1.5",
+          "--max-plies",
+          "40",
+          "--rules-profile",
+          "server-v3.2.1",
+          "--seed",
+          "42",
+          "127.0.0.1",
+          "5555"
+        ]
+      ],
+      "map_sha256": "e6d200ed046c62b42f71cfde13f11231bcdc4d7d256c9593938d0b05d55ede10",
+      "started": "2026-10-26T13:57:57.520583+00:00",
+      "move_time": 1.5,
+      "exit_codes": [
+        0,
+        0
+      ],
+      "bots": {
+        "ab3": {
+          "turns": 20,
+          "max_seconds": 1.502,
+          "mean_seconds": 1.2987,
+          "alerts_1_8": 0,
+          "violations_2": 0,
+          "faults": 0,
+          "new_game_failures": 0,
+          "bootstraps": 0,
+          "completed_depths": [
+            7,
+            7,
+            7,
+            7,
+            6,
+            6,
+            5,
+            6,
+            5,
+            6,
+            6,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            8,
+            8,
+            8
+          ],
+          "ended": true,
+          "bye": true,
+          "species": "vampires",
+          "errors": [],
+          "fallback_occurrences": 0
+        },
+        "ab2": {
+          "turns": 20,
+          "max_seconds": 1.502,
+          "mean_seconds": 1.06045,
+          "alerts_1_8": 0,
+          "violations_2": 0,
+          "faults": 0,
+          "new_game_failures": 0,
+          "bootstraps": 0,
+          "completed_depths": [
+            7,
+            7,
+            7,
+            7,
+            6,
+            5,
+            6,
+            5,
+            5,
+            7,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8
+          ],
+          "ended": true,
+          "bye": true,
+          "species": "werewolves",
+          "errors": [],
+          "fallback_occurrences": 0
+        }
+      },
+      "ui": {
+        "winner": "draw",
+        "confirmed": true,
+        "populations": {
+          "ab3": 16,
+          "ab2": 16
+        },
+        "observed_order": [
+          "ab3",
+          "ab2"
+        ],
+        "reason": "WPF displays draw"
+      },
+      "directory": "021-ab2-testmap2-40-0",
+      "server_trace_files": [
+        "trace_2026-10-26-14-57-58.txt"
+      ]
+    },
+    {
+      "id": 22,
+      "sha": "dc51ffb79ab1d283fd70bc6a70cfd6b6f7051a56",
+      "map": "testmap2.xml",
+      "max_plies": 40,
+      "order": [
+        "ab2",
+        "ab3"
+      ],
+      "specs": {
+        "ab2": "ab2:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+        "ab3": "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000"
+      },
+      "commands": [
+        [
+          "C:\\Users\\sebju\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+          "-B",
+          "main.py",
+          "--name",
+          "AB2",
+          "--agent",
+          "ab2:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+          "--move-time",
+          "1.5",
+          "--max-plies",
+          "40",
+          "--rules-profile",
+          "server-v3.2.1",
+          "--seed",
+          "42",
+          "127.0.0.1",
+          "5555"
+        ],
+        [
+          "C:\\Users\\sebju\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+          "-B",
+          "main.py",
+          "--name",
+          "AB3",
+          "--agent",
+          "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+          "--move-time",
+          "1.5",
+          "--max-plies",
+          "40",
+          "--rules-profile",
+          "server-v3.2.1",
+          "--seed",
+          "42",
+          "127.0.0.1",
+          "5555"
+        ]
+      ],
+      "map_sha256": "e6d200ed046c62b42f71cfde13f11231bcdc4d7d256c9593938d0b05d55ede10",
+      "started": "2026-10-26T14:00:26.441756+00:00",
+      "move_time": 1.5,
+      "exit_codes": [
+        0,
+        0
+      ],
+      "bots": {
+        "ab2": {
+          "turns": 20,
+          "max_seconds": 1.501,
+          "mean_seconds": 1.0641500000000002,
+          "alerts_1_8": 0,
+          "violations_2": 0,
+          "faults": 0,
+          "new_game_failures": 0,
+          "bootstraps": 0,
+          "completed_depths": [
+            8,
+            7,
+            7,
+            7,
+            7,
+            6,
+            5,
+            7,
+            7,
+            7,
+            7,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8
+          ],
+          "ended": true,
+          "bye": true,
+          "species": "vampires",
+          "errors": [],
+          "fallback_occurrences": 0
+        },
+        "ab3": {
+          "turns": 20,
+          "max_seconds": 1.502,
+          "mean_seconds": 1.24255,
+          "alerts_1_8": 0,
+          "violations_2": 0,
+          "faults": 0,
+          "new_game_failures": 0,
+          "bootstraps": 0,
+          "completed_depths": [
+            7,
+            6,
+            6,
+            6,
+            6,
+            5,
+            5,
+            5,
+            6,
+            6,
+            7,
+            8,
+            8,
+            7,
+            7,
+            7,
+            8,
+            8,
+            8,
+            8
+          ],
+          "ended": true,
+          "bye": true,
+          "species": "werewolves",
+          "errors": [],
+          "fallback_occurrences": 0
+        }
+      },
+      "ui": {
+        "winner": "draw",
+        "confirmed": true,
+        "populations": {
+          "ab2": 16,
+          "ab3": 16
+        },
+        "observed_order": [
+          "ab2",
+          "ab3"
+        ],
+        "reason": "WPF displays draw"
+      },
+      "directory": "022-ab2-testmap2-40-1",
+      "server_trace_files": [
+        "trace_2026-10-26-15-00-27.txt"
+      ]
+    },
+    {
+      "id": 23,
+      "sha": "dc51ffb79ab1d283fd70bc6a70cfd6b6f7051a56",
+      "map": "testmap2.xml",
+      "max_plies": 40,
+      "order": [
+        "ab3",
+        "ab4"
+      ],
+      "specs": {
+        "ab3": "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+        "ab4": "ab4:width=10,depth=2,max_depth=8,extra=4,tt_size=50000,qdepth=2,qwidth=3,aspiration=50000"
+      },
+      "commands": [
+        [
+          "C:\\Users\\sebju\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+          "-B",
+          "main.py",
+          "--name",
+          "AB3",
+          "--agent",
+          "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+          "--move-time",
+          "1.5",
+          "--max-plies",
+          "40",
+          "--rules-profile",
+          "server-v3.2.1",
+          "--seed",
+          "42",
+          "127.0.0.1",
+          "5555"
+        ],
+        [
+          "C:\\Users\\sebju\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+          "-B",
+          "main.py",
+          "--name",
+          "AB4",
+          "--agent",
+          "ab4:width=10,depth=2,max_depth=8,extra=4,tt_size=50000,qdepth=2,qwidth=3,aspiration=50000",
+          "--move-time",
+          "1.5",
+          "--max-plies",
+          "40",
+          "--rules-profile",
+          "server-v3.2.1",
+          "--seed",
+          "42",
+          "127.0.0.1",
+          "5555"
+        ]
+      ],
+      "map_sha256": "e6d200ed046c62b42f71cfde13f11231bcdc4d7d256c9593938d0b05d55ede10",
+      "started": "2026-10-26T14:02:38.358941+00:00",
+      "move_time": 1.5,
+      "exit_codes": [
+        0,
+        0
+      ],
+      "bots": {
+        "ab3": {
+          "turns": 20,
+          "max_seconds": 1.502,
+          "mean_seconds": 1.30995,
+          "alerts_1_8": 0,
+          "violations_2": 0,
+          "faults": 0,
+          "new_game_failures": 0,
+          "bootstraps": 0,
+          "completed_depths": [
+            7,
+            7,
+            7,
+            7,
+            6,
+            6,
+            5,
+            6,
+            5,
+            6,
+            6,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            8,
+            8,
+            8
+          ],
+          "ended": true,
+          "bye": true,
+          "species": "vampires",
+          "errors": [],
+          "fallback_occurrences": 0
+        },
+        "ab4": {
+          "turns": 20,
+          "max_seconds": 1.503,
+          "mean_seconds": 1.3171,
+          "alerts_1_8": 0,
+          "violations_2": 0,
+          "faults": 0,
+          "new_game_failures": 0,
+          "bootstraps": 0,
+          "completed_depths": [
+            5,
+            5,
+            5,
+            5,
+            5,
+            4,
+            4,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            8,
+            8,
+            8
+          ],
+          "ended": true,
+          "bye": true,
+          "species": "werewolves",
+          "errors": [],
+          "fallback_occurrences": 0
+        }
+      },
+      "ui": {
+        "winner": "draw",
+        "confirmed": true,
+        "populations": {
+          "ab3": 16,
+          "ab4": 16
+        },
+        "observed_order": [
+          "ab3",
+          "ab4"
+        ],
+        "reason": "WPF displays draw"
+      },
+      "directory": "023-ab4-testmap2-40-0",
+      "server_trace_files": [
+        "trace_2026-10-26-15-02-39.txt"
+      ]
+    },
+    {
+      "id": 24,
+      "sha": "dc51ffb79ab1d283fd70bc6a70cfd6b6f7051a56",
+      "map": "testmap2.xml",
+      "max_plies": 40,
+      "order": [
+        "ab4",
+        "ab3"
+      ],
+      "specs": {
+        "ab4": "ab4:width=10,depth=2,max_depth=8,extra=4,tt_size=50000,qdepth=2,qwidth=3,aspiration=50000",
+        "ab3": "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000"
+      },
+      "commands": [
+        [
+          "C:\\Users\\sebju\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+          "-B",
+          "main.py",
+          "--name",
+          "AB4",
+          "--agent",
+          "ab4:width=10,depth=2,max_depth=8,extra=4,tt_size=50000,qdepth=2,qwidth=3,aspiration=50000",
+          "--move-time",
+          "1.5",
+          "--max-plies",
+          "40",
+          "--rules-profile",
+          "server-v3.2.1",
+          "--seed",
+          "42",
+          "127.0.0.1",
+          "5555"
+        ],
+        [
+          "C:\\Users\\sebju\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+          "-B",
+          "main.py",
+          "--name",
+          "AB3",
+          "--agent",
+          "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+          "--move-time",
+          "1.5",
+          "--max-plies",
+          "40",
+          "--rules-profile",
+          "server-v3.2.1",
+          "--seed",
+          "42",
+          "127.0.0.1",
+          "5555"
+        ]
+      ],
+      "map_sha256": "e6d200ed046c62b42f71cfde13f11231bcdc4d7d256c9593938d0b05d55ede10",
+      "started": "2026-10-26T14:04:56.630890+00:00",
+      "move_time": 1.5,
+      "exit_codes": [
+        0,
+        0
+      ],
+      "bots": {
+        "ab4": {
+          "turns": 20,
+          "max_seconds": 1.503,
+          "mean_seconds": 1.35645,
+          "alerts_1_8": 0,
+          "violations_2": 0,
+          "faults": 0,
+          "new_game_failures": 0,
+          "bootstraps": 0,
+          "completed_depths": [
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            4,
+            4,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5,
+            5,
+            6,
+            5,
+            8,
+            8,
+            8
+          ],
+          "ended": true,
+          "bye": true,
+          "species": "vampires",
+          "errors": [],
+          "fallback_occurrences": 0
+        },
+        "ab3": {
+          "turns": 20,
+          "max_seconds": 1.502,
+          "mean_seconds": 1.25765,
+          "alerts_1_8": 0,
+          "violations_2": 0,
+          "faults": 0,
+          "new_game_failures": 0,
+          "bootstraps": 0,
+          "completed_depths": [
+            7,
+            7,
+            6,
+            6,
+            6,
+            5,
+            5,
+            5,
+            5,
+            5,
+            7,
+            7,
+            7,
+            7,
+            8,
+            7,
+            8,
+            8,
+            8,
+            8
+          ],
+          "ended": true,
+          "bye": true,
+          "species": "werewolves",
+          "errors": [],
+          "fallback_occurrences": 0
+        }
+      },
+      "ui": {
+        "winner": "draw",
+        "confirmed": true,
+        "populations": {
+          "ab4": 16,
+          "ab3": 16
+        },
+        "observed_order": [
+          "ab4",
+          "ab3"
+        ],
+        "reason": "WPF displays draw"
+      },
+      "directory": "024-ab4-testmap2-40-1",
+      "server_trace_files": [
+        "trace_2026-10-26-15-04-57.txt"
+      ]
+    },
+    {
+      "id": 25,
+      "sha": "dc51ffb79ab1d283fd70bc6a70cfd6b6f7051a56",
+      "map": "testmap2.xml",
+      "max_plies": 40,
+      "order": [
+        "ab3",
+        "ab5"
+      ],
+      "specs": {
+        "ab3": "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+        "ab5": "ab5:width=10,depth=2,max_depth=8,extra=4,tt_size=50000,qdepth=2,qwidth=3,aspiration=50000"
+      },
+      "commands": [
+        [
+          "C:\\Users\\sebju\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+          "-B",
+          "main.py",
+          "--name",
+          "AB3",
+          "--agent",
+          "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+          "--move-time",
+          "1.5",
+          "--max-plies",
+          "40",
+          "--rules-profile",
+          "server-v3.2.1",
+          "--seed",
+          "42",
+          "127.0.0.1",
+          "5555"
+        ],
+        [
+          "C:\\Users\\sebju\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+          "-B",
+          "main.py",
+          "--name",
+          "AB5",
+          "--agent",
+          "ab5:width=10,depth=2,max_depth=8,extra=4,tt_size=50000,qdepth=2,qwidth=3,aspiration=50000",
+          "--move-time",
+          "1.5",
+          "--max-plies",
+          "40",
+          "--rules-profile",
+          "server-v3.2.1",
+          "--seed",
+          "42",
+          "127.0.0.1",
+          "5555"
+        ]
+      ],
+      "map_sha256": "e6d200ed046c62b42f71cfde13f11231bcdc4d7d256c9593938d0b05d55ede10",
+      "started": "2026-10-26T14:07:16.602447+00:00",
+      "move_time": 1.5,
+      "exit_codes": [
+        0,
+        0
+      ],
+      "bots": {
+        "ab3": {
+          "turns": 20,
+          "max_seconds": 1.502,
+          "mean_seconds": 1.3103,
+          "alerts_1_8": 0,
+          "violations_2": 0,
+          "faults": 0,
+          "new_game_failures": 0,
+          "bootstraps": 0,
+          "completed_depths": [
+            7,
+            7,
+            7,
+            6,
+            6,
+            6,
+            5,
+            6,
+            5,
+            6,
+            6,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            8,
+            8,
+            8
+          ],
+          "ended": true,
+          "bye": true,
+          "species": "vampires",
+          "errors": [],
+          "fallback_occurrences": 0
+        },
+        "ab5": {
+          "turns": 20,
+          "max_seconds": 1.502,
+          "mean_seconds": 1.31955,
+          "alerts_1_8": 0,
+          "violations_2": 0,
+          "faults": 0,
+          "new_game_failures": 0,
+          "bootstraps": 0,
+          "completed_depths": [
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            3,
+            2,
+            3,
+            3,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            8,
+            8,
+            8
+          ],
+          "ended": true,
+          "bye": true,
+          "species": "werewolves",
+          "errors": [],
+          "fallback_occurrences": 0
+        }
+      },
+      "ui": {
+        "winner": "draw",
+        "confirmed": true,
+        "populations": {
+          "ab3": 16,
+          "ab5": 16
+        },
+        "observed_order": [
+          "ab3",
+          "ab5"
+        ],
+        "reason": "WPF displays draw"
+      },
+      "directory": "025-ab5-testmap2-40-0",
+      "server_trace_files": [
+        "trace_2026-10-26-15-07-17.txt"
+      ]
+    },
+    {
+      "id": 26,
+      "sha": "dc51ffb79ab1d283fd70bc6a70cfd6b6f7051a56",
+      "map": "testmap2.xml",
+      "max_plies": 40,
+      "order": [
+        "ab5",
+        "ab3"
+      ],
+      "specs": {
+        "ab5": "ab5:width=10,depth=2,max_depth=8,extra=4,tt_size=50000,qdepth=2,qwidth=3,aspiration=50000",
+        "ab3": "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000"
+      },
+      "commands": [
+        [
+          "C:\\Users\\sebju\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+          "-B",
+          "main.py",
+          "--name",
+          "AB5",
+          "--agent",
+          "ab5:width=10,depth=2,max_depth=8,extra=4,tt_size=50000,qdepth=2,qwidth=3,aspiration=50000",
+          "--move-time",
+          "1.5",
+          "--max-plies",
+          "40",
+          "--rules-profile",
+          "server-v3.2.1",
+          "--seed",
+          "42",
+          "127.0.0.1",
+          "5555"
+        ],
+        [
+          "C:\\Users\\sebju\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+          "-B",
+          "main.py",
+          "--name",
+          "AB3",
+          "--agent",
+          "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+          "--move-time",
+          "1.5",
+          "--max-plies",
+          "40",
+          "--rules-profile",
+          "server-v3.2.1",
+          "--seed",
+          "42",
+          "127.0.0.1",
+          "5555"
+        ]
+      ],
+      "map_sha256": "e6d200ed046c62b42f71cfde13f11231bcdc4d7d256c9593938d0b05d55ede10",
+      "started": "2026-10-26T14:10:16.700730+00:00",
+      "move_time": 1.5,
+      "exit_codes": [
+        0,
+        0
+      ],
+      "bots": {
+        "ab5": {
+          "turns": 20,
+          "max_seconds": 1.501,
+          "mean_seconds": 1.3561,
+          "alerts_1_8": 0,
+          "violations_2": 0,
+          "faults": 0,
+          "new_game_failures": 0,
+          "bootstraps": 0,
+          "completed_depths": [
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            3,
+            3,
+            2,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            5,
+            5,
+            8,
+            8,
+            8
+          ],
+          "ended": true,
+          "bye": true,
+          "species": "vampires",
+          "errors": [],
+          "fallback_occurrences": 0
+        },
+        "ab3": {
+          "turns": 20,
+          "max_seconds": 1.502,
+          "mean_seconds": 1.2501,
+          "alerts_1_8": 0,
+          "violations_2": 0,
+          "faults": 0,
+          "new_game_failures": 0,
+          "bootstraps": 0,
+          "completed_depths": [
+            6,
+            6,
+            7,
+            6,
+            6,
+            5,
+            5,
+            5,
+            5,
+            5,
+            6,
+            7,
+            8,
+            7,
+            8,
+            7,
+            8,
+            8,
+            8,
+            8
+          ],
+          "ended": true,
+          "bye": true,
+          "species": "werewolves",
+          "errors": [],
+          "fallback_occurrences": 0
+        }
+      },
+      "ui": {
+        "winner": null,
+        "confirmed": false,
+        "populations": {},
+        "reason": "UI missing"
+      },
+      "directory": "026-ab5-testmap2-40-1",
+      "server_trace_files": []
+    }
+  ],
+  "attempts": [
+    {
+      "id": 1,
+      "sha": "dc51ffb79ab1d283fd70bc6a70cfd6b6f7051a56",
+      "map": "thetrap.xml",
+      "max_plies": 40,
+      "order": [
+        "ab3",
+        "ab0"
+      ],
+      "specs": {
+        "ab3": "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+        "ab0": "ab0:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000"
+      },
+      "commands": [
+        [
+          "C:\\Users\\sebju\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+          "-B",
+          "main.py",
+          "--name",
+          "AB3",
+          "--agent",
+          "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+          "--move-time",
+          "1.5",
+          "--max-plies",
+          "40",
+          "--rules-profile",
+          "server-v3.2.1",
+          "--seed",
+          "42",
+          "127.0.0.1",
+          "5555"
+        ],
+        [
+          "C:\\Users\\sebju\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+          "-B",
+          "main.py",
+          "--name",
+          "AB0",
+          "--agent",
+          "ab0:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+          "--move-time",
+          "1.5",
+          "--max-plies",
+          "40",
+          "--rules-profile",
+          "server-v3.2.1",
+          "--seed",
+          "42",
+          "127.0.0.1",
+          "5555"
+        ]
+      ],
+      "map_sha256": "4a5bee60b38e3d8741f12d6ca1ac70a2d564a4420196bd11e71af8d90c09e7fe",
+      "started": "2026-10-26T13:25:01.267664+00:00",
+      "move_time": 1.5,
+      "exit_codes": [
+        0,
+        0
+      ],
+      "bots": {
+        "ab3": {
+          "turns": 18,
+          "max_seconds": 1.502,
+          "mean_seconds": 0.7137777777777778,
+          "alerts_1_8": 0,
+          "violations_2": 0,
+          "faults": 0,
+          "new_game_failures": 0,
+          "bootstraps": 0,
+          "completed_depths": [
+            7,
+            7,
+            7,
+            7,
+            7,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8
+          ],
+          "ended": true,
+          "bye": true,
+          "species": "vampires",
+          "errors": [],
+          "fallback_occurrences": 0
+        },
+        "ab0": {
+          "turns": 18,
+          "max_seconds": 0.003,
+          "mean_seconds": 0.002111111111111111,
+          "alerts_1_8": 0,
+          "violations_2": 0,
+          "faults": 0,
+          "new_game_failures": 0,
+          "bootstraps": 0,
+          "completed_depths": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "ended": true,
+          "bye": true,
+          "species": "werewolves",
+          "errors": [],
+          "fallback_occurrences": 0
+        }
+      },
+      "ui": {
+        "winner": null,
+        "confirmed": false,
+        "populations": {},
+        "reason": "Empty UI capture"
+      },
+      "directory": "001-ab0-thetrap-40-0",
+      "server_trace_files": [
+        "trace_2026-10-26-14-25-02.txt"
+      ]
+    },
+    {
+      "id": 2,
+      "sha": "dc51ffb79ab1d283fd70bc6a70cfd6b6f7051a56",
+      "map": "thetrap.xml",
+      "max_plies": 40,
+      "order": [
+        "ab0",
+        "ab3"
+      ],
+      "specs": {
+        "ab0": "ab0:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+        "ab3": "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000"
+      },
+      "commands": [
+        [
+          "C:\\Users\\sebju\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+          "-B",
+          "main.py",
+          "--name",
+          "AB0",
+          "--agent",
+          "ab0:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+          "--move-time",
+          "1.5",
+          "--max-plies",
+          "40",
+          "--rules-profile",
+          "server-v3.2.1",
+          "--seed",
+          "42",
+          "127.0.0.1",
+          "5555"
+        ],
+        [
+          "C:\\Users\\sebju\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+          "-B",
+          "main.py",
+          "--name",
+          "AB3",
+          "--agent",
+          "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+          "--move-time",
+          "1.5",
+          "--max-plies",
+          "40",
+          "--rules-profile",
+          "server-v3.2.1",
+          "--seed",
+          "42",
+          "127.0.0.1",
+          "5555"
+        ]
+      ],
+      "map_sha256": "4a5bee60b38e3d8741f12d6ca1ac70a2d564a4420196bd11e71af8d90c09e7fe",
+      "started": "2026-10-26T13:27:41.126956+00:00",
+      "move_time": 1.5,
+      "exit_codes": [
+        0,
+        0
+      ],
+      "bots": {
+        "ab0": {
+          "turns": 20,
+          "max_seconds": 0.007,
+          "mean_seconds": 0.0018499999999999999,
+          "alerts_1_8": 0,
+          "violations_2": 0,
+          "faults": 0,
+          "new_game_failures": 0,
+          "bootstraps": 0,
+          "completed_depths": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "ended": true,
+          "bye": true,
+          "species": "vampires",
+          "errors": [],
+          "fallback_occurrences": 0
+        },
+        "ab3": {
+          "turns": 20,
+          "max_seconds": 1.501,
+          "mean_seconds": 0.61805,
+          "alerts_1_8": 0,
+          "violations_2": 0,
+          "faults": 0,
+          "new_game_failures": 0,
+          "bootstraps": 0,
+          "completed_depths": [
+            7,
+            7,
+            7,
+            7,
+            7,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8
+          ],
+          "ended": true,
+          "bye": true,
+          "species": "werewolves",
+          "errors": [],
+          "fallback_occurrences": 0
+        }
+      },
+      "ui": {
+        "winner": "ab3",
+        "confirmed": true,
+        "populations": {
+          "ab0": 8,
+          "ab3": 9
+        },
+        "observed_order": [
+          "ab0",
+          "ab3"
+        ],
+        "reason": "WPF names winner explicitly"
+      },
+      "directory": "002-ab0-thetrap-40-1",
+      "server_trace_files": [
+        "trace_2026-10-26-14-27-41.txt"
+      ]
+    },
+    {
+      "id": 3,
+      "sha": "dc51ffb79ab1d283fd70bc6a70cfd6b6f7051a56",
+      "map": "thetrap.xml",
+      "max_plies": 40,
+      "order": [
+        "ab3",
+        "ab1"
+      ],
+      "specs": {
+        "ab3": "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+        "ab1": "ab1:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000"
+      },
+      "commands": [
+        [
+          "C:\\Users\\sebju\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+          "-B",
+          "main.py",
+          "--name",
+          "AB3",
+          "--agent",
+          "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+          "--move-time",
+          "1.5",
+          "--max-plies",
+          "40",
+          "--rules-profile",
+          "server-v3.2.1",
+          "--seed",
+          "42",
+          "127.0.0.1",
+          "5555"
+        ],
+        [
+          "C:\\Users\\sebju\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+          "-B",
+          "main.py",
+          "--name",
+          "AB1",
+          "--agent",
+          "ab1:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+          "--move-time",
+          "1.5",
+          "--max-plies",
+          "40",
+          "--rules-profile",
+          "server-v3.2.1",
+          "--seed",
+          "42",
+          "127.0.0.1",
+          "5555"
+        ]
+      ],
+      "map_sha256": "4a5bee60b38e3d8741f12d6ca1ac70a2d564a4420196bd11e71af8d90c09e7fe",
+      "started": "2026-10-26T13:28:22.331869+00:00",
+      "move_time": 1.5,
+      "exit_codes": [
+        0,
+        0
+      ],
+      "bots": {
+        "ab3": {
+          "turns": 18,
+          "max_seconds": 1.502,
+          "mean_seconds": 0.6993333333333333,
+          "alerts_1_8": 0,
+          "violations_2": 0,
+          "faults": 0,
+          "new_game_failures": 0,
+          "bootstraps": 0,
+          "completed_depths": [
+            7,
+            7,
+            7,
+            6,
+            7,
+            7,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8
+          ],
+          "ended": true,
+          "bye": true,
+          "species": "vampires",
+          "errors": [],
+          "fallback_occurrences": 0
+        },
+        "ab1": {
+          "turns": 18,
+          "max_seconds": 1.501,
+          "mean_seconds": 0.6264444444444445,
+          "alerts_1_8": 0,
+          "violations_2": 0,
+          "faults": 0,
+          "new_game_failures": 0,
+          "bootstraps": 0,
+          "completed_depths": [
+            7,
+            8,
+            7,
+            8,
+            7,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8
+          ],
+          "ended": true,
+          "bye": true,
+          "species": "werewolves",
+          "errors": [],
+          "fallback_occurrences": 0
+        }
+      },
+      "ui": {
+        "winner": "ab1",
+        "confirmed": true,
+        "populations": {
+          "ab3": 0,
+          "ab1": 4
+        },
+        "observed_order": [
+          "ab3",
+          "ab1"
+        ],
+        "reason": "WPF names winner explicitly"
+      },
+      "directory": "003-ab1-thetrap-40-0",
+      "server_trace_files": [
+        "trace_2026-10-26-14-28-23.txt"
+      ]
+    },
+    {
+      "id": 4,
+      "sha": "dc51ffb79ab1d283fd70bc6a70cfd6b6f7051a56",
+      "map": "thetrap.xml",
+      "max_plies": 40,
+      "order": [
+        "ab1",
+        "ab3"
+      ],
+      "specs": {
+        "ab1": "ab1:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+        "ab3": "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000"
+      },
+      "commands": [
+        [
+          "C:\\Users\\sebju\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+          "-B",
+          "main.py",
+          "--name",
+          "AB1",
+          "--agent",
+          "ab1:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+          "--move-time",
+          "1.5",
+          "--max-plies",
+          "40",
+          "--rules-profile",
+          "server-v3.2.1",
+          "--seed",
+          "42",
+          "127.0.0.1",
+          "5555"
+        ],
+        [
+          "C:\\Users\\sebju\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+          "-B",
+          "main.py",
+          "--name",
+          "AB3",
+          "--agent",
+          "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+          "--move-time",
+          "1.5",
+          "--max-plies",
+          "40",
+          "--rules-profile",
+          "server-v3.2.1",
+          "--seed",
+          "42",
+          "127.0.0.1",
+          "5555"
+        ]
+      ],
+      "map_sha256": "4a5bee60b38e3d8741f12d6ca1ac70a2d564a4420196bd11e71af8d90c09e7fe",
+      "started": "2026-10-26T13:30:44.440965+00:00",
+      "move_time": 1.5,
+      "exit_codes": [
+        0,
+        0
+      ],
+      "bots": {
+        "ab1": {
+          "turns": 20,
+          "max_seconds": 1.501,
+          "mean_seconds": 0.6315,
+          "alerts_1_8": 0,
+          "violations_2": 0,
+          "faults": 0,
+          "new_game_failures": 0,
+          "bootstraps": 0,
+          "completed_depths": [
+            7,
+            6,
+            7,
+            8,
+            7,
+            7,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8
+          ],
+          "ended": true,
+          "bye": true,
+          "species": "vampires",
+          "errors": [],
+          "fallback_occurrences": 0
+        },
+        "ab3": {
+          "turns": 20,
+          "max_seconds": 1.501,
+          "mean_seconds": 0.63785,
+          "alerts_1_8": 0,
+          "violations_2": 0,
+          "faults": 0,
+          "new_game_failures": 0,
+          "bootstraps": 0,
+          "completed_depths": [
+            6,
+            7,
+            7,
+            7,
+            6,
+            7,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8
+          ],
+          "ended": true,
+          "bye": true,
+          "species": "werewolves",
+          "errors": [],
+          "fallback_occurrences": 0
+        }
+      },
+      "ui": {
+        "winner": null,
+        "confirmed": false,
+        "populations": {},
+        "reason": "UI missing"
+      },
+      "directory": "004-ab1-thetrap-40-1",
+      "server_trace_files": [
+        "trace_2026-10-26-14-30-45.txt"
+      ]
+    },
+    {
+      "id": 5,
+      "sha": "dc51ffb79ab1d283fd70bc6a70cfd6b6f7051a56",
+      "map": "thetrap.xml",
+      "max_plies": 40,
+      "order": [
+        "ab3",
+        "ab2"
+      ],
+      "specs": {
+        "ab3": "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+        "ab2": "ab2:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000"
+      },
+      "commands": [
+        [
+          "C:\\Users\\sebju\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+          "-B",
+          "main.py",
+          "--name",
+          "AB3",
+          "--agent",
+          "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+          "--move-time",
+          "1.5",
+          "--max-plies",
+          "40",
+          "--rules-profile",
+          "server-v3.2.1",
+          "--seed",
+          "42",
+          "127.0.0.1",
+          "5555"
+        ],
+        [
+          "C:\\Users\\sebju\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+          "-B",
+          "main.py",
+          "--name",
+          "AB2",
+          "--agent",
+          "ab2:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+          "--move-time",
+          "1.5",
+          "--max-plies",
+          "40",
+          "--rules-profile",
+          "server-v3.2.1",
+          "--seed",
+          "42",
+          "127.0.0.1",
+          "5555"
+        ]
+      ],
+      "map_sha256": "4a5bee60b38e3d8741f12d6ca1ac70a2d564a4420196bd11e71af8d90c09e7fe",
+      "started": "2026-10-26T13:34:31.295236+00:00",
+      "move_time": 1.5,
+      "exit_codes": [
+        0,
+        0
+      ],
+      "bots": {
+        "ab3": {
+          "turns": 20,
+          "max_seconds": 1.502,
+          "mean_seconds": 0.6295499999999999,
+          "alerts_1_8": 0,
+          "violations_2": 0,
+          "faults": 0,
+          "new_game_failures": 0,
+          "bootstraps": 0,
+          "completed_depths": [
+            7,
+            7,
+            7,
+            7,
+            7,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8
+          ],
+          "ended": true,
+          "bye": true,
+          "species": "vampires",
+          "errors": [],
+          "fallback_occurrences": 0
+        },
+        "ab2": {
+          "turns": 20,
+          "max_seconds": 1.502,
+          "mean_seconds": 0.454,
+          "alerts_1_8": 0,
+          "violations_2": 0,
+          "faults": 0,
+          "new_game_failures": 0,
+          "bootstraps": 0,
+          "completed_depths": [
+            7,
+            7,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8
+          ],
+          "ended": true,
+          "bye": true,
+          "species": "werewolves",
+          "errors": [],
+          "fallback_occurrences": 0
+        }
+      },
+      "ui": {
+        "winner": "ab2",
+        "confirmed": true,
+        "populations": {
+          "ab3": 8,
+          "ab2": 9
+        },
+        "observed_order": [
+          "ab3",
+          "ab2"
+        ],
+        "reason": "WPF names winner explicitly"
+      },
+      "directory": "005-ab2-thetrap-40-0",
+      "server_trace_files": [
+        "trace_2026-10-26-14-34-32.txt"
+      ]
+    },
+    {
+      "id": 6,
+      "sha": "dc51ffb79ab1d283fd70bc6a70cfd6b6f7051a56",
+      "map": "thetrap.xml",
+      "max_plies": 40,
+      "order": [
+        "ab2",
+        "ab3"
+      ],
+      "specs": {
+        "ab2": "ab2:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+        "ab3": "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000"
+      },
+      "commands": [
+        [
+          "C:\\Users\\sebju\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+          "-B",
+          "main.py",
+          "--name",
+          "AB2",
+          "--agent",
+          "ab2:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+          "--move-time",
+          "1.5",
+          "--max-plies",
+          "40",
+          "--rules-profile",
+          "server-v3.2.1",
+          "--seed",
+          "42",
+          "127.0.0.1",
+          "5555"
+        ],
+        [
+          "C:\\Users\\sebju\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+          "-B",
+          "main.py",
+          "--name",
+          "AB3",
+          "--agent",
+          "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+          "--move-time",
+          "1.5",
+          "--max-plies",
+          "40",
+          "--rules-profile",
+          "server-v3.2.1",
+          "--seed",
+          "42",
+          "127.0.0.1",
+          "5555"
+        ]
+      ],
+      "map_sha256": "4a5bee60b38e3d8741f12d6ca1ac70a2d564a4420196bd11e71af8d90c09e7fe",
+      "started": "2026-10-26T13:37:32.975341+00:00",
+      "move_time": 1.5,
+      "exit_codes": [
+        0,
+        0
+      ],
+      "bots": {
+        "ab2": {
+          "turns": 20,
+          "max_seconds": 1.501,
+          "mean_seconds": 0.5315000000000001,
+          "alerts_1_8": 0,
+          "violations_2": 0,
+          "faults": 0,
+          "new_game_failures": 0,
+          "bootstraps": 0,
+          "completed_depths": [
+            7,
+            7,
+            7,
+            8,
+            7,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8
+          ],
+          "ended": true,
+          "bye": true,
+          "species": "vampires",
+          "errors": [],
+          "fallback_occurrences": 0
+        },
+        "ab3": {
+          "turns": 20,
+          "max_seconds": 1.501,
+          "mean_seconds": 0.567,
+          "alerts_1_8": 0,
+          "violations_2": 0,
+          "faults": 0,
+          "new_game_failures": 0,
+          "bootstraps": 0,
+          "completed_depths": [
+            7,
+            7,
+            6,
+            6,
+            7,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8
+          ],
+          "ended": true,
+          "bye": true,
+          "species": "werewolves",
+          "errors": [],
+          "fallback_occurrences": 0
+        }
+      },
+      "ui": {
+        "winner": "ab3",
+        "confirmed": true,
+        "populations": {
+          "ab2": 8,
+          "ab3": 9
+        },
+        "observed_order": [
+          "ab2",
+          "ab3"
+        ],
+        "reason": "WPF names winner explicitly"
+      },
+      "directory": "006-ab2-thetrap-40-1",
+      "server_trace_files": [
+        "trace_2026-10-26-14-37-33.txt"
+      ]
+    },
+    {
+      "id": 7,
+      "sha": "dc51ffb79ab1d283fd70bc6a70cfd6b6f7051a56",
+      "map": "thetrap.xml",
+      "max_plies": 40,
+      "order": [
+        "ab3",
+        "ab4"
+      ],
+      "specs": {
+        "ab3": "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+        "ab4": "ab4:width=10,depth=2,max_depth=8,extra=4,tt_size=50000,qdepth=2,qwidth=3,aspiration=50000"
+      },
+      "commands": [
+        [
+          "C:\\Users\\sebju\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+          "-B",
+          "main.py",
+          "--name",
+          "AB3",
+          "--agent",
+          "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+          "--move-time",
+          "1.5",
+          "--max-plies",
+          "40",
+          "--rules-profile",
+          "server-v3.2.1",
+          "--seed",
+          "42",
+          "127.0.0.1",
+          "5555"
+        ],
+        [
+          "C:\\Users\\sebju\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+          "-B",
+          "main.py",
+          "--name",
+          "AB4",
+          "--agent",
+          "ab4:width=10,depth=2,max_depth=8,extra=4,tt_size=50000,qdepth=2,qwidth=3,aspiration=50000",
+          "--move-time",
+          "1.5",
+          "--max-plies",
+          "40",
+          "--rules-profile",
+          "server-v3.2.1",
+          "--seed",
+          "42",
+          "127.0.0.1",
+          "5555"
+        ]
+      ],
+      "map_sha256": "4a5bee60b38e3d8741f12d6ca1ac70a2d564a4420196bd11e71af8d90c09e7fe",
+      "started": "2026-10-26T13:38:44.013622+00:00",
+      "move_time": 1.5,
+      "exit_codes": [
+        0,
+        0
+      ],
+      "bots": {
+        "ab3": {
+          "turns": 20,
+          "max_seconds": 1.502,
+          "mean_seconds": 0.56475,
+          "alerts_1_8": 0,
+          "violations_2": 0,
+          "faults": 0,
+          "new_game_failures": 0,
+          "bootstraps": 0,
+          "completed_depths": [
+            7,
+            7,
+            7,
+            7,
+            6,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8
+          ],
+          "ended": true,
+          "bye": true,
+          "species": "vampires",
+          "errors": [],
+          "fallback_occurrences": 0
+        },
+        "ab4": {
+          "turns": 20,
+          "max_seconds": 1.501,
+          "mean_seconds": 0.6623,
+          "alerts_1_8": 0,
+          "violations_2": 0,
+          "faults": 0,
+          "new_game_failures": 0,
+          "bootstraps": 0,
+          "completed_depths": [
+            6,
+            6,
+            6,
+            6,
+            6,
+            7,
+            7,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8
+          ],
+          "ended": true,
+          "bye": true,
+          "species": "werewolves",
+          "errors": [],
+          "fallback_occurrences": 0
+        }
+      },
+      "ui": {
+        "winner": null,
+        "confirmed": false,
+        "populations": {
+          "ab3": 8,
+          "ab4": 9
+        },
+        "observed_order": [
+          "ab3",
+          "ab4"
+        ],
+        "reason": "No explicit winner/draw found in captured UI"
+      },
+      "directory": "007-ab4-thetrap-40-0",
+      "server_trace_files": [
+        "trace_2026-10-26-14-38-44.txt"
+      ]
+    },
+    {
+      "id": 8,
+      "sha": "dc51ffb79ab1d283fd70bc6a70cfd6b6f7051a56",
+      "map": "thetrap.xml",
+      "max_plies": 40,
+      "order": [
+        "ab4",
+        "ab3"
+      ],
+      "specs": {
+        "ab4": "ab4:width=10,depth=2,max_depth=8,extra=4,tt_size=50000,qdepth=2,qwidth=3,aspiration=50000",
+        "ab3": "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000"
+      },
+      "commands": [
+        [
+          "C:\\Users\\sebju\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+          "-B",
+          "main.py",
+          "--name",
+          "AB4",
+          "--agent",
+          "ab4:width=10,depth=2,max_depth=8,extra=4,tt_size=50000,qdepth=2,qwidth=3,aspiration=50000",
+          "--move-time",
+          "1.5",
+          "--max-plies",
+          "40",
+          "--rules-profile",
+          "server-v3.2.1",
+          "--seed",
+          "42",
+          "127.0.0.1",
+          "5555"
+        ],
+        [
+          "C:\\Users\\sebju\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+          "-B",
+          "main.py",
+          "--name",
+          "AB3",
+          "--agent",
+          "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+          "--move-time",
+          "1.5",
+          "--max-plies",
+          "40",
+          "--rules-profile",
+          "server-v3.2.1",
+          "--seed",
+          "42",
+          "127.0.0.1",
+          "5555"
+        ]
+      ],
+      "map_sha256": "4a5bee60b38e3d8741f12d6ca1ac70a2d564a4420196bd11e71af8d90c09e7fe",
+      "started": "2026-10-26T13:39:23.752703+00:00",
+      "move_time": 1.5,
+      "exit_codes": [
+        0,
+        0
+      ],
+      "bots": {
+        "ab4": {
+          "turns": 20,
+          "max_seconds": 1.501,
+          "mean_seconds": 0.76725,
+          "alerts_1_8": 0,
+          "violations_2": 0,
+          "faults": 0,
+          "new_game_failures": 0,
+          "bootstraps": 0,
+          "completed_depths": [
+            5,
+            6,
+            5,
+            5,
+            6,
+            6,
+            7,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8
+          ],
+          "ended": true,
+          "bye": true,
+          "species": "vampires",
+          "errors": [],
+          "fallback_occurrences": 0
+        },
+        "ab3": {
+          "turns": 20,
+          "max_seconds": 1.501,
+          "mean_seconds": 0.6054,
+          "alerts_1_8": 0,
+          "violations_2": 0,
+          "faults": 0,
+          "new_game_failures": 0,
+          "bootstraps": 0,
+          "completed_depths": [
+            7,
+            7,
+            7,
+            8,
+            7,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8
+          ],
+          "ended": true,
+          "bye": true,
+          "species": "werewolves",
+          "errors": [],
+          "fallback_occurrences": 0
+        }
+      },
+      "ui": {
+        "winner": null,
+        "confirmed": false,
+        "populations": {
+          "ab4": 8,
+          "ab3": 9
+        },
+        "observed_order": [
+          "ab4",
+          "ab3"
+        ],
+        "reason": "No explicit winner/draw found in captured UI"
+      },
+      "directory": "008-ab4-thetrap-40-1",
+      "server_trace_files": [
+        "trace_2026-10-26-14-39-24.txt"
+      ]
+    },
+    {
+      "id": 9,
+      "sha": "dc51ffb79ab1d283fd70bc6a70cfd6b6f7051a56",
+      "map": "thetrap.xml",
+      "max_plies": 40,
+      "order": [
+        "ab3",
+        "ab5"
+      ],
+      "specs": {
+        "ab3": "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+        "ab5": "ab5:width=10,depth=2,max_depth=8,extra=4,tt_size=50000,qdepth=2,qwidth=3,aspiration=50000"
+      },
+      "commands": [
+        [
+          "C:\\Users\\sebju\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+          "-B",
+          "main.py",
+          "--name",
+          "AB3",
+          "--agent",
+          "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+          "--move-time",
+          "1.5",
+          "--max-plies",
+          "40",
+          "--rules-profile",
+          "server-v3.2.1",
+          "--seed",
+          "42",
+          "127.0.0.1",
+          "5555"
+        ],
+        [
+          "C:\\Users\\sebju\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+          "-B",
+          "main.py",
+          "--name",
+          "AB5",
+          "--agent",
+          "ab5:width=10,depth=2,max_depth=8,extra=4,tt_size=50000,qdepth=2,qwidth=3,aspiration=50000",
+          "--move-time",
+          "1.5",
+          "--max-plies",
+          "40",
+          "--rules-profile",
+          "server-v3.2.1",
+          "--seed",
+          "42",
+          "127.0.0.1",
+          "5555"
+        ]
+      ],
+      "map_sha256": "4a5bee60b38e3d8741f12d6ca1ac70a2d564a4420196bd11e71af8d90c09e7fe",
+      "started": "2026-10-26T13:40:05.879665+00:00",
+      "move_time": 1.5,
+      "exit_codes": [
+        0,
+        0
+      ],
+      "bots": {
+        "ab3": {
+          "turns": 20,
+          "max_seconds": 1.501,
+          "mean_seconds": 0.55965,
+          "alerts_1_8": 0,
+          "violations_2": 0,
+          "faults": 0,
+          "new_game_failures": 0,
+          "bootstraps": 0,
+          "completed_depths": [
+            7,
+            7,
+            7,
+            7,
+            6,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8
+          ],
+          "ended": true,
+          "bye": true,
+          "species": "vampires",
+          "errors": [],
+          "fallback_occurrences": 0
+        },
+        "ab5": {
+          "turns": 20,
+          "max_seconds": 1.502,
+          "mean_seconds": 0.74565,
+          "alerts_1_8": 0,
+          "violations_2": 0,
+          "faults": 0,
+          "new_game_failures": 0,
+          "bootstraps": 0,
+          "completed_depths": [
+            4,
+            5,
+            5,
+            5,
+            5,
+            6,
+            6,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8
+          ],
+          "ended": true,
+          "bye": true,
+          "species": "werewolves",
+          "errors": [],
+          "fallback_occurrences": 0
+        }
+      },
+      "ui": {
+        "winner": null,
+        "confirmed": false,
+        "populations": {
+          "ab3": 8,
+          "ab5": 9
+        },
+        "observed_order": [
+          "ab3",
+          "ab5"
+        ],
+        "reason": "No explicit winner/draw found in captured UI"
+      },
+      "directory": "009-ab5-thetrap-40-0",
+      "server_trace_files": [
+        "trace_2026-10-26-14-40-06.txt"
+      ]
+    },
+    {
+      "id": 10,
+      "sha": "dc51ffb79ab1d283fd70bc6a70cfd6b6f7051a56",
+      "map": "thetrap.xml",
+      "max_plies": 40,
+      "order": [
+        "ab5",
+        "ab3"
+      ],
+      "specs": {
+        "ab5": "ab5:width=10,depth=2,max_depth=8,extra=4,tt_size=50000,qdepth=2,qwidth=3,aspiration=50000",
+        "ab3": "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000"
+      },
+      "commands": [
+        [
+          "C:\\Users\\sebju\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+          "-B",
+          "main.py",
+          "--name",
+          "AB5",
+          "--agent",
+          "ab5:width=10,depth=2,max_depth=8,extra=4,tt_size=50000,qdepth=2,qwidth=3,aspiration=50000",
+          "--move-time",
+          "1.5",
+          "--max-plies",
+          "40",
+          "--rules-profile",
+          "server-v3.2.1",
+          "--seed",
+          "42",
+          "127.0.0.1",
+          "5555"
+        ],
+        [
+          "C:\\Users\\sebju\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+          "-B",
+          "main.py",
+          "--name",
+          "AB3",
+          "--agent",
+          "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+          "--move-time",
+          "1.5",
+          "--max-plies",
+          "40",
+          "--rules-profile",
+          "server-v3.2.1",
+          "--seed",
+          "42",
+          "127.0.0.1",
+          "5555"
+        ]
+      ],
+      "map_sha256": "4a5bee60b38e3d8741f12d6ca1ac70a2d564a4420196bd11e71af8d90c09e7fe",
+      "started": "2026-10-26T13:40:46.419317+00:00",
+      "move_time": 1.5,
+      "exit_codes": [
+        0,
+        0
+      ],
+      "bots": {
+        "ab5": {
+          "turns": 20,
+          "max_seconds": 1.501,
+          "mean_seconds": 0.8411,
+          "alerts_1_8": 0,
+          "violations_2": 0,
+          "faults": 0,
+          "new_game_failures": 0,
+          "bootstraps": 0,
+          "completed_depths": [
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            6,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8
+          ],
+          "ended": true,
+          "bye": true,
+          "species": "vampires",
+          "errors": [],
+          "fallback_occurrences": 0
+        },
+        "ab3": {
+          "turns": 20,
+          "max_seconds": 1.501,
+          "mean_seconds": 0.58005,
+          "alerts_1_8": 0,
+          "violations_2": 0,
+          "faults": 0,
+          "new_game_failures": 0,
+          "bootstraps": 0,
+          "completed_depths": [
+            7,
+            7,
+            6,
+            7,
+            7,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8
+          ],
+          "ended": true,
+          "bye": true,
+          "species": "werewolves",
+          "errors": [],
+          "fallback_occurrences": 0
+        }
+      },
+      "ui": {
+        "winner": null,
+        "confirmed": false,
+        "populations": {
+          "ab5": 8,
+          "ab3": 9
+        },
+        "observed_order": [
+          "ab5",
+          "ab3"
+        ],
+        "reason": "No explicit winner/draw found in captured UI"
+      },
+      "directory": "010-ab5-thetrap-40-1",
+      "server_trace_files": [
+        "trace_2026-10-26-14-40-47.txt"
+      ]
+    },
+    {
+      "id": 11,
+      "sha": "dc51ffb79ab1d283fd70bc6a70cfd6b6f7051a56",
+      "map": "thetrap.xml",
+      "max_plies": 40,
+      "order": [
+        "ab3",
+        "ab6"
+      ],
+      "specs": {
+        "ab3": "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+        "ab6": "ab6:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000"
+      },
+      "commands": [
+        [
+          "C:\\Users\\sebju\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+          "-B",
+          "main.py",
+          "--name",
+          "AB3",
+          "--agent",
+          "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+          "--move-time",
+          "1.5",
+          "--max-plies",
+          "40",
+          "--rules-profile",
+          "server-v3.2.1",
+          "--seed",
+          "42",
+          "127.0.0.1",
+          "5555"
+        ],
+        [
+          "C:\\Users\\sebju\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+          "-B",
+          "main.py",
+          "--name",
+          "AB6",
+          "--agent",
+          "ab6:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+          "--move-time",
+          "1.5",
+          "--max-plies",
+          "40",
+          "--rules-profile",
+          "server-v3.2.1",
+          "--seed",
+          "42",
+          "127.0.0.1",
+          "5555"
+        ]
+      ],
+      "map_sha256": "4a5bee60b38e3d8741f12d6ca1ac70a2d564a4420196bd11e71af8d90c09e7fe",
+      "started": "2026-10-26T13:41:28.596334+00:00",
+      "move_time": 1.5,
+      "exit_codes": [
+        0,
+        0
+      ],
+      "bots": {
+        "ab3": {
+          "turns": 17,
+          "max_seconds": 1.502,
+          "mean_seconds": 0.7253529411764705,
+          "alerts_1_8": 0,
+          "violations_2": 0,
+          "faults": 0,
+          "new_game_failures": 0,
+          "bootstraps": 0,
+          "completed_depths": [
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8
+          ],
+          "ended": true,
+          "bye": true,
+          "species": "vampires",
+          "errors": [],
+          "fallback_occurrences": 0
+        },
+        "ab6": {
+          "turns": 17,
+          "max_seconds": 1.501,
+          "mean_seconds": 1.500470588235294,
+          "alerts_1_8": 0,
+          "violations_2": 0,
+          "faults": 0,
+          "new_game_failures": 0,
+          "bootstraps": 0,
+          "completed_depths": [
+            4,
+            4,
+            4,
+            4,
+            4,
+            5,
+            5,
+            6,
+            7,
+            7,
+            6,
+            7,
+            6,
+            6,
+            6,
+            6,
+            6
+          ],
+          "ended": true,
+          "bye": true,
+          "species": "werewolves",
+          "errors": [],
+          "fallback_occurrences": 0
+        }
+      },
+      "ui": {
+        "winner": null,
+        "confirmed": false,
+        "populations": {
+          "ab3": 8,
+          "ab6": 9
+        },
+        "observed_order": [
+          "ab3",
+          "ab6"
+        ],
+        "reason": "No explicit winner/draw found in captured UI"
+      },
+      "directory": "011-ab6-thetrap-40-0",
+      "server_trace_files": [
+        "trace_2026-10-26-14-41-29.txt"
+      ]
+    },
+    {
+      "id": 12,
+      "sha": "dc51ffb79ab1d283fd70bc6a70cfd6b6f7051a56",
+      "map": "thetrap.xml",
+      "max_plies": 40,
+      "order": [
+        "ab6",
+        "ab3"
+      ],
+      "specs": {
+        "ab6": "ab6:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+        "ab3": "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000"
+      },
+      "commands": [
+        [
+          "C:\\Users\\sebju\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+          "-B",
+          "main.py",
+          "--name",
+          "AB6",
+          "--agent",
+          "ab6:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+          "--move-time",
+          "1.5",
+          "--max-plies",
+          "40",
+          "--rules-profile",
+          "server-v3.2.1",
+          "--seed",
+          "42",
+          "127.0.0.1",
+          "5555"
+        ],
+        [
+          "C:\\Users\\sebju\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+          "-B",
+          "main.py",
+          "--name",
+          "AB3",
+          "--agent",
+          "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+          "--move-time",
+          "1.5",
+          "--max-plies",
+          "40",
+          "--rules-profile",
+          "server-v3.2.1",
+          "--seed",
+          "42",
+          "127.0.0.1",
+          "5555"
+        ]
+      ],
+      "map_sha256": "4a5bee60b38e3d8741f12d6ca1ac70a2d564a4420196bd11e71af8d90c09e7fe",
+      "started": "2026-10-26T13:42:19.833403+00:00",
+      "move_time": 1.5,
+      "exit_codes": [
+        0,
+        0
+      ],
+      "bots": {
+        "ab6": {
+          "turns": 18,
+          "max_seconds": 1.501,
+          "mean_seconds": 1.4729444444444444,
+          "alerts_1_8": 0,
+          "violations_2": 0,
+          "faults": 0,
+          "new_game_failures": 0,
+          "bootstraps": 0,
+          "completed_depths": [
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            5,
+            6,
+            7,
+            7,
+            6,
+            7,
+            6,
+            7,
+            6,
+            7,
+            8
+          ],
+          "ended": true,
+          "bye": true,
+          "species": "vampires",
+          "errors": [],
+          "fallback_occurrences": 0
+        },
+        "ab3": {
+          "turns": 17,
+          "max_seconds": 1.501,
+          "mean_seconds": 0.7270588235294118,
+          "alerts_1_8": 0,
+          "violations_2": 0,
+          "faults": 0,
+          "new_game_failures": 0,
+          "bootstraps": 0,
+          "completed_depths": [
+            7,
+            7,
+            7,
+            7,
+            7,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8
+          ],
+          "ended": true,
+          "bye": true,
+          "species": "werewolves",
+          "errors": [],
+          "fallback_occurrences": 0
+        }
+      },
+      "ui": {
+        "winner": "ab6",
+        "confirmed": true,
+        "populations": {
+          "ab6": 3,
+          "ab3": 0
+        },
+        "observed_order": [
+          "ab6",
+          "ab3"
+        ],
+        "reason": "WPF names winner explicitly"
+      },
+      "directory": "012-ab6-thetrap-40-1",
+      "server_trace_files": [
+        "trace_2026-10-26-14-42-20.txt"
+      ]
+    },
+    {
+      "id": 13,
+      "sha": "dc51ffb79ab1d283fd70bc6a70cfd6b6f7051a56",
+      "map": "thetrap.xml",
+      "max_plies": 40,
+      "order": [
+        "ab3",
+        "ab7"
+      ],
+      "specs": {
+        "ab3": "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+        "ab7": "ab7:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000,weights={'material': 1.0, 'humans': 0.8, 'discount': 0.9, 'threat': 0.7, 'groups': 0.1}"
+      },
+      "commands": [
+        [
+          "C:\\Users\\sebju\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+          "-B",
+          "main.py",
+          "--name",
+          "AB3",
+          "--agent",
+          "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+          "--move-time",
+          "1.5",
+          "--max-plies",
+          "40",
+          "--rules-profile",
+          "server-v3.2.1",
+          "--seed",
+          "42",
+          "127.0.0.1",
+          "5555"
+        ],
+        [
+          "C:\\Users\\sebju\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+          "-B",
+          "main.py",
+          "--name",
+          "AB7",
+          "--agent",
+          "ab7:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000,weights={'material': 1.0, 'humans': 0.8, 'discount': 0.9, 'threat': 0.7, 'groups': 0.1}",
+          "--move-time",
+          "1.5",
+          "--max-plies",
+          "40",
+          "--rules-profile",
+          "server-v3.2.1",
+          "--seed",
+          "42",
+          "127.0.0.1",
+          "5555"
+        ]
+      ],
+      "map_sha256": "4a5bee60b38e3d8741f12d6ca1ac70a2d564a4420196bd11e71af8d90c09e7fe",
+      "started": "2026-10-26T13:43:21.853499+00:00",
+      "move_time": 1.5,
+      "exit_codes": [
+        0,
+        0
+      ],
+      "bots": {
+        "ab3": {
+          "turns": 20,
+          "max_seconds": 1.501,
+          "mean_seconds": 0.6404,
+          "alerts_1_8": 0,
+          "violations_2": 0,
+          "faults": 0,
+          "new_game_failures": 0,
+          "bootstraps": 0,
+          "completed_depths": [
+            7,
+            7,
+            7,
+            6,
+            7,
+            7,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8
+          ],
+          "ended": true,
+          "bye": true,
+          "species": "vampires",
+          "errors": [],
+          "fallback_occurrences": 0
+        },
+        "ab7": {
+          "turns": 20,
+          "max_seconds": 1.502,
+          "mean_seconds": 0.6139,
+          "alerts_1_8": 0,
+          "violations_2": 0,
+          "faults": 0,
+          "new_game_failures": 0,
+          "bootstraps": 0,
+          "completed_depths": [
+            7,
+            7,
+            7,
+            7,
+            7,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8
+          ],
+          "ended": true,
+          "bye": true,
+          "species": "werewolves",
+          "errors": [],
+          "fallback_occurrences": 0
+        }
+      },
+      "ui": {
+        "winner": "ab7",
+        "confirmed": true,
+        "populations": {
+          "ab3": 8,
+          "ab7": 9
+        },
+        "observed_order": [
+          "ab3",
+          "ab7"
+        ],
+        "reason": "WPF names winner explicitly"
+      },
+      "directory": "013-ab7-thetrap-40-0",
+      "server_trace_files": [
+        "trace_2026-10-26-14-43-22.txt"
+      ]
+    },
+    {
+      "id": 14,
+      "sha": "dc51ffb79ab1d283fd70bc6a70cfd6b6f7051a56",
+      "map": "thetrap.xml",
+      "max_plies": 40,
+      "order": [
+        "ab7",
+        "ab3"
+      ],
+      "specs": {
+        "ab7": "ab7:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000,weights={'material': 1.0, 'humans': 0.8, 'discount': 0.9, 'threat': 0.7, 'groups': 0.1}",
+        "ab3": "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000"
+      },
+      "commands": [
+        [
+          "C:\\Users\\sebju\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+          "-B",
+          "main.py",
+          "--name",
+          "AB7",
+          "--agent",
+          "ab7:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000,weights={'material': 1.0, 'humans': 0.8, 'discount': 0.9, 'threat': 0.7, 'groups': 0.1}",
+          "--move-time",
+          "1.5",
+          "--max-plies",
+          "40",
+          "--rules-profile",
+          "server-v3.2.1",
+          "--seed",
+          "42",
+          "127.0.0.1",
+          "5555"
+        ],
+        [
+          "C:\\Users\\sebju\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+          "-B",
+          "main.py",
+          "--name",
+          "AB3",
+          "--agent",
+          "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+          "--move-time",
+          "1.5",
+          "--max-plies",
+          "40",
+          "--rules-profile",
+          "server-v3.2.1",
+          "--seed",
+          "42",
+          "127.0.0.1",
+          "5555"
+        ]
+      ],
+      "map_sha256": "4a5bee60b38e3d8741f12d6ca1ac70a2d564a4420196bd11e71af8d90c09e7fe",
+      "started": "2026-10-26T13:44:03.565356+00:00",
+      "move_time": 1.5,
+      "exit_codes": [
+        0,
+        0
+      ],
+      "bots": {
+        "ab7": {
+          "turns": 20,
+          "max_seconds": 1.501,
+          "mean_seconds": 0.6325999999999999,
+          "alerts_1_8": 0,
+          "violations_2": 0,
+          "faults": 0,
+          "new_game_failures": 0,
+          "bootstraps": 0,
+          "completed_depths": [
+            7,
+            7,
+            7,
+            6,
+            7,
+            6,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8
+          ],
+          "ended": true,
+          "bye": true,
+          "species": "vampires",
+          "errors": [],
+          "fallback_occurrences": 0
+        },
+        "ab3": {
+          "turns": 20,
+          "max_seconds": 1.502,
+          "mean_seconds": 0.61185,
+          "alerts_1_8": 0,
+          "violations_2": 0,
+          "faults": 0,
+          "new_game_failures": 0,
+          "bootstraps": 0,
+          "completed_depths": [
+            7,
+            7,
+            7,
+            7,
+            7,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8
+          ],
+          "ended": true,
+          "bye": true,
+          "species": "werewolves",
+          "errors": [],
+          "fallback_occurrences": 0
+        }
+      },
+      "ui": {
+        "winner": "ab3",
+        "confirmed": true,
+        "populations": {
+          "ab7": 8,
+          "ab3": 9
+        },
+        "observed_order": [
+          "ab7",
+          "ab3"
+        ],
+        "reason": "WPF names winner explicitly"
+      },
+      "directory": "014-ab7-thetrap-40-1",
+      "server_trace_files": [
+        "trace_2026-10-26-14-44-04.txt"
+      ]
+    },
+    {
+      "id": 15,
+      "sha": "dc51ffb79ab1d283fd70bc6a70cfd6b6f7051a56",
+      "map": "thetrap.xml",
+      "max_plies": 40,
+      "order": [
+        "ab3",
+        "ab8"
+      ],
+      "specs": {
+        "ab3": "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+        "ab8": "ab8:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000"
+      },
+      "commands": [
+        [
+          "C:\\Users\\sebju\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+          "-B",
+          "main.py",
+          "--name",
+          "AB3",
+          "--agent",
+          "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+          "--move-time",
+          "1.5",
+          "--max-plies",
+          "40",
+          "--rules-profile",
+          "server-v3.2.1",
+          "--seed",
+          "42",
+          "127.0.0.1",
+          "5555"
+        ],
+        [
+          "C:\\Users\\sebju\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+          "-B",
+          "main.py",
+          "--name",
+          "AB8",
+          "--agent",
+          "ab8:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+          "--move-time",
+          "1.5",
+          "--max-plies",
+          "40",
+          "--rules-profile",
+          "server-v3.2.1",
+          "--seed",
+          "42",
+          "127.0.0.1",
+          "5555"
+        ]
+      ],
+      "map_sha256": "4a5bee60b38e3d8741f12d6ca1ac70a2d564a4420196bd11e71af8d90c09e7fe",
+      "started": "2026-10-26T13:44:48.092682+00:00",
+      "move_time": 1.5,
+      "exit_codes": [
+        0,
+        0
+      ],
+      "bots": {
+        "ab3": {
+          "turns": 19,
+          "max_seconds": 1.502,
+          "mean_seconds": 0.6308947368421053,
+          "alerts_1_8": 0,
+          "violations_2": 0,
+          "faults": 0,
+          "new_game_failures": 0,
+          "bootstraps": 0,
+          "completed_depths": [
+            7,
+            7,
+            7,
+            7,
+            7,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8
+          ],
+          "ended": true,
+          "bye": true,
+          "species": "vampires",
+          "errors": [],
+          "fallback_occurrences": 0
+        },
+        "ab8": {
+          "turns": 19,
+          "max_seconds": 1.501,
+          "mean_seconds": 0.4797894736842105,
+          "alerts_1_8": 0,
+          "violations_2": 0,
+          "faults": 0,
+          "new_game_failures": 0,
+          "bootstraps": 0,
+          "completed_depths": [
+            7,
+            6,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8
+          ],
+          "ended": true,
+          "bye": true,
+          "species": "werewolves",
+          "errors": [],
+          "fallback_occurrences": 0
+        }
+      },
+      "ui": {
+        "winner": "ab3",
+        "confirmed": true,
+        "populations": {
+          "ab3": 4,
+          "ab8": 0
+        },
+        "observed_order": [
+          "ab3",
+          "ab8"
+        ],
+        "reason": "WPF names winner explicitly"
+      },
+      "directory": "015-ab8-thetrap-40-0",
+      "server_trace_files": [
+        "trace_2026-10-26-14-44-48.txt"
+      ]
+    },
+    {
+      "id": 16,
+      "sha": "dc51ffb79ab1d283fd70bc6a70cfd6b6f7051a56",
+      "map": "thetrap.xml",
+      "max_plies": 40,
+      "order": [
+        "ab8",
+        "ab3"
+      ],
+      "specs": {
+        "ab8": "ab8:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+        "ab3": "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000"
+      },
+      "commands": [
+        [
+          "C:\\Users\\sebju\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+          "-B",
+          "main.py",
+          "--name",
+          "AB8",
+          "--agent",
+          "ab8:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+          "--move-time",
+          "1.5",
+          "--max-plies",
+          "40",
+          "--rules-profile",
+          "server-v3.2.1",
+          "--seed",
+          "42",
+          "127.0.0.1",
+          "5555"
+        ],
+        [
+          "C:\\Users\\sebju\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+          "-B",
+          "main.py",
+          "--name",
+          "AB3",
+          "--agent",
+          "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+          "--move-time",
+          "1.5",
+          "--max-plies",
+          "40",
+          "--rules-profile",
+          "server-v3.2.1",
+          "--seed",
+          "42",
+          "127.0.0.1",
+          "5555"
+        ]
+      ],
+      "map_sha256": "4a5bee60b38e3d8741f12d6ca1ac70a2d564a4420196bd11e71af8d90c09e7fe",
+      "started": "2026-10-26T13:45:34.049062+00:00",
+      "move_time": 1.5,
+      "exit_codes": [
+        0,
+        0
+      ],
+      "bots": {
+        "ab8": {
+          "turns": 20,
+          "max_seconds": 1.501,
+          "mean_seconds": 0.5558,
+          "alerts_1_8": 0,
+          "violations_2": 0,
+          "faults": 0,
+          "new_game_failures": 0,
+          "bootstraps": 0,
+          "completed_depths": [
+            7,
+            7,
+            7,
+            8,
+            7,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8
+          ],
+          "ended": true,
+          "bye": true,
+          "species": "vampires",
+          "errors": [],
+          "fallback_occurrences": 0
+        },
+        "ab3": {
+          "turns": 20,
+          "max_seconds": 1.502,
+          "mean_seconds": 0.5992999999999999,
+          "alerts_1_8": 0,
+          "violations_2": 0,
+          "faults": 0,
+          "new_game_failures": 0,
+          "bootstraps": 0,
+          "completed_depths": [
+            7,
+            7,
+            6,
+            6,
+            7,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8
+          ],
+          "ended": true,
+          "bye": true,
+          "species": "werewolves",
+          "errors": [],
+          "fallback_occurrences": 0
+        }
+      },
+      "ui": {
+        "winner": "ab3",
+        "confirmed": true,
+        "populations": {
+          "ab8": 8,
+          "ab3": 9
+        },
+        "observed_order": [
+          "ab8",
+          "ab3"
+        ],
+        "reason": "WPF names winner explicitly"
+      },
+      "directory": "016-ab8-thetrap-40-1",
+      "server_trace_files": [
+        "trace_2026-10-26-14-45-34.txt"
+      ]
+    },
+    {
+      "id": 17,
+      "sha": "dc51ffb79ab1d283fd70bc6a70cfd6b6f7051a56",
+      "map": "testmap2.xml",
+      "max_plies": 40,
+      "order": [
+        "ab3",
+        "ab0"
+      ],
+      "specs": {
+        "ab3": "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+        "ab0": "ab0:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000"
+      },
+      "commands": [
+        [
+          "C:\\Users\\sebju\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+          "-B",
+          "main.py",
+          "--name",
+          "AB3",
+          "--agent",
+          "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+          "--move-time",
+          "1.5",
+          "--max-plies",
+          "40",
+          "--rules-profile",
+          "server-v3.2.1",
+          "--seed",
+          "42",
+          "127.0.0.1",
+          "5555"
+        ],
+        [
+          "C:\\Users\\sebju\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+          "-B",
+          "main.py",
+          "--name",
+          "AB0",
+          "--agent",
+          "ab0:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+          "--move-time",
+          "1.5",
+          "--max-plies",
+          "40",
+          "--rules-profile",
+          "server-v3.2.1",
+          "--seed",
+          "42",
+          "127.0.0.1",
+          "5555"
+        ]
+      ],
+      "map_sha256": "e6d200ed046c62b42f71cfde13f11231bcdc4d7d256c9593938d0b05d55ede10",
+      "started": "2026-10-26T13:46:25.788924+00:00",
+      "move_time": 1.5,
+      "exit_codes": [
+        0,
+        0
+      ],
+      "bots": {
+        "ab3": {
+          "turns": 20,
+          "max_seconds": 1.501,
+          "mean_seconds": 1.2978999999999998,
+          "alerts_1_8": 0,
+          "violations_2": 0,
+          "faults": 0,
+          "new_game_failures": 0,
+          "bootstraps": 0,
+          "completed_depths": [
+            7,
+            7,
+            7,
+            7,
+            6,
+            6,
+            5,
+            6,
+            5,
+            6,
+            6,
+            7,
+            7,
+            7,
+            7,
+            8,
+            7,
+            8,
+            8,
+            8
+          ],
+          "ended": true,
+          "bye": true,
+          "species": "vampires",
+          "errors": [],
+          "fallback_occurrences": 0
+        },
+        "ab0": {
+          "turns": 20,
+          "max_seconds": 0.004,
+          "mean_seconds": 0.0028,
+          "alerts_1_8": 0,
+          "violations_2": 0,
+          "faults": 0,
+          "new_game_failures": 0,
+          "bootstraps": 0,
+          "completed_depths": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "ended": true,
+          "bye": true,
+          "species": "werewolves",
+          "errors": [],
+          "fallback_occurrences": 0
+        }
+      },
+      "ui": {
+        "winner": null,
+        "confirmed": false,
+        "populations": {},
+        "reason": "UI missing"
+      },
+      "directory": "017-ab0-testmap2-40-0",
+      "server_trace_files": [
+        "trace_2026-10-26-14-46-26.txt"
+      ]
+    },
+    {
+      "id": 18,
+      "sha": "dc51ffb79ab1d283fd70bc6a70cfd6b6f7051a56",
+      "map": "testmap2.xml",
+      "max_plies": 40,
+      "order": [
+        "ab0",
+        "ab3"
+      ],
+      "specs": {
+        "ab0": "ab0:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+        "ab3": "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000"
+      },
+      "commands": [
+        [
+          "C:\\Users\\sebju\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+          "-B",
+          "main.py",
+          "--name",
+          "AB0",
+          "--agent",
+          "ab0:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+          "--move-time",
+          "1.5",
+          "--max-plies",
+          "40",
+          "--rules-profile",
+          "server-v3.2.1",
+          "--seed",
+          "42",
+          "127.0.0.1",
+          "5555"
+        ],
+        [
+          "C:\\Users\\sebju\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+          "-B",
+          "main.py",
+          "--name",
+          "AB3",
+          "--agent",
+          "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+          "--move-time",
+          "1.5",
+          "--max-plies",
+          "40",
+          "--rules-profile",
+          "server-v3.2.1",
+          "--seed",
+          "42",
+          "127.0.0.1",
+          "5555"
+        ]
+      ],
+      "map_sha256": "e6d200ed046c62b42f71cfde13f11231bcdc4d7d256c9593938d0b05d55ede10",
+      "started": "2026-10-26T13:50:33.874724+00:00",
+      "move_time": 1.5,
+      "exit_codes": [
+        0,
+        0
+      ],
+      "bots": {
+        "ab0": {
+          "turns": 20,
+          "max_seconds": 0.005,
+          "mean_seconds": 0.0030499999999999998,
+          "alerts_1_8": 0,
+          "violations_2": 0,
+          "faults": 0,
+          "new_game_failures": 0,
+          "bootstraps": 0,
+          "completed_depths": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "ended": true,
+          "bye": true,
+          "species": "vampires",
+          "errors": [],
+          "fallback_occurrences": 0
+        },
+        "ab3": {
+          "turns": 20,
+          "max_seconds": 1.503,
+          "mean_seconds": 1.2641499999999999,
+          "alerts_1_8": 0,
+          "violations_2": 0,
+          "faults": 0,
+          "new_game_failures": 0,
+          "bootstraps": 0,
+          "completed_depths": [
+            6,
+            6,
+            6,
+            6,
+            6,
+            5,
+            5,
+            5,
+            6,
+            6,
+            7,
+            7,
+            7,
+            7,
+            7,
+            8,
+            8,
+            8,
+            8,
+            8
+          ],
+          "ended": true,
+          "bye": true,
+          "species": "werewolves",
+          "errors": [],
+          "fallback_occurrences": 0
+        }
+      },
+      "ui": {
+        "winner": "draw",
+        "confirmed": true,
+        "populations": {
+          "ab0": 16,
+          "ab3": 16
+        },
+        "observed_order": [
+          "ab0",
+          "ab3"
+        ],
+        "reason": "WPF displays draw"
+      },
+      "directory": "018-ab0-testmap2-40-1",
+      "server_trace_files": [
+        "trace_2026-10-26-14-50-34.txt"
+      ]
+    },
+    {
+      "id": 19,
+      "sha": "dc51ffb79ab1d283fd70bc6a70cfd6b6f7051a56",
+      "map": "testmap2.xml",
+      "max_plies": 40,
+      "order": [
+        "ab3",
+        "ab1"
+      ],
+      "specs": {
+        "ab3": "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+        "ab1": "ab1:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000"
+      },
+      "commands": [
+        [
+          "C:\\Users\\sebju\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+          "-B",
+          "main.py",
+          "--name",
+          "AB3",
+          "--agent",
+          "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+          "--move-time",
+          "1.5",
+          "--max-plies",
+          "40",
+          "--rules-profile",
+          "server-v3.2.1",
+          "--seed",
+          "42",
+          "127.0.0.1",
+          "5555"
+        ],
+        [
+          "C:\\Users\\sebju\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+          "-B",
+          "main.py",
+          "--name",
+          "AB1",
+          "--agent",
+          "ab1:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+          "--move-time",
+          "1.5",
+          "--max-plies",
+          "40",
+          "--rules-profile",
+          "server-v3.2.1",
+          "--seed",
+          "42",
+          "127.0.0.1",
+          "5555"
+        ]
+      ],
+      "map_sha256": "e6d200ed046c62b42f71cfde13f11231bcdc4d7d256c9593938d0b05d55ede10",
+      "started": "2026-10-26T13:52:51.577585+00:00",
+      "move_time": 1.5,
+      "exit_codes": [
+        0,
+        0
+      ],
+      "bots": {
+        "ab3": {
+          "turns": 20,
+          "max_seconds": 1.501,
+          "mean_seconds": 1.3007499999999999,
+          "alerts_1_8": 0,
+          "violations_2": 0,
+          "faults": 0,
+          "new_game_failures": 0,
+          "bootstraps": 0,
+          "completed_depths": [
+            7,
+            7,
+            7,
+            6,
+            6,
+            6,
+            5,
+            6,
+            5,
+            6,
+            6,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            8,
+            8,
+            8
+          ],
+          "ended": true,
+          "bye": true,
+          "species": "vampires",
+          "errors": [],
+          "fallback_occurrences": 0
+        },
+        "ab1": {
+          "turns": 20,
+          "max_seconds": 1.502,
+          "mean_seconds": 1.12175,
+          "alerts_1_8": 0,
+          "violations_2": 0,
+          "faults": 0,
+          "new_game_failures": 0,
+          "bootstraps": 0,
+          "completed_depths": [
+            7,
+            7,
+            7,
+            7,
+            6,
+            5,
+            6,
+            6,
+            6,
+            7,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8
+          ],
+          "ended": true,
+          "bye": true,
+          "species": "werewolves",
+          "errors": [],
+          "fallback_occurrences": 0
+        }
+      },
+      "ui": {
+        "winner": "draw",
+        "confirmed": true,
+        "populations": {
+          "ab3": 16,
+          "ab1": 16
+        },
+        "observed_order": [
+          "ab3",
+          "ab1"
+        ],
+        "reason": "WPF displays draw"
+      },
+      "directory": "019-ab1-testmap2-40-0",
+      "server_trace_files": [
+        "trace_2026-10-26-14-52-52.txt"
+      ]
+    },
+    {
+      "id": 20,
+      "sha": "dc51ffb79ab1d283fd70bc6a70cfd6b6f7051a56",
+      "map": "testmap2.xml",
+      "max_plies": 40,
+      "order": [
+        "ab1",
+        "ab3"
+      ],
+      "specs": {
+        "ab1": "ab1:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+        "ab3": "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000"
+      },
+      "commands": [
+        [
+          "C:\\Users\\sebju\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+          "-B",
+          "main.py",
+          "--name",
+          "AB1",
+          "--agent",
+          "ab1:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+          "--move-time",
+          "1.5",
+          "--max-plies",
+          "40",
+          "--rules-profile",
+          "server-v3.2.1",
+          "--seed",
+          "42",
+          "127.0.0.1",
+          "5555"
+        ],
+        [
+          "C:\\Users\\sebju\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+          "-B",
+          "main.py",
+          "--name",
+          "AB3",
+          "--agent",
+          "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+          "--move-time",
+          "1.5",
+          "--max-plies",
+          "40",
+          "--rules-profile",
+          "server-v3.2.1",
+          "--seed",
+          "42",
+          "127.0.0.1",
+          "5555"
+        ]
+      ],
+      "map_sha256": "e6d200ed046c62b42f71cfde13f11231bcdc4d7d256c9593938d0b05d55ede10",
+      "started": "2026-10-26T13:55:19.880722+00:00",
+      "move_time": 1.5,
+      "exit_codes": [
+        0,
+        0
+      ],
+      "bots": {
+        "ab1": {
+          "turns": 20,
+          "max_seconds": 1.502,
+          "mean_seconds": 1.1333499999999999,
+          "alerts_1_8": 0,
+          "violations_2": 0,
+          "faults": 0,
+          "new_game_failures": 0,
+          "bootstraps": 0,
+          "completed_depths": [
+            7,
+            7,
+            7,
+            7,
+            7,
+            6,
+            5,
+            6,
+            6,
+            7,
+            7,
+            7,
+            7,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8
+          ],
+          "ended": true,
+          "bye": true,
+          "species": "vampires",
+          "errors": [],
+          "fallback_occurrences": 0
+        },
+        "ab3": {
+          "turns": 20,
+          "max_seconds": 1.501,
+          "mean_seconds": 1.2541499999999999,
+          "alerts_1_8": 0,
+          "violations_2": 0,
+          "faults": 0,
+          "new_game_failures": 0,
+          "bootstraps": 0,
+          "completed_depths": [
+            6,
+            6,
+            6,
+            6,
+            6,
+            5,
+            5,
+            5,
+            6,
+            6,
+            7,
+            8,
+            8,
+            7,
+            7,
+            7,
+            8,
+            8,
+            8,
+            8
+          ],
+          "ended": true,
+          "bye": true,
+          "species": "werewolves",
+          "errors": [],
+          "fallback_occurrences": 0
+        }
+      },
+      "ui": {
+        "winner": "draw",
+        "confirmed": true,
+        "populations": {
+          "ab1": 16,
+          "ab3": 16
+        },
+        "observed_order": [
+          "ab1",
+          "ab3"
+        ],
+        "reason": "WPF displays draw"
+      },
+      "directory": "020-ab1-testmap2-40-1",
+      "server_trace_files": [
+        "trace_2026-10-26-14-55-20.txt"
+      ]
+    },
+    {
+      "id": 21,
+      "sha": "dc51ffb79ab1d283fd70bc6a70cfd6b6f7051a56",
+      "map": "testmap2.xml",
+      "max_plies": 40,
+      "order": [
+        "ab3",
+        "ab2"
+      ],
+      "specs": {
+        "ab3": "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+        "ab2": "ab2:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000"
+      },
+      "commands": [
+        [
+          "C:\\Users\\sebju\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+          "-B",
+          "main.py",
+          "--name",
+          "AB3",
+          "--agent",
+          "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+          "--move-time",
+          "1.5",
+          "--max-plies",
+          "40",
+          "--rules-profile",
+          "server-v3.2.1",
+          "--seed",
+          "42",
+          "127.0.0.1",
+          "5555"
+        ],
+        [
+          "C:\\Users\\sebju\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+          "-B",
+          "main.py",
+          "--name",
+          "AB2",
+          "--agent",
+          "ab2:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+          "--move-time",
+          "1.5",
+          "--max-plies",
+          "40",
+          "--rules-profile",
+          "server-v3.2.1",
+          "--seed",
+          "42",
+          "127.0.0.1",
+          "5555"
+        ]
+      ],
+      "map_sha256": "e6d200ed046c62b42f71cfde13f11231bcdc4d7d256c9593938d0b05d55ede10",
+      "started": "2026-10-26T13:57:57.520583+00:00",
+      "move_time": 1.5,
+      "exit_codes": [
+        0,
+        0
+      ],
+      "bots": {
+        "ab3": {
+          "turns": 20,
+          "max_seconds": 1.502,
+          "mean_seconds": 1.2987,
+          "alerts_1_8": 0,
+          "violations_2": 0,
+          "faults": 0,
+          "new_game_failures": 0,
+          "bootstraps": 0,
+          "completed_depths": [
+            7,
+            7,
+            7,
+            7,
+            6,
+            6,
+            5,
+            6,
+            5,
+            6,
+            6,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            8,
+            8,
+            8
+          ],
+          "ended": true,
+          "bye": true,
+          "species": "vampires",
+          "errors": [],
+          "fallback_occurrences": 0
+        },
+        "ab2": {
+          "turns": 20,
+          "max_seconds": 1.502,
+          "mean_seconds": 1.06045,
+          "alerts_1_8": 0,
+          "violations_2": 0,
+          "faults": 0,
+          "new_game_failures": 0,
+          "bootstraps": 0,
+          "completed_depths": [
+            7,
+            7,
+            7,
+            7,
+            6,
+            5,
+            6,
+            5,
+            5,
+            7,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8
+          ],
+          "ended": true,
+          "bye": true,
+          "species": "werewolves",
+          "errors": [],
+          "fallback_occurrences": 0
+        }
+      },
+      "ui": {
+        "winner": "draw",
+        "confirmed": true,
+        "populations": {
+          "ab3": 16,
+          "ab2": 16
+        },
+        "observed_order": [
+          "ab3",
+          "ab2"
+        ],
+        "reason": "WPF displays draw"
+      },
+      "directory": "021-ab2-testmap2-40-0",
+      "server_trace_files": [
+        "trace_2026-10-26-14-57-58.txt"
+      ]
+    },
+    {
+      "id": 22,
+      "sha": "dc51ffb79ab1d283fd70bc6a70cfd6b6f7051a56",
+      "map": "testmap2.xml",
+      "max_plies": 40,
+      "order": [
+        "ab2",
+        "ab3"
+      ],
+      "specs": {
+        "ab2": "ab2:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+        "ab3": "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000"
+      },
+      "commands": [
+        [
+          "C:\\Users\\sebju\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+          "-B",
+          "main.py",
+          "--name",
+          "AB2",
+          "--agent",
+          "ab2:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+          "--move-time",
+          "1.5",
+          "--max-plies",
+          "40",
+          "--rules-profile",
+          "server-v3.2.1",
+          "--seed",
+          "42",
+          "127.0.0.1",
+          "5555"
+        ],
+        [
+          "C:\\Users\\sebju\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+          "-B",
+          "main.py",
+          "--name",
+          "AB3",
+          "--agent",
+          "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+          "--move-time",
+          "1.5",
+          "--max-plies",
+          "40",
+          "--rules-profile",
+          "server-v3.2.1",
+          "--seed",
+          "42",
+          "127.0.0.1",
+          "5555"
+        ]
+      ],
+      "map_sha256": "e6d200ed046c62b42f71cfde13f11231bcdc4d7d256c9593938d0b05d55ede10",
+      "started": "2026-10-26T14:00:26.441756+00:00",
+      "move_time": 1.5,
+      "exit_codes": [
+        0,
+        0
+      ],
+      "bots": {
+        "ab2": {
+          "turns": 20,
+          "max_seconds": 1.501,
+          "mean_seconds": 1.0641500000000002,
+          "alerts_1_8": 0,
+          "violations_2": 0,
+          "faults": 0,
+          "new_game_failures": 0,
+          "bootstraps": 0,
+          "completed_depths": [
+            8,
+            7,
+            7,
+            7,
+            7,
+            6,
+            5,
+            7,
+            7,
+            7,
+            7,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8
+          ],
+          "ended": true,
+          "bye": true,
+          "species": "vampires",
+          "errors": [],
+          "fallback_occurrences": 0
+        },
+        "ab3": {
+          "turns": 20,
+          "max_seconds": 1.502,
+          "mean_seconds": 1.24255,
+          "alerts_1_8": 0,
+          "violations_2": 0,
+          "faults": 0,
+          "new_game_failures": 0,
+          "bootstraps": 0,
+          "completed_depths": [
+            7,
+            6,
+            6,
+            6,
+            6,
+            5,
+            5,
+            5,
+            6,
+            6,
+            7,
+            8,
+            8,
+            7,
+            7,
+            7,
+            8,
+            8,
+            8,
+            8
+          ],
+          "ended": true,
+          "bye": true,
+          "species": "werewolves",
+          "errors": [],
+          "fallback_occurrences": 0
+        }
+      },
+      "ui": {
+        "winner": "draw",
+        "confirmed": true,
+        "populations": {
+          "ab2": 16,
+          "ab3": 16
+        },
+        "observed_order": [
+          "ab2",
+          "ab3"
+        ],
+        "reason": "WPF displays draw"
+      },
+      "directory": "022-ab2-testmap2-40-1",
+      "server_trace_files": [
+        "trace_2026-10-26-15-00-27.txt"
+      ]
+    },
+    {
+      "id": 23,
+      "sha": "dc51ffb79ab1d283fd70bc6a70cfd6b6f7051a56",
+      "map": "testmap2.xml",
+      "max_plies": 40,
+      "order": [
+        "ab3",
+        "ab4"
+      ],
+      "specs": {
+        "ab3": "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+        "ab4": "ab4:width=10,depth=2,max_depth=8,extra=4,tt_size=50000,qdepth=2,qwidth=3,aspiration=50000"
+      },
+      "commands": [
+        [
+          "C:\\Users\\sebju\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+          "-B",
+          "main.py",
+          "--name",
+          "AB3",
+          "--agent",
+          "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+          "--move-time",
+          "1.5",
+          "--max-plies",
+          "40",
+          "--rules-profile",
+          "server-v3.2.1",
+          "--seed",
+          "42",
+          "127.0.0.1",
+          "5555"
+        ],
+        [
+          "C:\\Users\\sebju\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+          "-B",
+          "main.py",
+          "--name",
+          "AB4",
+          "--agent",
+          "ab4:width=10,depth=2,max_depth=8,extra=4,tt_size=50000,qdepth=2,qwidth=3,aspiration=50000",
+          "--move-time",
+          "1.5",
+          "--max-plies",
+          "40",
+          "--rules-profile",
+          "server-v3.2.1",
+          "--seed",
+          "42",
+          "127.0.0.1",
+          "5555"
+        ]
+      ],
+      "map_sha256": "e6d200ed046c62b42f71cfde13f11231bcdc4d7d256c9593938d0b05d55ede10",
+      "started": "2026-10-26T14:02:38.358941+00:00",
+      "move_time": 1.5,
+      "exit_codes": [
+        0,
+        0
+      ],
+      "bots": {
+        "ab3": {
+          "turns": 20,
+          "max_seconds": 1.502,
+          "mean_seconds": 1.30995,
+          "alerts_1_8": 0,
+          "violations_2": 0,
+          "faults": 0,
+          "new_game_failures": 0,
+          "bootstraps": 0,
+          "completed_depths": [
+            7,
+            7,
+            7,
+            7,
+            6,
+            6,
+            5,
+            6,
+            5,
+            6,
+            6,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            8,
+            8,
+            8
+          ],
+          "ended": true,
+          "bye": true,
+          "species": "vampires",
+          "errors": [],
+          "fallback_occurrences": 0
+        },
+        "ab4": {
+          "turns": 20,
+          "max_seconds": 1.503,
+          "mean_seconds": 1.3171,
+          "alerts_1_8": 0,
+          "violations_2": 0,
+          "faults": 0,
+          "new_game_failures": 0,
+          "bootstraps": 0,
+          "completed_depths": [
+            5,
+            5,
+            5,
+            5,
+            5,
+            4,
+            4,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            8,
+            8,
+            8
+          ],
+          "ended": true,
+          "bye": true,
+          "species": "werewolves",
+          "errors": [],
+          "fallback_occurrences": 0
+        }
+      },
+      "ui": {
+        "winner": "draw",
+        "confirmed": true,
+        "populations": {
+          "ab3": 16,
+          "ab4": 16
+        },
+        "observed_order": [
+          "ab3",
+          "ab4"
+        ],
+        "reason": "WPF displays draw"
+      },
+      "directory": "023-ab4-testmap2-40-0",
+      "server_trace_files": [
+        "trace_2026-10-26-15-02-39.txt"
+      ]
+    },
+    {
+      "id": 24,
+      "sha": "dc51ffb79ab1d283fd70bc6a70cfd6b6f7051a56",
+      "map": "testmap2.xml",
+      "max_plies": 40,
+      "order": [
+        "ab4",
+        "ab3"
+      ],
+      "specs": {
+        "ab4": "ab4:width=10,depth=2,max_depth=8,extra=4,tt_size=50000,qdepth=2,qwidth=3,aspiration=50000",
+        "ab3": "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000"
+      },
+      "commands": [
+        [
+          "C:\\Users\\sebju\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+          "-B",
+          "main.py",
+          "--name",
+          "AB4",
+          "--agent",
+          "ab4:width=10,depth=2,max_depth=8,extra=4,tt_size=50000,qdepth=2,qwidth=3,aspiration=50000",
+          "--move-time",
+          "1.5",
+          "--max-plies",
+          "40",
+          "--rules-profile",
+          "server-v3.2.1",
+          "--seed",
+          "42",
+          "127.0.0.1",
+          "5555"
+        ],
+        [
+          "C:\\Users\\sebju\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+          "-B",
+          "main.py",
+          "--name",
+          "AB3",
+          "--agent",
+          "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+          "--move-time",
+          "1.5",
+          "--max-plies",
+          "40",
+          "--rules-profile",
+          "server-v3.2.1",
+          "--seed",
+          "42",
+          "127.0.0.1",
+          "5555"
+        ]
+      ],
+      "map_sha256": "e6d200ed046c62b42f71cfde13f11231bcdc4d7d256c9593938d0b05d55ede10",
+      "started": "2026-10-26T14:04:56.630890+00:00",
+      "move_time": 1.5,
+      "exit_codes": [
+        0,
+        0
+      ],
+      "bots": {
+        "ab4": {
+          "turns": 20,
+          "max_seconds": 1.503,
+          "mean_seconds": 1.35645,
+          "alerts_1_8": 0,
+          "violations_2": 0,
+          "faults": 0,
+          "new_game_failures": 0,
+          "bootstraps": 0,
+          "completed_depths": [
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            4,
+            4,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5,
+            5,
+            6,
+            5,
+            8,
+            8,
+            8
+          ],
+          "ended": true,
+          "bye": true,
+          "species": "vampires",
+          "errors": [],
+          "fallback_occurrences": 0
+        },
+        "ab3": {
+          "turns": 20,
+          "max_seconds": 1.502,
+          "mean_seconds": 1.25765,
+          "alerts_1_8": 0,
+          "violations_2": 0,
+          "faults": 0,
+          "new_game_failures": 0,
+          "bootstraps": 0,
+          "completed_depths": [
+            7,
+            7,
+            6,
+            6,
+            6,
+            5,
+            5,
+            5,
+            5,
+            5,
+            7,
+            7,
+            7,
+            7,
+            8,
+            7,
+            8,
+            8,
+            8,
+            8
+          ],
+          "ended": true,
+          "bye": true,
+          "species": "werewolves",
+          "errors": [],
+          "fallback_occurrences": 0
+        }
+      },
+      "ui": {
+        "winner": "draw",
+        "confirmed": true,
+        "populations": {
+          "ab4": 16,
+          "ab3": 16
+        },
+        "observed_order": [
+          "ab4",
+          "ab3"
+        ],
+        "reason": "WPF displays draw"
+      },
+      "directory": "024-ab4-testmap2-40-1",
+      "server_trace_files": [
+        "trace_2026-10-26-15-04-57.txt"
+      ]
+    },
+    {
+      "id": 25,
+      "sha": "dc51ffb79ab1d283fd70bc6a70cfd6b6f7051a56",
+      "map": "testmap2.xml",
+      "max_plies": 40,
+      "order": [
+        "ab3",
+        "ab5"
+      ],
+      "specs": {
+        "ab3": "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+        "ab5": "ab5:width=10,depth=2,max_depth=8,extra=4,tt_size=50000,qdepth=2,qwidth=3,aspiration=50000"
+      },
+      "commands": [
+        [
+          "C:\\Users\\sebju\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+          "-B",
+          "main.py",
+          "--name",
+          "AB3",
+          "--agent",
+          "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+          "--move-time",
+          "1.5",
+          "--max-plies",
+          "40",
+          "--rules-profile",
+          "server-v3.2.1",
+          "--seed",
+          "42",
+          "127.0.0.1",
+          "5555"
+        ],
+        [
+          "C:\\Users\\sebju\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+          "-B",
+          "main.py",
+          "--name",
+          "AB5",
+          "--agent",
+          "ab5:width=10,depth=2,max_depth=8,extra=4,tt_size=50000,qdepth=2,qwidth=3,aspiration=50000",
+          "--move-time",
+          "1.5",
+          "--max-plies",
+          "40",
+          "--rules-profile",
+          "server-v3.2.1",
+          "--seed",
+          "42",
+          "127.0.0.1",
+          "5555"
+        ]
+      ],
+      "map_sha256": "e6d200ed046c62b42f71cfde13f11231bcdc4d7d256c9593938d0b05d55ede10",
+      "started": "2026-10-26T14:07:16.602447+00:00",
+      "move_time": 1.5,
+      "exit_codes": [
+        0,
+        0
+      ],
+      "bots": {
+        "ab3": {
+          "turns": 20,
+          "max_seconds": 1.502,
+          "mean_seconds": 1.3103,
+          "alerts_1_8": 0,
+          "violations_2": 0,
+          "faults": 0,
+          "new_game_failures": 0,
+          "bootstraps": 0,
+          "completed_depths": [
+            7,
+            7,
+            7,
+            6,
+            6,
+            6,
+            5,
+            6,
+            5,
+            6,
+            6,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            8,
+            8,
+            8
+          ],
+          "ended": true,
+          "bye": true,
+          "species": "vampires",
+          "errors": [],
+          "fallback_occurrences": 0
+        },
+        "ab5": {
+          "turns": 20,
+          "max_seconds": 1.502,
+          "mean_seconds": 1.31955,
+          "alerts_1_8": 0,
+          "violations_2": 0,
+          "faults": 0,
+          "new_game_failures": 0,
+          "bootstraps": 0,
+          "completed_depths": [
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            3,
+            2,
+            3,
+            3,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            8,
+            8,
+            8
+          ],
+          "ended": true,
+          "bye": true,
+          "species": "werewolves",
+          "errors": [],
+          "fallback_occurrences": 0
+        }
+      },
+      "ui": {
+        "winner": "draw",
+        "confirmed": true,
+        "populations": {
+          "ab3": 16,
+          "ab5": 16
+        },
+        "observed_order": [
+          "ab3",
+          "ab5"
+        ],
+        "reason": "WPF displays draw"
+      },
+      "directory": "025-ab5-testmap2-40-0",
+      "server_trace_files": [
+        "trace_2026-10-26-15-07-17.txt"
+      ]
+    },
+    {
+      "id": 26,
+      "sha": "dc51ffb79ab1d283fd70bc6a70cfd6b6f7051a56",
+      "map": "testmap2.xml",
+      "max_plies": 40,
+      "order": [
+        "ab5",
+        "ab3"
+      ],
+      "specs": {
+        "ab5": "ab5:width=10,depth=2,max_depth=8,extra=4,tt_size=50000,qdepth=2,qwidth=3,aspiration=50000",
+        "ab3": "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000"
+      },
+      "commands": [
+        [
+          "C:\\Users\\sebju\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+          "-B",
+          "main.py",
+          "--name",
+          "AB5",
+          "--agent",
+          "ab5:width=10,depth=2,max_depth=8,extra=4,tt_size=50000,qdepth=2,qwidth=3,aspiration=50000",
+          "--move-time",
+          "1.5",
+          "--max-plies",
+          "40",
+          "--rules-profile",
+          "server-v3.2.1",
+          "--seed",
+          "42",
+          "127.0.0.1",
+          "5555"
+        ],
+        [
+          "C:\\Users\\sebju\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+          "-B",
+          "main.py",
+          "--name",
+          "AB3",
+          "--agent",
+          "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+          "--move-time",
+          "1.5",
+          "--max-plies",
+          "40",
+          "--rules-profile",
+          "server-v3.2.1",
+          "--seed",
+          "42",
+          "127.0.0.1",
+          "5555"
+        ]
+      ],
+      "map_sha256": "e6d200ed046c62b42f71cfde13f11231bcdc4d7d256c9593938d0b05d55ede10",
+      "started": "2026-10-26T14:10:16.700730+00:00",
+      "move_time": 1.5,
+      "exit_codes": [
+        0,
+        0
+      ],
+      "bots": {
+        "ab5": {
+          "turns": 20,
+          "max_seconds": 1.501,
+          "mean_seconds": 1.3561,
+          "alerts_1_8": 0,
+          "violations_2": 0,
+          "faults": 0,
+          "new_game_failures": 0,
+          "bootstraps": 0,
+          "completed_depths": [
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            3,
+            3,
+            2,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            5,
+            5,
+            8,
+            8,
+            8
+          ],
+          "ended": true,
+          "bye": true,
+          "species": "vampires",
+          "errors": [],
+          "fallback_occurrences": 0
+        },
+        "ab3": {
+          "turns": 20,
+          "max_seconds": 1.502,
+          "mean_seconds": 1.2501,
+          "alerts_1_8": 0,
+          "violations_2": 0,
+          "faults": 0,
+          "new_game_failures": 0,
+          "bootstraps": 0,
+          "completed_depths": [
+            6,
+            6,
+            7,
+            6,
+            6,
+            5,
+            5,
+            5,
+            5,
+            5,
+            6,
+            7,
+            8,
+            7,
+            8,
+            7,
+            8,
+            8,
+            8,
+            8
+          ],
+          "ended": true,
+          "bye": true,
+          "species": "werewolves",
+          "errors": [],
+          "fallback_occurrences": 0
+        }
+      },
+      "ui": {
+        "winner": null,
+        "confirmed": false,
+        "populations": {},
+        "reason": "UI missing"
+      },
+      "directory": "026-ab5-testmap2-40-1",
+      "server_trace_files": []
+    }
+  ],
+  "architectures": {
+    "ab3": {
+      "games": 26,
+      "confirmed": 17,
+      "wins": 5,
+      "losses": 4,
+      "draws": 8,
+      "max_seconds": 1.503,
+      "faults": 0,
+      "alerts_1_8": 0,
+      "violations_2": 0,
+      "bootstraps": 0,
+      "fallback_occurrences": 0,
+      "turns": 509,
+      "total_seconds": 450.11499999999995,
+      "abnormal_sessions": 0,
+      "errors": [],
+      "mean_seconds": 0.884312377210216
+    },
+    "ab0": {
+      "games": 4,
+      "confirmed": 2,
+      "wins": 0,
+      "losses": 1,
+      "draws": 1,
+      "max_seconds": 0.007,
+      "faults": 0,
+      "alerts_1_8": 0,
+      "violations_2": 0,
+      "bootstraps": 0,
+      "fallback_occurrences": 0,
+      "turns": 78,
+      "total_seconds": 0.192,
+      "abnormal_sessions": 0,
+      "errors": [],
+      "mean_seconds": 0.0024615384615384616
+    },
+    "ab1": {
+      "games": 4,
+      "confirmed": 3,
+      "wins": 1,
+      "losses": 0,
+      "draws": 2,
+      "max_seconds": 1.502,
+      "faults": 0,
+      "alerts_1_8": 0,
+      "violations_2": 0,
+      "bootstraps": 0,
+      "fallback_occurrences": 0,
+      "turns": 78,
+      "total_seconds": 69.008,
+      "abnormal_sessions": 0,
+      "errors": [],
+      "mean_seconds": 0.8847179487179486
+    },
+    "ab2": {
+      "games": 4,
+      "confirmed": 4,
+      "wins": 1,
+      "losses": 1,
+      "draws": 2,
+      "max_seconds": 1.502,
+      "faults": 0,
+      "alerts_1_8": 0,
+      "violations_2": 0,
+      "bootstraps": 0,
+      "fallback_occurrences": 0,
+      "turns": 80,
+      "total_seconds": 62.202,
+      "abnormal_sessions": 0,
+      "errors": [],
+      "mean_seconds": 0.777525
+    },
+    "ab4": {
+      "games": 4,
+      "confirmed": 2,
+      "wins": 0,
+      "losses": 0,
+      "draws": 2,
+      "max_seconds": 1.503,
+      "faults": 0,
+      "alerts_1_8": 0,
+      "violations_2": 0,
+      "bootstraps": 0,
+      "fallback_occurrences": 0,
+      "turns": 80,
+      "total_seconds": 82.062,
+      "abnormal_sessions": 0,
+      "errors": [],
+      "mean_seconds": 1.0257749999999999
+    },
+    "ab5": {
+      "games": 4,
+      "confirmed": 1,
+      "wins": 0,
+      "losses": 0,
+      "draws": 1,
+      "max_seconds": 1.502,
+      "faults": 0,
+      "alerts_1_8": 0,
+      "violations_2": 0,
+      "bootstraps": 0,
+      "fallback_occurrences": 0,
+      "turns": 80,
+      "total_seconds": 85.24799999999999,
+      "abnormal_sessions": 0,
+      "errors": [],
+      "mean_seconds": 1.0655999999999999
+    },
+    "ab6": {
+      "games": 2,
+      "confirmed": 1,
+      "wins": 1,
+      "losses": 0,
+      "draws": 0,
+      "max_seconds": 1.501,
+      "faults": 0,
+      "alerts_1_8": 0,
+      "violations_2": 0,
+      "bootstraps": 0,
+      "fallback_occurrences": 0,
+      "turns": 35,
+      "total_seconds": 52.021,
+      "abnormal_sessions": 0,
+      "errors": [],
+      "mean_seconds": 1.4863142857142857
+    },
+    "ab7": {
+      "games": 2,
+      "confirmed": 2,
+      "wins": 1,
+      "losses": 1,
+      "draws": 0,
+      "max_seconds": 1.502,
+      "faults": 0,
+      "alerts_1_8": 0,
+      "violations_2": 0,
+      "bootstraps": 0,
+      "fallback_occurrences": 0,
+      "turns": 40,
+      "total_seconds": 24.93,
+      "abnormal_sessions": 0,
+      "errors": [],
+      "mean_seconds": 0.62325
+    },
+    "ab8": {
+      "games": 2,
+      "confirmed": 2,
+      "wins": 0,
+      "losses": 2,
+      "draws": 0,
+      "max_seconds": 1.501,
+      "faults": 0,
+      "alerts_1_8": 0,
+      "violations_2": 0,
+      "bootstraps": 0,
+      "fallback_occurrences": 0,
+      "turns": 39,
+      "total_seconds": 20.232,
+      "abnormal_sessions": 0,
+      "errors": [],
+      "mean_seconds": 0.5187692307692308
+    }
+  }
+}
