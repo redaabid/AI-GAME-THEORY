@@ -41,15 +41,17 @@ def configurations(name):
     return result
 
 
-def play(initial, candidate, candidate_species, *, budget, max_plies, seed):
+def play(initial, candidate, candidate_species, *, budget, max_plies, seed,
+         reference='alphabeta:width=10,max_depth=8'):
     agents = {candidate_species: make_agent(candidate),
-              opponent(candidate_species): make_agent('alphabeta:width=10,max_depth=8')}
+              opponent(candidate_species): make_agent(reference)}
     for species, agent in agents.items():
         agent.new_game(initial, species, seed)
     position = initial
     histories = {s: [] for s in agents}
     rng = random.Random(seed)
     timings, faults, bootstraps, late = [], [], 0, 0
+    reference_faults = []
     details = []
     while (outcome := get_outcome(position, max_plies=max_plies)) is None:
         species = position.to_play
@@ -65,6 +67,8 @@ def play(initial, candidate, candidate_species, *, budget, max_plies, seed):
             info = agents[species].info or {}
             bootstraps += bool(info.get('bootstrap'))
             details.append(info)
+        elif fault:
+            reference_faults.append(fault)
         histories[species].append((position, moves))
         position = simulate_turn(position, moves, rng)
     totals = {s: sum(getattr(c, s) for c in position.cells.values()) for s in agents}
@@ -72,7 +76,8 @@ def play(initial, candidate, candidate_species, *, budget, max_plies, seed):
     return dict(score=score, winner=outcome.winner, reason=outcome.reason,
                 plies=position.ply, candidate_species=candidate_species, seed=seed,
                 final_populations=totals, seconds=timings, faults=faults,
-                bootstraps=bootstraps, late=late, metrics=details)
+                bootstraps=bootstraps, late=late, metrics=details,
+                reference_faults=reference_faults)
 
 
 def evaluate(candidate, seeds, budget, max_plies):

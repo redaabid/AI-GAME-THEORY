@@ -79,6 +79,18 @@ Use `scripts/summarize_ab_server.py ROOT --max-plies 40` for the separate
 the comparison. Eight initial WPF verdicts remain unconfirmed; unknowns are
 neither draws nor losses. The existing agents remain untouched.
 
+An additional AB7 weight-only screen is implemented in
+`scripts/tune_ab7_weights.py`. It freezes the selected AB3 search parameters,
+screens ten settings on 60 training games, and evaluates the baseline plus two
+finalists on 24 games on different generated maps (all capped at 40 plies).
+On the 26 October run, discount=0.97 instead of 0.90 scored 0.625 (2 wins,
+6 draws, no losses) versus 0.500 (1 win, 6 draws, 1 loss) for the AB3 control.
+An untimed depth-2 probe found a different move on 1/12 additional positions.
+The profile is distinct and promising, with only eight validation games and
+a 0.2-second budget; superiority at the server budget is unproven. The original
+AB7 selection and WPF results are preserved. The new profile requires a separate
+explicit spec from `ab7-candidate.json`; no WPF or 200-ply test was resumed.
+
 Tests include an independently enumerated tiny minimax tree, TT/PVS/MTD equality,
 game-cap cache isolation, expired budgets, quiescence execution, probability mass,
 unconditional survivor means, extinction mass and joint arrivals. Run:
