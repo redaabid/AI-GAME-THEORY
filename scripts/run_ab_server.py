@@ -52,8 +52,10 @@ def main():
     p.add_argument('--output', type=Path, required=True)
     p.add_argument('--move-time', type=float, default=1.5)
     p.add_argument('--ui-timeout', type=float, default=180)
-    p.add_argument('--max-games', type=int, default=64)
+    p.add_argument('--max-games', type=int, default=32)
     p.add_argument('--offset', type=int, default=0)
+    p.add_argument('--allow-200', action='store_true',
+                   help='Explicitly enable the separate 200-ply phase')
     args = p.parse_args()
     args.output.mkdir(parents=True, exist_ok=True)
     selection = json.loads(args.selection.read_text(encoding='utf8'))
@@ -61,6 +63,9 @@ def main():
     jobs = [(n, m, plays, reverse) for plays in (40, 200)
             for m in ('thetrap.xml', 'testmap2.xml')
             for n in specs if n != 'ab3' for reverse in (False, True)]
+    requested = jobs[args.offset:args.offset + args.max_games]
+    if any(job[2] == 200 for job in requested) and not args.allow_200:
+        p.error('The 200-ply phase is paused; an explicit --allow-200 is required')
     sha = subprocess.check_output(['git', '-c', 'safe.directory=*', 'rev-parse', 'HEAD'],
                                   cwd=ROOT, text=True).strip()
     for index, (challenger, map_name, plays, reverse) in enumerate(jobs):

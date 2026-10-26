@@ -61,8 +61,11 @@ def summarize(root):
 def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument('root', type=Path)
+    p.add_argument('--max-plies', type=int, help='Restrict comparison to one server ply cap')
     args = p.parse_args()
     attempts = summarize(args.root)
+    if args.max_plies is not None:
+        attempts = [r for r in attempts if r['max_plies'] == args.max_plies]
     selected = {}
     # Keep every attempt; count each condition once, preferring explicit WPF evidence.
     for row in sorted(attempts, key=lambda r: (r['ui']['confirmed'], r['started'])):
@@ -119,8 +122,9 @@ def main():
                  'ne constitue pas une ablation isolant chaque optimisation. Le hasard du serveur '
                  'n’est pas contrôlé par --seed. Les temps imprimés sont arrondis à trois décimales '
                  'et ne remplacent pas une mesure de l’horloge interne du serveur.'])
-    (args.root/'SUMMARY.md').write_text('\n\n'.join(text)+'\n', encoding='utf8')
-    (args.root/'aggregate.json').write_text(json.dumps(dict(
+    suffix = f'-{args.max_plies}' if args.max_plies is not None else ''
+    (args.root/f'SUMMARY{suffix}.md').write_text('\n\n'.join(text)+'\n', encoding='utf8')
+    (args.root/f'aggregate{suffix}.json').write_text(json.dumps(dict(
         generated=datetime.now(timezone.utc).isoformat(), games=rows, attempts=attempts,
         architectures=aggregate), indent=2), encoding='utf8')
     print(json.dumps(dict(completed=len(rows), confirmed=sum(r['ui']['confirmed'] for r in rows),

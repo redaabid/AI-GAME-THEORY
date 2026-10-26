@@ -71,6 +71,14 @@ keeps raw bot logs and server traces, and waits for `ui-evidence.json` after eac
 game. A separate UI observer must capture the actual WPF result; a simulator
 prediction is not a substitute. With no observer, results remain unconfirmed.
 
+The default campaign is now limited to the 32 conditions at 40 plies. The user
+paused the 200-ply phase pending comparison and selection. Scheduling any
+200-ply job requires an explicit `--allow-200`; do not resume it automatically.
+Use `scripts/summarize_ab_server.py ROOT --max-plies 40` for the separate
+`SUMMARY-40.md` and `aggregate-40.json`, so later attempts do not contaminate
+the comparison. Eight initial WPF verdicts remain unconfirmed; unknowns are
+neither draws nor losses. The existing agents remain untouched.
+
 Tests include an independently enumerated tiny minimax tree, TT/PVS/MTD equality,
 game-cap cache isolation, expired budgets, quiescence execution, probability mass,
 unconditional survivor means, extinction mass and joint arrivals. Run:

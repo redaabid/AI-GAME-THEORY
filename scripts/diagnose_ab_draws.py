@@ -62,13 +62,15 @@ def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument('root', type=Path)
     p.add_argument('runtime', type=Path)
+    p.add_argument('--max-plies', type=int)
     args = p.parse_args()
-    aggregate = json.loads((args.root/'aggregate.json').read_text(encoding='utf8'))
+    suffix = f'-{args.max_plies}' if args.max_plies is not None else ''
+    aggregate = json.loads((args.root/f'aggregate{suffix}.json').read_text(encoding='utf8'))
     records = [analyze(game, args.root, args.runtime) for game in aggregate['games']]
     output = dict(note='States are reconstructed before each MOV from server UPDs. '
                   'The last observation precedes the final move and is not a substitute for the WPF final result. '
                   'A repeated state includes the player to move. No winner is inferred.', games=records)
-    (args.root/'draw-diagnostics.json').write_text(json.dumps(output, indent=2), encoding='utf8')
+    (args.root/f'draw-diagnostics{suffix}.json').write_text(json.dumps(output, indent=2), encoding='utf8')
     print(json.dumps([dict(id=r['id'], cap=r.get('max_plies'), reached_cap=r.get('reached_cap'),
                            repeats=r.get('repeated_states'), winner=r.get('ui_winner')) for r in records]))
 
