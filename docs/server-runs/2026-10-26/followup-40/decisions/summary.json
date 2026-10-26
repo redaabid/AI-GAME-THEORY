@@ -1,0 +1,101 @@
+{
+  "depth": 2,
+  "max_plies": 40,
+  "deadline": null,
+  "source_sha": "13344e6ad4a3d5a4b7159e26e81c19056fd49677",
+  "summary": {
+    "common": {
+      "ab0": {
+        "different_from_ab3": 3,
+        "faults": 0
+      },
+      "ab1": {
+        "different_from_ab3": 3,
+        "faults": 0
+      },
+      "ab2": {
+        "different_from_ab3": 3,
+        "faults": 0
+      },
+      "ab3": {
+        "different_from_ab3": 0,
+        "faults": 0
+      },
+      "ab4": {
+        "different_from_ab3": 0,
+        "faults": 0
+      },
+      "ab5": {
+        "different_from_ab3": 1,
+        "faults": 0
+      },
+      "ab6": {
+        "different_from_ab3": 0,
+        "faults": 0
+      },
+      "ab7": {
+        "different_from_ab3": 0,
+        "faults": 0
+      },
+      "ab8": {
+        "different_from_ab3": 3,
+        "faults": 0
+      },
+      "ab7_new": {
+        "different_from_ab3": 1,
+        "faults": 0
+      },
+      "legacy": {
+        "different_from_ab3": 7,
+        "faults": 0
+      }
+    },
+    "selected": {
+      "ab0": {
+        "different_from_ab3": 3,
+        "faults": 0
+      },
+      "ab1": {
+        "different_from_ab3": 3,
+        "faults": 0
+      },
+      "ab2": {
+        "different_from_ab3": 3,
+        "faults": 0
+      },
+      "ab3": {
+        "different_from_ab3": 0,
+        "faults": 0
+      },
+      "ab4": {
+        "different_from_ab3": 1,
+        "faults": 0
+      },
+      "ab5": {
+        "different_from_ab3": 2,
+        "faults": 0
+      },
+      "ab6": {
+        "different_from_ab3": 0,
+        "faults": 0
+      },
+      "ab7": {
+        "different_from_ab3": 0,
+        "faults": 0
+      },
+      "ab8": {
+        "different_from_ab3": 3,
+        "faults": 0
+      },
+      "ab7_new": {
+        "different_from_ab3": 1,
+        "faults": 0
+      },
+      "legacy": {
+        "different_from_ab3": 7,
+        "faults": 0
+      }
+    }
+  },
+  "note": "Fixed depth is not equal time. Quiescence extends AB5 and chance changes AB6 semantics. Equal moves are expected for search optimizations on the same tree; tie choices can differ. Values from the legacy agent use a different scale and are not compared numerically."
+}

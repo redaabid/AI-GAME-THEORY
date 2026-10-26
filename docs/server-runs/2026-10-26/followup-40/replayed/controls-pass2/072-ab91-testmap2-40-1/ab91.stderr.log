@@ -1,0 +1,26 @@
+INFO: Connected to 127.0.0.1:5555 as AB91
+INFO: Rules profile: server-v3.2.1
+INFO: Agent: baseline
+INFO: Board: 29 columns x 15 rows; playing vampires
+INFO: Turn 1: [(28, 14, 10, 27, 13)] (0.001 seconds)
+INFO: Turn 2: [(27, 13, 10, 26, 12)] (0.000 seconds)
+INFO: Turn 3: [(26, 12, 10, 25, 11)] (0.000 seconds)
+INFO: Turn 4: [(25, 11, 10, 24, 10)] (0.000 seconds)
+INFO: Turn 5: [(24, 10, 10, 23, 9)] (0.000 seconds)
+INFO: Turn 6: [(23, 9, 10, 22, 8)] (0.000 seconds)
+INFO: Turn 7: [(22, 8, 10, 21, 8)] (0.001 seconds)
+INFO: Turn 8: [(21, 8, 10, 20, 9)] (0.000 seconds)
+INFO: Turn 9: [(20, 9, 10, 19, 10)] (0.000 seconds)
+INFO: Turn 10: [(19, 10, 10, 18, 11)] (0.000 seconds)
+INFO: Turn 11: [(18, 11, 14, 18, 10)] (0.000 seconds)
+INFO: Turn 12: [(18, 10, 14, 19, 9)] (0.000 seconds)
+INFO: Turn 13: [(19, 9, 14, 20, 8)] (0.000 seconds)
+INFO: Turn 14: [(20, 8, 14, 21, 7)] (0.000 seconds)
+INFO: Turn 15: [(21, 7, 14, 22, 6)] (0.000 seconds)
+INFO: Turn 16: [(22, 6, 14, 23, 5)] (0.000 seconds)
+INFO: Turn 17: [(23, 5, 14, 24, 4)] (0.000 seconds)
+INFO: Turn 18: [(24, 4, 14, 25, 3)] (0.000 seconds)
+INFO: Turn 19: [(25, 3, 14, 26, 2)] (0.001 seconds)
+INFO: Turn 20: [(26, 2, 14, 27, 1)] (0.000 seconds)
+INFO: Game ended; waiting for the next game.
+INFO: Server finished the session.

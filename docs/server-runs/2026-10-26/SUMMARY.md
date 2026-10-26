@@ -1,5 +1,8 @@
 # AB0–AB8 — validation locale du 26 octobre 2026
 
+> Mise à jour : les huit conditions sans verdict ont été rejouées, et six contrôles ont été ajoutés. Voir le [comparatif complété et le diagnostic des nuls](followup-40/SUMMARY.md). Le tableau ci-dessous conserve l'état préliminaire de la campagne.
+
+
 **32/32 conditions terminées**, 24 résultats explicitement confirmés par WPF. 32 tentatives de parties conservées, sans compter les échecs de lancement.
 
 Contrôle de fonctionnement : **0 Agent fault**, **0 occurrences de fallback**, **0 coups >1,8 s**, **0 coups >2 s**. Maximum imprimé : **1.506 s**. Secours internes faute d’itération terminée : **0**.

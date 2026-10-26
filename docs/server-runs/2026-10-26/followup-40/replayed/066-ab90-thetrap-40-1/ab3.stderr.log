@@ -1,0 +1,8 @@
+INFO: Connected to 127.0.0.1:5555 as AB3
+INFO: Rules profile: server-v3.2.1
+INFO: Agent: ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000
+INFO: Board: 10 columns x 5 rows; playing werewolves
+INFO: AB_METRICS {"bootstrap": false, "chance_cutoffs": 0, "chance_outcomes": 0, "cutoffs": 492, "deadline_reached": false, "depth": 8, "features": {"aspiration": false, "chance": false, "history": true, "iterative": true, "mtd": false, "ordering": true, "pvs": false, "quiescence": false, "selective": true, "tt": true, "tuned": false}, "generated": 2258, "nodes": 2048, "passes": 0, "plan_cache_hits": 414, "profile": "ab3", "qnodes": 0, "researches": 0, "seconds": 0.5502207000008639, "tt_hits": 485, "value": 1000000}
+INFO: Turn 1: [(4, 1, 4, 3, 2)] (0.552 seconds)
+INFO: Game ended; waiting for the next game.
+INFO: Server finished the session.

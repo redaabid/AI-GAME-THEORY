@@ -1,0 +1,114 @@
+{
+  "id": 67,
+  "sha": "8dac75966eb22984a48f5ad5e47bc5c2142b4696",
+  "map": "testmap2.xml",
+  "max_plies": 40,
+  "order": [
+    "ab3",
+    "ab90"
+  ],
+  "specs": {
+    "ab3": "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+    "ab90": "alphabeta"
+  },
+  "commands": [
+    [
+      "C:\\Users\\sebju\\miniconda3\\python.exe",
+      "-B",
+      "main.py",
+      "--name",
+      "AB3",
+      "--agent",
+      "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+      "--move-time",
+      "1.5",
+      "--max-plies",
+      "40",
+      "--rules-profile",
+      "server-v3.2.1",
+      "--seed",
+      "42",
+      "127.0.0.1",
+      "5555"
+    ],
+    [
+      "C:\\Users\\sebju\\miniconda3\\python.exe",
+      "-B",
+      "main.py",
+      "--name",
+      "AB90",
+      "--agent",
+      "alphabeta",
+      "--move-time",
+      "1.5",
+      "--max-plies",
+      "40",
+      "--rules-profile",
+      "server-v3.2.1",
+      "--seed",
+      "42",
+      "127.0.0.1",
+      "5555"
+    ]
+  ],
+  "map_sha256": "e6d200ed046c62b42f71cfde13f11231bcdc4d7d256c9593938d0b05d55ede10",
+  "started": "2026-10-26T21:48:21.778823+00:00",
+  "move_time": 1.5,
+  "exit_codes": [
+    0,
+    0
+  ],
+  "bots": {
+    "ab3": {
+      "turns": 20,
+      "max_seconds": 1.502,
+      "mean_seconds": 1.3149,
+      "alerts_1_8": 0,
+      "violations_2": 0,
+      "faults": 0,
+      "new_game_failures": 0,
+      "bootstraps": 0,
+      "completed_depths": [
+        7,
+        7,
+        7,
+        7,
+        6,
+        6,
+        5,
+        5,
+        5,
+        5,
+        6,
+        6,
+        7,
+        7,
+        7,
+        6,
+        7,
+        8,
+        8,
+        8
+      ],
+      "ended": true,
+      "bye": true,
+      "species": "vampires",
+      "errors": []
+    },
+    "ab90": {
+      "turns": 20,
+      "max_seconds": 1.503,
+      "mean_seconds": 1.14245,
+      "alerts_1_8": 0,
+      "violations_2": 0,
+      "faults": 0,
+      "new_game_failures": 0,
+      "bootstraps": 0,
+      "completed_depths": [],
+      "ended": true,
+      "bye": true,
+      "species": "werewolves",
+      "errors": []
+    }
+  }
+}
