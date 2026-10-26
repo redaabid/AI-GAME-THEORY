@@ -142,3 +142,9 @@ Les valeurs temporelles viennent des lignes Turn et sont arrondies à trois déc
 Le push a reçu HTTP 403 : `Permission to redaabid/AI-GAME-THEORY.git denied to Juliansaiani`. Reda doit accorder les droits de collaboration à ce compte. Le travail est conservé localement sur les branches dédiées ; ce rapport ne constitue pas une preuve de publication distante. Aucun commit n’utilise de trailer Co-authored-by. Aucun binaire, DLL ou archive du professeur n’est inclus dans les résultats. Les fichiers bruts JSON/log/config et les tests sont conservés.
 
 Les empreintes de tous les fichiers de ce dossier sont dans `SHA256SUMS.txt`.
+
+## Nouveau réglage AB7 après le comparatif à 40 coups
+
+Le profil AB7 du comparatif ci-dessus utilisait les mêmes poids que AB3. Une recherche ultérieure a testé dix réglages de poids avec la recherche AB3 figée : 60 parties simulées d'entraînement, puis 24 de validation sur d'autres cartes générées. Le candidat discount=0,97 (au lieu de 0,90) obtient 2 victoires, 6 nuls et 0 défaite sur ses huit parties de validation ; le témoin AB3 obtient 1 victoire, 6 nuls et 1 défaite. Un contrôle à profondeur fixe trouve une décision différente sur 12 positions supplémentaires. Ce candidat justifie de conserver AB7 pour une future validation : les anciens résultats WPF ne lui sont pas attribués. Le gain reste exploratoire, avec un budget de 0,2 seconde et un petit échantillon.
+
+[Résumé du réglage](ab7-weights/SUMMARY.md) — [profil exact](ab7-weights/ab7-candidate.json) — [données](ab7-weights/results.json). Aucun serveur WPF ni essai à 200 coups n'a été relancé.
