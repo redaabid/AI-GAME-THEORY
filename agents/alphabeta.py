@@ -12,7 +12,7 @@ the clock (max_plies), so the endgame counts only what can still be reached.
 import time
 
 from agents import Agent, fallback_moves, register
-from evaluation import WEIGHTS, WIN, evaluate
+from evaluation import WEIGHTS, WIN, win_value
 from lookahead import candidate_turns, key, outcomes
 from simulator import get_outcome
 
@@ -43,7 +43,7 @@ class AlphaBeta(Agent):
                 raise TimeoutError
 
         def leaf(node):
-            return evaluate(node, node.to_play, self.weights, max_plies)
+            return win_value(node, node.to_play, self.weights, max_plies)
 
         def ordered(node, best=None):
             turns = candidate_turns(node, extra=self.extra)

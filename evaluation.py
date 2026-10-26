@@ -7,6 +7,8 @@ time), and immediate threats for the side to move. WEIGHTS are meant to be
 tuned offline (Texel); pass a modified copy to experiment.
 """
 
+from math import tanh
+
 from game import distance
 from macro import groups
 from simulator import opponent
@@ -86,3 +88,18 @@ def evaluate(position, species, weights=WEIGHTS, max_plies=None):
 
     return (weights["material"] * (own_total - enemy_total) + weights["humans"] * race
             + weights["threat"] * threat - weights["groups"] * (len(own) - len(enemy)))
+
+
+def win_value(position, species, weights=WEIGHTS, max_plies=None, relative=0.3):
+    """evaluate() squashed to (-WIN, WIN), so a search can average it with wins and losses.
+
+    Raw scores are in creatures while an elimination is worth WIN: a chance node
+    would then prefer a sure 9-creature deficit (a lost game) to a 70% winning
+    fight. A lead counts relative to the creatures left, so 9 of 13 is decisive
+    and 9 of 200 is not. Ends of game keep their exact values.
+    """
+    value = evaluate(position, species, weights, max_plies)
+    if abs(value) >= WIN:
+        return value
+    total = sum(c.vampires + c.werewolves for c in position.cells.values())
+    return WIN * tanh(value / max(3.0, relative * total))

@@ -45,3 +45,35 @@ before trusting any tuned weights.
 
 These numbers come from the simulator with Adam's MacBook timings. Confirm the
 final choice with `--move-time 2` on the tournament machines.
+
+## Fix after the first course-server games (22 October)
+
+The 24 games on the course server (branch `server-runs`, `docs/server-runs/2026-10-22/SUMMARY.md`)
+showed alpha-beta losing 10 of 12 games on `thetrap.xml`. Both failures replay exactly
+in the simulator from the logs:
+
+- **Fled instead of eating at depth 12.** An elimination is worth ±WIN while a
+  material deficit costs a few points, so a chance node preferred a sure −9 (a lost
+  game) to a 72% winning fight. Leaves now use `evaluation.win_value`: the score
+  squashed to (−WIN, WIN), with the lead measured against the creatures left.
+- **Walked next to a similar army.** No script attacks at coin-flip odds or keeps
+  its distance, so the search neither feared the opponent's gamble nor saw the
+  safe wait. `lookahead.candidate_turns` now adds both: gambles on adjacent
+  enemies and a keep-away step.
+
+Check in the simulator, `--move-time 0.5 --margin 0.1`, same seeds, before → after:
+
+| | vs baseline | vs oep | vs mcts-256 | Overall |
+|---|---|---|---|---|
+| Course maps (thetrap, testmap2), 40 plies, 24 games per pair | 0.88 → 1.00 | 0.29 → 0.50 | 0.67 → 0.83 | 0.61 → 0.78 |
+
+Head to head on 8 generated medium maps plus the course maps (200 plies, 40 games),
+new against old: 0.57.
+
+Second server series on `670a148` (`docs/server-runs/2026-10-22-670a148/` on `server-runs`):
+alpha-beta 14 W, 3 D, 7 L (was 10 W, 3 D, 11 L); thetrap 6 W, 6 L (was 2 W, 10 L).
+It showed one more gap: two groups next to the same enemy attacked one at a time
+(4 at 25%) instead of together (9 at 62%). `candidate_turns` now adds the joint
+attack. In the simulator the change is neutral on average (0.52 against the
+previous version on the course maps, 0.45 ± 0.17 on 8 medium maps), as the
+position is rare; the regression test replays it.

@@ -86,6 +86,26 @@ class EngineTests(unittest.TestCase):
         moves, _ = safe_choose(make_agent("alphabeta"), position, TurnContext(None, 200))
         self.assertNotIn((0, 0, 6, 1, 0), moves)
 
+    def test_deep_alphabeta_takes_a_likely_win_over_a_sure_deficit(self):
+        # Course server, thetrap, ply 12: at depth 12 it used to flee and lose instead of eating.
+        position = board([(9, 0, 0, 4, 0), (9, 1, 0, 2, 0), (6, 1, 0, 0, 8), (9, 2, 1, 0, 0), (9, 4, 2, 0, 0)],
+                         rows=5, columns=10, ply=12)
+        moves, _ = safe_choose(make_agent("alphabeta:depth=12"), position, TurnContext(None, 40))
+        self.assertIn((9, 1, 2, 9, 2), moves)
+
+    def test_alphabeta_with_a_lead_keeps_out_of_a_coin_flip(self):
+        # Course server, thetrap, ply 24: 9 v 8, it stepped next to the 8 and lost the battle.
+        position = board([(8, 2, 0, 9, 0), (6, 1, 0, 0, 8)], rows=5, columns=10, ply=24)
+        moves, _ = safe_choose(make_agent("alphabeta:depth=12"), position, TurnContext(None, 40))
+        self.assertTrue(all(max(abs(m[3] - 6), abs(m[4] - 1)) > 1 for m in moves), moves)
+
+    def test_alphabeta_attacks_with_all_adjacent_groups(self):
+        # Course server, thetrap, ply 15: it sent the 4 alone (25%) instead of the 9 together (62%).
+        position = board([(9, 1, 0, 0, 4), (9, 2, 0, 0, 5), (8, 2, 0, 8, 0)], rows=5, columns=10,
+                         to_play="werewolves", ply=15)
+        moves, _ = safe_choose(make_agent("alphabeta:depth=12"), position, TurnContext(None, 40))
+        self.assertEqual(sorted(moves), [(9, 1, 4, 8, 2), (9, 2, 5, 8, 2)])
+
     def test_oep_coordinates_several_groups(self):
         position = board([(0, 0, 0, 4, 0), (6, 0, 0, 4, 0), (1, 1, 3, 0, 0), (5, 1, 3, 0, 0), (3, 4, 0, 0, 6)])
         agent = make_agent("oep")
