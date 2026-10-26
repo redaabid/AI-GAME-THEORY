@@ -47,6 +47,7 @@ def parse_bot(path):
 
 def main():
     p = argparse.ArgumentParser(description=__doc__)
+    p.add_argument('--stop-on-bot-error', action='store_true', help='Stop after a fault, abnormal session or move above 1.8 seconds')
     p.add_argument('--runtime', type=Path, required=True)
     p.add_argument('--selection', type=Path, required=True)
     p.add_argument('--output', type=Path, required=True)
@@ -166,6 +167,10 @@ def main():
                     (game/'ui-missing.txt').write_text('UI evidence not captured; winner unconfirmed.\n')
                     raise TimeoutError('Final UI evidence missing; stopping before the next game')
                 time.sleep(.2)
+            if args.stop_on_bot_error and (any(result['exit_codes']) or any(
+                    s['faults'] or s['new_game_failures'] or s['errors'] or s['alerts_1_8']
+                    or not s['ended'] or not s['bye'] for s in result['bots'].values())):
+                raise RuntimeError('Bot health check failed; stopping the campaign after preserving UI evidence')
             print('FINISHED', index+1, challenger, map_name, plays,
                   json.dumps(result['bots']), flush=True)
         except Exception as error:
