@@ -11,7 +11,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from summarize_ab_server import summarize
 
-EXPECTED = {1, 4, 7, 8, 9, 10, 11, 17, 65, 66, 67, 68}
+EXPECTED = {1, 4, 7, 8, 9, 10, 11, 17, 65, 66, 67, 68, 71, 72}
 
 
 def main():
@@ -20,9 +20,13 @@ def main():
     p.add_argument('--followup', type=Path, required=True)
     p.add_argument('--output', type=Path, required=True)
     args = p.parse_args()
-    replay = summarize(args.followup/'real-server')
+    attempts = summarize(args.followup/'real-server')
+    selected = {}
+    for r in sorted(attempts, key=lambda r: (r['ui']['confirmed'], r['started'])):
+        selected[r['id']] = r
+    replay = list(selected.values())
     if {r['id'] for r in replay} != EXPECTED or not all(r['ui']['confirmed'] for r in replay):
-        p.error('All twelve new WPF results must be explicitly confirmed before final publication')
+        p.error('All fourteen new WPF results must be explicitly confirmed before final publication')
     if any(r['max_plies'] != 40 for r in replay):
         p.error('A 200-ply result cannot enter this report')
     if args.output.exists():
@@ -37,16 +41,17 @@ def main():
     for r in summarize(args.original):
         if r['max_plies'] == 40:
             copy_game(args.original/r['directory'], args.output/'original'/r['directory'])
-    for r in replay:
+    for r in attempts:
         copy_game(args.followup/'real-server'/r['directory'], args.output/'replayed'/r['directory'])
     shutil.copytree(args.followup/'decisions', args.output/'decisions')
     subprocess.run([sys.executable, '-B', str(ROOT/'scripts/summarize_ab_server.py'),
                     str(args.output), '--max-plies', '40'], check=True, stdout=subprocess.DEVNULL)
     aggregate = json.loads((args.output/'aggregate-40.json').read_text(encoding='utf8'))
     probe = json.loads((args.output/'decisions/summary.json').read_text(encoding='utf8'))
-    protocol = dict(rerun_ids=sorted(EXPECTED-{65,66,67,68}), control_ids=[65,66,67,68],
+    protocol = dict(rerun_ids=sorted(EXPECTED-{65,66,67,68,71,72}), control_ids=[65,66,67,68,71,72],
                     alias_ab90='Original unchanged alphabeta agent with default parameters',
-                    max_plies=40, new_games=12, original_games=32,
+                    alias_ab91='Original unchanged one-group baseline, independent of AB search',
+                    max_plies=40, new_games=len(attempts), new_conditions=14, original_games=32,
                     note='Replays replace missing conditions in the composed comparison, not the '
                     'unknown outcomes of the original random games. All attempts are retained. '
                     'No 200-ply game was scheduled. The launcher was stopped after job 4 '
@@ -55,9 +60,11 @@ def main():
                                                        cwd=ROOT, text=True).strip())
     (args.output/'protocol.json').write_text(json.dumps(protocol, indent=2), encoding='utf8')
     lines = ['# Contrôles à 40 coups — verdicts, décisions et ancien bot', '',
-             '**12 nouvelles parties WPF terminées et confirmées : huit cas rejoués et quatre contrôles.** '
+             '**14 nouvelles parties WPF terminées et confirmées : huit cas rejoués et six contrôles.** '
              'Les 32 conditions de la famille AB sont désormais couvertes par un résultat confirmé ; '
-             'les quatre contrôles supplémentaires opposent AB3 à l’ancien alphabeta.', '',
+             'quatre contrôles opposent AB3 à l’ancien alphabeta, puis deux à la baseline sur testmap2.', '',
+             f'{len(attempts)} nouvelles tentatives sont conservées. Les contrôles dont la capture UI '
+             'a expiré ont été rejoués ; leurs verdicts initiaux restent inconnus.', '',
              'Les huit verdicts initiaux absents restent inconnus. Les nouvelles parties rejouent les mêmes '
              'conditions mais peuvent avoir une issue différente, car le hasard du serveur n’est pas contrôlé. '
              'Le tableau composé retient une tentative confirmée par condition ; aucune partie n’est comptée deux fois.', '',
@@ -65,7 +72,7 @@ def main():
              '| Profil | Parties | V / N / D | Max (s) | Moyenne (s) | Faults |',
              '|---|---:|---|---:|---:|---:|']
     for name, s in sorted(aggregate['architectures'].items()):
-        label = 'ancien alphabeta (AB90)' if name == 'ab90' else name
+        label = {'ab90':'ancien alphabeta (AB90)', 'ab91':'baseline historique (AB91)'}.get(name, name)
         lines.append(f'| {label} | {s["games"]} | {s["wins"]}/{s["draws"]}/{s["losses"]} | '
                      f'{s["max_seconds"]:.3f} | {s["mean_seconds"]:.3f} | {s["faults"]} |')
     lines += ['', 'AB3 est le témoin commun : sa ligne regroupe tous les adversaires. AB7 désigne ici '
@@ -75,6 +82,9 @@ def main():
               'AB90 est uniquement le nom ASCII attribué à l’agent existant --agent alphabeta. '
               'Son code est inchangé, ses paramètres natifs sont conservés. Les deux ordres de connexion '
               'sont joués sur chaque carte, avec le même serveur, MaxPlays=40 et --move-time 1.5.', '',
+              'AB91 désigne la baseline historique de strategy.py, inchangée depuis le rapport du 22 octobre. '
+              'Ce témoin ne repose pas sur la recherche Alpha-Bêta. Deux contrôles supplémentaires '
+              'le confrontent à AB3 sur testmap2, dans les deux ordres.', '',
               '| Carte | Ordre | Vainqueur WPF | Effectifs dans cet ordre |',
               '|---|---|---|---|']
     for r in replay:
@@ -85,8 +95,11 @@ def main():
         lines.append(f'| {r["map"]} | {a} puis {b} | {r["ui"]["winner"]} | {pop.get(a)} / {pop.get(b)} |')
     legacy_big = [r for r in replay if r['id'] in (67,68)]
     draws = sum(r['ui']['winner']=='draw' for r in legacy_big)
+    baseline_big = [r for r in replay if r['id'] in (71,72)]
+    baseline_draws = sum(r['ui']['winner']=='draw' for r in baseline_big)
     lines += ['', f'Sur testmap2, le contrôle avec l’ancien bot donne **{draws}/2 nuls**. '
-              'Quatre parties ne permettent pas une attribution causale complète. L’ancien bot partage '
+              f'Le contrôle avec la baseline donne **{baseline_draws}/2 nuls**. '
+              'Ce petit lot ne permet pas une attribution causale complète. L’ancien bot partage '
               'aussi l’évaluation et des composants du simulateur avec la famille AB.', '',
               '## Décisions à profondeur fixe', '',
               'Douze positions identiques : huit états reconstruits des UPD du vrai serveur '

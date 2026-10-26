@@ -57,6 +57,8 @@ def main():
     p.add_argument('--ids', help='Comma-separated, one-based job IDs; overrides the offset range')
     p.add_argument('--legacy-control', action='store_true',
                    help='Append original alphabeta versus AB3 at 40 plies (IDs 65-68, name AB90)')
+    p.add_argument('--baseline-control', action='store_true',
+                   help='With legacy-control, append baseline controls (IDs 69-72, name AB91)')
     p.add_argument('--allow-200', action='store_true',
                    help='Explicitly enable the separate 200-ply phase')
     args = p.parse_args()
@@ -71,6 +73,12 @@ def main():
     if args.legacy_control:
         specs['ab90'] = 'alphabeta'
         jobs += [('ab90', m, 40, reverse) for m in ('thetrap.xml', 'testmap2.xml')
+                 for reverse in (False, True)]
+    if args.baseline_control:
+        if not args.legacy_control:
+            p.error('baseline-control requires legacy-control to preserve job IDs')
+        specs['ab91'] = 'baseline'
+        jobs += [('ab91', m, 40, reverse) for m in ('thetrap.xml', 'testmap2.xml')
                  for reverse in (False, True)]
     try:
         selected_ids = ({int(x) for x in args.ids.split(',')} if args.ids else
@@ -156,7 +164,7 @@ def main():
             while not (game/'ui-evidence.json').exists():
                 if time.monotonic() > limit:
                     (game/'ui-missing.txt').write_text('UI evidence not captured; winner unconfirmed.\n')
-                    break
+                    raise TimeoutError('Final UI evidence missing; stopping before the next game')
                 time.sleep(.2)
             print('FINISHED', index+1, challenger, map_name, plays,
                   json.dumps(result['bots']), flush=True)
