@@ -135,12 +135,12 @@ def main():
                    warning='Eight validation games per profile; no WPF validation, no 200-ply test. '
                    'Do not replace the historical profile or claim statistical superiority.')
     (args.output/'ab7-candidate.json').write_text(json.dumps(profile, indent=2), encoding='utf8')
-    text = ['# AB7 — réglage des poids à recherche identique à AB3',
+    text = ['# AB7 — réglage des poids à recherche identique à AB3', '',
             '60 parties simulées d’entraînement puis 24 parties de validation séparée, à 40 demi-coups. '
-            'Aucun serveur WPF lancé. Les cartes du cours et les anciens résultats restent inchangés.',
+            'Aucun serveur WPF lancé. Les cartes du cours et les anciens résultats restent inchangés.', '',
             f'Budget : {args.train_budget} s en entraînement, {args.validation_budget} s en validation. '
-            'Ces budgets courts ne garantissent pas un gain au budget serveur de 1,5 s.',
-            '| Profil validé | V / N / D | Score | Faults | Retards |',
+            'Ces budgets courts ne garantissent pas un gain au budget serveur de 1,5 s.', '',
+            '| Profil évalué | V / N / D | Score | Faults | Retards |',
             '|---|---|---:|---:|---:|']
     text += [f'| {r["id"]} | {r["wins"]} / {r["draws"]} / {r["losses"]} | {r["score"]:.3f} | '
              f'{r["faults"]} | {r["late"]} |' for r in report['validation']]
