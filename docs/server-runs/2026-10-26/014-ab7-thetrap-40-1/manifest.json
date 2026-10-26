@@ -1,0 +1,57 @@
+{
+  "id": 14,
+  "sha": "dc51ffb79ab1d283fd70bc6a70cfd6b6f7051a56",
+  "map": "thetrap.xml",
+  "max_plies": 40,
+  "order": [
+    "ab7",
+    "ab3"
+  ],
+  "specs": {
+    "ab7": "ab7:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000,weights={'material': 1.0, 'humans': 0.8, 'discount': 0.9, 'threat': 0.7, 'groups': 0.1}",
+    "ab3": "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000"
+  },
+  "commands": [
+    [
+      "C:\\Users\\sebju\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+      "-B",
+      "main.py",
+      "--name",
+      "AB7",
+      "--agent",
+      "ab7:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000,weights={'material': 1.0, 'humans': 0.8, 'discount': 0.9, 'threat': 0.7, 'groups': 0.1}",
+      "--move-time",
+      "1.5",
+      "--max-plies",
+      "40",
+      "--rules-profile",
+      "server-v3.2.1",
+      "--seed",
+      "42",
+      "127.0.0.1",
+      "5555"
+    ],
+    [
+      "C:\\Users\\sebju\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+      "-B",
+      "main.py",
+      "--name",
+      "AB3",
+      "--agent",
+      "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+      "--move-time",
+      "1.5",
+      "--max-plies",
+      "40",
+      "--rules-profile",
+      "server-v3.2.1",
+      "--seed",
+      "42",
+      "127.0.0.1",
+      "5555"
+    ]
+  ],
+  "map_sha256": "4a5bee60b38e3d8741f12d6ca1ac70a2d564a4420196bd11e71af8d90c09e7fe",
+  "started": "2026-10-26T13:44:03.565356+00:00",
+  "move_time": 1.5
+}

@@ -1,0 +1,1099 @@
+{
+  "note": "States are reconstructed before each MOV from server UPDs. The last observation precedes the final move and is not a substitute for the WPF final result. A repeated state includes the player to move. No winner is inferred.",
+  "games": [
+    {
+      "id": 1,
+      "map": "thetrap.xml",
+      "max_plies": 40,
+      "ui_winner": null,
+      "ui_confirmed": false,
+      "observed_server_plies": 36,
+      "reached_cap": false,
+      "state_observations": 36,
+      "unique_states": 36,
+      "repeated_states": 0,
+      "first_repeats": [],
+      "first": {
+        "pre_move_ply": 1,
+        "populations": [
+          9,
+          4,
+          4
+        ],
+        "nearest_enemy_distance": 2
+      },
+      "last": {
+        "pre_move_ply": 36,
+        "populations": [
+          0,
+          8,
+          9
+        ],
+        "nearest_enemy_distance": 1
+      }
+    },
+    {
+      "id": 2,
+      "map": "thetrap.xml",
+      "max_plies": 40,
+      "ui_winner": "ab3",
+      "ui_confirmed": true,
+      "observed_server_plies": 40,
+      "reached_cap": true,
+      "state_observations": 40,
+      "unique_states": 40,
+      "repeated_states": 0,
+      "first_repeats": [],
+      "first": {
+        "pre_move_ply": 1,
+        "populations": [
+          9,
+          4,
+          4
+        ],
+        "nearest_enemy_distance": 2
+      },
+      "last": {
+        "pre_move_ply": 40,
+        "populations": [
+          0,
+          8,
+          9
+        ],
+        "nearest_enemy_distance": 2
+      }
+    },
+    {
+      "id": 3,
+      "map": "thetrap.xml",
+      "max_plies": 40,
+      "ui_winner": "ab1",
+      "ui_confirmed": true,
+      "observed_server_plies": 36,
+      "reached_cap": false,
+      "state_observations": 36,
+      "unique_states": 36,
+      "repeated_states": 0,
+      "first_repeats": [],
+      "first": {
+        "pre_move_ply": 1,
+        "populations": [
+          9,
+          4,
+          4
+        ],
+        "nearest_enemy_distance": 2
+      },
+      "last": {
+        "pre_move_ply": 36,
+        "populations": [
+          0,
+          8,
+          9
+        ],
+        "nearest_enemy_distance": 1
+      }
+    },
+    {
+      "id": 4,
+      "map": "thetrap.xml",
+      "max_plies": 40,
+      "ui_winner": null,
+      "ui_confirmed": false,
+      "observed_server_plies": 40,
+      "reached_cap": true,
+      "state_observations": 40,
+      "unique_states": 36,
+      "repeated_states": 4,
+      "first_repeats": [
+        {
+          "ply": 35,
+          "repeated_ply": 31
+        },
+        {
+          "ply": 38,
+          "repeated_ply": 34
+        },
+        {
+          "ply": 39,
+          "repeated_ply": 31
+        },
+        {
+          "ply": 40,
+          "repeated_ply": 36
+        }
+      ],
+      "first": {
+        "pre_move_ply": 1,
+        "populations": [
+          9,
+          4,
+          4
+        ],
+        "nearest_enemy_distance": 2
+      },
+      "last": {
+        "pre_move_ply": 40,
+        "populations": [
+          0,
+          8,
+          9
+        ],
+        "nearest_enemy_distance": 2
+      }
+    },
+    {
+      "id": 5,
+      "map": "thetrap.xml",
+      "max_plies": 40,
+      "ui_winner": "ab2",
+      "ui_confirmed": true,
+      "observed_server_plies": 40,
+      "reached_cap": true,
+      "state_observations": 40,
+      "unique_states": 40,
+      "repeated_states": 0,
+      "first_repeats": [],
+      "first": {
+        "pre_move_ply": 1,
+        "populations": [
+          9,
+          4,
+          4
+        ],
+        "nearest_enemy_distance": 2
+      },
+      "last": {
+        "pre_move_ply": 40,
+        "populations": [
+          0,
+          8,
+          9
+        ],
+        "nearest_enemy_distance": 2
+      }
+    },
+    {
+      "id": 6,
+      "map": "thetrap.xml",
+      "max_plies": 40,
+      "ui_winner": "ab3",
+      "ui_confirmed": true,
+      "observed_server_plies": 40,
+      "reached_cap": true,
+      "state_observations": 40,
+      "unique_states": 36,
+      "repeated_states": 4,
+      "first_repeats": [
+        {
+          "ply": 37,
+          "repeated_ply": 33
+        },
+        {
+          "ply": 38,
+          "repeated_ply": 34
+        },
+        {
+          "ply": 39,
+          "repeated_ply": 35
+        },
+        {
+          "ply": 40,
+          "repeated_ply": 36
+        }
+      ],
+      "first": {
+        "pre_move_ply": 1,
+        "populations": [
+          9,
+          4,
+          4
+        ],
+        "nearest_enemy_distance": 2
+      },
+      "last": {
+        "pre_move_ply": 40,
+        "populations": [
+          0,
+          8,
+          9
+        ],
+        "nearest_enemy_distance": 1
+      }
+    },
+    {
+      "id": 7,
+      "map": "thetrap.xml",
+      "max_plies": 40,
+      "ui_winner": null,
+      "ui_confirmed": false,
+      "observed_server_plies": 40,
+      "reached_cap": true,
+      "state_observations": 40,
+      "unique_states": 36,
+      "repeated_states": 4,
+      "first_repeats": [
+        {
+          "ply": 35,
+          "repeated_ply": 31
+        },
+        {
+          "ply": 36,
+          "repeated_ply": 32
+        },
+        {
+          "ply": 39,
+          "repeated_ply": 31
+        },
+        {
+          "ply": 40,
+          "repeated_ply": 32
+        }
+      ],
+      "first": {
+        "pre_move_ply": 1,
+        "populations": [
+          9,
+          4,
+          4
+        ],
+        "nearest_enemy_distance": 2
+      },
+      "last": {
+        "pre_move_ply": 40,
+        "populations": [
+          0,
+          8,
+          9
+        ],
+        "nearest_enemy_distance": 1
+      }
+    },
+    {
+      "id": 8,
+      "map": "thetrap.xml",
+      "max_plies": 40,
+      "ui_winner": null,
+      "ui_confirmed": false,
+      "observed_server_plies": 40,
+      "reached_cap": true,
+      "state_observations": 40,
+      "unique_states": 40,
+      "repeated_states": 0,
+      "first_repeats": [],
+      "first": {
+        "pre_move_ply": 1,
+        "populations": [
+          9,
+          4,
+          4
+        ],
+        "nearest_enemy_distance": 2
+      },
+      "last": {
+        "pre_move_ply": 40,
+        "populations": [
+          0,
+          8,
+          9
+        ],
+        "nearest_enemy_distance": 2
+      }
+    },
+    {
+      "id": 9,
+      "map": "thetrap.xml",
+      "max_plies": 40,
+      "ui_winner": null,
+      "ui_confirmed": false,
+      "observed_server_plies": 40,
+      "reached_cap": true,
+      "state_observations": 40,
+      "unique_states": 36,
+      "repeated_states": 4,
+      "first_repeats": [
+        {
+          "ply": 37,
+          "repeated_ply": 33
+        },
+        {
+          "ply": 38,
+          "repeated_ply": 34
+        },
+        {
+          "ply": 39,
+          "repeated_ply": 35
+        },
+        {
+          "ply": 40,
+          "repeated_ply": 36
+        }
+      ],
+      "first": {
+        "pre_move_ply": 1,
+        "populations": [
+          9,
+          4,
+          4
+        ],
+        "nearest_enemy_distance": 2
+      },
+      "last": {
+        "pre_move_ply": 40,
+        "populations": [
+          0,
+          8,
+          9
+        ],
+        "nearest_enemy_distance": 2
+      }
+    },
+    {
+      "id": 10,
+      "map": "thetrap.xml",
+      "max_plies": 40,
+      "ui_winner": null,
+      "ui_confirmed": false,
+      "observed_server_plies": 40,
+      "reached_cap": true,
+      "state_observations": 40,
+      "unique_states": 36,
+      "repeated_states": 4,
+      "first_repeats": [
+        {
+          "ply": 37,
+          "repeated_ply": 33
+        },
+        {
+          "ply": 38,
+          "repeated_ply": 34
+        },
+        {
+          "ply": 39,
+          "repeated_ply": 35
+        },
+        {
+          "ply": 40,
+          "repeated_ply": 36
+        }
+      ],
+      "first": {
+        "pre_move_ply": 1,
+        "populations": [
+          9,
+          4,
+          4
+        ],
+        "nearest_enemy_distance": 2
+      },
+      "last": {
+        "pre_move_ply": 40,
+        "populations": [
+          0,
+          8,
+          9
+        ],
+        "nearest_enemy_distance": 1
+      }
+    },
+    {
+      "id": 11,
+      "map": "thetrap.xml",
+      "max_plies": 40,
+      "ui_winner": null,
+      "ui_confirmed": false,
+      "observed_server_plies": 34,
+      "reached_cap": false,
+      "state_observations": 34,
+      "unique_states": 34,
+      "repeated_states": 0,
+      "first_repeats": [],
+      "first": {
+        "pre_move_ply": 1,
+        "populations": [
+          9,
+          4,
+          4
+        ],
+        "nearest_enemy_distance": 2
+      },
+      "last": {
+        "pre_move_ply": 34,
+        "populations": [
+          0,
+          8,
+          9
+        ],
+        "nearest_enemy_distance": 1
+      }
+    },
+    {
+      "id": 12,
+      "map": "thetrap.xml",
+      "max_plies": 40,
+      "ui_winner": "ab6",
+      "ui_confirmed": true,
+      "observed_server_plies": 35,
+      "reached_cap": false,
+      "state_observations": 35,
+      "unique_states": 35,
+      "repeated_states": 0,
+      "first_repeats": [],
+      "first": {
+        "pre_move_ply": 1,
+        "populations": [
+          9,
+          4,
+          4
+        ],
+        "nearest_enemy_distance": 2
+      },
+      "last": {
+        "pre_move_ply": 35,
+        "populations": [
+          0,
+          8,
+          9
+        ],
+        "nearest_enemy_distance": 1
+      }
+    },
+    {
+      "id": 13,
+      "map": "thetrap.xml",
+      "max_plies": 40,
+      "ui_winner": "ab7",
+      "ui_confirmed": true,
+      "observed_server_plies": 40,
+      "reached_cap": true,
+      "state_observations": 40,
+      "unique_states": 40,
+      "repeated_states": 0,
+      "first_repeats": [],
+      "first": {
+        "pre_move_ply": 1,
+        "populations": [
+          9,
+          4,
+          4
+        ],
+        "nearest_enemy_distance": 2
+      },
+      "last": {
+        "pre_move_ply": 40,
+        "populations": [
+          0,
+          8,
+          9
+        ],
+        "nearest_enemy_distance": 2
+      }
+    },
+    {
+      "id": 14,
+      "map": "thetrap.xml",
+      "max_plies": 40,
+      "ui_winner": "ab3",
+      "ui_confirmed": true,
+      "observed_server_plies": 40,
+      "reached_cap": true,
+      "state_observations": 40,
+      "unique_states": 40,
+      "repeated_states": 0,
+      "first_repeats": [],
+      "first": {
+        "pre_move_ply": 1,
+        "populations": [
+          9,
+          4,
+          4
+        ],
+        "nearest_enemy_distance": 2
+      },
+      "last": {
+        "pre_move_ply": 40,
+        "populations": [
+          0,
+          8,
+          9
+        ],
+        "nearest_enemy_distance": 2
+      }
+    },
+    {
+      "id": 15,
+      "map": "thetrap.xml",
+      "max_plies": 40,
+      "ui_winner": "ab3",
+      "ui_confirmed": true,
+      "observed_server_plies": 38,
+      "reached_cap": false,
+      "state_observations": 38,
+      "unique_states": 38,
+      "repeated_states": 0,
+      "first_repeats": [],
+      "first": {
+        "pre_move_ply": 1,
+        "populations": [
+          9,
+          4,
+          4
+        ],
+        "nearest_enemy_distance": 2
+      },
+      "last": {
+        "pre_move_ply": 38,
+        "populations": [
+          0,
+          8,
+          9
+        ],
+        "nearest_enemy_distance": 1
+      }
+    },
+    {
+      "id": 16,
+      "map": "thetrap.xml",
+      "max_plies": 40,
+      "ui_winner": "ab3",
+      "ui_confirmed": true,
+      "observed_server_plies": 40,
+      "reached_cap": true,
+      "state_observations": 40,
+      "unique_states": 36,
+      "repeated_states": 4,
+      "first_repeats": [
+        {
+          "ply": 37,
+          "repeated_ply": 33
+        },
+        {
+          "ply": 38,
+          "repeated_ply": 34
+        },
+        {
+          "ply": 39,
+          "repeated_ply": 35
+        },
+        {
+          "ply": 40,
+          "repeated_ply": 36
+        }
+      ],
+      "first": {
+        "pre_move_ply": 1,
+        "populations": [
+          9,
+          4,
+          4
+        ],
+        "nearest_enemy_distance": 2
+      },
+      "last": {
+        "pre_move_ply": 40,
+        "populations": [
+          0,
+          8,
+          9
+        ],
+        "nearest_enemy_distance": 1
+      }
+    },
+    {
+      "id": 17,
+      "map": "testmap2.xml",
+      "max_plies": 40,
+      "ui_winner": null,
+      "ui_confirmed": false,
+      "observed_server_plies": 40,
+      "reached_cap": true,
+      "state_observations": 40,
+      "unique_states": 40,
+      "repeated_states": 0,
+      "first_repeats": [],
+      "first": {
+        "pre_move_ply": 1,
+        "populations": [
+          32,
+          10,
+          10
+        ],
+        "nearest_enemy_distance": 28
+      },
+      "last": {
+        "pre_move_ply": 40,
+        "populations": [
+          20,
+          16,
+          16
+        ],
+        "nearest_enemy_distance": 9
+      }
+    },
+    {
+      "id": 18,
+      "map": "testmap2.xml",
+      "max_plies": 40,
+      "ui_winner": "draw",
+      "ui_confirmed": true,
+      "observed_server_plies": 40,
+      "reached_cap": true,
+      "state_observations": 40,
+      "unique_states": 40,
+      "repeated_states": 0,
+      "first_repeats": [],
+      "first": {
+        "pre_move_ply": 1,
+        "populations": [
+          32,
+          10,
+          10
+        ],
+        "nearest_enemy_distance": 28
+      },
+      "last": {
+        "pre_move_ply": 40,
+        "populations": [
+          20,
+          16,
+          16
+        ],
+        "nearest_enemy_distance": 14
+      }
+    },
+    {
+      "id": 19,
+      "map": "testmap2.xml",
+      "max_plies": 40,
+      "ui_winner": "draw",
+      "ui_confirmed": true,
+      "observed_server_plies": 40,
+      "reached_cap": true,
+      "state_observations": 40,
+      "unique_states": 40,
+      "repeated_states": 0,
+      "first_repeats": [],
+      "first": {
+        "pre_move_ply": 1,
+        "populations": [
+          32,
+          10,
+          10
+        ],
+        "nearest_enemy_distance": 28
+      },
+      "last": {
+        "pre_move_ply": 40,
+        "populations": [
+          20,
+          16,
+          16
+        ],
+        "nearest_enemy_distance": 9
+      }
+    },
+    {
+      "id": 20,
+      "map": "testmap2.xml",
+      "max_plies": 40,
+      "ui_winner": "draw",
+      "ui_confirmed": true,
+      "observed_server_plies": 40,
+      "reached_cap": true,
+      "state_observations": 40,
+      "unique_states": 40,
+      "repeated_states": 0,
+      "first_repeats": [],
+      "first": {
+        "pre_move_ply": 1,
+        "populations": [
+          32,
+          10,
+          10
+        ],
+        "nearest_enemy_distance": 28
+      },
+      "last": {
+        "pre_move_ply": 40,
+        "populations": [
+          20,
+          16,
+          16
+        ],
+        "nearest_enemy_distance": 18
+      }
+    },
+    {
+      "id": 21,
+      "map": "testmap2.xml",
+      "max_plies": 40,
+      "ui_winner": "draw",
+      "ui_confirmed": true,
+      "observed_server_plies": 40,
+      "reached_cap": true,
+      "state_observations": 40,
+      "unique_states": 40,
+      "repeated_states": 0,
+      "first_repeats": [],
+      "first": {
+        "pre_move_ply": 1,
+        "populations": [
+          32,
+          10,
+          10
+        ],
+        "nearest_enemy_distance": 28
+      },
+      "last": {
+        "pre_move_ply": 40,
+        "populations": [
+          20,
+          16,
+          16
+        ],
+        "nearest_enemy_distance": 9
+      }
+    },
+    {
+      "id": 22,
+      "map": "testmap2.xml",
+      "max_plies": 40,
+      "ui_winner": "draw",
+      "ui_confirmed": true,
+      "observed_server_plies": 40,
+      "reached_cap": true,
+      "state_observations": 40,
+      "unique_states": 40,
+      "repeated_states": 0,
+      "first_repeats": [],
+      "first": {
+        "pre_move_ply": 1,
+        "populations": [
+          32,
+          10,
+          10
+        ],
+        "nearest_enemy_distance": 28
+      },
+      "last": {
+        "pre_move_ply": 40,
+        "populations": [
+          20,
+          16,
+          16
+        ],
+        "nearest_enemy_distance": 18
+      }
+    },
+    {
+      "id": 23,
+      "map": "testmap2.xml",
+      "max_plies": 40,
+      "ui_winner": "draw",
+      "ui_confirmed": true,
+      "observed_server_plies": 40,
+      "reached_cap": true,
+      "state_observations": 40,
+      "unique_states": 40,
+      "repeated_states": 0,
+      "first_repeats": [],
+      "first": {
+        "pre_move_ply": 1,
+        "populations": [
+          32,
+          10,
+          10
+        ],
+        "nearest_enemy_distance": 28
+      },
+      "last": {
+        "pre_move_ply": 40,
+        "populations": [
+          20,
+          16,
+          16
+        ],
+        "nearest_enemy_distance": 6
+      }
+    },
+    {
+      "id": 24,
+      "map": "testmap2.xml",
+      "max_plies": 40,
+      "ui_winner": "draw",
+      "ui_confirmed": true,
+      "observed_server_plies": 40,
+      "reached_cap": true,
+      "state_observations": 40,
+      "unique_states": 40,
+      "repeated_states": 0,
+      "first_repeats": [],
+      "first": {
+        "pre_move_ply": 1,
+        "populations": [
+          32,
+          10,
+          10
+        ],
+        "nearest_enemy_distance": 28
+      },
+      "last": {
+        "pre_move_ply": 40,
+        "populations": [
+          20,
+          16,
+          16
+        ],
+        "nearest_enemy_distance": 7
+      }
+    },
+    {
+      "id": 25,
+      "map": "testmap2.xml",
+      "max_plies": 40,
+      "ui_winner": "draw",
+      "ui_confirmed": true,
+      "observed_server_plies": 40,
+      "reached_cap": true,
+      "state_observations": 40,
+      "unique_states": 40,
+      "repeated_states": 0,
+      "first_repeats": [],
+      "first": {
+        "pre_move_ply": 1,
+        "populations": [
+          32,
+          10,
+          10
+        ],
+        "nearest_enemy_distance": 28
+      },
+      "last": {
+        "pre_move_ply": 40,
+        "populations": [
+          20,
+          16,
+          16
+        ],
+        "nearest_enemy_distance": 6
+      }
+    },
+    {
+      "id": 26,
+      "map": "testmap2.xml",
+      "max_plies": 40,
+      "ui_winner": "draw",
+      "ui_confirmed": true,
+      "observed_server_plies": 40,
+      "reached_cap": true,
+      "state_observations": 40,
+      "unique_states": 40,
+      "repeated_states": 0,
+      "first_repeats": [],
+      "first": {
+        "pre_move_ply": 1,
+        "populations": [
+          32,
+          10,
+          10
+        ],
+        "nearest_enemy_distance": 28
+      },
+      "last": {
+        "pre_move_ply": 40,
+        "populations": [
+          20,
+          16,
+          16
+        ],
+        "nearest_enemy_distance": 7
+      }
+    },
+    {
+      "id": 27,
+      "map": "testmap2.xml",
+      "max_plies": 40,
+      "ui_winner": "draw",
+      "ui_confirmed": true,
+      "observed_server_plies": 40,
+      "reached_cap": true,
+      "state_observations": 40,
+      "unique_states": 40,
+      "repeated_states": 0,
+      "first_repeats": [],
+      "first": {
+        "pre_move_ply": 1,
+        "populations": [
+          32,
+          10,
+          10
+        ],
+        "nearest_enemy_distance": 28
+      },
+      "last": {
+        "pre_move_ply": 40,
+        "populations": [
+          20,
+          16,
+          16
+        ],
+        "nearest_enemy_distance": 9
+      }
+    },
+    {
+      "id": 28,
+      "map": "testmap2.xml",
+      "max_plies": 40,
+      "ui_winner": "draw",
+      "ui_confirmed": true,
+      "observed_server_plies": 40,
+      "reached_cap": true,
+      "state_observations": 40,
+      "unique_states": 40,
+      "repeated_states": 0,
+      "first_repeats": [],
+      "first": {
+        "pre_move_ply": 1,
+        "populations": [
+          32,
+          10,
+          10
+        ],
+        "nearest_enemy_distance": 28
+      },
+      "last": {
+        "pre_move_ply": 40,
+        "populations": [
+          20,
+          16,
+          16
+        ],
+        "nearest_enemy_distance": 9
+      }
+    },
+    {
+      "id": 29,
+      "map": "testmap2.xml",
+      "max_plies": 40,
+      "ui_winner": "draw",
+      "ui_confirmed": true,
+      "observed_server_plies": 40,
+      "reached_cap": true,
+      "state_observations": 40,
+      "unique_states": 40,
+      "repeated_states": 0,
+      "first_repeats": [],
+      "first": {
+        "pre_move_ply": 1,
+        "populations": [
+          32,
+          10,
+          10
+        ],
+        "nearest_enemy_distance": 28
+      },
+      "last": {
+        "pre_move_ply": 40,
+        "populations": [
+          20,
+          16,
+          16
+        ],
+        "nearest_enemy_distance": 9
+      }
+    },
+    {
+      "id": 30,
+      "map": "testmap2.xml",
+      "max_plies": 40,
+      "ui_winner": "draw",
+      "ui_confirmed": true,
+      "observed_server_plies": 40,
+      "reached_cap": true,
+      "state_observations": 40,
+      "unique_states": 40,
+      "repeated_states": 0,
+      "first_repeats": [],
+      "first": {
+        "pre_move_ply": 1,
+        "populations": [
+          32,
+          10,
+          10
+        ],
+        "nearest_enemy_distance": 28
+      },
+      "last": {
+        "pre_move_ply": 40,
+        "populations": [
+          20,
+          16,
+          16
+        ],
+        "nearest_enemy_distance": 9
+      }
+    },
+    {
+      "id": 31,
+      "map": "testmap2.xml",
+      "max_plies": 40,
+      "ui_winner": "draw",
+      "ui_confirmed": true,
+      "observed_server_plies": 40,
+      "reached_cap": true,
+      "state_observations": 40,
+      "unique_states": 40,
+      "repeated_states": 0,
+      "first_repeats": [],
+      "first": {
+        "pre_move_ply": 1,
+        "populations": [
+          32,
+          10,
+          10
+        ],
+        "nearest_enemy_distance": 28
+      },
+      "last": {
+        "pre_move_ply": 40,
+        "populations": [
+          20,
+          16,
+          16
+        ],
+        "nearest_enemy_distance": 9
+      }
+    },
+    {
+      "id": 32,
+      "map": "testmap2.xml",
+      "max_plies": 40,
+      "ui_winner": "draw",
+      "ui_confirmed": true,
+      "observed_server_plies": 40,
+      "reached_cap": true,
+      "state_observations": 40,
+      "unique_states": 40,
+      "repeated_states": 0,
+      "first_repeats": [],
+      "first": {
+        "pre_move_ply": 1,
+        "populations": [
+          32,
+          10,
+          10
+        ],
+        "nearest_enemy_distance": 28
+      },
+      "last": {
+        "pre_move_ply": 40,
+        "populations": [
+          20,
+          16,
+          16
+        ],
+        "nearest_enemy_distance": 18
+      }
+    }
+  ]
+}

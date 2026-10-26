@@ -1,0 +1,19 @@
+{
+  "captured": "2026-10-26T13:26:26.723Z",
+  "request": {
+    "game": "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Année scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\research\\server-validation\\implementation-2026-10-26\\live-v3\\001-ab0-thetrap-40-0",
+    "server_pid": 540,
+    "index": 1
+  },
+  "captures": [
+    {
+      "window": {
+        "app": "process:C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Année scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\research\\server-validation\\implementation-2026-10-26\\server-inspection\\VampiresVSWerewolvesGameServer.exe",
+        "id": 2556210,
+        "title": "Vampires versus Werewolves"
+      },
+      "tree": "",
+      "document_text": ""
+    }
+  ]
+}
