@@ -73,7 +73,9 @@ def main():
             raise RuntimeError('Port 5555 is already occupied; do not take over an unknown server')
         game.mkdir()
         config_path = args.runtime / (EXE + '.config')
-        tree = ET.parse(config_path)
+        # Decode explicitly as well: Expat also rejects non-ASCII paths under
+        # a declaration using the legacy alias emitted by an earlier launcher.
+        tree = ET.ElementTree(ET.fromstring(config_path.read_text(encoding='utf-8-sig')))
         values = dict(ServerIP='127.0.0.1', ServerPort='5555', PlayersCount='2', DebugMode='True',
                       Map=str((args.runtime / map_name).resolve()), MaxPlays=str(plays),
                       MaxPlayDuration='00:00:02', MaxGameDuration='00:10:00', AutoRestart='False')
