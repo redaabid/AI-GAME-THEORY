@@ -123,7 +123,9 @@ def main():
                  'n’est pas contrôlé par --seed. Les temps imprimés sont arrondis à trois décimales '
                  'et ne remplacent pas une mesure de l’horloge interne du serveur.'])
     suffix = f'-{args.max_plies}' if args.max_plies is not None else ''
-    (args.root/f'SUMMARY{suffix}.md').write_text('\n\n'.join(text)+'\n', encoding='utf8')
+    rendered = '\n\n'.join(text)+'\n'
+    rendered = re.sub(r'(?m)(^\|[^\n]*\|)\n\n(?=\|)', r'\1\n', rendered)
+    (args.root/f'SUMMARY{suffix}.md').write_text(rendered, encoding='utf8')
     (args.root/f'aggregate{suffix}.json').write_text(json.dumps(dict(
         generated=datetime.now(timezone.utc).isoformat(), games=rows, attempts=attempts,
         architectures=aggregate), indent=2), encoding='utf8')
