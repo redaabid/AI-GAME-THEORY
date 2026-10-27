@@ -67,7 +67,7 @@ AB6 choisit ici les mêmes actions qu’AB3, mais sa valeur diffère sur une pos
 
 ## Comparaison avec les anciens rapports
 
-Le [rapport du 22 octobre](../../2026-10-22-670a148/SUMMARY.md) indique déjà deux nuls 16–16 contre OEP sur testmap2 à 40 coups. Contre MCTS et baseline, les quatre victoires sur cette carte à 40 coups étaient des scores 16–14 au plafond, sans élimination. Les anciennes parties différaient donc aussi par l’adversaire et sa collecte des humains. Machine, commit et archive du serveur historiques diffèrent ; ce contrôle ne prétend pas reproduire exactement ces anciens matchs.
+Le [rapport du 22 octobre](../../../2026-10-22-670a148/SUMMARY.md) indique déjà deux nuls 16–16 contre OEP sur testmap2 à 40 coups. Contre MCTS et baseline, les quatre victoires sur cette carte à 40 coups étaient des scores 16–14 au plafond, sans élimination. Les anciennes parties différaient donc aussi par l’adversaire et sa collecte des humains. Machine, commit et archive du serveur historiques diffèrent ; ce contrôle ne prétend pas reproduire exactement ces anciens matchs.
 
 ## Données et limites
 

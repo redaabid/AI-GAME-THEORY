@@ -1,3 +1,5 @@
+> **Essais Alpha-Bêta de Julian — 27 octobre 2026 :** [code, configurations et résultats](README_JULIAN_ALPHA_BETA_2026-10-27.md).
+
 # AI Game Theory: Vampires vs Werewolves
 
 A four-person team project to build an AI for the Vampires vs Werewolves game.
