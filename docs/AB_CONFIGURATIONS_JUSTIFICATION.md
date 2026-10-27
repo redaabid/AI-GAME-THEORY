@@ -20,6 +20,26 @@ Sources de cette description : [options des profils](../agents/ab_variants.py), 
 
 **AB2 n'explore donc pas tous les mouvements légaux.** AB3 n'introduit pas la première coordination du projet : il enrichit et modifie une sélection déjà bornée. Les scripts produisent le mouvement du tour courant et sont réévalués ensuite ; nous n'avons pas implémenté de macro-actions temporelles exécutées sur plusieurs tours.
 
+### Techniques évoquées par le professeur et variantes testées
+
+Nous avons mis à l'épreuve les techniques évoquées par le professeur autour d'Alpha-Bêta : ordre des coups, approfondissement itératif, mémoire et construction de mouvements coordonnés. Nous avons aussi comparé des compléments issus de la littérature. Voici où ils sont effectivement implémentés et dans quelles campagnes ils ont été testés.
+
+| Technique | Ce que nous avons implémenté | Variantes concernées | Tests sur le serveur |
+|---|---|---|---|
+| **Move ordering** | Choisir l'ordre d'exploration des coups ; historique à partir d'AB2 | AB1 à AB8 | Famille à 40 coups ; AB2, AB3, AB6 et nouvel AB7 à 200 |
+| **Iterative deepening** | Approfondir progressivement et conserver la dernière recherche entièrement terminée | AB1 à AB8 | Famille à 40 coups ; AB2, AB3, AB6 et nouvel AB7 à 200 |
+| **Mémoire des positions** | Table de transposition pour réutiliser valeurs ou bornes compatibles | AB2 à AB8 | Famille à 40 coups ; AB2, AB3, AB6 et nouvel AB7 à 200 |
+| **Mouvements coordonnés par scripts** | Enrichir les candidats par des tours complets impliquant plusieurs groupes, avec sélection diversifiée | AB3, AB4, AB5, AB6 et AB7 | Ces profils à 40 coups ; AB3, AB6 et nouvel AB7 à 200 |
+| **Fenêtres étroites et aspiration** | PVS et aspiration, avec reprise lorsque nécessaire | AB4 | 40 coups |
+| **Prolongations tactiques** | Quiescence bornée sur les feuilles tactiques | AB5 | 40 coups |
+| **Traitement du hasard** | Distributions des issues de combat et bornes aux nœuds de chance | AB6 | 40 et 200 coups |
+| **Réglage de l'évaluation** | Criblage hors ligne des poids ; candidat final avec `discount=0.97` | AB7 | Profil historique à 40 coups ; nouveau candidat à 200, après entraînement/validation simulés |
+| **Pilote à fenêtres nulles** | MTD(f) avec Alpha-Bêta et mémoire | AB8 | 40 coups |
+
+Les mouvements par scripts ne sont **pas des macro-actions temporelles sur plusieurs tours** : chaque décision produit seulement le tour courant. Le générateur commun d'AB2 comporte déjà de la coordination ; la ligne scripts décrit l'enrichissement spécifique d'AB3 et de ses dérivés. AB8 reprend AB2 et n'hérite donc pas des scripts d'AB3.
+
+« Testé » signifie ici évalué dans une configuration combinant ces composants, pas démontré bénéfique par une ablation indépendante. AB4, AB5 et AB8 ont bien été expérimentées à 40 coups, mais ne font pas partie des quatre configurations retenues. Le nouvel AB7 n'a pas joué la campagne WPF à 40 coups ; celle-ci concernait son profil historique.
+
 ## 2. AB2 — référence efficace, avec mémoire et ordonnancement
 
 ### Fonctionnement implémenté

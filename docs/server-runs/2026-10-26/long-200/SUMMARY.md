@@ -26,6 +26,28 @@ Aucun code de dÃ©cision du bot original ou des variantes nâ€™a Ã©tÃ© 
 
 Publication GitHub : le prÃ©cÃ©dent push a Ã©tÃ© refusÃ© (403, droits collaborateur manquants). Ce rapport est conservÃ© localement sur server-runs.
 
+## Techniques évoquées par le professeur : ce que nous avons testé
+
+Mise à jour du 27 octobre : récapitulatif des campagnes à 40 et à 200 coups.
+
+Les campagnes ont mis à l'épreuve les techniques discutées avec le professeur autour d'Alpha-Bêta, ainsi que des compléments de la littérature :
+
+| Technique | Variantes où elle est active | Campagne serveur |
+|---|---|---|
+| **Move ordering** : ordre d'exploration des coups | AB1 à AB8 ; historique à partir d'AB2 | 40 coups ; AB2, AB3, AB6 et nouvel AB7 à 200 |
+| **Iterative deepening** : dernière profondeur entièrement terminée conservée | AB1 à AB8 | 40 coups ; AB2, AB3, AB6 et nouvel AB7 à 200 |
+| **Mémoire des positions** : valeurs et bornes en table de transposition | AB2 à AB8 | 40 coups ; AB2, AB3, AB6 et nouvel AB7 à 200 |
+| **Mouvements coordonnés par scripts** : propositions de tours complets | AB3, AB4, AB5, AB6 et AB7 | 40 coups ; AB3, AB6 et nouvel AB7 à 200 |
+| **Fenêtres étroites / aspiration** : PVS et reprises | AB4 | 40 coups |
+| **Prolongations tactiques** : quiescence bornée | AB5 | 40 coups |
+| **Traitement du hasard** : distributions et bornes de chance | AB6 | 40 et 200 coups |
+| **Réglage de l'évaluation** | AB7 | Ancien profil à 40 ; nouveau candidat à 200, après réglage en simulation |
+| **MTD(f)** : pilote à fenêtres nulles et mémoire | AB8 | 40 coups |
+
+Les scripts produisent le mouvement du tour courant : **ce ne sont pas des macro-actions sur plusieurs tours**. AB2 possède déjà des candidats coordonnés ; AB3 enrichit cette base. AB8 dérive d'AB2 et n'inclut pas cet enrichissement par scripts.
+
+Les campagnes comparent des configurations combinées : elles ne démontrent pas le gain isolé de chaque technique. AB4, AB5 et AB8 ont été testées à 40 coups mais ne sont pas retenues dans la sélection finale AB2/AB3/AB6/AB7. Le nouvel AB7 est distinct de l'ancien profil testé à 40 coups.
+
 ## Fin des parties et répétitions
 
 Les traces reconstruisent les états avant les mouvements ; le dernier état reconstruit ne remplace pas les effectifs finaux lus dans WPF. Une répétition inclut le joueur au trait. Le compteur ne constitue pas une règle de nul du serveur.
