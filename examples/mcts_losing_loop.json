@@ -1,0 +1,284 @@
+{
+ "description": "Recorded losing shuttle before MCTS own turn 41 (ply 80); vampires 14, werewolves 16. Replayed first 80 logged plies; every battle before this point was guaranteed, so no random survivor reconstruction was needed.",
+ "source": {
+  "repository": "https://github.com/redaabid/AI-GAME-THEORY",
+  "revision": "47448a1e1a2a521edeb4755a372ec43b55645b5b",
+  "logs": [
+   "docs/server-runs/2026-10-22/p200_testmap2_MCTS-then-AlphaBeta_MCTS.txt",
+   "docs/server-runs/2026-10-22/p200_testmap2_MCTS-then-AlphaBeta_AlphaBeta.txt"
+  ],
+  "map": "Course testmap2.xml"
+ },
+ "max_plies": 200,
+ "state": {
+  "schema_version": 1,
+  "rows": 15,
+  "columns": 29,
+  "to_play": "vampires",
+  "ply": 80,
+  "rules_profile": "server-v3.2.1",
+  "cells": [
+   [
+    2,
+    1,
+    0,
+    0,
+    12
+   ],
+   [
+    3,
+    1,
+    0,
+    0,
+    4
+   ],
+   [
+    11,
+    10,
+    0,
+    14,
+    0
+   ],
+   [
+    14,
+    7,
+    20,
+    0,
+    0
+   ],
+   [
+    28,
+    0,
+    2,
+    0,
+    0
+   ]
+  ]
+ },
+ "history": [
+  {
+   "state": {
+    "schema_version": 1,
+    "rows": 15,
+    "columns": 29,
+    "to_play": "vampires",
+    "ply": 72,
+    "rules_profile": "server-v3.2.1",
+    "cells": [
+     [
+      2,
+      1,
+      0,
+      0,
+      12
+     ],
+     [
+      3,
+      1,
+      0,
+      0,
+      4
+     ],
+     [
+      11,
+      10,
+      0,
+      14,
+      0
+     ],
+     [
+      14,
+      7,
+      20,
+      0,
+      0
+     ],
+     [
+      28,
+      0,
+      2,
+      0,
+      0
+     ]
+    ]
+   },
+   "action": [
+    [
+     11,
+     10,
+     14,
+     10,
+     10
+    ]
+   ]
+  },
+  {
+   "state": {
+    "schema_version": 1,
+    "rows": 15,
+    "columns": 29,
+    "to_play": "vampires",
+    "ply": 74,
+    "rules_profile": "server-v3.2.1",
+    "cells": [
+     [
+      2,
+      0,
+      0,
+      0,
+      4
+     ],
+     [
+      3,
+      0,
+      0,
+      0,
+      12
+     ],
+     [
+      10,
+      10,
+      0,
+      14,
+      0
+     ],
+     [
+      14,
+      7,
+      20,
+      0,
+      0
+     ],
+     [
+      28,
+      0,
+      2,
+      0,
+      0
+     ]
+    ]
+   },
+   "action": [
+    [
+     10,
+     10,
+     14,
+     11,
+     10
+    ]
+   ]
+  },
+  {
+   "state": {
+    "schema_version": 1,
+    "rows": 15,
+    "columns": 29,
+    "to_play": "vampires",
+    "ply": 76,
+    "rules_profile": "server-v3.2.1",
+    "cells": [
+     [
+      2,
+      1,
+      0,
+      0,
+      12
+     ],
+     [
+      3,
+      1,
+      0,
+      0,
+      4
+     ],
+     [
+      11,
+      10,
+      0,
+      14,
+      0
+     ],
+     [
+      14,
+      7,
+      20,
+      0,
+      0
+     ],
+     [
+      28,
+      0,
+      2,
+      0,
+      0
+     ]
+    ]
+   },
+   "action": [
+    [
+     11,
+     10,
+     14,
+     10,
+     10
+    ]
+   ]
+  },
+  {
+   "state": {
+    "schema_version": 1,
+    "rows": 15,
+    "columns": 29,
+    "to_play": "vampires",
+    "ply": 78,
+    "rules_profile": "server-v3.2.1",
+    "cells": [
+     [
+      2,
+      0,
+      0,
+      0,
+      4
+     ],
+     [
+      3,
+      0,
+      0,
+      0,
+      12
+     ],
+     [
+      10,
+      10,
+      0,
+      14,
+      0
+     ],
+     [
+      14,
+      7,
+      20,
+      0,
+      0
+     ],
+     [
+      28,
+      0,
+      2,
+      0,
+      0
+     ]
+    ]
+   },
+   "action": [
+    [
+     10,
+     10,
+     14,
+     11,
+     10
+    ]
+   ]
+  }
+ ]
+}

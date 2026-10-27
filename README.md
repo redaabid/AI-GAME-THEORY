@@ -1,8 +1,9 @@
 # AI Game Theory: Vampires vs Werewolves
 
 A four-person team project to build an AI for the Vampires vs Werewolves game.
-`main` contains a Python benchmark bot, a CPU simulator, and six engines behind
-one interface: `alphabeta`, `oep`, `portfolio`, `mcts`, `baseline`, and `random`.
+The repository contains a Python benchmark bot, a CPU simulator, and agents behind
+one interface: `alphabeta`, `oep`, `portfolio`, `mcts`, `baseline`, and `random`,
+plus the experimental `mcts-memory` variant on `feat/mcts-memory`.
 A round-robin tournament compares them, and `tune.py` tunes them offline.
 
 **Current best engine: `alphabeta`** (simulator results in
@@ -56,6 +57,42 @@ timeouts, and faults. To add a model, create `agents/<name>.py`; see
 Registered engines: `baseline`, `random`, `mcts`, `portfolio` (Portfolio Greedy
 Search), `alphabeta` (iterative deepening with chance nodes), and `oep` (online
 evolutionary planning). `tune.py` tunes their parameters offline.
+
+## Experimental MCTS: memory and the turn limit
+
+To try this branch after saving your work:
+
+```sh
+git fetch origin
+git switch feat/mcts-memory
+python -m unittest discover -s tests -q
+python demo_mcts_memory.py
+```
+
+The demo loads a losing loop from a recorded server match. At a fixed 2,048
+iterations, original MCTS repeats the recorded retreat; memory MCTS chooses
+another move. It remembers repeated quiet decisions while behind and can ignore
+human groups that cannot be reached before the turn limit. No GPU is needed.
+
+This is an experiment, not a new champion: **96 CPU games across six maps showed
+no win-rate improvement** against alpha-beta. All four switch combinations scored
+7 wins, 2 draws, and 15 losses each. See [the implementation and results](docs/MCTS_MEMORY.md)
+for the reproduction commands, diagnostics, and remaining work.
+
+Compare all four variants yourself:
+
+```sh
+python benchmark_mcts.py --iterations 128 --max-plies 200
+```
+
+With the prepared 40-ply demo server running, the new agent can play live:
+
+```sh
+python main.py --agent mcts-memory --max-plies 40 --move-time 0.15 --name Memory 127.0.0.1 5555
+```
+
+Start a second bot in another terminal, as described below. For a 200-ply server,
+use `--max-plies 200 --move-time 1.5`. The original `mcts` remains the control agent.
 
 ## Run CPU games without the graphical server
 
@@ -212,6 +249,9 @@ The client handles TCP messages split across reads, board updates, game resets
 | `simulate.py` | CPU games and versioned JSONL export |
 | `candidates.py` | Bounded whole-turn generation, recruitment splits, coordinated moves |
 | `search.py` | Adversarial UCT, sampled battles, deadline, root visit targets |
+| `agents/mcts_memory.py` | Experimental repeated-position memory and clock switches |
+| `demo_mcts_memory.py` | Replay one recorded losing decision with all four switch combinations |
+| `benchmark_mcts.py` | Balanced comparison of original, memory, clock, and both against one opponent |
 | `evaluate.py` | Balanced multi-map comparisons and decision timing |
 | `main.py` | Command-line entry point and game loop; `--agent` takes any registered agent |
 | `agents/` | Shared `Agent` interface, registry, safety net, built-in agents |

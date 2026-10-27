@@ -4,6 +4,10 @@ This is the first search agent, implemented using the Python standard library.
 It is a measurable starting point for the team; map coverage and finite search
 budgets still limit its strength. No neural model is required.
 
+The optional `mcts-memory` variant adds game history and a turn-cap-aware leaf
+evaluation while preserving the original `mcts`. Its recorded-loop demo and
+96-game comparison are documented in [MCTS_MEMORY.md](MCTS_MEMORY.md).
+
 ## Try it
 
 From the repository folder, generate search examples against the baseline:

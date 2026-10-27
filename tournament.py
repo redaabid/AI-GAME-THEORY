@@ -14,6 +14,7 @@ go to .local/tournaments/.
 """
 
 import argparse
+from collections import Counter
 from dataclasses import replace
 from datetime import datetime, timezone
 from itertools import combinations
@@ -49,7 +50,10 @@ def play_match(initial, specs, *, seed, max_plies=200, move_time=2.0, margin=0.3
         agents[species].new_game(initial, species, seed * 2 + index)
     battle_rng = random.Random(seed)
     position, history = initial, {s: [] for s in SPECIES}
-    stats = {s: {"moves": 0, "seconds": [], "timeouts": 0, "faults": []} for s in SPECIES}
+    stats = {s: {"moves": 0, "seconds": [], "timeouts": 0, "faults": [],
+                 "repeated_positions": 0, "behind_moves": 0, "repeated_while_behind": 0,
+                 "memory_interventions": 0, "repeated_chosen_after_penalty": 0} for s in SPECIES}
+    seen = {s: Counter() for s in SPECIES}
     while (outcome := get_outcome(position, max_plies=max_plies)) is None:
         actor = position.to_play
         started = time.perf_counter()
@@ -59,6 +63,20 @@ def play_match(initial, specs, *, seed, max_plies=200, move_time=2.0, margin=0.3
         record = stats[actor]
         record["moves"] += 1
         record["seconds"].append(elapsed)
+        # Dimensions/rules are constant within this match. Ignore ply so a
+        # returning board counts as a repetition, including both armies/humans.
+        key = tuple(sorted(position.cells.items()))
+        repeated = seen[actor][key] > 0
+        seen[actor][key] += 1
+        behind = (sum(getattr(c, actor) for c in position.cells.values())
+                  < sum(getattr(c, opponent(actor)) for c in position.cells.values()))
+        record["repeated_positions"] += repeated
+        record["behind_moves"] += behind
+        record["repeated_while_behind"] += repeated and behind
+        info = agents[actor].info or {}
+        if info.get("penalized_actions", 0):
+            record["memory_interventions"] += 1
+            record["repeated_chosen_after_penalty"] += bool(info.get("chosen_repeated"))
         if fault:
             record["faults"].append(f"ply {position.ply}: {fault}"[:200])
         if move_time and elapsed > move_time:

@@ -89,7 +89,7 @@ def main(argv=None):
         parser.error("iterations must be positive")
     try:
         name, params = parse_spec(args.agent)
-        if name == "mcts" and "iterations" not in params:
+        if name in ("mcts", "mcts-memory") and "iterations" not in params:
             args.agent = f"{args.agent}{',' if ':' in args.agent else ':'}iterations={args.iterations}"
         make_agent(args.agent)
     except ValueError as error:

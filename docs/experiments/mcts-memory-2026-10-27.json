@@ -1,0 +1,822 @@
+{
+ "schema_version": 1,
+ "purpose": "mcts_memory_clock_ablation",
+ "variants": {
+  "original": "mcts:iterations=128",
+  "clock": "mcts-memory:iterations=128,memory=False,clock=True",
+  "memory": "mcts-memory:iterations=128,memory=True,clock=False",
+  "memory-clock": "mcts-memory:iterations=128,memory=True,clock=True"
+ },
+ "opponent": "alphabeta",
+ "iterations": 128,
+ "rounds": 1,
+ "seed": 20261027,
+ "max_plies": 200,
+ "move_time": 0,
+ "margin": 0.3,
+ "maps": [
+  {
+   "name": "demo",
+   "state": {
+    "schema_version": 1,
+    "rows": 5,
+    "columns": 7,
+    "to_play": "vampires",
+    "ply": 0,
+    "rules_profile": "server-v3.2.1",
+    "cells": [
+     [
+      0,
+      0,
+      0,
+      8,
+      0
+     ],
+     [
+      1,
+      1,
+      3,
+      0,
+      0
+     ],
+     [
+      2,
+      3,
+      4,
+      0,
+      0
+     ],
+     [
+      3,
+      2,
+      6,
+      0,
+      0
+     ],
+     [
+      4,
+      1,
+      4,
+      0,
+      0
+     ],
+     [
+      5,
+      3,
+      3,
+      0,
+      0
+     ],
+     [
+      6,
+      4,
+      0,
+      0,
+      8
+     ]
+    ]
+   }
+  },
+  {
+   "name": "endgame",
+   "state": {
+    "schema_version": 1,
+    "rows": 5,
+    "columns": 7,
+    "to_play": "vampires",
+    "ply": 0,
+    "rules_profile": "server-v3.2.1",
+    "cells": [
+     [
+      1,
+      2,
+      0,
+      15,
+      0
+     ],
+     [
+      5,
+      2,
+      0,
+      0,
+      10
+     ]
+    ]
+   }
+  },
+  {
+   "name": "recruitment",
+   "state": {
+    "schema_version": 1,
+    "rows": 7,
+    "columns": 9,
+    "to_play": "vampires",
+    "ply": 0,
+    "rules_profile": "server-v3.2.1",
+    "cells": [
+     [
+      0,
+      3,
+      0,
+      12,
+      0
+     ],
+     [
+      2,
+      1,
+      4,
+      0,
+      0
+     ],
+     [
+      2,
+      5,
+      4,
+      0,
+      0
+     ],
+     [
+      4,
+      3,
+      9,
+      0,
+      0
+     ],
+     [
+      6,
+      1,
+      4,
+      0,
+      0
+     ],
+     [
+      6,
+      5,
+      4,
+      0,
+      0
+     ],
+     [
+      8,
+      3,
+      0,
+      0,
+      12
+     ]
+    ]
+   }
+  },
+  {
+   "name": "tactics",
+   "state": {
+    "schema_version": 1,
+    "rows": 5,
+    "columns": 5,
+    "to_play": "vampires",
+    "ply": 0,
+    "rules_profile": "server-v3.2.1",
+    "cells": [
+     [
+      0,
+      1,
+      0,
+      6,
+      0
+     ],
+     [
+      0,
+      3,
+      0,
+      6,
+      0
+     ],
+     [
+      1,
+      2,
+      4,
+      0,
+      0
+     ],
+     [
+      2,
+      2,
+      0,
+      0,
+      8
+     ],
+     [
+      3,
+      0,
+      3,
+      0,
+      0
+     ],
+     [
+      4,
+      4,
+      0,
+      0,
+      4
+     ]
+    ]
+   }
+  },
+  {
+   "name": "val-medium-1000000",
+   "state": {
+    "schema_version": 1,
+    "rows": 7,
+    "columns": 16,
+    "to_play": "vampires",
+    "ply": 0,
+    "rules_profile": "server-v3.2.1",
+    "cells": [
+     [
+      0,
+      5,
+      1,
+      0,
+      0
+     ],
+     [
+      2,
+      0,
+      0,
+      8,
+      0
+     ],
+     [
+      3,
+      6,
+      7,
+      0,
+      0
+     ],
+     [
+      6,
+      4,
+      8,
+      0,
+      0
+     ],
+     [
+      9,
+      2,
+      8,
+      0,
+      0
+     ],
+     [
+      12,
+      0,
+      7,
+      0,
+      0
+     ],
+     [
+      13,
+      6,
+      0,
+      0,
+      8
+     ],
+     [
+      15,
+      1,
+      1,
+      0,
+      0
+     ]
+    ]
+   }
+  },
+  {
+   "name": "val-medium-1000001",
+   "state": {
+    "schema_version": 1,
+    "rows": 8,
+    "columns": 12,
+    "to_play": "vampires",
+    "ply": 0,
+    "rules_profile": "server-v3.2.1",
+    "cells": [
+     [
+      0,
+      1,
+      9,
+      0,
+      0
+     ],
+     [
+      1,
+      3,
+      10,
+      0,
+      0
+     ],
+     [
+      2,
+      0,
+      7,
+      0,
+      0
+     ],
+     [
+      2,
+      5,
+      4,
+      0,
+      0
+     ],
+     [
+      3,
+      3,
+      5,
+      0,
+      0
+     ],
+     [
+      4,
+      0,
+      1,
+      0,
+      0
+     ],
+     [
+      5,
+      1,
+      7,
+      0,
+      0
+     ],
+     [
+      5,
+      3,
+      0,
+      6,
+      0
+     ],
+     [
+      6,
+      4,
+      0,
+      0,
+      6
+     ],
+     [
+      6,
+      6,
+      7,
+      0,
+      0
+     ],
+     [
+      7,
+      7,
+      1,
+      0,
+      0
+     ],
+     [
+      8,
+      4,
+      5,
+      0,
+      0
+     ],
+     [
+      9,
+      2,
+      4,
+      0,
+      0
+     ],
+     [
+      9,
+      7,
+      7,
+      0,
+      0
+     ],
+     [
+      10,
+      4,
+      10,
+      0,
+      0
+     ],
+     [
+      11,
+      6,
+      9,
+      0,
+      0
+     ]
+    ]
+   }
+  }
+ ],
+ "source_sha256": {
+  "agents/__init__.py": "99e7ad3c448aedf3fe5058170813a7d327b35366f6534691f96519912ae2f4b2",
+  "agents/alphabeta.py": "18faf0e86cff7270d480d48f2986a342d1213fc9de8ee70979cad02afc27fadf",
+  "agents/builtin.py": "6a518ae464cdd0f093e00258ae24699385a0b97d7fab131285d31b9c2916e093",
+  "agents/mcts_memory.py": "5a1a44a5f45d515e8875e8d24de69af72cbf2f8e8e60493d500010f3b36f413a",
+  "agents/oep.py": "32881d91de6f00bd2e7c9abdd818a61003635fb4ff5a957e799398ec4477ab04",
+  "agents/portfolio.py": "04e3f46a3294ec15033eb83574bbc90adbc55e0c7aa3f1b459dbdc0b9ec41413",
+  "benchmark_mcts.py": "e85c7977dbeccf6075cec7ba4ea26ceda55272e33f378f3e451aa2fe2c4a7953",
+  "candidates.py": "e506d21f718778f9aabfe0700cab59d3994eef3f70fc93b0ac35ec61553a96c7",
+  "client.py": "0b34c450c8f5b50c17cb872b6bb31d1e5c2de840820076882a33c15a4106dbd5",
+  "combat.py": "7fb0c48bd796548593d91230a7f7422434cf597ac217ed296ff8f186456ab690",
+  "config.py": "fa7c79ddb6cbe5e5ed243f791e33db2074fd3fa0c7924937839f7d5b7c8d0218",
+  "evaluate.py": "45168c7fc6603de739883d1ec94e91167f114a22b86e1a3fc32323181cb9ec24",
+  "evaluation.py": "4e6ab05321788a3be8f590b0eb1f31ebec5936b0c551b30b68794f10c8441c57",
+  "game.py": "8f96872880bfba67d1964f843f8dad257aa4ff992a851ce7c345ca09c4465fad",
+  "lookahead.py": "7ea2036f875c37a5bebd84ea4a8944e09b4ff55f92b986e9746be9f7132d270c",
+  "macro.py": "95ed7e72b25b0ba4def014edba5ee1a4c8dd03b04f49dde08c53ba20279d7116",
+  "main.py": "8faa919f684605e55cfeaea37e0938a8e9741e559692a8eadcdbc4c6aa906e13",
+  "mapgen.py": "6673ab53e1617de2fc2d08a6cb0aa34fe9782bd0f3ec294d845c9edd5cf0adf5",
+  "playbook.py": "9004d87168c4bcd39d1debf6ad82c3a0e93acad05c52aa5045dbb8e7f35f934c",
+  "search.py": "524f320e07ec76d7ba3ead9b760461a4b34144ccec965e30a64767a21cc11d60",
+  "simulate.py": "a4fac93ce63e728e5ecd83c57a32786008ffc40728266dbf3d65611af55ea71c",
+  "simulator.py": "9af4d29a359132f3e9aadfa7291e2786d98af567ed730eeec4f056d104f4f81f",
+  "strategy.py": "66e9a8781887995bdcae942b5a5e71b7239be603c4ffe46fa89a991be10bce6e",
+  "tournament.py": "ce6d108444368bea0caae2d8ec95e94a9dd052d2ffdaa456f4d650aba5319a3b",
+  "tune.py": "068c5e9958aa24e3d1a80ae532d95785d9f1be89a32a2855c078a3a5369a5111"
+ },
+ "python_version": "3.12.9",
+ "summaries": {
+  "original": {
+   "games": 24,
+   "wins": 7,
+   "draws": 2,
+   "losses": 15,
+   "macro_mean_score": 0.3333333333333333,
+   "per_map": {
+    "demo": {
+     "games": 4,
+     "wins": 1,
+     "draws": 0,
+     "losses": 3,
+     "mean_score": 0.25
+    },
+    "endgame": {
+     "games": 4,
+     "wins": 2,
+     "draws": 0,
+     "losses": 2,
+     "mean_score": 0.5
+    },
+    "recruitment": {
+     "games": 4,
+     "wins": 1,
+     "draws": 0,
+     "losses": 3,
+     "mean_score": 0.25
+    },
+    "tactics": {
+     "games": 4,
+     "wins": 2,
+     "draws": 0,
+     "losses": 2,
+     "mean_score": 0.5
+    },
+    "val-medium-1000000": {
+     "games": 4,
+     "wins": 0,
+     "draws": 2,
+     "losses": 2,
+     "mean_score": 0.25
+    },
+    "val-medium-1000001": {
+     "games": 4,
+     "wins": 1,
+     "draws": 0,
+     "losses": 3,
+     "mean_score": 0.25
+    }
+   },
+   "moves": 537,
+   "timeouts": 0,
+   "repeated_positions": 211,
+   "behind_moves": 286,
+   "repeated_while_behind": 39,
+   "memory_interventions": 0,
+   "repeated_chosen_after_penalty": 0,
+   "repeat_rate": 0.3929236499068901,
+   "behind_repeat_rate": 0.13636363636363635,
+   "faults": 0,
+   "opponent_faults": 0,
+   "opponent_timeouts": 0,
+   "ply_limit_games": 2,
+   "p95_seconds": 0.27218099997844547,
+   "max_seconds": 0.3281344000133686
+  },
+  "clock": {
+   "games": 24,
+   "wins": 7,
+   "draws": 2,
+   "losses": 15,
+   "macro_mean_score": 0.3333333333333333,
+   "per_map": {
+    "demo": {
+     "games": 4,
+     "wins": 1,
+     "draws": 0,
+     "losses": 3,
+     "mean_score": 0.25
+    },
+    "endgame": {
+     "games": 4,
+     "wins": 2,
+     "draws": 0,
+     "losses": 2,
+     "mean_score": 0.5
+    },
+    "recruitment": {
+     "games": 4,
+     "wins": 1,
+     "draws": 0,
+     "losses": 3,
+     "mean_score": 0.25
+    },
+    "tactics": {
+     "games": 4,
+     "wins": 2,
+     "draws": 0,
+     "losses": 2,
+     "mean_score": 0.5
+    },
+    "val-medium-1000000": {
+     "games": 4,
+     "wins": 0,
+     "draws": 2,
+     "losses": 2,
+     "mean_score": 0.25
+    },
+    "val-medium-1000001": {
+     "games": 4,
+     "wins": 1,
+     "draws": 0,
+     "losses": 3,
+     "mean_score": 0.25
+    }
+   },
+   "moves": 537,
+   "timeouts": 0,
+   "repeated_positions": 211,
+   "behind_moves": 286,
+   "repeated_while_behind": 39,
+   "memory_interventions": 0,
+   "repeated_chosen_after_penalty": 0,
+   "repeat_rate": 0.3929236499068901,
+   "behind_repeat_rate": 0.13636363636363635,
+   "faults": 0,
+   "opponent_faults": 0,
+   "opponent_timeouts": 0,
+   "ply_limit_games": 2,
+   "p95_seconds": 0.22850409999955446,
+   "max_seconds": 0.2944439999992028
+  },
+  "memory": {
+   "games": 24,
+   "wins": 7,
+   "draws": 2,
+   "losses": 15,
+   "macro_mean_score": 0.3333333333333333,
+   "per_map": {
+    "demo": {
+     "games": 4,
+     "wins": 1,
+     "draws": 0,
+     "losses": 3,
+     "mean_score": 0.25
+    },
+    "endgame": {
+     "games": 4,
+     "wins": 2,
+     "draws": 0,
+     "losses": 2,
+     "mean_score": 0.5
+    },
+    "recruitment": {
+     "games": 4,
+     "wins": 1,
+     "draws": 0,
+     "losses": 3,
+     "mean_score": 0.25
+    },
+    "tactics": {
+     "games": 4,
+     "wins": 2,
+     "draws": 0,
+     "losses": 2,
+     "mean_score": 0.5
+    },
+    "val-medium-1000000": {
+     "games": 4,
+     "wins": 0,
+     "draws": 2,
+     "losses": 2,
+     "mean_score": 0.25
+    },
+    "val-medium-1000001": {
+     "games": 4,
+     "wins": 1,
+     "draws": 0,
+     "losses": 3,
+     "mean_score": 0.25
+    }
+   },
+   "moves": 566,
+   "timeouts": 0,
+   "repeated_positions": 216,
+   "behind_moves": 315,
+   "repeated_while_behind": 44,
+   "memory_interventions": 8,
+   "repeated_chosen_after_penalty": 0,
+   "repeat_rate": 0.38162544169611307,
+   "behind_repeat_rate": 0.13968253968253969,
+   "faults": 0,
+   "opponent_faults": 0,
+   "opponent_timeouts": 0,
+   "ply_limit_games": 2,
+   "p95_seconds": 0.1699135999660939,
+   "max_seconds": 0.2853545999969356
+  },
+  "memory-clock": {
+   "games": 24,
+   "wins": 7,
+   "draws": 2,
+   "losses": 15,
+   "macro_mean_score": 0.3333333333333333,
+   "per_map": {
+    "demo": {
+     "games": 4,
+     "wins": 1,
+     "draws": 0,
+     "losses": 3,
+     "mean_score": 0.25
+    },
+    "endgame": {
+     "games": 4,
+     "wins": 2,
+     "draws": 0,
+     "losses": 2,
+     "mean_score": 0.5
+    },
+    "recruitment": {
+     "games": 4,
+     "wins": 1,
+     "draws": 0,
+     "losses": 3,
+     "mean_score": 0.25
+    },
+    "tactics": {
+     "games": 4,
+     "wins": 2,
+     "draws": 0,
+     "losses": 2,
+     "mean_score": 0.5
+    },
+    "val-medium-1000000": {
+     "games": 4,
+     "wins": 0,
+     "draws": 2,
+     "losses": 2,
+     "mean_score": 0.25
+    },
+    "val-medium-1000001": {
+     "games": 4,
+     "wins": 1,
+     "draws": 0,
+     "losses": 3,
+     "mean_score": 0.25
+    }
+   },
+   "moves": 566,
+   "timeouts": 0,
+   "repeated_positions": 216,
+   "behind_moves": 315,
+   "repeated_while_behind": 44,
+   "memory_interventions": 8,
+   "repeated_chosen_after_penalty": 0,
+   "repeat_rate": 0.38162544169611307,
+   "behind_repeat_rate": 0.13968253968253969,
+   "faults": 0,
+   "opponent_faults": 0,
+   "opponent_timeouts": 0,
+   "ply_limit_games": 2,
+   "p95_seconds": 0.17567319999216124,
+   "max_seconds": 0.29790559998946264
+  }
+ },
+ "wall_seconds": 296.7432181999902,
+ "archive_note": "Complete match summaries and configuration; no per-turn logs. Unused demo script excluded from runtime hash snapshot.",
+ "original_report_sha256": "3cc9ded7f7de349229561795022573e4d2c74d446dd7099afe2bf2f5a1713601",
+ "games": {
+  "original": [
+   {"i":0,"j":1,"map_name":"demo","round":0,"a_species":"vampires","first":"vampires","seed":20261027,"a_score":0.0,"a_margin":-5,"winner":"werewolves","termination":"elimination","plies":12,"final_populations":{"vampires":0,"werewolves":5},"a_stats":{"moves":6,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":3,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.12381480005569756,"p95_seconds":0.12381480005569756},"b_stats":{"moves":6,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":2,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.02055730001302436,"p95_seconds":0.02055730001302436}},
+   {"i":0,"j":1,"map_name":"demo","round":0,"a_species":"vampires","first":"werewolves","seed":20261029,"a_score":0.0,"a_margin":-25,"winner":"werewolves","termination":"elimination","plies":17,"final_populations":{"vampires":0,"werewolves":25},"a_stats":{"moves":8,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":7,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.21410300000570714,"p95_seconds":0.21410300000570714},"b_stats":{"moves":9,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":0,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.01682230003643781,"p95_seconds":0.01682230003643781}},
+   {"i":0,"j":1,"map_name":"demo","round":0,"a_species":"werewolves","first":"vampires","seed":20261028,"a_score":1.0,"a_margin":1,"winner":"werewolves","termination":"elimination","plies":139,"final_populations":{"vampires":0,"werewolves":1},"a_stats":{"moves":69,"timeouts":0,"faults":[],"repeated_positions":39,"behind_moves":68,"repeated_while_behind":39,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.14284329995280132,"p95_seconds":0.14098950003972277},"b_stats":{"moves":70,"timeouts":0,"faults":[],"repeated_positions":32,"behind_moves":0,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.00859909999417141,"p95_seconds":0.0060464999987743795}},
+   {"i":0,"j":1,"map_name":"demo","round":0,"a_species":"werewolves","first":"werewolves","seed":20261030,"a_score":0.0,"a_margin":-18,"winner":"vampires","termination":"elimination","plies":14,"final_populations":{"vampires":18,"werewolves":0},"a_stats":{"moves":7,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":4,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.22140969999600202,"p95_seconds":0.22140969999600202},"b_stats":{"moves":7,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":2,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.03279369999654591,"p95_seconds":0.03279369999654591}},
+   {"i":0,"j":1,"map_name":"endgame","round":0,"a_species":"vampires","first":"vampires","seed":20361030,"a_score":1.0,"a_margin":10,"winner":"vampires","termination":"elimination","plies":4,"final_populations":{"vampires":10,"werewolves":0},"a_stats":{"moves":2,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":0,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.13654580002184957,"p95_seconds":0.13654580002184957},"b_stats":{"moves":2,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":2,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.0058723000111058354,"p95_seconds":0.0058723000111058354}},
+   {"i":0,"j":1,"map_name":"endgame","round":0,"a_species":"vampires","first":"werewolves","seed":20361032,"a_score":1.0,"a_margin":10,"winner":"vampires","termination":"elimination","plies":9,"final_populations":{"vampires":10,"werewolves":0},"a_stats":{"moves":4,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":0,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.13487579999491572,"p95_seconds":0.13487579999491572},"b_stats":{"moves":5,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":5,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.00488480000058189,"p95_seconds":0.00488480000058189}},
+   {"i":0,"j":1,"map_name":"endgame","round":0,"a_species":"werewolves","first":"vampires","seed":20361031,"a_score":0.0,"a_margin":-10,"winner":"vampires","termination":"elimination","plies":8,"final_populations":{"vampires":10,"werewolves":0},"a_stats":{"moves":4,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":4,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.09258579998277128,"p95_seconds":0.09258579998277128},"b_stats":{"moves":4,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":0,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.0038569000316783786,"p95_seconds":0.0038569000316783786}},
+   {"i":0,"j":1,"map_name":"endgame","round":0,"a_species":"werewolves","first":"werewolves","seed":20361033,"a_score":0.0,"a_margin":-9,"winner":"vampires","termination":"elimination","plies":9,"final_populations":{"vampires":9,"werewolves":0},"a_stats":{"moves":5,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":5,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.13727000000653788,"p95_seconds":0.13727000000653788},"b_stats":{"moves":4,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":0,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.004378799989353865,"p95_seconds":0.004378799989353865}},
+   {"i":0,"j":1,"map_name":"recruitment","round":0,"a_species":"vampires","first":"vampires","seed":20461033,"a_score":0.0,"a_margin":-22,"winner":"werewolves","termination":"elimination","plies":14,"final_populations":{"vampires":0,"werewolves":22},"a_stats":{"moves":7,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":5,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.2324642000021413,"p95_seconds":0.2324642000021413},"b_stats":{"moves":7,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":1,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.05983460001880303,"p95_seconds":0.05983460001880303}},
+   {"i":0,"j":1,"map_name":"recruitment","round":0,"a_species":"vampires","first":"werewolves","seed":20461035,"a_score":0.0,"a_margin":-24,"winner":"werewolves","termination":"elimination","plies":13,"final_populations":{"vampires":0,"werewolves":24},"a_stats":{"moves":6,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":5,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.24510390002978966,"p95_seconds":0.24510390002978966},"b_stats":{"moves":7,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":0,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.031883400049991906,"p95_seconds":0.031883400049991906}},
+   {"i":0,"j":1,"map_name":"recruitment","round":0,"a_species":"werewolves","first":"vampires","seed":20461034,"a_score":0.0,"a_margin":-25,"winner":"vampires","termination":"elimination","plies":21,"final_populations":{"vampires":25,"werewolves":0},"a_stats":{"moves":10,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":8,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.23212230001809075,"p95_seconds":0.23212230001809075},"b_stats":{"moves":11,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":0,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.05368479999015108,"p95_seconds":0.05368479999015108}},
+   {"i":0,"j":1,"map_name":"recruitment","round":0,"a_species":"werewolves","first":"werewolves","seed":20461036,"a_score":1.0,"a_margin":11,"winner":"werewolves","termination":"elimination","plies":12,"final_populations":{"vampires":0,"werewolves":11},"a_stats":{"moves":6,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":2,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.22991819999879226,"p95_seconds":0.22991819999879226},"b_stats":{"moves":6,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":4,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.03784309996990487,"p95_seconds":0.03784309996990487}},
+   {"i":0,"j":1,"map_name":"tactics","round":0,"a_species":"vampires","first":"vampires","seed":20561036,"a_score":1.0,"a_margin":11,"winner":"vampires","termination":"elimination","plies":10,"final_populations":{"vampires":11,"werewolves":0},"a_stats":{"moves":5,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":0,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.18597019999288023,"p95_seconds":0.18597019999288023},"b_stats":{"moves":5,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":5,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.026737699983641505,"p95_seconds":0.026737699983641505}},
+   {"i":0,"j":1,"map_name":"tactics","round":0,"a_species":"vampires","first":"werewolves","seed":20561038,"a_score":0.0,"a_margin":-15,"winner":"werewolves","termination":"elimination","plies":5,"final_populations":{"vampires":0,"werewolves":15},"a_stats":{"moves":2,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":2,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.15510599996196106,"p95_seconds":0.15510599996196106},"b_stats":{"moves":3,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":0,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.0484378999681212,"p95_seconds":0.0484378999681212}},
+   {"i":0,"j":1,"map_name":"tactics","round":0,"a_species":"werewolves","first":"vampires","seed":20561037,"a_score":1.0,"a_margin":7,"winner":"werewolves","termination":"elimination","plies":6,"final_populations":{"vampires":0,"werewolves":7},"a_stats":{"moves":3,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":3,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.16065470001194626,"p95_seconds":0.16065470001194626},"b_stats":{"moves":3,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":0,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.03876169997965917,"p95_seconds":0.03876169997965917}},
+   {"i":0,"j":1,"map_name":"tactics","round":0,"a_species":"werewolves","first":"werewolves","seed":20561039,"a_score":0.0,"a_margin":-10,"winner":"vampires","termination":"elimination","plies":11,"final_populations":{"vampires":10,"werewolves":0},"a_stats":{"moves":6,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":5,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.18898770003579557,"p95_seconds":0.18898770003579557},"b_stats":{"moves":5,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":1,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.1229647999862209,"p95_seconds":0.1229647999862209}},
+   {"i":0,"j":1,"map_name":"val-medium-1000000","round":0,"a_species":"vampires","first":"vampires","seed":20661039,"a_score":0.0,"a_margin":-29,"winner":"werewolves","termination":"elimination","plies":79,"final_populations":{"vampires":0,"werewolves":29},"a_stats":{"moves":40,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":36,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.3155945999897085,"p95_seconds":0.2752799000008963},"b_stats":{"moves":39,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":0,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.12884749996010214,"p95_seconds":0.11564120004186407}},
+   {"i":0,"j":1,"map_name":"val-medium-1000000","round":0,"a_species":"vampires","first":"werewolves","seed":20661041,"a_score":0.0,"a_margin":-28,"winner":"werewolves","termination":"elimination","plies":79,"final_populations":{"vampires":0,"werewolves":28},"a_stats":{"moves":39,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":36,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.2587279000435956,"p95_seconds":0.25621229998068884},"b_stats":{"moves":40,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":0,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.14348400000017136,"p95_seconds":0.10101230000145733}},
+   {"i":0,"j":1,"map_name":"val-medium-1000000","round":0,"a_species":"werewolves","first":"vampires","seed":20661040,"a_score":0.5,"a_margin":0,"winner":null,"termination":"ply_limit","plies":200,"final_populations":{"vampires":24,"werewolves":24},"a_stats":{"moves":100,"timeouts":0,"faults":[],"repeated_positions":81,"behind_moves":9,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.23979740001959726,"p95_seconds":0.21969050000188872},"b_stats":{"moves":100,"timeouts":0,"faults":[],"repeated_positions":80,"behind_moves":0,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.015316099976189435,"p95_seconds":0.010546899982728064}},
+   {"i":0,"j":1,"map_name":"val-medium-1000000","round":0,"a_species":"werewolves","first":"werewolves","seed":20661042,"a_score":0.5,"a_margin":0,"winner":null,"termination":"ply_limit","plies":200,"final_populations":{"vampires":24,"werewolves":24},"a_stats":{"moves":100,"timeouts":0,"faults":[],"repeated_positions":81,"behind_moves":9,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.23541520000435412,"p95_seconds":0.2110621000174433},"b_stats":{"moves":100,"timeouts":0,"faults":[],"repeated_positions":81,"behind_moves":0,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.015147600031923503,"p95_seconds":0.009983199997805059}},
+   {"i":0,"j":1,"map_name":"val-medium-1000001","round":0,"a_species":"vampires","first":"vampires","seed":20761042,"a_score":0.0,"a_margin":-48,"winner":"werewolves","termination":"elimination","plies":72,"final_populations":{"vampires":0,"werewolves":48},"a_stats":{"moves":36,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":34,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.3017898999969475,"p95_seconds":0.2844747999915853},"b_stats":{"moves":36,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":0,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.12248430005274713,"p95_seconds":0.11277710000285879}},
+   {"i":0,"j":1,"map_name":"val-medium-1000001","round":0,"a_species":"vampires","first":"werewolves","seed":20761044,"a_score":1.0,"a_margin":2,"winner":"vampires","termination":"elimination","plies":83,"final_populations":{"vampires":2,"werewolves":0},"a_stats":{"moves":41,"timeouts":0,"faults":[],"repeated_positions":10,"behind_moves":15,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.3281344000133686,"p95_seconds":0.29709610005375},"b_stats":{"moves":42,"timeouts":0,"faults":[],"repeated_positions":10,"behind_moves":26,"repeated_while_behind":10,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.16167579998727888,"p95_seconds":0.1088709999457933}},
+   {"i":0,"j":1,"map_name":"val-medium-1000001","round":0,"a_species":"werewolves","first":"vampires","seed":20761043,"a_score":0.0,"a_margin":-33,"winner":"vampires","termination":"elimination","plies":61,"final_populations":{"vampires":33,"werewolves":0},"a_stats":{"moves":30,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":26,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.317266300029587,"p95_seconds":0.3107654999475926},"b_stats":{"moves":31,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":3,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.1337552000186406,"p95_seconds":0.12887399998726323}},
+   {"i":0,"j":1,"map_name":"val-medium-1000001","round":0,"a_species":"werewolves","first":"werewolves","seed":20761045,"a_score":0.0,"a_margin":-4,"winner":"vampires","termination":"elimination","plies":1,"final_populations":{"vampires":4,"werewolves":0},"a_stats":{"moves":1,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":0,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.22537539998302236,"p95_seconds":0.22537539998302236},"b_stats":{"moves":0,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":0,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0,"p95_seconds":0.0}}
+  ],
+  "clock": [
+   {"i":0,"j":1,"map_name":"demo","round":0,"a_species":"vampires","first":"vampires","seed":20261027,"a_score":0.0,"a_margin":-5,"winner":"werewolves","termination":"elimination","plies":12,"final_populations":{"vampires":0,"werewolves":5},"a_stats":{"moves":6,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":3,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.20702820003498346,"p95_seconds":0.20702820003498346},"b_stats":{"moves":6,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":2,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.037762199994176626,"p95_seconds":0.037762199994176626}},
+   {"i":0,"j":1,"map_name":"demo","round":0,"a_species":"vampires","first":"werewolves","seed":20261029,"a_score":0.0,"a_margin":-25,"winner":"werewolves","termination":"elimination","plies":17,"final_populations":{"vampires":0,"werewolves":25},"a_stats":{"moves":8,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":7,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.19080290000420064,"p95_seconds":0.19080290000420064},"b_stats":{"moves":9,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":0,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.01686819997848943,"p95_seconds":0.01686819997848943}},
+   {"i":0,"j":1,"map_name":"demo","round":0,"a_species":"werewolves","first":"vampires","seed":20261028,"a_score":1.0,"a_margin":1,"winner":"werewolves","termination":"elimination","plies":139,"final_populations":{"vampires":0,"werewolves":1},"a_stats":{"moves":69,"timeouts":0,"faults":[],"repeated_positions":39,"behind_moves":68,"repeated_while_behind":39,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.22040829999605194,"p95_seconds":0.14560659998096526},"b_stats":{"moves":70,"timeouts":0,"faults":[],"repeated_positions":32,"behind_moves":0,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.017557800048962235,"p95_seconds":0.006313799996860325}},
+   {"i":0,"j":1,"map_name":"demo","round":0,"a_species":"werewolves","first":"werewolves","seed":20261030,"a_score":0.0,"a_margin":-18,"winner":"vampires","termination":"elimination","plies":14,"final_populations":{"vampires":18,"werewolves":0},"a_stats":{"moves":7,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":4,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.21467689995188266,"p95_seconds":0.21467689995188266},"b_stats":{"moves":7,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":2,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.03719750000163913,"p95_seconds":0.03719750000163913}},
+   {"i":0,"j":1,"map_name":"endgame","round":0,"a_species":"vampires","first":"vampires","seed":20361030,"a_score":1.0,"a_margin":10,"winner":"vampires","termination":"elimination","plies":4,"final_populations":{"vampires":10,"werewolves":0},"a_stats":{"moves":2,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":0,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.13280819996725768,"p95_seconds":0.13280819996725768},"b_stats":{"moves":2,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":2,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.004747500002849847,"p95_seconds":0.004747500002849847}},
+   {"i":0,"j":1,"map_name":"endgame","round":0,"a_species":"vampires","first":"werewolves","seed":20361032,"a_score":1.0,"a_margin":10,"winner":"vampires","termination":"elimination","plies":9,"final_populations":{"vampires":10,"werewolves":0},"a_stats":{"moves":4,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":0,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.12837449996732175,"p95_seconds":0.12837449996732175},"b_stats":{"moves":5,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":5,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.006391800008714199,"p95_seconds":0.006391800008714199}},
+   {"i":0,"j":1,"map_name":"endgame","round":0,"a_species":"werewolves","first":"vampires","seed":20361031,"a_score":0.0,"a_margin":-10,"winner":"vampires","termination":"elimination","plies":8,"final_populations":{"vampires":10,"werewolves":0},"a_stats":{"moves":4,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":4,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.13151670002844185,"p95_seconds":0.13151670002844185},"b_stats":{"moves":4,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":0,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.004998000047635287,"p95_seconds":0.004998000047635287}},
+   {"i":0,"j":1,"map_name":"endgame","round":0,"a_species":"werewolves","first":"werewolves","seed":20361033,"a_score":0.0,"a_margin":-9,"winner":"vampires","termination":"elimination","plies":9,"final_populations":{"vampires":9,"werewolves":0},"a_stats":{"moves":5,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":5,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.13632049999432638,"p95_seconds":0.13632049999432638},"b_stats":{"moves":4,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":0,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.0030282000079751015,"p95_seconds":0.0030282000079751015}},
+   {"i":0,"j":1,"map_name":"recruitment","round":0,"a_species":"vampires","first":"vampires","seed":20461033,"a_score":0.0,"a_margin":-22,"winner":"werewolves","termination":"elimination","plies":14,"final_populations":{"vampires":0,"werewolves":22},"a_stats":{"moves":7,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":5,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.2440121999825351,"p95_seconds":0.2440121999825351},"b_stats":{"moves":7,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":1,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.09750219999114051,"p95_seconds":0.09750219999114051}},
+   {"i":0,"j":1,"map_name":"recruitment","round":0,"a_species":"vampires","first":"werewolves","seed":20461035,"a_score":0.0,"a_margin":-24,"winner":"werewolves","termination":"elimination","plies":13,"final_populations":{"vampires":0,"werewolves":24},"a_stats":{"moves":6,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":5,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.24704249994829297,"p95_seconds":0.24704249994829297},"b_stats":{"moves":7,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":0,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.03191499999957159,"p95_seconds":0.03191499999957159}},
+   {"i":0,"j":1,"map_name":"recruitment","round":0,"a_species":"werewolves","first":"vampires","seed":20461034,"a_score":0.0,"a_margin":-25,"winner":"vampires","termination":"elimination","plies":21,"final_populations":{"vampires":25,"werewolves":0},"a_stats":{"moves":10,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":8,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.2759189999778755,"p95_seconds":0.2759189999778755},"b_stats":{"moves":11,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":0,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.05421609996119514,"p95_seconds":0.05421609996119514}},
+   {"i":0,"j":1,"map_name":"recruitment","round":0,"a_species":"werewolves","first":"werewolves","seed":20461036,"a_score":1.0,"a_margin":11,"winner":"werewolves","termination":"elimination","plies":12,"final_populations":{"vampires":0,"werewolves":11},"a_stats":{"moves":6,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":2,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.24654319998808205,"p95_seconds":0.24654319998808205},"b_stats":{"moves":6,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":4,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.038679299992509186,"p95_seconds":0.038679299992509186}},
+   {"i":0,"j":1,"map_name":"tactics","round":0,"a_species":"vampires","first":"vampires","seed":20561036,"a_score":1.0,"a_margin":11,"winner":"vampires","termination":"elimination","plies":10,"final_populations":{"vampires":11,"werewolves":0},"a_stats":{"moves":5,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":0,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.19120090000797063,"p95_seconds":0.19120090000797063},"b_stats":{"moves":5,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":5,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.027457399992272258,"p95_seconds":0.027457399992272258}},
+   {"i":0,"j":1,"map_name":"tactics","round":0,"a_species":"vampires","first":"werewolves","seed":20561038,"a_score":0.0,"a_margin":-15,"winner":"werewolves","termination":"elimination","plies":5,"final_populations":{"vampires":0,"werewolves":15},"a_stats":{"moves":2,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":2,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.16057760000694543,"p95_seconds":0.16057760000694543},"b_stats":{"moves":3,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":0,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.04417239996837452,"p95_seconds":0.04417239996837452}},
+   {"i":0,"j":1,"map_name":"tactics","round":0,"a_species":"werewolves","first":"vampires","seed":20561037,"a_score":1.0,"a_margin":7,"winner":"werewolves","termination":"elimination","plies":6,"final_populations":{"vampires":0,"werewolves":7},"a_stats":{"moves":3,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":3,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.16355319996364415,"p95_seconds":0.16355319996364415},"b_stats":{"moves":3,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":0,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.03826279996428639,"p95_seconds":0.03826279996428639}},
+   {"i":0,"j":1,"map_name":"tactics","round":0,"a_species":"werewolves","first":"werewolves","seed":20561039,"a_score":0.0,"a_margin":-10,"winner":"vampires","termination":"elimination","plies":11,"final_populations":{"vampires":10,"werewolves":0},"a_stats":{"moves":6,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":5,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.16892349999397993,"p95_seconds":0.16892349999397993},"b_stats":{"moves":5,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":1,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.18641780002508312,"p95_seconds":0.18641780002508312}},
+   {"i":0,"j":1,"map_name":"val-medium-1000000","round":0,"a_species":"vampires","first":"vampires","seed":20661039,"a_score":0.0,"a_margin":-29,"winner":"werewolves","termination":"elimination","plies":79,"final_populations":{"vampires":0,"werewolves":29},"a_stats":{"moves":40,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":36,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.2944439999992028,"p95_seconds":0.28436069999588653},"b_stats":{"moves":39,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":0,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.14820969995344058,"p95_seconds":0.12183530000038445}},
+   {"i":0,"j":1,"map_name":"val-medium-1000000","round":0,"a_species":"vampires","first":"werewolves","seed":20661041,"a_score":0.0,"a_margin":-28,"winner":"werewolves","termination":"elimination","plies":79,"final_populations":{"vampires":0,"werewolves":28},"a_stats":{"moves":39,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":36,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.1711545999860391,"p95_seconds":0.16763240000000224},"b_stats":{"moves":40,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":0,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.08459249994484708,"p95_seconds":0.06544289999874309}},
+   {"i":0,"j":1,"map_name":"val-medium-1000000","round":0,"a_species":"werewolves","first":"vampires","seed":20661040,"a_score":0.5,"a_margin":0,"winner":null,"termination":"ply_limit","plies":200,"final_populations":{"vampires":24,"werewolves":24},"a_stats":{"moves":100,"timeouts":0,"faults":[],"repeated_positions":81,"behind_moves":9,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.24905070004751906,"p95_seconds":0.23020490002818406},"b_stats":{"moves":100,"timeouts":0,"faults":[],"repeated_positions":80,"behind_moves":0,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.015095900045707822,"p95_seconds":0.011180499976035208}},
+   {"i":0,"j":1,"map_name":"val-medium-1000000","round":0,"a_species":"werewolves","first":"werewolves","seed":20661042,"a_score":0.5,"a_margin":0,"winner":null,"termination":"ply_limit","plies":200,"final_populations":{"vampires":24,"werewolves":24},"a_stats":{"moves":100,"timeouts":0,"faults":[],"repeated_positions":81,"behind_moves":9,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.14918910001870245,"p95_seconds":0.13441060000332072},"b_stats":{"moves":100,"timeouts":0,"faults":[],"repeated_positions":81,"behind_moves":0,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.008838200010359287,"p95_seconds":0.006808799982536584}},
+   {"i":0,"j":1,"map_name":"val-medium-1000001","round":0,"a_species":"vampires","first":"vampires","seed":20761042,"a_score":0.0,"a_margin":-48,"winner":"werewolves","termination":"elimination","plies":72,"final_populations":{"vampires":0,"werewolves":48},"a_stats":{"moves":36,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":34,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.1986680999980308,"p95_seconds":0.18188549997285008},"b_stats":{"moves":36,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":0,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.07525559997884557,"p95_seconds":0.0706718000001274}},
+   {"i":0,"j":1,"map_name":"val-medium-1000001","round":0,"a_species":"vampires","first":"werewolves","seed":20761044,"a_score":1.0,"a_margin":2,"winner":"vampires","termination":"elimination","plies":83,"final_populations":{"vampires":2,"werewolves":0},"a_stats":{"moves":41,"timeouts":0,"faults":[],"repeated_positions":10,"behind_moves":15,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.18250300001818687,"p95_seconds":0.17787180002778769},"b_stats":{"moves":42,"timeouts":0,"faults":[],"repeated_positions":10,"behind_moves":26,"repeated_while_behind":10,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.09015120001276955,"p95_seconds":0.06830210000043735}},
+   {"i":0,"j":1,"map_name":"val-medium-1000001","round":0,"a_species":"werewolves","first":"vampires","seed":20761043,"a_score":0.0,"a_margin":-33,"winner":"vampires","termination":"elimination","plies":61,"final_populations":{"vampires":33,"werewolves":0},"a_stats":{"moves":30,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":26,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.19435830001020804,"p95_seconds":0.1825669999816455},"b_stats":{"moves":31,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":3,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.0831633000052534,"p95_seconds":0.07673450000584126}},
+   {"i":0,"j":1,"map_name":"val-medium-1000001","round":0,"a_species":"werewolves","first":"werewolves","seed":20761045,"a_score":0.0,"a_margin":-4,"winner":"vampires","termination":"elimination","plies":1,"final_populations":{"vampires":4,"werewolves":0},"a_stats":{"moves":1,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":0,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.13729859999148175,"p95_seconds":0.13729859999148175},"b_stats":{"moves":0,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":0,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0,"p95_seconds":0.0}}
+  ],
+  "memory": [
+   {"i":0,"j":1,"map_name":"demo","round":0,"a_species":"vampires","first":"vampires","seed":20261027,"a_score":0.0,"a_margin":-5,"winner":"werewolves","termination":"elimination","plies":12,"final_populations":{"vampires":0,"werewolves":5},"a_stats":{"moves":6,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":3,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.13208460004534572,"p95_seconds":0.13208460004534572},"b_stats":{"moves":6,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":2,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.02236169995740056,"p95_seconds":0.02236169995740056}},
+   {"i":0,"j":1,"map_name":"demo","round":0,"a_species":"vampires","first":"werewolves","seed":20261029,"a_score":0.0,"a_margin":-25,"winner":"werewolves","termination":"elimination","plies":17,"final_populations":{"vampires":0,"werewolves":25},"a_stats":{"moves":8,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":7,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.1296227999846451,"p95_seconds":0.1296227999846451},"b_stats":{"moves":9,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":0,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.008921899949200451,"p95_seconds":0.008921899949200451}},
+   {"i":0,"j":1,"map_name":"demo","round":0,"a_species":"werewolves","first":"vampires","seed":20261028,"a_score":1.0,"a_margin":1,"winner":"werewolves","termination":"elimination","plies":197,"final_populations":{"vampires":0,"werewolves":1},"a_stats":{"moves":98,"timeouts":0,"faults":[],"repeated_positions":44,"behind_moves":97,"repeated_while_behind":44,"memory_interventions":8,"repeated_chosen_after_penalty":0,"max_seconds":0.1390755000174977,"p95_seconds":0.09444040001835674},"b_stats":{"moves":99,"timeouts":0,"faults":[],"repeated_positions":35,"behind_moves":0,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.01096679997863248,"p95_seconds":0.003883900004439056}},
+   {"i":0,"j":1,"map_name":"demo","round":0,"a_species":"werewolves","first":"werewolves","seed":20261030,"a_score":0.0,"a_margin":-18,"winner":"vampires","termination":"elimination","plies":14,"final_populations":{"vampires":18,"werewolves":0},"a_stats":{"moves":7,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":4,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.13867829996161163,"p95_seconds":0.13867829996161163},"b_stats":{"moves":7,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":2,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.020719799969810992,"p95_seconds":0.020719799969810992}},
+   {"i":0,"j":1,"map_name":"endgame","round":0,"a_species":"vampires","first":"vampires","seed":20361030,"a_score":1.0,"a_margin":10,"winner":"vampires","termination":"elimination","plies":4,"final_populations":{"vampires":10,"werewolves":0},"a_stats":{"moves":2,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":0,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.08445530000608414,"p95_seconds":0.08445530000608414},"b_stats":{"moves":2,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":2,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.003869100008159876,"p95_seconds":0.003869100008159876}},
+   {"i":0,"j":1,"map_name":"endgame","round":0,"a_species":"vampires","first":"werewolves","seed":20361032,"a_score":1.0,"a_margin":10,"winner":"vampires","termination":"elimination","plies":9,"final_populations":{"vampires":10,"werewolves":0},"a_stats":{"moves":4,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":0,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.08116840000730008,"p95_seconds":0.08116840000730008},"b_stats":{"moves":5,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":5,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.003063300042413175,"p95_seconds":0.003063300042413175}},
+   {"i":0,"j":1,"map_name":"endgame","round":0,"a_species":"werewolves","first":"vampires","seed":20361031,"a_score":0.0,"a_margin":-10,"winner":"vampires","termination":"elimination","plies":8,"final_populations":{"vampires":10,"werewolves":0},"a_stats":{"moves":4,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":4,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.08192239998606965,"p95_seconds":0.08192239998606965},"b_stats":{"moves":4,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":0,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.002085300046019256,"p95_seconds":0.002085300046019256}},
+   {"i":0,"j":1,"map_name":"endgame","round":0,"a_species":"werewolves","first":"werewolves","seed":20361033,"a_score":0.0,"a_margin":-9,"winner":"vampires","termination":"elimination","plies":9,"final_populations":{"vampires":9,"werewolves":0},"a_stats":{"moves":5,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":5,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.08422770001925528,"p95_seconds":0.08422770001925528},"b_stats":{"moves":4,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":0,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.0024290999863296747,"p95_seconds":0.0024290999863296747}},
+   {"i":0,"j":1,"map_name":"recruitment","round":0,"a_species":"vampires","first":"vampires","seed":20461033,"a_score":0.0,"a_margin":-22,"winner":"werewolves","termination":"elimination","plies":14,"final_populations":{"vampires":0,"werewolves":22},"a_stats":{"moves":7,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":5,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.14479749999009073,"p95_seconds":0.14479749999009073},"b_stats":{"moves":7,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":1,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.054580199997872114,"p95_seconds":0.054580199997872114}},
+   {"i":0,"j":1,"map_name":"recruitment","round":0,"a_species":"vampires","first":"werewolves","seed":20461035,"a_score":0.0,"a_margin":-24,"winner":"werewolves","termination":"elimination","plies":13,"final_populations":{"vampires":0,"werewolves":24},"a_stats":{"moves":6,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":5,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.14829830004600808,"p95_seconds":0.14829830004600808},"b_stats":{"moves":7,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":0,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.01871390000451356,"p95_seconds":0.01871390000451356}},
+   {"i":0,"j":1,"map_name":"recruitment","round":0,"a_species":"werewolves","first":"vampires","seed":20461034,"a_score":0.0,"a_margin":-25,"winner":"vampires","termination":"elimination","plies":21,"final_populations":{"vampires":25,"werewolves":0},"a_stats":{"moves":10,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":8,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.15685029997257516,"p95_seconds":0.15685029997257516},"b_stats":{"moves":11,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":0,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.032603400002699345,"p95_seconds":0.032603400002699345}},
+   {"i":0,"j":1,"map_name":"recruitment","round":0,"a_species":"werewolves","first":"werewolves","seed":20461036,"a_score":1.0,"a_margin":11,"winner":"werewolves","termination":"elimination","plies":12,"final_populations":{"vampires":0,"werewolves":11},"a_stats":{"moves":6,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":2,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.15127790003316477,"p95_seconds":0.15127790003316477},"b_stats":{"moves":6,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":4,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.02344920003088191,"p95_seconds":0.02344920003088191}},
+   {"i":0,"j":1,"map_name":"tactics","round":0,"a_species":"vampires","first":"vampires","seed":20561036,"a_score":1.0,"a_margin":11,"winner":"vampires","termination":"elimination","plies":10,"final_populations":{"vampires":11,"werewolves":0},"a_stats":{"moves":5,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":0,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.12840919999871403,"p95_seconds":0.12840919999871403},"b_stats":{"moves":5,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":5,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.017618199985008687,"p95_seconds":0.017618199985008687}},
+   {"i":0,"j":1,"map_name":"tactics","round":0,"a_species":"vampires","first":"werewolves","seed":20561038,"a_score":0.0,"a_margin":-15,"winner":"werewolves","termination":"elimination","plies":5,"final_populations":{"vampires":0,"werewolves":15},"a_stats":{"moves":2,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":2,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.1047219000174664,"p95_seconds":0.1047219000174664},"b_stats":{"moves":3,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":0,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.028155400010291487,"p95_seconds":0.028155400010291487}},
+   {"i":0,"j":1,"map_name":"tactics","round":0,"a_species":"werewolves","first":"vampires","seed":20561037,"a_score":1.0,"a_margin":7,"winner":"werewolves","termination":"elimination","plies":6,"final_populations":{"vampires":0,"werewolves":7},"a_stats":{"moves":3,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":3,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.11473699996713549,"p95_seconds":0.11473699996713549},"b_stats":{"moves":3,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":0,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.026697700028307736,"p95_seconds":0.026697700028307736}},
+   {"i":0,"j":1,"map_name":"tactics","round":0,"a_species":"werewolves","first":"werewolves","seed":20561039,"a_score":0.0,"a_margin":-10,"winner":"vampires","termination":"elimination","plies":11,"final_populations":{"vampires":10,"werewolves":0},"a_stats":{"moves":6,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":5,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.20952249999390915,"p95_seconds":0.20952249999390915},"b_stats":{"moves":5,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":1,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.14173750003101304,"p95_seconds":0.14173750003101304}},
+   {"i":0,"j":1,"map_name":"val-medium-1000000","round":0,"a_species":"vampires","first":"vampires","seed":20661039,"a_score":0.0,"a_margin":-29,"winner":"werewolves","termination":"elimination","plies":79,"final_populations":{"vampires":0,"werewolves":29},"a_stats":{"moves":40,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":36,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.19609250000212342,"p95_seconds":0.18726139998761937},"b_stats":{"moves":39,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":0,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.09080980002181605,"p95_seconds":0.07371110003441572}},
+   {"i":0,"j":1,"map_name":"val-medium-1000000","round":0,"a_species":"vampires","first":"werewolves","seed":20661041,"a_score":0.0,"a_margin":-28,"winner":"werewolves","termination":"elimination","plies":79,"final_populations":{"vampires":0,"werewolves":28},"a_stats":{"moves":39,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":36,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.1588259999989532,"p95_seconds":0.15375329996459186},"b_stats":{"moves":40,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":0,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.07827900000847876,"p95_seconds":0.060041899967473}},
+   {"i":0,"j":1,"map_name":"val-medium-1000000","round":0,"a_species":"werewolves","first":"vampires","seed":20661040,"a_score":0.5,"a_margin":0,"winner":null,"termination":"ply_limit","plies":200,"final_populations":{"vampires":24,"werewolves":24},"a_stats":{"moves":100,"timeouts":0,"faults":[],"repeated_positions":81,"behind_moves":9,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.15656399994622916,"p95_seconds":0.13613040000200272},"b_stats":{"moves":100,"timeouts":0,"faults":[],"repeated_positions":80,"behind_moves":0,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.0092333999928087,"p95_seconds":0.006542999995872378}},
+   {"i":0,"j":1,"map_name":"val-medium-1000000","round":0,"a_species":"werewolves","first":"werewolves","seed":20661042,"a_score":0.5,"a_margin":0,"winner":null,"termination":"ply_limit","plies":200,"final_populations":{"vampires":24,"werewolves":24},"a_stats":{"moves":100,"timeouts":0,"faults":[],"repeated_positions":81,"behind_moves":9,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.13390610000351444,"p95_seconds":0.1292251999839209},"b_stats":{"moves":100,"timeouts":0,"faults":[],"repeated_positions":81,"behind_moves":0,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.008398500038310885,"p95_seconds":0.006119499972555786}},
+   {"i":0,"j":1,"map_name":"val-medium-1000001","round":0,"a_species":"vampires","first":"vampires","seed":20761042,"a_score":0.0,"a_margin":-48,"winner":"werewolves","termination":"elimination","plies":72,"final_populations":{"vampires":0,"werewolves":48},"a_stats":{"moves":36,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":34,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.2853545999969356,"p95_seconds":0.19383970001945272},"b_stats":{"moves":36,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":0,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.1489481000462547,"p95_seconds":0.08658689999720082}},
+   {"i":0,"j":1,"map_name":"val-medium-1000001","round":0,"a_species":"vampires","first":"werewolves","seed":20761044,"a_score":1.0,"a_margin":2,"winner":"vampires","termination":"elimination","plies":83,"final_populations":{"vampires":2,"werewolves":0},"a_stats":{"moves":41,"timeouts":0,"faults":[],"repeated_positions":10,"behind_moves":15,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.18876940000336617,"p95_seconds":0.1743824000004679},"b_stats":{"moves":42,"timeouts":0,"faults":[],"repeated_positions":10,"behind_moves":26,"repeated_while_behind":10,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.08999809995293617,"p95_seconds":0.06992270000046119}},
+   {"i":0,"j":1,"map_name":"val-medium-1000001","round":0,"a_species":"werewolves","first":"vampires","seed":20761043,"a_score":0.0,"a_margin":-33,"winner":"vampires","termination":"elimination","plies":61,"final_populations":{"vampires":33,"werewolves":0},"a_stats":{"moves":30,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":26,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.22357999999076128,"p95_seconds":0.2030697999871336},"b_stats":{"moves":31,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":3,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.08778860000893474,"p95_seconds":0.07646899996325374}},
+   {"i":0,"j":1,"map_name":"val-medium-1000001","round":0,"a_species":"werewolves","first":"werewolves","seed":20761045,"a_score":0.0,"a_margin":-4,"winner":"vampires","termination":"elimination","plies":1,"final_populations":{"vampires":4,"werewolves":0},"a_stats":{"moves":1,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":0,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.12640100001590326,"p95_seconds":0.12640100001590326},"b_stats":{"moves":0,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":0,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0,"p95_seconds":0.0}}
+  ],
+  "memory-clock": [
+   {"i":0,"j":1,"map_name":"demo","round":0,"a_species":"vampires","first":"vampires","seed":20261027,"a_score":0.0,"a_margin":-5,"winner":"werewolves","termination":"elimination","plies":12,"final_populations":{"vampires":0,"werewolves":5},"a_stats":{"moves":6,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":3,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.1247948000091128,"p95_seconds":0.1247948000091128},"b_stats":{"moves":6,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":2,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.021088499983306974,"p95_seconds":0.021088499983306974}},
+   {"i":0,"j":1,"map_name":"demo","round":0,"a_species":"vampires","first":"werewolves","seed":20261029,"a_score":0.0,"a_margin":-25,"winner":"werewolves","termination":"elimination","plies":17,"final_populations":{"vampires":0,"werewolves":25},"a_stats":{"moves":8,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":7,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.12332010001409799,"p95_seconds":0.12332010001409799},"b_stats":{"moves":9,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":0,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.010322900023311377,"p95_seconds":0.010322900023311377}},
+   {"i":0,"j":1,"map_name":"demo","round":0,"a_species":"werewolves","first":"vampires","seed":20261028,"a_score":1.0,"a_margin":1,"winner":"werewolves","termination":"elimination","plies":197,"final_populations":{"vampires":0,"werewolves":1},"a_stats":{"moves":98,"timeouts":0,"faults":[],"repeated_positions":44,"behind_moves":97,"repeated_while_behind":44,"memory_interventions":8,"repeated_chosen_after_penalty":0,"max_seconds":0.1340710999793373,"p95_seconds":0.08472709998022765},"b_stats":{"moves":99,"timeouts":0,"faults":[],"repeated_positions":35,"behind_moves":0,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.010595100000500679,"p95_seconds":0.004114200011827052}},
+   {"i":0,"j":1,"map_name":"demo","round":0,"a_species":"werewolves","first":"werewolves","seed":20261030,"a_score":0.0,"a_margin":-18,"winner":"vampires","termination":"elimination","plies":14,"final_populations":{"vampires":18,"werewolves":0},"a_stats":{"moves":7,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":4,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.12809939996805042,"p95_seconds":0.12809939996805042},"b_stats":{"moves":7,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":2,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.018289599975105375,"p95_seconds":0.018289599975105375}},
+   {"i":0,"j":1,"map_name":"endgame","round":0,"a_species":"vampires","first":"vampires","seed":20361030,"a_score":1.0,"a_margin":10,"winner":"vampires","termination":"elimination","plies":4,"final_populations":{"vampires":10,"werewolves":0},"a_stats":{"moves":2,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":0,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.08084810001309961,"p95_seconds":0.08084810001309961},"b_stats":{"moves":2,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":2,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.0034474999993108213,"p95_seconds":0.0034474999993108213}},
+   {"i":0,"j":1,"map_name":"endgame","round":0,"a_species":"vampires","first":"werewolves","seed":20361032,"a_score":1.0,"a_margin":10,"winner":"vampires","termination":"elimination","plies":9,"final_populations":{"vampires":10,"werewolves":0},"a_stats":{"moves":4,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":0,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.07417840004200116,"p95_seconds":0.07417840004200116},"b_stats":{"moves":5,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":5,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.002386000007390976,"p95_seconds":0.002386000007390976}},
+   {"i":0,"j":1,"map_name":"endgame","round":0,"a_species":"werewolves","first":"vampires","seed":20361031,"a_score":0.0,"a_margin":-10,"winner":"vampires","termination":"elimination","plies":8,"final_populations":{"vampires":10,"werewolves":0},"a_stats":{"moves":4,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":4,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.07823759998427704,"p95_seconds":0.07823759998427704},"b_stats":{"moves":4,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":0,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.002132800000254065,"p95_seconds":0.002132800000254065}},
+   {"i":0,"j":1,"map_name":"endgame","round":0,"a_species":"werewolves","first":"werewolves","seed":20361033,"a_score":0.0,"a_margin":-9,"winner":"vampires","termination":"elimination","plies":9,"final_populations":{"vampires":9,"werewolves":0},"a_stats":{"moves":5,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":5,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.07876720000058413,"p95_seconds":0.07876720000058413},"b_stats":{"moves":4,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":0,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.0018198000034317374,"p95_seconds":0.0018198000034317374}},
+   {"i":0,"j":1,"map_name":"recruitment","round":0,"a_species":"vampires","first":"vampires","seed":20461033,"a_score":0.0,"a_margin":-22,"winner":"werewolves","termination":"elimination","plies":14,"final_populations":{"vampires":0,"werewolves":22},"a_stats":{"moves":7,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":5,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.14024740003515035,"p95_seconds":0.14024740003515035},"b_stats":{"moves":7,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":1,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.0513496000203304,"p95_seconds":0.0513496000203304}},
+   {"i":0,"j":1,"map_name":"recruitment","round":0,"a_species":"vampires","first":"werewolves","seed":20461035,"a_score":0.0,"a_margin":-24,"winner":"werewolves","termination":"elimination","plies":13,"final_populations":{"vampires":0,"werewolves":24},"a_stats":{"moves":6,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":5,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.14415040001040325,"p95_seconds":0.14415040001040325},"b_stats":{"moves":7,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":0,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.01827709999633953,"p95_seconds":0.01827709999633953}},
+   {"i":0,"j":1,"map_name":"recruitment","round":0,"a_species":"werewolves","first":"vampires","seed":20461034,"a_score":0.0,"a_margin":-25,"winner":"vampires","termination":"elimination","plies":21,"final_populations":{"vampires":25,"werewolves":0},"a_stats":{"moves":10,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":8,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.14526959997601807,"p95_seconds":0.14526959997601807},"b_stats":{"moves":11,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":0,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.030405900033656508,"p95_seconds":0.030405900033656508}},
+   {"i":0,"j":1,"map_name":"recruitment","round":0,"a_species":"werewolves","first":"werewolves","seed":20461036,"a_score":1.0,"a_margin":11,"winner":"werewolves","termination":"elimination","plies":12,"final_populations":{"vampires":0,"werewolves":11},"a_stats":{"moves":6,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":2,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.20586280000861734,"p95_seconds":0.20586280000861734},"b_stats":{"moves":6,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":4,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.03162659995723516,"p95_seconds":0.03162659995723516}},
+   {"i":0,"j":1,"map_name":"tactics","round":0,"a_species":"vampires","first":"vampires","seed":20561036,"a_score":1.0,"a_margin":11,"winner":"vampires","termination":"elimination","plies":10,"final_populations":{"vampires":11,"werewolves":0},"a_stats":{"moves":5,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":0,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.15086220001103356,"p95_seconds":0.15086220001103356},"b_stats":{"moves":5,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":5,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.014395600010175258,"p95_seconds":0.014395600010175258}},
+   {"i":0,"j":1,"map_name":"tactics","round":0,"a_species":"vampires","first":"werewolves","seed":20561038,"a_score":0.0,"a_margin":-15,"winner":"werewolves","termination":"elimination","plies":5,"final_populations":{"vampires":0,"werewolves":15},"a_stats":{"moves":2,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":2,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.1251724999747239,"p95_seconds":0.1251724999747239},"b_stats":{"moves":3,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":0,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.02897579997079447,"p95_seconds":0.02897579997079447}},
+   {"i":0,"j":1,"map_name":"tactics","round":0,"a_species":"werewolves","first":"vampires","seed":20561037,"a_score":1.0,"a_margin":7,"winner":"werewolves","termination":"elimination","plies":6,"final_populations":{"vampires":0,"werewolves":7},"a_stats":{"moves":3,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":3,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.11482279998017475,"p95_seconds":0.11482279998017475},"b_stats":{"moves":3,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":0,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.0224271000479348,"p95_seconds":0.0224271000479348}},
+   {"i":0,"j":1,"map_name":"tactics","round":0,"a_species":"werewolves","first":"werewolves","seed":20561039,"a_score":0.0,"a_margin":-10,"winner":"vampires","termination":"elimination","plies":11,"final_populations":{"vampires":10,"werewolves":0},"a_stats":{"moves":6,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":5,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.1128867999650538,"p95_seconds":0.1128867999650538},"b_stats":{"moves":5,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":1,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.1176153999986127,"p95_seconds":0.1176153999986127}},
+   {"i":0,"j":1,"map_name":"val-medium-1000000","round":0,"a_species":"vampires","first":"vampires","seed":20661039,"a_score":0.0,"a_margin":-29,"winner":"werewolves","termination":"elimination","plies":79,"final_populations":{"vampires":0,"werewolves":29},"a_stats":{"moves":40,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":36,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.19434760004514828,"p95_seconds":0.17908119998173788},"b_stats":{"moves":39,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":0,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.10196539998287335,"p95_seconds":0.08659999998053536}},
+   {"i":0,"j":1,"map_name":"val-medium-1000000","round":0,"a_species":"vampires","first":"werewolves","seed":20661041,"a_score":0.0,"a_margin":-28,"winner":"werewolves","termination":"elimination","plies":79,"final_populations":{"vampires":0,"werewolves":28},"a_stats":{"moves":39,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":36,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.16137819999130443,"p95_seconds":0.16048959997715428},"b_stats":{"moves":40,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":0,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.0929875000147149,"p95_seconds":0.059946299996227026}},
+   {"i":0,"j":1,"map_name":"val-medium-1000000","round":0,"a_species":"werewolves","first":"vampires","seed":20661040,"a_score":0.5,"a_margin":0,"winner":null,"termination":"ply_limit","plies":200,"final_populations":{"vampires":24,"werewolves":24},"a_stats":{"moves":100,"timeouts":0,"faults":[],"repeated_positions":81,"behind_moves":9,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.1555495000211522,"p95_seconds":0.13720029999967664},"b_stats":{"moves":100,"timeouts":0,"faults":[],"repeated_positions":80,"behind_moves":0,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.010072799981571734,"p95_seconds":0.00660349999088794}},
+   {"i":0,"j":1,"map_name":"val-medium-1000000","round":0,"a_species":"werewolves","first":"werewolves","seed":20661042,"a_score":0.5,"a_margin":0,"winner":null,"termination":"ply_limit","plies":200,"final_populations":{"vampires":24,"werewolves":24},"a_stats":{"moves":100,"timeouts":0,"faults":[],"repeated_positions":81,"behind_moves":9,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.15324959997087717,"p95_seconds":0.13473630003863946},"b_stats":{"moves":100,"timeouts":0,"faults":[],"repeated_positions":81,"behind_moves":0,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.009380600007716566,"p95_seconds":0.006377200013957918}},
+   {"i":0,"j":1,"map_name":"val-medium-1000001","round":0,"a_species":"vampires","first":"vampires","seed":20761042,"a_score":0.0,"a_margin":-48,"winner":"werewolves","termination":"elimination","plies":72,"final_populations":{"vampires":0,"werewolves":48},"a_stats":{"moves":36,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":34,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.29790559998946264,"p95_seconds":0.22597339999629185},"b_stats":{"moves":36,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":0,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.09741889999713749,"p95_seconds":0.07914520002668723}},
+   {"i":0,"j":1,"map_name":"val-medium-1000001","round":0,"a_species":"vampires","first":"werewolves","seed":20761044,"a_score":1.0,"a_margin":2,"winner":"vampires","termination":"elimination","plies":83,"final_populations":{"vampires":2,"werewolves":0},"a_stats":{"moves":41,"timeouts":0,"faults":[],"repeated_positions":10,"behind_moves":15,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.1854713000357151,"p95_seconds":0.17906989995390177},"b_stats":{"moves":42,"timeouts":0,"faults":[],"repeated_positions":10,"behind_moves":26,"repeated_while_behind":10,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.09701080003287643,"p95_seconds":0.07276489998912439}},
+   {"i":0,"j":1,"map_name":"val-medium-1000001","round":0,"a_species":"werewolves","first":"vampires","seed":20761043,"a_score":0.0,"a_margin":-33,"winner":"vampires","termination":"elimination","plies":61,"final_populations":{"vampires":33,"werewolves":0},"a_stats":{"moves":30,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":26,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.22245649999240413,"p95_seconds":0.19145969999954104},"b_stats":{"moves":31,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":3,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.08218510000733659,"p95_seconds":0.07840120000764728}},
+   {"i":0,"j":1,"map_name":"val-medium-1000001","round":0,"a_species":"werewolves","first":"werewolves","seed":20761045,"a_score":0.0,"a_margin":-4,"winner":"vampires","termination":"elimination","plies":1,"final_populations":{"vampires":4,"werewolves":0},"a_stats":{"moves":1,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":0,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0.13568389997817576,"p95_seconds":0.13568389997817576},"b_stats":{"moves":0,"timeouts":0,"faults":[],"repeated_positions":0,"behind_moves":0,"repeated_while_behind":0,"memory_interventions":0,"repeated_chosen_after_penalty":0,"max_seconds":0,"p95_seconds":0.0}}
+  ]
+ }
+}

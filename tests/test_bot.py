@@ -289,10 +289,12 @@ class CommandLineTests(unittest.TestCase):
                 connection.sendall(b"END")
             connection.sendall(b"BYE")
 
-        result = self.run_session(serve, options=("--agent", "mcts", "--iterations", "64", "--move-time", "0.2"))
-        self.assertEqual(result.returncode, 0, result.stderr)
-        self.assertIn("Agent: mcts", result.stderr)
-        self.assertIn("Search:", result.stderr)
+        for spec in ("mcts", "mcts-memory"):
+            with self.subTest(agent=spec):
+                result = self.run_session(serve, options=("--agent", spec, "--iterations", "64", "--move-time", "0.2"))
+                self.assertEqual(result.returncode, 0, result.stderr)
+                self.assertIn(f"Agent: {spec}:iterations=64", result.stderr)
+                self.assertIn("Search:", result.stderr)
 
     def test_invalid_arguments_do_not_attempt_a_connection(self):
         for arguments in (["127.0.0.1", "70000"], ["--name", "\u00e9"], ["--rules-profile", "unknown"],

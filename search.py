@@ -74,8 +74,16 @@ class _Node:
     visits: int = 0
 
 
-def evaluate(position, species, *, deadline=None):
-    """Bounded leaf value: current material plus contested human recruitment."""
+def evaluate(position, species, *, deadline=None, max_plies=None):
+    """Bounded leaf value; an optional clock excludes unreachable humans.
+
+    Omitting max_plies preserves the original MCTS heuristic. Distances with a
+    clock are an optimistic reachability test, not a promise of recruitment.
+    """
+    if max_plies is not None:
+        outcome = get_outcome(position, max_plies=max_plies)
+        if outcome is not None:
+            return outcome.value_for(species)
     other = opponent(species)
     own, enemy, humans = [], [], []
     for p, cell in sorted(position.cells.items()):
@@ -90,16 +98,31 @@ def evaluate(position, species, *, deadline=None):
     if not own_total or not enemy_total:
         return 0.0 if own_total == enemy_total else (1.0 if own_total else -1.0)
 
-    def recruitment_cost(groups, target, population):
-        return min(distance(p, target) + 4 * max(0, population - n) / n for p, n in groups)
+    remaining = None if max_plies is None else max(0, max_plies - position.ply)
+
+    def recruitment_cost(groups, target, population, actor):
+        turns = None if remaining is None else (remaining + int(position.to_play == actor)) // 2
+        costs = [distance(p, target) + 4 * max(0, population - n) / n
+                 for p, n in groups if turns is None or distance(p, target) <= turns]
+        return min(costs) if costs else None
 
     potential = 0.0
+    reachable_humans = 0
     tempo = 0.25 if position.to_play == species else -0.25
     for p, n in humans:
         check_deadline(deadline)
-        advantage = recruitment_cost(enemy, p, n) - recruitment_cost(own, p, n) + tempo
-        potential += n * tanh(0.6 * advantage)
-    scale = max(1, 0.6 * (own_total + enemy_total) + 0.25 * sum(n for _, n in humans))
+        own_cost = recruitment_cost(own, p, n, species)
+        enemy_cost = recruitment_cost(enemy, p, n, other)
+        if own_cost is None and enemy_cost is None:
+            continue
+        reachable_humans += n
+        if enemy_cost is None:
+            potential += n
+        elif own_cost is None:
+            potential -= n
+        else:
+            potential += n * tanh(0.6 * (enemy_cost - own_cost + tempo))
+    scale = max(1, 0.6 * (own_total + enemy_total) + 0.25 * reachable_humans)
     return 0.95 * tanh((own_total - enemy_total + 0.65 * potential) / scale)
 
 
@@ -107,7 +130,12 @@ def _key(position):
     return tuple(sorted(position.cells.items()))
 
 
-def _select(node, root_species, exploration):
+def action_key(moves):
+    """Canonical key for a complete turn, independent of move ordering."""
+    return tuple(sorted(tuple(move) for move in moves))
+
+
+def _select(node, root_species, exploration, penalties=None):
     # Widen DECISION actions only. Chance outcomes are always sampled afresh.
     width = min(len(node.edges), max(2, ceil(2 * sqrt(node.visits + 1))))
     active = node.edges[:width]
@@ -116,10 +144,11 @@ def _select(node, root_species, exploration):
             return edge
     sign = 1 if node.position.to_play == root_species else -1
     return max(active, key=lambda edge: sign * edge.total_value / edge.visits
-               + exploration * sqrt(log(node.visits + 1) / edge.visits))
+               + exploration * sqrt(log(node.visits + 1) / edge.visits)
+               - (penalties.get(action_key(edge.moves), 0.0) if penalties else 0.0))
 
 
-def _rollout(position, species, rng, config, deadline, max_plies):
+def _rollout(position, species, rng, config, deadline, max_plies, leaf_evaluator=None):
     for _ in range(config.rollout_depth):
         check_deadline(deadline)
         outcome = get_outcome(position, max_plies=max_plies)
@@ -132,20 +161,33 @@ def _rollout(position, species, rng, config, deadline, max_plies):
         position = simulate_turn(position, moves, rng)
     check_deadline(deadline)
     outcome = get_outcome(position, max_plies=max_plies)
-    return outcome.value_for(species) if outcome is not None else evaluate(position, species, deadline=deadline)
+    if outcome is not None:
+        return outcome.value_for(species)
+    if leaf_evaluator is not None:
+        return leaf_evaluator(position, species, deadline=deadline, max_plies=max_plies)
+    return evaluate(position, species, deadline=deadline)
 
 
-def search(position, *, config=None, rng=None, max_plies=None, deadline=None):
+def search(position, *, config=None, rng=None, max_plies=None, deadline=None,
+           leaf_evaluator=None, root_penalties=None):
     """Return a legal plan and root visit targets without mutating the input.
 
     Opponent nodes maximize the opponent's reward. Every selected edge samples a
     fresh battle outcome, so an early lucky battle is never frozen into the tree.
     Completed iterations alone contribute visits. A fixed iteration budget and
     RNG seed are reproducible; a wall-time budget depends on machine throughput.
+
+    Optional root penalties bias UCT selection only: backed-up rewards and visit
+    targets stay empirical. The optional evaluator affects nonterminal rollout
+    leaves only. Neither hook changes chance sampling or exact terminal rewards.
     """
     started = time.perf_counter()
     config = config or SearchConfig()
     rng = rng if rng is not None else random.Random()
+    root_penalties = dict(root_penalties or {})
+    if any(not isinstance(value, (int, float)) or not isfinite(value) or value < 0
+           for value in root_penalties.values()):
+        raise ValueError("Root penalties must be nonnegative and finite.")
     if config.time_limit is not None:
         limit = started + config.time_limit
         deadline = limit if deadline is None else min(deadline, limit)
@@ -177,7 +219,8 @@ def search(position, *, config=None, rng=None, max_plies=None, deadline=None):
                 if not node.edges:
                     actions = generate_candidates(node.position, limit=config.max_candidates, deadline=deadline)
                     node.edges = [_Edge(moves) for moves in actions]
-                edge = _select(node, position.to_play, config.exploration)
+                edge = _select(node, position.to_play, config.exploration,
+                               root_penalties if node is root else None)
                 next_position = simulate_turn(node.position, edge.moves, rng)
                 path.append(edge)
                 key = _key(next_position)
@@ -186,12 +229,14 @@ def search(position, *, config=None, rng=None, max_plies=None, deadline=None):
                     child = _Node(next_position)
                     edge.outcomes[key] = child
                     nodes.append(child)
-                    value = _rollout(next_position, position.to_play, rng, config, deadline, max_plies)
+                    value = _rollout(next_position, position.to_play, rng, config, deadline,
+                                     max_plies, leaf_evaluator)
                     break
                 node = child
                 nodes.append(node)
             else:
-                value = _rollout(node.position, position.to_play, rng, config, deadline, max_plies)
+                value = _rollout(node.position, position.to_play, rng, config, deadline,
+                                 max_plies, leaf_evaluator)
         except TimeoutError:
             break
         for visited in nodes:

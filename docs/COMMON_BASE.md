@@ -8,6 +8,7 @@ and in the round-robin tournament, so results are directly comparable.
 | --- | --- |
 | `agents/__init__.py` | `Agent` interface, registry, spec strings, safety net (`safe_choose`) |
 | `agents/builtin.py` | `random`, `baseline`, `mcts` adapters |
+| `agents/mcts_memory.py` | Experimental `mcts-memory`; independent memory and clock switches |
 | `agents/portfolio.py` | Portfolio Greedy Search (`portfolio`) |
 | `agents/alphabeta.py` | Alpha-beta over macro-turns with chance nodes (`alphabeta`) |
 | `agents/oep.py` | Online Evolutionary Planning (`oep`) |
@@ -132,9 +133,15 @@ to see how they fit together. Its parameters are `horizon` (plies simulated),
 | `alphabeta` | Negamax, iterative deepening, transposition table, uncertain battles as chance nodes | `depth=3` (untimed), `max_depth=12`, `width=10`, `extra=0` |
 | `oep` | Evolves one option per group; fitness = playout, worst case over opponent scripts | `population=16`, `generations=12`, `horizon=8`, `opponents=('eat','attack')` |
 | `mcts` | Reda's adversarial UCT (search.py) | `iterations=256`, `rollout_depth=6`, ... |
+| `mcts-memory` | Optional root repetition preference and turn-cap-aware MCTS leaves | `memory=True`, `clock=True`, `penalty=0.3`, `repetition_visits=2`, `history_window=32`, plus MCTS fields |
 
 With a deadline, `alphabeta` deepens and `oep` evolves until the deadline;
 `depth` and `generations` only apply to untimed runs.
+
+The `mcts-memory` variant is experimental. Run `python demo_mcts_memory.py` for a
+recorded decision and `python benchmark_mcts.py` for independent switch comparisons.
+See [MCTS_MEMORY.md](MCTS_MEMORY.md) for results and limits. Match summaries now
+also count repeated complete boards, losing repetitions, and memory interventions.
 
 ## Tune parameters offline
 
