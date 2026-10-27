@@ -1,3 +1,5 @@
+> Mise à jour du 27 octobre : publication réussie sur GitHub, branche `server-runs`, avec le compte `julian5422`. Les mentions antérieures de refus 403 décrivent les essais sous un autre compte.
+
 > Mise à jour du 27 octobre : [campagne complète à 200 coups — 16 verdicts confirmés](long-200/SUMMARY.md).
 
 # AB0–AB8 — validation locale du 26 octobre 2026

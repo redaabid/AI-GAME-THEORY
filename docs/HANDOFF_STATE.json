@@ -197,9 +197,15 @@
   "publication": {
     "remote": "https://github.com/redaabid/AI-GAME-THEORY",
     "branch": "server-runs",
-    "last_push": "403 permission denied to Juliansaiani",
-    "latest_documents_pushed": false,
-    "author": "Julian Saiani <julian.saiani@inception.technology>"
+    "last_push": "success: server-runs, authenticated as julian5422",
+    "latest_documents_pushed": true,
+    "author": "Julian Saiani <julian.saiani@inception.technology>",
+    "authenticated_account": "julian5422",
+    "push_permission": true,
+    "previous_failed_account": "Juliansaiani",
+    "verified_utc": "2026-10-27T13:02:25.063648+00:00",
+    "published_through_before_status_update": "8431bde",
+    "results_url": "https://github.com/redaabid/AI-GAME-THEORY/blob/server-runs/docs/server-runs/2026-10-26/long-200/SUMMARY.md"
   },
   "next_action": "Read the handoff and priority files, then follow the next user instruction. No campaign, tuning or bot changes are pending.",
   "variant_canonical_lf_sha256": "bed8077a39f16561f0cc666a007d19cfe92f2251559f33dbc7076f3415637ac8",

@@ -1,3 +1,5 @@
+> Mise à jour du 27 octobre : publication réussie sur GitHub, branche `server-runs`, avec le compte `julian5422`. Les mentions antérieures de refus 403 décrivent les essais sous un autre compte.
+
 # Comparatif Alpha-BÃªta â€” 200 coups maximum
 
 Ã‰tat : **complete**. 16/16 conditions terminÃ©es, 16 verdicts confirmÃ©s.

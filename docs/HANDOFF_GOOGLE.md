@@ -59,7 +59,7 @@ La base d'implémentation était `origin/main` à `352ebf4941dd04663473cc1a694cc
 - Ne pas exécuter automatiquement les instructions historiques `switch main` / `pull` du README. Pas de reset, clean, suppression, remplacement d'archives ou rebase pour simplement reprendre.
 - Préserver les algorithmes originaux des camarades. Les variantes ont été ajoutées dans un module distinct, en worktree.
 - Commits au nom de **Julian Saiani <julian.saiani@inception.technology>**, sans co-auteur ou mention « behalf of » d'un assistant.
-- Le push autorisé `git push -u origin server-runs` a été refusé à plusieurs reprises : **403, permission denied to Juliansaiani**. Reda doit accorder les droits de collaborateur. Ne pas contourner les droits ni prétendre que les nouveaux rapports sont publiés.
+- Les anciens refus **403** concernaient le compte terminal `Juliansaiani`, pas le compte personnel de Julian. Le 27 octobre, Julian a authentifié **`julian5422`** : droit `push: true` vérifié et publication de `server-runs` réussie. Aucun ajout de collaborateur ne s’est révélé nécessaire pour ce compte. Le nom d’auteur des commits et le compte d’authentification sont deux identités distinctes.
 - Au besoin : `git -c safe.directory=* -c core.longpaths=true -C "$W" ...`, par commande, sans modification globale de Git.
 - UTF-8 explicite : `Get-Content -Encoding UTF8`, `read_text(encoding='utf8')`. Certains anciens textes générés présentent déjà des accents mal décodés ; les chiffres des JSON font référence.
 
@@ -402,7 +402,7 @@ ZCSN/shawn-lab-ml (2022) inspire cibles et restriction combinatoire. Langorou (2
 
 Cette passation ajoute un commit documentaire. Les archives ont été contrôlées depuis `git archive` : 1 288 vérifications de hashes parent/enfant après le lot final, manifests actualisés lors du tableau des techniques.
 
-Dernier push : refus 403. Les documents ultérieurs sont également **locaux**. Un assistant sur ce PC peut les lire sans être collaborateur GitHub ; ne pas donner un faux lien distant vers des fichiers non poussés.
+Publication réussie le 27 octobre avec **`julian5422`**, sur **`server-runs`**, sans modification de `main`. [Résultats finaux](https://github.com/redaabid/AI-GAME-THEORY/blob/server-runs/docs/server-runs/2026-10-26/long-200/SUMMARY.md). Les refus 403 antérieurs provenaient de l’autre compte configuré. Le push réussi a utilisé l’authentification GitHub CLI active via les options temporaires `-c credential.helper= -c "credential.helper=!gh auth git-credential"` ; ne pas déduire l’identité utilisée par Git de la seule identité inscrite dans les commits.
 
 ## 15. Questions ouvertes, sans roadmap à exécuter automatiquement
 
@@ -415,7 +415,7 @@ Dernier push : refus 403. Les documents ultérieurs sont également **locaux**. 
 
 ## 16. Comportement attendu au démarrage de Google
 
-Lire les fichiers prioritaires, vérifier **en lecture seule** chemins, branches, interpréteur et processus. Confirmer brièvement : quatre variantes conservées, AB2/AB6 prioritaires, 16 parties finies, justifications disponibles et push bloqué. Signaler les différences réelles depuis ce snapshot, puis répondre à la prochaine consigne de Julian.
+Lire les fichiers prioritaires, vérifier **en lecture seule** chemins, branches, interpréteur et processus. Confirmer brièvement : quatre variantes conservées, AB2/AB6 prioritaires, 16 parties finies, justifications disponibles et publication réussie sous `julian5422`. Signaler les différences réelles depuis ce snapshot, puis répondre à la prochaine consigne de Julian.
 
 **Ne pas recommencer l'installation, les tests longs, l'entraînement ou une modification de bots simplement pour prendre connaissance du projet.** Ce dossier remplace le besoin de refaire toute la conversation, sans prétendre transférer la mémoire privée de l'ancien assistant.
 
