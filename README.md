@@ -127,6 +127,10 @@ See [docs/MCTS.md](docs/MCTS.md) for the algorithm, initial measurements, timing
 budgets, and training-label meanings. The candidate generator includes joint
 arrivals, independent group movement, and selected recruitment splits.
 
+To watch memory MCTS against Julian's AB2 or AB6 on four comparison maps, follow
+[the three-terminal commands](docs/WATCH_MATCH.md). These variants are available
+locally on this branch; the guide also gives a balanced 32-game CPU comparison.
+
 Use `--map path/to/map.xml`, `--max-plies 100`, or `--output .local/my-new-run` to
 choose the map, turn cap, and a new output folder. Existing runs are preserved.
 See [docs/CPU_GPU_HANDOFF.md](docs/CPU_GPU_HANDOFF.md) for the simulator API and data contract.
