@@ -1,3 +1,5 @@
+> Mise à jour du 27 octobre : [campagne complète à 200 coups — 16 verdicts confirmés](long-200/SUMMARY.md).
+
 # AB0–AB8 — validation locale du 26 octobre 2026
 
 > Mise à jour : les huit conditions sans verdict ont été rejouées, et six contrôles ont été ajoutés. Voir le [comparatif complété et le diagnostic des nuls](followup-40/SUMMARY.md). Le tableau ci-dessous conserve l'état préliminaire de la campagne.

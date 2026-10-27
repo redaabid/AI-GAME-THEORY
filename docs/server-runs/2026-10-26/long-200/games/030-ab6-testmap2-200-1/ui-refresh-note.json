@@ -1,0 +1,3 @@
+{
+  "note": "Initial bitmap had no verdict and stale 16/16 counts. Maximizing forced repaint: explicit AB6 wins / AB3 loses, final 16/12. Only the refreshed result was retained."
+}

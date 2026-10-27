@@ -1,0 +1,129 @@
+{
+  "id": 20,
+  "sha": "d22df256127f7799d1b8c8d951b420d3eed94efe",
+  "map": "thetrap.xml",
+  "max_plies": 200,
+  "order": [
+    "ab2",
+    "ab3"
+  ],
+  "specs": {
+    "ab2": "ab2:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+    "ab3": "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000"
+  },
+  "commands": [
+    [
+      "C:\\Users\\sebju\\miniconda3\\python.exe",
+      "-B",
+      "main.py",
+      "--name",
+      "AB2",
+      "--agent",
+      "ab2:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+      "--move-time",
+      "1.5",
+      "--max-plies",
+      "200",
+      "--rules-profile",
+      "server-v3.2.1",
+      "--seed",
+      "42",
+      "127.0.0.1",
+      "5555"
+    ],
+    [
+      "C:\\Users\\sebju\\miniconda3\\python.exe",
+      "-B",
+      "main.py",
+      "--name",
+      "AB3",
+      "--agent",
+      "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+      "--move-time",
+      "1.5",
+      "--max-plies",
+      "200",
+      "--rules-profile",
+      "server-v3.2.1",
+      "--seed",
+      "42",
+      "127.0.0.1",
+      "5555"
+    ]
+  ],
+  "map_sha256": "4a5bee60b38e3d8741f12d6ca1ac70a2d564a4420196bd11e71af8d90c09e7fe",
+  "started": "2026-10-26T22:54:53.695227+00:00",
+  "move_time": 1.5,
+  "exit_codes": [
+    0,
+    0
+  ],
+  "bots": {
+    "ab2": {
+      "turns": 17,
+      "max_seconds": 1.501,
+      "mean_seconds": 0.5986470588235294,
+      "alerts_1_8": 0,
+      "violations_2": 0,
+      "faults": 0,
+      "new_game_failures": 0,
+      "bootstraps": 0,
+      "completed_depths": [
+        7,
+        6,
+        7,
+        8,
+        7,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8
+      ],
+      "ended": true,
+      "bye": true,
+      "species": "vampires",
+      "errors": []
+    },
+    "ab3": {
+      "turns": 17,
+      "max_seconds": 1.502,
+      "mean_seconds": 0.7041176470588235,
+      "alerts_1_8": 0,
+      "violations_2": 0,
+      "faults": 0,
+      "new_game_failures": 0,
+      "bootstraps": 0,
+      "completed_depths": [
+        7,
+        8,
+        7,
+        8,
+        7,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8
+      ],
+      "ended": true,
+      "bye": true,
+      "species": "werewolves",
+      "errors": []
+    }
+  }
+}
