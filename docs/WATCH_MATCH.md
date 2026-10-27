@@ -87,16 +87,62 @@ give 32 MCTS games against the two opponents. Run them after closing the visual
 match so it does not compete for CPU time.
 
 ```powershell
-python tournament.py --agents "mcts-memory:iterations=100000" "ab2:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000" --maps .local/maps/mcts-vs-best-ab --rounds 1 --max-plies 200 --move-time 2 --margin 0.5 --workers 2 --seed 20261028
-python tournament.py --agents "mcts-memory:iterations=100000" "ab6:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000" --maps .local/maps/mcts-vs-best-ab --rounds 1 --max-plies 200 --move-time 2 --margin 0.5 --workers 2 --seed 20261028
+python campaign.py --opponent ab2
+python campaign.py --opponent ab6
 ```
 
+The runner uses the explicit selected opponent settings shown above, MCTS with
+both features and an iteration cap of 100000, battle seed 20261028, and two workers.
 The deadline is `2 - 0.5 = 1.5` seconds for both sides. The game cap is 200 plies;
 larger population wins at that cap. Actual battles are sampled. Use one worker
-on a busy machine. Timed searches depend on machine load, so common battle seeds
+on a busy machine (`--workers 1`, chosen when starting a new checkpoint).
+Timed searches depend on machine load, so common battle seeds
 and balanced roles do not make the complete campaign bit-for-bit reproducible.
 
-Reports and tables go under `.local/tournaments/`. Record the map, opponent,
-win/draw/loss counts, timeouts, and faults. Sixteen games per opponent are an
-initial comparison, not proof of an overall ranking. No neural training runs.
-The new four-map campaign has been prepared, not run or scored yet.
+The terminal prints its checkpoint folder immediately, prints progress after
+each saved game, and prints a heartbeat during long parallel games. Results go
+under `.local/campaigns/mcts-vs-ab2/` and `.local/campaigns/mcts-vs-ab6/`:
+
+- `manifest.json`: complete game schedule, maps, settings, Python version and
+  hashes of runtime source files, including both policies.
+- `games/game-*.json`: one atomic checkpoint per finished game, with its result,
+  timing, faults, and save time.
+- `report.json` and `report.md`: cumulative results, marked PARTIAL until all
+  16 games are complete. Rankings from an unfinished campaign can be unbalanced.
+
+Record the map, opponent, win/draw/loss counts, timeouts, and faults. Sixteen games
+per opponent are an initial comparison, not proof of an overall ranking. No neural
+training runs.
+
+## Run some games now, then continue later
+
+To finish at most four **additional** games and stop automatically:
+
+```powershell
+python campaign.py --opponent ab2 --max-games 4
+```
+
+Later, run the same opponent command to continue the remaining games:
+
+```powershell
+python campaign.py --opponent ab2
+```
+
+The runner loads saved results and skips those games. Repeating `--max-games 4`
+plays up to four more, rather than limiting the campaign to four in total. The
+full schedule remains 16 games per opponent. Use `--opponent ab6` for the other
+16-game campaign.
+
+Ctrl+C stops the runner while retaining already-saved games. Games that were
+still running or not yet saved restart from their beginning next time. A whole
+game is the checkpoint boundary; there are no mid-game snapshots. Keep the
+checkpoint folder and use the same computer and conditions for timed comparisons.
+The runner refuses to mix changed code, Python, maps or settings into a checkpoint;
+use `--checkpoint .local/campaigns/a-new-experiment` for a separate experiment.
+An OS lock prevents two processes from writing the same campaign concurrently.
+
+The original `tournament.py` command still writes results only after its entire
+batch finishes, under `.local/tournaments/`. Adding this new runner does not change
+an already-running process or recover its in-memory game results. A fully finished
+legacy batch remains a valid separate report; it is not imported into these new
+checkpoints. Let an existing legacy batch finish if you want to retain its games.

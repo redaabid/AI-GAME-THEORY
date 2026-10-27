@@ -130,6 +130,10 @@ arrivals, independent group movement, and selected recruitment splits.
 To watch memory MCTS against Julian's AB2 or AB6 on four comparison maps, follow
 [the three-terminal commands](docs/WATCH_MATCH.md). These variants are available
 locally on this branch; the guide also gives a balanced 32-game CPU comparison.
+Use `python campaign.py --opponent ab2 --max-games 4` to play four games and save
+them, then `python campaign.py --opponent ab2` to resume later. The same commands
+with `ab6` run the other 16-game campaign. Prepare the four maps using the guide
+first. Completed games are checkpointed individually; unfinished games restart.
 
 Use `--map path/to/map.xml`, `--max-plies 100`, or `--output .local/my-new-run` to
 choose the map, turn cap, and a new output folder. Existing runs are preserved.
