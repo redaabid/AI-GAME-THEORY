@@ -1,0 +1,708 @@
+{
+ "schema_version": 1,
+ "agents": [
+  "mcts-memory:iterations=100000",
+  "ab6:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000"
+ ],
+ "maps": [
+  "testmap2",
+  "thetrap",
+  "val-large-1290000",
+  "val-medium-1280000"
+ ],
+ "rounds": 1,
+ "seed": 20261028,
+ "max_plies": 200,
+ "move_time": 2.0,
+ "margin": 0.5,
+ "on_timeout": "skip",
+ "rules_profile": "server-v3.2.1",
+ "workers": 2,
+ "python_version": "3.12.9",
+ "code_sha256": "4661b928371597c9f08b3b3880ef0c3decfd5a3ec8e666edafb6130e668a05de",
+ "wall_seconds": 1964.2745240000077,
+ "ranking": [
+  {
+   "agent": "mcts-memory:iterations=100000",
+   "elo": 0.0,
+   "games": 16,
+   "mean_score": 0.5,
+   "moves": 1324,
+   "timeouts": 2,
+   "faults": 0,
+   "fault_examples": [],
+   "max_seconds": 13.313005800009705,
+   "p95_seconds": 1.503408299991861
+  },
+  {
+   "agent": "ab6:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+   "elo": 0.0,
+   "games": 16,
+   "mean_score": 0.5,
+   "moves": 1325,
+   "timeouts": 0,
+   "faults": 0,
+   "fault_examples": [],
+   "max_seconds": 1.5401031000074,
+   "p95_seconds": 1.5004069000133313
+  }
+ ],
+ "matrix": {
+  "mcts-memory:iterations=100000 vs ab6:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000": {
+   "games": 16,
+   "mean_score": 0.5,
+   "ci95": 0.2291765149399039,
+   "mean_final_margin": -1.9375,
+   "wins_by_elimination": 2
+  },
+  "ab6:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000 vs mcts-memory:iterations=100000": {
+   "games": 16,
+   "mean_score": 0.5,
+   "ci95": 0.2291765149399039,
+   "mean_final_margin": 1.9375,
+   "wins_by_elimination": 2
+  }
+ },
+ "games": [
+  {
+   "i": 0,
+   "j": 1,
+   "map_name": "testmap2",
+   "round": 0,
+   "a_species": "vampires",
+   "first": "vampires",
+   "seed": 20261028,
+   "a_score": 0.0,
+   "a_margin": -2,
+   "winner": "werewolves",
+   "termination": "ply_limit",
+   "plies": 200,
+   "final_populations": {
+    "vampires": 14,
+    "werewolves": 16
+   },
+   "a_stats": {
+    "moves": 100,
+    "timeouts": 0,
+    "faults": [],
+    "repeated_positions": 20,
+    "behind_moves": 90,
+    "repeated_while_behind": 20,
+    "memory_interventions": 7,
+    "repeated_chosen_after_penalty": 0,
+    "max_seconds": 1.5077913000131957
+   },
+   "b_stats": {
+    "moves": 100,
+    "timeouts": 0,
+    "faults": [],
+    "repeated_positions": 18,
+    "behind_moves": 0,
+    "repeated_while_behind": 0,
+    "memory_interventions": 0,
+    "repeated_chosen_after_penalty": 0,
+    "max_seconds": 1.5068890000111423
+   }
+  },
+  {
+   "i": 0,
+   "j": 1,
+   "map_name": "testmap2",
+   "round": 0,
+   "a_species": "vampires",
+   "first": "werewolves",
+   "seed": 20261030,
+   "a_score": 0.0,
+   "a_margin": -2,
+   "winner": "werewolves",
+   "termination": "ply_limit",
+   "plies": 200,
+   "final_populations": {
+    "vampires": 14,
+    "werewolves": 16
+   },
+   "a_stats": {
+    "moves": 100,
+    "timeouts": 0,
+    "faults": [],
+    "repeated_positions": 22,
+    "behind_moves": 91,
+    "repeated_while_behind": 22,
+    "memory_interventions": 10,
+    "repeated_chosen_after_penalty": 0,
+    "max_seconds": 1.5041630999767222
+   },
+   "b_stats": {
+    "moves": 100,
+    "timeouts": 0,
+    "faults": [],
+    "repeated_positions": 20,
+    "behind_moves": 0,
+    "repeated_while_behind": 0,
+    "memory_interventions": 0,
+    "repeated_chosen_after_penalty": 0,
+    "max_seconds": 1.5008217000286095
+   }
+  },
+  {
+   "i": 0,
+   "j": 1,
+   "map_name": "testmap2",
+   "round": 0,
+   "a_species": "werewolves",
+   "first": "vampires",
+   "seed": 20261029,
+   "a_score": 0.0,
+   "a_margin": -16,
+   "winner": "vampires",
+   "termination": "elimination",
+   "plies": 198,
+   "final_populations": {
+    "vampires": 16,
+    "werewolves": 0
+   },
+   "a_stats": {
+    "moves": 99,
+    "timeouts": 0,
+    "faults": [],
+    "repeated_positions": 21,
+    "behind_moves": 88,
+    "repeated_while_behind": 21,
+    "memory_interventions": 14,
+    "repeated_chosen_after_penalty": 0,
+    "max_seconds": 1.5239137000171468
+   },
+   "b_stats": {
+    "moves": 99,
+    "timeouts": 0,
+    "faults": [],
+    "repeated_positions": 20,
+    "behind_moves": 0,
+    "repeated_while_behind": 0,
+    "memory_interventions": 0,
+    "repeated_chosen_after_penalty": 0,
+    "max_seconds": 1.505599899974186
+   }
+  },
+  {
+   "i": 0,
+   "j": 1,
+   "map_name": "testmap2",
+   "round": 0,
+   "a_species": "werewolves",
+   "first": "werewolves",
+   "seed": 20261031,
+   "a_score": 0.0,
+   "a_margin": -4,
+   "winner": "vampires",
+   "termination": "ply_limit",
+   "plies": 200,
+   "final_populations": {
+    "vampires": 16,
+    "werewolves": 12
+   },
+   "a_stats": {
+    "moves": 100,
+    "timeouts": 0,
+    "faults": [],
+    "repeated_positions": 38,
+    "behind_moves": 88,
+    "repeated_while_behind": 38,
+    "memory_interventions": 22,
+    "repeated_chosen_after_penalty": 1,
+    "max_seconds": 1.5075698000146076
+   },
+   "b_stats": {
+    "moves": 100,
+    "timeouts": 0,
+    "faults": [],
+    "repeated_positions": 37,
+    "behind_moves": 0,
+    "repeated_while_behind": 0,
+    "memory_interventions": 0,
+    "repeated_chosen_after_penalty": 0,
+    "max_seconds": 1.511331700021401
+   }
+  },
+  {
+   "i": 0,
+   "j": 1,
+   "map_name": "thetrap",
+   "round": 0,
+   "a_species": "vampires",
+   "first": "vampires",
+   "seed": 20361031,
+   "a_score": 1.0,
+   "a_margin": 1,
+   "winner": "vampires",
+   "termination": "ply_limit",
+   "plies": 200,
+   "final_populations": {
+    "vampires": 9,
+    "werewolves": 8
+   },
+   "a_stats": {
+    "moves": 100,
+    "timeouts": 0,
+    "faults": [],
+    "repeated_positions": 88,
+    "behind_moves": 6,
+    "repeated_while_behind": 0,
+    "memory_interventions": 0,
+    "repeated_chosen_after_penalty": 0,
+    "max_seconds": 1.5055900000152178
+   },
+   "b_stats": {
+    "moves": 100,
+    "timeouts": 0,
+    "faults": [],
+    "repeated_positions": 89,
+    "behind_moves": 93,
+    "repeated_while_behind": 89,
+    "memory_interventions": 0,
+    "repeated_chosen_after_penalty": 0,
+    "max_seconds": 1.5001873000292107
+   }
+  },
+  {
+   "i": 0,
+   "j": 1,
+   "map_name": "thetrap",
+   "round": 0,
+   "a_species": "vampires",
+   "first": "werewolves",
+   "seed": 20361033,
+   "a_score": 1.0,
+   "a_margin": 1,
+   "winner": "vampires",
+   "termination": "ply_limit",
+   "plies": 200,
+   "final_populations": {
+    "vampires": 9,
+    "werewolves": 8
+   },
+   "a_stats": {
+    "moves": 100,
+    "timeouts": 0,
+    "faults": [],
+    "repeated_positions": 88,
+    "behind_moves": 6,
+    "repeated_while_behind": 0,
+    "memory_interventions": 0,
+    "repeated_chosen_after_penalty": 0,
+    "max_seconds": 1.504656100005377
+   },
+   "b_stats": {
+    "moves": 100,
+    "timeouts": 0,
+    "faults": [],
+    "repeated_positions": 88,
+    "behind_moves": 91,
+    "repeated_while_behind": 88,
+    "memory_interventions": 0,
+    "repeated_chosen_after_penalty": 0,
+    "max_seconds": 1.500173199980054
+   }
+  },
+  {
+   "i": 0,
+   "j": 1,
+   "map_name": "thetrap",
+   "round": 0,
+   "a_species": "werewolves",
+   "first": "vampires",
+   "seed": 20361032,
+   "a_score": 1.0,
+   "a_margin": 1,
+   "winner": "werewolves",
+   "termination": "ply_limit",
+   "plies": 200,
+   "final_populations": {
+    "vampires": 8,
+    "werewolves": 9
+   },
+   "a_stats": {
+    "moves": 100,
+    "timeouts": 0,
+    "faults": [],
+    "repeated_positions": 90,
+    "behind_moves": 6,
+    "repeated_while_behind": 0,
+    "memory_interventions": 0,
+    "repeated_chosen_after_penalty": 0,
+    "max_seconds": 1.506314400001429
+   },
+   "b_stats": {
+    "moves": 100,
+    "timeouts": 0,
+    "faults": [],
+    "repeated_positions": 90,
+    "behind_moves": 93,
+    "repeated_while_behind": 90,
+    "memory_interventions": 0,
+    "repeated_chosen_after_penalty": 0,
+    "max_seconds": 1.5009158999891952
+   }
+  },
+  {
+   "i": 0,
+   "j": 1,
+   "map_name": "thetrap",
+   "round": 0,
+   "a_species": "werewolves",
+   "first": "werewolves",
+   "seed": 20361034,
+   "a_score": 1.0,
+   "a_margin": 2,
+   "winner": "werewolves",
+   "termination": "elimination",
+   "plies": 2,
+   "final_populations": {
+    "vampires": 0,
+    "werewolves": 2
+   },
+   "a_stats": {
+    "moves": 1,
+    "timeouts": 0,
+    "faults": [],
+    "repeated_positions": 0,
+    "behind_moves": 0,
+    "repeated_while_behind": 0,
+    "memory_interventions": 0,
+    "repeated_chosen_after_penalty": 0,
+    "max_seconds": 1.5022279000259005
+   },
+   "b_stats": {
+    "moves": 1,
+    "timeouts": 0,
+    "faults": [],
+    "repeated_positions": 0,
+    "behind_moves": 0,
+    "repeated_while_behind": 0,
+    "memory_interventions": 0,
+    "repeated_chosen_after_penalty": 0,
+    "max_seconds": 1.5001127000432462
+   }
+  },
+  {
+   "i": 0,
+   "j": 1,
+   "map_name": "val-large-1290000",
+   "round": 0,
+   "a_species": "vampires",
+   "first": "vampires",
+   "seed": 20461034,
+   "a_score": 1.0,
+   "a_margin": 4,
+   "winner": "vampires",
+   "termination": "ply_limit",
+   "plies": 200,
+   "final_populations": {
+    "vampires": 56,
+    "werewolves": 52
+   },
+   "a_stats": {
+    "moves": 100,
+    "timeouts": 0,
+    "faults": [],
+    "repeated_positions": 62,
+    "behind_moves": 14,
+    "repeated_while_behind": 0,
+    "memory_interventions": 0,
+    "repeated_chosen_after_penalty": 0,
+    "max_seconds": 1.510453300026711
+   },
+   "b_stats": {
+    "moves": 100,
+    "timeouts": 0,
+    "faults": [],
+    "repeated_positions": 63,
+    "behind_moves": 88,
+    "repeated_while_behind": 63,
+    "memory_interventions": 0,
+    "repeated_chosen_after_penalty": 0,
+    "max_seconds": 1.5012080000014976
+   }
+  },
+  {
+   "i": 0,
+   "j": 1,
+   "map_name": "val-large-1290000",
+   "round": 0,
+   "a_species": "vampires",
+   "first": "werewolves",
+   "seed": 20461036,
+   "a_score": 0.0,
+   "a_margin": -2,
+   "winner": "werewolves",
+   "termination": "ply_limit",
+   "plies": 200,
+   "final_populations": {
+    "vampires": 49,
+    "werewolves": 51
+   },
+   "a_stats": {
+    "moves": 100,
+    "timeouts": 0,
+    "faults": [],
+    "repeated_positions": 55,
+    "behind_moves": 79,
+    "repeated_while_behind": 55,
+    "memory_interventions": 36,
+    "repeated_chosen_after_penalty": 0,
+    "max_seconds": 1.5103532000211999
+   },
+   "b_stats": {
+    "moves": 100,
+    "timeouts": 0,
+    "faults": [],
+    "repeated_positions": 55,
+    "behind_moves": 2,
+    "repeated_while_behind": 0,
+    "memory_interventions": 0,
+    "repeated_chosen_after_penalty": 0,
+    "max_seconds": 1.5024365999852307
+   }
+  },
+  {
+   "i": 0,
+   "j": 1,
+   "map_name": "val-large-1290000",
+   "round": 0,
+   "a_species": "werewolves",
+   "first": "vampires",
+   "seed": 20461035,
+   "a_score": 1.0,
+   "a_margin": 1,
+   "winner": "werewolves",
+   "termination": "ply_limit",
+   "plies": 200,
+   "final_populations": {
+    "vampires": 50,
+    "werewolves": 51
+   },
+   "a_stats": {
+    "moves": 100,
+    "timeouts": 0,
+    "faults": [],
+    "repeated_positions": 52,
+    "behind_moves": 17,
+    "repeated_while_behind": 0,
+    "memory_interventions": 0,
+    "repeated_chosen_after_penalty": 0,
+    "max_seconds": 1.5145676999818534
+   },
+   "b_stats": {
+    "moves": 100,
+    "timeouts": 0,
+    "faults": [],
+    "repeated_positions": 51,
+    "behind_moves": 79,
+    "repeated_while_behind": 51,
+    "memory_interventions": 0,
+    "repeated_chosen_after_penalty": 0,
+    "max_seconds": 1.5009922999888659
+   }
+  },
+  {
+   "i": 0,
+   "j": 1,
+   "map_name": "val-large-1290000",
+   "round": 0,
+   "a_species": "werewolves",
+   "first": "werewolves",
+   "seed": 20461037,
+   "a_score": 0.0,
+   "a_margin": -20,
+   "winner": "vampires",
+   "termination": "ply_limit",
+   "plies": 200,
+   "final_populations": {
+    "vampires": 27,
+    "werewolves": 7
+   },
+   "a_stats": {
+    "moves": 100,
+    "timeouts": 0,
+    "faults": [],
+    "repeated_positions": 36,
+    "behind_moves": 79,
+    "repeated_while_behind": 36,
+    "memory_interventions": 23,
+    "repeated_chosen_after_penalty": 1,
+    "max_seconds": 1.5214502000017092
+   },
+   "b_stats": {
+    "moves": 100,
+    "timeouts": 0,
+    "faults": [],
+    "repeated_positions": 36,
+    "behind_moves": 16,
+    "repeated_while_behind": 0,
+    "memory_interventions": 0,
+    "repeated_chosen_after_penalty": 0,
+    "max_seconds": 1.5401031000074
+   }
+  },
+  {
+   "i": 0,
+   "j": 1,
+   "map_name": "val-medium-1280000",
+   "round": 0,
+   "a_species": "vampires",
+   "first": "vampires",
+   "seed": 20561037,
+   "a_score": 0.0,
+   "a_margin": -11,
+   "winner": "werewolves",
+   "termination": "elimination",
+   "plies": 28,
+   "final_populations": {
+    "vampires": 0,
+    "werewolves": 11
+   },
+   "a_stats": {
+    "moves": 14,
+    "timeouts": 0,
+    "faults": [],
+    "repeated_positions": 0,
+    "behind_moves": 2,
+    "repeated_while_behind": 0,
+    "memory_interventions": 0,
+    "repeated_chosen_after_penalty": 0,
+    "max_seconds": 1.5039495999808423
+   },
+   "b_stats": {
+    "moves": 14,
+    "timeouts": 0,
+    "faults": [],
+    "repeated_positions": 0,
+    "behind_moves": 2,
+    "repeated_while_behind": 0,
+    "memory_interventions": 0,
+    "repeated_chosen_after_penalty": 0,
+    "max_seconds": 1.5002723999787122
+   }
+  },
+  {
+   "i": 0,
+   "j": 1,
+   "map_name": "val-medium-1280000",
+   "round": 0,
+   "a_species": "vampires",
+   "first": "werewolves",
+   "seed": 20561039,
+   "a_score": 1.0,
+   "a_margin": 16,
+   "winner": "vampires",
+   "termination": "elimination",
+   "plies": 21,
+   "final_populations": {
+    "vampires": 16,
+    "werewolves": 0
+   },
+   "a_stats": {
+    "moves": 10,
+    "timeouts": 0,
+    "faults": [],
+    "repeated_positions": 0,
+    "behind_moves": 2,
+    "repeated_while_behind": 0,
+    "memory_interventions": 0,
+    "repeated_chosen_after_penalty": 0,
+    "max_seconds": 1.5024468000046909
+   },
+   "b_stats": {
+    "moves": 11,
+    "timeouts": 0,
+    "faults": [],
+    "repeated_positions": 0,
+    "behind_moves": 0,
+    "repeated_while_behind": 0,
+    "memory_interventions": 0,
+    "repeated_chosen_after_penalty": 0,
+    "max_seconds": 1.5003025999758393
+   }
+  },
+  {
+   "i": 0,
+   "j": 1,
+   "map_name": "val-medium-1280000",
+   "round": 0,
+   "a_species": "werewolves",
+   "first": "vampires",
+   "seed": 20561038,
+   "a_score": 0.5,
+   "a_margin": 0,
+   "winner": null,
+   "termination": "ply_limit",
+   "plies": 200,
+   "final_populations": {
+    "vampires": 23,
+    "werewolves": 23
+   },
+   "a_stats": {
+    "moves": 100,
+    "timeouts": 1,
+    "faults": [],
+    "repeated_positions": 84,
+    "behind_moves": 6,
+    "repeated_while_behind": 0,
+    "memory_interventions": 0,
+    "repeated_chosen_after_penalty": 0,
+    "max_seconds": 13.313005800009705
+   },
+   "b_stats": {
+    "moves": 100,
+    "timeouts": 0,
+    "faults": [],
+    "repeated_positions": 84,
+    "behind_moves": 0,
+    "repeated_while_behind": 0,
+    "memory_interventions": 0,
+    "repeated_chosen_after_penalty": 0,
+    "max_seconds": 1.5005504000000656
+   }
+  },
+  {
+   "i": 0,
+   "j": 1,
+   "map_name": "val-medium-1280000",
+   "round": 0,
+   "a_species": "werewolves",
+   "first": "werewolves",
+   "seed": 20561040,
+   "a_score": 0.5,
+   "a_margin": 0,
+   "winner": null,
+   "termination": "ply_limit",
+   "plies": 200,
+   "final_populations": {
+    "vampires": 23,
+    "werewolves": 23
+   },
+   "a_stats": {
+    "moves": 100,
+    "timeouts": 1,
+    "faults": [],
+    "repeated_positions": 86,
+    "behind_moves": 7,
+    "repeated_while_behind": 0,
+    "memory_interventions": 0,
+    "repeated_chosen_after_penalty": 0,
+    "max_seconds": 13.016384899965487
+   },
+   "b_stats": {
+    "moves": 100,
+    "timeouts": 0,
+    "faults": [],
+    "repeated_positions": 86,
+    "behind_moves": 0,
+    "repeated_while_behind": 0,
+    "memory_interventions": 0,
+    "repeated_chosen_after_penalty": 0,
+    "max_seconds": 1.500387599982787
+   }
+  }
+ ]
+}

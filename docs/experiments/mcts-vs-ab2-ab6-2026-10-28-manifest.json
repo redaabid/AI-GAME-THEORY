@@ -1,0 +1,355 @@
+{
+ "schema_version": 1,
+ "description": "Completed 32-game CPU comparison, 28 October 2026. Original legacy reports are archived unchanged. Policy source hashes and map states below were verified during archiving, not recorded at match startup.",
+ "policy_verification_revision": "2ee905f7c15dea2fe42c6dd253fadbcd66e181a7",
+ "opponent_source_revision": "c1bb52662bccb9a8dfdd670a5db64cc84207a965",
+ "reports": {
+  "ab2": {
+   "file": "mcts-vs-ab2-2026-10-28.json",
+   "sha256": "cfc1d70297bb73aae097e69fe51fb79e3d782216d5a9ddcdbd92d9a92e8dc797",
+   "legacy_report_name": "20261027T234207Z.json"
+  },
+  "ab6": {
+   "file": "mcts-vs-ab6-2026-10-28.json",
+   "sha256": "8bbc408e9c6e14b2d83929dbb23cdb289ca751e3a1d27364c0f50fd55e6e005f",
+   "legacy_report_name": "20261028T001803Z.json"
+  }
+ },
+ "verified_source_sha256": {
+  "agents/__init__.py": "99e7ad3c448aedf3fe5058170813a7d327b35366f6534691f96519912ae2f4b2",
+  "agents/builtin.py": "6a518ae464cdd0f093e00258ae24699385a0b97d7fab131285d31b9c2916e093",
+  "agents/mcts_memory.py": "5a1a44a5f45d515e8875e8d24de69af72cbf2f8e8e60493d500010f3b36f413a",
+  "agents/ab_variants.py": "bed8077a39f16561f0cc666a007d19cfe92f2251559f33dbc7076f3415637ac8",
+  "search.py": "524f320e07ec76d7ba3ead9b760461a4b34144ccec965e30a64767a21cc11d60",
+  "candidates.py": "e506d21f718778f9aabfe0700cab59d3994eef3f70fc93b0ac35ec61553a96c7",
+  "strategy.py": "66e9a8781887995bdcae942b5a5e71b7239be603c4ffe46fa89a991be10bce6e",
+  "game.py": "8f96872880bfba67d1964f843f8dad257aa4ff992a851ce7c345ca09c4465fad",
+  "combat.py": "7fb0c48bd796548593d91230a7f7422434cf597ac217ed296ff8f186456ab690",
+  "simulator.py": "9af4d29a359132f3e9aadfa7291e2786d98af567ed730eeec4f056d104f4f81f",
+  "evaluation.py": "4e6ab05321788a3be8f590b0eb1f31ebec5936b0c551b30b68794f10c8441c57",
+  "lookahead.py": "7ea2036f875c37a5bebd84ea4a8944e09b4ff55f92b986e9746be9f7132d270c",
+  "macro.py": "95ed7e72b25b0ba4def014edba5ee1a4c8dd03b04f49dde08c53ba20279d7116",
+  "playbook.py": "9004d87168c4bcd39d1debf6ad82c3a0e93acad05c52aa5045dbb8e7f35f934c",
+  "tournament.py": "ce6d108444368bea0caae2d8ec95e94a9dd052d2ffdaa456f4d650aba5319a3b",
+  "mapgen.py": "6673ab53e1617de2fc2d08a6cb0aa34fe9782bd0f3ec294d845c9edd5cf0adf5"
+ },
+ "maps": [
+  {
+   "name": "testmap2",
+   "state": {
+    "schema_version": 1,
+    "rows": 15,
+    "columns": 29,
+    "to_play": "vampires",
+    "ply": 0,
+    "rules_profile": "server-v3.2.1",
+    "cells": [
+     [
+      0,
+      0,
+      0,
+      0,
+      10
+     ],
+     [
+      0,
+      14,
+      2,
+      0,
+      0
+     ],
+     [
+      10,
+      3,
+      4,
+      0,
+      0
+     ],
+     [
+      14,
+      7,
+      20,
+      0,
+      0
+     ],
+     [
+      18,
+      11,
+      4,
+      0,
+      0
+     ],
+     [
+      28,
+      0,
+      2,
+      0,
+      0
+     ],
+     [
+      28,
+      14,
+      0,
+      10,
+      0
+     ]
+    ]
+   }
+  },
+  {
+   "name": "thetrap",
+   "state": {
+    "schema_version": 1,
+    "rows": 5,
+    "columns": 10,
+    "to_play": "vampires",
+    "ply": 0,
+    "rules_profile": "server-v3.2.1",
+    "cells": [
+     [
+      2,
+      2,
+      4,
+      0,
+      0
+     ],
+     [
+      4,
+      1,
+      0,
+      0,
+      4
+     ],
+     [
+      4,
+      3,
+      0,
+      4,
+      0
+     ],
+     [
+      9,
+      0,
+      2,
+      0,
+      0
+     ],
+     [
+      9,
+      2,
+      1,
+      0,
+      0
+     ],
+     [
+      9,
+      4,
+      2,
+      0,
+      0
+     ]
+    ]
+   }
+  },
+  {
+   "name": "val-large-1290000",
+   "state": {
+    "schema_version": 1,
+    "rows": 14,
+    "columns": 21,
+    "to_play": "vampires",
+    "ply": 0,
+    "rules_profile": "server-v3.2.1",
+    "cells": [
+     [
+      1,
+      9,
+      1,
+      0,
+      0
+     ],
+     [
+      2,
+      5,
+      1,
+      0,
+      0
+     ],
+     [
+      4,
+      0,
+      14,
+      0,
+      0
+     ],
+     [
+      6,
+      8,
+      1,
+      0,
+      0
+     ],
+     [
+      7,
+      0,
+      13,
+      0,
+      0
+     ],
+     [
+      7,
+      2,
+      8,
+      0,
+      0
+     ],
+     [
+      7,
+      9,
+      0,
+      0,
+      12
+     ],
+     [
+      8,
+      0,
+      4,
+      0,
+      0
+     ],
+     [
+      12,
+      13,
+      4,
+      0,
+      0
+     ],
+     [
+      13,
+      4,
+      0,
+      12,
+      0
+     ],
+     [
+      13,
+      11,
+      8,
+      0,
+      0
+     ],
+     [
+      13,
+      13,
+      13,
+      0,
+      0
+     ],
+     [
+      14,
+      5,
+      1,
+      0,
+      0
+     ],
+     [
+      16,
+      13,
+      14,
+      0,
+      0
+     ],
+     [
+      18,
+      8,
+      1,
+      0,
+      0
+     ],
+     [
+      19,
+      4,
+      1,
+      0,
+      0
+     ]
+    ]
+   }
+  },
+  {
+   "name": "val-medium-1280000",
+   "state": {
+    "schema_version": 1,
+    "rows": 11,
+    "columns": 10,
+    "to_play": "vampires",
+    "ply": 0,
+    "rules_profile": "server-v3.2.1",
+    "cells": [
+     [
+      1,
+      4,
+      4,
+      0,
+      0
+     ],
+     [
+      3,
+      0,
+      4,
+      0,
+      0
+     ],
+     [
+      4,
+      1,
+      1,
+      0,
+      0
+     ],
+     [
+      4,
+      2,
+      0,
+      14,
+      0
+     ],
+     [
+      5,
+      8,
+      0,
+      0,
+      14
+     ],
+     [
+      5,
+      9,
+      1,
+      0,
+      0
+     ],
+     [
+      6,
+      10,
+      4,
+      0,
+      0
+     ],
+     [
+      8,
+      6,
+      4,
+      0,
+      0
+     ]
+    ]
+   }
+  }
+ ],
+ "limitations": [
+  "Timed runs vary with hardware and OS scheduling.",
+  "MCTS had two timeouts in the AB6 series. Their cause is not established by these summaries.",
+  "Legacy report code_sha256 covers selected root modules; verified_source_sha256 supplements it with agent and shared module hashes.",
+  "These are simulator games, not new Windows-server games or neural training."
+ ]
+}

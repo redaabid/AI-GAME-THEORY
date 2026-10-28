@@ -6,8 +6,12 @@ one interface: `alphabeta`, `oep`, `portfolio`, `mcts`, `baseline`, and `random`
 plus the experimental `mcts-memory` variant on `feat/mcts-memory`.
 A round-robin tournament compares them, and `tune.py` tunes them offline.
 
-**Current best engine: `alphabeta`** (simulator results in
-[docs/RESULTS.md](docs/RESULTS.md)). Earlier progress notes:
+**Latest: 32 timed games against AB2 and AB6**, plus resumable per-game
+checkpoints: [results and team handoff](docs/MCTS_AB_COMPARISON.md). MCTS scored
+7 W / 3 D / 6 L against AB2 and 7 W / 2 D / 7 L against AB6; two MCTS timeouts in
+the AB6 batch need investigation. No overall champion is established by this sample.
+
+Earlier engine comparisons: [docs/RESULTS.md](docs/RESULTS.md). Earlier progress notes:
 [docs/PROGRESS.md](docs/PROGRESS.md) (15 October 2026).
 
 ## What runs during a game?
@@ -57,6 +61,8 @@ timeouts, and faults. To add a model, create `agents/<name>.py`; see
 Registered engines: `baseline`, `random`, `mcts`, `portfolio` (Portfolio Greedy
 Search), `alphabeta` (iterative deepening with chance nodes), and `oep` (online
 evolutionary planning). `tune.py` tunes their parameters offline.
+This branch also includes `mcts-memory` and Julian's `ab0`–`ab8` variants;
+`ab7` requires an explicit weight dictionary. See [the AB2/AB6 guide](docs/WATCH_MATCH.md).
 
 ## Experimental MCTS: memory and the turn limit
 
@@ -129,7 +135,7 @@ arrivals, independent group movement, and selected recruitment splits.
 
 To watch memory MCTS against Julian's AB2 or AB6 on four comparison maps, follow
 [the three-terminal commands](docs/WATCH_MATCH.md). These variants are available
-locally on this branch; the guide also gives a balanced 32-game CPU comparison.
+on this branch; the guide also gives a balanced 32-game CPU comparison.
 Use `python campaign.py --opponent ab2 --max-games 4` to play four games and save
 them, then `python campaign.py --opponent ab2` to resume later. The same commands
 with `ab6` run the other 16-game campaign. Prepare the four maps using the guide
@@ -218,7 +224,7 @@ The bots play automatically. Terminals log the assigned species, moves, and
 decision times. `Game ended` and `Server finished the session` indicate a
 completed match. The server window shows the board.
 
-Both bots use the `baseline` engine by default. To play the best engine in
+Both bots use the `baseline` engine by default. To play the shared alpha-beta engine in
 terminal A instead, run:
 
 ```sh
@@ -286,8 +292,10 @@ The bot has also completed a two-bot compatibility match on the supplied Server
 v3.2.1 using `thetrap.xml`, a two-second move limit, and a 40-ply test cap.
 The simulator supports splitting and combined arrivals. The benchmark agent still
 moves one full group per turn; the search engines also split and coordinate groups.
-The engines have not yet played a full match on the Windows server: run one before
-the tournament. See [docs/ROADMAP.md](docs/ROADMAP.md).
+Teammates' real-server alpha-beta campaigns are on the
+`julian-tests-alpha-beta-2026-10-27` branch. The 32-game memory-MCTS comparison
+reported here uses the CPU simulator. Validate the final selected variant on
+the course server before the tournament. See [docs/ROADMAP.md](docs/ROADMAP.md).
 
 ## Configuration and troubleshooting
 
