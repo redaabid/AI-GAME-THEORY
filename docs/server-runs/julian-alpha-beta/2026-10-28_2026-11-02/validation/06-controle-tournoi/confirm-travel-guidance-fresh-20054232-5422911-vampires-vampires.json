@@ -1,0 +1,1190 @@
+{
+  "candidate_species": "vampires",
+  "seed": 5422911,
+  "winner": null,
+  "termination": "ply_limit",
+  "plies": 8,
+  "repetitions": 0,
+  "first_adjacent_ply": null,
+  "final_populations": {
+    "vampires": 23,
+    "werewolves": 23
+  },
+  "faults": [],
+  "timings": {
+    "vampires": [
+      0.020163299996056594,
+      0.02012770000146702,
+      0.02015189999656286,
+      0.020129500000621192
+    ],
+    "werewolves": [
+      0.020288700005039573,
+      0.020302000004448928,
+      0.020271000001230277,
+      0.005010299995774403
+    ]
+  },
+  "trace": [
+    {
+      "ply": 0,
+      "species": "vampires",
+      "seconds": 0.020163299996056594,
+      "moves": [
+        [
+          2,
+          2,
+          8,
+          3,
+          2
+        ]
+      ],
+      "metrics": {
+        "profile": "ab2",
+        "features": {
+          "iterative": true,
+          "ordering": true,
+          "tt": true,
+          "history": true,
+          "selective": false,
+          "pvs": false,
+          "aspiration": false,
+          "quiescence": false,
+          "chance": false,
+          "tuned": false,
+          "mtd": false
+        },
+        "depth": 1,
+        "value": 1000000,
+        "bootstrap": false,
+        "deadline_reached": true,
+        "seconds": 0.019929800007957965,
+        "nodes": 18,
+        "cutoffs": 0,
+        "tt_hits": 0,
+        "researches": 0,
+        "passes": 0,
+        "chance_outcomes": 0,
+        "chance_cutoffs": 0,
+        "qnodes": 0,
+        "generated": 18,
+        "plan_cache_hits": 1,
+        "experiment": "scripted_travel_rollout",
+        "route_plies": 8,
+        "route_steps": 89,
+        "route_calls": 14,
+        "route_max_steps": 7
+      },
+      "position": {
+        "schema_version": 1,
+        "rows": 8,
+        "columns": 11,
+        "to_play": "vampires",
+        "ply": 0,
+        "rules_profile": "server-v3.2.1",
+        "cells": [
+          [
+            0,
+            7,
+            10,
+            0,
+            0
+          ],
+          [
+            1,
+            4,
+            1,
+            0,
+            0
+          ],
+          [
+            2,
+            2,
+            0,
+            8,
+            0
+          ],
+          [
+            2,
+            5,
+            6,
+            0,
+            0
+          ],
+          [
+            3,
+            2,
+            1,
+            0,
+            0
+          ],
+          [
+            3,
+            4,
+            7,
+            0,
+            0
+          ],
+          [
+            7,
+            3,
+            7,
+            0,
+            0
+          ],
+          [
+            7,
+            5,
+            1,
+            0,
+            0
+          ],
+          [
+            8,
+            2,
+            6,
+            0,
+            0
+          ],
+          [
+            8,
+            5,
+            0,
+            0,
+            8
+          ],
+          [
+            9,
+            3,
+            1,
+            0,
+            0
+          ],
+          [
+            10,
+            0,
+            10,
+            0,
+            0
+          ]
+        ]
+      }
+    },
+    {
+      "ply": 1,
+      "species": "werewolves",
+      "seconds": 0.020288700005039573,
+      "moves": [
+        [
+          8,
+          5,
+          8,
+          8,
+          4
+        ]
+      ],
+      "metrics": {
+        "profile": "ab2",
+        "features": {
+          "iterative": true,
+          "ordering": true,
+          "tt": true,
+          "history": true,
+          "selective": false,
+          "pvs": false,
+          "aspiration": false,
+          "quiescence": false,
+          "chance": false,
+          "tuned": false,
+          "mtd": false
+        },
+        "depth": 2,
+        "value": -52847,
+        "bootstrap": false,
+        "deadline_reached": true,
+        "seconds": 0.019934600000851788,
+        "nodes": 38,
+        "cutoffs": 7,
+        "tt_hits": 0,
+        "researches": 0,
+        "passes": 0,
+        "chance_outcomes": 0,
+        "chance_cutoffs": 0,
+        "qnodes": 0,
+        "generated": 60,
+        "plan_cache_hits": 3,
+        "experiment": "ab2exp",
+        "width": 6,
+        "max_depth": 24,
+        "repeat_penalty": 0,
+        "repeat_after": 2,
+        "progress_weight": 2000,
+        "goal": [
+          [
+            7,
+            3
+          ],
+          7,
+          2
+        ]
+      },
+      "position": {
+        "schema_version": 1,
+        "rows": 8,
+        "columns": 11,
+        "to_play": "werewolves",
+        "ply": 1,
+        "rules_profile": "server-v3.2.1",
+        "cells": [
+          [
+            0,
+            7,
+            10,
+            0,
+            0
+          ],
+          [
+            1,
+            4,
+            1,
+            0,
+            0
+          ],
+          [
+            2,
+            5,
+            6,
+            0,
+            0
+          ],
+          [
+            3,
+            2,
+            0,
+            9,
+            0
+          ],
+          [
+            3,
+            4,
+            7,
+            0,
+            0
+          ],
+          [
+            7,
+            3,
+            7,
+            0,
+            0
+          ],
+          [
+            7,
+            5,
+            1,
+            0,
+            0
+          ],
+          [
+            8,
+            2,
+            6,
+            0,
+            0
+          ],
+          [
+            8,
+            5,
+            0,
+            0,
+            8
+          ],
+          [
+            9,
+            3,
+            1,
+            0,
+            0
+          ],
+          [
+            10,
+            0,
+            10,
+            0,
+            0
+          ]
+        ]
+      }
+    },
+    {
+      "ply": 2,
+      "species": "vampires",
+      "seconds": 0.02012770000146702,
+      "moves": [
+        [
+          3,
+          2,
+          9,
+          2,
+          3
+        ]
+      ],
+      "metrics": {
+        "profile": "ab2",
+        "features": {
+          "iterative": true,
+          "ordering": true,
+          "tt": true,
+          "history": true,
+          "selective": false,
+          "pvs": false,
+          "aspiration": false,
+          "quiescence": false,
+          "chance": false,
+          "tuned": false,
+          "mtd": false
+        },
+        "depth": 1,
+        "value": 1000000,
+        "bootstrap": false,
+        "deadline_reached": true,
+        "seconds": 0.01985140000761021,
+        "nodes": 23,
+        "cutoffs": 2,
+        "tt_hits": 0,
+        "researches": 0,
+        "passes": 0,
+        "chance_outcomes": 0,
+        "chance_cutoffs": 0,
+        "qnodes": 0,
+        "generated": 24,
+        "plan_cache_hits": 1,
+        "experiment": "scripted_travel_rollout",
+        "route_plies": 8,
+        "route_steps": 74,
+        "route_calls": 17,
+        "route_max_steps": 5
+      },
+      "position": {
+        "schema_version": 1,
+        "rows": 8,
+        "columns": 11,
+        "to_play": "vampires",
+        "ply": 2,
+        "rules_profile": "server-v3.2.1",
+        "cells": [
+          [
+            0,
+            7,
+            10,
+            0,
+            0
+          ],
+          [
+            1,
+            4,
+            1,
+            0,
+            0
+          ],
+          [
+            2,
+            5,
+            6,
+            0,
+            0
+          ],
+          [
+            3,
+            2,
+            0,
+            9,
+            0
+          ],
+          [
+            3,
+            4,
+            7,
+            0,
+            0
+          ],
+          [
+            7,
+            3,
+            7,
+            0,
+            0
+          ],
+          [
+            7,
+            5,
+            1,
+            0,
+            0
+          ],
+          [
+            8,
+            2,
+            6,
+            0,
+            0
+          ],
+          [
+            8,
+            4,
+            0,
+            0,
+            8
+          ],
+          [
+            9,
+            3,
+            1,
+            0,
+            0
+          ],
+          [
+            10,
+            0,
+            10,
+            0,
+            0
+          ]
+        ]
+      }
+    },
+    {
+      "ply": 3,
+      "species": "werewolves",
+      "seconds": 0.020302000004448928,
+      "moves": [
+        [
+          8,
+          4,
+          7,
+          7,
+          3
+        ]
+      ],
+      "metrics": {
+        "profile": "ab2",
+        "features": {
+          "iterative": true,
+          "ordering": true,
+          "tt": true,
+          "history": true,
+          "selective": false,
+          "pvs": false,
+          "aspiration": false,
+          "quiescence": false,
+          "chance": false,
+          "tuned": false,
+          "mtd": false
+        },
+        "depth": 2,
+        "value": -56267,
+        "bootstrap": false,
+        "deadline_reached": true,
+        "seconds": 0.019901299994671717,
+        "nodes": 35,
+        "cutoffs": 5,
+        "tt_hits": 0,
+        "researches": 0,
+        "passes": 0,
+        "chance_outcomes": 0,
+        "chance_cutoffs": 0,
+        "qnodes": 0,
+        "generated": 48,
+        "plan_cache_hits": 3,
+        "experiment": "ab2exp",
+        "width": 6,
+        "max_depth": 24,
+        "repeat_penalty": 0,
+        "repeat_after": 2,
+        "progress_weight": 2000,
+        "goal": [
+          [
+            7,
+            3
+          ],
+          7,
+          1
+        ]
+      },
+      "position": {
+        "schema_version": 1,
+        "rows": 8,
+        "columns": 11,
+        "to_play": "werewolves",
+        "ply": 3,
+        "rules_profile": "server-v3.2.1",
+        "cells": [
+          [
+            0,
+            7,
+            10,
+            0,
+            0
+          ],
+          [
+            1,
+            4,
+            1,
+            0,
+            0
+          ],
+          [
+            2,
+            3,
+            0,
+            9,
+            0
+          ],
+          [
+            2,
+            5,
+            6,
+            0,
+            0
+          ],
+          [
+            3,
+            4,
+            7,
+            0,
+            0
+          ],
+          [
+            7,
+            3,
+            7,
+            0,
+            0
+          ],
+          [
+            7,
+            5,
+            1,
+            0,
+            0
+          ],
+          [
+            8,
+            2,
+            6,
+            0,
+            0
+          ],
+          [
+            8,
+            4,
+            0,
+            0,
+            8
+          ],
+          [
+            9,
+            3,
+            1,
+            0,
+            0
+          ],
+          [
+            10,
+            0,
+            10,
+            0,
+            0
+          ]
+        ]
+      }
+    },
+    {
+      "ply": 4,
+      "species": "vampires",
+      "seconds": 0.02015189999656286,
+      "moves": [
+        [
+          2,
+          3,
+          2,
+          1,
+          4
+        ],
+        [
+          2,
+          3,
+          7,
+          3,
+          4
+        ]
+      ],
+      "metrics": {
+        "profile": "ab2",
+        "features": {
+          "iterative": true,
+          "ordering": true,
+          "tt": true,
+          "history": true,
+          "selective": false,
+          "pvs": false,
+          "aspiration": false,
+          "quiescence": false,
+          "chance": false,
+          "tuned": false,
+          "mtd": false
+        },
+        "depth": 1,
+        "value": 1000000,
+        "bootstrap": false,
+        "deadline_reached": true,
+        "seconds": 0.019858899991959333,
+        "nodes": 22,
+        "cutoffs": 3,
+        "tt_hits": 0,
+        "researches": 0,
+        "passes": 0,
+        "chance_outcomes": 0,
+        "chance_cutoffs": 0,
+        "qnodes": 0,
+        "generated": 30,
+        "plan_cache_hits": 1,
+        "experiment": "scripted_travel_rollout",
+        "route_plies": 8,
+        "route_steps": 36,
+        "route_calls": 15,
+        "route_max_steps": 3
+      },
+      "position": {
+        "schema_version": 1,
+        "rows": 8,
+        "columns": 11,
+        "to_play": "vampires",
+        "ply": 4,
+        "rules_profile": "server-v3.2.1",
+        "cells": [
+          [
+            0,
+            7,
+            10,
+            0,
+            0
+          ],
+          [
+            1,
+            4,
+            1,
+            0,
+            0
+          ],
+          [
+            2,
+            3,
+            0,
+            9,
+            0
+          ],
+          [
+            2,
+            5,
+            6,
+            0,
+            0
+          ],
+          [
+            3,
+            4,
+            7,
+            0,
+            0
+          ],
+          [
+            7,
+            3,
+            0,
+            0,
+            14
+          ],
+          [
+            7,
+            5,
+            1,
+            0,
+            0
+          ],
+          [
+            8,
+            2,
+            6,
+            0,
+            0
+          ],
+          [
+            8,
+            4,
+            0,
+            0,
+            1
+          ],
+          [
+            9,
+            3,
+            1,
+            0,
+            0
+          ],
+          [
+            10,
+            0,
+            10,
+            0,
+            0
+          ]
+        ]
+      }
+    },
+    {
+      "ply": 5,
+      "species": "werewolves",
+      "seconds": 0.020271000001230277,
+      "moves": [
+        [
+          7,
+          3,
+          14,
+          8,
+          2
+        ],
+        [
+          8,
+          4,
+          1,
+          7,
+          5
+        ]
+      ],
+      "metrics": {
+        "profile": "ab2",
+        "features": {
+          "iterative": true,
+          "ordering": true,
+          "tt": true,
+          "history": true,
+          "selective": false,
+          "pvs": false,
+          "aspiration": false,
+          "quiescence": false,
+          "chance": false,
+          "tuned": false,
+          "mtd": false
+        },
+        "depth": 1,
+        "value": 121090,
+        "bootstrap": false,
+        "deadline_reached": true,
+        "seconds": 0.019790900012594648,
+        "nodes": 24,
+        "cutoffs": 4,
+        "tt_hits": 0,
+        "researches": 0,
+        "passes": 0,
+        "chance_outcomes": 0,
+        "chance_cutoffs": 0,
+        "qnodes": 0,
+        "generated": 36,
+        "plan_cache_hits": 1,
+        "experiment": "ab2exp",
+        "width": 6,
+        "max_depth": 24,
+        "repeat_penalty": 0,
+        "repeat_after": 2,
+        "progress_weight": 2000,
+        "goal": [
+          [
+            8,
+            2
+          ],
+          6,
+          1
+        ]
+      },
+      "position": {
+        "schema_version": 1,
+        "rows": 8,
+        "columns": 11,
+        "to_play": "werewolves",
+        "ply": 5,
+        "rules_profile": "server-v3.2.1",
+        "cells": [
+          [
+            0,
+            7,
+            10,
+            0,
+            0
+          ],
+          [
+            1,
+            4,
+            0,
+            3,
+            0
+          ],
+          [
+            2,
+            5,
+            6,
+            0,
+            0
+          ],
+          [
+            3,
+            4,
+            0,
+            14,
+            0
+          ],
+          [
+            7,
+            3,
+            0,
+            0,
+            14
+          ],
+          [
+            7,
+            5,
+            1,
+            0,
+            0
+          ],
+          [
+            8,
+            2,
+            6,
+            0,
+            0
+          ],
+          [
+            8,
+            4,
+            0,
+            0,
+            1
+          ],
+          [
+            9,
+            3,
+            1,
+            0,
+            0
+          ],
+          [
+            10,
+            0,
+            10,
+            0,
+            0
+          ]
+        ]
+      }
+    },
+    {
+      "ply": 6,
+      "species": "vampires",
+      "seconds": 0.020129500000621192,
+      "moves": [
+        [
+          1,
+          4,
+          3,
+          2,
+          5
+        ],
+        [
+          3,
+          4,
+          14,
+          2,
+          5
+        ]
+      ],
+      "metrics": {
+        "profile": "ab2",
+        "features": {
+          "iterative": true,
+          "ordering": true,
+          "tt": true,
+          "history": true,
+          "selective": false,
+          "pvs": false,
+          "aspiration": false,
+          "quiescence": false,
+          "chance": false,
+          "tuned": false,
+          "mtd": false
+        },
+        "depth": 12,
+        "value": 0,
+        "bootstrap": false,
+        "deadline_reached": true,
+        "seconds": 0.01979140000184998,
+        "nodes": 218,
+        "cutoffs": 57,
+        "tt_hits": 0,
+        "researches": 0,
+        "passes": 0,
+        "chance_outcomes": 0,
+        "chance_cutoffs": 0,
+        "qnodes": 0,
+        "generated": 42,
+        "plan_cache_hits": 75,
+        "experiment": "scripted_travel_rollout",
+        "route_plies": 8,
+        "route_steps": 6,
+        "route_calls": 6,
+        "route_max_steps": 1
+      },
+      "position": {
+        "schema_version": 1,
+        "rows": 8,
+        "columns": 11,
+        "to_play": "vampires",
+        "ply": 6,
+        "rules_profile": "server-v3.2.1",
+        "cells": [
+          [
+            0,
+            7,
+            10,
+            0,
+            0
+          ],
+          [
+            1,
+            4,
+            0,
+            3,
+            0
+          ],
+          [
+            2,
+            5,
+            6,
+            0,
+            0
+          ],
+          [
+            3,
+            4,
+            0,
+            14,
+            0
+          ],
+          [
+            7,
+            5,
+            0,
+            0,
+            2
+          ],
+          [
+            8,
+            2,
+            0,
+            0,
+            20
+          ],
+          [
+            9,
+            3,
+            1,
+            0,
+            0
+          ],
+          [
+            10,
+            0,
+            10,
+            0,
+            0
+          ]
+        ]
+      }
+    },
+    {
+      "ply": 7,
+      "species": "werewolves",
+      "seconds": 0.005010299995774403,
+      "moves": [
+        [
+          8,
+          2,
+          1,
+          9,
+          3
+        ]
+      ],
+      "metrics": {
+        "profile": "ab2",
+        "features": {
+          "iterative": true,
+          "ordering": true,
+          "tt": true,
+          "history": true,
+          "selective": false,
+          "pvs": false,
+          "aspiration": false,
+          "quiescence": false,
+          "chance": false,
+          "tuned": false,
+          "mtd": false
+        },
+        "depth": 24,
+        "value": 0,
+        "bootstrap": false,
+        "deadline_reached": false,
+        "seconds": 0.0045467999880202115,
+        "nodes": 168,
+        "cutoffs": 0,
+        "tt_hits": 0,
+        "researches": 0,
+        "passes": 0,
+        "chance_outcomes": 0,
+        "chance_cutoffs": 0,
+        "qnodes": 0,
+        "generated": 6,
+        "plan_cache_hits": 23,
+        "experiment": "ab2exp",
+        "width": 6,
+        "max_depth": 24,
+        "repeat_penalty": 0,
+        "repeat_after": 2,
+        "progress_weight": 2000,
+        "goal": [
+          [
+            10,
+            0
+          ],
+          10,
+          2
+        ]
+      },
+      "position": {
+        "schema_version": 1,
+        "rows": 8,
+        "columns": 11,
+        "to_play": "werewolves",
+        "ply": 7,
+        "rules_profile": "server-v3.2.1",
+        "cells": [
+          [
+            0,
+            7,
+            10,
+            0,
+            0
+          ],
+          [
+            2,
+            5,
+            0,
+            23,
+            0
+          ],
+          [
+            7,
+            5,
+            0,
+            0,
+            2
+          ],
+          [
+            8,
+            2,
+            0,
+            0,
+            20
+          ],
+          [
+            9,
+            3,
+            1,
+            0,
+            0
+          ],
+          [
+            10,
+            0,
+            10,
+            0,
+            0
+          ]
+        ]
+      }
+    },
+    {
+      "ply": 8,
+      "position": {
+        "schema_version": 1,
+        "rows": 8,
+        "columns": 11,
+        "to_play": "vampires",
+        "ply": 8,
+        "rules_profile": "server-v3.2.1",
+        "cells": [
+          [
+            0,
+            7,
+            10,
+            0,
+            0
+          ],
+          [
+            2,
+            5,
+            0,
+            23,
+            0
+          ],
+          [
+            7,
+            5,
+            0,
+            0,
+            2
+          ],
+          [
+            8,
+            2,
+            0,
+            0,
+            19
+          ],
+          [
+            9,
+            3,
+            0,
+            0,
+            2
+          ],
+          [
+            10,
+            0,
+            10,
+            0,
+            0
+          ]
+        ]
+      }
+    }
+  ],
+  "alerts_over_1_8": 0,
+  "bootstraps": 0,
+  "score": 0.5,
+  "a": "travel",
+  "b": "guidance",
+  "map": "fresh-20054232",
+  "first": "vampires",
+  "stage": "confirm"
+}

@@ -1,0 +1,24 @@
+{
+  "status": "working_selection_by_user_2026-11-02_not_exam_certification",
+  "move_time_seconds": 1.5,
+  "local_max_plies": 200,
+  "profiles": {
+    "ab2_reference": "ab2exp:depth=1,max_depth=24,width=6,extra=0,tt_size=50000",
+    "ab2_width7": "ab2exp:depth=1,max_depth=24,width=7,extra=0,tt_size=50000",
+    "ab2_tie_width7": "ab2tie:depth=1,max_depth=24,width=7,extra=0,tt_size=50000"
+  },
+  "validation_status": {
+    "ab2_reference": "priority_candidate_complete_simulator_games_WPF_pending",
+    "ab2_width7": "priority_candidate_complete_simulator_games_WPF_pending",
+    "ab2_tie_width7": "experimental_targeted_checks_passed_full_comparison_in_progress_WPF_pending"
+  },
+  "notes": [
+    "These specs select three working configurations, not three new search algorithms.",
+    "All use iterative deepening; depth=1 is the untimed diagnostic setting, max_depth=24 the timed cap.",
+    "No tactical extension, distant guidance or travel rollout is enabled in these retained specs.",
+    "TIE is fixed to width7 by the user; its past width6 probes remain historical evidence.",
+    "Reference and width7 are the current priority candidates, not statistically proven superior to every alternative.",
+    "TIE is experimental: targeted replays and timing probes passed; its complete paired-game campaign is still in progress, with no final validation claim.",
+    "Final WPF validation and confirmation of exam server/rules/ply cap remain outstanding."
+  ]
+}

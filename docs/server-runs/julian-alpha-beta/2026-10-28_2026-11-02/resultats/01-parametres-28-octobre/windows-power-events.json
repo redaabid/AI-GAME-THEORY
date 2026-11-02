@@ -1,0 +1,62 @@
+[
+  {
+    "utc": "2026-10-28T19:43:04.9959125Z",
+    "id": 507,
+    "message": "Le système quitte le mode de veille moderne \r\n\r\nmotif : Lid. "
+  },
+  {
+    "utc": "2026-10-28T19:40:33.8083238Z",
+    "id": 506,
+    "message": "Le système est en veille moderne \r\n\r\nmotif : Idle Timeout. "
+  },
+  {
+    "utc": "2026-10-28T19:40:00.7543193Z",
+    "id": 507,
+    "message": "Le système quitte le mode de veille moderne \r\n\r\nmotif : Resume from Hibernate. "
+  },
+  {
+    "utc": "2026-10-28T19:40:00.6837668Z",
+    "id": 506,
+    "message": "Le système est en veille moderne \r\n\r\nmotif : Sleep, Hibernate, or Shutdown. "
+  },
+  {
+    "utc": "2026-10-28T19:39:55.9210344Z",
+    "id": 507,
+    "message": "Le système quitte le mode de veille moderne \r\n\r\nmotif : Sleep, Hibernate, or Shutdown. "
+  },
+  {
+    "utc": "2026-10-28T19:00:27.3156153Z",
+    "id": 506,
+    "message": "Le système est en veille moderne \r\n\r\nmotif : Austerity Battery Drain Budget Exceeded. "
+  },
+  {
+    "utc": "2026-10-28T19:00:27.3117910Z",
+    "id": 507,
+    "message": "Le système quitte le mode de veille moderne \r\n\r\nmotif : Austerity Battery Drain Budget Exceeded. "
+  },
+  {
+    "utc": "2026-10-28T18:59:59.3647014Z",
+    "id": 506,
+    "message": "Le système est en veille moderne \r\n\r\nmotif : Lid. "
+  },
+  {
+    "utc": "2026-10-28T18:59:59.3637062Z",
+    "id": 507,
+    "message": "Le système quitte le mode de veille moderne \r\n\r\nmotif : Lid. "
+  },
+  {
+    "utc": "2026-10-28T18:59:56.7282225Z",
+    "id": 506,
+    "message": "Le système est en veille moderne \r\n\r\nmotif : AC/DC Display Burst Suppressed. "
+  },
+  {
+    "utc": "2026-10-28T18:59:56.7222135Z",
+    "id": 507,
+    "message": "Le système quitte le mode de veille moderne \r\n\r\nmotif : AC/DC Display Burst Suppressed. "
+  },
+  {
+    "utc": "2026-10-28T18:30:01.8141927Z",
+    "id": 506,
+    "message": "Le système est en veille moderne \r\n\r\nmotif : Idle Timeout. "
+  }
+]

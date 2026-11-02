@@ -1,5 +1,18 @@
 # Julian — tests d’optimisation Alpha-Bêta — 27 octobre 2026
 
+**Mise à jour documentaire du 2 novembre :** [compléments AB2, cartes et tournoi](docs/server-runs/julian-alpha-beta/2026-10-28_2026-11-02/README.md).
+[Synthèse chronologique et trois configurations de travail, TIE largeur 7 inclus](docs/server-runs/julian-alpha-beta/2026-10-28_2026-11-02/SYNTHESE_DEMARCHE_ET_CONFIGURATIONS.md).
+**AB2 référence et AB2 largeur 7 sont les candidats prioritaires testés en
+simulateur ; TIE largeur 7 reste expérimental, sa campagne complète étant en cours.**
+La [correction ciblée du départage des coups AB2](docs/server-runs/julian-alpha-beta/2026-10-28_2026-11-02/corrections-ciblees-2-novembre/README.md)
+est isolée dans `agents/ab2_tie.py` ; les AB2 précédents restent disponibles.
+Ce nouveau dossier documente les conseils rapportés du professeur, les essais
+du 28 au 31 octobre et la correction TIE expérimentale du 2 novembre.
+Il complète la livraison sur la même branche personnelle ; la campagne TIE
+en cours est présentée uniquement sous forme d'un point d'étape incomplet.
+L'[index personnel daté](docs/server-runs/julian-alpha-beta/README.md) distingue
+les deux périodes. Les résultats ci-dessous des 26–27 octobre restent historiques.
+
 Branche de travail : **`julian-tests-alpha-beta-2026-10-27`**. Ce fichier identifie explicitement les ajouts de Julian sans déplacer les modules Python ni casser leurs imports. `main` est conservée ; l’ancienne branche `server-runs` n’est pas supprimée.
 
 ## Code exact et architecture

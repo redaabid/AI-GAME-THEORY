@@ -1,0 +1,22 @@
+{
+  "status": "paired_tie_width7_regression_on_previously_used_maps",
+  "budget_seconds": 1.5,
+  "max_plies": 200,
+  "reference": "ab2exp:depth=1,max_depth=24,width=6,extra=0,tt_size=50000",
+  "profiles": {
+    "control": "ab2exp:depth=1,max_depth=24,width=6,extra=0,tt_size=50000",
+    "width7": "ab2exp:depth=1,max_depth=24,width=7,extra=0,tt_size=50000",
+    "tie_vs_reference": "ab2tie:depth=1,max_depth=24,width=7,extra=0,tt_size=50000",
+    "tie_vs_width7": "ab2tie:depth=1,max_depth=24,width=7,extra=0,tt_size=50000"
+  },
+  "comparison_reference": {
+    "tie_vs_reference": "control",
+    "tie_vs_width7": "width7"
+  },
+  "notes": [
+    "Three distinct configurations; the two tie labels designate the same TIE width7 candidate in different matchups.",
+    "Two previously used confirmation maps, four roles, one battle seed: 16 games, not an independent final test.",
+    "Budget 1.5s and cap 200; stop on invalid timing/fault and preserve raw records.",
+    "No new weights or algorithms changed for this comparison."
+  ]
+}

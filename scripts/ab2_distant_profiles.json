@@ -1,0 +1,27 @@
+{
+  "status": "exploratory_distant_screening_not_optimized",
+  "budget_seconds": 1.5,
+  "max_plies": 200,
+  "reference": "ab2exp:max_depth=24,width=6,extra=0",
+  "notes": [
+    "Exactly five configurations including the depth24 control.",
+    "All challengers face the same depth24 control, both species/roles.",
+    "Depth is a cap, not a promise; record actual completed depths separately.",
+    "Travel rollout simulates legal alternating scripted turns at quiet leaves; opponent policy is approximate, not exhaustive minimax.",
+    "Guidance weight 2000 and rollout length 8 are exploratory choices, not optimized values.",
+    "Simulator screening only; no WPF certification."
+  ],
+  "profiles": {
+    "control": "ab2exp:max_depth=24,width=6,extra=0",
+    "tactical1": "ab2exp:max_depth=24,width=6,extra=0,tactical=True,qdepth=1,qwidth=2",
+    "width7": "ab2exp:max_depth=24,width=7,extra=0",
+    "guidance": "ab2exp:max_depth=24,width=6,extra=0,progress_weight=2000",
+    "travel": "ab2route:depth=1,max_depth=24,width=6,extra=0,route_plies=8"
+  },
+  "comparison_reference": {
+    "tactical1": "control",
+    "width7": "control",
+    "guidance": "control",
+    "travel": "control"
+  }
+}

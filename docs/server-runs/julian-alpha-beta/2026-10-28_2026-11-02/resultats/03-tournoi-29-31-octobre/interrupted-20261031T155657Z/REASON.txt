@@ -1,0 +1,1 @@
+Excluded timing-contaminated game; elapsed outliers 8.388s, 73.619s, 1211.530s. Windows Kernel-Power records Modern Standby exit with Lid reason 2026-10-29 21:42:58 UTC. Raw game retained; no model fault logged.

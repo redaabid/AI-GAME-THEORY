@@ -1,0 +1,12 @@
+{
+  "profile": "tie_vs_width7",
+  "reference": "width7",
+  "map": "external-1-fresh-20054232-first-werewolves",
+  "species": "werewolves",
+  "seed": 5422911,
+  "completed_games": 15,
+  "updated": "2026-11-02T21:32:16.453789+00:00",
+  "ply": 12,
+  "last_seconds": 0.0035370999976294115,
+  "faults": 0
+}
