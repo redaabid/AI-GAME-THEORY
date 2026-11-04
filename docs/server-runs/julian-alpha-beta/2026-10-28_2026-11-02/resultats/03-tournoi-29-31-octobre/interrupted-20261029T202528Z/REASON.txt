@@ -1,1 +1,0 @@
-Interrupted game preserved; replay required. Windows Kernel-Power logs show Modern Standby and lid-related transitions during this campaign. No raw records discarded.
