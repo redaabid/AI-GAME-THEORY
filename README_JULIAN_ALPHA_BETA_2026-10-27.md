@@ -1,5 +1,10 @@
 # Julian — tests d’optimisation Alpha-Bêta — 27 octobre 2026
 
+**Archive de la publication précédente.** L'avancement AB2 dispose maintenant
+d'une [entrée datée du 4 novembre](README_JULIAN_ALPHA_BETA_2026-11-04.md), sur la
+branche `julian-tests-alpha-beta-2026-11-04`. Les mentions de l'ancienne branche
+ci-dessous décrivent les publications antérieures.
+
 **Mise à jour documentaire du 2 novembre :** [compléments AB2, cartes et tournoi](docs/server-runs/julian-alpha-beta/2026-10-28_2026-11-02/README.md).
 [Synthèse chronologique et trois configurations de travail, TIE largeur 7 inclus](docs/server-runs/julian-alpha-beta/2026-10-28_2026-11-02/SYNTHESE_DEMARCHE_ET_CONFIGURATIONS.md).
 **AB2 référence et AB2 largeur 7 sont les candidats prioritaires testés en

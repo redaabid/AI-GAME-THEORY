@@ -1,4 +1,4 @@
-> **Essais Alpha-Bêta de Julian — 27 octobre 2026 :** [code, configurations et résultats](README_JULIAN_ALPHA_BETA_2026-10-27.md).
+> **Avancement AB2 de Julian — branche du 4 novembre 2026 :** [configurations, code et résultats](README_JULIAN_ALPHA_BETA_2026-11-04.md).
 
 # AI Game Theory: Vampires vs Werewolves
 

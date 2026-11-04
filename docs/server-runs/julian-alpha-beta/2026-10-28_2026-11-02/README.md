@@ -1,5 +1,9 @@
 # Julian — compléments AB2 du 28 octobre au 2 novembre 2026
 
+**Publication dédiée du 4 novembre :** branche `julian-tests-alpha-beta-2026-11-04`,
+[nouvelle entrée de lecture](../../../../README_JULIAN_ALPHA_BETA_2026-11-04.md).
+Les dates de ce dossier restent celles des expériences et de leur compte rendu.
+
 **Statut des configurations :** AB2 référence (plafond 24, largeur 6) et AB2
 largeur 7 sont nos candidats prioritaires actuels, déjà testés en parties
 complètes dans le simulateur. **AB2 TIE largeur 7 reste une expérimentation** :
@@ -225,11 +229,15 @@ Aucune nouvelle partie n'a été lancée pour rédiger cette mise à jour.
 
 ## État Git au moment de la rédaction
 
-Branche de livraison : `julian-tests-alpha-beta-2026-10-27`, compte GitHub
-`julian5422`. Avant cette livraison, la branche distante était à
+Branche de livraison actuelle : `julian-tests-alpha-beta-2026-11-04`, compte
+GitHub `julian5422`. Première publication de ce dossier : le 2 novembre sur
+`julian-tests-alpha-beta-2026-10-27`, commit `3061b57`. Avant cette première
+publication, la branche distante était à
 `c1bb52662bccb9a8dfdd670a5db64cc84207a965`, avec les archives des 26–27 octobre.
 Cette mise à jour ajoute les nouveaux modules, scripts, tests et le dossier
 documentaire du 28 octobre au 2 novembre. Les fichiers de code restent dans les
 dossiers généraux et les données dans le dossier personnel daté. Les originaux
 dans `.local/ab2-experiments/` sont préservés. `main` reste inchangée.
 Le point d'étape TIE ne doit pas être lu comme un résultat final de sa campagne.
+La nouvelle branche du 4 novembre reprend cet avancement avec une entrée datée
+distincte ; les données des anciens tests sont conservées dans leurs archives.

@@ -1,5 +1,9 @@
 # Expériences Alpha-Bêta de Julian
 
+Publication actuelle : **`julian-tests-alpha-beta-2026-11-04`**.
+[Entrée de lecture du 4 novembre](../../../README_JULIAN_ALPHA_BETA_2026-11-04.md).
+La branche du 27 octobre est conservée comme publication précédente.
+
 Les sources restent dans les dossiers généraux `agents/`, `scripts/` et `tests/`.
 Ce répertoire rassemble les configurations, résultats et explications datés.
 
