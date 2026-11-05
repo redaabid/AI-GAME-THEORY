@@ -1,0 +1,57 @@
+{
+  "id": 4,
+  "sha": "13344e6ad4a3d5a4b7159e26e81c19056fd49677",
+  "map": "thetrap.xml",
+  "max_plies": 40,
+  "order": [
+    "ab1",
+    "ab3"
+  ],
+  "specs": {
+    "ab1": "ab1:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+    "ab3": "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000"
+  },
+  "commands": [
+    [
+      "C:\\Users\\sebju\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+      "-B",
+      "main.py",
+      "--name",
+      "AB1",
+      "--agent",
+      "ab1:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+      "--move-time",
+      "1.5",
+      "--max-plies",
+      "40",
+      "--rules-profile",
+      "server-v3.2.1",
+      "--seed",
+      "42",
+      "127.0.0.1",
+      "5555"
+    ],
+    [
+      "C:\\Users\\sebju\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+      "-B",
+      "main.py",
+      "--name",
+      "AB3",
+      "--agent",
+      "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+      "--move-time",
+      "1.5",
+      "--max-plies",
+      "40",
+      "--rules-profile",
+      "server-v3.2.1",
+      "--seed",
+      "42",
+      "127.0.0.1",
+      "5555"
+    ]
+  ],
+  "map_sha256": "4a5bee60b38e3d8741f12d6ca1ac70a2d564a4420196bd11e71af8d90c09e7fe",
+  "started": "2026-10-26T15:27:52.651067+00:00",
+  "move_time": 1.5
+}

@@ -1,0 +1,15 @@
+{
+  "spec": "ab7:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000,weights={'material': 1.0, 'humans': 0.8, 'discount': 0.97, 'threat': 0.7, 'groups': 0.1}",
+  "weights": {
+    "material": 1.0,
+    "humans": 0.8,
+    "discount": 0.97,
+    "threat": 0.7,
+    "groups": 0.1
+  },
+  "reference": "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+  "status": "promising_simulator_candidate",
+  "validation_score": 0.625,
+  "baseline_score": 0.5,
+  "warning": "Eight validation games per profile; no WPF validation, no 200-ply test. Do not replace the historical profile or claim statistical superiority."
+}

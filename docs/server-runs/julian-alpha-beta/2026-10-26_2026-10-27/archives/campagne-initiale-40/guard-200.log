@@ -1,0 +1,5 @@
+usage: run_ab_server.py [-h] --runtime RUNTIME --selection SELECTION
+                        --output OUTPUT [--move-time MOVE_TIME]
+                        [--ui-timeout UI_TIMEOUT] [--max-games MAX_GAMES]
+                        [--offset OFFSET] [--allow-200]
+run_ab_server.py: error: The 200-ply phase is paused; an explicit --allow-200 is required

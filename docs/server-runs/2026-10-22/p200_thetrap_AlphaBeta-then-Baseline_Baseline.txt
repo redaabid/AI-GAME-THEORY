@@ -1,0 +1,19 @@
+INFO: Connected to 127.0.0.1:5555 as Baseline
+INFO: Rules profile: server-v3.2.1
+INFO: Agent: baseline
+INFO: Board: 10 columns x 5 rows; playing werewolves
+INFO: Turn 1: [(4, 1, 4, 3, 0)] (0.000 seconds)
+INFO: Turn 2: [(3, 0, 4, 2, 1)] (0.000 seconds)
+INFO: Turn 3: [(2, 1, 4, 2, 2)] (0.000 seconds)
+INFO: Turn 4: [(2, 2, 8, 3, 1)] (0.000 seconds)
+INFO: Turn 5: [(3, 1, 8, 4, 0)] (0.000 seconds)
+INFO: Turn 6: [(4, 0, 8, 5, 0)] (0.000 seconds)
+INFO: Turn 7: [(5, 0, 8, 6, 0)] (0.000 seconds)
+INFO: Turn 8: [(6, 0, 8, 7, 0)] (0.000 seconds)
+INFO: Turn 9: [(7, 0, 8, 6, 0)] (0.000 seconds)
+INFO: Turn 10: [(6, 0, 8, 6, 1)] (0.000 seconds)
+INFO: Turn 11: [(6, 1, 8, 6, 0)] (0.000 seconds)
+INFO: Turn 12: [(6, 0, 8, 6, 1)] (0.000 seconds)
+INFO: Turn 13: [(6, 1, 8, 7, 1)] (0.000 seconds)
+INFO: Game ended; waiting for the next game.
+INFO: Server finished the session.

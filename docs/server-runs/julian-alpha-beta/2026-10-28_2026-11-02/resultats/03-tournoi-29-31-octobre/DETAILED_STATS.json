@@ -1,0 +1,131 @@
+{
+  "screen": {
+    "total_games": 80,
+    "stats": {
+      "control": {
+        "games": 32,
+        "wins": 8,
+        "draws": 16,
+        "losses": 8,
+        "repeated": 4822,
+        "faults": 0,
+        "cap24": 395,
+        "decisions": 3042,
+        "mean_seconds": 1.404855044345898,
+        "max_seconds": 1.5768682999914745,
+        "mean_depth": 17.966798159105853,
+        "max_depth": 24,
+        "min_depth": 7
+      },
+      "guidance": {
+        "games": 32,
+        "wins": 8,
+        "draws": 16,
+        "losses": 8,
+        "repeated": 4376,
+        "faults": 0,
+        "cap24": 187,
+        "decisions": 2907,
+        "mean_seconds": 1.434782873202685,
+        "max_seconds": 1.5649039999989327,
+        "mean_depth": 15.706570347437221,
+        "max_depth": 24,
+        "min_depth": 6
+      },
+      "tactical1": {
+        "games": 32,
+        "wins": 8,
+        "draws": 16,
+        "losses": 8,
+        "repeated": 4965,
+        "faults": 0,
+        "cap24": 206,
+        "decisions": 3099,
+        "mean_seconds": 1.4236001861245409,
+        "max_seconds": 1.5600055000104476,
+        "mean_depth": 15.26944175540497,
+        "max_depth": 24,
+        "min_depth": 6
+      },
+      "travel": {
+        "games": 32,
+        "wins": 8,
+        "draws": 16,
+        "losses": 8,
+        "repeated": 4965,
+        "faults": 0,
+        "cap24": 190,
+        "decisions": 3112,
+        "mean_seconds": 1.4236547226544118,
+        "max_seconds": 1.5670225999783725,
+        "mean_depth": 11.78245501285347,
+        "max_depth": 24,
+        "min_depth": 5
+      },
+      "width7": {
+        "games": 32,
+        "wins": 8,
+        "draws": 16,
+        "losses": 8,
+        "repeated": 4046,
+        "faults": 0,
+        "cap24": 258,
+        "decisions": 2641,
+        "mean_seconds": 1.421992508746669,
+        "max_seconds": 1.5689240000210702,
+        "mean_depth": 15.97841726618705,
+        "max_depth": 24,
+        "min_depth": 7
+      }
+    },
+    "terminations": {
+      "ply_limit": 63,
+      "elimination": 17
+    },
+    "first_wins": 40,
+    "second_wins": 0,
+    "draws": 40
+  },
+  "confirm": {
+    "total_games": 16,
+    "stats": {
+      "width7": {
+        "games": 16,
+        "wins": 6,
+        "draws": 8,
+        "losses": 2,
+        "repeated": 2105,
+        "faults": 0,
+        "cap24": 75,
+        "decisions": 1512,
+        "mean_seconds": 1.443576358531564,
+        "max_seconds": 1.5663019000203349,
+        "mean_depth": 12.83994708994709,
+        "max_depth": 24,
+        "min_depth": 4
+      },
+      "guidance": {
+        "games": 16,
+        "wins": 2,
+        "draws": 8,
+        "losses": 6,
+        "repeated": 2105,
+        "faults": 0,
+        "cap24": 68,
+        "decisions": 1511,
+        "mean_seconds": 1.4514996743218762,
+        "max_seconds": 1.573337799985893,
+        "mean_depth": 12.28722700198544,
+        "max_depth": 24,
+        "min_depth": 4
+      }
+    },
+    "terminations": {
+      "elimination": 6,
+      "ply_limit": 10
+    },
+    "first_wins": 4,
+    "second_wins": 4,
+    "draws": 8
+  }
+}

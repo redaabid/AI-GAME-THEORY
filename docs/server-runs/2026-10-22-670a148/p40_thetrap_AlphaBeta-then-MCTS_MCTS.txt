@@ -1,0 +1,46 @@
+INFO: Connected to 127.0.0.1:5555 as MCTS
+INFO: Rules profile: server-v3.2.1
+INFO: Agent: mcts:iterations=10000
+INFO: Board: 10 columns x 5 rows; playing werewolves
+INFO: Search: 1680 iterations; fallback=False
+INFO: Turn 1: [(4, 1, 4, 3, 2)] (1.503 seconds)
+INFO: Search: 1050 iterations; fallback=False
+INFO: Turn 2: [(3, 2, 4, 2, 2)] (1.502 seconds)
+INFO: Search: 1069 iterations; fallback=False
+INFO: Turn 3: [(2, 2, 8, 3, 3)] (1.502 seconds)
+INFO: Search: 1146 iterations; fallback=False
+INFO: Turn 4: [(3, 3, 8, 4, 3)] (1.502 seconds)
+INFO: Search: 1646 iterations; fallback=False
+INFO: Turn 5: [(4, 3, 8, 5, 2)] (1.502 seconds)
+INFO: Search: 1751 iterations; fallback=False
+INFO: Turn 6: [(5, 2, 8, 6, 1)] (1.502 seconds)
+INFO: Search: 2187 iterations; fallback=False
+INFO: Turn 7: [(6, 1, 8, 7, 2)] (1.503 seconds)
+INFO: Search: 2527 iterations; fallback=False
+INFO: Turn 8: [(7, 2, 8, 6, 1)] (1.502 seconds)
+INFO: Search: 2753 iterations; fallback=False
+INFO: Turn 9: [(6, 1, 8, 5, 2)] (1.502 seconds)
+INFO: Search: 2653 iterations; fallback=False
+INFO: Turn 10: [(5, 2, 8, 4, 1)] (1.502 seconds)
+INFO: Search: 2750 iterations; fallback=False
+INFO: Turn 11: [(4, 1, 8, 4, 0)] (1.502 seconds)
+INFO: Search: 2417 iterations; fallback=False
+INFO: Turn 12: [(4, 0, 8, 3, 1)] (1.502 seconds)
+INFO: Search: 2570 iterations; fallback=False
+INFO: Turn 13: [(3, 1, 8, 3, 0)] (1.503 seconds)
+INFO: Search: 2691 iterations; fallback=False
+INFO: Turn 14: [(3, 0, 8, 2, 0)] (1.503 seconds)
+INFO: Search: 2843 iterations; fallback=False
+INFO: Turn 15: [(2, 0, 8, 3, 1)] (1.502 seconds)
+INFO: Search: 2963 iterations; fallback=False
+INFO: Turn 16: [(3, 1, 8, 4, 1)] (1.503 seconds)
+INFO: Search: 3759 iterations; fallback=False
+INFO: Turn 17: [(4, 1, 8, 5, 2)] (1.503 seconds)
+INFO: Search: 6427 iterations; fallback=False
+INFO: Turn 18: [(5, 2, 8, 6, 3)] (1.505 seconds)
+INFO: Search: 10000 iterations; fallback=False
+INFO: Turn 19: [(6, 3, 8, 7, 4)] (1.028 seconds)
+INFO: Search: 10000 iterations; fallback=False
+INFO: Turn 20: [(7, 4, 8, 6, 3)] (0.335 seconds)
+INFO: Game ended; waiting for the next game.
+INFO: Server finished the session.

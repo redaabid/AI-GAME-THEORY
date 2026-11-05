@@ -1,0 +1,30 @@
+{
+  "captured": "2026-10-26T21:58:36.844Z",
+  "request": {
+    "game": "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Année scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\research\\server-validation\\followup-40-2026-10-26\\real-server\\controls-pass2\\072-ab91-testmap2-40-1",
+    "server_pid": 37628,
+    "index": 72
+  },
+  "captures": [
+    {
+      "window": {
+        "app": "process:C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Année scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\research\\server-validation\\implementation-2026-10-26\\server-inspection\\VampiresVSWerewolvesGameServer.exe",
+        "id": 1379734,
+        "title": "Vampires versus Werewolves"
+      },
+      "tree": ""
+    }
+  ],
+  "manual": {
+    "winner": "ab3",
+    "populations": {
+      "ab91": 14,
+      "ab3": 16
+    },
+    "observed_order": [
+      "ab91",
+      "ab3"
+    ],
+    "reason": "Visual reading of final WPF screenshot: AB3 wins / AB91 loses, baseline=14, AB3=16, humans=22. Accessibility text unavailable."
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "rerun_ids": [
+    1,
+    4,
+    7,
+    8,
+    9,
+    10,
+    11,
+    17
+  ],
+  "control_ids": [
+    65,
+    66,
+    67,
+    68,
+    71,
+    72
+  ],
+  "alias_ab90": "Original unchanged alphabeta agent with default parameters",
+  "alias_ab91": "Original unchanged one-group baseline, independent of AB search",
+  "max_plies": 40,
+  "new_games": 17,
+  "new_conditions": 14,
+  "original_games": 32,
+  "note": "Replays replace missing conditions in the composed comparison, not the unknown outcomes of the original random games. All attempts are retained. No 200-ply game was scheduled. The launcher was stopped after job 4 to retain the final window while the user restored it; then resumed with remaining IDs.",
+  "source_sha": "8dac75966eb22984a48f5ad5e47bc5c2142b4696"
+}

@@ -1,0 +1,19 @@
+{
+  "captured": "2026-10-26T13:39:23.006Z",
+  "request": {
+    "game": "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Année scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\research\\server-validation\\implementation-2026-10-26\\live-v3\\007-ab4-thetrap-40-0",
+    "server_pid": 10872,
+    "index": 7
+  },
+  "captures": [
+    {
+      "window": {
+        "app": "process:C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Année scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\research\\server-validation\\implementation-2026-10-26\\server-inspection\\VampiresVSWerewolvesGameServer.exe",
+        "id": 3281434,
+        "title": "Vampires versus Werewolves"
+      },
+      "tree": "Window: \"Vampires versus Werewolves\", App: VampiresVSWerewolvesGameServer.exe.\n\t0 fenêtre Vampires versus Werewolves Secondary Actions: Raise\n\t\t1 barre de titre (settable, string) Value: Vampires versus Werewolves\n\t\t\t2 barre de menus Système ID: MenuBar\n\t\t\t\t3 élément de menu Système\n\t\t\t4 Bouton Réduire\n\t\t\t5 Bouton Agrandir\n\t\t\t6 Bouton Fermer\n\t\t7 personnalisé ID: mainControl\n\t\t\t8 texte Vampires versus Werewolves\n\t\t\t\t9 texte Vampires versus Werewolves\n\t\t\t10 texte 00:09:38 ID: countdown\n\t\t\t\t541 texte 00:09:38\n\t\t\t12 texte AB3\n\t\t\t\t13 texte AB3\n\t\t\t14 image\n\t\t\t15 texte AB4\n\t\t\t\t16 texte AB4\n\t\t\t17 image\n\t\t\t18 personnalisé ID: Board\n\t\t\t\t542 personnalisé\n\t\t\t\t\t543 texte 0\n\t\t\t\t\t\t544 texte 0\n\t\t\t\t545 personnalisé\n\t\t\t\t\t546 texte 0\n\t\t\t\t\t\t547 texte 0\n\t\t\t\t548 personnalisé\n\t\t\t\t\t549 texte 0\n\t\t\t\t\t\t550 texte 0\n\t\t\t\t551 personnalisé\n\t\t\t\t\t552 texte 0\n\t\t\t\t\t\t553 texte 0\n\t\t\t\t554 personnalisé\n\t\t\t\t\t555 texte 9\n\t\t\t\t\t\t556 texte 9\n\t\t\t\t557 personnalisé\n\t\t\t\t\t558 texte 0\n\t\t\t\t\t\t559 texte 0\n\t\t\t\t560 personnalisé\n\t\t\t\t\t561 texte 0\n\t\t\t\t\t\t562 texte 0\n\t\t\t\t563 personnalisé\n\t\t\t\t\t564 texte 0\n\t\t\t\t\t\t565 texte 0\n\t\t\t\t566 personnalisé\n\t\t\t\t\t567 texte 0\n\t\t\t\t\t\t568 texte 0\n\t\t\t\t569 personnalisé\n\t\t\t\t\t570 texte 0\n\t\t\t\t\t\t571 texte 0\n\t\t\t\t572 personnalisé\n\t\t\t\t\t573 texte 8\n\t\t\t\t\t\t574 texte 8\n\t\t\t\t575 personnalisé\n\t\t\t\t\t576 texte 0\n\t\t\t\t\t\t577 texte 0\n\t\t\t\t578 personnalisé\n\t\t\t\t\t579 texte 0\n\t\t\t\t\t\t580 texte 0\n\t\t\t\t581 personnalisé\n\t\t\t\t\t582 texte 0\n\t\t\t\t\t\t583 texte 0\n\t\t\t\t584 personnalisé\n\t\t\t\t\t585 texte {DisconnectedItem}\n\t\t\t\t\t\t586 texte 0\n\t\t\t169 texte Human(s) left:\n\t\t\t\t170 texte Human(s) left:\n\t\t\t171 texte 0\n\t\t\t\t587 texte 0\n\t\t\t173 barre de progression Value: 8\n\t\t\t174 barre de progression Value: 9\n\t\t\t175 texte 8\n\t\t\t\t588 texte 8\n\t\t\t177 texte 9\n\t\t\t\t589 texte 9\n\t\t\t179 personnalisé ID: messVw\n\nDocument text: ```\n{DisconnectedItem}\n8\n0\n9\n```",
+      "document_text": "{DisconnectedItem}\n8\n0\n9"
+    }
+  ]
+}

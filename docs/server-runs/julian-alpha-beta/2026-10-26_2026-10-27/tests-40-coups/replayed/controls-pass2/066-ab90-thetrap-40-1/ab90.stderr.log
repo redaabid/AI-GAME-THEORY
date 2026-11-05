@@ -1,0 +1,7 @@
+INFO: Connected to 127.0.0.1:5555 as AB90
+INFO: Rules profile: server-v3.2.1
+INFO: Agent: alphabeta
+INFO: Board: 10 columns x 5 rows; playing vampires
+INFO: Turn 1: [(4, 3, 4, 3, 2)] (1.500 seconds)
+INFO: Game ended; waiting for the next game.
+INFO: Server finished the session.

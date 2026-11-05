@@ -1,0 +1,14 @@
+{
+  "pid": 21032,
+  "started": "2026-10-29T15:09:43.8458077Z",
+  "python": "C:\\Users\\sebju\\miniconda3\\python.exe",
+  "arguments": [
+    "-u",
+    "-B",
+    "scripts/screen_ab2_round_robin.py",
+    "--output",
+    ".local/ab2-experiments/2026-10-29-round-robin"
+  ],
+  "working_directory": "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Année scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs",
+  "output": "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Année scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\ab2-experiments\\2026-10-29-round-robin"
+}

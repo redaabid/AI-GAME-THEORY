@@ -1,0 +1,14 @@
+{
+  "names": [
+    "width7",
+    "guidance"
+  ],
+  "primary_score_ties_at_cutoff": [
+    "width7",
+    "guidance",
+    "control",
+    "tactical1",
+    "travel"
+  ],
+  "note": "Secondary tie-break is exploratory, not evidence of superiority"
+}

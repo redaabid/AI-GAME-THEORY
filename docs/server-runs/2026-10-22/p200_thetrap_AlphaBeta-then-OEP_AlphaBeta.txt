@@ -1,0 +1,17 @@
+INFO: Connected to 127.0.0.1:5555 as AlphaBeta
+INFO: Rules profile: server-v3.2.1
+INFO: Agent: alphabeta
+INFO: Board: 10 columns x 5 rows; playing vampires
+INFO: Turn 1: [(4, 3, 4, 4, 2)] (0.446 seconds)
+INFO: Turn 2: [(4, 2, 4, 5, 1)] (0.234 seconds)
+INFO: Turn 3: [(5, 1, 2, 6, 0), (5, 1, 2, 6, 2)] (0.485 seconds)
+INFO: Turn 4: [(6, 0, 2, 7, 0), (6, 2, 2, 7, 1)] (0.628 seconds)
+INFO: Turn 5: [(7, 0, 2, 8, 0), (7, 1, 2, 6, 0)] (1.500 seconds)
+INFO: Turn 6: [(6, 0, 2, 7, 1), (8, 0, 2, 9, 0)] (1.164 seconds)
+INFO: Turn 7: [(7, 1, 2, 8, 2), (9, 0, 4, 9, 1)] (0.244 seconds)
+INFO: Turn 8: [(8, 2, 2, 8, 1), (9, 1, 4, 9, 2)] (0.105 seconds)
+INFO: Turn 9: [(9, 2, 5, 9, 3)] (0.037 seconds)
+INFO: Turn 10: [(9, 3, 5, 9, 4)] (0.012 seconds)
+INFO: Turn 11: [(9, 4, 7, 8, 3)] (0.005 seconds)
+INFO: Game ended; waiting for the next game.
+INFO: Server finished the session.

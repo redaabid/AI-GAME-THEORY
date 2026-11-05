@@ -1,0 +1,1 @@
+Timing-contaminated confirmation game retained: 305.740s and 2320.391s. Windows Kernel-Power reports sleep/hibernate and Lid wake during the period. No agent fault. Replay condition without changing parameters.

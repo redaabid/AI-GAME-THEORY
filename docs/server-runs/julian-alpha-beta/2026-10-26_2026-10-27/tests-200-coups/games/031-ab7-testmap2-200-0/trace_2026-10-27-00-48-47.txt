@@ -1,0 +1,2017 @@
+10/27/2026 00:48:47	Démarrage de l'attente de 2 connexion(s).
+10/27/2026 00:48:48	Réception de NME en cours pour le joueur 0
+10/27/2026 00:48:48	Nom du joueur #0 est AB3
+10/27/2026 00:48:48	Envoi de la description de la carte au joueur 0
+10/27/2026 00:48:48	Envoi de la description de la carte au joueur 0 terminé
+10/27/2026 00:48:48	Réception de NME en cours pour le joueur 1
+10/27/2026 00:48:48	Nom du joueur #1 est AB7
+10/27/2026 00:48:48	Envoi de la description de la carte au joueur 1
+10/27/2026 00:48:48	Envoi de la description de la carte au joueur 1 terminé
+10/27/2026 00:48:48	Connexion(s) effectuée(s).
+10/27/2026 00:48:48	Arrêt de l'écoute.
+10/27/2026 00:48:54	Démarrage du tour à tour
+10/27/2026 00:48:54	Démarrage du chrono
+10/27/2026 00:48:54	Coup n°1
+			-> Tour du joueur #0
+10/27/2026 00:48:54	Envoi de UPD pour 0 mise(s) à jour
+		Trame de UPD: 55-50-44-00
+10/27/2026 00:48:54	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:48:55	Coup n°2
+			-> Tour du joueur #1
+10/27/2026 00:48:55	Envoi de UPD pour 2 mise(s) à jour
+		Trame de UPD: 55-50-44-02-1B-0D-00-0A-00-1C-0E-00-00-00
+10/27/2026 00:48:55	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:48:57	Coup n°3
+			-> Tour du joueur #0
+10/27/2026 00:48:57	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-1B-0D-00-0A-00-1C-0E-00-00-00-01-01-00-00-0A-00-00-00-00-00
+10/27/2026 00:48:57	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:48:59	Coup n°4
+			-> Tour du joueur #1
+10/27/2026 00:48:59	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-1A-0C-00-0A-00-1B-0D-00-00-00-01-01-00-00-0A-00-00-00-00-00
+10/27/2026 00:48:59	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:49:01	Coup n°5
+			-> Tour du joueur #0
+10/27/2026 00:49:01	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-1A-0C-00-0A-00-1B-0D-00-00-00-02-02-00-00-0A-01-01-00-00-00
+10/27/2026 00:49:01	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:49:03	Coup n°6
+			-> Tour du joueur #1
+10/27/2026 00:49:03	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-19-0B-00-0A-00-1A-0C-00-00-00-02-02-00-00-0A-01-01-00-00-00
+10/27/2026 00:49:03	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:49:04	Coup n°7
+			-> Tour du joueur #0
+10/27/2026 00:49:04	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-19-0B-00-0A-00-1A-0C-00-00-00-03-03-00-00-0A-02-02-00-00-00
+10/27/2026 00:49:04	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:49:07	Coup n°8
+			-> Tour du joueur #1
+10/27/2026 00:49:07	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-18-0A-00-0A-00-19-0B-00-00-00-03-03-00-00-0A-02-02-00-00-00
+10/27/2026 00:49:07	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:49:08	Coup n°9
+			-> Tour du joueur #0
+10/27/2026 00:49:08	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-18-0A-00-0A-00-19-0B-00-00-00-04-04-00-00-0A-03-03-00-00-00
+10/27/2026 00:49:08	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:49:11	Coup n°10
+			-> Tour du joueur #1
+10/27/2026 00:49:11	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-17-09-00-0A-00-18-0A-00-00-00-04-04-00-00-0A-03-03-00-00-00
+10/27/2026 00:49:11	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:49:12	Coup n°11
+			-> Tour du joueur #0
+10/27/2026 00:49:12	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-17-09-00-0A-00-18-0A-00-00-00-05-05-00-00-0A-04-04-00-00-00
+10/27/2026 00:49:12	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:49:14	Coup n°12
+			-> Tour du joueur #1
+10/27/2026 00:49:14	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-16-08-00-0A-00-17-09-00-00-00-05-05-00-00-0A-04-04-00-00-00
+10/27/2026 00:49:14	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:49:16	Coup n°13
+			-> Tour du joueur #0
+10/27/2026 00:49:16	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-16-08-00-0A-00-17-09-00-00-00-06-06-00-00-0A-05-05-00-00-00
+10/27/2026 00:49:16	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 10 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:49:18	Coup n°14
+			-> Tour du joueur #1
+10/27/2026 00:49:18	Envoi de UPD pour 5 mise(s) à jour
+		Trame de UPD: 55-50-44-05-15-08-00-04-00-16-08-00-00-00-15-07-00-06-00-06-06-00-00-0A-05-05-00-00-00
+10/27/2026 00:49:18	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 10 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:49:21	Coup n°15
+			-> Tour du joueur #0
+10/27/2026 00:49:21	Envoi de UPD pour 6 mise(s) à jour
+		Trame de UPD: 55-50-44-06-15-08-00-04-00-16-08-00-00-00-15-07-00-06-00-05-07-00-00-02-06-06-00-00-00-07-05-00-00-08
+10/27/2026 00:49:21	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 15 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:49:23	Coup n°16
+			-> Tour du joueur #1
+10/27/2026 00:49:23	Envoi de UPD pour 8 mise(s) à jour
+		Trame de UPD: 55-50-44-08-16-06-00-02-00-15-07-00-00-00-14-08-00-04-00-14-09-00-04-00-15-08-00-00-00-05-07-00-00-02-06-06-00-00-00-07-05-00-00-08
+10/27/2026 00:49:23	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 10 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:49:25	Coup n°17
+			-> Tour du joueur #0
+10/27/2026 00:49:25	Envoi de UPD pour 9 mise(s) à jour
+		Trame de UPD: 55-50-44-09-16-06-00-02-00-15-07-00-00-00-14-08-00-04-00-14-09-00-04-00-15-08-00-00-00-04-08-00-00-02-05-07-00-00-00-08-04-00-00-08-07-05-00-00-00
+10/27/2026 00:49:25	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 15 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:49:27	Coup n°18
+			-> Tour du joueur #1
+10/27/2026 00:49:27	Envoi de UPD pour 10 mise(s) à jour
+		Trame de UPD: 55-50-44-0A-13-09-00-04-00-14-08-00-00-00-13-0A-00-04-00-14-09-00-00-00-17-05-00-02-00-16-06-00-00-00-04-08-00-00-02-05-07-00-00-00-08-04-00-00-08-07-05-00-00-00
+10/27/2026 00:49:27	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 10 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:49:29	Coup n°19
+			-> Tour du joueur #0
+10/27/2026 00:49:29	Envoi de UPD pour 10 mise(s) à jour
+		Trame de UPD: 55-50-44-0A-13-09-00-04-00-14-08-00-00-00-13-0A-00-04-00-14-09-00-00-00-17-05-00-02-00-16-06-00-00-00-03-09-00-00-02-04-08-00-00-00-09-03-00-00-08-08-04-00-00-00
+10/27/2026 00:49:29	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 15 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:49:31	Coup n°20
+			-> Tour du joueur #1
+10/27/2026 00:49:31	Envoi de UPD pour 10 mise(s) à jour
+		Trame de UPD: 55-50-44-0A-12-0A-00-04-00-13-09-00-00-00-12-0B-00-08-00-13-0A-00-00-00-18-04-00-02-00-17-05-00-00-00-03-09-00-00-02-04-08-00-00-00-09-03-00-00-08-08-04-00-00-00
+10/27/2026 00:49:31	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 10 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:49:33	Coup n°21
+			-> Tour du joueur #0
+10/27/2026 00:49:33	Envoi de UPD pour 10 mise(s) à jour
+		Trame de UPD: 55-50-44-0A-12-0A-00-04-00-13-09-00-00-00-12-0B-00-08-00-13-0A-00-00-00-18-04-00-02-00-17-05-00-00-00-02-0A-00-00-02-03-09-00-00-00-0A-03-00-00-0C-09-03-00-00-00
+10/27/2026 00:49:33	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 10 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:49:35	Coup n°22
+			-> Tour du joueur #1
+10/27/2026 00:49:35	Envoi de UPD pour 8 mise(s) à jour
+		Trame de UPD: 55-50-44-08-12-0A-00-0C-00-12-0B-00-00-00-19-03-00-02-00-18-04-00-00-00-02-0A-00-00-02-03-09-00-00-00-0A-03-00-00-0C-09-03-00-00-00
+10/27/2026 00:49:35	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:49:37	Coup n°23
+			-> Tour du joueur #0
+10/27/2026 00:49:37	Envoi de UPD pour 6 mise(s) à jour
+		Trame de UPD: 55-50-44-06-12-0A-00-0C-00-12-0B-00-00-00-19-03-00-02-00-18-04-00-00-00-01-0B-00-00-02-02-0A-00-00-00
+10/27/2026 00:49:37	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 10 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:49:38	Coup n°24
+			-> Tour du joueur #1
+10/27/2026 00:49:38	Envoi de UPD pour 6 mise(s) à jour
+		Trame de UPD: 55-50-44-06-11-0B-00-0C-00-12-0A-00-00-00-1A-02-00-02-00-19-03-00-00-00-01-0B-00-00-02-02-0A-00-00-00
+10/27/2026 00:49:38	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:49:40	Coup n°25
+			-> Tour du joueur #0
+10/27/2026 00:49:40	Envoi de UPD pour 6 mise(s) à jour
+		Trame de UPD: 55-50-44-06-11-0B-00-0C-00-12-0A-00-00-00-1A-02-00-02-00-19-03-00-00-00-00-0C-00-00-02-01-0B-00-00-00
+10/27/2026 00:49:40	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 10 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:49:42	Coup n°26
+			-> Tour du joueur #1
+10/27/2026 00:49:42	Envoi de UPD pour 6 mise(s) à jour
+		Trame de UPD: 55-50-44-06-10-0C-00-0C-00-11-0B-00-00-00-1B-01-00-02-00-1A-02-00-00-00-00-0C-00-00-02-01-0B-00-00-00
+10/27/2026 00:49:42	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:49:45	Coup n°27
+			-> Tour du joueur #0
+10/27/2026 00:49:45	Envoi de UPD pour 6 mise(s) à jour
+		Trame de UPD: 55-50-44-06-10-0C-00-0C-00-11-0B-00-00-00-1B-01-00-02-00-1A-02-00-00-00-00-0D-00-00-02-00-0C-00-00-00
+10/27/2026 00:49:45	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 10 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:49:47	Coup n°28
+			-> Tour du joueur #1
+10/27/2026 00:49:47	Envoi de UPD pour 6 mise(s) à jour
+		Trame de UPD: 55-50-44-06-0F-0D-00-0C-00-10-0C-00-00-00-1C-00-00-04-00-1B-01-00-00-00-00-0D-00-00-02-00-0C-00-00-00
+10/27/2026 00:49:47	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:49:48	Coup n°29
+			-> Tour du joueur #0
+10/27/2026 00:49:48	Envoi de UPD pour 6 mise(s) à jour
+		Trame de UPD: 55-50-44-06-0F-0D-00-0C-00-10-0C-00-00-00-1C-00-00-04-00-1B-01-00-00-00-00-0E-00-00-04-00-0D-00-00-00
+10/27/2026 00:49:48	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:49:50	Coup n°30
+			-> Tour du joueur #1
+10/27/2026 00:49:50	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-0E-0E-00-0C-00-0F-0D-00-00-00-00-0E-00-00-04-00-0D-00-00-00
+10/27/2026 00:49:50	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 10 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:49:52	Coup n°31
+			-> Tour du joueur #0
+10/27/2026 00:49:52	Envoi de UPD pour 6 mise(s) à jour
+		Trame de UPD: 55-50-44-06-0E-0E-00-0C-00-0F-0D-00-00-00-00-0D-00-00-04-00-0E-00-00-00-09-02-00-00-0C-0A-03-00-00-00
+10/27/2026 00:49:52	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:49:54	Coup n°32
+			-> Tour du joueur #1
+10/27/2026 00:49:54	Envoi de UPD pour 6 mise(s) à jour
+		Trame de UPD: 55-50-44-06-0D-0D-00-0C-00-0E-0E-00-00-00-00-0D-00-00-04-00-0E-00-00-00-09-02-00-00-0C-0A-03-00-00-00
+10/27/2026 00:49:54	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 10 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:49:56	Coup n°33
+			-> Tour du joueur #0
+10/27/2026 00:49:56	Envoi de UPD pour 6 mise(s) à jour
+		Trame de UPD: 55-50-44-06-0D-0D-00-0C-00-0E-0E-00-00-00-00-0C-00-00-04-00-0D-00-00-00-08-01-00-00-0C-09-02-00-00-00
+10/27/2026 00:49:56	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 10 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:49:58	Coup n°34
+			-> Tour du joueur #1
+10/27/2026 00:49:58	Envoi de UPD pour 8 mise(s) à jour
+		Trame de UPD: 55-50-44-08-0C-0C-00-0C-00-0D-0D-00-00-00-1B-01-00-04-00-1C-00-00-00-00-00-0C-00-00-04-00-0D-00-00-00-08-01-00-00-0C-09-02-00-00-00
+10/27/2026 00:49:58	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 10 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:50:00	Coup n°35
+			-> Tour du joueur #0
+10/27/2026 00:50:00	Envoi de UPD pour 8 mise(s) à jour
+		Trame de UPD: 55-50-44-08-0C-0C-00-0C-00-0D-0D-00-00-00-1B-01-00-04-00-1C-00-00-00-00-00-0B-00-00-04-00-0C-00-00-00-07-00-00-00-0C-08-01-00-00-00
+10/27/2026 00:50:00	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:50:02	Coup n°36
+			-> Tour du joueur #1
+10/27/2026 00:50:02	Envoi de UPD pour 6 mise(s) à jour
+		Trame de UPD: 55-50-44-06-0B-0B-00-0C-00-0C-0C-00-00-00-00-0B-00-00-04-00-0C-00-00-00-07-00-00-00-0C-08-01-00-00-00
+10/27/2026 00:50:02	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:50:04	Coup n°37
+			-> Tour du joueur #0
+10/27/2026 00:50:04	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-0B-0B-00-0C-00-0C-0C-00-00-00-00-0A-00-00-04-00-0B-00-00-00
+10/27/2026 00:50:04	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:50:05	Coup n°38
+			-> Tour du joueur #1
+10/27/2026 00:50:05	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-0A-0A-00-0C-00-0B-0B-00-00-00-00-0A-00-00-04-00-0B-00-00-00
+10/27/2026 00:50:05	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:50:07	Coup n°39
+			-> Tour du joueur #0
+10/27/2026 00:50:07	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-0A-0A-00-0C-00-0B-0B-00-00-00-00-09-00-00-04-00-0A-00-00-00
+10/27/2026 00:50:07	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:50:09	Coup n°40
+			-> Tour du joueur #1
+10/27/2026 00:50:09	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-09-09-00-0C-00-0A-0A-00-00-00-00-09-00-00-04-00-0A-00-00-00
+10/27/2026 00:50:09	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:50:11	Coup n°41
+			-> Tour du joueur #0
+10/27/2026 00:50:11	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-09-09-00-0C-00-0A-0A-00-00-00-00-08-00-00-04-00-09-00-00-00
+10/27/2026 00:50:11	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:50:13	Coup n°42
+			-> Tour du joueur #1
+10/27/2026 00:50:13	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-08-08-00-0C-00-09-09-00-00-00-00-08-00-00-04-00-09-00-00-00
+10/27/2026 00:50:13	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:50:14	Coup n°43
+			-> Tour du joueur #0
+10/27/2026 00:50:14	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-08-08-00-0C-00-09-09-00-00-00-00-07-00-00-04-00-08-00-00-00
+10/27/2026 00:50:14	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:50:16	Coup n°44
+			-> Tour du joueur #1
+10/27/2026 00:50:16	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-07-07-00-0C-00-08-08-00-00-00-00-07-00-00-04-00-08-00-00-00
+10/27/2026 00:50:16	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:50:18	Coup n°45
+			-> Tour du joueur #0
+10/27/2026 00:50:18	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-07-07-00-0C-00-08-08-00-00-00-00-06-00-00-04-00-07-00-00-00
+10/27/2026 00:50:18	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:50:20	Coup n°46
+			-> Tour du joueur #1
+10/27/2026 00:50:20	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-06-06-00-0C-00-07-07-00-00-00-00-06-00-00-04-00-07-00-00-00
+10/27/2026 00:50:20	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:50:22	Coup n°47
+			-> Tour du joueur #0
+10/27/2026 00:50:22	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-06-06-00-0C-00-07-07-00-00-00-00-05-00-00-04-00-06-00-00-00
+10/27/2026 00:50:22	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:50:24	Coup n°48
+			-> Tour du joueur #1
+10/27/2026 00:50:24	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-05-05-00-0C-00-06-06-00-00-00-00-05-00-00-04-00-06-00-00-00
+10/27/2026 00:50:24	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:50:26	Coup n°49
+			-> Tour du joueur #0
+10/27/2026 00:50:26	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-05-05-00-0C-00-06-06-00-00-00-00-04-00-00-04-00-05-00-00-00
+10/27/2026 00:50:26	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:50:29	Coup n°50
+			-> Tour du joueur #1
+10/27/2026 00:50:29	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-04-04-00-0C-00-05-05-00-00-00-00-04-00-00-04-00-05-00-00-00
+10/27/2026 00:50:29	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:50:31	Coup n°51
+			-> Tour du joueur #0
+10/27/2026 00:50:31	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-04-04-00-0C-00-05-05-00-00-00-00-03-00-00-04-00-04-00-00-00
+10/27/2026 00:50:31	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:50:33	Coup n°52
+			-> Tour du joueur #1
+10/27/2026 00:50:33	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-03-03-00-0C-00-04-04-00-00-00-00-03-00-00-04-00-04-00-00-00
+10/27/2026 00:50:33	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:50:35	Coup n°53
+			-> Tour du joueur #0
+10/27/2026 00:50:35	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-03-03-00-0C-00-04-04-00-00-00-00-02-00-00-04-00-03-00-00-00
+10/27/2026 00:50:35	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:50:37	Coup n°54
+			-> Tour du joueur #1
+10/27/2026 00:50:37	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-02-02-00-0C-00-03-03-00-00-00-00-02-00-00-04-00-03-00-00-00
+10/27/2026 00:50:37	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:50:40	Coup n°55
+			-> Tour du joueur #0
+10/27/2026 00:50:40	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-02-02-00-0C-00-03-03-00-00-00-00-01-00-00-04-00-02-00-00-00
+10/27/2026 00:50:40	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 10 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:50:42	Coup n°56
+			-> Tour du joueur #1
+10/27/2026 00:50:42	Envoi de UPD pour 6 mise(s) à jour
+		Trame de UPD: 55-50-44-06-01-01-00-0C-00-02-02-00-00-00-1A-02-00-04-00-1B-01-00-00-00-00-01-00-00-04-00-02-00-00-00
+10/27/2026 00:50:42	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:50:43	Déclenchement d'une bataille aléatoire entre Werewolves et Vampires
+			L'attaquant va mourir
+10/27/2026 00:50:44	Coup n°57
+			-> Tour du joueur #0
+10/27/2026 00:50:44	Envoi de UPD pour 5 mise(s) à jour
+		Trame de UPD: 55-50-44-05-01-01-00-08-00-02-02-00-00-00-1A-02-00-04-00-1B-01-00-00-00-00-01-00-00-00
+10/27/2026 00:50:44	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:50:46	Coup n°58
+			-> Tour du joueur #1
+10/27/2026 00:50:46	Envoi de UPD pour 3 mise(s) à jour
+		Trame de UPD: 55-50-44-03-00-00-00-08-00-01-01-00-00-00-00-01-00-00-00
+10/27/2026 00:50:46	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:50:48	Coup n°59
+			-> Tour du joueur #0
+10/27/2026 00:50:48	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-00-00-00-08-00-01-01-00-00-00-06-00-00-00-0C-07-00-00-00-00
+10/27/2026 00:50:48	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 10 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:50:50	Coup n°60
+			-> Tour du joueur #1
+10/27/2026 00:50:50	Envoi de UPD pour 6 mise(s) à jour
+		Trame de UPD: 55-50-44-06-00-01-00-08-00-00-00-00-00-00-1B-01-00-04-00-1A-02-00-00-00-06-00-00-00-0C-07-00-00-00-00
+10/27/2026 00:50:50	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:50:52	Coup n°61
+			-> Tour du joueur #0
+10/27/2026 00:50:52	Envoi de UPD pour 6 mise(s) à jour
+		Trame de UPD: 55-50-44-06-00-01-00-08-00-00-00-00-00-00-1B-01-00-04-00-1A-02-00-00-00-05-00-00-00-0C-06-00-00-00-00
+10/27/2026 00:50:52	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 10 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:50:54	Coup n°62
+			-> Tour du joueur #1
+10/27/2026 00:50:54	Envoi de UPD pour 6 mise(s) à jour
+		Trame de UPD: 55-50-44-06-00-00-00-08-00-00-01-00-00-00-1C-00-00-04-00-1B-01-00-00-00-05-00-00-00-0C-06-00-00-00-00
+10/27/2026 00:50:54	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:50:56	Coup n°63
+			-> Tour du joueur #0
+10/27/2026 00:50:56	Envoi de UPD pour 6 mise(s) à jour
+		Trame de UPD: 55-50-44-06-00-00-00-08-00-00-01-00-00-00-1C-00-00-04-00-1B-01-00-00-00-04-00-00-00-0C-05-00-00-00-00
+10/27/2026 00:50:56	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:50:58	Coup n°64
+			-> Tour du joueur #1
+10/27/2026 00:50:58	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-01-00-00-08-00-00-00-00-00-00-04-00-00-00-0C-05-00-00-00-00
+10/27/2026 00:50:58	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:51:01	Coup n°65
+			-> Tour du joueur #0
+10/27/2026 00:51:01	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-01-00-00-08-00-00-00-00-00-00-03-00-00-00-0C-04-00-00-00-00
+10/27/2026 00:51:01	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:51:03	Coup n°66
+			-> Tour du joueur #1
+10/27/2026 00:51:03	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-01-01-00-08-00-01-00-00-00-00-03-00-00-00-0C-04-00-00-00-00
+10/27/2026 00:51:03	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:51:05	Coup n°67
+			-> Tour du joueur #0
+10/27/2026 00:51:05	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-01-01-00-08-00-01-00-00-00-00-03-01-00-00-0C-03-00-00-00-00
+10/27/2026 00:51:05	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:51:07	Coup n°68
+			-> Tour du joueur #1
+10/27/2026 00:51:07	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-00-00-00-08-00-01-01-00-00-00-03-01-00-00-0C-03-00-00-00-00
+10/27/2026 00:51:07	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:51:09	Coup n°69
+			-> Tour du joueur #0
+10/27/2026 00:51:09	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-00-00-00-08-00-01-01-00-00-00-02-02-00-00-0C-03-01-00-00-00
+10/27/2026 00:51:09	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:51:11	Coup n°70
+			-> Tour du joueur #1
+10/27/2026 00:51:11	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-00-01-00-08-00-00-00-00-00-00-02-02-00-00-0C-03-01-00-00-00
+10/27/2026 00:51:11	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:51:13	Coup n°71
+			-> Tour du joueur #0
+10/27/2026 00:51:13	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-00-01-00-08-00-00-00-00-00-00-01-01-00-00-0C-02-02-00-00-00
+10/27/2026 00:51:13	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:51:15	Coup n°72
+			-> Tour du joueur #1
+10/27/2026 00:51:15	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-1B-00-00-04-00-1C-00-00-00-00-01-01-00-00-0C-02-02-00-00-00
+10/27/2026 00:51:15	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:51:17	Coup n°73
+			-> Tour du joueur #0
+10/27/2026 00:51:17	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-1B-00-00-04-00-1C-00-00-00-00-00-01-00-00-0C-01-01-00-00-00
+10/27/2026 00:51:17	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:51:20	Coup n°74
+			-> Tour du joueur #1
+10/27/2026 00:51:20	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-1A-00-00-04-00-1B-00-00-00-00-00-01-00-00-0C-01-01-00-00-00
+10/27/2026 00:51:20	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:51:22	Coup n°75
+			-> Tour du joueur #0
+10/27/2026 00:51:22	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-1A-00-00-04-00-1B-00-00-00-00-00-00-00-00-0C-00-01-00-00-00
+10/27/2026 00:51:22	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:51:24	Coup n°76
+			-> Tour du joueur #1
+10/27/2026 00:51:24	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-19-00-00-04-00-1A-00-00-00-00-00-00-00-00-0C-00-01-00-00-00
+10/27/2026 00:51:24	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:51:26	Coup n°77
+			-> Tour du joueur #0
+10/27/2026 00:51:26	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-19-00-00-04-00-1A-00-00-00-00-00-01-00-00-0C-00-00-00-00-00
+10/27/2026 00:51:26	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:51:28	Coup n°78
+			-> Tour du joueur #1
+10/27/2026 00:51:28	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-18-00-00-04-00-19-00-00-00-00-00-01-00-00-0C-00-00-00-00-00
+10/27/2026 00:51:28	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:51:30	Coup n°79
+			-> Tour du joueur #0
+10/27/2026 00:51:30	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-18-00-00-04-00-19-00-00-00-00-00-00-00-00-0C-00-01-00-00-00
+10/27/2026 00:51:30	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:51:31	Coup n°80
+			-> Tour du joueur #1
+10/27/2026 00:51:31	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-17-00-00-04-00-18-00-00-00-00-00-00-00-00-0C-00-01-00-00-00
+10/27/2026 00:51:31	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:51:33	Coup n°81
+			-> Tour du joueur #0
+10/27/2026 00:51:33	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-17-00-00-04-00-18-00-00-00-00-00-01-00-00-0C-00-00-00-00-00
+10/27/2026 00:51:33	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:51:35	Coup n°82
+			-> Tour du joueur #1
+10/27/2026 00:51:35	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-16-00-00-04-00-17-00-00-00-00-00-01-00-00-0C-00-00-00-00-00
+10/27/2026 00:51:35	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:51:37	Coup n°83
+			-> Tour du joueur #0
+10/27/2026 00:51:37	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-16-00-00-04-00-17-00-00-00-00-00-00-00-00-0C-00-01-00-00-00
+10/27/2026 00:51:37	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:51:38	Coup n°84
+			-> Tour du joueur #1
+10/27/2026 00:51:38	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-15-00-00-04-00-16-00-00-00-00-00-00-00-00-0C-00-01-00-00-00
+10/27/2026 00:51:38	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:51:40	Coup n°85
+			-> Tour du joueur #0
+10/27/2026 00:51:40	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-15-00-00-04-00-16-00-00-00-00-00-01-00-00-0C-00-00-00-00-00
+10/27/2026 00:51:40	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:51:42	Coup n°86
+			-> Tour du joueur #1
+10/27/2026 00:51:42	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-14-00-00-04-00-15-00-00-00-00-00-01-00-00-0C-00-00-00-00-00
+10/27/2026 00:51:42	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:51:45	Coup n°87
+			-> Tour du joueur #0
+10/27/2026 00:51:45	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-14-00-00-04-00-15-00-00-00-00-00-00-00-00-0C-00-01-00-00-00
+10/27/2026 00:51:45	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:51:48	Coup n°88
+			-> Tour du joueur #1
+10/27/2026 00:51:48	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-13-00-00-04-00-14-00-00-00-00-00-00-00-00-0C-00-01-00-00-00
+10/27/2026 00:51:48	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:51:50	Coup n°89
+			-> Tour du joueur #0
+10/27/2026 00:51:50	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-13-00-00-04-00-14-00-00-00-00-00-01-00-00-0C-00-00-00-00-00
+10/27/2026 00:51:50	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:51:53	Coup n°90
+			-> Tour du joueur #1
+10/27/2026 00:51:53	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-12-00-00-04-00-13-00-00-00-00-00-01-00-00-0C-00-00-00-00-00
+10/27/2026 00:51:53	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:51:56	Coup n°91
+			-> Tour du joueur #0
+10/27/2026 00:51:56	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-12-00-00-04-00-13-00-00-00-00-00-00-00-00-0C-00-01-00-00-00
+10/27/2026 00:51:56	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:51:58	Coup n°92
+			-> Tour du joueur #1
+10/27/2026 00:51:58	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-11-00-00-04-00-12-00-00-00-00-00-00-00-00-0C-00-01-00-00-00
+10/27/2026 00:51:58	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:52:01	Coup n°93
+			-> Tour du joueur #0
+10/27/2026 00:52:01	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-11-00-00-04-00-12-00-00-00-00-00-01-00-00-0C-00-00-00-00-00
+10/27/2026 00:52:01	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:52:03	Coup n°94
+			-> Tour du joueur #1
+10/27/2026 00:52:03	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-10-00-00-04-00-11-00-00-00-00-00-01-00-00-0C-00-00-00-00-00
+10/27/2026 00:52:03	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:52:05	Coup n°95
+			-> Tour du joueur #0
+10/27/2026 00:52:05	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-10-00-00-04-00-11-00-00-00-00-00-00-00-00-0C-00-01-00-00-00
+10/27/2026 00:52:05	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:52:07	Coup n°96
+			-> Tour du joueur #1
+10/27/2026 00:52:07	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-0F-00-00-04-00-10-00-00-00-00-00-00-00-00-0C-00-01-00-00-00
+10/27/2026 00:52:07	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:52:10	Coup n°97
+			-> Tour du joueur #0
+10/27/2026 00:52:10	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-0F-00-00-04-00-10-00-00-00-00-00-01-00-00-0C-00-00-00-00-00
+10/27/2026 00:52:10	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:52:12	Coup n°98
+			-> Tour du joueur #1
+10/27/2026 00:52:12	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-0E-00-00-04-00-0F-00-00-00-00-00-01-00-00-0C-00-00-00-00-00
+10/27/2026 00:52:12	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:52:13	Coup n°99
+			-> Tour du joueur #0
+10/27/2026 00:52:13	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-0E-00-00-04-00-0F-00-00-00-00-00-00-00-00-0C-00-01-00-00-00
+10/27/2026 00:52:13	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:52:16	Coup n°100
+			-> Tour du joueur #1
+10/27/2026 00:52:16	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-0D-00-00-04-00-0E-00-00-00-00-00-00-00-00-0C-00-01-00-00-00
+10/27/2026 00:52:16	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:52:18	Coup n°101
+			-> Tour du joueur #0
+10/27/2026 00:52:18	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-0D-00-00-04-00-0E-00-00-00-00-00-01-00-00-0C-00-00-00-00-00
+10/27/2026 00:52:18	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:52:20	Coup n°102
+			-> Tour du joueur #1
+10/27/2026 00:52:20	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-0C-00-00-04-00-0D-00-00-00-00-00-01-00-00-0C-00-00-00-00-00
+10/27/2026 00:52:20	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:52:23	Coup n°103
+			-> Tour du joueur #0
+10/27/2026 00:52:23	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-0C-00-00-04-00-0D-00-00-00-00-00-00-00-00-0C-00-01-00-00-00
+10/27/2026 00:52:23	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:52:23	Coup n°104
+			-> Tour du joueur #1
+10/27/2026 00:52:23	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-0B-00-00-04-00-0C-00-00-00-00-00-00-00-00-0C-00-01-00-00-00
+10/27/2026 00:52:23	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:52:25	Coup n°105
+			-> Tour du joueur #0
+10/27/2026 00:52:25	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-0B-00-00-04-00-0C-00-00-00-00-00-01-00-00-0C-00-00-00-00-00
+10/27/2026 00:52:25	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:52:28	Coup n°106
+			-> Tour du joueur #1
+10/27/2026 00:52:28	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-0A-00-00-04-00-0B-00-00-00-00-00-01-00-00-0C-00-00-00-00-00
+10/27/2026 00:52:28	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:52:29	Coup n°107
+			-> Tour du joueur #0
+10/27/2026 00:52:29	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-0A-00-00-04-00-0B-00-00-00-00-00-00-00-00-0C-00-01-00-00-00
+10/27/2026 00:52:29	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:52:32	Coup n°108
+			-> Tour du joueur #1
+10/27/2026 00:52:32	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-09-00-00-04-00-0A-00-00-00-00-00-00-00-00-0C-00-01-00-00-00
+10/27/2026 00:52:32	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:52:32	Coup n°109
+			-> Tour du joueur #0
+10/27/2026 00:52:32	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-09-00-00-04-00-0A-00-00-00-00-00-01-00-00-0C-00-00-00-00-00
+10/27/2026 00:52:32	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:52:35	Coup n°110
+			-> Tour du joueur #1
+10/27/2026 00:52:35	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-08-00-00-04-00-09-00-00-00-00-00-01-00-00-0C-00-00-00-00-00
+10/27/2026 00:52:35	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:52:37	Coup n°111
+			-> Tour du joueur #0
+10/27/2026 00:52:37	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-08-00-00-04-00-09-00-00-00-00-00-00-00-00-0C-00-01-00-00-00
+10/27/2026 00:52:37	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:52:40	Coup n°112
+			-> Tour du joueur #1
+10/27/2026 00:52:40	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-07-00-00-04-00-08-00-00-00-00-00-00-00-00-0C-00-01-00-00-00
+10/27/2026 00:52:40	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:52:42	Coup n°113
+			-> Tour du joueur #0
+10/27/2026 00:52:42	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-07-00-00-04-00-08-00-00-00-00-00-01-00-00-0C-00-00-00-00-00
+10/27/2026 00:52:42	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:52:44	Coup n°114
+			-> Tour du joueur #1
+10/27/2026 00:52:44	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-06-00-00-04-00-07-00-00-00-00-00-01-00-00-0C-00-00-00-00-00
+10/27/2026 00:52:44	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:52:46	Coup n°115
+			-> Tour du joueur #0
+10/27/2026 00:52:46	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-06-00-00-04-00-07-00-00-00-00-00-00-00-00-0C-00-01-00-00-00
+10/27/2026 00:52:46	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:52:47	Coup n°116
+			-> Tour du joueur #1
+10/27/2026 00:52:47	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-05-00-00-04-00-06-00-00-00-00-00-00-00-00-0C-00-01-00-00-00
+10/27/2026 00:52:47	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:52:49	Coup n°117
+			-> Tour du joueur #0
+10/27/2026 00:52:49	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-05-00-00-04-00-06-00-00-00-00-00-01-00-00-0C-00-00-00-00-00
+10/27/2026 00:52:49	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:52:52	Coup n°118
+			-> Tour du joueur #1
+10/27/2026 00:52:52	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-04-00-00-04-00-05-00-00-00-00-00-01-00-00-0C-00-00-00-00-00
+10/27/2026 00:52:52	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:52:54	Coup n°119
+			-> Tour du joueur #0
+10/27/2026 00:52:54	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-04-00-00-04-00-05-00-00-00-00-00-00-00-00-0C-00-01-00-00-00
+10/27/2026 00:52:54	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:52:56	Coup n°120
+			-> Tour du joueur #1
+10/27/2026 00:52:56	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-03-00-00-04-00-04-00-00-00-00-00-00-00-00-0C-00-01-00-00-00
+10/27/2026 00:52:56	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:52:57	Coup n°121
+			-> Tour du joueur #0
+10/27/2026 00:52:57	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-03-00-00-04-00-04-00-00-00-00-00-01-00-00-0C-00-00-00-00-00
+10/27/2026 00:52:57	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:52:59	Coup n°122
+			-> Tour du joueur #1
+10/27/2026 00:52:59	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-03-01-00-04-00-03-00-00-00-00-00-01-00-00-0C-00-00-00-00-00
+10/27/2026 00:52:59	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:52:59	Coup n°123
+			-> Tour du joueur #0
+10/27/2026 00:52:59	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-03-01-00-04-00-03-00-00-00-00-00-00-00-00-0C-00-01-00-00-00
+10/27/2026 00:52:59	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:53:01	Coup n°124
+			-> Tour du joueur #1
+10/27/2026 00:53:01	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-03-00-00-04-00-03-01-00-00-00-00-00-00-00-0C-00-01-00-00-00
+10/27/2026 00:53:01	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:53:03	Coup n°125
+			-> Tour du joueur #0
+10/27/2026 00:53:03	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-03-00-00-04-00-03-01-00-00-00-00-01-00-00-0C-00-00-00-00-00
+10/27/2026 00:53:03	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:53:05	Coup n°126
+			-> Tour du joueur #1
+10/27/2026 00:53:05	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-03-01-00-04-00-03-00-00-00-00-00-01-00-00-0C-00-00-00-00-00
+10/27/2026 00:53:05	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:53:07	Coup n°127
+			-> Tour du joueur #0
+10/27/2026 00:53:07	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-03-01-00-04-00-03-00-00-00-00-00-00-00-00-0C-00-01-00-00-00
+10/27/2026 00:53:07	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:53:09	Coup n°128
+			-> Tour du joueur #1
+10/27/2026 00:53:09	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-03-00-00-04-00-03-01-00-00-00-00-00-00-00-0C-00-01-00-00-00
+10/27/2026 00:53:09	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:53:11	Coup n°129
+			-> Tour du joueur #0
+10/27/2026 00:53:11	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-03-00-00-04-00-03-01-00-00-00-00-01-00-00-0C-00-00-00-00-00
+10/27/2026 00:53:11	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:53:13	Coup n°130
+			-> Tour du joueur #1
+10/27/2026 00:53:13	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-03-01-00-04-00-03-00-00-00-00-00-01-00-00-0C-00-00-00-00-00
+10/27/2026 00:53:13	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:53:16	Coup n°131
+			-> Tour du joueur #0
+10/27/2026 00:53:16	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-03-01-00-04-00-03-00-00-00-00-00-00-00-00-0C-00-01-00-00-00
+10/27/2026 00:53:16	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:53:18	Coup n°132
+			-> Tour du joueur #1
+10/27/2026 00:53:18	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-03-00-00-04-00-03-01-00-00-00-00-00-00-00-0C-00-01-00-00-00
+10/27/2026 00:53:18	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:53:20	Coup n°133
+			-> Tour du joueur #0
+10/27/2026 00:53:20	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-03-00-00-04-00-03-01-00-00-00-00-01-00-00-0C-00-00-00-00-00
+10/27/2026 00:53:20	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:53:22	Coup n°134
+			-> Tour du joueur #1
+10/27/2026 00:53:22	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-03-01-00-04-00-03-00-00-00-00-00-01-00-00-0C-00-00-00-00-00
+10/27/2026 00:53:22	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:53:24	Coup n°135
+			-> Tour du joueur #0
+10/27/2026 00:53:24	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-03-01-00-04-00-03-00-00-00-00-00-00-00-00-0C-00-01-00-00-00
+10/27/2026 00:53:24	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:53:27	Coup n°136
+			-> Tour du joueur #1
+10/27/2026 00:53:27	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-03-00-00-04-00-03-01-00-00-00-00-00-00-00-0C-00-01-00-00-00
+10/27/2026 00:53:27	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:53:29	Coup n°137
+			-> Tour du joueur #0
+10/27/2026 00:53:29	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-03-00-00-04-00-03-01-00-00-00-00-01-00-00-0C-00-00-00-00-00
+10/27/2026 00:53:29	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:53:30	Coup n°138
+			-> Tour du joueur #1
+10/27/2026 00:53:30	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-03-01-00-04-00-03-00-00-00-00-00-01-00-00-0C-00-00-00-00-00
+10/27/2026 00:53:30	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:53:32	Coup n°139
+			-> Tour du joueur #0
+10/27/2026 00:53:32	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-03-01-00-04-00-03-00-00-00-00-00-00-00-00-0C-00-01-00-00-00
+10/27/2026 00:53:32	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:53:35	Coup n°140
+			-> Tour du joueur #1
+10/27/2026 00:53:35	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-03-00-00-04-00-03-01-00-00-00-00-00-00-00-0C-00-01-00-00-00
+10/27/2026 00:53:35	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:53:37	Coup n°141
+			-> Tour du joueur #0
+10/27/2026 00:53:37	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-03-00-00-04-00-03-01-00-00-00-00-01-00-00-0C-00-00-00-00-00
+10/27/2026 00:53:37	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:53:39	Coup n°142
+			-> Tour du joueur #1
+10/27/2026 00:53:39	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-03-01-00-04-00-03-00-00-00-00-00-01-00-00-0C-00-00-00-00-00
+10/27/2026 00:53:39	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:53:40	Coup n°143
+			-> Tour du joueur #0
+10/27/2026 00:53:40	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-03-01-00-04-00-03-00-00-00-00-00-00-00-00-0C-00-01-00-00-00
+10/27/2026 00:53:40	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:53:41	Coup n°144
+			-> Tour du joueur #1
+10/27/2026 00:53:41	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-03-00-00-04-00-03-01-00-00-00-00-00-00-00-0C-00-01-00-00-00
+10/27/2026 00:53:41	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:53:43	Coup n°145
+			-> Tour du joueur #0
+10/27/2026 00:53:43	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-03-00-00-04-00-03-01-00-00-00-00-01-00-00-0C-00-00-00-00-00
+10/27/2026 00:53:43	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:53:45	Coup n°146
+			-> Tour du joueur #1
+10/27/2026 00:53:45	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-03-01-00-04-00-03-00-00-00-00-00-01-00-00-0C-00-00-00-00-00
+10/27/2026 00:53:45	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:53:48	Coup n°147
+			-> Tour du joueur #0
+10/27/2026 00:53:48	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-03-01-00-04-00-03-00-00-00-00-00-00-00-00-0C-00-01-00-00-00
+10/27/2026 00:53:48	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:53:49	Coup n°148
+			-> Tour du joueur #1
+10/27/2026 00:53:49	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-03-00-00-04-00-03-01-00-00-00-00-00-00-00-0C-00-01-00-00-00
+10/27/2026 00:53:49	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:53:52	Coup n°149
+			-> Tour du joueur #0
+10/27/2026 00:53:52	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-03-00-00-04-00-03-01-00-00-00-00-01-00-00-0C-00-00-00-00-00
+10/27/2026 00:53:52	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:53:54	Coup n°150
+			-> Tour du joueur #1
+10/27/2026 00:53:54	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-03-01-00-04-00-03-00-00-00-00-00-01-00-00-0C-00-00-00-00-00
+10/27/2026 00:53:54	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:53:56	Coup n°151
+			-> Tour du joueur #0
+10/27/2026 00:53:56	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-03-01-00-04-00-03-00-00-00-00-00-00-00-00-0C-00-01-00-00-00
+10/27/2026 00:53:56	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:53:58	Coup n°152
+			-> Tour du joueur #1
+10/27/2026 00:53:58	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-03-00-00-04-00-03-01-00-00-00-00-00-00-00-0C-00-01-00-00-00
+10/27/2026 00:53:58	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:53:59	Coup n°153
+			-> Tour du joueur #0
+10/27/2026 00:53:59	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-03-00-00-04-00-03-01-00-00-00-00-01-00-00-0C-00-00-00-00-00
+10/27/2026 00:53:59	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:54:00	Coup n°154
+			-> Tour du joueur #1
+10/27/2026 00:54:00	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-03-01-00-04-00-03-00-00-00-00-00-01-00-00-0C-00-00-00-00-00
+10/27/2026 00:54:00	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:54:02	Coup n°155
+			-> Tour du joueur #0
+10/27/2026 00:54:02	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-03-01-00-04-00-03-00-00-00-00-00-00-00-00-0C-00-01-00-00-00
+10/27/2026 00:54:02	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:54:02	Coup n°156
+			-> Tour du joueur #1
+10/27/2026 00:54:02	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-03-00-00-04-00-03-01-00-00-00-00-00-00-00-0C-00-01-00-00-00
+10/27/2026 00:54:02	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:54:05	Coup n°157
+			-> Tour du joueur #0
+10/27/2026 00:54:05	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-03-00-00-04-00-03-01-00-00-00-00-01-00-00-0C-00-00-00-00-00
+10/27/2026 00:54:05	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:54:07	Coup n°158
+			-> Tour du joueur #1
+10/27/2026 00:54:07	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-03-01-00-04-00-03-00-00-00-00-00-01-00-00-0C-00-00-00-00-00
+10/27/2026 00:54:07	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:54:09	Coup n°159
+			-> Tour du joueur #0
+10/27/2026 00:54:09	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-03-01-00-04-00-03-00-00-00-00-00-00-00-00-0C-00-01-00-00-00
+10/27/2026 00:54:09	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:54:11	Coup n°160
+			-> Tour du joueur #1
+10/27/2026 00:54:11	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-03-00-00-04-00-03-01-00-00-00-00-00-00-00-0C-00-01-00-00-00
+10/27/2026 00:54:11	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:54:13	Coup n°161
+			-> Tour du joueur #0
+10/27/2026 00:54:13	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-03-00-00-04-00-03-01-00-00-00-00-01-00-00-0C-00-00-00-00-00
+10/27/2026 00:54:13	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:54:16	Coup n°162
+			-> Tour du joueur #1
+10/27/2026 00:54:16	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-03-01-00-04-00-03-00-00-00-00-00-01-00-00-0C-00-00-00-00-00
+10/27/2026 00:54:16	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:54:18	Coup n°163
+			-> Tour du joueur #0
+10/27/2026 00:54:18	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-03-01-00-04-00-03-00-00-00-00-00-00-00-00-0C-00-01-00-00-00
+10/27/2026 00:54:18	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:54:20	Coup n°164
+			-> Tour du joueur #1
+10/27/2026 00:54:20	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-03-00-00-04-00-03-01-00-00-00-00-00-00-00-0C-00-01-00-00-00
+10/27/2026 00:54:20	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:54:22	Coup n°165
+			-> Tour du joueur #0
+10/27/2026 00:54:22	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-03-00-00-04-00-03-01-00-00-00-00-01-00-00-0C-00-00-00-00-00
+10/27/2026 00:54:22	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:54:24	Coup n°166
+			-> Tour du joueur #1
+10/27/2026 00:54:24	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-03-01-00-04-00-03-00-00-00-00-00-01-00-00-0C-00-00-00-00-00
+10/27/2026 00:54:24	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:54:26	Coup n°167
+			-> Tour du joueur #0
+10/27/2026 00:54:26	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-03-01-00-04-00-03-00-00-00-00-00-00-00-00-0C-00-01-00-00-00
+10/27/2026 00:54:26	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:54:28	Coup n°168
+			-> Tour du joueur #1
+10/27/2026 00:54:28	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-03-00-00-04-00-03-01-00-00-00-00-00-00-00-0C-00-01-00-00-00
+10/27/2026 00:54:28	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:54:29	Coup n°169
+			-> Tour du joueur #0
+10/27/2026 00:54:29	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-03-00-00-04-00-03-01-00-00-00-00-01-00-00-0C-00-00-00-00-00
+10/27/2026 00:54:29	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:54:31	Coup n°170
+			-> Tour du joueur #1
+10/27/2026 00:54:31	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-03-01-00-04-00-03-00-00-00-00-00-01-00-00-0C-00-00-00-00-00
+10/27/2026 00:54:31	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:54:33	Coup n°171
+			-> Tour du joueur #0
+10/27/2026 00:54:33	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-03-01-00-04-00-03-00-00-00-00-00-00-00-00-0C-00-01-00-00-00
+10/27/2026 00:54:33	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:54:35	Coup n°172
+			-> Tour du joueur #1
+10/27/2026 00:54:35	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-03-00-00-04-00-03-01-00-00-00-00-00-00-00-0C-00-01-00-00-00
+10/27/2026 00:54:35	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:54:36	Coup n°173
+			-> Tour du joueur #0
+10/27/2026 00:54:36	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-03-00-00-04-00-03-01-00-00-00-00-01-00-00-0C-00-00-00-00-00
+10/27/2026 00:54:36	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:54:38	Coup n°174
+			-> Tour du joueur #1
+10/27/2026 00:54:38	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-03-01-00-04-00-03-00-00-00-00-00-01-00-00-0C-00-00-00-00-00
+10/27/2026 00:54:38	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:54:40	Coup n°175
+			-> Tour du joueur #0
+10/27/2026 00:54:40	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-03-01-00-04-00-03-00-00-00-00-00-00-00-00-0C-00-01-00-00-00
+10/27/2026 00:54:40	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:54:41	Coup n°176
+			-> Tour du joueur #1
+10/27/2026 00:54:41	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-03-00-00-04-00-03-01-00-00-00-00-00-00-00-0C-00-01-00-00-00
+10/27/2026 00:54:41	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:54:43	Coup n°177
+			-> Tour du joueur #0
+10/27/2026 00:54:43	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-03-00-00-04-00-03-01-00-00-00-00-01-00-00-0C-00-00-00-00-00
+10/27/2026 00:54:43	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:54:45	Coup n°178
+			-> Tour du joueur #1
+10/27/2026 00:54:45	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-03-01-00-04-00-03-00-00-00-00-00-01-00-00-0C-00-00-00-00-00
+10/27/2026 00:54:45	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:54:47	Coup n°179
+			-> Tour du joueur #0
+10/27/2026 00:54:47	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-03-01-00-04-00-03-00-00-00-00-00-00-00-00-0C-00-01-00-00-00
+10/27/2026 00:54:47	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:54:48	Coup n°180
+			-> Tour du joueur #1
+10/27/2026 00:54:48	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-03-00-00-04-00-03-01-00-00-00-00-00-00-00-0C-00-01-00-00-00
+10/27/2026 00:54:48	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:54:50	Coup n°181
+			-> Tour du joueur #0
+10/27/2026 00:54:50	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-03-00-00-04-00-03-01-00-00-00-00-01-00-00-0C-00-00-00-00-00
+10/27/2026 00:54:50	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:54:52	Coup n°182
+			-> Tour du joueur #1
+10/27/2026 00:54:52	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-03-01-00-04-00-03-00-00-00-00-00-01-00-00-0C-00-00-00-00-00
+10/27/2026 00:54:52	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:54:53	Coup n°183
+			-> Tour du joueur #0
+10/27/2026 00:54:53	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-03-01-00-04-00-03-00-00-00-00-00-00-00-00-0C-00-01-00-00-00
+10/27/2026 00:54:53	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:54:55	Coup n°184
+			-> Tour du joueur #1
+10/27/2026 00:54:55	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-03-00-00-04-00-03-01-00-00-00-00-00-00-00-0C-00-01-00-00-00
+10/27/2026 00:54:55	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:54:57	Coup n°185
+			-> Tour du joueur #0
+10/27/2026 00:54:57	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-03-00-00-04-00-03-01-00-00-00-00-01-00-00-0C-00-00-00-00-00
+10/27/2026 00:54:57	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:54:59	Coup n°186
+			-> Tour du joueur #1
+10/27/2026 00:54:59	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-03-01-00-04-00-03-00-00-00-00-00-01-00-00-0C-00-00-00-00-00
+10/27/2026 00:54:59	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:55:00	Coup n°187
+			-> Tour du joueur #0
+10/27/2026 00:55:00	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-03-01-00-04-00-03-00-00-00-00-00-00-00-00-0C-00-01-00-00-00
+10/27/2026 00:55:00	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:55:02	Coup n°188
+			-> Tour du joueur #1
+10/27/2026 00:55:02	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-03-00-00-04-00-03-01-00-00-00-00-00-00-00-0C-00-01-00-00-00
+10/27/2026 00:55:02	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:55:04	Coup n°189
+			-> Tour du joueur #0
+10/27/2026 00:55:04	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-03-00-00-04-00-03-01-00-00-00-00-01-00-00-0C-00-00-00-00-00
+10/27/2026 00:55:04	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:55:05	Coup n°190
+			-> Tour du joueur #1
+10/27/2026 00:55:05	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-03-01-00-04-00-03-00-00-00-00-00-01-00-00-0C-00-00-00-00-00
+10/27/2026 00:55:05	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:55:07	Coup n°191
+			-> Tour du joueur #0
+10/27/2026 00:55:07	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-03-01-00-04-00-03-00-00-00-00-00-00-00-00-0C-00-01-00-00-00
+10/27/2026 00:55:07	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:55:09	Coup n°192
+			-> Tour du joueur #1
+10/27/2026 00:55:09	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-03-00-00-04-00-03-01-00-00-00-00-00-00-00-0C-00-01-00-00-00
+10/27/2026 00:55:09	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:55:11	Coup n°193
+			-> Tour du joueur #0
+10/27/2026 00:55:11	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-03-00-00-04-00-03-01-00-00-00-00-01-00-00-0C-00-00-00-00-00
+10/27/2026 00:55:11	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:55:12	Coup n°194
+			-> Tour du joueur #1
+10/27/2026 00:55:12	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-03-01-00-04-00-03-00-00-00-00-00-01-00-00-0C-00-00-00-00-00
+10/27/2026 00:55:12	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:55:14	Coup n°195
+			-> Tour du joueur #0
+10/27/2026 00:55:14	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-03-01-00-04-00-03-00-00-00-00-00-00-00-00-0C-00-01-00-00-00
+10/27/2026 00:55:14	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:55:16	Coup n°196
+			-> Tour du joueur #1
+10/27/2026 00:55:16	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-03-00-00-04-00-03-01-00-00-00-00-00-00-00-0C-00-01-00-00-00
+10/27/2026 00:55:16	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:55:18	Coup n°197
+			-> Tour du joueur #0
+10/27/2026 00:55:18	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-03-00-00-04-00-03-01-00-00-00-00-01-00-00-0C-00-00-00-00-00
+10/27/2026 00:55:18	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:55:18	Coup n°198
+			-> Tour du joueur #1
+10/27/2026 00:55:18	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-03-01-00-04-00-03-00-00-00-00-00-01-00-00-0C-00-00-00-00-00
+10/27/2026 00:55:18	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:55:18	Coup n°199
+			-> Tour du joueur #0
+10/27/2026 00:55:18	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-03-01-00-04-00-03-00-00-00-00-00-00-00-00-0C-00-01-00-00-00
+10/27/2026 00:55:18	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:55:18	Coup n°200
+			-> Tour du joueur #1
+10/27/2026 00:55:18	Envoi de UPD pour 4 mise(s) à jour
+		Trame de UPD: 55-50-44-04-03-00-00-04-00-03-01-00-00-00-00-00-00-00-0C-00-01-00-00-00
+10/27/2026 00:55:18	Attente de la réponse du joueur
+			-> Attente des 4 premiers octets
+		-> Les 4 premiers octets ont bien été reçus
+			MOV: en attente de 5 octets
+			MOV: tous les octets ont été reçus
+			MOV: les mouvements sont en cours de calculs
+10/27/2026 00:55:22	Envoi de END et BYE et fermeture de la socket aux Vampires
+10/27/2026 00:55:22	Envoi de END et BYE et fermeture de la socket aux Werewolves

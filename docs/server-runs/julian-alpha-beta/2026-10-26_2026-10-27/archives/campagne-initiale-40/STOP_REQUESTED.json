@@ -1,0 +1,12 @@
+{
+  "saved_utc": "2026-10-26T14:45:34.4299607Z",
+  "status": "stopped_by_user_before_continuing_200",
+  "scope": "Compare only 32 conditions at MaxPlays=40",
+  "no_more_games_without_new_instruction": true,
+  "excluded_200": [
+    "033: completed before stop request",
+    "034: failed with TimeoutError before stop verification"
+  ],
+  "guard_test_exit": 2,
+  "owned_processes": 0
+}

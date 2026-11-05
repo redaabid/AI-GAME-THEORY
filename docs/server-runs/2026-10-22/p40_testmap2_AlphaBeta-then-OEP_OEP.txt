@@ -1,0 +1,26 @@
+INFO: Connected to 127.0.0.1:5555 as OEP
+INFO: Rules profile: server-v3.2.1
+INFO: Agent: oep
+INFO: Board: 29 columns x 15 rows; playing werewolves
+INFO: Turn 1: [(0, 0, 10, 1, 1)] (0.007 seconds)
+INFO: Turn 2: [(1, 1, 10, 2, 2)] (0.011 seconds)
+INFO: Turn 3: [(2, 2, 10, 3, 3)] (0.012 seconds)
+INFO: Turn 4: [(3, 3, 10, 4, 3)] (0.012 seconds)
+INFO: Turn 5: [(4, 3, 10, 5, 3)] (0.012 seconds)
+INFO: Turn 6: [(5, 3, 10, 6, 3)] (0.013 seconds)
+INFO: Turn 7: [(6, 3, 10, 7, 3)] (0.016 seconds)
+INFO: Turn 8: [(7, 3, 10, 8, 3)] (0.019 seconds)
+INFO: Turn 9: [(8, 3, 10, 9, 3)] (0.019 seconds)
+INFO: Turn 10: [(9, 3, 6, 8, 4), (9, 3, 4, 10, 3)] (0.013 seconds)
+INFO: Turn 11: [(8, 4, 6, 7, 5), (10, 3, 8, 9, 4)] (0.062 seconds)
+INFO: Turn 12: [(7, 5, 6, 6, 6), (9, 4, 8, 8, 5)] (0.038 seconds)
+INFO: Turn 13: [(6, 6, 6, 5, 7), (8, 5, 8, 7, 6)] (0.038 seconds)
+INFO: Turn 14: [(5, 7, 6, 4, 8), (7, 6, 8, 6, 7)] (0.021 seconds)
+INFO: Turn 15: [(4, 8, 6, 3, 9), (6, 7, 8, 5, 8)] (0.021 seconds)
+INFO: Turn 16: [(3, 9, 6, 2, 10), (5, 8, 8, 4, 9)] (0.021 seconds)
+INFO: Turn 17: [(2, 10, 6, 1, 11), (4, 9, 8, 3, 10)] (0.016 seconds)
+INFO: Turn 18: [(1, 11, 6, 0, 12), (3, 10, 8, 2, 11)] (0.011 seconds)
+INFO: Turn 19: [(0, 12, 6, 0, 13), (2, 11, 8, 1, 12)] (0.006 seconds)
+INFO: Turn 20: [(0, 13, 6, 0, 14), (1, 12, 8, 1, 13)] (0.002 seconds)
+INFO: Game ended; waiting for the next game.
+INFO: Server finished the session.

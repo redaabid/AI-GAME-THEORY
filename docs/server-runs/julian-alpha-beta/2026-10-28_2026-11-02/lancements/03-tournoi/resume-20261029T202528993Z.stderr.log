@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "C:\Users\sebju\Julian 2026\Centrale 2026\Année scloaire 2026-2027\S1\Foundations of AI\Project\Github\AI-GAME-THEORY\.local\worktrees\server-runs\scripts\screen_ab2_round_robin.py", line 172, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\sebju\Julian 2026\Centrale 2026\Année scloaire 2026-2027\S1\Foundations of AI\Project\Github\AI-GAME-THEORY\.local\worktrees\server-runs\scripts\screen_ab2_round_robin.py", line 153, in main
+    screened=run('screen',list(combinations(specs,2)),maps,[5422901])
+  File "C:\Users\sebju\Julian 2026\Centrale 2026\Année scloaire 2026-2027\S1\Foundations of AI\Project\Github\AI-GAME-THEORY\.local\worktrees\server-runs\scripts\screen_ab2_round_robin.py", line 146, in run
+    raise RuntimeError('Stopped on invalid game; raw result saved')
+RuntimeError: Stopped on invalid game; raw result saved

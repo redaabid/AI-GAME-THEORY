@@ -1,0 +1,16 @@
+Skipping saved game 001-depth24-external-0-thetrap-vampires.json
+Skipping saved game 002-depth24-external-0-thetrap-werewolves.json
+Skipping saved game 003-depth24-external-1-testmap2-vampires.json
+Skipping saved game 004-depth24-external-1-testmap2-werewolves.json
+Skipping saved game 005-width8-external-0-thetrap-vampires.json
+Skipping saved game 006-width8-external-0-thetrap-werewolves.json
+Skipping saved game 007-width8-external-1-testmap2-vampires.json
+Skipping saved game 008-width8-external-1-testmap2-werewolves.json
+Skipping saved game 009-tactical1-external-0-thetrap-vampires.json
+Skipping saved game 010-tactical1-external-0-thetrap-werewolves.json
+Skipping saved game 011-tactical1-external-1-testmap2-vampires.json
+Skipping saved game 012-tactical1-external-1-testmap2-werewolves.json
+13 repeat external-0-thetrap vampires: faults=0 bootstraps=0
+14 repeat external-0-thetrap werewolves: faults=0 bootstraps=0
+15 repeat external-1-testmap2 vampires: faults=0 bootstraps=0
+16 repeat external-1-testmap2 werewolves: faults=0 bootstraps=0

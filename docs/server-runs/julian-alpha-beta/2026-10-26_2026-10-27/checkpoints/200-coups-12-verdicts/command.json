@@ -1,0 +1,17 @@
+[
+  "C:\\Users\\sebju\\miniconda3\\python.exe",
+  "-B",
+  "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\alphabeta-validation\\scripts\\run_ab_server.py",
+  "--runtime",
+  "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\research\\server-validation\\long-200-2026-10-26\\runtime",
+  "--selection",
+  "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\research\\server-validation\\long-200-2026-10-26\\selection.json",
+  "--output",
+  "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\research\\server-validation\\long-200-2026-10-26\\games",
+  "--ids",
+  "17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32",
+  "--allow-200",
+  "--stop-on-bot-error",
+  "--ui-timeout",
+  "3600"
+]

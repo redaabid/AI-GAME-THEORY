@@ -1,0 +1,57 @@
+{
+  "id": 17,
+  "sha": "d22df256127f7799d1b8c8d951b420d3eed94efe",
+  "map": "thetrap.xml",
+  "max_plies": 200,
+  "order": [
+    "ab3",
+    "ab0"
+  ],
+  "specs": {
+    "ab3": "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+    "ab0": "ab0:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000"
+  },
+  "commands": [
+    [
+      "C:\\Users\\sebju\\miniconda3\\python.exe",
+      "-B",
+      "main.py",
+      "--name",
+      "AB3",
+      "--agent",
+      "ab3:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+      "--move-time",
+      "1.5",
+      "--max-plies",
+      "200",
+      "--rules-profile",
+      "server-v3.2.1",
+      "--seed",
+      "42",
+      "127.0.0.1",
+      "5555"
+    ],
+    [
+      "C:\\Users\\sebju\\miniconda3\\python.exe",
+      "-B",
+      "main.py",
+      "--name",
+      "AB0",
+      "--agent",
+      "ab0:width=6,depth=1,max_depth=8,extra=0,tt_size=50000,qdepth=1,qwidth=2,aspiration=25000",
+      "--move-time",
+      "1.5",
+      "--max-plies",
+      "200",
+      "--rules-profile",
+      "server-v3.2.1",
+      "--seed",
+      "42",
+      "127.0.0.1",
+      "5555"
+    ]
+  ],
+  "map_sha256": "4a5bee60b38e3d8741f12d6ca1ac70a2d564a4420196bd11e71af8d90c09e7fe",
+  "started": "2026-10-26T22:50:00.118102+00:00",
+  "move_time": 1.5
+}

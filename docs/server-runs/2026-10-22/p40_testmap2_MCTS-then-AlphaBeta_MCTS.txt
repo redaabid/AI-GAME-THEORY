@@ -1,0 +1,46 @@
+INFO: Connected to 127.0.0.1:5555 as MCTS
+INFO: Rules profile: server-v3.2.1
+INFO: Agent: mcts:iterations=10000
+INFO: Board: 29 columns x 15 rows; playing vampires
+INFO: Search: 1556 iterations; fallback=False
+INFO: Turn 1: [(28, 14, 10, 27, 13)] (1.502 seconds)
+INFO: Search: 933 iterations; fallback=False
+INFO: Turn 2: [(27, 13, 10, 26, 12)] (1.502 seconds)
+INFO: Search: 895 iterations; fallback=False
+INFO: Turn 3: [(26, 12, 10, 25, 11)] (1.502 seconds)
+INFO: Search: 899 iterations; fallback=False
+INFO: Turn 4: [(25, 11, 10, 24, 12)] (1.502 seconds)
+INFO: Search: 887 iterations; fallback=False
+INFO: Turn 5: [(24, 12, 10, 23, 13)] (1.502 seconds)
+INFO: Search: 862 iterations; fallback=False
+INFO: Turn 6: [(23, 13, 10, 22, 13)] (1.502 seconds)
+INFO: Search: 873 iterations; fallback=False
+INFO: Turn 7: [(22, 13, 10, 21, 12)] (1.502 seconds)
+INFO: Search: 895 iterations; fallback=False
+INFO: Turn 8: [(21, 12, 10, 20, 12)] (1.502 seconds)
+INFO: Search: 928 iterations; fallback=False
+INFO: Turn 9: [(20, 12, 10, 19, 12)] (1.502 seconds)
+INFO: Search: 824 iterations; fallback=False
+INFO: Turn 10: [(19, 12, 10, 18, 11)] (1.501 seconds)
+INFO: Search: 801 iterations; fallback=False
+INFO: Turn 11: [(18, 11, 14, 18, 12)] (1.501 seconds)
+INFO: Search: 920 iterations; fallback=False
+INFO: Turn 12: [(18, 12, 14, 17, 13)] (1.502 seconds)
+INFO: Search: 1015 iterations; fallback=False
+INFO: Turn 13: [(17, 13, 14, 16, 14)] (1.502 seconds)
+INFO: Search: 957 iterations; fallback=False
+INFO: Turn 14: [(16, 14, 14, 17, 13)] (1.501 seconds)
+INFO: Search: 1031 iterations; fallback=False
+INFO: Turn 15: [(17, 13, 14, 16, 12)] (1.501 seconds)
+INFO: Search: 1090 iterations; fallback=False
+INFO: Turn 16: [(16, 12, 14, 15, 13)] (1.502 seconds)
+INFO: Search: 1264 iterations; fallback=False
+INFO: Turn 17: [(15, 13, 14, 14, 12)] (1.502 seconds)
+INFO: Search: 1632 iterations; fallback=False
+INFO: Turn 18: [(14, 12, 2, 15, 11)] (1.502 seconds)
+INFO: Search: 2388 iterations; fallback=False
+INFO: Turn 19: [(14, 12, 12, 15, 12), (15, 11, 2, 16, 10)] (1.503 seconds)
+INFO: Search: 8357 iterations; fallback=False
+INFO: Turn 20: [(15, 12, 12, 16, 11), (16, 10, 2, 17, 9)] (1.501 seconds)
+INFO: Game ended; waiting for the next game.
+INFO: Server finished the session.

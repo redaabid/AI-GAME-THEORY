@@ -1,0 +1,228 @@
+{
+  "captured_utc": "2026-10-27T12:28:27.550525+00:00",
+  "note": "Snapshot before the documentation commit; read git log for the new HEAD.",
+  "repo": "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Année scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY",
+  "canonical_handoff": "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Année scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\docs\\server-runs\\julian-alpha-beta\\2026-10-26_2026-10-27\\passation\\HANDOFF_GOOGLE.md",
+  "workspace_entry": "C:/Users/sebju/AUtres/Documents/ChatGPT/Foundation of AI/PASSATION_GOOGLE.md",
+  "retained_profiles": [
+    "ab2",
+    "ab3",
+    "ab6",
+    "ab7_new_discount_0.97"
+  ],
+  "preferred_profiles": [
+    "ab2",
+    "ab6"
+  ],
+  "default_python": {
+    "executable": "C:\\Users\\sebju\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+    "version": "3.14.3 (tags/v3.14.3:323c59a, Feb  3 2026, 16:04:56) [MSC v.1944 64 bit (AMD64)]"
+  },
+  "campaign_python": {
+    "executable": "C:\\Users\\sebju\\miniconda3\\python.exe",
+    "version": "Python 3.14.7"
+  },
+  "worktrees": {
+    "main": {
+      "path": "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Année scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY",
+      "branch": "main",
+      "head_before_handoff_commit": "65aa455f6c053eadeb04abe18d3421717166d48d",
+      "status_before_handoff_commit": ""
+    },
+    "implementation": {
+      "path": "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Année scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\alphabeta-validation",
+      "branch": "codex/alphabeta-validation",
+      "head_before_handoff_commit": "d22df256127f7799d1b8c8d951b420d3eed94efe",
+      "status_before_handoff_commit": ""
+    },
+    "results": {
+      "path": "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Année scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs",
+      "branch": "server-runs",
+      "head_before_handoff_commit": "2cf4652e542f85b9635c58aab431dc2747be2f02",
+      "status_before_handoff_commit": "?? docs/HANDOFF_GOOGLE.md"
+    }
+  },
+  "runtimes": {
+    "original": {
+      "path": "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Année scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\server",
+      "settings": {
+        "ServerIP": "127.0.0.1",
+        "ServerPort": "5555",
+        "DebugMode": "True",
+        "PlayersCount": "2",
+        "Map": "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Année scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\server\\thetrap.xml",
+        "MaxGameDuration": "00:05:00",
+        "MaxPlayDuration": "00:00:02",
+        "MaxPlays": "200",
+        "AutoRestart": "False"
+      },
+      "map_exists": true,
+      "files": {
+        "VampiresVSWerewolvesGameServer.exe": true,
+        "VampiresVSWerewolvesGameServer.exe.config": true,
+        "VVSW.Model.dll": true,
+        "VVSW.Controls.dll": true,
+        "thetrap.xml": true,
+        "testmap2.xml": true
+      }
+    },
+    "last_campaign": {
+      "path": "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Année scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\research\\server-validation\\long-200-2026-10-26\\runtime",
+      "settings": {
+        "ServerIP": "127.0.0.1",
+        "ServerPort": "5555",
+        "DebugMode": "True",
+        "PlayersCount": "2",
+        "Map": "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Année scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\research\\server-validation\\long-200-2026-10-26\\runtime\\testmap2.xml",
+        "MaxGameDuration": "00:10:00",
+        "MaxPlayDuration": "00:00:02",
+        "MaxPlays": "200",
+        "AutoRestart": "False"
+      },
+      "map_exists": true,
+      "files": {
+        "VampiresVSWerewolvesGameServer.exe": true,
+        "VampiresVSWerewolvesGameServer.exe.config": true,
+        "VVSW.Model.dll": true,
+        "VVSW.Controls.dll": true,
+        "thetrap.xml": true,
+        "testmap2.xml": true
+      }
+    }
+  },
+  "campaign_state": {
+    "status": "complete",
+    "exit_code": 0,
+    "summary_exit_code": 0,
+    "finished": "2026-10-27T00:02:36.408374+00:00"
+  },
+  "server_process_count": 0,
+  "port_5555_listeners": [],
+  "results_200": {
+    "conditions": 16,
+    "confirmed": 16,
+    "architectures": {
+      "ab3": {
+        "games": 16,
+        "confirmed": 16,
+        "wins": 6,
+        "losses": 9,
+        "draws": 1,
+        "max_seconds": 1.513,
+        "faults": 0,
+        "alerts_1_8": 0,
+        "violations_2": 0,
+        "bootstraps": 0,
+        "fallback_occurrences": 0,
+        "turns": 1298,
+        "total_seconds": 750.233,
+        "abnormal_sessions": 0,
+        "errors": [],
+        "mean_seconds": 0.5779915254237288
+      },
+      "ab0": {
+        "games": 4,
+        "confirmed": 4,
+        "wins": 1,
+        "losses": 3,
+        "draws": 0,
+        "max_seconds": 0.005,
+        "faults": 0,
+        "alerts_1_8": 0,
+        "violations_2": 0,
+        "bootstraps": 0,
+        "fallback_occurrences": 0,
+        "turns": 264,
+        "total_seconds": 0.484,
+        "abnormal_sessions": 0,
+        "errors": [],
+        "mean_seconds": 0.0018333333333333333
+      },
+      "ab2": {
+        "games": 4,
+        "confirmed": 4,
+        "wins": 3,
+        "losses": 0,
+        "draws": 1,
+        "max_seconds": 1.507,
+        "faults": 0,
+        "alerts_1_8": 0,
+        "violations_2": 0,
+        "bootstraps": 0,
+        "fallback_occurrences": 0,
+        "turns": 317,
+        "total_seconds": 117.277,
+        "abnormal_sessions": 0,
+        "errors": [],
+        "mean_seconds": 0.3699589905362776
+      },
+      "ab6": {
+        "games": 4,
+        "confirmed": 4,
+        "wins": 3,
+        "losses": 1,
+        "draws": 0,
+        "max_seconds": 1.513,
+        "faults": 0,
+        "alerts_1_8": 0,
+        "violations_2": 0,
+        "bootstraps": 0,
+        "fallback_occurrences": 0,
+        "turns": 318,
+        "total_seconds": 468.313,
+        "abnormal_sessions": 0,
+        "errors": [],
+        "mean_seconds": 1.4726823899371069
+      },
+      "ab7": {
+        "games": 4,
+        "confirmed": 4,
+        "wins": 2,
+        "losses": 2,
+        "draws": 0,
+        "max_seconds": 1.503,
+        "faults": 0,
+        "alerts_1_8": 0,
+        "violations_2": 0,
+        "bootstraps": 0,
+        "fallback_occurrences": 0,
+        "turns": 400,
+        "total_seconds": 221.808,
+        "abnormal_sessions": 0,
+        "errors": [],
+        "mean_seconds": 0.55452
+      }
+    }
+  },
+  "publication": {
+    "remote": "https://github.com/redaabid/AI-GAME-THEORY",
+    "branch": "julian-tests-alpha-beta-2026-10-27",
+    "last_push": "success: server-runs, authenticated as julian5422",
+    "latest_documents_pushed": true,
+    "author": "Julian Saiani <julian.saiani@inception.technology>",
+    "authenticated_account": "julian5422",
+    "push_permission": true,
+    "previous_failed_account": "Juliansaiani",
+    "verified_utc": "2026-10-27T13:02:25.063648+00:00",
+    "published_through_before_status_update": "8431bde",
+    "results_url": "https://github.com/redaabid/AI-GAME-THEORY/blob/julian-tests-alpha-beta-2026-10-27/docs/server-runs/julian-alpha-beta/2026-10-26_2026-10-27/tests-200-coups/SUMMARY.md",
+    "previous_branch": "server-runs"
+  },
+  "next_action": "Read the handoff and priority files, then follow the next user instruction. No campaign, tuning or bot changes are pending.",
+  "variant_canonical_lf_sha256": "bed8077a39f16561f0cc666a007d19cfe92f2251559f33dbc7076f3415637ac8",
+  "paths": {
+    "report_200": "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Année scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\docs\\server-runs\\julian-alpha-beta\\2026-10-26_2026-10-27\\tests-200-coups\\SUMMARY.md",
+    "aggregate_200": "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Année scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\docs\\server-runs\\julian-alpha-beta\\2026-10-26_2026-10-27\\tests-200-coups\\games\\aggregate-200.json",
+    "protocol_200": "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Année scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\docs\\server-runs\\julian-alpha-beta\\2026-10-26_2026-10-27\\tests-200-coups\\protocol.json",
+    "report_40": "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Année scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\docs\\server-runs\\julian-alpha-beta\\2026-10-26_2026-10-27\\tests-40-coups\\SUMMARY.md",
+    "justifications": "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Année scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\docs\\server-runs\\julian-alpha-beta\\2026-10-26_2026-10-27\\justifications\\AB_CONFIGURATIONS_JUSTIFICATION.md",
+    "legacy_audit": "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Année scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\research\\previous-projects",
+    "literature": "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Année scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\research\\scientific-literature"
+  },
+  "reorganization": {
+    "date": "2026-10-27",
+    "active_results_branch": "julian-tests-alpha-beta-2026-10-27",
+    "results_directory": "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Année scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\docs\\server-runs\\julian-alpha-beta\\2026-10-26_2026-10-27",
+    "note": "Old HEAD fields retain their original snapshot provenance; use git log for current HEAD."
+  }
+}

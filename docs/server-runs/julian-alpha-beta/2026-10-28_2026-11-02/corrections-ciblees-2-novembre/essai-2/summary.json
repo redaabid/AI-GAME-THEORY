@@ -1,0 +1,116 @@
+[
+  {
+    "agent": "ab2exp",
+    "width": 6,
+    "plies": 9,
+    "repetitions": 0,
+    "start_gap": 3,
+    "end_gap": null,
+    "outcome": {
+      "winner": "werewolves",
+      "reason": "elimination"
+    },
+    "window_limit": false,
+    "seconds": 0.15847379999468103,
+    "case": 0
+  },
+  {
+    "agent": "ab2tie",
+    "width": 6,
+    "plies": 9,
+    "repetitions": 0,
+    "start_gap": 3,
+    "end_gap": null,
+    "outcome": {
+      "winner": "werewolves",
+      "reason": "elimination"
+    },
+    "window_limit": false,
+    "seconds": 0.23791699999128468,
+    "case": 0
+  },
+  {
+    "agent": "ab2exp",
+    "width": 6,
+    "plies": 40,
+    "repetitions": 12,
+    "start_gap": 11,
+    "end_gap": 3,
+    "outcome": null,
+    "window_limit": true,
+    "seconds": 0.7328596000006655,
+    "case": 1
+  },
+  {
+    "agent": "ab2tie",
+    "width": 6,
+    "plies": 33,
+    "repetitions": 0,
+    "start_gap": 11,
+    "end_gap": null,
+    "outcome": {
+      "winner": "vampires",
+      "reason": "elimination"
+    },
+    "window_limit": false,
+    "seconds": 0.7438588999939384,
+    "case": 1
+  },
+  {
+    "agent": "ab2exp",
+    "width": 6,
+    "plies": 7,
+    "repetitions": 0,
+    "start_gap": 3,
+    "end_gap": null,
+    "outcome": {
+      "winner": "werewolves",
+      "reason": "elimination"
+    },
+    "window_limit": false,
+    "seconds": 0.11958320000849199,
+    "case": 2
+  },
+  {
+    "agent": "ab2tie",
+    "width": 6,
+    "plies": 7,
+    "repetitions": 0,
+    "start_gap": 3,
+    "end_gap": null,
+    "outcome": {
+      "winner": "werewolves",
+      "reason": "elimination"
+    },
+    "window_limit": false,
+    "seconds": 0.11713050000253133,
+    "case": 2
+  },
+  {
+    "agent": "ab2exp",
+    "width": 7,
+    "plies": 40,
+    "repetitions": 8,
+    "start_gap": 13,
+    "end_gap": 3,
+    "outcome": null,
+    "window_limit": true,
+    "seconds": 0.8105538999952842,
+    "case": 3
+  },
+  {
+    "agent": "ab2tie",
+    "width": 7,
+    "plies": 37,
+    "repetitions": 0,
+    "start_gap": 13,
+    "end_gap": null,
+    "outcome": {
+      "winner": "vampires",
+      "reason": "elimination"
+    },
+    "window_limit": false,
+    "seconds": 1.1579421000060393,
+    "case": 3
+  }
+]
