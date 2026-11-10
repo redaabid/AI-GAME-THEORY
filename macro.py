@@ -8,6 +8,7 @@ respecting the turn rules, so engines reason in objectives, not in cells.
 from dataclasses import dataclass
 from math import ceil
 
+from candidates import check_deadline
 from game import Cell, distance
 from simulator import opponent
 
@@ -20,9 +21,14 @@ class Order:
     away: bool = False  # Step away from goal instead (fleeing).
 
 
-def groups(position, kind):
+def groups(position, kind, *, deadline=None):
     """Sorted [(cell, count)] for 'humans', 'vampires', or 'werewolves'."""
-    return sorted((p, getattr(c, kind)) for p, c in position.cells.items() if getattr(c, kind))
+    result = []
+    for p, cell in position.cells.items():
+        check_deadline(deadline)
+        if getattr(cell, kind):
+            result.append((p, getattr(cell, kind)))
+    return sorted(result)
 
 
 def neighbors(cell, rows, columns):
@@ -52,7 +58,7 @@ def step(order, rows, columns, blocked=()):
                                        sign * ((n[0] - gx) ** 2 + (n[1] - gy) ** 2), n))
 
 
-def orders_to_moves(position, orders, species=None):
+def orders_to_moves(position, orders, species=None, *, deadline=None):
     """Legal turn from orders, plus the step taken by each order (None if dropped).
 
     Rule 5 (a cell cannot be source and target) is enforced by never stepping
@@ -60,10 +66,11 @@ def orders_to_moves(position, orders, species=None):
     than remain at their source are trimmed. Returns ([], steps) if nothing moves.
     """
     species = species or position.to_play
-    available = {p: n for p, n in groups(position, species)}
+    available = {p: n for p, n in groups(position, species, deadline=deadline)}
     sources = {o.source for o in orders if o.count > 0 and available.get(o.source)}
     merged, steps = {}, []
     for order in orders:
+        check_deadline(deadline)
         count = min(order.count, available.get(order.source, 0))
         target = step(order, position.rows, position.columns, sources) if count > 0 else None
         if target is None or target == order.source:

@@ -2,13 +2,158 @@
 
 # AI Game Theory: Vampires vs Werewolves
 
+**Team quickstart:** the latest MCTS experiments are on `feat/mcts-memory`.
+See [the current handoff](docs/MCTS_TEAM_HANDOFF.md) for checkout, tests, map
+setup and the V9-versus-V6 command. V6 remains the reference.
+
 A four-person team project to build an AI for the Vampires vs Werewolves game.
 The repository contains a Python benchmark bot, a CPU simulator, and agents behind
 one interface: `alphabeta`, `oep`, `portfolio`, `mcts`, `baseline`, and `random`,
-plus the experimental `mcts-memory` variant on `feat/mcts-memory`.
+plus the experimental `mcts-memory`, `mcts-v1`, `mcts-v2`, and `mcts-v3` variants on `feat/mcts-memory`.
 A round-robin tournament compares them, and `tune.py` tunes them offline.
 
-**Latest: 32 timed games against AB2 and AB6**, plus resumable per-game
+**MCTS v3 = V1 plus coordinated rollouts.** It keeps V1's six-ply rollout
+horizon, memory and turn-limit evaluation. Start the 32-game comparison against
+V1 on four maps yourself:
+
+```sh
+python campaign.py --opponent mcts-v1 --agent mcts-v3
+```
+
+It prints progress and saves each completed game. Run the same command to resume.
+Reports: `.local/campaigns/mcts-v3-vs-v1/`;
+see [the v3 guide](docs/MCTS_V3.md) for settings and commands.
+
+**MCTS V4: experimental contextual parameter tuning.** V1's exploration and
+rollout length adapt to distances, group counts and remaining turns. The
+[V4 research and run guide](docs/MCTS_V4.md) explains the sources, limits and
+separate launcher. The completed 32-game comparison finished **14 wins / 1 draw /
+17 losses** for V4 against V1, with zero timeouts or faults for either agent.
+
+**Exploration-only V4 also completed 32 games:** **13 wins / 1 draw / 18 losses**
+against V1. Its reproduction/resume command is:
+
+```sh
+python scripts/compare_mcts_v4.py --opponent v1 --exploration-only
+```
+
+Reports and resumable checkpoints go to
+`.local/campaigns/mcts-v4-exploration-vs-v1/`. Add `--dry-run` to preview or
+`--max-games 4` to finish at most four additional games this session.
+
+**Latest opponent test: V1 against Julian AB2 width 7.** MCTS finished
+**11 wins / 7 draws / 14 losses** across 32 balanced games, with zero timeouts
+or faults for either agent. The main weakness was `testmap2`; see the
+[analysis and next steps](docs/MCTS_JULIAN_RESULTS.md).
+
+**Recruitment diagnosis:** four recorded openings exposed a retreat/loop near
+a guaranteed village capture. The [recorder and findings](docs/MCTS_RECRUITMENT_DIAGNOSTIC.md)
+include a portable counterexample and a controlled evaluation probe. Run a new
+diagnostic with `python scripts/diagnose_mcts_recruitment.py`.
+
+**MCTS V5 = V1 plus recruitment-feasibility evaluation.** It applies the
+diagnostic's village-value adjustment during search. Start the separate
+32-game comparison against Julian's retained AB2 width-7 profile yourself:
+
+```sh
+python scripts/compare_mcts_v5.py --opponent width7
+```
+
+Eight games on each of the same four maps, with 1.5 seconds thinking per turn.
+Add `--dry-run` to preview or `--max-games 4` to play four additional games;
+rerun to resume. Results: `.local/campaigns/mcts-v5-vs-julian-ab2-width7/`.
+The first completed run scored **13 wins / 11 draws / 8 losses** (57.81%),
+versus V1's 45.31% against the same opponent. Two games were affected by laptop
+standby; see [the verified V5 results](docs/MCTS_V5_RESULTS.md) and
+[the V5 guide](docs/MCTS_V5.md) for controls, limits and commands.
+
+Two full V5 game recordings now expose the tied endgame and delayed recruitment
+on the large map. See [the investigation and offline replay](docs/MCTS_V5_DIAGNOSTIC.md).
+
+**MCTS V6 = V5 plus clock-aware endgame evaluation.** With no humans left and
+fewer than 40 plies remaining, simulated positions are scored increasingly by
+their population-at-cap result. This tests whether V5 can take worthwhile
+risks instead of waiting for a population loss. See [the V6 guide](docs/MCTS_V6.md)
+for the two-position probes, limits and controls. Start its separate 32-game
+comparison against V5 yourself:
+
+```sh
+python scripts/compare_mcts_v6.py --opponent v5
+```
+
+Use `--opponent width7` to face Julian's retained AB2, `--dry-run` to preview,
+or `--max-games 4` to play only four additional games. Completed games are
+checkpointed; rerun to resume. Completed six-worker V6 runs scored **16 wins /
+4 draws / 12 losses against V5** (56.25%) and **16 wins / 10 draws / 6 losses
+against Julian's AB2 width 7** (65.63%). All eight AB2 games on `testmap2`
+ended 16-16 at the turn cap. Both runs had zero faults and timeouts.
+
+**MCTS V7 = V6 plus persistent objectives after a tied board repeats.** It
+compares interception, recruitment and regrouping plans against three simple
+reply models, then adds bounded progress guidance to MCTS. See [the V7 guide](docs/MCTS_V7.md)
+for the exact activation, local probes, controls and full-game recorder.
+Start its separate 32-game comparison against V6 with six workers:
+
+```sh
+python scripts/compare_mcts_v7.py --opponent v6 --workers 6
+```
+
+Use `--opponent width7` to face Julian's retained AB2. Add `--dry-run` to
+preview, or `--max-games 4` to complete only four more games. Rerun to resume.
+Record a new detailed game with
+`python scripts/trace_mcts_v7.py --opponent width7` to inspect its objectives.
+
+**V7 controlled diagnosis:** the first 32-game comparison finished
+**8 wins / 5 draws / 19 losses** against V6 (32.81%). Six games had system-stall
+timeouts; excluding those left 32.69%. A later diagnostic won for V7 with zero
+objective activations. The [controlled stalemate experiment](docs/MCTS_V7_CONTROLLED.md)
+therefore compares goals on/off directly from the recorded 16-16 position,
+using paired seeds and fixed MCTS budgets. The completed controlled test ended
+in **four draws with objectives on and four draws with objectives off**;
+[the results](docs/MCTS_V7_CONTROLLED_RESULTS.md) explain why pursuing the
+enemy failed to close the gap. V6 remains the reference version.
+
+**MCTS V8: experimental interception feasibility on V6.** It checks moving
+enemy merge escapes and bounded intact-group contact scenarios, then applies
+a small root selection preference only when the model verifies contact.
+V6 remains the reference; recruitment changes come later. Launch the new
+32-game, four-map comparison yourself:
+
+```sh
+python scripts/compare_mcts_v8.py --opponent v6 --workers 6
+```
+
+Rerun the same command to resume completed-game checkpoints. Add `--dry-run`
+to preview or `--max-games 4` to play at most four additional games. See
+[the V8 guide](docs/MCTS_V8.md) for limits, diagnostics and the AB2 command.
+
+The completed V8 comparison scored **11 wins / 2 draws / 19 losses** against
+V6 (37.5%), with zero faults or timeouts. V6 remains the reference.
+
+**MCTS V9 = V6 plus short recruitment-sequence planning.** It compares capture
+timing, future growth, enemy village races and counterattack exposure, with
+bounded root guidance. The local recorded-position probe changes V6's delayed
+14-human capture to an immediate capture for four fixed seeds; match strength
+is not yet established. Launch the separate 32-game comparison yourself:
+
+```sh
+python scripts/compare_mcts_v9.py --opponent v6 --workers 6
+```
+
+Results and planner activations/cost are saved separately in `report.md` and
+`recruitment.md` under `.local/campaigns/mcts-v9-vs-v6/`. Rerun to resume;
+add `--dry-run` to preview or `--max-games 4` for four additional games. See
+[the V9 guide](docs/MCTS_V9.md) for assumptions, controls and when to consider
+a small neural guide. V9 currently has no neural network.
+
+To play V5 against another team's bot on their course server, use the
+[remote match guide](docs/PLAY_FRIEND_V5.md) and `scripts/play_mcts_v5.py`.
+
+The completed local V2 comparison scored **9 wins / 1 draw / 22 losses** against
+V1. V3 isolates coordination from V2's other rollout changes. See
+[the v2 guide](docs/MCTS_V2.md) for that version's implementation.
+
+**Earlier: 32 timed games against AB2 and AB6**, plus resumable per-game
 checkpoints: [results and team handoff](docs/MCTS_AB_COMPARISON.md). MCTS scored
 7 W / 3 D / 6 L against AB2 and 7 W / 2 D / 7 L against AB6; two MCTS timeouts in
 the AB6 batch need investigation. No overall champion is established by this sample.

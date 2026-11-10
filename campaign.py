@@ -2,6 +2,8 @@
 
     python campaign.py --opponent ab2 --max-games 4
     python campaign.py --opponent ab2
+    python campaign.py --opponent mcts-v1
+    python campaign.py --opponent mcts-v1 --agent mcts-v3
 
 The same command resumes the same campaign automatically. Completed games are
 never rerun; interrupted games restart. Existing tournament.py runs are separate.
@@ -12,6 +14,7 @@ from contextlib import contextmanager
 from datetime import datetime, timezone
 from hashlib import sha256
 import json
+from math import isfinite
 import multiprocessing
 import os
 from pathlib import Path
@@ -19,7 +22,7 @@ import platform
 import signal
 from tempfile import NamedTemporaryFile
 
-from agents import make_agent
+from agents import make_agent, parse_spec
 from simulator import get_outcome, load_map
 from tournament import ROLES, _run_job, markdown_tables, summarize
 
@@ -44,20 +47,26 @@ def runtime_hashes():
 
 
 def make_plan(names, maps, *, seed=20261028, workers=2, max_plies=200,
-              move_time=2.0, margin=0.5):
+              move_time=2.0, margin=0.5, rounds=1):
     if len(names) != 2 or len(set(names)) != 2:
         raise ValueError("A campaign needs two different agent specs.")
     if not maps or len({name for name, _ in maps}) != len(maps):
         raise ValueError("Maps must be nonempty and have unique names.")
+    if any(type(value) is not int or value < 1 for value in (workers, max_plies, rounds)):
+        raise ValueError("workers, max_plies and rounds must be positive integers.")
+    if (not isfinite(move_time) or move_time < 0 or not isfinite(margin) or margin < 0
+            or (move_time and margin >= move_time)):
+        raise ValueError("Timing must be finite and nonnegative; margin must be smaller than move-time.")
     jobs = []
     settings = dict(max_plies=max_plies, move_time=move_time, margin=margin, on_timeout="skip")
     for index, (map_name, position) in enumerate(maps):
         if get_outcome(position) is not None:
             raise ValueError(f"Map {map_name} is already terminal.")
-        for role, (species, first) in enumerate(ROLES):
-            jobs.append(dict(i=0, j=1, a=names[0], b=names[1], map_name=map_name,
-                             map=position.to_dict(), round=0, a_species=species, first=first,
-                             seed=seed + 100_003 * index + role, settings=settings))
+        for round_index in range(rounds):
+            for role, (species, first) in enumerate(ROLES):
+                jobs.append(dict(i=0, j=1, a=names[0], b=names[1], map_name=map_name,
+                                 map=position.to_dict(), round=round_index, a_species=species, first=first,
+                                 seed=seed + 100_003 * index + 4 * round_index + role, settings=settings))
     return dict(schema_version=1, agents=list(names), workers=workers,
                 python_version=platform.python_version(), source_sha256=runtime_hashes(), jobs=jobs)
 
@@ -131,14 +140,24 @@ def save_report(directory, plan, results):
     games = [results[index] for index in sorted(results)]
     matrix, ranking = summarize(plan["agents"], games) if games else ({}, [])
     complete = len(games) == len(plan["jobs"])
+    per_map = {}
+    for name in sorted({game["map_name"] for game in games}):
+        scores = [game["a_score"] for game in games if game["map_name"] == name]
+        per_map[name] = dict(games=len(scores), wins=scores.count(1), draws=scores.count(0.5),
+                             losses=scores.count(0), mean_score=sum(scores) / len(scores))
     report = dict(schema_version=1, status="complete" if complete else "partial",
                   updated_utc=utc_now(), completed_games=len(games), total_games=len(plan["jobs"]),
-                  plan=plan, matrix=matrix, ranking=ranking, games=games)
+                  plan=plan, matrix=matrix, ranking=ranking, per_map=per_map, games=games)
     atomic_json(directory / "report.json", report)
     # report.json is authoritative; this Markdown is a regenerable convenience.
     if games:
         text = (f"{report['status'].upper()}: {len(games)}/{len(plan['jobs'])} games.\n\n"
                 + markdown_tables(plan["agents"], matrix, ranking) + "\n")
+        text += (f"\nResults for {plan['agents'][0]}:\n\n"
+                 "| Map | Games | Wins | Draws | Losses | Score |\n|---|---|---|---|---|---|\n")
+        for name, row in per_map.items():
+            text += (f"| {name} | {row['games']} | {row['wins']} | {row['draws']} "
+                     f"| {row['losses']} | {row['mean_score']:.3f} |\n")
         (directory / "report.md").write_text(text, encoding="utf-8")
     return report
 
@@ -213,30 +232,63 @@ def run_campaign(plan, directory, *, max_games=None, progress=None):
 
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    parser.add_argument("--opponent", choices=("ab2", "ab6"), required=True)
+    parser.add_argument("--opponent", choices=("ab2", "ab6", "mcts-v1"), required=True)
+    parser.add_argument("--agent", help="Challenger spec, e.g. mcts-v3; MCTS defaults to --iterations")
     parser.add_argument("--max-games", type=int, help="Finish at most N additional games, then stop")
     parser.add_argument("--checkpoint", type=Path, help="Default: .local/campaigns/mcts-vs-OPPONENT")
     parser.add_argument("--workers", type=int, default=2)
+    parser.add_argument("--rounds", type=int, help="4 role-balanced games per map per round; default 2 vs v1, 1 vs AB")
+    parser.add_argument("--iterations", type=int, default=100000, help="Iteration cap per MCTS decision")
+    parser.add_argument("--maps", nargs="+", type=Path, help="XML files or folders; default the four prepared maps")
+    parser.add_argument("--seed", type=int, default=20261028)
+    parser.add_argument("--max-plies", type=int, default=200)
+    parser.add_argument("--move-time", type=float, default=2.0, help="Hard allowance; 0 for fixed-iteration screening")
+    parser.add_argument("--margin", type=float, default=0.5, help="Reserve from allowance; default thinking time 1.5 s")
+    parser.add_argument("--dry-run", action="store_true", help="Validate and print the plan without starting games or writing checkpoints")
     args = parser.parse_args(argv)
-    if args.workers < 1 or (args.max_games is not None and args.max_games < 1):
-        parser.error("workers and max-games must be positive")
-    directory = args.checkpoint or ROOT / ".local" / "campaigns" / f"mcts-vs-{args.opponent}"
+    if (min(args.workers, args.iterations, args.max_plies) < 1
+            or (args.rounds is not None and args.rounds < 1)
+            or (args.max_games is not None and args.max_games < 1)):
+        parser.error("workers, iterations, max-plies, rounds and max-games must be positive")
+    against_v1 = args.opponent == "mcts-v1"
+    default_agent = "mcts-v2" if against_v1 else "mcts-memory"
+    label = args.agent.partition(":")[0].strip() if args.agent else default_agent
+    checkpoint_name = (f"{label}-vs-v1" if against_v1 else
+                       f"{label if args.agent else 'mcts'}-vs-{args.opponent}")
+    directory = args.checkpoint or ROOT / ".local" / "campaigns" / checkpoint_name
 
     def progress(done, total, result):
         if result is None:
             print(f"Saved {done}/{total} games. Workers running if games remain...", flush=True)
         else:
             score = {0: "loss", 0.5: "draw", 1: "win"}[result["a_score"]]
-            print(f"Saved {done}/{total} | {result['map_name']} | MCTS {score}", flush=True)
+            print(f"Saved {done}/{total} | {result['map_name']} | {label} {score} | {result['plies']} plies", flush=True)
 
     try:
-        names = ["mcts-memory:iterations=100000", f"{args.opponent}:{PARAMS}"]
+        challenger = args.agent or default_agent
+        name, params = parse_spec(challenger)
+        if name in ("mcts", "mcts-memory", "mcts-v1", "mcts-v2", "mcts-v3") and "iterations" not in params:
+            challenger += f"{',' if ':' in challenger else ':'}iterations={args.iterations}"
+        names = [challenger,
+                 f"mcts-v1:iterations={args.iterations}" if against_v1 else f"{args.opponent}:{PARAMS}"]
+        label = names[0].partition(":")[0]
         for name in names:
             make_agent(name)
-        maps = [(name, load_map(ROOT / ".local" / "maps" / "mcts-vs-best-ab" / (name + ".xml")))
-                for name in MAP_NAMES]
-        plan = make_plan(names, maps, workers=args.workers)
+        paths = ([file for path in args.maps for file in
+                  (sorted(path.glob("*.xml")) if path.is_dir() else [path])] if args.maps else
+                 [ROOT / ".local" / "maps" / "mcts-vs-best-ab" / (name + ".xml") for name in MAP_NAMES])
+        maps = [(path.stem, load_map(path)) for path in paths]
+        rounds = args.rounds if args.rounds is not None else (2 if against_v1 else 1)
+        plan = make_plan(names, maps, workers=args.workers, rounds=rounds, seed=args.seed,
+                         max_plies=args.max_plies, move_time=args.move_time, margin=args.margin)
         print(f"Checkpoint: {directory.resolve()}", flush=True)
+        print(f"Agents: {names[0]} vs {names[1]}", flush=True)
+        print(f"Planned: {len(plan['jobs'])} games | {len(maps)} maps | {rounds} rounds | {args.workers} workers", flush=True)
+        print(f"Thinking time: {args.move_time - args.margin if args.move_time else 0:g} s per move "
+              f"(0 = untimed), allowance {args.move_time:g} s | cap {args.max_plies} plies", flush=True)
+        if args.dry_run:
+            print("Plan validated. No games started and no checkpoint files written.")
+            return 0
         report, interrupted = run_campaign(plan, directory, max_games=args.max_games, progress=progress)
     except (OSError, ValueError, KeyError) as error:
         parser.exit(1, f"Campaign failed: {error}\nAlready-saved game files are preserved.\n")

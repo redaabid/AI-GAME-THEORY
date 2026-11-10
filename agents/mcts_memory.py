@@ -60,6 +60,10 @@ class MemoryMCTSAgent(MCTSAgent):
         super().new_game(position, species, seed)
         self.info = None
 
+    def search_options(self):
+        """Experimental subclasses can replace rollouts without copying memory."""
+        return {}
+
     def repetition_penalties(self, position, history):
         key = position_key(position)
         counts = Counter()
@@ -83,12 +87,14 @@ class MemoryMCTSAgent(MCTSAgent):
         result = search(position, config=self.config, rng=self.rng,
                         max_plies=context.max_plies, deadline=context.deadline,
                         leaf_evaluator=evaluate if self.clock else None,
-                        root_penalties=penalties)
+                        root_penalties=penalties, **self.search_options())
         self.info = {"iterations": result.iterations, "fallback": result.fallback,
                      "memory": self.memory, "clock": self.clock,
                      "population_margin": own - enemy, "repetitions": repetitions,
                      "penalized_actions": len(penalties),
                      "chosen_repeated": action_key(result.moves) in penalties}
+        if result.diagnostics:
+            self.info["search"] = result.diagnostics
         if penalties:
             LOGGER.info("Memory: margin=%d, repeats=%d, penalized=%d, chosen_repeated=%s",
                         own - enemy, repetitions, len(penalties), self.info["chosen_repeated"])

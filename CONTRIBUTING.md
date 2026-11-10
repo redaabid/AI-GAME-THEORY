@@ -42,3 +42,8 @@ Runtime search and game logic should be implemented by the team, following the
 project brief's library restrictions. The instructor has permitted AI frameworks
 for offline neural training. Document any future training dependencies separately
 so colleagues can continue running the baseline without them.
+
+For the current MCTS work on `feat/mcts-memory`, follow the
+[team handoff](docs/MCTS_TEAM_HANDOFF.md). Branch new MCTS changes from the latest
+version of that branch while it awaits integration into `main`; keep V6 as the
+reference and give each changed experiment a fresh checkpoint directory.

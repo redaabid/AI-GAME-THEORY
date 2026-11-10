@@ -1,0 +1,620 @@
+{
+  "purpose": "observed_v5_diagnostic_not_optimal_action_label",
+  "origin": {
+    "date": "2026-11-06",
+    "diagnostic_directory": "v5-full-20261106T135048452489Z",
+    "trace_file": "game-02.jsonl",
+    "trace_sha256": "1fb5a922569eba55278f46f4658a0c56554e4009ef6a9a7ff3e5ca34400197dd",
+    "seed": 20461036,
+    "reference_game": 19,
+    "max_plies": 200,
+    "agents": [
+      "mcts-v5:iterations=100000",
+      "ab2exp:depth=1,max_depth=24,width=7,extra=0,tt_size=50000"
+    ],
+    "source_sha256": {
+      "agents/__init__.py": "99e7ad3c448aedf3fe5058170813a7d327b35366f6534691f96519912ae2f4b2",
+      "agents/ab2_experiments.py": "2415f39e97afd8008be9ed6c1b2f2b8c5ea07794b8ffdc250f00d549bd91d83a",
+      "agents/ab2_routes.py": "46a9cc359130dbb407327f718fedd7e1dbf70a395701d475be6eec10782bc8ce",
+      "agents/ab2_tie.py": "6c9cc58114b1f010aee506043747665c995497d2d767ddce594323d31920086c",
+      "agents/ab_variants.py": "bed8077a39f16561f0cc666a007d19cfe92f2251559f33dbc7076f3415637ac8",
+      "agents/alphabeta.py": "18faf0e86cff7270d480d48f2986a342d1213fc9de8ee70979cad02afc27fadf",
+      "agents/builtin.py": "6a518ae464cdd0f093e00258ae24699385a0b97d7fab131285d31b9c2916e093",
+      "agents/mcts_memory.py": "6d43632147f476e9044c1d811f9f2cef83ce36269330f768cb1996ad68f2fdfa",
+      "agents/mcts_v2.py": "69f111e2720cf6f86cd7828a76ba9937faf5ac367ad8bc0c7aa984836eb387ba",
+      "agents/mcts_v3.py": "547a8366a25584556498c1245358e2265432da1c970afbded2190c457c69bfc8",
+      "agents/oep.py": "32881d91de6f00bd2e7c9abdd818a61003635fb4ff5a957e799398ec4477ab04",
+      "agents/portfolio.py": "04e3f46a3294ec15033eb83574bbc90adbc55e0c7aa3f1b459dbdc0b9ec41413",
+      "benchmark_mcts.py": "e85c7977dbeccf6075cec7ba4ea26ceda55272e33f378f3e451aa2fe2c4a7953",
+      "campaign.py": "9973d28588ebda037c8810b8846ea4e849b06b6047e18c85b9e8cb9972dc7b86",
+      "candidates.py": "e506d21f718778f9aabfe0700cab59d3994eef3f70fc93b0ac35ec61553a96c7",
+      "client.py": "0b34c450c8f5b50c17cb872b6bb31d1e5c2de840820076882a33c15a4106dbd5",
+      "combat.py": "7fb0c48bd796548593d91230a7f7422434cf597ac217ed296ff8f186456ab690",
+      "config.py": "fa7c79ddb6cbe5e5ed243f791e33db2074fd3fa0c7924937839f7d5b7c8d0218",
+      "demo_mcts_memory.py": "99370eebe58136496fcb9bc2fb3fa4f88e47cd4469245709b585fe50a10190ee",
+      "evaluate.py": "45168c7fc6603de739883d1ec94e91167f114a22b86e1a3fc32323181cb9ec24",
+      "evaluation.py": "4e6ab05321788a3be8f590b0eb1f31ebec5936b0c551b30b68794f10c8441c57",
+      "game.py": "8f96872880bfba67d1964f843f8dad257aa4ff992a851ce7c345ca09c4465fad",
+      "lookahead.py": "7ea2036f875c37a5bebd84ea4a8944e09b4ff55f92b986e9746be9f7132d270c",
+      "macro.py": "58f4e842e26647e965d644d658cae25fd2855b68f5ee1b27fc518c0936f348df",
+      "main.py": "e0a13a5afbbae435c98163ab7e46dc1690fdc8320278056c18181d38060d300f",
+      "mapgen.py": "6673ab53e1617de2fc2d08a6cb0aa34fe9782bd0f3ec294d845c9edd5cf0adf5",
+      "playbook.py": "471322171ac19114a74571ea100d5b0d1641a13dc4296f9367f84aaa0a701382",
+      "rollouts.py": "6e57615ab1bf8e3e9db22f23c092522c9840608ce040661c59d253a914549da2",
+      "search.py": "bde6405d95721cb946d3b84a663069e10afc457888040c82897aed501798857f",
+      "simulate.py": "a4fac93ce63e728e5ecd83c57a32786008ffc40728266dbf3d65611af55ea71c",
+      "simulator.py": "9af4d29a359132f3e9aadfa7291e2786d98af567ed730eeec4f056d104f4f81f",
+      "strategy.py": "66e9a8781887995bdcae942b5a5e71b7239be603c4ffe46fa89a991be10bce6e",
+      "tournament.py": "3b7c4679837cda55d2065598d6878c9a5ba78d462066ebbe411ed4519f4b9498",
+      "tune.py": "068c5e9958aa24e3d1a80ae532d95785d9f1be89a32a2855c078a3a5369a5111"
+    },
+    "v5_source_sha256": {
+      "scripts/compare_mcts_v5.py": "12633d33e4592bdc12fa0d1fa9a5dc3f16e70fe8d0cef36cd467ab3466eee9d6",
+      "scripts/mcts_v5/__init__.py": "4d6f3bd35232507289b4c3903eecac318ce4c52a26db2859f1dee50b8843b01e",
+      "scripts/mcts_v5/agent.py": "1befa9c18657b4bd4f256d22a5488e7bf5067084a2b56e88df3e89b97f1e7236",
+      "scripts/mcts_v5/value.py": "11664abbe61fc8f5e8e6a9cd7c860d291ce22c0704b491a49983e0e5ae8b28a1"
+    }
+  },
+  "state": {
+    "schema_version": 1,
+    "rows": 14,
+    "columns": 21,
+    "to_play": "vampires",
+    "ply": 79,
+    "rules_profile": "server-v3.2.1",
+    "cells": [
+      [
+        1,
+        13,
+        0,
+        0,
+        7
+      ],
+      [
+        4,
+        0,
+        14,
+        0,
+        0
+      ],
+      [
+        5,
+        0,
+        0,
+        14,
+        0
+      ],
+      [
+        5,
+        1,
+        0,
+        15,
+        0
+      ],
+      [
+        13,
+        11,
+        0,
+        0,
+        32
+      ],
+      [
+        15,
+        0,
+        0,
+        0,
+        3
+      ],
+      [
+        15,
+        12,
+        0,
+        9,
+        0
+      ],
+      [
+        16,
+        13,
+        14,
+        0,
+        0
+      ]
+    ]
+  },
+  "recorded_move": [
+    [
+      5,
+      0,
+      14,
+      6,
+      0
+    ],
+    [
+      5,
+      1,
+      15,
+      6,
+      0
+    ]
+  ],
+  "root": {
+    "algorithm": "adversarial_uct_v1",
+    "iterations": 572,
+    "candidate_set": "recruitment_turns_v1",
+    "visits": [
+      16,
+      20,
+      16,
+      16,
+      20,
+      20,
+      20,
+      16,
+      20,
+      20,
+      16,
+      18,
+      20,
+      20,
+      20,
+      17,
+      17,
+      20,
+      20,
+      20,
+      20,
+      20,
+      20,
+      20,
+      20,
+      20,
+      15,
+      21,
+      19,
+      12,
+      13
+    ],
+    "action_values": [
+      0.03391973141014741,
+      0.10584199154590623,
+      0.03391973141014741,
+      0.03391973141014741,
+      0.10893265838759943,
+      0.10584199154590623,
+      0.10584199154590623,
+      0.03391973141014741,
+      0.10893265838759943,
+      0.10893265838759943,
+      0.03391973141014741,
+      0.07058129630624782,
+      0.10893265838759943,
+      0.10893265838759943,
+      0.10893265838759943,
+      0.053410645037471796,
+      0.05873924108924875,
+      0.10452372864100892,
+      0.10893265838759943,
+      0.10893265838759943,
+      0.10893265838759943,
+      0.10893265838759943,
+      0.10893265838759943,
+      0.10893265838759943,
+      0.10893265838759943,
+      0.10893265838759943,
+      -0.0071111290364473485,
+      0.1378310516139336,
+      0.10844747180735742,
+      -0.14015159491239568,
+      -0.09291616986496204
+    ],
+    "fallback": false,
+    "candidate_actions": [
+      [
+        [
+          5,
+          0,
+          14,
+          4,
+          0
+        ],
+        [
+          5,
+          1,
+          15,
+          4,
+          0
+        ],
+        [
+          15,
+          12,
+          9,
+          16,
+          11
+        ]
+      ],
+      [
+        [
+          5,
+          0,
+          14,
+          4,
+          0
+        ],
+        [
+          5,
+          1,
+          15,
+          4,
+          0
+        ]
+      ],
+      [
+        [
+          5,
+          0,
+          14,
+          4,
+          1
+        ],
+        [
+          5,
+          1,
+          15,
+          4,
+          0
+        ],
+        [
+          15,
+          12,
+          9,
+          16,
+          11
+        ]
+      ],
+      [
+        [
+          5,
+          1,
+          15,
+          4,
+          0
+        ],
+        [
+          15,
+          12,
+          9,
+          16,
+          11
+        ]
+      ],
+      [
+        [
+          5,
+          0,
+          14,
+          4,
+          0
+        ]
+      ],
+      [
+        [
+          5,
+          1,
+          14,
+          4,
+          0
+        ]
+      ],
+      [
+        [
+          5,
+          1,
+          15,
+          4,
+          0
+        ]
+      ],
+      [
+        [
+          5,
+          0,
+          14,
+          5,
+          1
+        ],
+        [
+          15,
+          12,
+          9,
+          16,
+          11
+        ]
+      ],
+      [
+        [
+          5,
+          0,
+          14,
+          5,
+          1
+        ]
+      ],
+      [
+        [
+          5,
+          1,
+          15,
+          5,
+          0
+        ]
+      ],
+      [
+        [
+          15,
+          12,
+          9,
+          16,
+          11
+        ]
+      ],
+      [
+        [
+          15,
+          12,
+          9,
+          16,
+          12
+        ]
+      ],
+      [
+        [
+          5,
+          0,
+          14,
+          4,
+          1
+        ]
+      ],
+      [
+        [
+          5,
+          0,
+          14,
+          4,
+          1
+        ],
+        [
+          5,
+          1,
+          15,
+          4,
+          1
+        ]
+      ],
+      [
+        [
+          5,
+          1,
+          15,
+          4,
+          1
+        ]
+      ],
+      [
+        [
+          15,
+          12,
+          9,
+          14,
+          13
+        ]
+      ],
+      [
+        [
+          15,
+          12,
+          9,
+          15,
+          11
+        ]
+      ],
+      [
+        [
+          15,
+          12,
+          9,
+          15,
+          13
+        ]
+      ],
+      [
+        [
+          5,
+          0,
+          14,
+          6,
+          0
+        ]
+      ],
+      [
+        [
+          5,
+          0,
+          14,
+          6,
+          1
+        ]
+      ],
+      [
+        [
+          5,
+          1,
+          14,
+          5,
+          2
+        ]
+      ],
+      [
+        [
+          5,
+          1,
+          15,
+          4,
+          2
+        ]
+      ],
+      [
+        [
+          5,
+          1,
+          15,
+          5,
+          2
+        ]
+      ],
+      [
+        [
+          5,
+          1,
+          15,
+          6,
+          0
+        ]
+      ],
+      [
+        [
+          5,
+          1,
+          15,
+          6,
+          1
+        ]
+      ],
+      [
+        [
+          5,
+          1,
+          15,
+          6,
+          2
+        ]
+      ],
+      [
+        [
+          15,
+          12,
+          9,
+          16,
+          13
+        ]
+      ],
+      [
+        [
+          5,
+          0,
+          14,
+          6,
+          0
+        ],
+        [
+          5,
+          1,
+          15,
+          6,
+          0
+        ]
+      ],
+      [
+        [
+          5,
+          0,
+          14,
+          6,
+          1
+        ],
+        [
+          5,
+          1,
+          15,
+          6,
+          1
+        ]
+      ],
+      [
+        [
+          15,
+          12,
+          9,
+          14,
+          11
+        ]
+      ],
+      [
+        [
+          15,
+          12,
+          9,
+          14,
+          12
+        ]
+      ]
+    ],
+    "chosen_moves": [
+      [
+        5,
+        0,
+        14,
+        6,
+        0
+      ],
+      [
+        5,
+        1,
+        15,
+        6,
+        0
+      ]
+    ]
+  },
+  "agent_info": {
+    "version": "v5",
+    "feasibility": true,
+    "leaf_evaluation": "recruitment-feasibility-v1",
+    "iterations": 572,
+    "fallback": false,
+    "memory": true,
+    "clock": true,
+    "population_margin": -4,
+    "repetitions": 0,
+    "penalized_actions": 0,
+    "chosen_repeated": false,
+    "search": {
+      "iterations": 572,
+      "tree_depth_total": 1369,
+      "rollouts": 572,
+      "rollout_plies": 3432,
+      "extension_plies": 0,
+      "coordinated_turns": 0,
+      "loop_cutoffs": 0,
+      "candidate_calls": 280,
+      "candidate_wall_seconds": 0.37718349986243993,
+      "candidate_cpu_seconds": 0.328125,
+      "rollout_wall_seconds": 0.9466285999224056,
+      "rollout_cpu_seconds": 0.921875,
+      "search_wall_seconds": 1.4999240000033751,
+      "search_cpu_seconds": 1.453125,
+      "deadline_stops": 1,
+      "tree_depth_max": 3,
+      "rollout_depth_max": 6
+    }
+  },
+  "static_root_evaluation": {
+    "v1": 0.09043426918006228,
+    "v5": 0.09043426918006228
+  },
+  "limitations": [
+    "One new timed game, not an exact replay of the earlier campaign.",
+    "An available guaranteed recruitment is not proof of a globally winning continuation.",
+    "Only moves and battles replay exactly; per-decision agent RNG state is not stored."
+  ]
+}

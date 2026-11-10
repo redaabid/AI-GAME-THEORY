@@ -1,0 +1,375 @@
+{
+  "schema_version": 1,
+  "purpose": "recorded_recruitment_stall_and_counterfactual_probe_not_optimal_action_label",
+  "origin": {
+    "date": "2026-11-06",
+    "trace_file": "game-01.jsonl",
+    "trace_sha256": "ee9c388fc10f9acb438d0d34e0421b41f09d91611b267521b6b315a49c749fef",
+    "diagnostic_script_sha256": "77ea8587b40ee67b8e2f57e89ac80a65a7fe214cfb386b71ae59a40ab5598148",
+    "ply": 16,
+    "agents": [
+      "mcts-v1:iterations=100000",
+      "ab2exp:depth=1,max_depth=24,width=7,extra=0,tt_size=50000"
+    ],
+    "relevant_source_sha256": {
+      "candidates.py": "e506d21f718778f9aabfe0700cab59d3994eef3f70fc93b0ac35ec61553a96c7",
+      "combat.py": "7fb0c48bd796548593d91230a7f7422434cf597ac217ed296ff8f186456ab690",
+      "search.py": "bde6405d95721cb946d3b84a663069e10afc457888040c82897aed501798857f",
+      "simulator.py": "9af4d29a359132f3e9aadfa7291e2786d98af567ed730eeec4f056d104f4f81f",
+      "strategy.py": "66e9a8781887995bdcae942b5a5e71b7239be603c4ffe46fa89a991be10bce6e"
+    }
+  },
+  "state": {
+    "schema_version": 1,
+    "rows": 15,
+    "columns": 29,
+    "to_play": "vampires",
+    "ply": 16,
+    "rules_profile": "server-v3.2.1",
+    "cells": [
+      [
+        0,
+        14,
+        2,
+        0,
+        0
+      ],
+      [
+        4,
+        8,
+        0,
+        0,
+        2
+      ],
+      [
+        8,
+        4,
+        0,
+        0,
+        8
+      ],
+      [
+        10,
+        3,
+        4,
+        0,
+        0
+      ],
+      [
+        14,
+        7,
+        20,
+        0,
+        0
+      ],
+      [
+        18,
+        11,
+        4,
+        0,
+        0
+      ],
+      [
+        20,
+        11,
+        0,
+        10,
+        0
+      ],
+      [
+        28,
+        0,
+        2,
+        0,
+        0
+      ]
+    ]
+  },
+  "target": {
+    "coordinate": [
+      18,
+      11
+    ],
+    "humans": 4,
+    "distance_before": 2
+  },
+  "recorded_move": [
+    [
+      20,
+      11,
+      10,
+      21,
+      10
+    ]
+  ],
+  "recorded_root": {
+    "algorithm": "adversarial_uct_v1",
+    "iterations": 748,
+    "candidate_set": "recruitment_turns_v1",
+    "visits": [
+      14,
+      34,
+      40,
+      45,
+      25,
+      47,
+      49,
+      165,
+      165,
+      164
+    ],
+    "action_values": [
+      -0.2985456120347975,
+      0.024947156375665996,
+      0.08711844061272796,
+      0.12644226184734003,
+      -0.055497531209200604,
+      0.13378716517037773,
+      0.1495750701362699,
+      0.38492808490156877,
+      0.3849278671959954,
+      0.38531492592425287
+    ],
+    "fallback": false,
+    "candidate_actions": [
+      [
+        [
+          20,
+          11,
+          4,
+          19,
+          10
+        ]
+      ],
+      [
+        [
+          20,
+          11,
+          10,
+          19,
+          10
+        ]
+      ],
+      [
+        [
+          20,
+          11,
+          10,
+          19,
+          11
+        ]
+      ],
+      [
+        [
+          20,
+          11,
+          10,
+          19,
+          12
+        ]
+      ],
+      [
+        [
+          20,
+          11,
+          2,
+          19,
+          10
+        ]
+      ],
+      [
+        [
+          20,
+          11,
+          10,
+          20,
+          10
+        ]
+      ],
+      [
+        [
+          20,
+          11,
+          10,
+          20,
+          12
+        ]
+      ],
+      [
+        [
+          20,
+          11,
+          10,
+          21,
+          10
+        ]
+      ],
+      [
+        [
+          20,
+          11,
+          10,
+          21,
+          11
+        ]
+      ],
+      [
+        [
+          20,
+          11,
+          10,
+          21,
+          12
+        ]
+      ]
+    ],
+    "chosen_moves": [
+      [
+        20,
+        11,
+        10,
+        21,
+        10
+      ]
+    ]
+  },
+  "probe": {
+    "search_config": {
+      "iterations": 512,
+      "time_limit": null,
+      "tree_depth": 12,
+      "rollout_depth": 6,
+      "max_candidates": 32,
+      "exploration": 1.4
+    },
+    "ablation": "Ignore human stacks larger than both species current total populations only in leaf evaluation; transition rules and candidates unchanged.",
+    "results": [
+      {
+        "seed": 0,
+        "evaluation": "original",
+        "moves": [
+          [
+            20,
+            11,
+            10,
+            21,
+            10
+          ]
+        ],
+        "distance_first_destination_to_village": 3,
+        "iterations": 512
+      },
+      {
+        "seed": 0,
+        "evaluation": "feasibility_ablation",
+        "moves": [
+          [
+            20,
+            11,
+            4,
+            19,
+            10
+          ]
+        ],
+        "distance_first_destination_to_village": 1,
+        "iterations": 512
+      },
+      {
+        "seed": 1,
+        "evaluation": "original",
+        "moves": [
+          [
+            20,
+            11,
+            10,
+            21,
+            10
+          ]
+        ],
+        "distance_first_destination_to_village": 3,
+        "iterations": 512
+      },
+      {
+        "seed": 1,
+        "evaluation": "feasibility_ablation",
+        "moves": [
+          [
+            20,
+            11,
+            4,
+            19,
+            10
+          ]
+        ],
+        "distance_first_destination_to_village": 1,
+        "iterations": 512
+      },
+      {
+        "seed": 2,
+        "evaluation": "original",
+        "moves": [
+          [
+            20,
+            11,
+            10,
+            21,
+            10
+          ]
+        ],
+        "distance_first_destination_to_village": 3,
+        "iterations": 512
+      },
+      {
+        "seed": 2,
+        "evaluation": "feasibility_ablation",
+        "moves": [
+          [
+            20,
+            11,
+            4,
+            19,
+            10
+          ]
+        ],
+        "distance_first_destination_to_village": 1,
+        "iterations": 512
+      },
+      {
+        "seed": 3,
+        "evaluation": "original",
+        "moves": [
+          [
+            20,
+            11,
+            10,
+            21,
+            10
+          ]
+        ],
+        "distance_first_destination_to_village": 3,
+        "iterations": 512
+      },
+      {
+        "seed": 3,
+        "evaluation": "feasibility_ablation",
+        "moves": [
+          [
+            20,
+            11,
+            4,
+            19,
+            10
+          ]
+        ],
+        "distance_first_destination_to_village": 1,
+        "iterations": 512
+      }
+    ]
+  },
+  "limitations": [
+    "A new opening prefix, not a replay of the completed 32-game campaign.",
+    "The selected alternative is not proven globally optimal.",
+    "The feasibility ablation changes leaf evaluation only; risky human battles remain legal.",
+    "Counterfactual searches do not establish match strength or a validated production agent."
+  ]
+}

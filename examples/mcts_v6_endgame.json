@@ -1,0 +1,1332 @@
+{
+  "purpose": "Recorded diagnostic cases, not optimal-action labels. Turn RNG state was not recorded.",
+  "origin": {
+    "date": "2026-11-06",
+    "trace": ".local/diagnostics/v5-full-20261106T135048452489Z/game-02.jsonl",
+    "trace_sha256": "1fb5a922569eba55278f46f4658a0c56554e4009ef6a9a7ff3e5ca34400197dd",
+    "max_plies": 200
+  },
+  "cases": {
+    "late_attack": {
+      "state": {
+        "schema_version": 1,
+        "rows": 14,
+        "columns": 21,
+        "to_play": "vampires",
+        "ply": 167,
+        "rules_profile": "server-v3.2.1",
+        "cells": [
+          [
+            0,
+            4,
+            0,
+            0,
+            7
+          ],
+          [
+            10,
+            0,
+            0,
+            0,
+            3
+          ],
+          [
+            19,
+            9,
+            0,
+            52,
+            0
+          ],
+          [
+            20,
+            9,
+            0,
+            0,
+            46
+          ]
+        ]
+      },
+      "attack": [
+        [
+          19,
+          9,
+          52,
+          20,
+          9
+        ]
+      ],
+      "observed_moves": [
+        [
+          19,
+          9,
+          52,
+          19,
+          8
+        ]
+      ],
+      "observed_root": {
+        "algorithm": "adversarial_uct_v1",
+        "iterations": 1608,
+        "candidate_set": "recruitment_turns_v1",
+        "visits": [
+          241,
+          177,
+          146,
+          167,
+          279,
+          230,
+          192,
+          176
+        ],
+        "action_values": [
+          -0.0009608273528888271,
+          -0.03922833446360631,
+          -0.06959187511172203,
+          -0.0474595447279382,
+          0.01803083811447096,
+          -0.0008405870869250869,
+          -0.028022334723182125,
+          -0.03993912591485648
+        ],
+        "fallback": false,
+        "candidate_actions": [
+          [
+            [
+              19,
+              9,
+              52,
+              20,
+              9
+            ]
+          ],
+          [
+            [
+              19,
+              9,
+              52,
+              18,
+              8
+            ]
+          ],
+          [
+            [
+              19,
+              9,
+              52,
+              18,
+              9
+            ]
+          ],
+          [
+            [
+              19,
+              9,
+              52,
+              18,
+              10
+            ]
+          ],
+          [
+            [
+              19,
+              9,
+              52,
+              19,
+              8
+            ]
+          ],
+          [
+            [
+              19,
+              9,
+              52,
+              19,
+              10
+            ]
+          ],
+          [
+            [
+              19,
+              9,
+              52,
+              20,
+              8
+            ]
+          ],
+          [
+            [
+              19,
+              9,
+              52,
+              20,
+              10
+            ]
+          ]
+        ],
+        "chosen_moves": [
+          [
+            19,
+            9,
+            52,
+            19,
+            8
+          ]
+        ]
+      }
+    },
+    "early_trap": {
+      "state": {
+        "schema_version": 1,
+        "rows": 14,
+        "columns": 21,
+        "to_play": "vampires",
+        "ply": 25,
+        "rules_profile": "server-v3.2.1",
+        "cells": [
+          [
+            1,
+            9,
+            1,
+            0,
+            0
+          ],
+          [
+            2,
+            5,
+            1,
+            0,
+            0
+          ],
+          [
+            3,
+            6,
+            0,
+            0,
+            1
+          ],
+          [
+            3,
+            7,
+            0,
+            0,
+            4
+          ],
+          [
+            4,
+            0,
+            14,
+            0,
+            0
+          ],
+          [
+            7,
+            0,
+            13,
+            0,
+            0
+          ],
+          [
+            7,
+            2,
+            0,
+            16,
+            0
+          ],
+          [
+            12,
+            11,
+            0,
+            0,
+            13
+          ],
+          [
+            13,
+            12,
+            0,
+            0,
+            19
+          ],
+          [
+            14,
+            11,
+            0,
+            0,
+            1
+          ],
+          [
+            15,
+            12,
+            0,
+            9,
+            0
+          ],
+          [
+            16,
+            13,
+            14,
+            0,
+            0
+          ],
+          [
+            18,
+            8,
+            1,
+            0,
+            0
+          ],
+          [
+            19,
+            4,
+            1,
+            0,
+            0
+          ]
+        ]
+      },
+      "attack": [
+        [
+          15,
+          12,
+          9,
+          14,
+          11
+        ]
+      ],
+      "observed_moves": [
+        [
+          7,
+          2,
+          16,
+          8,
+          1
+        ]
+      ],
+      "observed_root": {
+        "algorithm": "adversarial_uct_v1",
+        "iterations": 387,
+        "candidate_set": "recruitment_turns_v1",
+        "visits": [
+          13,
+          13,
+          13,
+          15,
+          15,
+          15,
+          15,
+          16,
+          14,
+          12,
+          15,
+          15,
+          13,
+          14,
+          14,
+          14,
+          13,
+          13,
+          14,
+          14,
+          15,
+          15,
+          15,
+          15,
+          12,
+          9,
+          9,
+          8,
+          9
+        ],
+        "action_values": [
+          -0.0030869028754728052,
+          -0.003082578133097727,
+          0.021572256420869476,
+          0.09186423377773018,
+          0.0918586340405441,
+          0.09185610804002166,
+          0.0918617077772077,
+          0.12227272330769003,
+          0.04491447124072597,
+          -0.003965606118838435,
+          0.09729290774127583,
+          0.09185737029858165,
+          0.028417962920011728,
+          0.04787481304027923,
+          0.05899529562130128,
+          0.050583604997094765,
+          0.015601918976983402,
+          0.013914315007129826,
+          0.046907980831061895,
+          0.046907980831061895,
+          0.09726875618476767,
+          0.09726624897339246,
+          0.09726624897339246,
+          0.0918373710298739,
+          -0.018788657377469636,
+          -0.18925691353380014,
+          -0.18788381892552802,
+          -0.23101347418725973,
+          -0.20825728419861086
+        ],
+        "fallback": false,
+        "candidate_actions": [
+          [
+            [
+              7,
+              2,
+              16,
+              6,
+              1
+            ],
+            [
+              15,
+              12,
+              9,
+              16,
+              11
+            ]
+          ],
+          [
+            [
+              7,
+              2,
+              16,
+              7,
+              1
+            ],
+            [
+              15,
+              12,
+              9,
+              16,
+              11
+            ]
+          ],
+          [
+            [
+              7,
+              2,
+              16,
+              8,
+              1
+            ],
+            [
+              15,
+              12,
+              9,
+              16,
+              11
+            ]
+          ],
+          [
+            [
+              7,
+              2,
+              13,
+              6,
+              1
+            ]
+          ],
+          [
+            [
+              7,
+              2,
+              14,
+              6,
+              1
+            ]
+          ],
+          [
+            [
+              7,
+              2,
+              16,
+              6,
+              1
+            ]
+          ],
+          [
+            [
+              7,
+              2,
+              16,
+              7,
+              1
+            ]
+          ],
+          [
+            [
+              7,
+              2,
+              16,
+              8,
+              1
+            ]
+          ],
+          [
+            [
+              7,
+              2,
+              1,
+              6,
+              1
+            ]
+          ],
+          [
+            [
+              15,
+              12,
+              9,
+              16,
+              11
+            ]
+          ],
+          [
+            [
+              7,
+              2,
+              16,
+              6,
+              2
+            ]
+          ],
+          [
+            [
+              7,
+              2,
+              16,
+              8,
+              2
+            ]
+          ],
+          [
+            [
+              15,
+              12,
+              9,
+              16,
+              12
+            ]
+          ],
+          [
+            [
+              15,
+              12,
+              1,
+              14,
+              11
+            ]
+          ],
+          [
+            [
+              15,
+              12,
+              9,
+              15,
+              13
+            ]
+          ],
+          [
+            [
+              15,
+              12,
+              1,
+              15,
+              11
+            ]
+          ],
+          [
+            [
+              15,
+              12,
+              9,
+              15,
+              11
+            ]
+          ],
+          [
+            [
+              15,
+              12,
+              1,
+              14,
+              11
+            ],
+            [
+              15,
+              12,
+              1,
+              15,
+              11
+            ]
+          ],
+          [
+            [
+              7,
+              2,
+              1,
+              6,
+              1
+            ],
+            [
+              7,
+              2,
+              14,
+              6,
+              3
+            ]
+          ],
+          [
+            [
+              7,
+              2,
+              2,
+              6,
+              1
+            ],
+            [
+              7,
+              2,
+              14,
+              6,
+              3
+            ]
+          ],
+          [
+            [
+              7,
+              2,
+              14,
+              6,
+              3
+            ]
+          ],
+          [
+            [
+              7,
+              2,
+              16,
+              6,
+              3
+            ]
+          ],
+          [
+            [
+              7,
+              2,
+              16,
+              7,
+              3
+            ]
+          ],
+          [
+            [
+              7,
+              2,
+              16,
+              8,
+              3
+            ]
+          ],
+          [
+            [
+              15,
+              12,
+              9,
+              16,
+              13
+            ]
+          ],
+          [
+            [
+              15,
+              12,
+              1,
+              15,
+              11
+            ],
+            [
+              15,
+              12,
+              8,
+              14,
+              11
+            ]
+          ],
+          [
+            [
+              15,
+              12,
+              9,
+              14,
+              11
+            ]
+          ],
+          [
+            [
+              15,
+              12,
+              9,
+              14,
+              12
+            ]
+          ],
+          [
+            [
+              15,
+              12,
+              9,
+              14,
+              13
+            ]
+          ]
+        ],
+        "chosen_moves": [
+          [
+            7,
+            2,
+            16,
+            8,
+            1
+          ]
+        ]
+      }
+    }
+  },
+  "probe": {
+    "date": "2026-11-06",
+    "max_plies": 200,
+    "search_config": {
+      "iterations": 1024,
+      "time_limit": null,
+      "tree_depth": 12,
+      "rollout_depth": 6,
+      "max_candidates": 32,
+      "exploration": 1.4
+    },
+    "endgame_window": 40,
+    "sequence": "Seeds 0-3 on both cases, then seeds 4-11 on the late case without configuration changes. No recorded own-turn history supplied.",
+    "source_sha256": {
+      "agents/__init__.py": "99e7ad3c448aedf3fe5058170813a7d327b35366f6534691f96519912ae2f4b2",
+      "agents/ab2_experiments.py": "2415f39e97afd8008be9ed6c1b2f2b8c5ea07794b8ffdc250f00d549bd91d83a",
+      "agents/ab2_routes.py": "46a9cc359130dbb407327f718fedd7e1dbf70a395701d475be6eec10782bc8ce",
+      "agents/ab2_tie.py": "6c9cc58114b1f010aee506043747665c995497d2d767ddce594323d31920086c",
+      "agents/ab_variants.py": "bed8077a39f16561f0cc666a007d19cfe92f2251559f33dbc7076f3415637ac8",
+      "agents/alphabeta.py": "18faf0e86cff7270d480d48f2986a342d1213fc9de8ee70979cad02afc27fadf",
+      "agents/builtin.py": "6a518ae464cdd0f093e00258ae24699385a0b97d7fab131285d31b9c2916e093",
+      "agents/mcts_memory.py": "6d43632147f476e9044c1d811f9f2cef83ce36269330f768cb1996ad68f2fdfa",
+      "agents/mcts_v2.py": "69f111e2720cf6f86cd7828a76ba9937faf5ac367ad8bc0c7aa984836eb387ba",
+      "agents/mcts_v3.py": "547a8366a25584556498c1245358e2265432da1c970afbded2190c457c69bfc8",
+      "agents/oep.py": "32881d91de6f00bd2e7c9abdd818a61003635fb4ff5a957e799398ec4477ab04",
+      "agents/portfolio.py": "04e3f46a3294ec15033eb83574bbc90adbc55e0c7aa3f1b459dbdc0b9ec41413",
+      "benchmark_mcts.py": "e85c7977dbeccf6075cec7ba4ea26ceda55272e33f378f3e451aa2fe2c4a7953",
+      "campaign.py": "9973d28588ebda037c8810b8846ea4e849b06b6047e18c85b9e8cb9972dc7b86",
+      "candidates.py": "e506d21f718778f9aabfe0700cab59d3994eef3f70fc93b0ac35ec61553a96c7",
+      "client.py": "0b34c450c8f5b50c17cb872b6bb31d1e5c2de840820076882a33c15a4106dbd5",
+      "combat.py": "7fb0c48bd796548593d91230a7f7422434cf597ac217ed296ff8f186456ab690",
+      "config.py": "fa7c79ddb6cbe5e5ed243f791e33db2074fd3fa0c7924937839f7d5b7c8d0218",
+      "demo_mcts_memory.py": "99370eebe58136496fcb9bc2fb3fa4f88e47cd4469245709b585fe50a10190ee",
+      "evaluate.py": "45168c7fc6603de739883d1ec94e91167f114a22b86e1a3fc32323181cb9ec24",
+      "evaluation.py": "4e6ab05321788a3be8f590b0eb1f31ebec5936b0c551b30b68794f10c8441c57",
+      "game.py": "8f96872880bfba67d1964f843f8dad257aa4ff992a851ce7c345ca09c4465fad",
+      "lookahead.py": "7ea2036f875c37a5bebd84ea4a8944e09b4ff55f92b986e9746be9f7132d270c",
+      "macro.py": "58f4e842e26647e965d644d658cae25fd2855b68f5ee1b27fc518c0936f348df",
+      "main.py": "e0a13a5afbbae435c98163ab7e46dc1690fdc8320278056c18181d38060d300f",
+      "mapgen.py": "6673ab53e1617de2fc2d08a6cb0aa34fe9782bd0f3ec294d845c9edd5cf0adf5",
+      "playbook.py": "471322171ac19114a74571ea100d5b0d1641a13dc4296f9367f84aaa0a701382",
+      "rollouts.py": "6e57615ab1bf8e3e9db22f23c092522c9840608ce040661c59d253a914549da2",
+      "search.py": "bde6405d95721cb946d3b84a663069e10afc457888040c82897aed501798857f",
+      "simulate.py": "a4fac93ce63e728e5ecd83c57a32786008ffc40728266dbf3d65611af55ea71c",
+      "simulator.py": "9af4d29a359132f3e9aadfa7291e2786d98af567ed730eeec4f056d104f4f81f",
+      "strategy.py": "66e9a8781887995bdcae942b5a5e71b7239be603c4ffe46fa89a991be10bce6e",
+      "tournament.py": "3b7c4679837cda55d2065598d6878c9a5ba78d462066ebbe411ed4519f4b9498",
+      "tune.py": "068c5e9958aa24e3d1a80ae532d95785d9f1be89a32a2855c078a3a5369a5111"
+    },
+    "v6_source_sha256": {
+      "scripts/compare_mcts_v6.py": "19e00f9f54a690c9a3b0e5b2a85699f724e89b27343d5dbcca6a9bca54f4ce1b",
+      "scripts/mcts_v6/__init__.py": "22ceaf819fe6145e8dc4d3cd5a81d34d8341c2e200c49b416624a11be72e791a",
+      "scripts/mcts_v6/agent.py": "e142fa3117f3a39b104aa46efda0e80ab945ee26475efce27862f763f5d5422e",
+      "scripts/mcts_v6/value.py": "4f50fe9eca222b417d55fc35e135412bcfae53dda7aa31dcbf55464d8d1db08a",
+      "scripts/mcts_v5/__init__.py": "4d6f3bd35232507289b4c3903eecac318ce4c52a26db2859f1dee50b8843b01e",
+      "scripts/mcts_v5/agent.py": "1befa9c18657b4bd4f256d22a5488e7bf5067084a2b56e88df3e89b97f1e7236",
+      "scripts/mcts_v5/value.py": "11664abbe61fc8f5e8e6a9cd7c860d291ce22c0704b491a49983e0e5ae8b28a1"
+    },
+    "results": [
+      {
+        "case": "late_attack",
+        "seed": 0,
+        "version": "v5",
+        "moves": [
+          [
+            19,
+            9,
+            52,
+            20,
+            9
+          ]
+        ],
+        "attack_visits": 193,
+        "attack_mean": 0.04770469243887069,
+        "chosen_visits": 193,
+        "chosen_mean": 0.04770469243887069
+      },
+      {
+        "case": "late_attack",
+        "seed": 0,
+        "version": "v6",
+        "moves": [
+          [
+            19,
+            9,
+            52,
+            20,
+            9
+          ]
+        ],
+        "attack_visits": 697,
+        "attack_mean": 0.07642165547917272,
+        "chosen_visits": 697,
+        "chosen_mean": 0.07642165547917272
+      },
+      {
+        "case": "late_attack",
+        "seed": 1,
+        "version": "v5",
+        "moves": [
+          [
+            19,
+            9,
+            52,
+            20,
+            9
+          ]
+        ],
+        "attack_visits": 227,
+        "attack_mean": 0.08221198414788984,
+        "chosen_visits": 227,
+        "chosen_mean": 0.08221198414788984
+      },
+      {
+        "case": "late_attack",
+        "seed": 1,
+        "version": "v6",
+        "moves": [
+          [
+            19,
+            9,
+            52,
+            20,
+            9
+          ]
+        ],
+        "attack_visits": 748,
+        "attack_mean": 0.11275597022113852,
+        "chosen_visits": 748,
+        "chosen_mean": 0.11275597022113852
+      },
+      {
+        "case": "late_attack",
+        "seed": 2,
+        "version": "v5",
+        "moves": [
+          [
+            19,
+            9,
+            52,
+            20,
+            9
+          ]
+        ],
+        "attack_visits": 229,
+        "attack_mean": 0.08099342395165601,
+        "chosen_visits": 229,
+        "chosen_mean": 0.08099342395165601
+      },
+      {
+        "case": "late_attack",
+        "seed": 2,
+        "version": "v6",
+        "moves": [
+          [
+            19,
+            9,
+            52,
+            20,
+            9
+          ]
+        ],
+        "attack_visits": 754,
+        "attack_mean": 0.12119557185013488,
+        "chosen_visits": 754,
+        "chosen_mean": 0.12119557185013488
+      },
+      {
+        "case": "late_attack",
+        "seed": 3,
+        "version": "v5",
+        "moves": [
+          [
+            19,
+            9,
+            52,
+            20,
+            8
+          ]
+        ],
+        "attack_visits": 175,
+        "attack_mean": 0.02911459016121807,
+        "chosen_visits": 176,
+        "chosen_mean": 0.03351901828047402
+      },
+      {
+        "case": "late_attack",
+        "seed": 3,
+        "version": "v6",
+        "moves": [
+          [
+            19,
+            9,
+            52,
+            20,
+            9
+          ]
+        ],
+        "attack_visits": 736,
+        "attack_mean": 0.11893561518355596,
+        "chosen_visits": 736,
+        "chosen_mean": 0.11893561518355596
+      },
+      {
+        "case": "early_trap",
+        "seed": 0,
+        "version": "v5",
+        "moves": [
+          [
+            7,
+            2,
+            16,
+            8,
+            1
+          ]
+        ],
+        "attack_visits": 22,
+        "attack_mean": -0.12625357432740367,
+        "chosen_visits": 50,
+        "chosen_mean": 0.13628533706339122
+      },
+      {
+        "case": "early_trap",
+        "seed": 0,
+        "version": "v6",
+        "moves": [
+          [
+            7,
+            2,
+            16,
+            8,
+            1
+          ]
+        ],
+        "attack_visits": 22,
+        "attack_mean": -0.12625357432740367,
+        "chosen_visits": 50,
+        "chosen_mean": 0.13628533706339122
+      },
+      {
+        "case": "early_trap",
+        "seed": 1,
+        "version": "v5",
+        "moves": [
+          [
+            7,
+            2,
+            16,
+            8,
+            1
+          ]
+        ],
+        "attack_visits": 22,
+        "attack_mean": -0.12625357432740367,
+        "chosen_visits": 50,
+        "chosen_mean": 0.13628533706339122
+      },
+      {
+        "case": "early_trap",
+        "seed": 1,
+        "version": "v6",
+        "moves": [
+          [
+            7,
+            2,
+            16,
+            8,
+            1
+          ]
+        ],
+        "attack_visits": 22,
+        "attack_mean": -0.12625357432740367,
+        "chosen_visits": 50,
+        "chosen_mean": 0.13628533706339122
+      },
+      {
+        "case": "early_trap",
+        "seed": 2,
+        "version": "v5",
+        "moves": [
+          [
+            7,
+            2,
+            16,
+            8,
+            1
+          ]
+        ],
+        "attack_visits": 22,
+        "attack_mean": -0.12625357432740367,
+        "chosen_visits": 50,
+        "chosen_mean": 0.13628533706339122
+      },
+      {
+        "case": "early_trap",
+        "seed": 2,
+        "version": "v6",
+        "moves": [
+          [
+            7,
+            2,
+            16,
+            8,
+            1
+          ]
+        ],
+        "attack_visits": 22,
+        "attack_mean": -0.12625357432740367,
+        "chosen_visits": 50,
+        "chosen_mean": 0.13628533706339122
+      },
+      {
+        "case": "early_trap",
+        "seed": 3,
+        "version": "v5",
+        "moves": [
+          [
+            7,
+            2,
+            16,
+            8,
+            1
+          ]
+        ],
+        "attack_visits": 22,
+        "attack_mean": -0.12625357432740367,
+        "chosen_visits": 50,
+        "chosen_mean": 0.13628533706339122
+      },
+      {
+        "case": "early_trap",
+        "seed": 3,
+        "version": "v6",
+        "moves": [
+          [
+            7,
+            2,
+            16,
+            8,
+            1
+          ]
+        ],
+        "attack_visits": 22,
+        "attack_mean": -0.12625357432740367,
+        "chosen_visits": 50,
+        "chosen_mean": 0.13628533706339122
+      },
+      {
+        "case": "late_attack",
+        "seed": 4,
+        "version": "v5",
+        "moves": [
+          [
+            19,
+            9,
+            52,
+            20,
+            9
+          ]
+        ],
+        "attack_visits": 192,
+        "attack_mean": 0.028580501008908066,
+        "chosen_visits": 192,
+        "chosen_mean": 0.028580501008908066
+      },
+      {
+        "case": "late_attack",
+        "seed": 4,
+        "version": "v6",
+        "moves": [
+          [
+            19,
+            9,
+            52,
+            20,
+            9
+          ]
+        ],
+        "attack_visits": 714,
+        "attack_mean": 0.10367582682891581,
+        "chosen_visits": 714,
+        "chosen_mean": 0.10367582682891581
+      },
+      {
+        "case": "late_attack",
+        "seed": 5,
+        "version": "v5",
+        "moves": [
+          [
+            19,
+            9,
+            52,
+            20,
+            9
+          ]
+        ],
+        "attack_visits": 264,
+        "attack_mean": 0.05609224497166906,
+        "chosen_visits": 264,
+        "chosen_mean": 0.05609224497166906
+      },
+      {
+        "case": "late_attack",
+        "seed": 5,
+        "version": "v6",
+        "moves": [
+          [
+            19,
+            9,
+            52,
+            20,
+            9
+          ]
+        ],
+        "attack_visits": 710,
+        "attack_mean": 0.11142884081891133,
+        "chosen_visits": 710,
+        "chosen_mean": 0.11142884081891133
+      },
+      {
+        "case": "late_attack",
+        "seed": 6,
+        "version": "v5",
+        "moves": [
+          [
+            19,
+            9,
+            52,
+            20,
+            8
+          ]
+        ],
+        "attack_visits": 144,
+        "attack_mean": 0.005409841375790074,
+        "chosen_visits": 179,
+        "chosen_mean": 0.018459509167832608
+      },
+      {
+        "case": "late_attack",
+        "seed": 6,
+        "version": "v6",
+        "moves": [
+          [
+            19,
+            9,
+            52,
+            20,
+            9
+          ]
+        ],
+        "attack_visits": 715,
+        "attack_mean": 0.1212775094709571,
+        "chosen_visits": 715,
+        "chosen_mean": 0.1212775094709571
+      },
+      {
+        "case": "late_attack",
+        "seed": 7,
+        "version": "v5",
+        "moves": [
+          [
+            19,
+            9,
+            52,
+            20,
+            9
+          ]
+        ],
+        "attack_visits": 194,
+        "attack_mean": 0.01590546589862011,
+        "chosen_visits": 194,
+        "chosen_mean": 0.01590546589862011
+      },
+      {
+        "case": "late_attack",
+        "seed": 7,
+        "version": "v6",
+        "moves": [
+          [
+            19,
+            9,
+            52,
+            20,
+            9
+          ]
+        ],
+        "attack_visits": 714,
+        "attack_mean": 0.11031613305391919,
+        "chosen_visits": 714,
+        "chosen_mean": 0.11031613305391919
+      },
+      {
+        "case": "late_attack",
+        "seed": 8,
+        "version": "v5",
+        "moves": [
+          [
+            19,
+            9,
+            52,
+            20,
+            9
+          ]
+        ],
+        "attack_visits": 208,
+        "attack_mean": 0.05311263906179834,
+        "chosen_visits": 208,
+        "chosen_mean": 0.05311263906179834
+      },
+      {
+        "case": "late_attack",
+        "seed": 8,
+        "version": "v6",
+        "moves": [
+          [
+            19,
+            9,
+            52,
+            20,
+            9
+          ]
+        ],
+        "attack_visits": 768,
+        "attack_mean": 0.13202235750157873,
+        "chosen_visits": 768,
+        "chosen_mean": 0.13202235750157873
+      },
+      {
+        "case": "late_attack",
+        "seed": 9,
+        "version": "v5",
+        "moves": [
+          [
+            19,
+            9,
+            52,
+            20,
+            9
+          ]
+        ],
+        "attack_visits": 206,
+        "attack_mean": 0.03243699644812828,
+        "chosen_visits": 206,
+        "chosen_mean": 0.03243699644812828
+      },
+      {
+        "case": "late_attack",
+        "seed": 9,
+        "version": "v6",
+        "moves": [
+          [
+            19,
+            9,
+            52,
+            20,
+            9
+          ]
+        ],
+        "attack_visits": 742,
+        "attack_mean": 0.12075615147124978,
+        "chosen_visits": 742,
+        "chosen_mean": 0.12075615147124978
+      },
+      {
+        "case": "late_attack",
+        "seed": 10,
+        "version": "v5",
+        "moves": [
+          [
+            19,
+            9,
+            52,
+            20,
+            8
+          ]
+        ],
+        "attack_visits": 122,
+        "attack_mean": -0.039840289373585004,
+        "chosen_visits": 173,
+        "chosen_mean": 0.015181321964837423
+      },
+      {
+        "case": "late_attack",
+        "seed": 10,
+        "version": "v6",
+        "moves": [
+          [
+            19,
+            9,
+            52,
+            20,
+            9
+          ]
+        ],
+        "attack_visits": 699,
+        "attack_mean": 0.1603631622786884,
+        "chosen_visits": 699,
+        "chosen_mean": 0.1603631622786884
+      },
+      {
+        "case": "late_attack",
+        "seed": 11,
+        "version": "v5",
+        "moves": [
+          [
+            19,
+            9,
+            52,
+            20,
+            9
+          ]
+        ],
+        "attack_visits": 200,
+        "attack_mean": 0.039881237630106196,
+        "chosen_visits": 200,
+        "chosen_mean": 0.039881237630106196
+      },
+      {
+        "case": "late_attack",
+        "seed": 11,
+        "version": "v6",
+        "moves": [
+          [
+            19,
+            9,
+            52,
+            20,
+            9
+          ]
+        ],
+        "attack_visits": 692,
+        "attack_mean": 0.12845988804047864,
+        "chosen_visits": 692,
+        "chosen_mean": 0.12845988804047864
+      }
+    ]
+  }
+}

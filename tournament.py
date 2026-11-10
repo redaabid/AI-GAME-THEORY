@@ -32,6 +32,7 @@ from agents import TurnContext, available_agents, fallback_moves, make_agent, sa
 from combat import DEFAULT_RULES_PROFILE, RULES_PROFILES
 from mapgen import FAMILIES, SPLIT_OFFSETS, generate_maps
 from simulate import code_fingerprint
+from search import accumulate_diagnostics
 from simulator import SPECIES, Position, get_outcome, load_map, opponent, simulate_turn
 
 ROOT = Path(__file__).resolve().parent
@@ -52,14 +53,19 @@ def play_match(initial, specs, *, seed, max_plies=200, move_time=2.0, margin=0.3
     position, history = initial, {s: [] for s in SPECIES}
     stats = {s: {"moves": 0, "seconds": [], "timeouts": 0, "faults": [],
                  "repeated_positions": 0, "behind_moves": 0, "repeated_while_behind": 0,
-                 "memory_interventions": 0, "repeated_chosen_after_penalty": 0} for s in SPECIES}
+                 "memory_interventions": 0, "repeated_chosen_after_penalty": 0,
+                 "search": {}, "slow_decisions": []} for s in SPECIES}
     seen = {s: Counter() for s in SPECIES}
     while (outcome := get_outcome(position, max_plies=max_plies)) is None:
         actor = position.to_play
+        agent_rng = getattr(agents[actor], "rng", None)
+        rng_before = agent_rng.getstate() if isinstance(agent_rng, random.Random) else None
         started = time.perf_counter()
+        cpu_started = time.process_time()
         deadline = started + move_time - margin if move_time else None
         moves, fault = safe_choose(agents[actor], position, TurnContext(deadline, max_plies, history[actor]))
         elapsed = time.perf_counter() - started
+        cpu_elapsed = time.process_time() - cpu_started
         record = stats[actor]
         record["moves"] += 1
         record["seconds"].append(elapsed)
@@ -74,6 +80,16 @@ def play_match(initial, specs, *, seed, max_plies=200, move_time=2.0, margin=0.3
         record["behind_moves"] += behind
         record["repeated_while_behind"] += repeated and behind
         info = agents[actor].info or {}
+        accumulate_diagnostics(record["search"], info.get("search", {}))
+        # The full caller time includes search cleanup and safe_choose validation.
+        # Capture overruns for diagnosis without claiming to know their cause.
+        if move_time and elapsed > move_time - margin + 0.05 and len(record["slow_decisions"]) < 8:
+            record["slow_decisions"].append({
+                "ply": position.ply, "wall_seconds": elapsed, "cpu_seconds": cpu_elapsed,
+                "search": info.get("search", {}), "state": position.to_dict(),
+                "rng_before": rng_before,
+                "history": [{"state": p.to_dict(), "moves": m} for p, m in history[actor][-32:]],
+            })
         if info.get("penalized_actions", 0):
             record["memory_interventions"] += 1
             record["repeated_chosen_after_penalty"] += bool(info.get("chosen_repeated"))
@@ -140,7 +156,8 @@ def summarize(names, results):
     squares = [[0.0] * n for _ in range(n)]
     margin = [[0.0] * n for _ in range(n)]
     eliminations = [[0] * n for _ in range(n)]
-    per_agent = [{"seconds": [], "timeouts": 0, "faults": [], "moves": 0} for _ in range(n)]
+    per_agent = [{"seconds": [], "timeouts": 0, "faults": [], "moves": 0, "search": {}}
+                 for _ in range(n)]
     for r in results:
         for me, other, s, m, st in ((r["i"], r["j"], r["a_score"], r["a_margin"], r["a_stats"]),
                                     (r["j"], r["i"], 1 - r["a_score"], -r["a_margin"], r["b_stats"])):
@@ -154,6 +171,7 @@ def summarize(names, results):
             agent["timeouts"] += st["timeouts"]
             agent["moves"] += st["moves"]
             agent["faults"] += st["faults"]
+            accumulate_diagnostics(agent["search"], st.get("search", {}))
     anchor = "baseline" if "baseline" in names else None
     elo = bradley_terry_elo(names, score, games, anchor)
     matrix = {}
@@ -174,6 +192,7 @@ def summarize(names, results):
                         "moves": per_agent[i]["moves"], "timeouts": per_agent[i]["timeouts"],
                         "faults": len(per_agent[i]["faults"]),
                         "fault_examples": per_agent[i]["faults"][:5],
+                        "search": per_agent[i]["search"],
                         "max_seconds": max(seconds, default=0.0), "p95_seconds": _percentile(seconds, 0.95)})
     ranking.sort(key=lambda row: -row["elo"])
     return matrix, ranking
@@ -197,6 +216,17 @@ def markdown_tables(names, matrix, ranking):
     for rank, row in enumerate(ranking, 1):
         lines.append(f"| {rank} | {row['agent']} | {row['elo']:+.0f} | {row['mean_score']:.3f} | {row['games']} "
                      f"| {row['max_seconds']:.2f} | {row['p95_seconds']:.2f} | {row['timeouts']} | {row['faults']} |")
+    measured = [row for row in ranking if row.get("search", {}).get("decisions")]
+    if measured:
+        lines += ["", "Depths below count individual player turns (plies). Means use completed iterations/rollouts.",
+                  "", "| Agent | Mean / max tree depth | Mean / max rollout depth | Extra tactical plies | Multi-group turns | Loop cutoffs | Search wall / CPU s |",
+                  "|---|---|---|---|---|---|---|"]
+        for row in measured:
+            d = row["search"]
+            lines.append(f"| {row['agent']} | {d['tree_depth_total'] / max(1, d['iterations']):.2f} / {d['tree_depth_max']} "
+                         f"| {d['rollout_plies'] / max(1, d['rollouts']):.2f} / {d['rollout_depth_max']} "
+                         f"| {d['extension_plies']} | {d['coordinated_turns']} | {d['loop_cutoffs']} "
+                         f"| {d['search_wall_seconds']:.2f} / {d['search_cpu_seconds']:.2f} |")
     return "\n".join(lines)
 
 

@@ -62,6 +62,13 @@ def play_game(args):
                 if agent.info and "iterations" in agent.info:
                     LOGGER.info("Search: %s iterations; fallback=%s", agent.info["iterations"],
                                 agent.info.get("fallback"))
+                    details = agent.info.get("search")
+                    if details:
+                        LOGGER.info("Depth: tree mean %.1f/max %d; rollout mean %.1f/max %d; extensions %d",
+                                    details["tree_depth_total"] / max(1, details["iterations"]),
+                                    details["tree_depth_max"],
+                                    details["rollout_plies"] / max(1, details["rollouts"]),
+                                    details["rollout_depth_max"], details["extension_plies"])
                 client.send_mov(len(moves), moves)
                 LOGGER.info("Turn %s: %s (%.3f seconds)", state.turn, moves,
                             time.perf_counter() - started)
@@ -89,7 +96,7 @@ def main(argv=None):
         parser.error("iterations must be positive")
     try:
         name, params = parse_spec(args.agent)
-        if name in ("mcts", "mcts-memory") and "iterations" not in params:
+        if name in ("mcts", "mcts-memory", "mcts-v1", "mcts-v2", "mcts-v3") and "iterations" not in params:
             args.agent = f"{args.agent}{',' if ':' in args.agent else ':'}iterations={args.iterations}"
         make_agent(args.agent)
     except ValueError as error:

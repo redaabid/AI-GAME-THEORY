@@ -1,0 +1,468 @@
+{
+  "purpose": "Observed V5 tied loop used to test V7; not a solved winning position.",
+  "origin": {
+    "trace": ".local/diagnostics/v5-full-20261106T135048452489Z/game-01.jsonl",
+    "trace_sha256": "3e6908f3d749e85d7026180f301c9fbb6694588cd2951ba02f75f8c8c3679e6c",
+    "max_plies": 200
+  },
+  "state": {
+    "schema_version": 1,
+    "rows": 15,
+    "columns": 29,
+    "to_play": "vampires",
+    "ply": 58,
+    "rules_profile": "server-v3.2.1",
+    "cells": [
+      [
+        0,
+        1,
+        0,
+        0,
+        4
+      ],
+      [
+        11,
+        2,
+        0,
+        0,
+        12
+      ],
+      [
+        14,
+        7,
+        20,
+        0,
+        0
+      ],
+      [
+        28,
+        0,
+        0,
+        16,
+        0
+      ]
+    ]
+  },
+  "history": [
+    {
+      "state": {
+        "schema_version": 1,
+        "rows": 15,
+        "columns": 29,
+        "to_play": "vampires",
+        "ply": 42,
+        "rules_profile": "server-v3.2.1",
+        "cells": [
+          [
+            0,
+            7,
+            0,
+            0,
+            4
+          ],
+          [
+            11,
+            2,
+            0,
+            0,
+            12
+          ],
+          [
+            14,
+            7,
+            20,
+            0,
+            0
+          ],
+          [
+            26,
+            2,
+            0,
+            8,
+            0
+          ],
+          [
+            27,
+            0,
+            0,
+            4,
+            0
+          ],
+          [
+            28,
+            0,
+            0,
+            4,
+            0
+          ]
+        ]
+      },
+      "action": [
+        [
+          26,
+          2,
+          8,
+          27,
+          1
+        ],
+        [
+          27,
+          0,
+          4,
+          28,
+          0
+        ]
+      ]
+    },
+    {
+      "state": {
+        "schema_version": 1,
+        "rows": 15,
+        "columns": 29,
+        "to_play": "vampires",
+        "ply": 44,
+        "rules_profile": "server-v3.2.1",
+        "cells": [
+          [
+            0,
+            6,
+            0,
+            0,
+            4
+          ],
+          [
+            11,
+            2,
+            0,
+            0,
+            12
+          ],
+          [
+            14,
+            7,
+            20,
+            0,
+            0
+          ],
+          [
+            27,
+            1,
+            0,
+            8,
+            0
+          ],
+          [
+            28,
+            0,
+            0,
+            8,
+            0
+          ]
+        ]
+      },
+      "action": [
+        [
+          27,
+          1,
+          8,
+          28,
+          0
+        ]
+      ]
+    },
+    {
+      "state": {
+        "schema_version": 1,
+        "rows": 15,
+        "columns": 29,
+        "to_play": "vampires",
+        "ply": 46,
+        "rules_profile": "server-v3.2.1",
+        "cells": [
+          [
+            0,
+            5,
+            0,
+            0,
+            4
+          ],
+          [
+            11,
+            2,
+            0,
+            0,
+            12
+          ],
+          [
+            14,
+            7,
+            20,
+            0,
+            0
+          ],
+          [
+            28,
+            0,
+            0,
+            16,
+            0
+          ]
+        ]
+      },
+      "action": [
+        [
+          28,
+          0,
+          16,
+          28,
+          1
+        ]
+      ]
+    },
+    {
+      "state": {
+        "schema_version": 1,
+        "rows": 15,
+        "columns": 29,
+        "to_play": "vampires",
+        "ply": 48,
+        "rules_profile": "server-v3.2.1",
+        "cells": [
+          [
+            0,
+            4,
+            0,
+            0,
+            4
+          ],
+          [
+            11,
+            2,
+            0,
+            0,
+            12
+          ],
+          [
+            14,
+            7,
+            20,
+            0,
+            0
+          ],
+          [
+            28,
+            1,
+            0,
+            16,
+            0
+          ]
+        ]
+      },
+      "action": [
+        [
+          28,
+          1,
+          16,
+          28,
+          0
+        ]
+      ]
+    },
+    {
+      "state": {
+        "schema_version": 1,
+        "rows": 15,
+        "columns": 29,
+        "to_play": "vampires",
+        "ply": 50,
+        "rules_profile": "server-v3.2.1",
+        "cells": [
+          [
+            0,
+            3,
+            0,
+            0,
+            4
+          ],
+          [
+            11,
+            2,
+            0,
+            0,
+            12
+          ],
+          [
+            14,
+            7,
+            20,
+            0,
+            0
+          ],
+          [
+            28,
+            0,
+            0,
+            16,
+            0
+          ]
+        ]
+      },
+      "action": [
+        [
+          28,
+          0,
+          16,
+          28,
+          1
+        ]
+      ]
+    },
+    {
+      "state": {
+        "schema_version": 1,
+        "rows": 15,
+        "columns": 29,
+        "to_play": "vampires",
+        "ply": 52,
+        "rules_profile": "server-v3.2.1",
+        "cells": [
+          [
+            0,
+            2,
+            0,
+            0,
+            4
+          ],
+          [
+            11,
+            2,
+            0,
+            0,
+            12
+          ],
+          [
+            14,
+            7,
+            20,
+            0,
+            0
+          ],
+          [
+            28,
+            1,
+            0,
+            16,
+            0
+          ]
+        ]
+      },
+      "action": [
+        [
+          28,
+          1,
+          16,
+          28,
+          0
+        ]
+      ]
+    },
+    {
+      "state": {
+        "schema_version": 1,
+        "rows": 15,
+        "columns": 29,
+        "to_play": "vampires",
+        "ply": 54,
+        "rules_profile": "server-v3.2.1",
+        "cells": [
+          [
+            0,
+            1,
+            0,
+            0,
+            4
+          ],
+          [
+            11,
+            2,
+            0,
+            0,
+            12
+          ],
+          [
+            14,
+            7,
+            20,
+            0,
+            0
+          ],
+          [
+            28,
+            0,
+            0,
+            16,
+            0
+          ]
+        ]
+      },
+      "action": [
+        [
+          28,
+          0,
+          16,
+          28,
+          1
+        ]
+      ]
+    },
+    {
+      "state": {
+        "schema_version": 1,
+        "rows": 15,
+        "columns": 29,
+        "to_play": "vampires",
+        "ply": 56,
+        "rules_profile": "server-v3.2.1",
+        "cells": [
+          [
+            0,
+            0,
+            0,
+            0,
+            4
+          ],
+          [
+            11,
+            2,
+            0,
+            0,
+            12
+          ],
+          [
+            14,
+            7,
+            20,
+            0,
+            0
+          ],
+          [
+            28,
+            1,
+            0,
+            16,
+            0
+          ]
+        ]
+      },
+      "action": [
+        [
+          28,
+          1,
+          16,
+          28,
+          0
+        ]
+      ]
+    }
+  ]
+}

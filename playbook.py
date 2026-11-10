@@ -6,6 +6,7 @@ Each script falls back to another behaviour when it has nothing to do, so every
 group always receives an order.
 """
 
+from candidates import check_deadline
 from game import distance
 from macro import Order, groups, orders_to_moves
 from simulator import get_outcome, opponent, simulate_turn
@@ -16,37 +17,43 @@ DISCOUNT = 0.9
 class View:
     """Groups of one side's turn, computed once and shared by all its scripts."""
 
-    def __init__(self, position, species=None):
+    def __init__(self, position, species=None, *, deadline=None):
         self.position = position
+        self.deadline = deadline
         self.species = species or position.to_play
-        self.own = groups(position, self.species)
-        self.enemy = groups(position, opponent(self.species))
-        self.humans = groups(position, "humans")
+        self.own = groups(position, self.species, deadline=deadline)
+        self.enemy = groups(position, opponent(self.species), deadline=deadline)
+        self.humans = groups(position, "humans", deadline=deadline)
         self.center = ((position.columns - 1) // 2, (position.rows - 1) // 2)
+
+    def checked(self, items):
+        for item in items:
+            check_deadline(self.deadline)
+            yield item
 
     def safe_humans(self, cell, n):
         """Humans this group converts before any enemy able to convert them, best first."""
         options = []
-        for target, h in self.humans:
+        for target, h in self.checked(self.humans):
             if h > n:
                 continue
             ours = distance(cell, target)
             # We move first in our own turn, so a tie is ours.
-            if any(m >= h and distance(p, target) < ours for p, m in self.enemy):
+            if any(m >= h and distance(p, target) < ours for p, m in self.checked(self.enemy)):
                 continue
             # Do not convert next to an enemy that could then kill the larger group.
-            if any(2 * m >= 3 * (n + h) and distance(p, target) <= ours + 1 for p, m in self.enemy):
+            if any(2 * m >= 3 * (n + h) and distance(p, target) <= ours + 1 for p, m in self.checked(self.enemy)):
                 continue
             options.append((h * DISCOUNT ** ours, target, h))
         return sorted(options, key=lambda item: (-item[0], item[1]))
 
     def killable(self, cell, n):
-        options = [(m / (1 + distance(cell, p)), p) for p, m in self.enemy if 2 * n >= 3 * m]
+        options = [(m / (1 + distance(cell, p)), p) for p, m in self.checked(self.enemy) if 2 * n >= 3 * m]
         return max(options)[1] if options else None
 
     def predator(self, cell, n, radius=2):
         """Nearest enemy within radius that surely kills this group, or None."""
-        threats = [(distance(cell, p), p) for p, m in self.enemy
+        threats = [(distance(cell, p), p) for p, m in self.checked(self.enemy)
                    if 2 * m >= 3 * n and distance(cell, p) <= radius]
         return min(threats)[1] if threats else None
 
@@ -67,15 +74,15 @@ def flee(view, cell, n):
 
 
 def merge(view, cell, n):
-    allies = [(distance(cell, p), -m, p) for p, m in view.own if p != cell]
+    allies = [(distance(cell, p), -m, p) for p, m in view.checked(view.own) if p != cell]
     return [Order(cell, n, min(allies)[2])] if allies else eat(view, cell, n)
 
 
 def split(view, cell, n):
     """Send exactly enough to the best humans and the rest to the next ones (D2)."""
     options = view.safe_humans(cell, n)
-    for _, first, h1 in options:
-        for _, second, h2 in options:
+    for _, first, h1 in view.checked(options):
+        for _, second, h2 in view.checked(options):
             if second != first and h1 + h2 <= n:
                 return [Order(cell, h1, first), Order(cell, n - h1, second)]
     return eat(view, cell, n)
@@ -86,10 +93,10 @@ def regroup(view, cell, n):
     threat = view.predator(cell, n)
     if threat:
         return [Order(cell, n, threat, away=True)]
-    allies = [(-m, distance(cell, p), p) for p, m in view.own if p != cell]
+    allies = [(-m, distance(cell, p), p) for p, m in view.checked(view.own) if p != cell]
     if allies:
         return [Order(cell, n, min(allies)[2])]
-    weaker = [(distance(cell, p), p) for p, m in view.enemy if m < n]
+    weaker = [(distance(cell, p), p) for p, m in view.checked(view.enemy) if m < n]
     if weaker:
         return [Order(cell, n, min(weaker)[1])]
     return [Order(cell, n, view.center)] if cell != view.center else [Order(cell, n, view.enemy[0][0], away=True)]
@@ -98,16 +105,16 @@ def regroup(view, cell, n):
 SCRIPTS = {"eat": eat, "attack": attack, "flee": flee, "merge": merge, "split": split}
 
 
-def play_turn(position, assignment, default="eat"):
+def play_turn(position, assignment, default="eat", *, deadline=None):
     """Moves for the side to play, and its assignment carried to the groups' new cells."""
-    view = View(position)
+    view = View(position, deadline=deadline)
     orders, owners = [], []
-    for cell, n in view.own:
+    for cell, n in view.checked(view.own):
         script = assignment.get(cell, default)
         new = SCRIPTS[script](view, cell, n)
         orders += new
         owners += [script] * len(new)
-    moves, steps = orders_to_moves(position, orders)
+    moves, steps = orders_to_moves(position, orders, deadline=deadline)
     carried = {}
     for order, target, script in zip(orders, steps, owners):
         carried.setdefault(target if target is not None else order.source, script)

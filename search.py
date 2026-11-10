@@ -44,6 +44,7 @@ class SearchResult:
     iterations: int
     elapsed_seconds: float
     fallback: bool
+    diagnostics: dict = field(default_factory=dict)
 
     @property
     def policy(self):
@@ -72,6 +73,40 @@ class _Node:
     position: object
     edges: list = field(default_factory=list)
     visits: int = 0
+
+
+@dataclass(frozen=True)
+class RolloutResult:
+    value: float
+    plies: int
+    extension_plies: int = 0
+    coordinated_turns: int = 0
+    loop_cutoffs: int = 0
+
+
+# Raw sums/maxima can be combined across decisions without averaging averages.
+DIAGNOSTIC_SUMS = (
+    "iterations", "tree_depth_total", "rollouts", "rollout_plies", "extension_plies",
+    "coordinated_turns", "loop_cutoffs", "candidate_calls", "candidate_wall_seconds",
+    "candidate_cpu_seconds", "rollout_wall_seconds", "rollout_cpu_seconds",
+    "search_wall_seconds", "search_cpu_seconds", "deadline_stops",
+)
+DIAGNOSTIC_MAXIMA = ("tree_depth_max", "rollout_depth_max")
+
+
+def empty_diagnostics():
+    return dict.fromkeys((*DIAGNOSTIC_SUMS, *DIAGNOSTIC_MAXIMA), 0)
+
+
+def accumulate_diagnostics(total, source):
+    """Merge one decision or an already aggregated match record."""
+    if not source:
+        return
+    total["decisions"] = total.get("decisions", 0) + source.get("decisions", 1)
+    for name in DIAGNOSTIC_SUMS:
+        total[name] = total.get(name, 0) + source.get(name, 0)
+    for name in DIAGNOSTIC_MAXIMA:
+        total[name] = max(total.get(name, 0), source.get(name, 0))
 
 
 def evaluate(position, species, *, deadline=None, max_plies=None):
@@ -149,27 +184,32 @@ def _select(node, root_species, exploration, penalties=None):
 
 
 def _rollout(position, species, rng, config, deadline, max_plies, leaf_evaluator=None):
+    plies = 0
     for _ in range(config.rollout_depth):
         check_deadline(deadline)
         outcome = get_outcome(position, max_plies=max_plies)
         if outcome is not None:
-            return outcome.value_for(species)
+            return RolloutResult(outcome.value_for(species), plies)
         view = position.to_game_state()
         moves = choose_moves(view, deadline=deadline)
         if not supported_turn(view, moves):
             moves = first_supported_move(view)
         position = simulate_turn(position, moves, rng)
+        plies += 1
     check_deadline(deadline)
     outcome = get_outcome(position, max_plies=max_plies)
     if outcome is not None:
-        return outcome.value_for(species)
+        return RolloutResult(outcome.value_for(species), plies)
     if leaf_evaluator is not None:
-        return leaf_evaluator(position, species, deadline=deadline, max_plies=max_plies)
-    return evaluate(position, species, deadline=deadline)
+        value = leaf_evaluator(position, species, deadline=deadline, max_plies=max_plies)
+    else:
+        value = evaluate(position, species, deadline=deadline)
+    return RolloutResult(value, plies)
 
 
 def search(position, *, config=None, rng=None, max_plies=None, deadline=None,
-           leaf_evaluator=None, root_penalties=None):
+           leaf_evaluator=None, root_penalties=None, rollout_policy=None,
+           collect_diagnostics=False):
     """Return a legal plan and root visit targets without mutating the input.
 
     Opponent nodes maximize the opponent's reward. Every selected edge samples a
@@ -179,9 +219,13 @@ def search(position, *, config=None, rng=None, max_plies=None, deadline=None,
 
     Optional root penalties bias UCT selection only: backed-up rewards and visit
     targets stay empirical. The optional evaluator affects nonterminal rollout
-    leaves only. Neither hook changes chance sampling or exact terminal rewards.
+    leaves only. An optional rollout_policy returns RolloutResult and must use
+    the supplied RNG and deadline. Defaults retain the original search policy.
+    Diagnostics do not enter selection, evaluation or training metadata.
     """
     started = time.perf_counter()
+    cpu_started = time.process_time() if collect_diagnostics else 0
+    diagnostics = empty_diagnostics() if collect_diagnostics else None
     config = config or SearchConfig()
     rng = rng if rng is not None else random.Random()
     root_penalties = dict(root_penalties or {})
@@ -196,16 +240,46 @@ def search(position, *, config=None, rng=None, max_plies=None, deadline=None,
     view = position.to_game_state()
     fallback = first_supported_move(view)
     root = _Node(position, [_Edge(fallback)])
+
+    def candidates(current, **kwargs):
+        if diagnostics is None:
+            return generate_candidates(current, limit=config.max_candidates, deadline=deadline, **kwargs)
+        wall, cpu = time.perf_counter(), time.process_time()
+        diagnostics["candidate_calls"] += 1
+        try:
+            return generate_candidates(current, limit=config.max_candidates, deadline=deadline, **kwargs)
+        finally:
+            diagnostics["candidate_wall_seconds"] += time.perf_counter() - wall
+            diagnostics["candidate_cpu_seconds"] += time.process_time() - cpu
+
+    def rollout(current):
+        wall = time.perf_counter() if diagnostics is not None else 0
+        cpu = time.process_time() if diagnostics is not None else 0
+        try:
+            result = (rollout_policy or _rollout)(
+                current, position.to_play, rng, config, deadline, max_plies, leaf_evaluator)
+        finally:
+            if diagnostics is not None:
+                diagnostics["rollout_wall_seconds"] += time.perf_counter() - wall
+                diagnostics["rollout_cpu_seconds"] += time.process_time() - cpu
+        if diagnostics is not None:
+            diagnostics["rollouts"] += 1
+            diagnostics["rollout_plies"] += result.plies
+            diagnostics["rollout_depth_max"] = max(diagnostics["rollout_depth_max"], result.plies)
+            for name in ("extension_plies", "coordinated_turns", "loop_cutoffs"):
+                diagnostics[name] += getattr(result, name)
+        return result.value
+
     try:
         benchmark = choose_moves(view, deadline=deadline)
         if supported_turn(view, benchmark):
             fallback = benchmark
         root.edges = [_Edge(fallback)]
-        actions = generate_candidates(position, limit=config.max_candidates,
-                                      fallback=fallback, deadline=deadline)
+        actions = candidates(position, fallback=fallback)
         root.edges = [_Edge(moves) for moves in actions]
     except TimeoutError:
-        pass
+        if diagnostics is not None:
+            diagnostics["deadline_stops"] = 1
 
     for _ in range(config.iterations):
         node, path, nodes = root, [], [root]
@@ -217,7 +291,7 @@ def search(position, *, config=None, rng=None, max_plies=None, deadline=None,
                     value = outcome.value_for(position.to_play)
                     break
                 if not node.edges:
-                    actions = generate_candidates(node.position, limit=config.max_candidates, deadline=deadline)
+                    actions = candidates(node.position)
                     node.edges = [_Edge(moves) for moves in actions]
                 edge = _select(node, position.to_play, config.exploration,
                                root_penalties if node is root else None)
@@ -229,16 +303,20 @@ def search(position, *, config=None, rng=None, max_plies=None, deadline=None,
                     child = _Node(next_position)
                     edge.outcomes[key] = child
                     nodes.append(child)
-                    value = _rollout(next_position, position.to_play, rng, config, deadline,
-                                     max_plies, leaf_evaluator)
+                    value = rollout(next_position)
                     break
                 node = child
                 nodes.append(node)
             else:
-                value = _rollout(node.position, position.to_play, rng, config, deadline,
-                                 max_plies, leaf_evaluator)
+                value = rollout(node.position)
         except TimeoutError:
+            if diagnostics is not None:
+                diagnostics["deadline_stops"] = 1
             break
+        if diagnostics is not None:
+            diagnostics["iterations"] += 1
+            diagnostics["tree_depth_total"] += len(path)
+            diagnostics["tree_depth_max"] = max(diagnostics["tree_depth_max"], len(path))
         for visited in nodes:
             visited.visits += 1
         for edge in path:
@@ -252,7 +330,11 @@ def search(position, *, config=None, rng=None, max_plies=None, deadline=None,
     else:
         moves = fallback
     view.validate_moves(moves)
+    if diagnostics is not None:
+        diagnostics["search_wall_seconds"] = time.perf_counter() - started
+        diagnostics["search_cpu_seconds"] = time.process_time() - cpu_started
     return SearchResult(moves, [edge.moves for edge in root.edges],
                         [edge.visits for edge in root.edges],
                         [edge.total_value / edge.visits if edge.visits else None for edge in root.edges],
-                        root.visits, time.perf_counter() - started, root.visits == 0)
+                        root.visits, time.perf_counter() - started, root.visits == 0,
+                        diagnostics or {})

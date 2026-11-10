@@ -175,6 +175,68 @@ class CampaignTests(unittest.TestCase):
         self.assertEqual(result.returncode, 2)
         self.assertIn("must be positive", result.stderr)
 
+    def test_two_round_plan_covers_all_roles_on_all_four_maps_with_distinct_seeds(self):
+        maps = [(name, BOARD) for name in campaign.MAP_NAMES]
+        plan = campaign.make_plan(["mcts-v2:iterations=8", "mcts-v1:iterations=8"], maps, rounds=2)
+        self.assertEqual(len(plan["jobs"]), 32)
+        self.assertEqual(len({job["seed"] for job in plan["jobs"]}), 32)
+        for name, _ in maps:
+            for round_index in range(2):
+                self.assertEqual({(j["a_species"], j["first"]) for j in plan["jobs"]
+                                  if j["map_name"] == name and j["round"] == round_index}, set(campaign.ROLES))
+        self.assertIn("rollouts.py", plan["source_sha256"])
+        self.assertIn("agents/mcts_v2.py", plan["source_sha256"])
+
+    def test_v2_cli_dry_run_validates_32_games_and_does_not_create_checkpoints(self):
+        result = subprocess.run([sys.executable, "campaign.py", "--opponent", "mcts-v1",
+                                 "--maps", "maps", "--checkpoint", str(self.folder), "--dry-run"],
+                                cwd=ROOT, capture_output=True, text=True, timeout=5)
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertIn("32 games | 4 maps | 2 rounds", result.stdout)
+        self.assertIn("mcts-v2:iterations=100000 vs mcts-v1:iterations=100000", result.stdout)
+        self.assertIn("Thinking time: 1.5 s", result.stdout)
+        self.assertFalse(self.folder.exists())
+
+    def test_v3_dry_run_uses_a_separate_checkpoint_and_equal_iteration_caps(self):
+        result = subprocess.run([sys.executable, "campaign.py", "--opponent", "mcts-v1",
+                                 "--agent", "mcts-v3", "--maps", "maps", "--dry-run"],
+                                cwd=ROOT, capture_output=True, text=True, timeout=5)
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertIn("32 games | 4 maps | 2 rounds", result.stdout)
+        self.assertIn("mcts-v3:iterations=100000 vs mcts-v1:iterations=100000", result.stdout)
+        self.assertIn(str(ROOT / ".local/campaigns/mcts-v3-vs-v1"), result.stdout)
+        self.assertIn("Thinking time: 1.5 s", result.stdout)
+        self.assertIn("No games started", result.stdout)
+
+    def test_v3_dry_run_respects_explicit_caps_and_checkpoint_directory(self):
+        result = subprocess.run([sys.executable, "campaign.py", "--opponent", "mcts-v1",
+                                 "--agent", "mcts-v3:iterations=8", "--iterations", "16",
+                                 "--maps", "maps", "--checkpoint", str(self.folder), "--dry-run"],
+                                cwd=ROOT, capture_output=True, text=True, timeout=5)
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertIn("mcts-v3:iterations=8 vs mcts-v1:iterations=16", result.stdout)
+        self.assertIn(str(self.folder.resolve()), result.stdout)
+        self.assertFalse(self.folder.exists())
+
+    def test_invalid_timing_is_rejected_before_creating_a_checkpoint(self):
+        for value in ("nan", "-1", "0.1"):
+            result = subprocess.run([sys.executable, "campaign.py", "--opponent", "mcts-v1",
+                                     "--maps", "maps", "--checkpoint", str(self.folder),
+                                     "--move-time", value, "--dry-run"],
+                                    cwd=ROOT, capture_output=True, text=True, timeout=5)
+            self.assertNotEqual(result.returncode, 0)
+            self.assertFalse(self.folder.exists())
+
+    def test_report_includes_per_map_wins_draws_losses(self):
+        game = campaign._run_job(self.plan["jobs"][0])
+        report = campaign.save_report(self.folder, self.plan, {0: game})
+        row = report["per_map"]["duel"]
+        self.assertEqual(row["games"], 1)
+        self.assertEqual(row["wins"] + row["draws"] + row["losses"], 1)
+        self.assertEqual(row["mean_score"], game["a_score"])
+        self.assertIn("| Map | Games | Wins | Draws | Losses | Score |",
+                      (self.folder / "report.md").read_text(encoding="utf-8"))
+
 
 if __name__ == "__main__":
     unittest.main()
