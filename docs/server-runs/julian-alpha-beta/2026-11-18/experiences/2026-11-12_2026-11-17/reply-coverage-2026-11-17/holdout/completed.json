@@ -1,0 +1,17 @@
+{
+ "status": "complete",
+ "maps": {
+  "holdout-medium-20261119": {
+   "games": 4,
+   "wins": 2,
+   "draws": 0,
+   "losses": 2,
+   "mean_seconds": 1.4697896273962576,
+   "max_seconds": 1.5293719999899622,
+   "over18_both": 0,
+   "faults_both": 0,
+   "timeouts_both": 0
+  }
+ },
+ "verified_transitions": 582
+}

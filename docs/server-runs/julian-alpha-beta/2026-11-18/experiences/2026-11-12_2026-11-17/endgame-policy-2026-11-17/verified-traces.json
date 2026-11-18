@@ -1,0 +1,1816 @@
+[
+ {
+  "file": "ce642bc395be29ee2f581e47b97943f0c03073e4e74cb696c018bdc919aca448.json",
+  "agent": "ab2endgame:depth=1,max_depth=24,width=7,extra=0,tt_size=50000",
+  "map": "holdout-medium-20261113",
+  "species": "vampires",
+  "first": "vampires",
+  "seed": 2026211304,
+  "score": 1.0,
+  "plies": 57,
+  "final": {
+   "vampires": 19,
+   "werewolves": 0
+  },
+  "turns_verified": 57,
+  "stats": {
+   "vampires": {
+    "turns": 29,
+    "repeated": 0,
+    "recruit_opportunities": 5,
+    "declined_recruit": 0,
+    "random_battles": 1,
+    "depths": [
+     5,
+     5,
+     5,
+     6,
+     5,
+     5,
+     5,
+     6,
+     7,
+     7,
+     7,
+     6,
+     7,
+     12,
+     12,
+     10,
+     13,
+     12,
+     14,
+     13,
+     15,
+     16,
+     14,
+     14,
+     14,
+     15,
+     15,
+     15,
+     16
+    ],
+    "seconds": [
+     1.4997289000020828,
+     1.497980500018457,
+     1.4978270000137854,
+     1.4978808999876492,
+     1.497548299987102,
+     1.4977681000018492,
+     1.4976823999895714,
+     1.4972211999993306,
+     1.4967447000090033,
+     1.4957295999920461,
+     1.495952999975998,
+     1.49536200001603,
+     1.4955293999810237,
+     1.4954524000058882,
+     1.4958884999796283,
+     1.49561429998721,
+     1.4955252999789082,
+     1.4968218999856617,
+     1.4968359999766108,
+     1.4966692000161856,
+     1.4971227000060026,
+     1.4965288999956101,
+     1.4962207000062335,
+     1.4963065999909304,
+     1.497168200003216,
+     1.4964690000051633,
+     1.4966896000260022,
+     1.4964007000089623,
+     1.495887800003402
+    ]
+   },
+   "werewolves": {
+    "turns": 28,
+    "repeated": 0,
+    "recruit_opportunities": 6,
+    "declined_recruit": 1,
+    "random_battles": 0,
+    "depths": [],
+    "seconds": []
+   }
+  },
+  "events": [
+   {
+    "ply": 0,
+    "actor": "vampires",
+    "recruit": true,
+    "battles": [],
+    "after": {
+     "vampires": 15,
+     "werewolves": 8
+    }
+   },
+   {
+    "ply": 1,
+    "actor": "werewolves",
+    "recruit": true,
+    "battles": [],
+    "after": {
+     "vampires": 15,
+     "werewolves": 15
+    }
+   },
+   {
+    "ply": 2,
+    "actor": "vampires",
+    "recruit": true,
+    "battles": [],
+    "after": {
+     "vampires": 21,
+     "werewolves": 15
+    }
+   },
+   {
+    "ply": 3,
+    "actor": "werewolves",
+    "recruit": true,
+    "battles": [],
+    "after": {
+     "vampires": 21,
+     "werewolves": 21
+    }
+   },
+   {
+    "ply": 4,
+    "actor": "vampires",
+    "recruit": true,
+    "battles": [],
+    "after": {
+     "vampires": 30,
+     "werewolves": 21
+    }
+   },
+   {
+    "ply": 5,
+    "actor": "werewolves",
+    "recruit": true,
+    "battles": [],
+    "after": {
+     "vampires": 30,
+     "werewolves": 30
+    }
+   },
+   {
+    "ply": 8,
+    "actor": "vampires",
+    "recruit": true,
+    "battles": [],
+    "after": {
+     "vampires": 31,
+     "werewolves": 30
+    }
+   },
+   {
+    "ply": 10,
+    "actor": "vampires",
+    "recruit": true,
+    "battles": [],
+    "after": {
+     "vampires": 48,
+     "werewolves": 30
+    }
+   },
+   {
+    "ply": 11,
+    "actor": "werewolves",
+    "recruit": true,
+    "battles": [],
+    "after": {
+     "vampires": 48,
+     "werewolves": 39
+    }
+   },
+   {
+    "ply": 15,
+    "actor": "werewolves",
+    "recruit": true,
+    "battles": [],
+    "after": {
+     "vampires": 48,
+     "werewolves": 48
+    }
+   },
+   {
+    "ply": 56,
+    "actor": "vampires",
+    "recruit": false,
+    "battles": [
+     {
+      "attackers": 48,
+      "defenders": 48,
+      "probability": 0.5
+     }
+    ],
+    "after": {
+     "vampires": 19,
+     "werewolves": 0
+    }
+   }
+  ]
+ },
+ {
+  "file": "2075bceb7ee3d120f78caaf2e60caacd1367a27a8eaa2eed25822b6330dffd28.json",
+  "agent": "ab2endgame:depth=1,max_depth=24,width=7,extra=0,tt_size=50000",
+  "map": "holdout-medium-20261113",
+  "species": "werewolves",
+  "first": "vampires",
+  "seed": 2026211305,
+  "score": 0.0,
+  "plies": 36,
+  "final": {
+   "vampires": 25,
+   "werewolves": 0
+  },
+  "turns_verified": 36,
+  "stats": {
+   "vampires": {
+    "turns": 18,
+    "repeated": 0,
+    "recruit_opportunities": 5,
+    "declined_recruit": 1,
+    "random_battles": 0,
+    "depths": [],
+    "seconds": []
+   },
+   "werewolves": {
+    "turns": 18,
+    "repeated": 0,
+    "recruit_opportunities": 5,
+    "declined_recruit": 0,
+    "random_battles": 1,
+    "depths": [
+     5,
+     5,
+     5,
+     5,
+     5,
+     5,
+     6,
+     5,
+     7,
+     7,
+     6,
+     11,
+     14,
+     15,
+     16,
+     14,
+     16,
+     19
+    ],
+    "seconds": [
+     1.4997603000083473,
+     1.4979959999909624,
+     1.4974730999965686,
+     1.497737199999392,
+     1.4979166999983136,
+     1.497750000009546,
+     1.4974204000027385,
+     1.4968240000016522,
+     1.4960317999939434,
+     1.4962029000162147,
+     1.4958346000057645,
+     1.4958311000082176,
+     1.4956352000008337,
+     1.496227399999043,
+     1.4962371999863535,
+     1.496591199975228,
+     1.496877899975516,
+     1.4967031000123825
+    ]
+   }
+  },
+  "events": [
+   {
+    "ply": 0,
+    "actor": "vampires",
+    "recruit": true,
+    "battles": [],
+    "after": {
+     "vampires": 15,
+     "werewolves": 8
+    }
+   },
+   {
+    "ply": 1,
+    "actor": "werewolves",
+    "recruit": true,
+    "battles": [],
+    "after": {
+     "vampires": 15,
+     "werewolves": 15
+    }
+   },
+   {
+    "ply": 2,
+    "actor": "vampires",
+    "recruit": true,
+    "battles": [],
+    "after": {
+     "vampires": 30,
+     "werewolves": 15
+    }
+   },
+   {
+    "ply": 3,
+    "actor": "werewolves",
+    "recruit": true,
+    "battles": [],
+    "after": {
+     "vampires": 30,
+     "werewolves": 21
+    }
+   },
+   {
+    "ply": 5,
+    "actor": "werewolves",
+    "recruit": true,
+    "battles": [],
+    "after": {
+     "vampires": 30,
+     "werewolves": 30
+    }
+   },
+   {
+    "ply": 8,
+    "actor": "vampires",
+    "recruit": true,
+    "battles": [],
+    "after": {
+     "vampires": 39,
+     "werewolves": 30
+    }
+   },
+   {
+    "ply": 9,
+    "actor": "werewolves",
+    "recruit": true,
+    "battles": [],
+    "after": {
+     "vampires": 39,
+     "werewolves": 31
+    }
+   },
+   {
+    "ply": 11,
+    "actor": "werewolves",
+    "recruit": true,
+    "battles": [],
+    "after": {
+     "vampires": 39,
+     "werewolves": 40
+    }
+   },
+   {
+    "ply": 12,
+    "actor": "vampires",
+    "recruit": true,
+    "battles": [],
+    "after": {
+     "vampires": 47,
+     "werewolves": 40
+    }
+   },
+   {
+    "ply": 14,
+    "actor": "vampires",
+    "recruit": true,
+    "battles": [],
+    "after": {
+     "vampires": 55,
+     "werewolves": 40
+    }
+   },
+   {
+    "ply": 15,
+    "actor": "werewolves",
+    "recruit": false,
+    "battles": [
+     {
+      "attackers": 32,
+      "defenders": 16,
+      "probability": 1.0
+     }
+    ],
+    "after": {
+     "vampires": 39,
+     "werewolves": 40
+    }
+   },
+   {
+    "ply": 22,
+    "actor": "vampires",
+    "recruit": true,
+    "battles": [],
+    "after": {
+     "vampires": 40,
+     "werewolves": 40
+    }
+   },
+   {
+    "ply": 35,
+    "actor": "werewolves",
+    "recruit": false,
+    "battles": [
+     {
+      "attackers": 40,
+      "defenders": 40,
+      "probability": 0.5
+     }
+    ],
+    "after": {
+     "vampires": 25,
+     "werewolves": 0
+    }
+   }
+  ]
+ },
+ {
+  "file": "cd514a290fea9708e6135f65b0bba316af7ef53d73cfdd5584dceb0178704845.json",
+  "agent": "ab2endgame:depth=1,max_depth=24,width=7,extra=0,tt_size=50000",
+  "map": "holdout-medium-20261113",
+  "species": "vampires",
+  "first": "werewolves",
+  "seed": 2026211306,
+  "score": 0.0,
+  "plies": 42,
+  "final": {
+   "vampires": 0,
+   "werewolves": 9
+  },
+  "turns_verified": 42,
+  "stats": {
+   "vampires": {
+    "turns": 21,
+    "repeated": 0,
+    "recruit_opportunities": 5,
+    "declined_recruit": 1,
+    "random_battles": 1,
+    "depths": [
+     5,
+     5,
+     5,
+     5,
+     5,
+     6,
+     6,
+     6,
+     6,
+     7,
+     9,
+     10,
+     9,
+     7,
+     5,
+     16,
+     17,
+     17,
+     16,
+     15,
+     10
+    ],
+    "seconds": [
+     1.499866900005145,
+     1.4974566000164486,
+     1.4975013000075705,
+     1.4978222000063397,
+     1.4976777999836486,
+     1.4975844000000507,
+     1.4971335000009276,
+     1.4966543999908026,
+     1.496797100000549,
+     1.4964990000007674,
+     1.4957651000004262,
+     1.4960692999884486,
+     1.4956940000120085,
+     1.4952508000133093,
+     1.495498799980851,
+     1.495136999990791,
+     1.4960537000151817,
+     1.4959725000080653,
+     1.495217399991816,
+     1.495057899999665,
+     1.4953586000192445
+    ]
+   },
+   "werewolves": {
+    "turns": 21,
+    "repeated": 0,
+    "recruit_opportunities": 7,
+    "declined_recruit": 1,
+    "random_battles": 1,
+    "depths": [],
+    "seconds": []
+   }
+  },
+  "events": [
+   {
+    "ply": 0,
+    "actor": "werewolves",
+    "recruit": true,
+    "battles": [],
+    "after": {
+     "vampires": 8,
+     "werewolves": 15
+    }
+   },
+   {
+    "ply": 1,
+    "actor": "vampires",
+    "recruit": true,
+    "battles": [],
+    "after": {
+     "vampires": 15,
+     "werewolves": 15
+    }
+   },
+   {
+    "ply": 2,
+    "actor": "werewolves",
+    "recruit": true,
+    "battles": [],
+    "after": {
+     "vampires": 15,
+     "werewolves": 21
+    }
+   },
+   {
+    "ply": 3,
+    "actor": "vampires",
+    "recruit": true,
+    "battles": [],
+    "after": {
+     "vampires": 21,
+     "werewolves": 21
+    }
+   },
+   {
+    "ply": 4,
+    "actor": "werewolves",
+    "recruit": true,
+    "battles": [],
+    "after": {
+     "vampires": 21,
+     "werewolves": 30
+    }
+   },
+   {
+    "ply": 7,
+    "actor": "vampires",
+    "recruit": true,
+    "battles": [],
+    "after": {
+     "vampires": 31,
+     "werewolves": 30
+    }
+   },
+   {
+    "ply": 9,
+    "actor": "vampires",
+    "recruit": true,
+    "battles": [],
+    "after": {
+     "vampires": 40,
+     "werewolves": 30
+    }
+   },
+   {
+    "ply": 12,
+    "actor": "werewolves",
+    "recruit": true,
+    "battles": [],
+    "after": {
+     "vampires": 40,
+     "werewolves": 38
+    }
+   },
+   {
+    "ply": 14,
+    "actor": "werewolves",
+    "recruit": true,
+    "battles": [],
+    "after": {
+     "vampires": 40,
+     "werewolves": 47
+    }
+   },
+   {
+    "ply": 18,
+    "actor": "werewolves",
+    "recruit": true,
+    "battles": [],
+    "after": {
+     "vampires": 40,
+     "werewolves": 56
+    }
+   },
+   {
+    "ply": 30,
+    "actor": "werewolves",
+    "recruit": false,
+    "battles": [
+     {
+      "attackers": 40,
+      "defenders": 40,
+      "probability": 0.5
+     }
+    ],
+    "after": {
+     "vampires": 12,
+     "werewolves": 16
+    }
+   },
+   {
+    "ply": 41,
+    "actor": "vampires",
+    "recruit": false,
+    "battles": [
+     {
+      "attackers": 12,
+      "defenders": 16,
+      "probability": 0.375
+     }
+    ],
+    "after": {
+     "vampires": 0,
+     "werewolves": 9
+    }
+   }
+  ]
+ },
+ {
+  "file": "f0f7c0d2ef526ede620cde8f9592929a396729a9407dbc8dcedeeb76646404aa.json",
+  "agent": "ab2endgame:depth=1,max_depth=24,width=7,extra=0,tt_size=50000",
+  "map": "holdout-medium-20261113",
+  "species": "werewolves",
+  "first": "werewolves",
+  "seed": 2026211307,
+  "score": 1.0,
+  "plies": 33,
+  "final": {
+   "vampires": 0,
+   "werewolves": 13
+  },
+  "turns_verified": 33,
+  "stats": {
+   "vampires": {
+    "turns": 16,
+    "repeated": 0,
+    "recruit_opportunities": 10,
+    "declined_recruit": 6,
+    "random_battles": 1,
+    "depths": [],
+    "seconds": []
+   },
+   "werewolves": {
+    "turns": 17,
+    "repeated": 0,
+    "recruit_opportunities": 6,
+    "declined_recruit": 0,
+    "random_battles": 2,
+    "depths": [
+     5,
+     5,
+     5,
+     5,
+     5,
+     5,
+     6,
+     6,
+     6,
+     6,
+     7,
+     6,
+     5,
+     3,
+     10,
+     10,
+     10
+    ],
+    "seconds": [
+     1.4998444999800995,
+     1.4967574999900535,
+     1.4971680999733508,
+     1.4972990000096615,
+     1.4975204999791458,
+     1.4974566000164486,
+     1.4972552999970503,
+     1.4968942999839783,
+     1.4962759000191,
+     1.4893151000142097,
+     1.4963287999853492,
+     1.4964799000008497,
+     1.4967754999815952,
+     1.4962151999934576,
+     1.4930231000180356,
+     1.4967359000002034,
+     1.4969402000133414
+    ]
+   }
+  },
+  "events": [
+   {
+    "ply": 0,
+    "actor": "werewolves",
+    "recruit": true,
+    "battles": [],
+    "after": {
+     "vampires": 8,
+     "werewolves": 15
+    }
+   },
+   {
+    "ply": 2,
+    "actor": "werewolves",
+    "recruit": true,
+    "battles": [],
+    "after": {
+     "vampires": 8,
+     "werewolves": 21
+    }
+   },
+   {
+    "ply": 4,
+    "actor": "werewolves",
+    "recruit": true,
+    "battles": [],
+    "after": {
+     "vampires": 8,
+     "werewolves": 30
+    }
+   },
+   {
+    "ply": 5,
+    "actor": "vampires",
+    "recruit": true,
+    "battles": [],
+    "after": {
+     "vampires": 15,
+     "werewolves": 30
+    }
+   },
+   {
+    "ply": 7,
+    "actor": "vampires",
+    "recruit": true,
+    "battles": [],
+    "after": {
+     "vampires": 24,
+     "werewolves": 30
+    }
+   },
+   {
+    "ply": 9,
+    "actor": "vampires",
+    "recruit": false,
+    "battles": [
+     {
+      "attackers": 2,
+      "defenders": 8,
+      "probability": 0.125
+     }
+    ],
+    "after": {
+     "vampires": 22,
+     "werewolves": 29
+    }
+   },
+   {
+    "ply": 10,
+    "actor": "werewolves",
+    "recruit": true,
+    "battles": [],
+    "after": {
+     "vampires": 22,
+     "werewolves": 38
+    }
+   },
+   {
+    "ply": 12,
+    "actor": "werewolves",
+    "recruit": true,
+    "battles": [],
+    "after": {
+     "vampires": 22,
+     "werewolves": 39
+    }
+   },
+   {
+    "ply": 14,
+    "actor": "werewolves",
+    "recruit": true,
+    "battles": [],
+    "after": {
+     "vampires": 22,
+     "werewolves": 47
+    }
+   },
+   {
+    "ply": 17,
+    "actor": "vampires",
+    "recruit": true,
+    "battles": [],
+    "after": {
+     "vampires": 38,
+     "werewolves": 47
+    }
+   },
+   {
+    "ply": 26,
+    "actor": "werewolves",
+    "recruit": false,
+    "battles": [
+     {
+      "attackers": 7,
+      "defenders": 20,
+      "probability": 0.175
+     }
+    ],
+    "after": {
+     "vampires": 36,
+     "werewolves": 40
+    }
+   },
+   {
+    "ply": 27,
+    "actor": "vampires",
+    "recruit": true,
+    "battles": [],
+    "after": {
+     "vampires": 44,
+     "werewolves": 40
+    }
+   },
+   {
+    "ply": 32,
+    "actor": "werewolves",
+    "recruit": false,
+    "battles": [
+     {
+      "attackers": 40,
+      "defenders": 44,
+      "probability": 0.45454545454545453
+     }
+    ],
+    "after": {
+     "vampires": 0,
+     "werewolves": 13
+    }
+   }
+  ]
+ },
+ {
+  "file": "017a9db2a797bfd0c3bf10c7dd413eaefdb7364d7f4d8392509959141d1c82c4.json",
+  "agent": "ab2endgame:depth=1,max_depth=24,width=7,extra=0,tt_size=50000",
+  "map": "unseen-medium-20261117",
+  "species": "vampires",
+  "first": "vampires",
+  "seed": 2026311307,
+  "score": 0.0,
+  "plies": 34,
+  "final": {
+   "vampires": 0,
+   "werewolves": 16
+  },
+  "turns_verified": 34,
+  "stats": {
+   "vampires": {
+    "turns": 17,
+    "repeated": 0,
+    "recruit_opportunities": 2,
+    "declined_recruit": 0,
+    "random_battles": 0,
+    "depths": [
+     5,
+     5,
+     5,
+     6,
+     6,
+     5,
+     6,
+     4,
+     7,
+     7,
+     9,
+     7,
+     7,
+     7,
+     7,
+     6,
+     5
+    ],
+    "seconds": [
+     1.4998074999894015,
+     1.4969988000229932,
+     1.4961758999852464,
+     1.496830999996746,
+     1.4971100000257138,
+     1.4970707000175025,
+     1.496680699987337,
+     1.496140600007493,
+     1.4967415000137407,
+     1.496596499986481,
+     1.4964992000022903,
+     1.496438100002706,
+     1.4961685999878682,
+     1.4959279999893624,
+     1.4958628000167664,
+     1.495691199990688,
+     1.4955266999895684
+    ]
+   },
+   "werewolves": {
+    "turns": 17,
+    "repeated": 0,
+    "recruit_opportunities": 3,
+    "declined_recruit": 0,
+    "random_battles": 1,
+    "depths": [],
+    "seconds": []
+   }
+  },
+  "events": [
+   {
+    "ply": 2,
+    "actor": "vampires",
+    "recruit": true,
+    "battles": [],
+    "after": {
+     "vampires": 12,
+     "werewolves": 9
+    }
+   },
+   {
+    "ply": 5,
+    "actor": "werewolves",
+    "recruit": true,
+    "battles": [],
+    "after": {
+     "vampires": 12,
+     "werewolves": 11
+    }
+   },
+   {
+    "ply": 6,
+    "actor": "vampires",
+    "recruit": true,
+    "battles": [],
+    "after": {
+     "vampires": 14,
+     "werewolves": 11
+    }
+   },
+   {
+    "ply": 7,
+    "actor": "werewolves",
+    "recruit": true,
+    "battles": [],
+    "after": {
+     "vampires": 14,
+     "werewolves": 21
+    }
+   },
+   {
+    "ply": 8,
+    "actor": "vampires",
+    "recruit": true,
+    "battles": [],
+    "after": {
+     "vampires": 24,
+     "werewolves": 21
+    }
+   },
+   {
+    "ply": 14,
+    "actor": "vampires",
+    "recruit": true,
+    "battles": [],
+    "after": {
+     "vampires": 33,
+     "werewolves": 21
+    }
+   },
+   {
+    "ply": 19,
+    "actor": "werewolves",
+    "recruit": true,
+    "battles": [],
+    "after": {
+     "vampires": 33,
+     "werewolves": 33
+    }
+   },
+   {
+    "ply": 33,
+    "actor": "werewolves",
+    "recruit": false,
+    "battles": [
+     {
+      "attackers": 27,
+      "defenders": 33,
+      "probability": 0.4090909090909091
+     }
+    ],
+    "after": {
+     "vampires": 0,
+     "werewolves": 16
+    }
+   }
+  ]
+ },
+ {
+  "file": "a0f977ca03511815b80243de698c2989f0c72c153a18b754759ce8f27c5f3d74.json",
+  "agent": "ab2endgame:depth=1,max_depth=24,width=7,extra=0,tt_size=50000",
+  "map": "unseen-medium-20261117",
+  "species": "werewolves",
+  "first": "vampires",
+  "seed": 2026311308,
+  "score": 0.5,
+  "plies": 200,
+  "final": {
+   "vampires": 26,
+   "werewolves": 26
+  },
+  "turns_verified": 200,
+  "stats": {
+   "vampires": {
+    "turns": 100,
+    "repeated": 61,
+    "recruit_opportunities": 4,
+    "declined_recruit": 0,
+    "random_battles": 1,
+    "depths": [],
+    "seconds": []
+   },
+   "werewolves": {
+    "turns": 100,
+    "repeated": 62,
+    "recruit_opportunities": 3,
+    "declined_recruit": 0,
+    "random_battles": 1,
+    "depths": [
+     6,
+     5,
+     6,
+     5,
+     6,
+     7,
+     6,
+     7,
+     8,
+     9,
+     10,
+     9,
+     9,
+     8,
+     3,
+     5,
+     16,
+     18,
+     18,
+     18,
+     18,
+     18,
+     17,
+     17,
+     17,
+     18,
+     19,
+     17,
+     18,
+     18,
+     17,
+     17,
+     17,
+     18,
+     17,
+     17,
+     18,
+     18,
+     17,
+     16,
+     16,
+     17,
+     17,
+     17,
+     17,
+     18,
+     19,
+     17,
+     18,
+     17,
+     17,
+     17,
+     17,
+     17,
+     17,
+     17,
+     17,
+     17,
+     17,
+     17,
+     16,
+     17,
+     17,
+     17,
+     17,
+     18,
+     19,
+     17,
+     18,
+     18,
+     17,
+     17,
+     17,
+     17,
+     17,
+     17,
+     17,
+     17,
+     17,
+     17,
+     16,
+     17,
+     17,
+     16,
+     15,
+     18,
+     19,
+     17,
+     18,
+     18,
+     16,
+     15,
+     17,
+     23,
+     24,
+     24,
+     24,
+     24,
+     24,
+     24
+    ],
+    "seconds": [
+     1.4998297000129241,
+     1.497480500023812,
+     1.4969955000269692,
+     1.4973259000107646,
+     1.4977009000140242,
+     1.4967439000029117,
+     1.496441600000253,
+     1.4929451999778394,
+     1.4963181000202894,
+     1.4968326000089291,
+     1.496453500003554,
+     1.496680499985814,
+     1.4964890999835916,
+     1.4964585999841802,
+     1.4964493000006769,
+     1.495853000000352,
+     1.4958699000126217,
+     1.4967160999949556,
+     1.496503300004406,
+     1.496378799987724,
+     1.4966348999878392,
+     1.49627849998069,
+     1.4963758999947459,
+     1.4961520000069868,
+     1.4965456000063568,
+     1.4966703999962192,
+     1.4966386000160128,
+     1.4962306000234094,
+     1.4966217000037432,
+     1.496085300022969,
+     1.4964258999971207,
+     1.495843699987745,
+     1.4966531999816652,
+     1.496410099993227,
+     1.496938800002681,
+     1.496697700000368,
+     1.4965978999971412,
+     1.49659409999731,
+     1.4965177999984007,
+     1.496211999998195,
+     1.49662449999596,
+     1.4958740000147372,
+     1.5009578999888618,
+     1.4965308999817353,
+     1.4963023999880534,
+     1.4960090999957174,
+     1.4966118000156712,
+     1.4961424999928568,
+     1.4953769999847282,
+     1.4786998000054155,
+     1.4958058000192977,
+     1.4959754000010435,
+     1.4957284000120126,
+     1.4954340000113007,
+     1.4963368000171613,
+     1.4959062000270933,
+     1.4964883000066038,
+     1.4962599000136834,
+     1.5103745999804232,
+     1.4955472000001464,
+     1.496100699994713,
+     1.4954986999800894,
+     1.49608770001214,
+     1.4960939000011422,
+     1.4900570999889169,
+     1.4959059999964666,
+     1.4961826000071596,
+     1.4961629000026733,
+     1.4957329999888316,
+     1.4955745000042953,
+     1.4939883999759331,
+     1.4960572000127286,
+     1.4960945000057109,
+     1.4961178000085056,
+     1.4963786999869626,
+     1.4961600999813527,
+     1.4959972999931779,
+     1.495402100001229,
+     1.4956712999846786,
+     1.4952094000182115,
+     1.495363099995302,
+     1.4957997000019532,
+     1.4959260000032373,
+     1.4955544999975245,
+     1.4954836000106297,
+     1.4951432999805547,
+     1.4939606999978423,
+     1.495815300004324,
+     1.4959880999813322,
+     1.493977599981008,
+     1.4935388999874704,
+     1.4954544999927748,
+     1.4954175000020768,
+     1.496068300009938,
+     1.0855695999925956,
+     0.5162789999740198,
+     0.18992200001957826,
+     0.07520110000041313,
+     0.03307870001299307,
+     0.005868100008228794
+    ]
+   }
+  },
+  "events": [
+   {
+    "ply": 2,
+    "actor": "vampires",
+    "recruit": true,
+    "battles": [],
+    "after": {
+     "vampires": 12,
+     "werewolves": 9
+    }
+   },
+   {
+    "ply": 5,
+    "actor": "werewolves",
+    "recruit": true,
+    "battles": [],
+    "after": {
+     "vampires": 12,
+     "werewolves": 11
+    }
+   },
+   {
+    "ply": 7,
+    "actor": "werewolves",
+    "recruit": true,
+    "battles": [],
+    "after": {
+     "vampires": 12,
+     "werewolves": 21
+    }
+   },
+   {
+    "ply": 8,
+    "actor": "vampires",
+    "recruit": true,
+    "battles": [],
+    "after": {
+     "vampires": 14,
+     "werewolves": 21
+    }
+   },
+   {
+    "ply": 10,
+    "actor": "vampires",
+    "recruit": true,
+    "battles": [],
+    "after": {
+     "vampires": 24,
+     "werewolves": 21
+    }
+   },
+   {
+    "ply": 13,
+    "actor": "werewolves",
+    "recruit": true,
+    "battles": [],
+    "after": {
+     "vampires": 24,
+     "werewolves": 33
+    }
+   },
+   {
+    "ply": 16,
+    "actor": "vampires",
+    "recruit": true,
+    "battles": [],
+    "after": {
+     "vampires": 33,
+     "werewolves": 33
+    }
+   },
+   {
+    "ply": 29,
+    "actor": "werewolves",
+    "recruit": false,
+    "battles": [
+     {
+      "attackers": 6,
+      "defenders": 30,
+      "probability": 0.1
+     }
+    ],
+    "after": {
+     "vampires": 29,
+     "werewolves": 27
+    }
+   },
+   {
+    "ply": 32,
+    "actor": "vampires",
+    "recruit": false,
+    "battles": [
+     {
+      "attackers": 3,
+      "defenders": 27,
+      "probability": 0.05555555555555555
+     }
+    ],
+    "after": {
+     "vampires": 26,
+     "werewolves": 26
+    }
+   }
+  ]
+ },
+ {
+  "file": "7c4a05e382d03f3362489d97db7285d9ed782fc7308f690357e24c2cb67f2778.json",
+  "agent": "ab2endgame:depth=1,max_depth=24,width=7,extra=0,tt_size=50000",
+  "map": "unseen-medium-20261117",
+  "species": "vampires",
+  "first": "werewolves",
+  "seed": 2026311309,
+  "score": 0.0,
+  "plies": 17,
+  "final": {
+   "vampires": 0,
+   "werewolves": 16
+  },
+  "turns_verified": 17,
+  "stats": {
+   "vampires": {
+    "turns": 8,
+    "repeated": 0,
+    "recruit_opportunities": 2,
+    "declined_recruit": 0,
+    "random_battles": 0,
+    "depths": [
+     6,
+     6,
+     5,
+     6,
+     6,
+     7,
+     6,
+     6
+    ],
+    "seconds": [
+     1.4998870999843348,
+     1.4969544000050519,
+     1.4967700999986846,
+     1.4972415000083856,
+     1.4965834000031464,
+     1.4971778999897651,
+     1.4963493999966886,
+     1.4967380000161938
+    ]
+   },
+   "werewolves": {
+    "turns": 9,
+    "repeated": 0,
+    "recruit_opportunities": 3,
+    "declined_recruit": 0,
+    "random_battles": 1,
+    "depths": [],
+    "seconds": []
+   }
+  },
+  "events": [
+   {
+    "ply": 2,
+    "actor": "werewolves",
+    "recruit": true,
+    "battles": [],
+    "after": {
+     "vampires": 9,
+     "werewolves": 12
+    }
+   },
+   {
+    "ply": 3,
+    "actor": "vampires",
+    "recruit": true,
+    "battles": [],
+    "after": {
+     "vampires": 12,
+     "werewolves": 12
+    }
+   },
+   {
+    "ply": 6,
+    "actor": "werewolves",
+    "recruit": true,
+    "battles": [],
+    "after": {
+     "vampires": 12,
+     "werewolves": 14
+    }
+   },
+   {
+    "ply": 7,
+    "actor": "vampires",
+    "recruit": true,
+    "battles": [],
+    "after": {
+     "vampires": 14,
+     "werewolves": 14
+    }
+   },
+   {
+    "ply": 8,
+    "actor": "werewolves",
+    "recruit": true,
+    "battles": [],
+    "after": {
+     "vampires": 14,
+     "werewolves": 24
+    }
+   },
+   {
+    "ply": 9,
+    "actor": "vampires",
+    "recruit": true,
+    "battles": [],
+    "after": {
+     "vampires": 24,
+     "werewolves": 24
+    }
+   },
+   {
+    "ply": 15,
+    "actor": "vampires",
+    "recruit": true,
+    "battles": [],
+    "after": {
+     "vampires": 33,
+     "werewolves": 24
+    }
+   },
+   {
+    "ply": 16,
+    "actor": "werewolves",
+    "recruit": false,
+    "battles": [
+     {
+      "attackers": 9,
+      "defenders": 33,
+      "probability": 0.13636363636363635
+     }
+    ],
+    "after": {
+     "vampires": 0,
+     "werewolves": 16
+    }
+   }
+  ]
+ },
+ {
+  "file": "6d05feecb73e86aaeb00be79bcbcc796f21eb23fc8b2e3e75c5f4ed68cce450c.json",
+  "agent": "ab2endgame:depth=1,max_depth=24,width=7,extra=0,tt_size=50000",
+  "map": "unseen-medium-20261117",
+  "species": "werewolves",
+  "first": "werewolves",
+  "seed": 2026311310,
+  "score": 0.5,
+  "plies": 200,
+  "final": {
+   "vampires": 33,
+   "werewolves": 33
+  },
+  "turns_verified": 200,
+  "stats": {
+   "vampires": {
+    "turns": 100,
+    "repeated": 48,
+    "recruit_opportunities": 4,
+    "declined_recruit": 0,
+    "random_battles": 0,
+    "depths": [],
+    "seconds": []
+   },
+   "werewolves": {
+    "turns": 100,
+    "repeated": 48,
+    "recruit_opportunities": 3,
+    "declined_recruit": 0,
+    "random_battles": 0,
+    "depths": [
+     5,
+     5,
+     6,
+     6,
+     5,
+     6,
+     6,
+     6,
+     6,
+     7,
+     10,
+     10,
+     11,
+     12,
+     13,
+     13,
+     13,
+     13,
+     13,
+     13,
+     12,
+     11,
+     12,
+     11,
+     12,
+     13,
+     14,
+     15,
+     17,
+     18,
+     17,
+     18,
+     17,
+     18,
+     18,
+     18,
+     17,
+     16,
+     15,
+     15,
+     15,
+     15,
+     16,
+     17,
+     17,
+     17,
+     17,
+     18,
+     19,
+     18,
+     18,
+     19,
+     17,
+     18,
+     17,
+     18,
+     17,
+     17,
+     15,
+     15,
+     16,
+     15,
+     16,
+     17,
+     17,
+     16,
+     17,
+     18,
+     19,
+     18,
+     18,
+     18,
+     17,
+     16,
+     16,
+     16,
+     17,
+     16,
+     15,
+     15,
+     15,
+     15,
+     15,
+     17,
+     17,
+     17,
+     17,
+     18,
+     19,
+     18,
+     17,
+     21,
+     20,
+     20,
+     24,
+     24,
+     24,
+     24,
+     24,
+     24
+    ],
+    "seconds": [
+     1.4998474000021815,
+     1.496760699985316,
+     1.4967155999911483,
+     1.4968031999887899,
+     1.5015430000203196,
+     1.4968362000072375,
+     1.496571199997561,
+     1.4967771999945398,
+     1.4962638999859337,
+     1.4928103999991436,
+     1.4961564000113867,
+     1.4960353000205941,
+     1.4954965000215452,
+     1.4959226000064518,
+     1.495209500018973,
+     1.4959209999942686,
+     1.4957747000153176,
+     1.4959095000231173,
+     1.4958547000132967,
+     1.4957683999964502,
+     1.495895699976245,
+     1.4961235000228044,
+     1.49551359997713,
+     1.4950801999948453,
+     1.495619599998463,
+     1.4952555999916513,
+     1.493142399995122,
+     1.4960785000002943,
+     1.4959344000089914,
+     1.495879199996125,
+     1.490568399982294,
+     1.4964504000090528,
+     1.4959529000043403,
+     1.4960736999928486,
+     1.49618729998474,
+     1.496394899993902,
+     1.4951253999897745,
+     1.4953860000241548,
+     1.4965102999994997,
+     1.4960709000006318,
+     1.4959615000116173,
+     1.4953558999986853,
+     1.4960834000085015,
+     1.4957360999833327,
+     1.495794599992223,
+     1.4959964999870863,
+     1.4956377999915276,
+     1.495649999997113,
+     1.4955991999886464,
+     1.495218299998669,
+     1.4958110000006855,
+     1.494971300009638,
+     1.4951144000224303,
+     1.4942777999967802,
+     1.4950695000006817,
+     1.4961610999889672,
+     1.496211099991342,
+     1.4956080999982078,
+     1.4958712999941781,
+     1.4961081000219565,
+     1.4957941999891773,
+     1.4952234999800567,
+     1.4954382999858353,
+     1.4958082999801263,
+     1.4957597999891732,
+     1.492772800003877,
+     1.4938274000014644,
+     1.4960667999985162,
+     1.4963274999754503,
+     1.4959116999816615,
+     1.496056599979056,
+     1.4952470999851357,
+     1.4943515000049956,
+     1.4963859999843407,
+     1.4956087000027765,
+     1.495447699999204,
+     1.4965242999896873,
+     1.493780799995875,
+     1.493772199988598,
+     1.4958895000163466,
+     1.495672699995339,
+     1.4935066000034567,
+     1.4948977000021841,
+     1.4962910000176635,
+     1.4959868999721948,
+     1.4954335000074934,
+     1.4954155999876093,
+     1.4949349000235088,
+     1.492054200003622,
+     1.4920205000089481,
+     1.493977600010112,
+     1.4956442000111565,
+     1.4956479000102263,
+     1.4937079999945126,
+     1.2047183999966364,
+     0.5943688999977894,
+     0.26416960000642575,
+     0.10204870000598021,
+     0.04880220000632107,
+     0.009453200007556006
+    ]
+   }
+  },
+  "events": [
+   {
+    "ply": 4,
+    "actor": "werewolves",
+    "recruit": true,
+    "battles": [],
+    "after": {
+     "vampires": 9,
+     "werewolves": 11
+    }
+   },
+   {
+    "ply": 6,
+    "actor": "werewolves",
+    "recruit": true,
+    "battles": [],
+    "after": {
+     "vampires": 9,
+     "werewolves": 21
+    }
+   },
+   {
+    "ply": 7,
+    "actor": "vampires",
+    "recruit": true,
+    "battles": [],
+    "after": {
+     "vampires": 11,
+     "werewolves": 21
+    }
+   },
+   {
+    "ply": 9,
+    "actor": "vampires",
+    "recruit": true,
+    "battles": [],
+    "after": {
+     "vampires": 21,
+     "werewolves": 21
+    }
+   },
+   {
+    "ply": 12,
+    "actor": "werewolves",
+    "recruit": true,
+    "battles": [],
+    "after": {
+     "vampires": 21,
+     "werewolves": 33
+    }
+   },
+   {
+    "ply": 15,
+    "actor": "vampires",
+    "recruit": true,
+    "battles": [],
+    "after": {
+     "vampires": 30,
+     "werewolves": 33
+    }
+   },
+   {
+    "ply": 17,
+    "actor": "vampires",
+    "recruit": true,
+    "battles": [],
+    "after": {
+     "vampires": 33,
+     "werewolves": 33
+    }
+   }
+  ]
+ }
+]

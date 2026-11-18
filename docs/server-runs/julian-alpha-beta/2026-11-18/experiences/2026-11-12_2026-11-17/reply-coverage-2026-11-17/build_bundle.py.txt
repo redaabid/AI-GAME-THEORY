@@ -1,0 +1,36 @@
+"""Create a portable local candidate; algorithm class ASTs must stay identical."""
+from pathlib import Path
+import shutil,ast,json,hashlib,subprocess,sys,zipfile
+HERE=Path(__file__).parent;BASE=HERE.parent;ROOT=BASE/"runtime"
+OUT=HERE/"portable-ab2-replies"
+if OUT.exists():raise SystemExit("Existing bundle preserved")
+OUT.mkdir();(OUT/"agents").mkdir()
+for p in ROOT.glob("*.py"):shutil.copy2(p,OUT/p.name)
+for p in (ROOT/"agents").glob("*.py"):shutil.copy2(p,OUT/"agents"/p.name)
+paths={"combo_agents.py":BASE/"combo_agents.py","goal_agent.py":BASE/"goal-coverage-2026-11-13/goal_agent.py",
+       "endgame_agent.py":BASE/"endgame-policy-2026-11-17/endgame_agent.py","reply_agent.py":HERE/"reply_agent.py"}
+for name,p in paths.items():
+    old=p.read_text()
+    new="\n".join(line for line in old.splitlines()
+                  if not line.startswith(("from pathlib import Path","import sys","BASE=","sys.path.insert")))+"\n"
+    before=[ast.dump(n,include_attributes=False) for n in ast.parse(old).body if isinstance(n,ast.ClassDef)]
+    after=[ast.dump(n,include_attributes=False) for n in ast.parse(new).body if isinstance(n,ast.ClassDef)]
+    assert before==after,name
+    (OUT/name).write_text(new,encoding="utf-8")
+shutil.copy2(HERE/"main_candidate.py",OUT/"run_bot.py")
+shutil.copy2(HERE/"test_replies.py",OUT/"test_replies.py")
+shutil.copy2(HERE/"reply-fixtures.json",OUT/"reply-fixtures.json")
+(OUT/"README.md").write_text("# AB2 candidate — 17 November 2026\n\nPython 3.11+ and standard library only.\nRun: python -B run_bot.py IP PORT\nDefault agent: ab2replies, internal width 7, immediate opponent reply pool 32, move budget 1.5 s.\nUse --max-plies N to match the actual server cap (default 200).\nCandidate, not yet validated on H208.\nBased on redaabid/AI-GAME-THEORY commit 8888c096, with Julian's local AB2 experiments.\n",encoding="utf-8")
+r=subprocess.run([sys.executable,"-B","test_replies.py","-v"],cwd=OUT,capture_output=True,text=True)
+(HERE/"bundle-tests.log").write_text(r.stdout+r.stderr)
+if r.returncode:raise SystemExit(r.returncode)
+r=subprocess.run([sys.executable,"-B","run_bot.py","--help"],cwd=OUT,capture_output=True,text=True)
+assert r.returncode==0
+manifest={str(p.relative_to(OUT)):hashlib.sha256(p.read_bytes()).hexdigest() for p in OUT.rglob("*") if p.is_file()}
+(OUT/"SHA256SUMS.json").write_text(json.dumps(manifest,indent=2))
+archive=HERE/"AB2-Replies-candidate-2026-11-17.zip"
+with zipfile.ZipFile(archive,"x",compression=zipfile.ZIP_DEFLATED) as z:
+    for p in OUT.rglob("*"):
+        if p.is_file():z.write(p,p.relative_to(OUT))
+print(archive)
+

@@ -1,0 +1,22 @@
+{
+  "publication": "2026-11-18",
+  "move_time_seconds": 1.5,
+  "local_max_plies": 200,
+  "profiles": {
+    "ab2_reference": "ab2exp:depth=1,max_depth=24,width=6,extra=0,tt_size=50000",
+    "ab2_width7": "ab2exp:depth=1,max_depth=24,width=7,extra=0,tt_size=50000",
+    "ab2_tie": "ab2tie:depth=1,max_depth=24,width=7,extra=0,tt_size=50000",
+    "ab2_risk": "ab2risk:depth=1,max_depth=24,width=7,extra=0,tt_size=50000",
+    "ab2_risk_tie": "ab2risktie:depth=1,max_depth=24,width=7,extra=0,tt_size=50000",
+    "ab2_goals": "ab2goals:depth=1,max_depth=24,width=7,extra=0,tt_size=50000",
+    "ab2_endgame": "ab2endgame:depth=1,max_depth=24,width=7,extra=0,tt_size=50000",
+    "ab2_replies": "ab2replies:depth=1,max_depth=24,width=7,extra=0,tt_size=50000"
+  },
+  "default_candidate": "ab2_replies",
+  "notes": [
+    "The older retained-profile file is unchanged and remains historical.",
+    "depth=1 is the untimed diagnostic setting; 24 is a timed ceiling, not an achieved physical depth.",
+    "AB2-Replies uses up to 32 candidates only for the first opponent reply; seven elsewhere.",
+    "Candidate selection remains experimental; H208 and broader independent maps remain to validate."
+  ]
+}

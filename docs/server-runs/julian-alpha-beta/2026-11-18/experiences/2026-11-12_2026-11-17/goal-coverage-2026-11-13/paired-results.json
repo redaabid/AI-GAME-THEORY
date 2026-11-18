@@ -1,0 +1,58 @@
+[
+  {
+    "species": "vampires",
+    "first": "vampires",
+    "old_score": 0.5,
+    "new_score": 0.5,
+    "final": {
+      "vampires": 48,
+      "werewolves": 48
+    },
+    "activated": 0,
+    "own_turns": 100,
+    "old_repeated": 56,
+    "new_repeated": 62
+  },
+  {
+    "species": "werewolves",
+    "first": "vampires",
+    "old_score": 1.0,
+    "new_score": 1.0,
+    "final": {
+      "vampires": 0,
+      "werewolves": 26
+    },
+    "activated": 0,
+    "own_turns": 97,
+    "old_repeated": 28,
+    "new_repeated": 15
+  },
+  {
+    "species": "vampires",
+    "first": "werewolves",
+    "old_score": 0.0,
+    "new_score": 0.0,
+    "final": {
+      "vampires": 32,
+      "werewolves": 40
+    },
+    "activated": 0,
+    "own_turns": 100,
+    "old_repeated": 0,
+    "new_repeated": 61
+  },
+  {
+    "species": "werewolves",
+    "first": "werewolves",
+    "old_score": 0.0,
+    "new_score": 1.0,
+    "final": {
+      "vampires": 40,
+      "werewolves": 56
+    },
+    "activated": 1,
+    "own_turns": 100,
+    "old_repeated": 0,
+    "new_repeated": 8
+  }
+]

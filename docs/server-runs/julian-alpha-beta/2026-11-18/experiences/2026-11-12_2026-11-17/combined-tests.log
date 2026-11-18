@@ -1,0 +1,9 @@
+test_expired_deadline_has_legal_move (__main__.CombinedTests.test_expired_deadline_has_legal_move) ... ok
+test_keeps_strategic_root_tie (__main__.CombinedTests.test_keeps_strategic_root_tie) ... ok
+test_preserves_action_set (__main__.CombinedTests.test_preserves_action_set) ... ok
+test_preserves_last_chance_probability (__main__.CombinedTests.test_preserves_last_chance_probability) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.118s
+
+OK

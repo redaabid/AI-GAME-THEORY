@@ -1,0 +1,10 @@
+{
+  "ServerIP": "127.0.0.1",
+  "ServerPort": "5555",
+  "PlayersCount": "2",
+  "MaxGameDuration": "00:10:00",
+  "MaxPlayDuration": "00:00:02",
+  "MaxPlays": "200",
+  "AutoRestart": "False",
+  "Map": "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\endgame-policy-2026-11-17\\wpf-runtime\\thetrap.xml"
+}

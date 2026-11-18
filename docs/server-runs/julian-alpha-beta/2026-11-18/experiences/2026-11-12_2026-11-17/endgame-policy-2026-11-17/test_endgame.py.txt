@@ -1,0 +1,71 @@
+import json,time,unittest
+from pathlib import Path
+from dataclasses import replace
+import endgame_agent
+from agents import make_agent,safe_choose,TurnContext
+from agents.ab_variants import SCORE,exact_successors
+from simulator import Position,simulate_turn,get_outcome,opponent
+from game import Cell,distance
+BASE=Path(__file__).parent.parent
+
+class EndgameTests(unittest.TestCase):
+    def pick(self,p,name="ab2endgame",depth=3,maxplies=200,**params):
+        spec=f"{name}:depth={depth},max_depth=24,width=7,extra=0"
+        for k,v in params.items():spec+=f",{k}={v!r}"
+        a=make_agent(spec);m,f=safe_choose(a,p,TurnContext(None,maxplies))
+        self.assertIsNone(f);return a,m
+    def test_recorded_losing_army_approaches_instead_of_fleeing(self):
+        rows=json.loads((BASE/"late-loss-audit-2026-11-17.json").read_text())
+        for row in rows:
+            p=Position.from_dict(row["position"])
+            a,m=self.pick(p)
+            child=simulate_turn(p,m,None)
+            own=[q for q,c in child.cells.items() if getattr(c,p.to_play)]
+            enemies=[q for q,c in p.cells.items() if getattr(c,opponent(p.to_play))]
+            self.assertLess(min(distance(q,r) for q in own for r in enemies),row["gap"])
+            self.assertTrue(a.info["losing_pursuit"])
+    def test_off_switch_matches_goal_reference(self):
+        p=Position(5,10,{(0,2):Cell(vampires=32),(8,2):Cell(werewolves=40)},ply=181)
+        a,m=self.pick(p,endgame=False,pursuit=False);b,n=self.pick(p,"ab2goals")
+        self.assertEqual(m,n);self.assertEqual(a.info["value"],b.info["value"])
+    def test_clock_blend_has_documented_value_and_symmetry(self):
+        p=Position(5,10,{(0,2):Cell(vampires=32),(8,2):Cell(werewolves=40)},ply=180)
+        a,_=self.pick(p,depth=1);b,_=self.pick(p,"ab2goals",depth=1)
+        self.assertAlmostEqual(a.leaf(p),.5*b.leaf(p)-.5*SCORE)
+        q=replace(p,to_play=opponent(p.to_play))
+        self.assertAlmostEqual(a.leaf(q),-a.leaf(p))
+    def test_humans_disable_clock_and_pursuit(self):
+        p=Position(5,10,{(0,2):Cell(vampires=10),(8,2):Cell(werewolves=12),(4,4):Cell(humans=3)},ply=180)
+        a,m=self.pick(p);b,n=self.pick(p,"ab2goals")
+        self.assertFalse(a.info["losing_pursuit"]);self.assertEqual(m,n);self.assertEqual(a.info["value"],b.info["value"])
+    def test_unknown_cap_keeps_reference(self):
+        p=Position(5,10,{(0,2):Cell(vampires=10),(8,2):Cell(werewolves=12)},ply=180)
+        a,m=self.pick(p,maxplies=None);b,n=self.pick(p,"ab2goals",maxplies=None)
+        self.assertEqual(m,n);self.assertEqual(a.info["value"],b.info["value"])
+    def test_last_chance_attack_preserved(self):
+        p=Position(3,3,{(0,1):Cell(vampires=2),(1,1):Cell(werewolves=10)},ply=198)
+        _,m=self.pick(p,depth=2);self.assertEqual(m,[(0,1,2,1,1)])
+    def test_winning_army_does_not_offer_enemy_gamble(self):
+        p=Position(5,10,{(1,2):Cell(werewolves=7),(1,4):Cell(vampires=4)},to_play="werewolves",ply=190)
+        a,m=self.pick(p)
+        child=simulate_turn(p,m,None)
+        own=next(q for q,c in child.cells.items() if c.werewolves)
+        enemy=next(q for q,c in child.cells.items() if c.vampires)
+        self.assertFalse(a.info["losing_pursuit"]);self.assertGreater(distance(own,enemy),1)
+    def test_joint_immediate_win_kept(self):
+        p=Position(3,3,{(0,0):Cell(vampires=3),(0,2):Cell(vampires=3),(1,1):Cell(werewolves=4)},ply=190)
+        _,m=self.pick(p);self.assertEqual(get_outcome(simulate_turn(p,m,None)).winner,"vampires")
+    def test_terminal_results_are_exact(self):
+        p=Position(3,3,{(0,1):Cell(vampires=2),(1,1):Cell(werewolves=10)},ply=198)
+        a,_=self.pick(p,depth=2);end=replace(p,ply=200)
+        self.assertEqual(a.leaf(end),-SCORE)
+    def test_clock_value_matches_exact_unpruned_small_tree(self):
+        p=Position(3,3,{(0,1):Cell(vampires=3),(1,1):Cell(werewolves=3)},ply=196)
+        a,_=self.pick(p,depth=2)
+        def oracle(n,d):
+            if not d or get_outcome(n,max_plies=200):return a.leaf(n)
+            return max(sum(prob*-oracle(child,d-1) for prob,child in exact_successors(n,m))
+                       for _,m,_ in a.plans(n))
+        self.assertAlmostEqual(a.info["value"],oracle(p,2),places=4)
+if __name__=="__main__":unittest.main()
+

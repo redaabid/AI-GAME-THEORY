@@ -1,0 +1,17 @@
+import json
+from pathlib import Path
+import smooth_agent
+from agents import make_agent,TurnContext
+from simulator import Position
+BASE=Path(__file__).parent.parent
+rows=json.loads((BASE/"goal-coverage-2026-11-13/positions.json").read_text())
+out=[]
+for t in rows:
+ p=Position.from_dict(t["position"])
+ for name in ("ab2goals","ab2smooth"):
+  a=make_agent(f"{name}:depth=4,max_depth=24,width=7,extra=0")
+  m=a.choose_moves(p,TurnContext(None,200))
+  row=dict(ply=p.ply,species=p.to_play,agent=name,moves=m,value=a.info["value"])
+  out.append(row);print(json.dumps(row))
+(Path(__file__).parent/"probes.json").write_text(json.dumps(out,indent=2))
+

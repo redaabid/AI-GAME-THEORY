@@ -1,0 +1,39 @@
+0/8 saved
+0/8 saved
+0/8 saved
+0/8 saved
+1/8 saved | holdout-medium-20261113 | AB2 score=0.0 | ply=36
+1/8 saved
+1/8 saved
+2/8 saved | holdout-medium-20261113 | AB2 score=1.0 | ply=57
+2/8 saved
+2/8 saved
+3/8 saved | holdout-medium-20261113 | AB2 score=0.0 | ply=42
+3/8 saved
+4/8 saved | holdout-medium-20261113 | AB2 score=1.0 | ply=33
+4/8 saved
+4/8 saved
+5/8 saved | unseen-medium-20261117 | AB2 score=0.0 | ply=34
+5/8 saved
+6/8 saved | unseen-medium-20261117 | AB2 score=0.0 | ply=17
+6/8 saved
+6/8 saved
+6/8 saved
+6/8 saved
+6/8 saved
+6/8 saved
+6/8 saved
+6/8 saved
+6/8 saved
+6/8 saved
+6/8 saved
+6/8 saved
+6/8 saved
+6/8 saved
+6/8 saved
+7/8 saved | unseen-medium-20261117 | AB2 score=0.5 | ply=200
+7/8 saved
+7/8 saved
+7/8 saved
+8/8 saved | unseen-medium-20261117 | AB2 score=0.5 | ply=200
+{"holdout-medium-20261113": {"games": 4, "wins": 2, "draws": 0, "losses": 2, "mean_seconds": 1.5002263764689867, "max_seconds": 1.5004500999930315, "over18_both": 0, "faults_both": 0, "timeouts_both": 0}, "unseen-medium-20261117": {"games": 4, "wins": 0, "draws": 2, "losses": 2, "mean_seconds": 1.438778752889096, "max_seconds": 1.5141944999922998, "over18_both": 0, "faults_both": 0, "timeouts_both": 0}}

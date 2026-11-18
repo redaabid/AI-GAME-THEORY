@@ -1,0 +1,35 @@
+0/4 saved
+0/4 saved
+0/4 saved
+0/4 saved
+0/4 saved
+0/4 saved
+0/4 saved
+0/4 saved
+1/4 saved | holdout-medium-20261119 | AB2 score=0.0 | ply=72
+1/4 saved
+1/4 saved
+1/4 saved
+1/4 saved
+2/4 saved | holdout-medium-20261119 | AB2 score=0.0 | ply=121
+2/4 saved
+2/4 saved
+2/4 saved
+2/4 saved
+2/4 saved
+2/4 saved
+2/4 saved
+2/4 saved
+2/4 saved
+2/4 saved
+2/4 saved
+2/4 saved
+2/4 saved
+2/4 saved
+3/4 saved | holdout-medium-20261119 | AB2 score=1.0 | ply=200
+3/4 saved
+3/4 saved
+3/4 saved
+3/4 saved
+4/4 saved | holdout-medium-20261119 | AB2 score=1.0 | ply=189
+{"holdout-medium-20261119": {"games": 4, "wins": 2, "draws": 0, "losses": 2, "mean_seconds": 1.4697896273962576, "max_seconds": 1.5293719999899622, "over18_both": 0, "faults_both": 0, "timeouts_both": 0}}

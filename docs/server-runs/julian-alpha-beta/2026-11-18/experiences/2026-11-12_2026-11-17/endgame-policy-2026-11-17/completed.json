@@ -1,0 +1,28 @@
+{
+ "status": "complete",
+ "maps": {
+  "holdout-medium-20261113": {
+   "games": 4,
+   "wins": 2,
+   "draws": 0,
+   "losses": 2,
+   "mean_seconds": 1.5002263764689867,
+   "max_seconds": 1.5004500999930315,
+   "over18_both": 0,
+   "faults_both": 0,
+   "timeouts_both": 0
+  },
+  "unseen-medium-20261117": {
+   "games": 4,
+   "wins": 0,
+   "draws": 2,
+   "losses": 2,
+   "mean_seconds": 1.438778752889096,
+   "max_seconds": 1.5141944999922998,
+   "over18_both": 0,
+   "faults_both": 0,
+   "timeouts_both": 0
+  }
+ },
+ "verified_transitions": 619
+}

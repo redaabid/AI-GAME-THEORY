@@ -1,0 +1,93 @@
+{
+ "game_index": 2,
+ "job_sha256": "f5f0d430ea6dc52508b331afecab76824650e26801d21ef18d94fc3f5c5bb4f0",
+ "result_sha256": "0f018503c6fbdee075bb53d9be836e8bbd420831b67638530562dd20cd85fa6d",
+ "saved_utc": "2026-11-17T14:01:50.879010+00:00",
+ "result": {
+  "i": 0,
+  "j": 1,
+  "map_name": "holdout-medium-20261113",
+  "round": 0,
+  "a_species": "vampires",
+  "first": "werewolves",
+  "seed": 2026211306,
+  "a_score": 0.0,
+  "a_margin": -28,
+  "winner": "werewolves",
+  "termination": "elimination",
+  "plies": 22,
+  "final_populations": {
+   "vampires": 0,
+   "werewolves": 28
+  },
+  "a_stats": {
+   "moves": 11,
+   "seconds": [
+    1.5002150000073016,
+    1.5002042000123765,
+    1.5002180000010412,
+    1.50029729999369,
+    1.5003140999760944,
+    1.5002948000037577,
+    1.5004292000085115,
+    1.5002048999886028,
+    1.5002386999840382,
+    1.5001836000010371,
+    1.500254499987932
+   ],
+   "timeouts": 0,
+   "faults": [],
+   "repeated_positions": 0,
+   "behind_moves": 7,
+   "repeated_while_behind": 0,
+   "memory_interventions": 0,
+   "repeated_chosen_after_penalty": 0,
+   "search": {},
+   "slow_decisions": []
+  },
+  "b_stats": {
+   "moves": 11,
+   "seconds": [
+    1.5021496000117622,
+    1.5020189999777358,
+    1.5026090999890584,
+    1.5026079000090249,
+    1.5024483999877702,
+    1.5021017999970354,
+    1.502044399996521,
+    1.5015260000072885,
+    1.5023624999739695,
+    1.5019346000044607,
+    1.501578299998073
+   ],
+   "timeouts": 0,
+   "faults": [],
+   "repeated_positions": 0,
+   "behind_moves": 3,
+   "repeated_while_behind": 0,
+   "memory_interventions": 0,
+   "repeated_chosen_after_penalty": 0,
+   "search": {
+    "decisions": 11,
+    "iterations": 7056,
+    "tree_depth_total": 18334,
+    "rollouts": 7055,
+    "rollout_plies": 42100,
+    "extension_plies": 0,
+    "coordinated_turns": 0,
+    "loop_cutoffs": 0,
+    "candidate_calls": 2334,
+    "candidate_wall_seconds": 3.5097707001841627,
+    "candidate_cpu_seconds": 3.625,
+    "rollout_wall_seconds": 10.640060899750097,
+    "rollout_cpu_seconds": 10.515625,
+    "search_wall_seconds": 16.500517300039064,
+    "search_cpu_seconds": 16.453125,
+    "deadline_stops": 11,
+    "tree_depth_max": 4,
+    "rollout_depth_max": 6
+   },
+   "slow_decisions": []
+  }
+ }
+}

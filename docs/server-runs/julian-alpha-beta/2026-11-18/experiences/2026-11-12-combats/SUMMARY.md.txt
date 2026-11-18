@@ -1,0 +1,63 @@
+# AB2 : expérience sur les combats aléatoires — 12 novembre 2026
+
+## Changement effectué
+Nouvel agent **ab2risk**, largeur 7. Même génération de candidats, mêmes poids, même profondeur maximale et même budget qu'AB2 référence.
+Sur un mouvement sans combat aléatoire, il conserve la recherche Alpha-Bêta habituelle.
+Lors d'un combat aléatoire, il réutilise les distributions exactes déjà implémentées pour AB6 : probabilité de victoire, effectifs survivants, réponses adverses et moyenne pondérée des valeurs.
+Les groupes attaquant la même case sont additionnés avant de calculer le combat.
+Cette expérience ne combine pas le départage TIE, un guidage ou de nouveaux poids. Ce n'est pas AB6 complet : la sélection d'actions reste celle d'AB2.
+
+Pourquoi : dans la référence, simuler uniquement l'issue la plus probable peut transformer un pari encore gagnable en défaite certaine dans l'arbre. À l'inverse, le bot peut négliger le risque qu'un adversaire faible engage un combat.
+
+## Sources et fichiers
+Copie isolée du commit Reda **8888c096ff84ce4a0dceebe96647ba98e0d5b3fa**, branche feat/mcts-memory.
+- Agent ajouté : [runtime/agents/ab2_risk.py](runtime/agents/ab2_risk.py)
+- Tests ajoutés : [runtime/tests/test_ab2_risk.py](runtime/tests/test_ab2_risk.py)
+- Tests complets : [unit-tests.log](unit-tests.log)
+- Vérifications et empreintes : [provenance.json](provenance.json)
+- Essais ciblés : [late_probes.py](late_probes.py), [late-summary.json](late-summary.json), late-ab2exp/ et late-ab2risk/
+- Lanceur pour de futures parties complètes : [full_comparison.py](full_comparison.py)
+
+Les agents existants sont inchangés ; la copie extraite utilise CRLF sous Windows, vérification du contenu normalisé faite sur les fichiers critiques.
+Aucun code de la branche de travail ni main n'a été modifié. Aucun commit/push. La campagne TIE historique reste intacte et arrêtée ; elle n'a pas été relancée ici.
+
+## Vérifications
+**365 tests réussis**, dont 7 nouveaux, en environ 85 secondes.
+Les nouveaux tests couvrent :
+- dernier pari préférable à une défaite certaine ;
+- valeur comparée à un expectiminimax sans coupures sur le même ensemble borné de candidats ;
+- deux espèces et cache froid/réutilisé ;
+- comportement identique à la référence sur une position calme ;
+- élimination garantie, attaques coordonnées, humains et échéances courtes/expirées.
+
+Cela ne prouve pas la correction sur tous les plateaux ni une supériorité en tournoi.
+
+## Comparaison ciblée contre MCTS V6
+Deux positions synthétiques sans humains, 13 contre 10 et 15 contre 10, distance initiale 2.
+Départ à **194 demi-coups**, arrêt à 200 : au plus six demi-coups par continuation.
+Quatre rôles par position (camp et premier joueur inversés), mêmes graines entre référence et variante ; un seul worker.
+Budget maximal de réflexion 1,5 s, tolérance de mesure 2 s, V6 plafond 100000 itérations.
+Historiques initialement vides. Il ne s'agit ni de parties complètes, ni de rejeux des défaites enregistrées chez Reda.
+
+| Agent contre V6 | Continuations | V | N | D | Temps moyen/coup | Temps maximal/coup |
+|---|---:|---:|---:|---:|---:|---:|
+| AB2 largeur 7 référence | 8 | 3 | 1 | 4 | 0,082 s | 0,250 s |
+| AB2 risque largeur 7 | 8 | 4 | 0 | 4 | 0,182 s | 0,885 s |
+
+Zéro faute, zéro dépassement de 1,8 s et zéro timeout pour les deux AB et V6 dans ces essais.
+La variante obtient une victoire supplémentaire sur ce petit lot, au prix de davantage de calculs. **Échantillon trop petit et ciblé pour conclure qu'elle est supérieure ou qu'elle bat V6 globalement.**
+Les faibles temps AB s'expliquent notamment par la proximité de la limite, qui termine rapidement les branches ; ils ne prédisent pas le temps au milieu d'une partie.
+
+## Décision et suite
+Conserver **ab2risk comme expérimentation**, sans remplacer nos candidats validés.
+La correction du dernier pari est démontrée sur le test ciblé. Le gain général reste inconnu.
+Étape suivante : parties complètes contre le même V6, référence et variante séparées, rôles/graines/cartes équilibrés, budget 1,5 s, puis cartes inédites et serveur WPF/H208.
+Les données complètes des défaites de Reda ne sont pas publiées dans son Git ; elles n'ont donc pas été analysées ici. Leur récupération permettrait de choisir des cas réellement représentatifs.
+
+Depuis le dossier runtime, aperçu d'un plan de parties complètes, sans le lancer :
+```powershell
+python -B ../full_comparison.py --maps <chemin_carte_1.xml> <chemin_carte_2.xml> --dry-run
+```
+En retirant --dry-run, le lanceur exécute au maximum quatre parties supplémentaires par profil et sauvegarde chaque partie. La même commande reprend les résultats terminés. Les dossiers full-ab2exp/ et full-ab2risk/ sont distincts des essais ciblés.
+Ce lanceur a été vérifié en dry-run ; aucune partie complète n'a été lancée durant cette intervention.
+

@@ -1,0 +1,1564 @@
+{
+  "scope": "6 targeted synthetic positions; fixed depth 3; same bounded candidate set; not whole legal tree or timing validation",
+  "records": [
+    {
+      "case": "humans_reachable",
+      "width": 6,
+      "model": "ab2exp",
+      "mode": "cold",
+      "moves": [
+        [
+          0,
+          2,
+          10,
+          1,
+          1
+        ]
+      ],
+      "fault": null,
+      "value": 665360,
+      "oracle_value": 665360,
+      "agrees": true,
+      "winner": null,
+      "enemy_gap": 13
+    },
+    {
+      "case": "humans_reachable",
+      "width": 6,
+      "model": "ab2exp",
+      "mode": "warm",
+      "moves": [
+        [
+          0,
+          2,
+          10,
+          1,
+          1
+        ]
+      ],
+      "fault": null,
+      "value": 665360,
+      "oracle_value": 665360,
+      "agrees": true,
+      "winner": null,
+      "enemy_gap": 13
+    },
+    {
+      "case": "humans_reachable",
+      "width": 6,
+      "model": "ab2exp",
+      "mode": "no_tt",
+      "moves": [
+        [
+          0,
+          2,
+          10,
+          1,
+          1
+        ]
+      ],
+      "fault": null,
+      "value": 665360,
+      "oracle_value": 665360,
+      "agrees": true,
+      "winner": null,
+      "enemy_gap": 13
+    },
+    {
+      "case": "humans_reachable",
+      "width": 6,
+      "model": "ab2tie",
+      "mode": "cold",
+      "moves": [
+        [
+          0,
+          2,
+          10,
+          1,
+          1
+        ]
+      ],
+      "fault": null,
+      "value": 665360,
+      "oracle_value": 665360,
+      "agrees": true,
+      "winner": null,
+      "enemy_gap": 13
+    },
+    {
+      "case": "humans_reachable",
+      "width": 6,
+      "model": "ab2tie",
+      "mode": "warm",
+      "moves": [
+        [
+          0,
+          2,
+          10,
+          1,
+          1
+        ]
+      ],
+      "fault": null,
+      "value": 665360,
+      "oracle_value": 665360,
+      "agrees": true,
+      "winner": null,
+      "enemy_gap": 13
+    },
+    {
+      "case": "humans_reachable",
+      "width": 6,
+      "model": "ab2tie",
+      "mode": "no_tt",
+      "moves": [
+        [
+          0,
+          2,
+          10,
+          1,
+          1
+        ]
+      ],
+      "fault": null,
+      "value": 665360,
+      "oracle_value": 665360,
+      "agrees": true,
+      "winner": null,
+      "enemy_gap": 13
+    },
+    {
+      "case": "humans_reachable",
+      "width": 7,
+      "model": "ab2exp",
+      "mode": "cold",
+      "moves": [
+        [
+          0,
+          2,
+          10,
+          1,
+          1
+        ]
+      ],
+      "fault": null,
+      "value": 665360,
+      "oracle_value": 665360,
+      "agrees": true,
+      "winner": null,
+      "enemy_gap": 13
+    },
+    {
+      "case": "humans_reachable",
+      "width": 7,
+      "model": "ab2exp",
+      "mode": "warm",
+      "moves": [
+        [
+          0,
+          2,
+          10,
+          1,
+          1
+        ]
+      ],
+      "fault": null,
+      "value": 665360,
+      "oracle_value": 665360,
+      "agrees": true,
+      "winner": null,
+      "enemy_gap": 13
+    },
+    {
+      "case": "humans_reachable",
+      "width": 7,
+      "model": "ab2exp",
+      "mode": "no_tt",
+      "moves": [
+        [
+          0,
+          2,
+          10,
+          1,
+          1
+        ]
+      ],
+      "fault": null,
+      "value": 665360,
+      "oracle_value": 665360,
+      "agrees": true,
+      "winner": null,
+      "enemy_gap": 13
+    },
+    {
+      "case": "humans_reachable",
+      "width": 7,
+      "model": "ab2tie",
+      "mode": "cold",
+      "moves": [
+        [
+          0,
+          2,
+          10,
+          1,
+          1
+        ]
+      ],
+      "fault": null,
+      "value": 665360,
+      "oracle_value": 665360,
+      "agrees": true,
+      "winner": null,
+      "enemy_gap": 13
+    },
+    {
+      "case": "humans_reachable",
+      "width": 7,
+      "model": "ab2tie",
+      "mode": "warm",
+      "moves": [
+        [
+          0,
+          2,
+          10,
+          1,
+          1
+        ]
+      ],
+      "fault": null,
+      "value": 665360,
+      "oracle_value": 665360,
+      "agrees": true,
+      "winner": null,
+      "enemy_gap": 13
+    },
+    {
+      "case": "humans_reachable",
+      "width": 7,
+      "model": "ab2tie",
+      "mode": "no_tt",
+      "moves": [
+        [
+          0,
+          2,
+          10,
+          1,
+          1
+        ]
+      ],
+      "fault": null,
+      "value": 665360,
+      "oracle_value": 665360,
+      "agrees": true,
+      "winner": null,
+      "enemy_gap": 13
+    },
+    {
+      "case": "recruitment_danger",
+      "width": 6,
+      "model": "ab2exp",
+      "mode": "cold",
+      "moves": [
+        [
+          0,
+          1,
+          10,
+          0,
+          0
+        ]
+      ],
+      "fault": null,
+      "value": -965427,
+      "oracle_value": -965427,
+      "agrees": true,
+      "winner": null,
+      "enemy_gap": 2
+    },
+    {
+      "case": "recruitment_danger",
+      "width": 6,
+      "model": "ab2exp",
+      "mode": "warm",
+      "moves": [
+        [
+          0,
+          1,
+          10,
+          0,
+          0
+        ]
+      ],
+      "fault": null,
+      "value": -965427,
+      "oracle_value": -965427,
+      "agrees": true,
+      "winner": null,
+      "enemy_gap": 2
+    },
+    {
+      "case": "recruitment_danger",
+      "width": 6,
+      "model": "ab2exp",
+      "mode": "no_tt",
+      "moves": [
+        [
+          0,
+          1,
+          10,
+          0,
+          0
+        ]
+      ],
+      "fault": null,
+      "value": -965427,
+      "oracle_value": -965427,
+      "agrees": true,
+      "winner": null,
+      "enemy_gap": 2
+    },
+    {
+      "case": "recruitment_danger",
+      "width": 6,
+      "model": "ab2tie",
+      "mode": "cold",
+      "moves": [
+        [
+          0,
+          1,
+          10,
+          0,
+          0
+        ]
+      ],
+      "fault": null,
+      "value": -965427,
+      "oracle_value": -965427,
+      "agrees": true,
+      "winner": null,
+      "enemy_gap": 2
+    },
+    {
+      "case": "recruitment_danger",
+      "width": 6,
+      "model": "ab2tie",
+      "mode": "warm",
+      "moves": [
+        [
+          0,
+          1,
+          10,
+          0,
+          0
+        ]
+      ],
+      "fault": null,
+      "value": -965427,
+      "oracle_value": -965427,
+      "agrees": true,
+      "winner": null,
+      "enemy_gap": 2
+    },
+    {
+      "case": "recruitment_danger",
+      "width": 6,
+      "model": "ab2tie",
+      "mode": "no_tt",
+      "moves": [
+        [
+          0,
+          1,
+          10,
+          0,
+          0
+        ]
+      ],
+      "fault": null,
+      "value": -965427,
+      "oracle_value": -965427,
+      "agrees": true,
+      "winner": null,
+      "enemy_gap": 2
+    },
+    {
+      "case": "recruitment_danger",
+      "width": 7,
+      "model": "ab2exp",
+      "mode": "cold",
+      "moves": [
+        [
+          0,
+          1,
+          10,
+          0,
+          0
+        ]
+      ],
+      "fault": null,
+      "value": -965427,
+      "oracle_value": -965427,
+      "agrees": true,
+      "winner": null,
+      "enemy_gap": 2
+    },
+    {
+      "case": "recruitment_danger",
+      "width": 7,
+      "model": "ab2exp",
+      "mode": "warm",
+      "moves": [
+        [
+          0,
+          1,
+          10,
+          0,
+          0
+        ]
+      ],
+      "fault": null,
+      "value": -965427,
+      "oracle_value": -965427,
+      "agrees": true,
+      "winner": null,
+      "enemy_gap": 2
+    },
+    {
+      "case": "recruitment_danger",
+      "width": 7,
+      "model": "ab2exp",
+      "mode": "no_tt",
+      "moves": [
+        [
+          0,
+          1,
+          10,
+          0,
+          0
+        ]
+      ],
+      "fault": null,
+      "value": -965427,
+      "oracle_value": -965427,
+      "agrees": true,
+      "winner": null,
+      "enemy_gap": 2
+    },
+    {
+      "case": "recruitment_danger",
+      "width": 7,
+      "model": "ab2tie",
+      "mode": "cold",
+      "moves": [
+        [
+          0,
+          1,
+          10,
+          0,
+          0
+        ]
+      ],
+      "fault": null,
+      "value": -965427,
+      "oracle_value": -965427,
+      "agrees": true,
+      "winner": null,
+      "enemy_gap": 2
+    },
+    {
+      "case": "recruitment_danger",
+      "width": 7,
+      "model": "ab2tie",
+      "mode": "warm",
+      "moves": [
+        [
+          0,
+          1,
+          10,
+          0,
+          0
+        ]
+      ],
+      "fault": null,
+      "value": -965427,
+      "oracle_value": -965427,
+      "agrees": true,
+      "winner": null,
+      "enemy_gap": 2
+    },
+    {
+      "case": "recruitment_danger",
+      "width": 7,
+      "model": "ab2tie",
+      "mode": "no_tt",
+      "moves": [
+        [
+          0,
+          1,
+          10,
+          0,
+          0
+        ]
+      ],
+      "fault": null,
+      "value": -965427,
+      "oracle_value": -965427,
+      "agrees": true,
+      "winner": null,
+      "enemy_gap": 2
+    },
+    {
+      "case": "pursuit_no_humans",
+      "width": 6,
+      "model": "ab2exp",
+      "mode": "cold",
+      "moves": [
+        [
+          0,
+          0,
+          18,
+          0,
+          1
+        ]
+      ],
+      "fault": null,
+      "value": 582783,
+      "oracle_value": 582783,
+      "agrees": true,
+      "winner": null,
+      "enemy_gap": 11
+    },
+    {
+      "case": "pursuit_no_humans",
+      "width": 6,
+      "model": "ab2exp",
+      "mode": "warm",
+      "moves": [
+        [
+          0,
+          0,
+          18,
+          0,
+          1
+        ]
+      ],
+      "fault": null,
+      "value": 582783,
+      "oracle_value": 582783,
+      "agrees": true,
+      "winner": null,
+      "enemy_gap": 11
+    },
+    {
+      "case": "pursuit_no_humans",
+      "width": 6,
+      "model": "ab2exp",
+      "mode": "no_tt",
+      "moves": [
+        [
+          0,
+          0,
+          18,
+          0,
+          1
+        ]
+      ],
+      "fault": null,
+      "value": 582783,
+      "oracle_value": 582783,
+      "agrees": true,
+      "winner": null,
+      "enemy_gap": 11
+    },
+    {
+      "case": "pursuit_no_humans",
+      "width": 6,
+      "model": "ab2tie",
+      "mode": "cold",
+      "moves": [
+        [
+          0,
+          0,
+          18,
+          1,
+          0
+        ]
+      ],
+      "fault": null,
+      "value": 582783,
+      "oracle_value": 582783,
+      "agrees": true,
+      "winner": null,
+      "enemy_gap": 10
+    },
+    {
+      "case": "pursuit_no_humans",
+      "width": 6,
+      "model": "ab2tie",
+      "mode": "warm",
+      "moves": [
+        [
+          0,
+          0,
+          18,
+          1,
+          0
+        ]
+      ],
+      "fault": null,
+      "value": 582783,
+      "oracle_value": 582783,
+      "agrees": true,
+      "winner": null,
+      "enemy_gap": 10
+    },
+    {
+      "case": "pursuit_no_humans",
+      "width": 6,
+      "model": "ab2tie",
+      "mode": "no_tt",
+      "moves": [
+        [
+          0,
+          0,
+          18,
+          1,
+          0
+        ]
+      ],
+      "fault": null,
+      "value": 582783,
+      "oracle_value": 582783,
+      "agrees": true,
+      "winner": null,
+      "enemy_gap": 10
+    },
+    {
+      "case": "pursuit_no_humans",
+      "width": 7,
+      "model": "ab2exp",
+      "mode": "cold",
+      "moves": [
+        [
+          0,
+          0,
+          18,
+          0,
+          1
+        ]
+      ],
+      "fault": null,
+      "value": 582783,
+      "oracle_value": 582783,
+      "agrees": true,
+      "winner": null,
+      "enemy_gap": 11
+    },
+    {
+      "case": "pursuit_no_humans",
+      "width": 7,
+      "model": "ab2exp",
+      "mode": "warm",
+      "moves": [
+        [
+          0,
+          0,
+          18,
+          0,
+          1
+        ]
+      ],
+      "fault": null,
+      "value": 582783,
+      "oracle_value": 582783,
+      "agrees": true,
+      "winner": null,
+      "enemy_gap": 11
+    },
+    {
+      "case": "pursuit_no_humans",
+      "width": 7,
+      "model": "ab2exp",
+      "mode": "no_tt",
+      "moves": [
+        [
+          0,
+          0,
+          18,
+          0,
+          1
+        ]
+      ],
+      "fault": null,
+      "value": 582783,
+      "oracle_value": 582783,
+      "agrees": true,
+      "winner": null,
+      "enemy_gap": 11
+    },
+    {
+      "case": "pursuit_no_humans",
+      "width": 7,
+      "model": "ab2tie",
+      "mode": "cold",
+      "moves": [
+        [
+          0,
+          0,
+          18,
+          1,
+          0
+        ]
+      ],
+      "fault": null,
+      "value": 582783,
+      "oracle_value": 582783,
+      "agrees": true,
+      "winner": null,
+      "enemy_gap": 10
+    },
+    {
+      "case": "pursuit_no_humans",
+      "width": 7,
+      "model": "ab2tie",
+      "mode": "warm",
+      "moves": [
+        [
+          0,
+          0,
+          18,
+          1,
+          0
+        ]
+      ],
+      "fault": null,
+      "value": 582783,
+      "oracle_value": 582783,
+      "agrees": true,
+      "winner": null,
+      "enemy_gap": 10
+    },
+    {
+      "case": "pursuit_no_humans",
+      "width": 7,
+      "model": "ab2tie",
+      "mode": "no_tt",
+      "moves": [
+        [
+          0,
+          0,
+          18,
+          1,
+          0
+        ]
+      ],
+      "fault": null,
+      "value": 582783,
+      "oracle_value": 582783,
+      "agrees": true,
+      "winner": null,
+      "enemy_gap": 10
+    },
+    {
+      "case": "immediate_win",
+      "width": 6,
+      "model": "ab2exp",
+      "mode": "cold",
+      "moves": [
+        [
+          1,
+          3,
+          18,
+          0,
+          3
+        ]
+      ],
+      "fault": null,
+      "value": 1000000,
+      "oracle_value": 1000000,
+      "agrees": true,
+      "winner": "vampires",
+      "enemy_gap": null
+    },
+    {
+      "case": "immediate_win",
+      "width": 6,
+      "model": "ab2exp",
+      "mode": "warm",
+      "moves": [
+        [
+          1,
+          3,
+          18,
+          0,
+          3
+        ]
+      ],
+      "fault": null,
+      "value": 1000000,
+      "oracle_value": 1000000,
+      "agrees": true,
+      "winner": "vampires",
+      "enemy_gap": null
+    },
+    {
+      "case": "immediate_win",
+      "width": 6,
+      "model": "ab2exp",
+      "mode": "no_tt",
+      "moves": [
+        [
+          1,
+          3,
+          18,
+          0,
+          3
+        ]
+      ],
+      "fault": null,
+      "value": 1000000,
+      "oracle_value": 1000000,
+      "agrees": true,
+      "winner": "vampires",
+      "enemy_gap": null
+    },
+    {
+      "case": "immediate_win",
+      "width": 6,
+      "model": "ab2tie",
+      "mode": "cold",
+      "moves": [
+        [
+          1,
+          3,
+          18,
+          0,
+          3
+        ]
+      ],
+      "fault": null,
+      "value": 1000000,
+      "oracle_value": 1000000,
+      "agrees": true,
+      "winner": "vampires",
+      "enemy_gap": null
+    },
+    {
+      "case": "immediate_win",
+      "width": 6,
+      "model": "ab2tie",
+      "mode": "warm",
+      "moves": [
+        [
+          1,
+          3,
+          18,
+          0,
+          3
+        ]
+      ],
+      "fault": null,
+      "value": 1000000,
+      "oracle_value": 1000000,
+      "agrees": true,
+      "winner": "vampires",
+      "enemy_gap": null
+    },
+    {
+      "case": "immediate_win",
+      "width": 6,
+      "model": "ab2tie",
+      "mode": "no_tt",
+      "moves": [
+        [
+          1,
+          3,
+          18,
+          0,
+          3
+        ]
+      ],
+      "fault": null,
+      "value": 1000000,
+      "oracle_value": 1000000,
+      "agrees": true,
+      "winner": "vampires",
+      "enemy_gap": null
+    },
+    {
+      "case": "immediate_win",
+      "width": 7,
+      "model": "ab2exp",
+      "mode": "cold",
+      "moves": [
+        [
+          1,
+          3,
+          18,
+          0,
+          3
+        ]
+      ],
+      "fault": null,
+      "value": 1000000,
+      "oracle_value": 1000000,
+      "agrees": true,
+      "winner": "vampires",
+      "enemy_gap": null
+    },
+    {
+      "case": "immediate_win",
+      "width": 7,
+      "model": "ab2exp",
+      "mode": "warm",
+      "moves": [
+        [
+          1,
+          3,
+          18,
+          0,
+          3
+        ]
+      ],
+      "fault": null,
+      "value": 1000000,
+      "oracle_value": 1000000,
+      "agrees": true,
+      "winner": "vampires",
+      "enemy_gap": null
+    },
+    {
+      "case": "immediate_win",
+      "width": 7,
+      "model": "ab2exp",
+      "mode": "no_tt",
+      "moves": [
+        [
+          1,
+          3,
+          18,
+          0,
+          3
+        ]
+      ],
+      "fault": null,
+      "value": 1000000,
+      "oracle_value": 1000000,
+      "agrees": true,
+      "winner": "vampires",
+      "enemy_gap": null
+    },
+    {
+      "case": "immediate_win",
+      "width": 7,
+      "model": "ab2tie",
+      "mode": "cold",
+      "moves": [
+        [
+          1,
+          3,
+          18,
+          0,
+          3
+        ]
+      ],
+      "fault": null,
+      "value": 1000000,
+      "oracle_value": 1000000,
+      "agrees": true,
+      "winner": "vampires",
+      "enemy_gap": null
+    },
+    {
+      "case": "immediate_win",
+      "width": 7,
+      "model": "ab2tie",
+      "mode": "warm",
+      "moves": [
+        [
+          1,
+          3,
+          18,
+          0,
+          3
+        ]
+      ],
+      "fault": null,
+      "value": 1000000,
+      "oracle_value": 1000000,
+      "agrees": true,
+      "winner": "vampires",
+      "enemy_gap": null
+    },
+    {
+      "case": "immediate_win",
+      "width": 7,
+      "model": "ab2tie",
+      "mode": "no_tt",
+      "moves": [
+        [
+          1,
+          3,
+          18,
+          0,
+          3
+        ]
+      ],
+      "fault": null,
+      "value": 1000000,
+      "oracle_value": 1000000,
+      "agrees": true,
+      "winner": "vampires",
+      "enemy_gap": null
+    },
+    {
+      "case": "strong_may_allow_enemy_initiative",
+      "width": 6,
+      "model": "ab2exp",
+      "mode": "cold",
+      "moves": [
+        [
+          1,
+          2,
+          10,
+          0,
+          1
+        ]
+      ],
+      "fault": null,
+      "value": 976785,
+      "oracle_value": 976785,
+      "agrees": true,
+      "winner": null,
+      "enemy_gap": 3
+    },
+    {
+      "case": "strong_may_allow_enemy_initiative",
+      "width": 6,
+      "model": "ab2exp",
+      "mode": "warm",
+      "moves": [
+        [
+          1,
+          2,
+          10,
+          0,
+          1
+        ]
+      ],
+      "fault": null,
+      "value": 976785,
+      "oracle_value": 976785,
+      "agrees": true,
+      "winner": null,
+      "enemy_gap": 3
+    },
+    {
+      "case": "strong_may_allow_enemy_initiative",
+      "width": 6,
+      "model": "ab2exp",
+      "mode": "no_tt",
+      "moves": [
+        [
+          1,
+          2,
+          10,
+          0,
+          1
+        ]
+      ],
+      "fault": null,
+      "value": 976785,
+      "oracle_value": 976785,
+      "agrees": true,
+      "winner": null,
+      "enemy_gap": 3
+    },
+    {
+      "case": "strong_may_allow_enemy_initiative",
+      "width": 6,
+      "model": "ab2tie",
+      "mode": "cold",
+      "moves": [
+        [
+          1,
+          2,
+          10,
+          1,
+          1
+        ]
+      ],
+      "fault": null,
+      "value": 976785,
+      "oracle_value": 976785,
+      "agrees": true,
+      "winner": null,
+      "enemy_gap": 2
+    },
+    {
+      "case": "strong_may_allow_enemy_initiative",
+      "width": 6,
+      "model": "ab2tie",
+      "mode": "warm",
+      "moves": [
+        [
+          1,
+          2,
+          10,
+          1,
+          1
+        ]
+      ],
+      "fault": null,
+      "value": 976785,
+      "oracle_value": 976785,
+      "agrees": true,
+      "winner": null,
+      "enemy_gap": 2
+    },
+    {
+      "case": "strong_may_allow_enemy_initiative",
+      "width": 6,
+      "model": "ab2tie",
+      "mode": "no_tt",
+      "moves": [
+        [
+          1,
+          2,
+          10,
+          1,
+          1
+        ]
+      ],
+      "fault": null,
+      "value": 976785,
+      "oracle_value": 976785,
+      "agrees": true,
+      "winner": null,
+      "enemy_gap": 2
+    },
+    {
+      "case": "strong_may_allow_enemy_initiative",
+      "width": 7,
+      "model": "ab2exp",
+      "mode": "cold",
+      "moves": [
+        [
+          1,
+          2,
+          10,
+          0,
+          1
+        ]
+      ],
+      "fault": null,
+      "value": 976785,
+      "oracle_value": 976785,
+      "agrees": true,
+      "winner": null,
+      "enemy_gap": 3
+    },
+    {
+      "case": "strong_may_allow_enemy_initiative",
+      "width": 7,
+      "model": "ab2exp",
+      "mode": "warm",
+      "moves": [
+        [
+          1,
+          2,
+          10,
+          0,
+          1
+        ]
+      ],
+      "fault": null,
+      "value": 976785,
+      "oracle_value": 976785,
+      "agrees": true,
+      "winner": null,
+      "enemy_gap": 3
+    },
+    {
+      "case": "strong_may_allow_enemy_initiative",
+      "width": 7,
+      "model": "ab2exp",
+      "mode": "no_tt",
+      "moves": [
+        [
+          1,
+          2,
+          10,
+          0,
+          1
+        ]
+      ],
+      "fault": null,
+      "value": 976785,
+      "oracle_value": 976785,
+      "agrees": true,
+      "winner": null,
+      "enemy_gap": 3
+    },
+    {
+      "case": "strong_may_allow_enemy_initiative",
+      "width": 7,
+      "model": "ab2tie",
+      "mode": "cold",
+      "moves": [
+        [
+          1,
+          2,
+          10,
+          1,
+          1
+        ]
+      ],
+      "fault": null,
+      "value": 976785,
+      "oracle_value": 976785,
+      "agrees": true,
+      "winner": null,
+      "enemy_gap": 2
+    },
+    {
+      "case": "strong_may_allow_enemy_initiative",
+      "width": 7,
+      "model": "ab2tie",
+      "mode": "warm",
+      "moves": [
+        [
+          1,
+          2,
+          10,
+          1,
+          1
+        ]
+      ],
+      "fault": null,
+      "value": 976785,
+      "oracle_value": 976785,
+      "agrees": true,
+      "winner": null,
+      "enemy_gap": 2
+    },
+    {
+      "case": "strong_may_allow_enemy_initiative",
+      "width": 7,
+      "model": "ab2tie",
+      "mode": "no_tt",
+      "moves": [
+        [
+          1,
+          2,
+          10,
+          1,
+          1
+        ]
+      ],
+      "fault": null,
+      "value": 976785,
+      "oracle_value": 976785,
+      "agrees": true,
+      "winner": null,
+      "enemy_gap": 2
+    },
+    {
+      "case": "last_chance_before_cap",
+      "width": 6,
+      "model": "ab2exp",
+      "mode": "cold",
+      "moves": [
+        [
+          0,
+          1,
+          2,
+          0,
+          0
+        ]
+      ],
+      "fault": null,
+      "value": -1000000,
+      "oracle_value": -1000000,
+      "agrees": true,
+      "winner": null,
+      "enemy_gap": 1
+    },
+    {
+      "case": "last_chance_before_cap",
+      "width": 6,
+      "model": "ab2exp",
+      "mode": "warm",
+      "moves": [
+        [
+          0,
+          1,
+          2,
+          0,
+          0
+        ]
+      ],
+      "fault": null,
+      "value": -1000000,
+      "oracle_value": -1000000,
+      "agrees": true,
+      "winner": null,
+      "enemy_gap": 1
+    },
+    {
+      "case": "last_chance_before_cap",
+      "width": 6,
+      "model": "ab2exp",
+      "mode": "no_tt",
+      "moves": [
+        [
+          0,
+          1,
+          2,
+          0,
+          0
+        ]
+      ],
+      "fault": null,
+      "value": -1000000,
+      "oracle_value": -1000000,
+      "agrees": true,
+      "winner": null,
+      "enemy_gap": 1
+    },
+    {
+      "case": "last_chance_before_cap",
+      "width": 6,
+      "model": "ab2tie",
+      "mode": "cold",
+      "moves": [
+        [
+          0,
+          1,
+          2,
+          0,
+          0
+        ]
+      ],
+      "fault": null,
+      "value": -1000000,
+      "oracle_value": -1000000,
+      "agrees": true,
+      "winner": null,
+      "enemy_gap": 1
+    },
+    {
+      "case": "last_chance_before_cap",
+      "width": 6,
+      "model": "ab2tie",
+      "mode": "warm",
+      "moves": [
+        [
+          0,
+          1,
+          2,
+          0,
+          0
+        ]
+      ],
+      "fault": null,
+      "value": -1000000,
+      "oracle_value": -1000000,
+      "agrees": true,
+      "winner": null,
+      "enemy_gap": 1
+    },
+    {
+      "case": "last_chance_before_cap",
+      "width": 6,
+      "model": "ab2tie",
+      "mode": "no_tt",
+      "moves": [
+        [
+          0,
+          1,
+          2,
+          0,
+          0
+        ]
+      ],
+      "fault": null,
+      "value": -1000000,
+      "oracle_value": -1000000,
+      "agrees": true,
+      "winner": null,
+      "enemy_gap": 1
+    },
+    {
+      "case": "last_chance_before_cap",
+      "width": 7,
+      "model": "ab2exp",
+      "mode": "cold",
+      "moves": [
+        [
+          0,
+          1,
+          2,
+          0,
+          0
+        ]
+      ],
+      "fault": null,
+      "value": -1000000,
+      "oracle_value": -1000000,
+      "agrees": true,
+      "winner": null,
+      "enemy_gap": 1
+    },
+    {
+      "case": "last_chance_before_cap",
+      "width": 7,
+      "model": "ab2exp",
+      "mode": "warm",
+      "moves": [
+        [
+          0,
+          1,
+          2,
+          0,
+          0
+        ]
+      ],
+      "fault": null,
+      "value": -1000000,
+      "oracle_value": -1000000,
+      "agrees": true,
+      "winner": null,
+      "enemy_gap": 1
+    },
+    {
+      "case": "last_chance_before_cap",
+      "width": 7,
+      "model": "ab2exp",
+      "mode": "no_tt",
+      "moves": [
+        [
+          0,
+          1,
+          2,
+          0,
+          0
+        ]
+      ],
+      "fault": null,
+      "value": -1000000,
+      "oracle_value": -1000000,
+      "agrees": true,
+      "winner": null,
+      "enemy_gap": 1
+    },
+    {
+      "case": "last_chance_before_cap",
+      "width": 7,
+      "model": "ab2tie",
+      "mode": "cold",
+      "moves": [
+        [
+          0,
+          1,
+          2,
+          0,
+          0
+        ]
+      ],
+      "fault": null,
+      "value": -1000000,
+      "oracle_value": -1000000,
+      "agrees": true,
+      "winner": null,
+      "enemy_gap": 1
+    },
+    {
+      "case": "last_chance_before_cap",
+      "width": 7,
+      "model": "ab2tie",
+      "mode": "warm",
+      "moves": [
+        [
+          0,
+          1,
+          2,
+          0,
+          0
+        ]
+      ],
+      "fault": null,
+      "value": -1000000,
+      "oracle_value": -1000000,
+      "agrees": true,
+      "winner": null,
+      "enemy_gap": 1
+    },
+    {
+      "case": "last_chance_before_cap",
+      "width": 7,
+      "model": "ab2tie",
+      "mode": "no_tt",
+      "moves": [
+        [
+          0,
+          1,
+          2,
+          0,
+          0
+        ]
+      ],
+      "fault": null,
+      "value": -1000000,
+      "oracle_value": -1000000,
+      "agrees": true,
+      "winner": null,
+      "enemy_gap": 1
+    }
+  ],
+  "search_checks": 72,
+  "search_mismatches": 0,
+  "faults": 0,
+  "flat_pursuit_scores": [
+    {
+      "moves": [
+        [
+          0,
+          0,
+          18,
+          1,
+          0
+        ]
+      ],
+      "static": 582783
+    },
+    {
+      "moves": [
+        [
+          0,
+          0,
+          18,
+          1,
+          1
+        ]
+      ],
+      "static": 582783
+    },
+    {
+      "moves": [
+        [
+          0,
+          0,
+          18,
+          0,
+          1
+        ]
+      ],
+      "static": 582783
+    }
+  ],
+  "last_chance_attack": {
+    "deterministic_score": -1000000,
+    "exact_one_ply_expected_score": -880999.99991,
+    "rules_profile": "server-v3.2.1",
+    "outcomes": 13
+  }
+}

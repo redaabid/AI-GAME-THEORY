@@ -1,0 +1,2 @@
+Observed WPF result: AB-Endgame wins; MCTS-V6 loses.
+Final populations 3 versus 0. Humans left 0.

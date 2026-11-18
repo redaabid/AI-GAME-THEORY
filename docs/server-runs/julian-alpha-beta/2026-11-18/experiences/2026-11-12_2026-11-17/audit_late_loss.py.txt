@@ -1,0 +1,29 @@
+from pathlib import Path
+import json,sys
+BASE=Path(__file__).parent
+sys.path.insert(0,str(BASE/"goal-coverage-2026-11-13"))
+import goal_agent
+from agents import make_agent,TurnContext
+from simulator import Position,opponent
+from game import distance
+out=[]
+for f in (BASE/"traces").glob("*.json"):
+ r=json.loads(f.read_text())
+ if not r["job"]["a"].startswith("ab2goals:") or r["result"]["a_score"]!=0:continue
+ print("LOSS",r["job"]["map_name"],r["job"]["a_species"],r["result"]["final_populations"])
+ for t in r["turns"]:
+  p=Position.from_dict(t["position"])
+  if p.to_play!=r["job"]["a_species"] or p.ply<155:continue
+  if p.ply%20 not in (0,1) and p.ply<195:continue
+  own=[q for q,c in p.cells.items() if getattr(c,p.to_play)]
+  enemy=[q for q,c in p.cells.items() if getattr(c,opponent(p.to_play))]
+  a=make_agent("ab2goals:depth=3,width=7,extra=0");a.choose_moves(p,TurnContext(None,200))
+  def gap(n):
+   x=[q for q,c in n.cells.items() if getattr(c,p.to_play)]
+   y=[q for q,c in n.cells.items() if getattr(c,opponent(p.to_play))]
+   return min((distance(q,r) for q in x for r in y),default=0)
+  rows=[dict(moves=list(m),static=value,gap=gap(child)) for value,m,child in a.plans(p)]
+  row=dict(position=p.to_dict(),logged=t["moves"],info=t["info"],gap=gap(p),candidates=rows)
+  out.append(row);print(json.dumps(dict(ply=p.ply,gap=gap(p),moves=t["moves"],candidate_gaps=[r["gap"] for r in rows])))
+(BASE/"late-loss-audit-2026-11-17.json").write_text(json.dumps(out,indent=2))
+

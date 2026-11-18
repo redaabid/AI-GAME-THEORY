@@ -1,0 +1,15 @@
+test_clock_blend_has_documented_value_and_symmetry (__main__.EndgameTests.test_clock_blend_has_documented_value_and_symmetry) ... ok
+test_clock_value_matches_exact_unpruned_small_tree (__main__.EndgameTests.test_clock_value_matches_exact_unpruned_small_tree) ... ok
+test_humans_disable_clock_and_pursuit (__main__.EndgameTests.test_humans_disable_clock_and_pursuit) ... ok
+test_joint_immediate_win_kept (__main__.EndgameTests.test_joint_immediate_win_kept) ... ok
+test_last_chance_attack_preserved (__main__.EndgameTests.test_last_chance_attack_preserved) ... ok
+test_off_switch_matches_goal_reference (__main__.EndgameTests.test_off_switch_matches_goal_reference) ... ok
+test_recorded_losing_army_approaches_instead_of_fleeing (__main__.EndgameTests.test_recorded_losing_army_approaches_instead_of_fleeing) ... ok
+test_terminal_results_are_exact (__main__.EndgameTests.test_terminal_results_are_exact) ... ok
+test_unknown_cap_keeps_reference (__main__.EndgameTests.test_unknown_cap_keeps_reference) ... ok
+test_winning_army_does_not_offer_enemy_gamble (__main__.EndgameTests.test_winning_army_does_not_offer_enemy_gamble) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.290s
+
+OK

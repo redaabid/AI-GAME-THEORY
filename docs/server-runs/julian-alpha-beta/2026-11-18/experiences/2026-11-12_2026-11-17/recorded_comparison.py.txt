@@ -1,0 +1,53 @@
+"""Recorded full-game comparisons against unmodified Reda V6."""
+import sys,json,hashlib,ctypes,argparse
+from pathlib import Path
+ROOT=Path(__file__).parent/"runtime"
+sys.path.insert(0,str(ROOT))
+import scripts.mcts_v6
+import campaign,tournament
+from simulator import load_map
+from campaign import make_plan,run_campaign,atomic_json
+from agents import safe_choose
+TRACE=[]
+def recorded_choose(agent,position,context):
+    moves,fault=safe_choose(agent,position,context)
+    TRACE.append(dict(position=position.to_dict(),moves=moves,fault=fault,info=agent.info))
+    return moves,fault
+tournament.safe_choose=recorded_choose
+ORIGINAL=tournament._run_job
+def recorded_job(job):
+    TRACE.clear()
+    result=ORIGINAL(job)
+    key=hashlib.sha256(json.dumps(job,sort_keys=True).encode()).hexdigest()
+    atomic_json(Path(__file__).parent/"traces"/(key+".json"),dict(job=job,result=result,turns=TRACE))
+    return result
+campaign._run_job=recorded_job
+
+def main():
+    parser=argparse.ArgumentParser()
+    parser.add_argument("--agent",default="ab2risk")
+    parser.add_argument("--budget",type=float,default=1.5)
+    parser.add_argument("--map",choices=("thetrap","testmap2"),default="thetrap")
+    parser.add_argument("--seed",type=int,default=2026111201)
+    parser.add_argument("--max-games",type=int,default=4)
+    args=parser.parse_args()
+    if not 0<args.budget<=1.5:parser.error("budget outside (0,1.5]")
+    path=ROOT.parents[5]/"server"/(args.map+".xml")
+    maps=[(args.map,load_map(path))]
+    spec=f"{args.agent}:depth=1,max_depth=24,width=7,extra=0,tt_size=50000"
+    plan=make_plan([spec,"mcts-v6:iterations=100000"],maps,seed=args.seed,workers=2,rounds=1,
+                   max_plies=200,move_time=2 if args.budget==1.5 else args.budget+.5,margin=.5)
+    plan["recorded_sources"]={str(p.relative_to(ROOT)):hashlib.sha256(p.read_bytes()).hexdigest()
+                             for p in sorted(ROOT.rglob("*.py")) if ".local" not in p.parts}
+    plan["recorder_sha256"]=hashlib.sha256(Path(__file__).read_bytes()).hexdigest()
+    directory=Path(__file__).parent/f"{args.agent}-{args.map}-{args.budget}-{args.seed}"
+    def progress(done,total,result):
+        if result:print(f"{args.agent}: {done}/{total}, score={result['a_score']} ply={result['plies']}",flush=True)
+    ctypes.windll.kernel32.SetThreadExecutionState(0x80000001)
+    try:
+        report,interrupted=run_campaign(plan,directory,max_games=args.max_games,progress=progress)
+        print(directory/"report.md",flush=True)
+        return 130 if interrupted else 0
+    finally:ctypes.windll.kernel32.SetThreadExecutionState(0x80000000)
+if __name__=="__main__":raise SystemExit(main())
+

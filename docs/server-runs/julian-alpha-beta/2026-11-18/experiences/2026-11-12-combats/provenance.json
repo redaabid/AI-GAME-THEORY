@@ -1,0 +1,41 @@
+{
+  "base_commit": "8888c096ff84ce4a0dceebe96647ba98e0d5b3fa",
+  "python": "3.14.7",
+  "existing_files_unchanged_ignoring_crlf": {
+    "agents/ab_variants.py": true,
+    "agents/ab2_experiments.py": true,
+    "agents/ab2_tie.py": true,
+    "combat.py": true,
+    "evaluation.py": true,
+    "scripts/mcts_v6/agent.py": true
+  },
+  "line_endings": {
+    "agents/ab_variants.py": {
+      "git_crlf": 0,
+      "snapshot_crlf": 363
+    },
+    "agents/ab2_experiments.py": {
+      "git_crlf": 0,
+      "snapshot_crlf": 100
+    },
+    "agents/ab2_tie.py": {
+      "git_crlf": 0,
+      "snapshot_crlf": 59
+    },
+    "combat.py": {
+      "git_crlf": 0,
+      "snapshot_crlf": 73
+    },
+    "evaluation.py": {
+      "git_crlf": 0,
+      "snapshot_crlf": 105
+    },
+    "scripts/mcts_v6/agent.py": {
+      "git_crlf": 0,
+      "snapshot_crlf": 42
+    }
+  },
+  "new_agent_sha256": "f4c0cf0338f0989126bed427e8bae3fc4dc53f46f6b9828d88fd7b72f44b723f",
+  "test_count": 365,
+  "scope": "Experimental; short synthetic endgame continuations only; no full match or WPF validation"
+}

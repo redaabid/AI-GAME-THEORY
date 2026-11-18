@@ -1,0 +1,56 @@
+# Validation sur d'autres cartes — 13 novembre 2026
+
+Même candidat ab2risktie, même MCTS V6 de Reda, aucun changement des paramètres.
+8 parties complètes : 2 cartes × 4 rôles (espèce et premier joueur croisés).
+1,5 s de réflexion par décision, allowance 2 s, limite 200 demi-coups, 2 workers.
+Graine de campagne 2026111301 ; la convention du lanceur ajoute 100003 par carte et 0 à 3 selon le rôle.
+
+| Carte | V AB2 | N | D AB2 | Temps moyen AB2 | Maximum AB2 |
+|---|---:|---:|---:|---:|---:|
+| testmap2 | 0 | 4 | 0 | 1,431 s | 1,501 s |
+| holdout-medium-20261113 | 1 | 1 | 2 | 1,441 s | 1,502 s |
+
+Zéro faute, zéro timeout et zéro décision au-dessus de 1,8 s pour les deux agents.
+Les 1 287 transitions ont été rejouées et vérifiées. Les empreintes des sources correspondent au lot figé.
+La nouvelle carte 8 × 10 a été générée une seule fois avec random.Random(20261113), famille medium, sans sélection selon les résultats.
+Il n'y a pas de témoin AB2 référence rejoué dans ce nouveau lot : ce lot compare le candidat à V6, pas son gain relatif à la référence.
+
+## Ce que ça change dans la conclusion
+Le précédent 8/8 sur thetrap est réel mais local à cette carte et ses séries.
+Sur ces deux autres cartes, le candidat ne domine pas V6. On ne peut pas le présenter comme globalement meilleur.
+La taille du lot reste petite : quatre parties sur une carte ne donnent pas un classement général précis.
+
+## Par rapport aux remarques du professeur
+| Remarque | Ce qui a été fait | Ce qui reste à vérifier |
+|---|---|---|
+| Oscillations alors qu'il reste des humains accessibles | Départage revu ; trois positions de défaites de thetrap choisissent la progression au lieu du recul, à valeur de recherche égale. | Aucun mécanisme ne garantit la disparition de toutes les répétitions. Contrôler chaque cas où un humain accessible est réellement manqué. |
+| Risque si l'adversaire attaque en premier | Les combats aléatoires ne sont plus remplacés par une seule issue probable dans les actions recherchées. Le test du groupe 7 face à 4 vérifie l'évitement de l'exposition observée. | La sélection des candidats et l'évaluation restent sélectives/heuristiques ; ce n'est pas une garantie de décision optimale. |
+| Tenter un pari si attendre signifie perdre | Régression ciblée 2 contre 10 avant la limite : le candidat prend en compte sa chance de gagner et choisit l'attaque. | Ce comportement n'est pas automatiquement optimal dans toutes les fins de partie. |
+| Fort poursuit, faible évite les risques inutiles | Le classement stratégique et les probabilités tiennent mieux compte de ces situations dans les cas vérifiés. | Poursuite, interception et répartition du recrutement restent à examiner sur les défaites réelles. |
+| « Sauter des cases » | Aucun saut physique ajouté : les règles écrites imposent l'adjacence. La recherche anticipe plusieurs tours. | Ne pas attribuer au professeur une technique précise d'abstraction sans clarification de sa formulation. |
+| Conditions réelles, H208, serveur, MCTS | V6 est maintenant testé directement sur plusieurs cartes, avec rôles équilibrés, traces et temps. | Tests WPF et H208 toujours à faire ; les simulations ne les remplacent pas. |
+
+## Pourquoi les quatre nuls sur testmap2 ne prouvent pas un bug
+Les deux camps finissent à 16 contre 16, avec le village central de 20 humains restant.
+Ce village n'est pas convertible avec certitude par un groupe de 16.
+Les rapports bruts recensent encore des répétitions des deux côtés. Cela ne prouve ni qu'un gain sûr existait, ni que la position est théoriquement nulle.
+Il faudrait identifier une continuation réellement meilleure avant d'ajouter une pénalité à toute répétition.
+
+## Les deux défaites sur la carte inédite
+- Vampires, deuxième joueur : notre population monte à 40, puis V6 recrute jusqu'à 56. Notre attaque 40 contre un groupe de 38 (probabilité de victoire du combat environ 55,3 %) échoue ; élimination au demi-coup 28.
+- Werewolves, premier joueur : avance initiale jusqu'à 47 contre 29, puis perte d'un groupe de 7 dans un combat contre 11 ; V6 recrute et prend l'avantage 44 contre 40. Notre attaque finale 40 contre 44 (environ 45,5 %) échoue ; élimination au demi-coup 59.
+
+Ces observations identifient des cas à étudier : maintien de l'avance de recrutement, usage des groupes et choix tactiques.
+Perdre un tirage ne démontre pas à lui seul que le coup était mauvais. Aucun correctif supplémentaire n'a été appliqué après lecture de ces résultats.
+
+## Données et statut
+- [report.md](report.md), [report.json](report.json) : bilan brut du lanceur.
+- [completed.json](completed.json) : achèvement, temps et contrôles.
+- [verified-traces.json](verified-traces.json) : événements et analyses des 8 parties.
+- [holdout-medium-20261113.xml](holdout-medium-20261113.xml) : carte inédite.
+- games/ : sauvegardes individuelles ; les traces intégrales sont dans ../traces/.
+- Le compteur de répétitions du petit outil d'analyse a été complété puis comparé aux rapports bruts pour les 24 parties enregistrées. Ce changement porte uniquement sur l'analyse, pas sur le bot ou les matchs.
+
+Les 370 tests du candidat avaient réussi avant ce lot ; le code du bot n'a pas changé depuis.
+Tout est local. Aucun commit, push, changement de branche ni modification des anciens modèles.
+

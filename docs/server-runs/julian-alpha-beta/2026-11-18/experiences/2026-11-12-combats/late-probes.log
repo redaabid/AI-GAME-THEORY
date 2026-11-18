@@ -1,0 +1,18 @@
+1/8 late-risk-13v10 score=1.0 ply=199
+2/8 late-risk-13v10 score=0.0 ply=200
+3/8 late-risk-13v10 score=1.0 ply=196
+4/8 late-risk-13v10 score=0.0 ply=200
+5/8 late-dominance-15v10 score=0.5 ply=200
+6/8 late-dominance-15v10 score=0.0 ply=200
+7/8 late-dominance-15v10 score=1.0 ply=196
+8/8 late-dominance-15v10 score=0.0 ply=200
+{"completed": 8, "wins": 3, "draws": 1, "losses": 4, "candidate": {"mean": 0.0816440199909266, "max": 0.2504663000581786, "over18": 0, "faults": 0, "timeouts": 0}, "mcts": {"mean": 1.5017495421067764, "max": 1.5067078999709338, "over18": 0, "faults": 0, "timeouts": 0}}
+1/8 late-risk-13v10 score=1.0 ply=199
+2/8 late-risk-13v10 score=0.0 ply=200
+3/8 late-risk-13v10 score=1.0 ply=198
+4/8 late-risk-13v10 score=0.0 ply=200
+5/8 late-dominance-15v10 score=1.0 ply=199
+6/8 late-dominance-15v10 score=0.0 ply=200
+7/8 late-dominance-15v10 score=1.0 ply=196
+8/8 late-dominance-15v10 score=0.0 ply=200
+{"completed": 8, "wins": 4, "draws": 0, "losses": 4, "candidate": {"mean": 0.1824084618960374, "max": 0.8847414999036118, "over18": 0, "faults": 0, "timeouts": 0}, "mcts": {"mean": 1.501561999982713, "max": 1.503640400012955, "over18": 0, "faults": 0, "timeouts": 0}}

@@ -1,0 +1,63 @@
+"""Small diagnostic audit; not a performance tournament or a bot change."""
+import json, sys
+from pathlib import Path
+from dataclasses import replace
+from collections import Counter
+sys.path.insert(0, str(Path.cwd()))
+from agents import make_agent, TurnContext, safe_choose
+from agents.ab_variants import SCORE, exact_successors
+from candidates import generate_candidates
+from evaluation import evaluate
+from game import Cell, distance
+from simulator import Position, simulate_turn, get_outcome
+
+OUT=Path(__file__).parent
+cases={
+ 'humans_reachable':Position(5,15,{(0,2):Cell(vampires=10),(5,2):Cell(humans=4),(14,2):Cell(werewolves=8)}),
+ 'recruitment_danger':Position(3,3,{(0,1):Cell(vampires=10),(1,1):Cell(humans=3),(2,1):Cell(werewolves=20)}),
+ 'pursuit_no_humans':Position(5,25,{(0,0):Cell(vampires=18),(11,1):Cell(werewolves=12)},ply=58),
+ 'immediate_win':Position(5,25,{(1,3):Cell(vampires=18),(0,3):Cell(werewolves=12)},ply=54),
+ 'strong_may_allow_enemy_initiative':Position(5,7,{(1,2):Cell(vampires=10),(3,2):Cell(werewolves=2)}),
+ 'last_chance_before_cap':Position(3,3,{(0,1):Cell(vampires=2),(1,1):Cell(werewolves=10)},ply=198),
+}
+def oracle(a,node,depth):
+ if depth==0 or get_outcome(node,max_plies=200) is not None:return a.leaf(node)
+ actions=generate_candidates(node,limit=a.width,deadline=None)
+ return max((-oracle(a,simulate_turn(node,m,None),depth-1) for m in actions),default=a.leaf(node))
+records=[]
+for name,node in cases.items():
+ for width in (6,7):
+  oracle_agent=make_agent(f'ab2exp:depth=3,max_depth=24,width={width},extra=0')
+  oracle_agent.max_plies=200
+  exact=oracle(oracle_agent,node,3)
+  for model in ('ab2exp','ab2tie'):
+   a=make_agent(f'{model}:depth=3,max_depth=24,width={width},extra=0')
+   for mode in ('cold','warm','no_tt'):
+    if mode=='no_tt':a.features=replace(a.features,tt=False)
+    moves,fault=safe_choose(a,node,TurnContext(None,200))
+    after=simulate_turn(node,moves,None)
+    outcome=get_outcome(after,max_plies=200)
+    own=[q for q,c in after.cells.items() if c.vampires]
+    enemy=[q for q,c in after.cells.items() if c.werewolves]
+    records.append(dict(case=name,width=width,model=model,mode=mode,moves=moves,fault=fault,
+      value=a.info.get('value'),oracle_value=exact,agrees=a.info.get('value')==exact,
+      winner=outcome.winner if outcome else None,
+      enemy_gap=min((distance(x,y) for x in own for y in enemy),default=None)))
+# Isolate the combat approximation independently of the selected action.
+node=cases['last_chance_before_cap']; attack=[(0,1,2,1,1)]
+probe=make_agent('ab2exp:depth=3,width=6,extra=0');probe.max_plies=200
+distribution=list(exact_successors(node,attack))
+chance_score=sum(q * -probe.leaf(p) for q,p in distribution)
+deterministic_score=-probe.leaf(simulate_turn(node,attack,None))
+flat=cases['pursuit_no_humans']
+flat_scores=[dict(moves=m,static=-probe.leaf(simulate_turn(flat,m,None))) for m in generate_candidates(flat,limit=7)]
+result=dict(scope='6 targeted synthetic positions; fixed depth 3; same bounded candidate set; not whole legal tree or timing validation',
+ records=records,search_checks=len(records),search_mismatches=sum(not r['agrees'] for r in records),
+ faults=sum(bool(r['fault']) for r in records),flat_pursuit_scores=flat_scores,
+ last_chance_attack=dict(deterministic_score=deterministic_score,exact_one_ply_expected_score=chance_score,
+                         rules_profile=node.rules_profile,outcomes=len(distribution)))
+(OUT/'diagnostic.json').write_text(json.dumps(result,indent=2),encoding='utf-8')
+print(json.dumps({k:result[k] for k in ('scope','search_checks','search_mismatches','faults','last_chance_attack')}))
+for r in records:
+ if r['mode']=='cold' and r['width']==7:print(json.dumps(r))
+

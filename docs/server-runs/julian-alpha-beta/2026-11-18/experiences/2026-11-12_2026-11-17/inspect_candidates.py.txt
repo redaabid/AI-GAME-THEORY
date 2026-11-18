@@ -1,0 +1,30 @@
+import sys,json
+from pathlib import Path
+ROOT=Path(__file__).parent/"runtime";sys.path.insert(0,str(ROOT))
+import combo_agents
+from agents import make_agent,TurnContext
+from simulator import Position,simulate_turn
+from candidates import generate_candidates,turn_score
+from game import Cell
+def recruited(p,m):
+ arrivals={}
+ for _,_,n,x,y in m:arrivals[x,y]=arrivals.get((x,y),0)+n
+ return sum(p.cells.get(q,Cell()).humans for q,n in arrivals.items() if 0<p.cells.get(q,Cell()).humans<=n)
+out=[]
+for f in (ROOT.parent/"traces").glob("*.json"):
+ row=json.loads(f.read_text())
+ if not row["job"]["map_name"].startswith("holdout") or row["result"]["a_score"]!=0:continue
+ for t in row["turns"]:
+  p=Position.from_dict(t["position"])
+  if p.to_play!=row["job"]["a_species"] or p.ply not in (5,11,12,14,16,18,20,22):continue
+  full=generate_candidates(p,limit=256);short=generate_candidates(p,limit=7)
+  opportunities=[m for m in full if recruited(p,m)]
+  a=make_agent("ab2risktie:depth=3,max_depth=24,width=7,extra=0")
+  chosen=a.choose_moves(p,TurnContext(None,200))
+  plans=[dict(moves=list(m),static=value,recruits=recruited(p,m)) for value,m,c in a.plans(p)]
+  r=dict(species=p.to_play,ply=p.ply,logged=t["moves"],fixed_chosen=chosen,value=a.info["value"],
+    capture_full=len(opportunities),capture_short=sum(bool(recruited(p,m)) for m in short),plans=plans,
+    best_capture=next((dict(moves=m,recruits=recruited(p,m)) for m in opportunities),None))
+  out.append(r);print(json.dumps(r))
+(ROOT.parent/"candidate-coverage.json").write_text(json.dumps(out,indent=2))
+

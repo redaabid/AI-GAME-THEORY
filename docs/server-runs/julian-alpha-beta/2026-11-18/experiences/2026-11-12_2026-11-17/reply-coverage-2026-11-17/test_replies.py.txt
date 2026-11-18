@@ -1,0 +1,56 @@
+import json,time,unittest
+from pathlib import Path
+import reply_agent
+from agents import make_agent,TurnContext,safe_choose
+from agents.ab_variants import signature,exact_successors
+from simulator import Position,get_outcome
+from game import Cell
+from candidates import generate_candidates,supported_turn
+BASE=Path(__file__).parent.parent
+class ReplyTests(unittest.TestCase):
+    def pick(self,p,name="ab2replies",depth=2,**params):
+        spec=f"{name}:depth={depth},max_depth=24,width=7,extra=0"
+        for k,v in params.items():spec+=f",{k}={v!r}"
+        a=make_agent(spec);m,f=safe_choose(a,p,TurnContext(None,200));self.assertIsNone(f)
+        return a,m
+    def test_recorded_opponent_moves_are_covered(self):
+        rows=json.loads((Path(__file__).parent/"reply-fixtures.json").read_text())
+        formerly_missing=0
+        for row in rows:
+            p=Position.from_dict(row["root"]);q=Position.from_dict(row["reply"])
+            old={signature(m) for m in generate_candidates(q,limit=7)}
+            target=signature(row["moves"])
+            if target in old:continue
+            # Initialize the same decision regime without spending a deep search.
+            a=make_agent("ab2replies:depth=1,width=7,extra=0")
+            a.choose_moves(p,TurnContext(None,200))
+            candidates={r[1] for r in a.plans(q)}
+            self.assertIn(target,candidates)
+            self.assertLessEqual(len(candidates),32);self.assertEqual(a.width,7)
+            formerly_missing+=1
+        self.assertGreater(formerly_missing,5)
+    def test_disabled_width_preserves_parent(self):
+        p=Position(5,10,{(0,2):Cell(vampires=9),(8,2):Cell(werewolves=8),(4,4):Cell(humans=3)})
+        a,m=self.pick(p,reply_width=7);b,n=self.pick(p,"ab2endgame")
+        self.assertEqual(m,n);self.assertEqual(a.info["value"],b.info["value"])
+    def test_exact_value_matches_unpruned_selected_tree_and_warm_cache(self):
+        p=Position(3,4,{(0,0):Cell(vampires=3),(3,2):Cell(werewolves=3),(1,1):Cell(humans=2)})
+        a,_=self.pick(p)
+        def oracle(n,d):
+            if not d or get_outcome(n,max_plies=200):return a.leaf(n)
+            return max(sum(prob*-oracle(c,d-1) for prob,c in exact_successors(n,m)) for _,m,_ in a.plans(n))
+        expected=oracle(p,2)
+        self.assertAlmostEqual(a.info["value"],expected,places=4)
+        a.choose_moves(p,TurnContext(None,200))
+        self.assertAlmostEqual(a.info["value"],expected,places=4)
+    def test_short_deadline_restores_width_and_legal_turn(self):
+        p=Position(3,4,{(0,0):Cell(vampires=3),(3,2):Cell(werewolves=3),(1,1):Cell(humans=2)})
+        a=make_agent("ab2replies:depth=1,max_depth=24,width=7,extra=0")
+        started=time.perf_counter();m,f=safe_choose(a,p,TurnContext(started+.03,200))
+        self.assertIsNone(f);self.assertEqual(a.width,7)
+        self.assertTrue(supported_turn(p.to_game_state(),m));self.assertLess(time.perf_counter()-started,.3)
+    def test_late_gamble_preserved(self):
+        p=Position(3,3,{(0,1):Cell(vampires=2),(1,1):Cell(werewolves=10)},ply=198)
+        _,m=self.pick(p);self.assertEqual(m,[(0,1,2,1,1)])
+if __name__=="__main__":unittest.main()
+

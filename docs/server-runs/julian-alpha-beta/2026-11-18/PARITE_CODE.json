@@ -1,0 +1,32 @@
+[
+  {
+    "original": ".local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\agents\\ab2_risk.py",
+    "module": "agents\\ab2_risk.py",
+    "algorithm_ast_identical": true,
+    "original_sha256": "f4c0cf0338f0989126bed427e8bae3fc4dc53f46f6b9828d88fd7b72f44b723f"
+  },
+  {
+    "original": ".local\\research\\ab2-v6-investigation-2026-11-12\\combo_agents.py",
+    "module": "agents\\ab2_risk_tie.py",
+    "algorithm_ast_identical": true,
+    "original_sha256": "664dc971ca73ca880831d2d1f3f2afe97b39a3997b7918466d1e2ad433f45dea"
+  },
+  {
+    "original": ".local\\research\\ab2-v6-investigation-2026-11-12\\goal-coverage-2026-11-13\\goal_agent.py",
+    "module": "agents\\ab2_goal_coverage.py",
+    "algorithm_ast_identical": true,
+    "original_sha256": "eaa6976175518c10b978c7eb274dd3ebcdbda01ddb94694b9480643503fc36d6"
+  },
+  {
+    "original": ".local\\research\\ab2-v6-investigation-2026-11-12\\endgame-policy-2026-11-17\\endgame_agent.py",
+    "module": "agents\\ab2_endgame.py",
+    "algorithm_ast_identical": true,
+    "original_sha256": "c28acab55327b670e96925e881cdc0ef2fe96671ec4f95ec7ec729726c2e814b"
+  },
+  {
+    "original": ".local\\research\\ab2-v6-investigation-2026-11-12\\reply-coverage-2026-11-17\\reply_agent.py",
+    "module": "agents\\ab2_reply_coverage.py",
+    "algorithm_ast_identical": true,
+    "original_sha256": "b995797d51757851c01ec9495b7a711c5664b6a3bb29bdd96fb6bbe6627193b7"
+  }
+]

@@ -1,0 +1,45 @@
+INFO: Connected to 127.0.0.1:5555 as MCTS-V6
+INFO: Rules profile: server-v3.2.1
+INFO: Agent: mcts-v6:iterations=100000
+INFO: Board: 10 columns x 5 rows; playing werewolves
+INFO: Search: 989 iterations; fallback=False
+INFO: Depth: tree mean 3.1/max 4; rollout mean 5.6/max 6; extensions 0
+INFO: Turn 1: [(4, 1, 4, 3, 2)] (1.504 seconds)
+INFO: Search: 1154 iterations; fallback=False
+INFO: Depth: tree mean 3.1/max 5; rollout mean 5.4/max 6; extensions 0
+INFO: Turn 2: [(3, 2, 4, 4, 3)] (1.504 seconds)
+INFO: Search: 1020 iterations; fallback=False
+INFO: Depth: tree mean 3.1/max 4; rollout mean 5.7/max 6; extensions 0
+INFO: Turn 3: [(4, 3, 2, 5, 2)] (1.504 seconds)
+INFO: Search: 939 iterations; fallback=False
+INFO: Depth: tree mean 2.8/max 4; rollout mean 6.0/max 6; extensions 0
+INFO: Turn 4: [(4, 3, 2, 5, 4), (5, 2, 2, 6, 1)] (1.504 seconds)
+INFO: Search: 898 iterations; fallback=False
+INFO: Depth: tree mean 2.7/max 4; rollout mean 6.0/max 6; extensions 0
+INFO: Turn 5: [(5, 4, 2, 6, 3), (6, 1, 2, 7, 0)] (1.504 seconds)
+INFO: Search: 913 iterations; fallback=False
+INFO: Depth: tree mean 2.7/max 4; rollout mean 5.9/max 6; extensions 0
+INFO: Turn 6: [(7, 0, 2, 8, 0)] (1.504 seconds)
+INFO: Search: 889 iterations; fallback=False
+INFO: Depth: tree mean 2.7/max 4; rollout mean 6.0/max 6; extensions 0
+INFO: Turn 7: [(6, 3, 2, 7, 3), (8, 0, 2, 9, 0)] (1.503 seconds)
+INFO: Search: 985 iterations; fallback=False
+INFO: Depth: tree mean 2.8/max 4; rollout mean 5.8/max 6; extensions 0
+INFO: Turn 8: [(7, 3, 2, 8, 3), (9, 0, 4, 9, 1)] (1.503 seconds)
+INFO: Search: 892 iterations; fallback=False
+INFO: Depth: tree mean 2.4/max 3; rollout mean 5.9/max 6; extensions 0
+INFO: Turn 9: [(9, 1, 1, 9, 2), (9, 1, 2, 8, 2)] (1.503 seconds)
+INFO: Search: 680 iterations; fallback=False
+INFO: Depth: tree mean 2.3/max 3; rollout mean 6.0/max 6; extensions 0
+INFO: Turn 10: [(8, 2, 2, 9, 3), (8, 3, 2, 9, 4), (9, 1, 1, 8, 1), (9, 2, 2, 9, 3)] (1.503 seconds)
+INFO: Search: 1228 iterations; fallback=False
+INFO: Depth: tree mean 3.5/max 5; rollout mean 5.6/max 6; extensions 0
+INFO: Turn 11: [(9, 4, 4, 9, 3)] (1.503 seconds)
+INFO: Search: 1192 iterations; fallback=False
+INFO: Depth: tree mean 4.0/max 5; rollout mean 5.4/max 6; extensions 0
+INFO: Turn 12: [(9, 3, 8, 8, 2)] (1.503 seconds)
+INFO: Search: 1395 iterations; fallback=False
+INFO: Depth: tree mean 3.7/max 5; rollout mean 5.4/max 6; extensions 0
+INFO: Turn 13: [(8, 2, 8, 7, 1)] (1.504 seconds)
+INFO: Game ended; waiting for the next game.
+INFO: Server finished the session.

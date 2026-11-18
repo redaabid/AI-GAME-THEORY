@@ -1,0 +1,25 @@
+import sys,json
+from pathlib import Path
+HERE=Path(__file__).parent
+sys.path.insert(0,str(HERE))
+import goal_agent
+from agents import make_agent,TurnContext
+from simulator import Position
+from game import distance
+BASE=HERE.parent
+out=[]
+for file in (BASE/"traces").glob("*.json"):
+ r=json.loads(file.read_text())
+ if not r["job"]["map_name"].startswith("holdout") or r["result"]["a_score"]!=0:continue
+ for t in r["turns"]:
+  p=Position.from_dict(t["position"])
+  if p.to_play!=r["job"]["a_species"] or p.ply not in (5,16,18,20,22):continue
+  for name in ("ab2risktie","ab2goals"):
+   a=make_agent(f"{name}:depth=4,max_depth=24,width=7,extra=0")
+   m=a.choose_moves(p,TurnContext(None,200))
+   row=dict(agent=name,ply=p.ply,species=p.to_play,moves=m,value=a.info["value"],
+      candidates=[list(row[1]) for row in a.plans(p)])
+   out.append(row)
+   print(json.dumps({k:row[k] for k in ("agent","ply","species","moves","value")}))
+(HERE/"position-probes.json").write_text(json.dumps(out,indent=2))
+

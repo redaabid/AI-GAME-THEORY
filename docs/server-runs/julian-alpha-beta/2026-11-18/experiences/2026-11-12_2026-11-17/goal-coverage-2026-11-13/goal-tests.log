@@ -1,0 +1,15 @@
+test_joint_immediate_win_survives_goal_selection (__main__.GoalTests.test_joint_immediate_win_survives_goal_selection) ... ok
+test_losing_endgame_gamble_is_preserved (__main__.GoalTests.test_losing_endgame_gamble_is_preserved) ... ok
+test_no_goal_plan_recruits_into_guaranteed_counterkill (__main__.GoalTests.test_no_goal_plan_recruits_into_guaranteed_counterkill) ... ok
+test_off_switch_preserves_reference_values_and_moves (__main__.GoalTests.test_off_switch_preserves_reference_values_and_moves) ... ok
+test_recorded_capable_army_progresses_instead_of_weak_army_loop (__main__.GoalTests.test_recorded_capable_army_progresses_instead_of_weak_army_loop) ... ok
+test_safe_adjacent_food_is_collected (__main__.GoalTests.test_safe_adjacent_food_is_collected) ... ok
+test_short_deadline_remains_legal (__main__.GoalTests.test_short_deadline_remains_legal) ... ok
+test_species_symmetry (__main__.GoalTests.test_species_symmetry) ... ok
+test_strong_army_pursues_without_humans (__main__.GoalTests.test_strong_army_pursues_without_humans) ... ok
+test_value_matches_unpruned_chance_oracle_on_selected_actions (__main__.GoalTests.test_value_matches_unpruned_chance_oracle_on_selected_actions) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.337s
+
+OK

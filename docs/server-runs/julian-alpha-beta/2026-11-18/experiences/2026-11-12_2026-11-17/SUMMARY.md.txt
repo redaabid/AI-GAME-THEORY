@@ -1,0 +1,105 @@
+# AB2 contre MCTS V6 : diagnostic et combinaison corrigée
+Expérience commencée le 12 novembre 2026, validation finale le 13 novembre — simulation CPU, aucun résultat WPF revendiqué.
+
+## Résultat
+**État au 17 novembre :** un candidat AB2-Replies est empaqueté ; 396 tests passent. Il fait 5 V / 1 N / 2 D sur les cartes de développement, puis 2 V / 2 D sur une carte de confirmation. Le parent a gagné 3–0 sur le vrai serveur ; le candidat a terminé un essai réel de 200 demi-coups sans erreur (verdict visuel encore à relever). Voir le [bilan actualisé](BILAN_2026-11-17.md).
+
+**Suite du diagnostic :** une correction ciblant les groupes de capacités différentes donne 2 victoires / 1 nul / 1 défaite sur la carte medium connue, contre 1 / 1 / 2 pour ce témoin. Voir le [nouveau compte rendu](goal-coverage-2026-11-13/SUMMARY.md). Le 8/8 historique de thetrap ne s'applique pas automatiquement à ce nouveau candidat.
+
+**Mise à jour du 13 novembre :** le lot sur d'autres cartes donne 4 nuls sur testmap2 et 1 victoire / 1 nul / 2 défaites sur une carte medium inédite. Le 8/8 ci-dessous concerne uniquement thetrap et ne démontre pas une supériorité générale sur V6. Voir le [bilan de validation sur d'autres cartes](validation-other-maps-2026-11-13/SUMMARY.md).
+
+Une nouvelle combinaison locale, **ab2risktie**, conserve Alpha-Bêta, la largeur 7 et les poids d'AB2.
+Elle associe :
+1. le départage stratégique et les répétitions récentes déjà expérimentés dans AB2Tie ;
+2. les issues probabilisées des combats ajoutées dans AB2Risk.
+
+| Agent contre V6 | Parties complètes | Victoires | Nuls | Défaites | Temps moyen par décision | Maximum |
+|---|---:|---:|---:|---:|---:|---:|
+| AB2 référence largeur 7 | 4 | 2 | 0 | 2 | 1,391 s | 1,505 s |
+| AB2 départage seul | 4 | 2 | 0 | 2 | 1,494 s | 1,500 s |
+| AB2 départage + combats probabilistes | 8 | 8 | 0 | 0 | 1,453 s | 1,522 s |
+
+**Une seule carte : thetrap.xml.** Quatre rôles par série (espèce et premier joueur croisés).
+Première série commune aux trois agents : graine de campagne 2026111201, décalée de 0 à 3 selon le rôle.
+Confirmation de la combinaison, sans changement de code/paramètres : graine de campagne 2026111202, mêmes quatre rôles.
+Les graines individuelles des séries peuvent se recouper entre rôles différents ; il ne s'agit pas de huit échantillons indépendants de cartes.
+La référence n'a pas été rejouée sur la seconde série : le comparatif apparié direct porte sur les quatre premières parties.
+Plusieurs victoires impliquent des combats aléatoires ; 8/8 ne signifie pas une probabilité de victoire de 100 %.
+
+Budget de réflexion 1,5 s, allowance 2 s, limite 200 demi-coups, deux workers, règles server-v3.2.1.
+Aucune faute, aucun timeout et aucun temps supérieur à 1,8 s pour les deux côtés sur les 16 parties.
+Python 3.14.7, PC local Intel Core i7-10875H (8 cœurs / 16 threads).
+V6 inchangé, iterations=100000 ; ces 100000 sont un plafond d'itérations, pas une profondeur ni des parties jouées.
+Instantané de base : commit Reda 8888c096ff84ce4a0dceebe96647ba98e0d5b3fa.
+
+## Ce qui expliquait les défaites
+### 1. Progression perdue à égalité de note
+Les deux défaites de la référence se terminent à la limite, 8 contre 9, sans aucun combat de monstres.
+AB2 recrute les quatre humains, puis repart vers la gauche alors que les autres humains sont à droite.
+V6 collecte les autres villages et conserve sa population supérieure.
+
+Sur les positions enregistrées aux demi-coups 8, 10 et 12 :
+- à profondeur fixe 4, référence et AB2Risk choisissent un déplacement vers la gauche ;
+- AB2Tie choisit un déplacement vers la droite ;
+- les valeurs de recherche sont identiques entre les trois versions sur chacune de ces positions.
+
+Quand les villages restants sont attribués à l'adversaire par l'estimation de course, notre déplacement peut ne plus changer la note.
+L'ordre d'exploration décide alors à la place d'une préférence utile de progression.
+Ce n'est donc pas seulement un problème des fins de partie sans humains.
+
+### 2. Une victoire dans le modèle approximatif peut cacher un risque réel
+Le départage seul termine ce premier lot à 2/4, malgré des déplacements plus actifs.
+Une de ses défaites fournit un cas précis :
+- demi-coup 52, notre groupe de 7 est en (1,2), le groupe adverse de 4 en (1,4) ;
+- le bot avance en (1,3), adjacent à l'adversaire, avec une valeur interne +1 000 000 ;
+- V6 attaque immédiatement : 4 contre 7 reste un combat aléatoire sous ce profil ;
+- le tirage élimine notre groupe.
+
+L'ancienne simulation ne garde que l'issue la plus probable et un effectif arrondi.
+La recherche peut donc conclure à une victoire certaine **dans ce modèle**, alors qu'une autre issue reste possible sur le serveur.
+Un autre cas du départage seul attaque 9 contre 8 alors qu'il est devant, puis perd le combat.
+Ce sont précisément les situations d'initiative et de risque évoquées par le professeur.
+
+## Correction retenue pour poursuivre la validation
+[combo_agents.py](combo_agents.py) combine les classes sans recopier ni modifier le moteur :
+- [runtime/agents/ab2_tie.py](runtime/agents/ab2_tie.py) : classement à la racine, priorité au score statique, puis moins de répétitions récentes, puis classement stratégique ; meilleur score recherché toujours prioritaire ;
+- [runtime/agents/ab2_risk.py](runtime/agents/ab2_risk.py) : branches exactes de combats aléatoires et moyenne pondérée des valeurs, à partir des distributions déjà utilisées dans AB6 ;
+- transitions calmes et combats garantis : recherche Alpha-Bêta ordinaire ;
+- mêmes candidats, même largeur, même évaluation de base, mêmes échéances ;
+- aucun saut de cases, aucune nouvelle règle de déplacement, aucun réseau neuronal, aucun réglage de poids présenté comme optimal.
+
+La combinaison est un nouveau candidat expérimental. Le calcul des probabilités améliore le modèle des combats, mais la largeur reste sélective et l'évaluation reste une approximation.
+Le 8/8 démontre qu'elle a battu V6 dans ce lot ; il ne démontre ni sa supériorité générale, ni la résolution de toutes les oscillations.
+
+## Vérifications et données
+- **370 tests réussis**, zéro erreur et zéro échec, en 76,406 secondes lors de la vérification finale indépendante.
+- [aggregate.json](aggregate.json) : résultats et temps agrégés.
+- [trace-analysis.json](trace-analysis.json) : événements de recrutement et de combat.
+- [loss-probes.json](loss-probes.json) : comparaisons à profondeur fixe sur les défaites.
+- [traces/](traces/) : les 16 parties intégrales, plateaux, coups, métadonnées et résultats.
+- **1 525 transitions rejouées exactement** à partir des coups et graines enregistrés ; résultats finaux vérifiés.
+- Les empreintes des sources enregistrées correspondent aux fichiers utilisés ; modules combinés également vérifiés.
+- [all-tests-final.log](all-tests-final.log) et [tests-completed.json](tests-completed.json) : suite complète importée avec le candidat combiné et régressions ciblées, vérification finale du 13 novembre.
+- Le premier lancement de cette vérification avait une erreur de garde des sous-processus Windows dans verify_all.py. Il a été arrêté et corrigé ; son ancien journal all-tests.log est conservé, mais ne constitue pas le résultat de validation. Les parties étaient déjà terminées et leurs sources n'ont pas changé.
+- Un deuxième lancement a été interrompu avant son bilan (all-tests-verified.log). La vérification finale utilise un processus indépendant ; seul tests-completed.json atteste son achèvement.
+- [test_combined.py](test_combined.py) : compatibilité du départage, probabilités, candidats, échéance expirée et cas 7 contre 4.
+
+Les niveaux de recherche terminés moyens sont 19,13 pour la référence, 10,70 pour le départage seul et 13,72 pour la combinaison.
+Ces moyennes portent sur des trajectoires et longueurs différentes. La limite de partie peut terminer les branches avant le niveau demandé, surtout en fin de partie : elles ne mesurent pas une profondeur physique identique dans tous les arbres.
+Les valeurs élevées ne prouvent pas une meilleure IA : la référence cherche ici plus de niveaux mais gagne moins dans le lot apparié.
+
+## Code utilisable et limites restantes
+Lanceur local prêt : [main_candidate.py](main_candidate.py).
+Il importe le candidat puis réutilise main.py et le client existants. Sans --agent explicite, il sélectionne cette combinaison largeur 7.
+Exemple depuis ce dossier : python -B main_candidate.py --name AB2 127.0.0.1 5555.
+IP et port restent paramétrables ; ne lancer cette commande que lorsque le serveur est prêt.
+L'aide du lanceur a été vérifiée. Aucun test TCP/WPF de cette combinaison n'a été effectué ici.
+
+À faire avant d'en faire notre modèle final :
+1. comparer sur testmap2 et des cartes inédites, avec plusieurs séries de graines ;
+2. conserver les témoins et examiner aussi les défaites, sans retoucher le modèle pendant un lot ;
+3. vérifier les nouvelles décisions de combat et les répétitions sur ces autres cartes ;
+4. valider sur le vrai serveur et les machines H208.
+
+Les sources et résultats restent dans cette copie locale isolée. Aucun ancien modèle ni branche partagée modifié, aucun commit ou push.
+

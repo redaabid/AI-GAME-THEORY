@@ -1,0 +1,10 @@
+import sys
+from pathlib import Path
+import endgame_agent
+from main import main
+if __name__=="__main__":
+    args=sys.argv[1:]
+    if not any(x=="--agent" or x.startswith("--agent=") for x in args):
+        args=["--agent","ab2endgame:depth=1,max_depth=24,width=7,extra=0,tt_size=50000",*args]
+    raise SystemExit(main(args))
+

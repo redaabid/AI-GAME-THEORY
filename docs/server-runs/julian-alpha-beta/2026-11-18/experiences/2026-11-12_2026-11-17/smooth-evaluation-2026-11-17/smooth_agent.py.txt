@@ -1,0 +1,28 @@
+"""Alpha-beta with a smooth recruitment heuristic; not an MCTS search."""
+from pathlib import Path
+import sys
+BASE=Path(__file__).parent.parent
+sys.path.insert(0,str(BASE/"endgame-policy-2026-11-17"))
+from endgame_agent import EndgameAB2
+from agents import register
+from agents.ab_variants import SCORE
+from macro import groups
+from simulator import get_outcome,opponent
+from scripts.mcts_v5.value import feasible_evaluate
+
+@register("ab2smooth")
+class SmoothRecruitmentAB2(EndgameAB2):
+    def leaf(self,node):
+        outcome=get_outcome(node,max_plies=self.max_plies)
+        if outcome is not None:return outcome.value_for(node.to_play)*SCORE
+        maximum=max(sum(n for _,n in groups(node,node.to_play)),
+                    sum(n for _,n in groups(node,opponent(node.to_play))))
+        if not any(0<c.humans<=maximum for c in node.cells.values()):
+            return super().leaf(node)
+        return SCORE*feasible_evaluate(node,node.to_play,deadline=self.deadline,max_plies=self.max_plies)
+
+    def choose_moves(self,node,context):
+        moves=super().choose_moves(node,context)
+        self.info.update(evaluation="smooth_recruitment_v6_feasible")
+        return moves
+

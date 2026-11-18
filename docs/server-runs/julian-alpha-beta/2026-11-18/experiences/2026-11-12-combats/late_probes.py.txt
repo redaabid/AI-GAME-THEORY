@@ -1,0 +1,42 @@
+"""Predeclared late-game probes, NOT full matches or a general win-rate estimate."""
+from pathlib import Path
+import sys, json, hashlib, platform, ctypes
+ROOT=Path(__file__).parent/"runtime"
+sys.path.insert(0,str(ROOT))
+import scripts.mcts_v6
+from campaign import make_plan,run_campaign
+from simulator import Position
+from game import Cell
+
+OUT=Path(__file__).parent
+maps=[
+ ("late-risk-13v10",Position(5,7,{(1,2):Cell(vampires=13),(3,2):Cell(werewolves=10)},ply=194)),
+ ("late-dominance-15v10",Position(5,7,{(1,2):Cell(vampires=15),(3,2):Cell(werewolves=10)},ply=194)),
+]
+def progress(done,total,result):
+ if result: print(f"{done}/{total} {result['map_name']} score={result['a_score']} ply={result['plies']}",flush=True)
+summary={}
+if __name__=="__main__":
+ # Prevent idle sleep during timed probes, reset on exit; manual suspend is still possible.
+ ctypes.windll.kernel32.SetThreadExecutionState(0x80000001)
+ try:
+  for name in ("ab2exp","ab2risk"):
+   spec=f"{name}:depth=1,max_depth=24,width=7,extra=0,tt_size=50000"
+   plan=make_plan([spec,"mcts-v6:iterations=100000"],maps,seed=20261112,workers=1,max_plies=200,move_time=2,margin=.5,rounds=1)
+   plan["scope"]="Synthetic continuations from ply194; empty histories; not full games or Reda game replays"
+   plan["extra_source_sha256"]={str(p.relative_to(ROOT)):hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted((ROOT/"scripts").rglob("*.py"))}
+   plan["launcher_sha256"]=hashlib.sha256(Path(__file__).read_bytes()).hexdigest()
+   report,interrupted=run_campaign(plan,OUT/("late-"+name),progress=progress)
+   games=report["games"]
+   def timing(key):
+    seconds=[x for g in games for x in g[key]["seconds"]]
+    return dict(mean=sum(seconds)/len(seconds) if seconds else 0,max=max(seconds,default=0),
+      over18=sum(x>1.8 for x in seconds),faults=sum(len(g[key]["faults"]) for g in games),
+      timeouts=sum(g[key]["timeouts"] for g in games))
+   summary[name]=dict(completed=len(games),wins=sum(g["a_score"]==1 for g in games),draws=sum(g["a_score"]==.5 for g in games),
+     losses=sum(g["a_score"]==0 for g in games),candidate=timing("a_stats"),mcts=timing("b_stats"))
+   (OUT/"late-summary.json").write_text(json.dumps(summary,indent=2))
+   print(json.dumps(summary[name]),flush=True)
+   if interrupted:break
+ finally:ctypes.windll.kernel32.SetThreadExecutionState(0x80000000)
+

@@ -1,0 +1,118 @@
+"""Isolated candidate-coverage experiment, keeping the same AB2 engine/value."""
+from pathlib import Path
+import sys
+BASE=Path(__file__).resolve().parent.parent
+sys.path.insert(0,str(BASE/"runtime"));sys.path.insert(0,str(BASE))
+from agents import register
+from combo_agents import AB2RiskTie
+from agents.ab_variants import signature,SCORE,position_key
+from candidates import supported_turn,turn_score
+from game import Cell,distance
+from macro import groups
+from simulator import simulate_turn,opponent,get_outcome
+
+@register("ab2goals")
+class GoalCoverageAB2(AB2RiskTie):
+    def __init__(self,goal_slots=2,**kwargs):
+        super().__init__(**kwargs)
+        if type(goal_slots) is not int or not 0<=goal_slots<self.width:
+            raise ValueError("goal_slots must be an integer in [0,width)")
+        self.goal_slots=goal_slots
+
+    def safe_plan(self,node,moves):
+        self.check()
+        if not supported_turn(node.to_game_state(),moves):return False
+        after=simulate_turn(node,moves,None)
+        foes=groups(after,opponent(node.to_play))
+        for _,_,_,x,y in moves:
+            strength=getattr(after.cells.get((x,y),Cell()),node.to_play)
+            attackers=sum(n for q,n in foes if distance(q,(x,y))==1)
+            if strength and 2*attackers>=3*strength:return False
+        return True
+
+    def goal_turns(self,node):
+        state=node.to_game_state();own=groups(node,node.to_play)
+        humans=groups(node,"humans");foes=groups(node,opponent(node.to_play))
+        # Match distinct capable groups to distinct recruitment objectives.
+        choices=[]
+        for source,count in own:
+            self.check()
+            for target,n in humans:
+                self.check()
+                if count>=n:
+                    choices.append((-n/(1+distance(source,target)),distance(source,target),source,count,target))
+        # No forced pursuit by weak armies; the ordinary candidates still offer
+        # evasion, gambles, joint attacks, merges and splits.
+        if not choices:
+            for source,count in own:
+                for target,n in foes:
+                    self.check()
+                    if 2*count>=3*n:
+                        choices.append((-n/(1+distance(source,target)),distance(source,target),source,count,target))
+        choices.sort()
+        assignments=[];sources=set();targets=set()
+        for _,initial,source,count,target in choices:
+            self.check()
+            if source in sources or target in targets:continue
+            steps=[]
+            for q in state.neighbors(source):
+                self.check()
+                if distance(q,target)>=initial:continue
+                cell=node.cells.get(q,Cell())
+                # Only quiet, guaranteed human or guaranteed monster steps.
+                if cell.humans>count:continue
+                enemy=getattr(cell,opponent(node.to_play))
+                if enemy and 2*count<3*enemy:continue
+                move=(*source,count,*q)
+                if self.safe_plan(node,[move]):
+                    score=turn_score(state,[move],humans,foes,deadline=self.deadline)
+                    steps.append((distance(q,target),-score,q,move))
+            if not steps:continue
+            move=min(steps)[-1]
+            assignments.append(move);sources.add(source);targets.add(target)
+            if len(assignments)>=4:break
+        proposals=[]
+        joint=[]
+        for move in assignments:
+            self.check()
+            if self.safe_plan(node,joint+[move]):joint.append(move)
+        if len(joint)>1:proposals.append(signature(joint))
+        proposals.extend(signature([m]) for m in assignments)
+        return list(dict.fromkeys(proposals))
+
+    def _plans(self,node):
+        rows=super()._plans(node)
+        if not self.goal_slots:return rows
+        proposals=self.goal_turns(node)
+        if not proposals:return rows
+        old={r[1]:r for r in rows}
+        guided=[]
+        for moves in proposals[:self.goal_slots]:
+            self.check()
+            row=old.get(moves)
+            if row is None:
+                child=simulate_turn(node,moves,None)
+                row=(-self.leaf(child),moves,child)
+                self.stats["generated"]+=1
+            guided.append(row)
+        protected=[r for r in rows if (end:=get_outcome(r[2],max_plies=self.max_plies)) is not None
+                   and end.winner==node.to_play]
+        guided=[r for r in guided if r not in protected]
+        selected=list(protected)
+        budget=min(len(guided),max(0,self.width-len(selected)))
+        chosen=guided[:budget]
+        for row in rows:
+            if row not in selected and row not in chosen and len(selected)<self.width-budget:
+                selected.append(row)
+        for row in chosen:
+            if row not in selected:selected.append(row)
+        if position_key(node)==getattr(self,"root_key",None):
+            order=[r[1] for r in guided]+[r[1] for r in rows]
+            self.root_rank={m:i for i,m in reversed(list(enumerate(order)))}
+        return selected[:self.width]
+
+    def choose_moves(self,node,context):
+        moves=super().choose_moves(node,context)
+        self.info.update(candidate_coverage="capable_group_goals_v1",goal_slots=self.goal_slots)
+        return moves
+

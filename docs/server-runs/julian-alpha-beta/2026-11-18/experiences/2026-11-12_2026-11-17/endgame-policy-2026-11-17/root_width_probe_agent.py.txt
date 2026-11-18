@@ -1,0 +1,86 @@
+"""Clock-aware no-human endgames; preserve the existing AB2 engine and weights."""
+from pathlib import Path
+import sys
+BASE=Path(__file__).resolve().parent.parent
+sys.path.insert(0,str(BASE/"goal-coverage-2026-11-13"))
+from goal_agent import GoalCoverageAB2
+from agents import register
+from agents.ab_variants import SCORE,position_key
+from agents.ab2_experiments import repetition_key
+from candidates import generate_candidates
+from agents.ab_variants import signature
+from game import distance
+from macro import groups
+from simulator import get_outcome,opponent
+
+@register("ab2endgame")
+class EndgameAB2(GoalCoverageAB2):
+    def __init__(self,endgame=True,pursuit=True,endgame_window=40,root_width=7,**kwargs):
+        super().__init__(**kwargs)
+        if type(endgame) is not bool or type(pursuit) is not bool:
+            raise ValueError("endgame and pursuit must be booleans")
+        if type(endgame_window) is not int or endgame_window<1:
+            raise ValueError("endgame_window must be positive")
+        if type(root_width) is not int or not self.width<=root_width<=64:
+            raise ValueError('root_width must be between internal width and 64')
+        self.root_width=root_width
+        self.endgame,self.pursuit,self.endgame_window=endgame,pursuit,endgame_window
+        self.pursuit_target=None
+
+    def _plans(self,node):
+        wide=position_key(node)==getattr(self,'root_key',None) and any(c.humans for c in node.cells.values())
+        normal=self.width
+        try:
+            if wide:self.width=self.root_width
+            rows=super()._plans(node)
+            if wide and self.root_rank is None:
+                ordered=generate_candidates(node,limit=max(2,self.root_width),deadline=self.deadline)
+                self.root_rank={signature(m):i for i,m in enumerate(ordered)}
+            return rows
+        finally:self.width=normal
+
+    def leaf(self,node):
+        value=super().leaf(node)
+        if not self.endgame or self.max_plies is None:return value
+        if get_outcome(node,max_plies=self.max_plies) is not None:return value
+        if any(c.humans for c in node.cells.values()):return value
+        remaining=self.max_plies-node.ply
+        weight=max(0.0,min(1.0,1-remaining/self.endgame_window))
+        if not weight:return value
+        own=sum(n for _,n in groups(node,node.to_play))
+        enemy=sum(n for _,n in groups(node,opponent(node.to_play)))
+        cap=(own>enemy)-(own<enemy)
+        return (1-weight)*value+weight*cap*SCORE
+
+    def choose_moves(self,node,context):
+        self.pursuit_target=None
+        own=groups(node,node.to_play);enemy=groups(node,opponent(node.to_play))
+        ours=sum(n for _,n in own);theirs=sum(n for _,n in enemy)
+        if self.pursuit and context.max_plies is not None and 0<ours<theirs and not any(c.humans for c in node.cells.values()):
+            strongest=max(n for _,n in own)
+            origins=[q for q,n in own if n==strongest]
+            # Prefer a target whose removal could reverse the population lead.
+            needed=theirs-ours+1
+            targets=[(q,n) for q,n in enemy if n>=needed] or enemy
+            self.pursuit_target=min(targets,key=lambda x:(min(distance(q,x[0]) for q in origins),-x[1],x[0]))[0]
+        moves=super().choose_moves(node,context)
+        self.info.update(endgame_clock=self.endgame,endgame_window=self.endgame_window,
+                         losing_pursuit=self.pursuit_target is not None,internal_width=self.width,
+                         root_width=self.root_width if any(c.humans for c in node.cells.values()) else self.width)
+        return moves
+
+    def plans(self,node,principal=None,tactical=False):
+        rows=super().plans(node,principal,tactical)
+        if not tactical and self.pursuit_target is not None and position_key(node)==self.root_key:
+            def gap(child):
+                own=groups(child,node.to_play)
+                if not own:return max(node.rows,node.columns)+1
+                if not getattr(child.cells.get(self.pursuit_target),opponent(node.to_play),0):return 0
+                biggest=max(n for _,n in own)
+                return min(distance(q,self.pursuit_target) for q,n in own if n==biggest)
+            # A strictly better searched value still wins. Only root exploration
+            # order changes; no random battle is forced or forbidden.
+            rows.sort(key=lambda r:(-r[0],gap(r[2]),self.recent_after.get(repetition_key(r[2]),0),
+                                     self.root_rank.get(r[1],len(self.root_rank)),r[1]))
+        return rows
+

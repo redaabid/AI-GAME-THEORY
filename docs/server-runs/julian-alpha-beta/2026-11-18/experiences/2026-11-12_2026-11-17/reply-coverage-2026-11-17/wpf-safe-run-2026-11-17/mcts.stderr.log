@@ -1,0 +1,314 @@
+INFO: Connected to 127.0.0.1:5555 as MCTS-V6
+INFO: Rules profile: server-v3.2.1
+INFO: Agent: mcts-v6:iterations=100000
+INFO: Board: 10 columns x 5 rows; playing werewolves
+INFO: Search: 980 iterations; fallback=False
+INFO: Depth: tree mean 3.1/max 4; rollout mean 5.6/max 6; extensions 0
+INFO: Turn 1: [(4, 1, 4, 3, 2)] (1.502 seconds)
+INFO: Search: 1188 iterations; fallback=False
+INFO: Depth: tree mean 3.1/max 5; rollout mean 5.4/max 6; extensions 0
+INFO: Turn 2: [(3, 2, 4, 4, 3)] (1.502 seconds)
+INFO: Search: 1055 iterations; fallback=False
+INFO: Depth: tree mean 3.2/max 4; rollout mean 5.7/max 6; extensions 0
+INFO: Turn 3: [(4, 3, 1, 5, 2)] (1.503 seconds)
+INFO: Search: 1036 iterations; fallback=False
+INFO: Depth: tree mean 2.9/max 4; rollout mean 6.0/max 6; extensions 0
+INFO: Turn 4: [(4, 3, 3, 5, 3), (5, 2, 1, 6, 1)] (1.502 seconds)
+INFO: Search: 947 iterations; fallback=False
+INFO: Depth: tree mean 2.6/max 3; rollout mean 5.9/max 6; extensions 0
+INFO: Turn 5: [(5, 3, 3, 6, 3), (6, 1, 1, 7, 0)] (1.502 seconds)
+INFO: Search: 885 iterations; fallback=False
+INFO: Depth: tree mean 2.7/max 4; rollout mean 5.9/max 6; extensions 0
+INFO: Turn 6: [(6, 3, 3, 7, 2), (7, 0, 1, 8, 1)] (1.504 seconds)
+INFO: Search: 719 iterations; fallback=False
+INFO: Depth: tree mean 2.5/max 4; rollout mean 5.5/max 6; extensions 0
+INFO: Turn 7: [(7, 2, 3, 8, 2), (8, 1, 1, 9, 2)] (1.502 seconds)
+INFO: Search: 1012 iterations; fallback=False
+INFO: Depth: tree mean 2.8/max 4; rollout mean 5.6/max 6; extensions 0
+INFO: Turn 8: [(9, 2, 2, 9, 3)] (1.503 seconds)
+INFO: Search: 1047 iterations; fallback=False
+INFO: Depth: tree mean 3.3/max 4; rollout mean 5.8/max 6; extensions 0
+INFO: Turn 9: [(8, 2, 3, 8, 3), (9, 3, 2, 9, 4)] (1.502 seconds)
+INFO: Search: 1229 iterations; fallback=False
+INFO: Depth: tree mean 3.2/max 4; rollout mean 5.7/max 6; extensions 0
+INFO: Turn 10: [(9, 4, 4, 8, 4)] (1.502 seconds)
+INFO: Search: 1235 iterations; fallback=False
+INFO: Depth: tree mean 3.1/max 4; rollout mean 5.7/max 6; extensions 0
+INFO: Turn 11: [(8, 3, 3, 9, 4), (8, 4, 4, 7, 4)] (1.502 seconds)
+INFO: Search: 1197 iterations; fallback=False
+INFO: Depth: tree mean 3.2/max 4; rollout mean 5.7/max 6; extensions 0
+INFO: Turn 12: [(7, 4, 4, 8, 3), (9, 4, 3, 9, 3)] (1.502 seconds)
+INFO: Search: 1229 iterations; fallback=False
+INFO: Depth: tree mean 3.1/max 4; rollout mean 5.9/max 6; extensions 0
+INFO: Turn 13: [(9, 3, 3, 8, 3)] (1.504 seconds)
+INFO: Search: 1442 iterations; fallback=False
+INFO: Depth: tree mean 3.9/max 5; rollout mean 5.9/max 6; extensions 0
+INFO: Turn 14: [(8, 3, 7, 9, 2)] (1.503 seconds)
+INFO: Search: 1252 iterations; fallback=False
+INFO: Depth: tree mean 3.9/max 5; rollout mean 6.0/max 6; extensions 0
+INFO: Turn 15: [(9, 2, 7, 8, 2)] (1.503 seconds)
+INFO: Search: 1301 iterations; fallback=False
+INFO: Depth: tree mean 3.7/max 5; rollout mean 6.0/max 6; extensions 0
+INFO: Turn 16: [(8, 2, 7, 9, 1)] (1.502 seconds)
+INFO: Search: 1473 iterations; fallback=False
+INFO: Depth: tree mean 4.2/max 5; rollout mean 6.0/max 6; extensions 0
+INFO: Turn 17: [(9, 1, 7, 9, 0)] (1.502 seconds)
+INFO: Search: 1395 iterations; fallback=False
+INFO: Depth: tree mean 4.5/max 6; rollout mean 6.0/max 6; extensions 0
+INFO: Turn 18: [(9, 0, 7, 9, 1)] (1.502 seconds)
+INFO: Search: 1296 iterations; fallback=False
+INFO: Depth: tree mean 4.4/max 5; rollout mean 6.0/max 6; extensions 0
+INFO: Turn 19: [(9, 1, 7, 9, 0)] (1.502 seconds)
+INFO: Search: 1255 iterations; fallback=False
+INFO: Depth: tree mean 4.4/max 6; rollout mean 6.0/max 6; extensions 0
+INFO: Turn 20: [(9, 0, 7, 9, 1)] (1.502 seconds)
+INFO: Search: 1275 iterations; fallback=False
+INFO: Depth: tree mean 4.1/max 5; rollout mean 6.0/max 6; extensions 0
+INFO: Turn 21: [(9, 1, 7, 9, 0)] (1.501 seconds)
+INFO: Search: 1390 iterations; fallback=False
+INFO: Depth: tree mean 4.5/max 6; rollout mean 6.0/max 6; extensions 0
+INFO: Turn 22: [(9, 0, 7, 9, 1)] (1.502 seconds)
+INFO: Search: 1215 iterations; fallback=False
+INFO: Depth: tree mean 4.4/max 5; rollout mean 6.0/max 6; extensions 0
+INFO: Turn 23: [(9, 1, 7, 9, 0)] (1.505 seconds)
+INFO: Search: 1292 iterations; fallback=False
+INFO: Depth: tree mean 4.1/max 5; rollout mean 6.0/max 6; extensions 0
+INFO: Turn 24: [(9, 0, 7, 9, 1)] (1.503 seconds)
+INFO: Search: 1290 iterations; fallback=False
+INFO: Depth: tree mean 4.1/max 5; rollout mean 6.0/max 6; extensions 0
+INFO: Turn 25: [(9, 1, 7, 9, 0)] (1.503 seconds)
+INFO: Search: 1284 iterations; fallback=False
+INFO: Depth: tree mean 4.4/max 5; rollout mean 6.0/max 6; extensions 0
+INFO: Turn 26: [(9, 0, 7, 9, 1)] (1.503 seconds)
+INFO: Search: 1357 iterations; fallback=False
+INFO: Depth: tree mean 4.2/max 5; rollout mean 6.0/max 6; extensions 0
+INFO: Turn 27: [(9, 1, 7, 9, 0)] (1.502 seconds)
+INFO: Search: 1411 iterations; fallback=False
+INFO: Depth: tree mean 4.7/max 6; rollout mean 6.0/max 6; extensions 0
+INFO: Turn 28: [(9, 0, 7, 9, 1)] (1.503 seconds)
+INFO: Search: 1406 iterations; fallback=False
+INFO: Depth: tree mean 4.2/max 5; rollout mean 6.0/max 6; extensions 0
+INFO: Turn 29: [(9, 1, 7, 9, 0)] (1.502 seconds)
+INFO: Search: 1442 iterations; fallback=False
+INFO: Depth: tree mean 4.5/max 6; rollout mean 6.0/max 6; extensions 0
+INFO: Turn 30: [(9, 0, 7, 9, 1)] (1.502 seconds)
+INFO: Search: 1277 iterations; fallback=False
+INFO: Depth: tree mean 4.4/max 5; rollout mean 6.0/max 6; extensions 0
+INFO: Turn 31: [(9, 1, 7, 9, 0)] (1.502 seconds)
+INFO: Search: 1391 iterations; fallback=False
+INFO: Depth: tree mean 4.5/max 6; rollout mean 6.0/max 6; extensions 0
+INFO: Turn 32: [(9, 0, 7, 9, 1)] (1.502 seconds)
+INFO: Search: 1491 iterations; fallback=False
+INFO: Depth: tree mean 3.9/max 5; rollout mean 6.0/max 6; extensions 0
+INFO: Turn 33: [(9, 1, 7, 9, 0)] (1.502 seconds)
+INFO: Search: 1390 iterations; fallback=False
+INFO: Depth: tree mean 4.1/max 5; rollout mean 6.0/max 6; extensions 0
+INFO: Turn 34: [(9, 0, 7, 9, 1)] (1.503 seconds)
+INFO: Search: 1504 iterations; fallback=False
+INFO: Depth: tree mean 4.2/max 5; rollout mean 6.0/max 6; extensions 0
+INFO: Turn 35: [(9, 1, 7, 9, 0)] (1.504 seconds)
+INFO: Search: 1324 iterations; fallback=False
+INFO: Depth: tree mean 4.4/max 6; rollout mean 6.0/max 6; extensions 0
+INFO: Turn 36: [(9, 0, 7, 9, 1)] (1.502 seconds)
+INFO: Search: 1290 iterations; fallback=False
+INFO: Depth: tree mean 4.4/max 5; rollout mean 6.0/max 6; extensions 0
+INFO: Turn 37: [(9, 1, 7, 9, 0)] (1.502 seconds)
+INFO: Search: 1362 iterations; fallback=False
+INFO: Depth: tree mean 4.2/max 5; rollout mean 6.0/max 6; extensions 0
+INFO: Turn 38: [(9, 0, 7, 9, 1)] (1.502 seconds)
+INFO: Search: 1390 iterations; fallback=False
+INFO: Depth: tree mean 4.2/max 5; rollout mean 6.0/max 6; extensions 0
+INFO: Turn 39: [(9, 1, 7, 9, 0)] (1.502 seconds)
+INFO: Search: 1479 iterations; fallback=False
+INFO: Depth: tree mean 4.4/max 5; rollout mean 6.0/max 6; extensions 0
+INFO: Turn 40: [(9, 0, 7, 9, 1)] (1.502 seconds)
+INFO: Search: 1319 iterations; fallback=False
+INFO: Depth: tree mean 4.1/max 5; rollout mean 6.0/max 6; extensions 0
+INFO: Turn 41: [(9, 1, 7, 9, 0)] (1.502 seconds)
+INFO: Search: 1379 iterations; fallback=False
+INFO: Depth: tree mean 4.7/max 6; rollout mean 6.0/max 6; extensions 0
+INFO: Turn 42: [(9, 0, 7, 9, 1)] (1.502 seconds)
+INFO: Search: 1274 iterations; fallback=False
+INFO: Depth: tree mean 4.1/max 5; rollout mean 6.0/max 6; extensions 0
+INFO: Turn 43: [(9, 1, 7, 9, 0)] (1.502 seconds)
+INFO: Memory: margin=-3, repeats=2, penalized=1, chosen_repeated=False
+INFO: Search: 1302 iterations; fallback=False
+INFO: Depth: tree mean 4.5/max 6; rollout mean 6.0/max 6; extensions 0
+INFO: Turn 44: [(9, 0, 7, 8, 0)] (1.502 seconds)
+INFO: Search: 1376 iterations; fallback=False
+INFO: Depth: tree mean 4.5/max 5; rollout mean 6.0/max 6; extensions 0
+INFO: Turn 45: [(8, 0, 7, 9, 0)] (1.502 seconds)
+INFO: Memory: margin=-3, repeats=2, penalized=1, chosen_repeated=False
+INFO: Search: 1207 iterations; fallback=False
+INFO: Depth: tree mean 4.5/max 6; rollout mean 6.0/max 6; extensions 0
+INFO: Turn 46: [(9, 0, 7, 8, 0)] (1.502 seconds)
+INFO: Search: 1407 iterations; fallback=False
+INFO: Depth: tree mean 4.2/max 5; rollout mean 6.0/max 6; extensions 0
+INFO: Turn 47: [(8, 0, 7, 9, 0)] (1.502 seconds)
+INFO: Search: 1374 iterations; fallback=False
+INFO: Depth: tree mean 4.2/max 5; rollout mean 6.0/max 6; extensions 0
+INFO: Turn 48: [(9, 0, 7, 9, 1)] (1.502 seconds)
+INFO: Memory: margin=-3, repeats=2, penalized=1, chosen_repeated=False
+INFO: Search: 1403 iterations; fallback=False
+INFO: Depth: tree mean 4.5/max 6; rollout mean 6.0/max 6; extensions 0
+INFO: Turn 49: [(9, 1, 7, 9, 2)] (1.502 seconds)
+INFO: Search: 1315 iterations; fallback=False
+INFO: Depth: tree mean 4.0/max 5; rollout mean 6.0/max 6; extensions 0
+INFO: Turn 50: [(9, 2, 7, 9, 1)] (1.502 seconds)
+INFO: Memory: margin=-3, repeats=2, penalized=1, chosen_repeated=False
+INFO: Search: 1450 iterations; fallback=False
+INFO: Depth: tree mean 4.2/max 5; rollout mean 6.0/max 6; extensions 0
+INFO: Turn 51: [(9, 1, 7, 9, 2)] (1.502 seconds)
+INFO: Search: 1339 iterations; fallback=False
+INFO: Depth: tree mean 4.0/max 5; rollout mean 6.0/max 6; extensions 0
+INFO: Turn 52: [(9, 2, 7, 9, 1)] (1.504 seconds)
+INFO: Memory: margin=-3, repeats=2, penalized=1, chosen_repeated=False
+INFO: Search: 1296 iterations; fallback=False
+INFO: Depth: tree mean 4.4/max 5; rollout mean 6.0/max 6; extensions 0
+INFO: Turn 53: [(9, 1, 7, 9, 2)] (1.503 seconds)
+INFO: Search: 1415 iterations; fallback=False
+INFO: Depth: tree mean 3.8/max 5; rollout mean 6.0/max 6; extensions 0
+INFO: Turn 54: [(9, 2, 7, 9, 1)] (1.502 seconds)
+INFO: Memory: margin=-3, repeats=2, penalized=1, chosen_repeated=False
+INFO: Search: 1405 iterations; fallback=False
+INFO: Depth: tree mean 4.2/max 6; rollout mean 6.0/max 6; extensions 0
+INFO: Turn 55: [(9, 1, 7, 9, 2)] (1.502 seconds)
+INFO: Search: 1507 iterations; fallback=False
+INFO: Depth: tree mean 4.1/max 5; rollout mean 6.0/max 6; extensions 0
+INFO: Turn 56: [(9, 2, 7, 9, 1)] (1.502 seconds)
+INFO: Memory: margin=-3, repeats=2, penalized=1, chosen_repeated=False
+INFO: Search: 1381 iterations; fallback=False
+INFO: Depth: tree mean 4.2/max 5; rollout mean 6.0/max 6; extensions 0
+INFO: Turn 57: [(9, 1, 7, 9, 2)] (1.502 seconds)
+INFO: Search: 1394 iterations; fallback=False
+INFO: Depth: tree mean 4.4/max 5; rollout mean 6.0/max 6; extensions 0
+INFO: Turn 58: [(9, 2, 7, 9, 1)] (1.506 seconds)
+INFO: Memory: margin=-3, repeats=2, penalized=1, chosen_repeated=False
+INFO: Search: 1361 iterations; fallback=False
+INFO: Depth: tree mean 4.2/max 5; rollout mean 6.0/max 6; extensions 0
+INFO: Turn 59: [(9, 1, 7, 9, 2)] (1.504 seconds)
+INFO: Search: 1319 iterations; fallback=False
+INFO: Depth: tree mean 4.0/max 5; rollout mean 6.0/max 6; extensions 0
+INFO: Turn 60: [(9, 2, 7, 9, 1)] (1.502 seconds)
+INFO: Search: 1274 iterations; fallback=False
+INFO: Depth: tree mean 4.4/max 5; rollout mean 6.0/max 6; extensions 0
+INFO: Turn 61: [(9, 1, 7, 9, 0)] (1.504 seconds)
+INFO: Search: 1355 iterations; fallback=False
+INFO: Depth: tree mean 4.5/max 6; rollout mean 6.0/max 6; extensions 0
+INFO: Turn 62: [(9, 0, 7, 9, 1)] (1.502 seconds)
+INFO: Search: 1360 iterations; fallback=False
+INFO: Depth: tree mean 4.1/max 5; rollout mean 6.0/max 6; extensions 0
+INFO: Turn 63: [(9, 1, 7, 9, 0)] (1.503 seconds)
+INFO: Search: 1270 iterations; fallback=False
+INFO: Depth: tree mean 4.4/max 6; rollout mean 6.0/max 6; extensions 0
+INFO: Turn 64: [(9, 0, 7, 9, 1)] (1.502 seconds)
+INFO: Search: 1413 iterations; fallback=False
+INFO: Depth: tree mean 4.5/max 5; rollout mean 6.0/max 6; extensions 0
+INFO: Turn 65: [(9, 1, 7, 9, 0)] (1.502 seconds)
+INFO: Search: 1380 iterations; fallback=False
+INFO: Depth: tree mean 4.2/max 5; rollout mean 6.0/max 6; extensions 0
+INFO: Turn 66: [(9, 0, 7, 9, 1)] (1.502 seconds)
+INFO: Search: 1381 iterations; fallback=False
+INFO: Depth: tree mean 4.2/max 5; rollout mean 6.0/max 6; extensions 0
+INFO: Turn 67: [(9, 1, 7, 9, 0)] (1.502 seconds)
+INFO: Search: 1366 iterations; fallback=False
+INFO: Depth: tree mean 4.4/max 5; rollout mean 6.0/max 6; extensions 0
+INFO: Turn 68: [(9, 0, 7, 9, 1)] (1.502 seconds)
+INFO: Search: 1460 iterations; fallback=False
+INFO: Depth: tree mean 4.2/max 6; rollout mean 6.0/max 6; extensions 0
+INFO: Turn 69: [(9, 1, 7, 9, 0)] (1.502 seconds)
+INFO: Search: 1372 iterations; fallback=False
+INFO: Depth: tree mean 4.7/max 6; rollout mean 6.0/max 6; extensions 0
+INFO: Turn 70: [(9, 0, 7, 9, 1)] (1.502 seconds)
+INFO: Search: 1466 iterations; fallback=False
+INFO: Depth: tree mean 4.2/max 6; rollout mean 6.0/max 6; extensions 0
+INFO: Turn 71: [(9, 1, 7, 9, 0)] (1.502 seconds)
+INFO: Search: 1332 iterations; fallback=False
+INFO: Depth: tree mean 4.4/max 6; rollout mean 6.0/max 6; extensions 0
+INFO: Turn 72: [(9, 0, 7, 9, 1)] (1.504 seconds)
+INFO: Search: 1279 iterations; fallback=False
+INFO: Depth: tree mean 4.4/max 5; rollout mean 6.0/max 6; extensions 0
+INFO: Turn 73: [(9, 1, 7, 9, 0)] (1.503 seconds)
+INFO: Search: 1317 iterations; fallback=False
+INFO: Depth: tree mean 4.4/max 6; rollout mean 6.0/max 6; extensions 0
+INFO: Turn 74: [(9, 0, 7, 9, 1)] (1.502 seconds)
+INFO: Search: 1329 iterations; fallback=False
+INFO: Depth: tree mean 3.9/max 5; rollout mean 6.0/max 6; extensions 0
+INFO: Turn 75: [(9, 1, 7, 9, 0)] (1.502 seconds)
+INFO: Search: 1445 iterations; fallback=False
+INFO: Depth: tree mean 4.1/max 5; rollout mean 6.0/max 6; extensions 0
+INFO: Turn 76: [(9, 0, 7, 8, 1)] (1.502 seconds)
+INFO: Search: 1434 iterations; fallback=False
+INFO: Depth: tree mean 3.9/max 5; rollout mean 6.0/max 6; extensions 0
+INFO: Turn 77: [(8, 1, 7, 8, 2)] (1.502 seconds)
+INFO: Search: 1525 iterations; fallback=False
+INFO: Depth: tree mean 4.1/max 5; rollout mean 6.0/max 6; extensions 0
+INFO: Turn 78: [(8, 2, 7, 8, 1)] (1.503 seconds)
+INFO: Search: 1336 iterations; fallback=False
+INFO: Depth: tree mean 3.8/max 5; rollout mean 6.0/max 6; extensions 0
+INFO: Turn 79: [(8, 1, 7, 8, 2)] (1.502 seconds)
+INFO: Search: 1252 iterations; fallback=False
+INFO: Depth: tree mean 3.7/max 5; rollout mean 6.0/max 6; extensions 0
+INFO: Turn 80: [(8, 2, 7, 8, 1)] (1.505 seconds)
+INFO: Search: 1393 iterations; fallback=False
+INFO: Depth: tree mean 4.2/max 5; rollout mean 6.0/max 6; extensions 0
+INFO: Turn 81: [(8, 1, 7, 8, 2)] (1.502 seconds)
+INFO: Search: 1515 iterations; fallback=False
+INFO: Depth: tree mean 3.8/max 5; rollout mean 6.0/max 6; extensions 0
+INFO: Turn 82: [(8, 2, 7, 8, 1)] (1.504 seconds)
+INFO: Search: 1428 iterations; fallback=False
+INFO: Depth: tree mean 3.6/max 5; rollout mean 6.0/max 6; extensions 0
+INFO: Turn 83: [(8, 1, 7, 8, 2)] (1.502 seconds)
+INFO: Search: 1340 iterations; fallback=False
+INFO: Depth: tree mean 3.7/max 5; rollout mean 6.0/max 6; extensions 0
+INFO: Turn 84: [(8, 2, 7, 8, 1)] (1.502 seconds)
+INFO: Search: 1428 iterations; fallback=False
+INFO: Depth: tree mean 3.9/max 5; rollout mean 6.0/max 6; extensions 0
+INFO: Turn 85: [(8, 1, 7, 8, 2)] (1.502 seconds)
+INFO: Search: 1444 iterations; fallback=False
+INFO: Depth: tree mean 4.1/max 5; rollout mean 6.0/max 6; extensions 0
+INFO: Turn 86: [(8, 2, 7, 8, 1)] (1.502 seconds)
+INFO: Search: 1317 iterations; fallback=False
+INFO: Depth: tree mean 3.6/max 5; rollout mean 6.0/max 6; extensions 0
+INFO: Turn 87: [(8, 1, 7, 8, 2)] (1.502 seconds)
+INFO: Search: 1412 iterations; fallback=False
+INFO: Depth: tree mean 3.8/max 5; rollout mean 6.0/max 6; extensions 0
+INFO: Turn 88: [(8, 2, 7, 8, 1)] (1.502 seconds)
+INFO: Search: 1504 iterations; fallback=False
+INFO: Depth: tree mean 3.9/max 5; rollout mean 6.0/max 6; extensions 0
+INFO: Turn 89: [(8, 1, 7, 8, 2)] (1.502 seconds)
+INFO: Search: 1350 iterations; fallback=False
+INFO: Depth: tree mean 3.8/max 5; rollout mean 6.0/max 6; extensions 0
+INFO: Turn 90: [(8, 2, 7, 8, 1)] (1.503 seconds)
+INFO: Search: 1522 iterations; fallback=False
+INFO: Depth: tree mean 4.2/max 5; rollout mean 6.0/max 6; extensions 0
+INFO: Turn 91: [(8, 1, 7, 8, 2)] (1.502 seconds)
+INFO: Search: 1366 iterations; fallback=False
+INFO: Depth: tree mean 3.8/max 5; rollout mean 6.0/max 6; extensions 0
+INFO: Turn 92: [(8, 2, 7, 8, 1)] (1.502 seconds)
+INFO: Search: 1454 iterations; fallback=False
+INFO: Depth: tree mean 3.9/max 5; rollout mean 6.0/max 6; extensions 0
+INFO: Turn 93: [(8, 1, 7, 8, 2)] (1.502 seconds)
+INFO: Search: 1331 iterations; fallback=False
+INFO: Depth: tree mean 4.0/max 5; rollout mean 6.0/max 6; extensions 0
+INFO: Turn 94: [(8, 2, 7, 8, 1)] (1.502 seconds)
+INFO: Search: 1553 iterations; fallback=False
+INFO: Depth: tree mean 3.9/max 5; rollout mean 6.0/max 6; extensions 0
+INFO: Turn 95: [(8, 1, 7, 8, 2)] (1.502 seconds)
+INFO: Search: 1655 iterations; fallback=False
+INFO: Depth: tree mean 3.7/max 5; rollout mean 5.3/max 6; extensions 0
+INFO: Turn 96: [(8, 2, 7, 9, 1)] (1.502 seconds)
+INFO: Search: 2279 iterations; fallback=False
+INFO: Depth: tree mean 4.7/max 6; rollout mean 2.3/max 6; extensions 0
+INFO: Turn 97: [(9, 1, 7, 9, 0)] (1.503 seconds)
+INFO: Search: 4333 iterations; fallback=False
+INFO: Depth: tree mean 4.8/max 5; rollout mean 0.2/max 4; extensions 0
+INFO: Turn 98: [(9, 0, 7, 9, 1)] (1.506 seconds)
+INFO: Search: 8388 iterations; fallback=False
+INFO: Depth: tree mean 3.0/max 3; rollout mean 0.2/max 2; extensions 0
+INFO: Turn 99: [(9, 1, 7, 9, 0)] (1.501 seconds)
+INFO: Search: 25417 iterations; fallback=False
+INFO: Depth: tree mean 1.0/max 1; rollout mean 0.0/max 0; extensions 0
+INFO: Turn 100: [(9, 0, 7, 9, 1)] (1.500 seconds)
+INFO: Game ended; waiting for the next game.
+INFO: Server finished the session.

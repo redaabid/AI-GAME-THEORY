@@ -1,0 +1,10 @@
+test_disabled_width_preserves_parent (__main__.ReplyTests.test_disabled_width_preserves_parent) ... ok
+test_exact_value_matches_unpruned_selected_tree_and_warm_cache (__main__.ReplyTests.test_exact_value_matches_unpruned_selected_tree_and_warm_cache) ... ok
+test_late_gamble_preserved (__main__.ReplyTests.test_late_gamble_preserved) ... ok
+test_recorded_opponent_moves_are_covered (__main__.ReplyTests.test_recorded_opponent_moves_are_covered) ... ok
+test_short_deadline_restores_width_and_legal_turn (__main__.ReplyTests.test_short_deadline_restores_width_and_legal_turn) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.330s
+
+OK

@@ -1,0 +1,61 @@
+"""Four-game frozen-map confirmation; seed 20261119 is an ID, not a test date."""
+from pathlib import Path
+import sys,json,hashlib,random,ctypes
+HERE=Path(__file__).parent;BASE=HERE.parent;ROOT=BASE/"runtime"
+import reply_agent
+import scripts.mcts_v6
+sys.path.insert(0,str(BASE))
+import recorded_comparison
+from campaign import make_plan,run_campaign,atomic_json
+from simulator import load_map
+from mapgen import random_map,write_map
+from analyze import analyze
+def main():
+    assert json.loads((HERE/"tests-completed.json").read_text())["success"]
+    directory=HERE/"holdout";directory.mkdir(exist_ok=True)
+    fresh=random_map(random.Random(20261119),"medium")
+    xml=directory/"holdout-medium-20261119.xml"
+    if xml.exists():assert load_map(xml)==fresh
+    else:write_map(fresh,xml)
+    maps=[("holdout-medium-20261119",fresh)]
+    spec="ab2replies:depth=1,max_depth=24,width=7,extra=0,tt_size=50000"
+    plan=make_plan([spec,"mcts-v6:iterations=100000"],maps,seed=2026311901,workers=2,rounds=1,
+                   max_plies=200,move_time=2,margin=.5)
+    files=[HERE/"reply_agent.py",BASE/"endgame-policy-2026-11-17/endgame_agent.py",Path(__file__),BASE/"combo_agents.py",BASE/"recorded_comparison.py",
+           BASE/"analyze.py",BASE/"goal-coverage-2026-11-13/goal_agent.py",*sorted(ROOT.rglob("*.py"))]
+    plan["experimental_sources_sha256"]={str(p.resolve()):hashlib.sha256(p.read_bytes()).hexdigest()
+                 for p in files if ".local" not in p.relative_to(BASE).parts}
+    plan["reference_known_map_report_sha256"]=hashlib.sha256((BASE/"goal-coverage-2026-11-13/matches/report.json").read_bytes()).hexdigest()
+    def progress(done,total,result):
+        line=f"{done}/{total} saved"
+        if result:line+=f" | {result['map_name']} | AB2 score={result['a_score']} | ply={result['plies']}"
+        print(line,flush=True)
+        if result and any(result[k]['faults'] or result[k]['timeouts'] or any(v>1.8 for v in result[k]['seconds']) for k in ('a_stats','b_stats')):
+            atomic_json(directory/'INVALID_TIMING.json',dict(map=result['map_name'],seed=result['seed']))
+            raise RuntimeError('Invalid timing or agent fault: saved, not accepted as a valid batch')
+    ctypes.windll.kernel32.SetThreadExecutionState(0x80000001)
+    try:report,interrupted=run_campaign(plan,directory,progress=progress)
+    finally:ctypes.windll.kernel32.SetThreadExecutionState(0x80000000)
+    if interrupted:return 130
+    verified=[]
+    for job in plan["jobs"]:
+        key=hashlib.sha256(json.dumps(job,sort_keys=True).encode()).hexdigest()
+        verified.append(analyze(BASE/"traces"/(key+".json")))
+    atomic_json(directory/"verified-traces.json",verified)
+    stats={}
+    for name,_ in maps:
+        games=[g for g in report["games"] if g["map_name"]==name]
+        sec=[v for g in games for v in g["a_stats"]["seconds"]]
+        allsec=[v for g in games for k in ("a_stats","b_stats") for v in g[k]["seconds"]]
+        stats[name]=dict(games=len(games),wins=sum(g["a_score"]==1 for g in games),
+          draws=sum(g["a_score"]==.5 for g in games),losses=sum(g["a_score"]==0 for g in games),
+          mean_seconds=sum(sec)/len(sec),max_seconds=max(sec),over18_both=sum(v>1.8 for v in allsec),
+          faults_both=sum(len(g[k]["faults"]) for g in games for k in ("a_stats","b_stats")),
+          timeouts_both=sum(g[k]["timeouts"] for g in games for k in ("a_stats","b_stats")))
+    for p,h in plan["experimental_sources_sha256"].items():assert hashlib.sha256(Path(p).read_bytes()).hexdigest()==h,p
+    atomic_json(directory/"completed.json",dict(status=report["status"],maps=stats,
+          verified_transitions=sum(r["turns_verified"] for r in verified)))
+    print(json.dumps(stats),flush=True)
+    return 0
+if __name__=="__main__":raise SystemExit(main())
+

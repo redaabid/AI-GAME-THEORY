@@ -1,0 +1,78 @@
+import json,time,unittest,random
+from pathlib import Path
+from dataclasses import replace
+import goal_agent
+from agents import make_agent,safe_choose,TurnContext
+from agents.ab_variants import exact_successors
+from candidates import supported_turn
+from game import Cell,distance
+from simulator import Position,simulate_turn,get_outcome,opponent
+
+class GoalTests(unittest.TestCase):
+    def pick(self,p,spec="ab2goals",depth=3,deadline=None):
+        a=make_agent(f"{spec}:depth={depth},max_depth=24,width=7,extra=0")
+        m,f=safe_choose(a,p,TurnContext(deadline,200));self.assertIsNone(f)
+        return a,m
+    def fixture(self):
+        rows=json.loads((Path(__file__).parent/"positions.json").read_text())
+        return Position.from_dict(next(r["position"] for r in rows if r["position"]["ply"]==18))
+    def test_recorded_capable_army_progresses_instead_of_weak_army_loop(self):
+        p=self.fixture();a,m=self.pick(p)
+        self.assertTrue(any(n==40 for x,y,n,tx,ty in m))
+        old=next(q for q,c in p.cells.items() if c.werewolves==40)
+        after=simulate_turn(p,m,None);new=next(q for q,c in after.cells.items() if c.werewolves>=40)
+        food=[q for q,c in p.cells.items() if c.humans and c.humans<=40]
+        self.assertLess(min(distance(new,h) for h in food),min(distance(old,h) for h in food))
+        rows=a.plans(p);self.assertLessEqual(len(rows),7);self.assertEqual(len(rows),len({r[1] for r in rows}))
+    def test_off_switch_preserves_reference_values_and_moves(self):
+        p=self.fixture()
+        a=make_agent("ab2goals:goal_slots=0,depth=3,width=7,extra=0")
+        b=make_agent("ab2risktie:depth=3,width=7,extra=0")
+        x=a.choose_moves(p,TurnContext(None,200));y=b.choose_moves(p,TurnContext(None,200))
+        self.assertEqual(x,y);self.assertEqual(a.info["value"],b.info["value"])
+    def test_safe_adjacent_food_is_collected(self):
+        p=Position(5,8,{(0,1):Cell(vampires=10),(1,1):Cell(humans=3),(7,4):Cell(werewolves=8)})
+        _,m=self.pick(p)
+        self.assertTrue(any((tx,ty)==(1,1) and n>=3 for x,y,n,tx,ty in m))
+    def test_unaffected_recorded_opening_keeps_reference_move_and_value(self):
+        rows=json.loads((Path(__file__).parent/'positions.json').read_text())
+        p=Position.from_dict(next(r['position'] for r in rows if r['position']['ply']==5))
+        a,m=self.pick(p,depth=4);b,n=self.pick(p,'ab2risktie',depth=4)
+        self.assertFalse(a.info['goal_coverage_active'])
+        self.assertEqual(m,n);self.assertEqual(a.info['value'],b.info['value'])
+    def test_no_goal_plan_recruits_into_guaranteed_counterkill(self):
+        p=Position(3,3,{(0,1):Cell(vampires=10),(1,1):Cell(humans=3),(2,1):Cell(werewolves=20)})
+        a,_=self.pick(p)
+        self.assertFalse(any(any((m[3],m[4])==(1,1) for m in plan) for plan in a.goal_turns(p)))
+    def test_joint_immediate_win_survives_goal_selection(self):
+        p=Position(3,3,{(0,0):Cell(vampires=3),(0,2):Cell(vampires=3),(1,1):Cell(werewolves=4)})
+        _,m=self.pick(p)
+        self.assertEqual(get_outcome(simulate_turn(p,m,None)).winner,"vampires")
+    def test_losing_endgame_gamble_is_preserved(self):
+        p=Position(3,3,{(0,1):Cell(vampires=2),(1,1):Cell(werewolves=10)},ply=198)
+        _,m=self.pick(p,depth=2)
+        self.assertEqual(m,[(0,1,2,1,1)])
+    def test_strong_army_pursues_without_humans(self):
+        p=Position(5,25,{(0,0):Cell(vampires=18),(11,1):Cell(werewolves=12)},ply=58)
+        _,m=self.pick(p)
+        after=simulate_turn(p,m,None);q=next(q for q,c in after.cells.items() if c.vampires)
+        self.assertLess(distance(q,(11,1)),11)
+    def test_species_symmetry(self):
+        p=self.fixture();cells={q:Cell(humans=c.humans,vampires=c.werewolves,werewolves=c.vampires) for q,c in p.cells.items()}
+        q=replace(p,cells=cells,to_play=opponent(p.to_play))
+        a,m=self.pick(p);b,n=self.pick(q)
+        self.assertEqual(m,n);self.assertEqual(a.info["value"],b.info["value"])
+    def test_short_deadline_remains_legal(self):
+        p=self.fixture()
+        for budget in (-1,.03):
+            started=time.perf_counter();_,m=self.pick(p,deadline=started+budget)
+            self.assertTrue(supported_turn(p.to_game_state(),m));self.assertLess(time.perf_counter()-started,.3)
+    def test_value_matches_unpruned_chance_oracle_on_selected_actions(self):
+        p=Position(3,3,{(0,1):Cell(vampires=3),(1,1):Cell(werewolves=3)},ply=198)
+        a,_=self.pick(p,depth=2)
+        def oracle(n,d):
+            if not d or get_outcome(n,max_plies=200):return a.leaf(n)
+            return max(sum(prob*-oracle(child,d-1) for prob,child in exact_successors(n,m)) for _,m,_ in a.plans(n))
+        self.assertAlmostEqual(a.info["value"],oracle(p,2),places=4)
+if __name__=="__main__":unittest.main()
+

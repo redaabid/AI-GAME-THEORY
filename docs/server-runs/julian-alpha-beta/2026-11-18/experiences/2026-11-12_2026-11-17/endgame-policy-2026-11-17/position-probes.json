@@ -1,0 +1,179 @@
+[
+  {
+    "case": "recruitment",
+    "agent": "ab2goals",
+    "config": "",
+    "moves": [
+      [
+        1,
+        1,
+        12,
+        0,
+        1
+      ],
+      [
+        1,
+        3,
+        8,
+        1,
+        4
+      ],
+      [
+        2,
+        2,
+        1,
+        2,
+        3
+      ]
+    ],
+    "value": 38145
+  },
+  {
+    "case": "recruitment",
+    "agent": "ab2endgame",
+    "config": ",root_width=7",
+    "moves": [
+      [
+        1,
+        1,
+        12,
+        0,
+        1
+      ],
+      [
+        1,
+        3,
+        8,
+        1,
+        4
+      ],
+      [
+        2,
+        2,
+        1,
+        2,
+        3
+      ]
+    ],
+    "value": 38145
+  },
+  {
+    "case": "recruitment",
+    "agent": "ab2endgame",
+    "config": ",root_width=12",
+    "moves": [
+      [
+        1,
+        1,
+        12,
+        0,
+        1
+      ],
+      [
+        1,
+        3,
+        8,
+        1,
+        4
+      ],
+      [
+        2,
+        2,
+        1,
+        2,
+        3
+      ]
+    ],
+    "value": 38145
+  },
+  {
+    "case": "group40",
+    "agent": "ab2goals",
+    "config": "",
+    "moves": [
+      [
+        6,
+        1,
+        40,
+        5,
+        1
+      ]
+    ],
+    "value": 126379
+  },
+  {
+    "case": "group40",
+    "agent": "ab2endgame",
+    "config": ",root_width=7",
+    "moves": [
+      [
+        6,
+        1,
+        40,
+        5,
+        1
+      ]
+    ],
+    "value": 126379
+  },
+  {
+    "case": "group40",
+    "agent": "ab2endgame",
+    "config": ",root_width=12",
+    "moves": [
+      [
+        6,
+        1,
+        40,
+        5,
+        1
+      ]
+    ],
+    "value": 126379
+  },
+  {
+    "case": "late_loss",
+    "agent": "ab2goals",
+    "config": "",
+    "moves": [
+      [
+        1,
+        2,
+        32,
+        0,
+        1
+      ]
+    ],
+    "value": -354316
+  },
+  {
+    "case": "late_loss",
+    "agent": "ab2endgame",
+    "config": ",root_width=7",
+    "moves": [
+      [
+        1,
+        2,
+        32,
+        2,
+        1
+      ]
+    ],
+    "value": -757868.5
+  },
+  {
+    "case": "late_loss",
+    "agent": "ab2endgame",
+    "config": ",root_width=12",
+    "moves": [
+      [
+        1,
+        2,
+        32,
+        2,
+        1
+      ]
+    ],
+    "value": -757868.5
+  }
+]

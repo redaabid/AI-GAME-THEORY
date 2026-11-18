@@ -1,0 +1,16 @@
+from pathlib import Path
+import sys,json,unittest
+HERE=Path(__file__).parent;BASE=HERE.parent
+import reply_agent,test_replies
+sys.path.insert(0,str(BASE));import test_combined
+sys.path.insert(0,str(BASE/"goal-coverage-2026-11-13"));import test_goals
+sys.path.insert(0,str(BASE/"endgame-policy-2026-11-17"));import test_endgame
+if __name__=="__main__":
+    suite=unittest.defaultTestLoader.discover(str(BASE/"runtime/tests"))
+    for module in (test_combined,test_goals,test_endgame,test_replies):
+        suite.addTests(unittest.defaultTestLoader.loadTestsFromModule(module))
+    with (HERE/"all-tests.log").open("w",encoding="utf-8") as stream:
+        r=unittest.TextTestRunner(stream=stream,verbosity=2).run(suite)
+    (HERE/"tests-completed.json").write_text(json.dumps(dict(tests=r.testsRun,success=r.wasSuccessful(),errors=len(r.errors),failures=len(r.failures))))
+    raise SystemExit(not r.wasSuccessful())
+

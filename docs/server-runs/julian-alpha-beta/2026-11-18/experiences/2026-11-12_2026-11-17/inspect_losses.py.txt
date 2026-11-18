@@ -1,0 +1,19 @@
+import json,sys
+from pathlib import Path
+root=Path(__file__).parent
+rows=[]
+for f in (root/"traces").glob("*.json"):
+    r=json.loads(f.read_text())
+    if not r["job"]["map_name"].startswith("holdout") or r["result"]["a_score"]!=0:continue
+    print("LOSS",r["job"]["a_species"],r["result"]["plies"])
+    for t in r["turns"]:
+        p=t["position"]
+        if p["to_play"]!=r["job"]["a_species"]:continue
+        info=t["info"];v=sum(c[3] for c in p["cells"]);w=sum(c[4] for c in p["cells"])
+        h=[c[:3] for c in p["cells"] if c[2]]
+        item=dict(ply=p["ply"],pop=[v,w],humans=h,moves=t["moves"],depth=info.get("depth"),
+                  value=info.get("value"),chance=info.get("chance_outcomes"),bootstrap=info.get("bootstrap"))
+        rows.append(item)
+        print(json.dumps(item))
+(root/"followup-loss-decisions.json").write_text(json.dumps(rows,indent=2))
+

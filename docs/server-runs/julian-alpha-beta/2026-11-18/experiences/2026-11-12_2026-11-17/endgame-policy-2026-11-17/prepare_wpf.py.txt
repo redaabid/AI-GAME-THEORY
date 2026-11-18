@@ -1,0 +1,19 @@
+from pathlib import Path
+import shutil,json,xml.etree.ElementTree as ET
+HERE=Path(__file__).parent;BASE=HERE.parent
+source=BASE.parents[4]/"server";dest=HERE/"wpf-runtime"
+if dest.exists():raise SystemExit("Existing WPF runtime preserved; use another folder.")
+dest.mkdir()
+for name in ("VampiresVSWerewolvesGameServer.exe","VampiresVSWerewolvesGameServer.exe.config","VVSW.Model.dll","VVSW.Controls.dll","thetrap.xml"):
+    shutil.copy2(source/name,dest/name)
+p=dest/"VampiresVSWerewolvesGameServer.exe.config"
+parser=ET.XMLParser(target=ET.TreeBuilder(insert_comments=True));tree=ET.parse(p,parser=parser)
+settings={e.attrib["key"]:e for e in tree.findall("./appSettings/add")}
+values=dict(ServerIP="127.0.0.1",ServerPort="5555",PlayersCount="2",MaxGameDuration="00:10:00",
+             MaxPlayDuration="00:00:02",MaxPlays="200",AutoRestart="False",Map=str((dest/"thetrap.xml").resolve()))
+for key,value in values.items():settings[key].set("value",value)
+tree.write(p,encoding="utf-8",xml_declaration=True)
+ET.parse(p);assert Path(values["Map"]).exists()
+(HERE/"wpf-settings.json").write_text(json.dumps(values,indent=2))
+print(dest/"VampiresVSWerewolvesGameServer.exe")
+

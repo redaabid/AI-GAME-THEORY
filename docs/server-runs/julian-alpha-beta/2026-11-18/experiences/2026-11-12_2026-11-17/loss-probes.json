@@ -1,0 +1,137 @@
+[
+  {
+    "ply": 8,
+    "agent": "ab2exp",
+    "moves": [
+      [
+        2,
+        2,
+        8,
+        1,
+        1
+      ]
+    ],
+    "value": 292329,
+    "fault": null
+  },
+  {
+    "ply": 8,
+    "agent": "ab2tie",
+    "moves": [
+      [
+        2,
+        2,
+        8,
+        3,
+        1
+      ]
+    ],
+    "value": 292329,
+    "fault": null
+  },
+  {
+    "ply": 8,
+    "agent": "ab2risk",
+    "moves": [
+      [
+        2,
+        2,
+        8,
+        1,
+        1
+      ]
+    ],
+    "value": 292329,
+    "fault": null
+  },
+  {
+    "ply": 10,
+    "agent": "ab2exp",
+    "moves": [
+      [
+        1,
+        1,
+        8,
+        1,
+        0
+      ]
+    ],
+    "value": 208030,
+    "fault": null
+  },
+  {
+    "ply": 10,
+    "agent": "ab2tie",
+    "moves": [
+      [
+        1,
+        1,
+        8,
+        2,
+        0
+      ]
+    ],
+    "value": 208030,
+    "fault": null
+  },
+  {
+    "ply": 10,
+    "agent": "ab2risk",
+    "moves": [
+      [
+        1,
+        1,
+        8,
+        1,
+        0
+      ]
+    ],
+    "value": 208030,
+    "fault": null
+  },
+  {
+    "ply": 12,
+    "agent": "ab2exp",
+    "moves": [
+      [
+        1,
+        0,
+        8,
+        0,
+        0
+      ]
+    ],
+    "value": 177005,
+    "fault": null
+  },
+  {
+    "ply": 12,
+    "agent": "ab2tie",
+    "moves": [
+      [
+        1,
+        0,
+        8,
+        2,
+        0
+      ]
+    ],
+    "value": 177005,
+    "fault": null
+  },
+  {
+    "ply": 12,
+    "agent": "ab2risk",
+    "moves": [
+      [
+        1,
+        0,
+        8,
+        0,
+        0
+      ]
+    ],
+    "value": 177005,
+    "fault": null
+  }
+]

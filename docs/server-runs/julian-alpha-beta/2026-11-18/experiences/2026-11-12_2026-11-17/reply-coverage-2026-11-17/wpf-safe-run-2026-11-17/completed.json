@@ -1,0 +1,28 @@
+{
+  "status": "finished",
+  "reason": null,
+  "seconds": 304.3067624999967,
+  "ab": {
+    "turns": 100,
+    "mean_seconds": 1.4072,
+    "max_seconds": 1.515,
+    "over18": 0,
+    "faults": 0,
+    "tracebacks": 0,
+    "session_finished": true
+  },
+  "mcts": {
+    "turns": 100,
+    "mean_seconds": 1.5024099999999998,
+    "max_seconds": 1.506,
+    "over18": 0,
+    "faults": 0,
+    "tracebacks": 0,
+    "session_finished": true
+  },
+  "exit_codes": [
+    0,
+    0
+  ],
+  "winner": "not_yet_observed"
+}

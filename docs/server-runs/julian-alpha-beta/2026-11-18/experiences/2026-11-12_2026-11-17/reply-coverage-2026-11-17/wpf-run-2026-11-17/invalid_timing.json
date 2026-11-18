@@ -1,0 +1,20 @@
+{
+  "status": "invalid_timing",
+  "cause": "Windows Modern Standby; resume event reason Lid; retain raw run",
+  "ab": {
+    "turns": 100,
+    "max_seconds": 1.99,
+    "over18": [
+      1.99
+    ],
+    "session_finished": true
+  },
+  "mcts": {
+    "turns": 100,
+    "max_seconds": 734.45,
+    "over18": [
+      734.45
+    ],
+    "session_finished": true
+  }
+}

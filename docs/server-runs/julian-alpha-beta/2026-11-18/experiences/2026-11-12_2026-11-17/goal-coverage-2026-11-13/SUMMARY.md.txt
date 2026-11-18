@@ -1,0 +1,82 @@
+# Correction ciblée de la sélection des candidats — 13 novembre 2026
+
+## Défaut identifié
+Sur une position enregistrée de la carte medium, un groupe de 7 ne peut convertir aucun des humains restants (8 et 9).
+Notre groupe de 40, lui, le peut. Pourtant les sept candidats de l'ancienne version font surtout bouger le petit groupe ; les variantes proposées pour le gros groupe progressent mal.
+Le départage à la racine ne suffit pas lorsque le mouvement utile est absent de cette liste.
+
+Une autre position montre une capture de 9 humains différée, malgré sa présence dans les candidats. Ce second cas relève d'une autre limite de recherche/évaluation ; il n'est pas présenté comme résolu ici.
+
+## Correction
+Nouvel agent local **ab2goals**, construit sur le précédent ab2risktie.
+- Toujours largeur 7, mêmes poids d'évaluation, même calcul probabiliste des combats et même approfondissement.
+- Activation uniquement si certains groupes ne peuvent convertir aucun humain restant avec certitude, alors qu'un autre groupe le peut.
+- Réserve au plus deux places pour des propositions de déplacement de groupes capables vers des objectifs de recrutement distincts.
+- Propose des tours coordonnés quand ils sont légaux ; n'impose pas leur choix à Alpha-Bêta.
+- Préserve les éliminations immédiates garanties et évite, dans les nouvelles propositions, une conversion suivie d'une contre-attaque garantie destructrice.
+- Hors de ce contexte, conserve la sélection précédente. Le cache est vidé quand le régime change, pour ne pas réutiliser des valeurs calculées avec d'autres ensembles d'actions.
+- Aucune coordonnée de carte ou identité d'adversaire n'est codée en dur. Les déplacements restent adjacents.
+
+Le paramètre initial est goal_slots=2 ; il n'a pas été optimisé et n'est pas présenté comme optimal.
+
+## Essais et décisions
+Premier essai : diversification appliquée largement.
+Les courts rejeux à 0,15 s étaient mitigés : un cas de meilleure avance, un autre de défaite alors que le témoin gagnait.
+Cette première version n'est pas retenue. Son source est conservé dans goal_agent_v1.py.txt, avec short-summary.json et les traces short-*.
+Ces trajectoires partielles ne sont pas des résultats de parties complètes à 1,5 s.
+
+Version révisée : restriction au défaut de capacités différentes.
+Sur la position enregistrée au demi-coup 18, à profondeur fixe 4 :
+- ancien : bouge uniquement le groupe de 7 ;
+- nouveau : fait avancer le groupe de 40 de (6,1) vers (5,1), réduisant la distance à un objectif accessible ;
+- même valeur de recherche : 126379.
+Une ouverture enregistrée hors du contexte d'activation conserve exactement le mouvement et la valeur du témoin à profondeur fixe.
+
+## Validation complète contre V6
+Même carte medium, même testmap2, mêmes rôles et graines que le lot témoin antérieur.
+Quatre rôles par carte, 200 demi-coups, réflexion 1,5 s, allowance 2 s, deux workers.
+V6 inchangé, plafond 100000 itérations. Aucun paramètre changé pendant le lot.
+
+| Carte | Ancien AB2 (V/N/D) | AB2 corrigé (V/N/D) | Temps moyen corrigé | Maximum corrigé |
+|---|---|---|---:|---:|
+| testmap2 | 0 / 4 / 0 | 0 / 4 / 0 | 1,430 s | 1,514 s |
+| medium-20261113 | 1 / 1 / 2 | 2 / 1 / 1 | 1,448 s | 1,517 s |
+
+Zéro faute, zéro timeout et zéro décision au-dessus de 1,8 s pour les deux agents.
+Les 1 594 transitions ont été rejouées et vérifiées ; les sources figées correspondent aux empreintes du lot.
+
+Sur la carte medium, le rôle werewolves/premier joueur passe d'une défaite à une victoire 56 contre 40.
+Le nouveau mécanisme s'est activé à un seul tour de cette partie, au demi-coup 12.
+Il ne s'est activé dans aucune des trois autres parties medium. Les trajectoires de recherches chronométrées peuvent varier même avec les mêmes graines : ce petit lot n'isole donc pas parfaitement un effet causal sur le taux de victoire.
+Le mécanisme a également été inactif sur testmap2.
+
+La carte medium était déjà connue du diagnostic : ce n'est plus un test indépendant de réglage.
+Quatre parties par carte ne démontrent pas une supériorité générale. Thetrap n'a pas été rejouée avec ce nouveau candidat ; son ancien 8/8 reste attaché à ab2risktie.
+
+## Tests et rapport au problème du professeur
+**381 tests réussis** (zéro erreur/échec) en 71,585 s.
+Les 11 nouvelles régressions vérifient notamment :
+- le gros groupe capable progresse sur le cas enregistré ;
+- les capacités et les déplacements restent symétriques entre espèces ;
+- l'ouverture hors activation et le contrôle goal_slots=0 conservent le témoin ;
+- capture sûre, contre-attaque certaine évitée, élimination coordonnée et dernier pari préservés ;
+- largeur bornée, coups légaux, échéances courtes et valeur conforme à un oracle sans coupures sur une petite position.
+
+**Ce cas concret d'oscillation avec humains accessibles est corrigé.**
+Cela ne signifie pas que toute oscillation est éliminée, ni que toutes les décisions de recrutement ou de combat sont optimales.
+Les répétitions existent encore, parfois pendant une défense gagnante à la limite ; leur nombre seul ne permet pas de juger une stratégie.
+Les cas où tous les groupes sont déjà capables, les courses de recrutement perdues, la poursuite et l'interception restent des limites possibles à examiner.
+Les tests WPF et H208 restent à faire. Aucun « saut » physique de cases n'a été ajouté.
+
+## Fichiers
+- [goal_agent.py](goal_agent.py) : correction isolée ; mixed_capability, goal_turns et _plans.
+- [test_goals.py](test_goals.py), [positions.json](positions.json) : propriétés et positions enregistrées.
+- [tests-completed.json](tests-completed.json), [all-tests.log](all-tests.log) : 381 tests.
+- [matches/report.md](matches/report.md), [matches/report.json](matches/report.json), [completed.json](completed.json) : résultats.
+- [paired-results.json](paired-results.json) : rôles, populations, activations et comparaison au témoin.
+- [verified-traces.json](verified-traces.json) : analyses et événements ; traces complètes dans ../traces/.
+- [validate_matches.py](validate_matches.py) : lanceur reprenable avec empreintes des sources.
+- [main_candidate.py](main_candidate.py) : lanceur TCP local sélectionnant explicitement ab2goals, IP/port paramétrables ; aide vérifiée, aucune partie WPF lancée.
+
+Tout reste local. Les anciens modèles et résultats sont conservés ; aucun commit/push et aucune modification d'une branche partagée.
+

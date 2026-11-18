@@ -1,0 +1,19 @@
+import json
+from pathlib import Path
+import endgame_agent
+from agents import make_agent,TurnContext
+from simulator import Position
+BASE=Path(__file__).parent.parent
+rows=json.loads((BASE/"goal-coverage-2026-11-13/positions.json").read_text())
+late=json.loads((BASE/"late-loss-audit-2026-11-17.json").read_text())
+out=[]
+for label,p in [("recruitment",Position.from_dict(next(r["position"] for r in rows if r["position"]["ply"]==5))),
+                ("group40",Position.from_dict(next(r["position"] for r in rows if r["position"]["ply"]==18))),
+                ("late_loss",Position.from_dict(late[1]["position"]))]:
+ for name,params in [("ab2goals",""),("ab2endgame",",root_width=7"),("ab2endgame",",root_width=12")]:
+  a=make_agent(f"{name}:depth=4,max_depth=24,width=7,extra=0{params}")
+  m=a.choose_moves(p,TurnContext(None,200))
+  item=dict(case=label,agent=name,config=params,moves=m,value=a.info["value"])
+  out.append(item);print(json.dumps(item))
+(Path(__file__).parent/"position-probes.json").write_text(json.dumps(out,indent=2))
+

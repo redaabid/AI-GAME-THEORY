@@ -1,0 +1,62 @@
+"""Frozen eight-game cross-map validation, no tuning during this batch."""
+import sys,json,hashlib,random,ctypes
+from pathlib import Path
+HERE=Path(__file__).parent
+ROOT=HERE/"runtime"
+sys.path.insert(0,str(ROOT))
+import combined_comparison
+import recorded_comparison
+from campaign import make_plan,run_campaign,atomic_json
+from simulator import load_map
+from mapgen import random_map,write_map
+from analyze import analyze
+
+def main():
+    course=ROOT.parents[5]/"server"/"testmap2.xml"
+    fresh=random_map(random.Random(20261113),"medium")
+    directory=HERE/"validation-other-maps-2026-11-13"
+    directory.mkdir(exist_ok=True)
+    xml=directory/"holdout-medium-20261113.xml"
+    if xml.exists():
+        if load_map(xml)!=fresh:raise ValueError("Existing map differs; preserved")
+    else:write_map(fresh,xml)
+    maps=[("testmap2",load_map(course)),("holdout-medium-20261113",fresh)]
+    spec="ab2risktie:depth=1,max_depth=24,width=7,extra=0,tt_size=50000"
+    plan=make_plan([spec,"mcts-v6:iterations=100000"],maps,seed=2026111301,workers=2,rounds=1,
+                   max_plies=200,move_time=2,margin=.5)
+    plan["experiment_sources_sha256"]={str(p.relative_to(HERE)):hashlib.sha256(p.read_bytes()).hexdigest()
+        for p in [Path(__file__),HERE/"combined_comparison.py",HERE/"combo_agents.py",HERE/"recorded_comparison.py",
+                  *sorted(ROOT.rglob("*.py"))] if ".local" not in p.relative_to(HERE).parts}
+    def progress(done,total,result):
+        text=f"{done}/{total} saved"
+        if result:text+=f" | {result['map_name']} | AB2 score={result['a_score']} | ply={result['plies']}"
+        print(text,flush=True)
+    ctypes.windll.kernel32.SetThreadExecutionState(0x80000001)
+    try:
+        report,interrupted=run_campaign(plan,directory,progress=progress)
+    finally:ctypes.windll.kernel32.SetThreadExecutionState(0x80000000)
+    if interrupted:return 130
+    verified=[]
+    for job in plan["jobs"]:
+        key=hashlib.sha256(json.dumps(job,sort_keys=True).encode()).hexdigest()
+        verified.append(analyze(HERE/"traces"/(key+".json")))
+    atomic_json(directory/"verified-traces.json",verified)
+    stats={}
+    for mapname,_ in maps:
+        games=[g for g in report["games"] if g["map_name"]==mapname]
+        secs=[s for g in games for s in g["a_stats"]["seconds"]]
+        allsec=[s for g in games for k in ("a_stats","b_stats") for s in g[k]["seconds"]]
+        stats[mapname]=dict(games=len(games),wins=sum(g["a_score"]==1 for g in games),
+          draws=sum(g["a_score"]==.5 for g in games),losses=sum(g["a_score"]==0 for g in games),
+          mean_seconds=sum(secs)/len(secs),max_seconds=max(secs),
+          faults_both=sum(len(g[k]["faults"]) for g in games for k in ("a_stats","b_stats")),
+          timeouts_both=sum(g[k]["timeouts"] for g in games for k in ("a_stats","b_stats")),
+          over18_both=sum(s>1.8 for s in allsec))
+    for file,expected in plan["experiment_sources_sha256"].items():
+        assert hashlib.sha256((HERE/file).read_bytes()).hexdigest()==expected,file
+    atomic_json(directory/"completed.json",dict(status=report["status"],maps=stats,
+      verified_transitions=sum(r["turns_verified"] for r in verified)))
+    print(json.dumps(stats),flush=True)
+    return 0
+if __name__=="__main__":raise SystemExit(main())
+

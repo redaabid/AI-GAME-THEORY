@@ -1,0 +1,39 @@
+import sys,time,unittest
+from pathlib import Path
+from dataclasses import replace
+import agents.ab2_risk_tie
+from agents import make_agent,safe_choose,TurnContext
+from candidates import supported_turn
+from game import Cell,distance
+from simulator import Position,simulate_turn
+class CombinedTests(unittest.TestCase):
+    def pick(self,p,name="ab2risktie",depth=4,deadline=None):
+        a=make_agent(f"{name}:depth={depth},max_depth=24,width=7,extra=0")
+        m,f=safe_choose(a,p,TurnContext(deadline,200));self.assertIsNone(f)
+        return a,m
+    def test_keeps_strategic_root_tie(self):
+        p=Position(5,25,{(0,0):Cell(vampires=18),(11,1):Cell(werewolves=12)},ply=58)
+        a,m=self.pick(p);b,n=self.pick(p,"ab2tie")
+        self.assertEqual(m,n);self.assertEqual(a.info["value"],b.info["value"])
+        self.assertEqual(m,[(0,0,18,1,0)])
+    def test_preserves_last_chance_probability(self):
+        p=Position(3,3,{(0,1):Cell(vampires=2),(1,1):Cell(werewolves=10)},ply=198)
+        a,m=self.pick(p,depth=2);b,n=self.pick(p,"ab2risk",depth=2)
+        self.assertEqual(m,[(0,1,2,1,1)])
+        self.assertAlmostEqual(a.info["value"],b.info["value"],places=5)
+    def test_preserves_action_set(self):
+        p=Position(3,3,{(0,1):Cell(vampires=4),(1,1):Cell(werewolves=4)},ply=198)
+        a,_=self.pick(p,depth=2);b,_=self.pick(p,"ab2exp",depth=2)
+        self.assertEqual({r[1] for r in a.plans(p)},{r[1] for r in b.plans(p)})
+    def test_avoids_exposing_lead_to_recorded_enemy_gamble(self):
+        p=Position(5,10,{(1,2):Cell(werewolves=7),(1,4):Cell(vampires=4)},to_play='werewolves',ply=52)
+        _,m=self.pick(p,depth=3)
+        after=simulate_turn(p,m,None)
+        own=next(q for q,c in after.cells.items() if c.werewolves)
+        enemy=next(q for q,c in after.cells.items() if c.vampires)
+        self.assertGreater(distance(own,enemy),1)
+    def test_expired_deadline_has_legal_move(self):
+        p=Position(3,3,{(0,1):Cell(vampires=4),(1,1):Cell(werewolves=4)})
+        _,m=self.pick(p,deadline=time.perf_counter()-1)
+        self.assertTrue(supported_turn(p.to_game_state(),m))
+if __name__=="__main__":unittest.main()

@@ -1,0 +1,166 @@
+{
+  "full_simulated_matches": 52,
+  "campaigns": [
+    {
+      "report": "experiences\\2026-11-12_2026-11-17\\ab2exp-thetrap-1.5-2026111201\\report.json",
+      "games": 4,
+      "status": "complete",
+      "maps": {
+        "thetrap": {
+          "wins": 2,
+          "draws": 0,
+          "losses": 2,
+          "mean_seconds": 1.3914956708360007,
+          "max_seconds": 1.5048669000389054
+        }
+      }
+    },
+    {
+      "report": "experiences\\2026-11-12_2026-11-17\\ab2risktie-thetrap-1.5-2026111201\\report.json",
+      "games": 4,
+      "status": "complete",
+      "maps": {
+        "thetrap": {
+          "wins": 4,
+          "draws": 0,
+          "losses": 0,
+          "mean_seconds": 1.4159452540268107,
+          "max_seconds": 1.5085560999577865
+        }
+      }
+    },
+    {
+      "report": "experiences\\2026-11-12_2026-11-17\\ab2risktie-thetrap-1.5-2026111202\\report.json",
+      "games": 4,
+      "status": "complete",
+      "maps": {
+        "thetrap": {
+          "wins": 4,
+          "draws": 0,
+          "losses": 0,
+          "mean_seconds": 1.4829171445303473,
+          "max_seconds": 1.5217823000857607
+        }
+      }
+    },
+    {
+      "report": "experiences\\2026-11-12_2026-11-17\\ab2tie-thetrap-1.5-2026111201\\report.json",
+      "games": 4,
+      "status": "complete",
+      "maps": {
+        "thetrap": {
+          "wins": 2,
+          "draws": 0,
+          "losses": 2,
+          "mean_seconds": 1.4938541654264554,
+          "max_seconds": 1.5003149000694975
+        }
+      }
+    },
+    {
+      "report": "experiences\\2026-11-12_2026-11-17\\endgame-policy-2026-11-17\\matches\\report.json",
+      "games": 8,
+      "status": "complete",
+      "maps": {
+        "holdout-medium-20261113": {
+          "wins": 2,
+          "draws": 0,
+          "losses": 2,
+          "mean_seconds": 1.5002263764689867,
+          "max_seconds": 1.5004500999930315
+        },
+        "unseen-medium-20261117": {
+          "wins": 0,
+          "draws": 2,
+          "losses": 2,
+          "mean_seconds": 1.438778752889096,
+          "max_seconds": 1.5141944999922998
+        }
+      }
+    },
+    {
+      "report": "experiences\\2026-11-12_2026-11-17\\goal-coverage-2026-11-13\\matches\\report.json",
+      "games": 8,
+      "status": "complete",
+      "maps": {
+        "holdout-medium-20261113": {
+          "wins": 2,
+          "draws": 1,
+          "losses": 1,
+          "mean_seconds": 1.4481399735516236,
+          "max_seconds": 1.5169582999997147
+        },
+        "testmap2": {
+          "wins": 0,
+          "draws": 4,
+          "losses": 0,
+          "mean_seconds": 1.4301949037499821,
+          "max_seconds": 1.5142841000006229
+        }
+      }
+    },
+    {
+      "report": "experiences\\2026-11-12_2026-11-17\\reply-coverage-2026-11-17\\holdout\\report.json",
+      "games": 4,
+      "status": "complete",
+      "maps": {
+        "holdout-medium-20261119": {
+          "wins": 2,
+          "draws": 0,
+          "losses": 2,
+          "mean_seconds": 1.4697896273962576,
+          "max_seconds": 1.5293719999899622
+        }
+      }
+    },
+    {
+      "report": "experiences\\2026-11-12_2026-11-17\\reply-coverage-2026-11-17\\matches\\report.json",
+      "games": 8,
+      "status": "complete",
+      "maps": {
+        "holdout-medium-20261113": {
+          "wins": 1,
+          "draws": 1,
+          "losses": 2,
+          "mean_seconds": 1.455559026528915,
+          "max_seconds": 1.5021511999948416
+        },
+        "unseen-medium-20261117": {
+          "wins": 4,
+          "draws": 0,
+          "losses": 0,
+          "mean_seconds": 1.4681888427001684,
+          "max_seconds": 1.5220727999985684
+        }
+      }
+    },
+    {
+      "report": "experiences\\2026-11-12_2026-11-17\\validation-other-maps-2026-11-13\\report.json",
+      "games": 8,
+      "status": "complete",
+      "maps": {
+        "holdout-medium-20261113": {
+          "wins": 1,
+          "draws": 1,
+          "losses": 2,
+          "mean_seconds": 1.4405584467213013,
+          "max_seconds": 1.5017075999994631
+        },
+        "testmap2": {
+          "wins": 0,
+          "draws": 4,
+          "losses": 0,
+          "mean_seconds": 1.4308555252499957,
+          "max_seconds": 1.501115099999879
+        }
+      }
+    }
+  ],
+  "other_evidence": {
+    "short_late_continuations": 16,
+    "synthetic_audit_checks": 72,
+    "valid_wpf_sessions": 2,
+    "invalid_wpf_sessions": 1,
+    "old_checkpoint": "13/16: incomplete, not included in the 52 new matches"
+  }
+}

@@ -1,0 +1,64 @@
+"""Course-server test with idle-sleep inhibition and suspension/timing guards."""
+from pathlib import Path
+import subprocess,time,json,re,ctypes,sys
+HERE=Path(__file__).parent
+OUT=HERE/"wpf-safe-run-2026-11-17"
+PY=sys.executable
+def save(name,data):(OUT/name).write_text(json.dumps(data,indent=2),encoding="utf-8")
+def connected():
+    data=subprocess.check_output(["netstat","-ano","-p","tcp"],text=True,errors="replace")
+    return any(len(x:=line.split())>=4 and x[1].endswith(":5555") and x[3]=="ESTABLISHED" for line in data.splitlines())
+def metrics(name):
+    path=OUT/(name+".stderr.log");text=path.read_text(errors="replace") if path.exists() else ""
+    seconds=[float(x) for x in re.findall(r"Turn \d+:.*?\(([0-9.]+) seconds\)",text)]
+    return dict(turns=len(seconds),mean_seconds=sum(seconds)/len(seconds) if seconds else None,
+       max_seconds=max(seconds,default=0),over18=sum(x>1.8 for x in seconds),faults=text.count("Agent fault"),
+       tracebacks=text.count("Traceback"),session_finished="Server finished the session." in text)
+def main():
+    OUT.mkdir(exist_ok=False)
+    ctypes.windll.kernel32.SetThreadExecutionState(0x80000001)
+    handles=[];procs=[];reason=None
+    try:
+        for label,script,name in (("ab","main_candidate.py","AB-Replies"),("mcts","main_v6.py","MCTS-V6")):
+            stdout=(OUT/(label+".stdout.log")).open("wb");stderr=(OUT/(label+".stderr.log")).open("wb")
+            handles.extend([stdout,stderr])
+            p=subprocess.Popen([PY,"-u","-B",script,"--name",name,"--max-plies","200","127.0.0.1","5555"],
+                cwd=HERE,stdout=stdout,stderr=stderr,creationflags=subprocess.CREATE_NO_WINDOW)
+            procs.append(p)
+            if label=="ab":
+                end=time.monotonic()+15
+                while not connected():
+                    if p.poll() is not None:raise RuntimeError("First bot exited before connection")
+                    if time.monotonic()>end:raise RuntimeError("First connection not confirmed")
+                    time.sleep(.25)
+        started=last=time.monotonic()
+        save("pids.json",dict(ab=procs[0].pid,mcts=procs[1].pid))
+        while any(p.poll() is None for p in procs):
+            time.sleep(1);now=time.monotonic()
+            if now-last>8:reason="host_pause_detected";break
+            last=now
+            current={name:metrics(name) for name in ("ab","mcts")}
+            if any(v["over18"] or v["faults"] or v["tracebacks"] for v in current.values()):
+                reason="timing_or_agent_fault";break
+            if now-started>720:reason="supervisor_timeout";break
+        if reason:
+            for p in procs:
+                if p.poll() is None:p.terminate()
+        for p in procs:p.wait(timeout=10)
+        for h in handles:h.flush()
+        result=dict(status="invalid" if reason else "finished",reason=reason,
+                    seconds=time.monotonic()-started,ab=metrics("ab"),mcts=metrics("mcts"),
+                    exit_codes=[p.returncode for p in procs],winner="not_yet_observed")
+        if any(not v["session_finished"] or v["over18"] or v["faults"] or v["tracebacks"]
+               for v in (result["ab"],result["mcts"])):result["status"]="invalid"
+        save("completed.json",result)
+        if result["status"]!="finished":return 1
+    finally:
+        for p in procs:
+            if p.poll() is None:p.terminate()
+        for h in handles:h.close()
+        ctypes.windll.kernel32.SetThreadExecutionState(0x80000000)
+    # Separate frozen-map test; it has its own sleep guard and checkpoints.
+    return subprocess.call([PY,"-u","-B","validate_holdout.py"],cwd=HERE)
+if __name__=="__main__":raise SystemExit(main())
+

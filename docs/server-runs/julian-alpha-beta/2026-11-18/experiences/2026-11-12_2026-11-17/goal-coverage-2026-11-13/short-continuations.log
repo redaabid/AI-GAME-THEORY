@@ -1,0 +1,4 @@
+{"candidate": "ab2risktie", "actor": "werewolves", "start_ply": 18, "last_ply": 66, "totals": {"werewolves": 47, "vampires": 46}, "repetitions": 0, "faults": [], "termination": "observation_limit", "winner": null}
+{"candidate": "ab2goals", "actor": "werewolves", "start_ply": 18, "last_ply": 66, "totals": {"werewolves": 43, "vampires": 26}, "repetitions": 3, "faults": [], "termination": "observation_limit", "winner": null}
+{"candidate": "ab2risktie", "actor": "vampires", "start_ply": 5, "last_ply": 50, "totals": {"vampires": 21, "werewolves": 0}, "repetitions": 0, "faults": [], "termination": "elimination", "winner": "vampires"}
+{"candidate": "ab2goals", "actor": "vampires", "start_ply": 5, "last_ply": 19, "totals": {"vampires": 0, "werewolves": 45}, "repetitions": 0, "faults": [], "termination": "elimination", "winner": "werewolves"}

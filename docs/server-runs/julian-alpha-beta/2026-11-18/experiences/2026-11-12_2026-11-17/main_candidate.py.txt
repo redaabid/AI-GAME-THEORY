@@ -1,0 +1,12 @@
+"""Run the experimental combined AB2 through the unchanged TCP client."""
+import sys
+from pathlib import Path
+sys.path.insert(0,str(Path(__file__).parent/"runtime"))
+import combo_agents
+from main import main
+if __name__=="__main__":
+    args=sys.argv[1:]
+    if not any(arg=="--agent" or arg.startswith("--agent=") for arg in args):
+        args=["--agent","ab2risktie:depth=1,max_depth=24,width=7,extra=0,tt_size=50000",*args]
+    raise SystemExit(main(args))
+

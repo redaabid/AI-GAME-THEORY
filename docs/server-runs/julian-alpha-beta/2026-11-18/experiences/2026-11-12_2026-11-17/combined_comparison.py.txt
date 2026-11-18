@@ -1,0 +1,16 @@
+"""Recorded comparator that additionally registers the isolated combined agent."""
+import sys,hashlib
+from pathlib import Path
+ROOT=Path(__file__).parent/"runtime"
+sys.path.insert(0,str(ROOT))
+import combo_agents
+import recorded_comparison as runner
+original=runner.make_plan
+def pinned_plan(*args,**kwargs):
+    plan=original(*args,**kwargs)
+    plan["combined_experiment_sha256"]={p.name:hashlib.sha256(p.read_bytes()).hexdigest()
+        for p in (Path(__file__),Path(combo_agents.__file__))}
+    return plan
+runner.make_plan=pinned_plan
+if __name__=="__main__":raise SystemExit(runner.main())
+

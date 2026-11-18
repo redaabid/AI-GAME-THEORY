@@ -1,0 +1,15 @@
+import sys,unittest,json
+from pathlib import Path
+HERE=Path(__file__).parent
+import goal_agent,test_goals
+sys.path.insert(0,str(HERE.parent))
+import test_combined
+if __name__=="__main__":
+    suite=unittest.defaultTestLoader.discover(str(HERE.parent/"runtime/tests"))
+    suite.addTests(unittest.defaultTestLoader.loadTestsFromModule(test_combined))
+    suite.addTests(unittest.defaultTestLoader.loadTestsFromModule(test_goals))
+    with (HERE/"all-tests.log").open("w",encoding="utf-8") as stream:
+        r=unittest.TextTestRunner(stream=stream,verbosity=2).run(suite)
+    (HERE/"tests-completed.json").write_text(json.dumps(dict(tests=r.testsRun,success=r.wasSuccessful(),failures=len(r.failures),errors=len(r.errors))))
+    raise SystemExit(not r.wasSuccessful())
+

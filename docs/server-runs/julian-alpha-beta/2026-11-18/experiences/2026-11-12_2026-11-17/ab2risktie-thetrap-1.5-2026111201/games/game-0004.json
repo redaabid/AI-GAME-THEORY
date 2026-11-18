@@ -1,0 +1,90 @@
+{
+ "game_index": 3,
+ "job_sha256": "a30fb14598fbba4ed6a034e07d56cd2dca422b8242246b604ce591c26a645f74",
+ "result_sha256": "01b7a8536a30b26bc3e6b6e19a5d1203d2b74462f80b1674ba995c225ae640ba",
+ "saved_utc": "2026-11-12T21:14:47.644367+00:00",
+ "result": {
+  "i": 0,
+  "j": 1,
+  "map_name": "thetrap",
+  "round": 0,
+  "a_species": "werewolves",
+  "first": "werewolves",
+  "seed": 2026111204,
+  "a_score": 1.0,
+  "a_margin": 4,
+  "winner": "werewolves",
+  "termination": "elimination",
+  "plies": 19,
+  "final_populations": {
+   "vampires": 0,
+   "werewolves": 4
+  },
+  "a_stats": {
+   "moves": 10,
+   "seconds": [
+    1.500188700039871,
+    1.5001727000344545,
+    1.5002471000188962,
+    1.500196099979803,
+    1.5001711000222713,
+    1.5001702000154182,
+    1.5002113999798894,
+    1.500170600018464,
+    1.5001823999918997,
+    1.500157600035891
+   ],
+   "timeouts": 0,
+   "faults": [],
+   "repeated_positions": 0,
+   "behind_moves": 1,
+   "repeated_while_behind": 0,
+   "memory_interventions": 0,
+   "repeated_chosen_after_penalty": 0,
+   "search": {},
+   "slow_decisions": []
+  },
+  "b_stats": {
+   "moves": 9,
+   "seconds": [
+    1.5016734999371693,
+    1.5017875001067296,
+    1.5015420999843627,
+    1.501647699973546,
+    1.5018872000509873,
+    1.5019698000978678,
+    1.5017256999853998,
+    1.5017180999275297,
+    1.5016843000194058
+   ],
+   "timeouts": 0,
+   "faults": [],
+   "repeated_positions": 0,
+   "behind_moves": 6,
+   "repeated_while_behind": 0,
+   "memory_interventions": 0,
+   "repeated_chosen_after_penalty": 0,
+   "search": {
+    "decisions": 9,
+    "iterations": 9282,
+    "tree_depth_total": 27275,
+    "rollouts": 9142,
+    "rollout_plies": 52697,
+    "extension_plies": 0,
+    "coordinated_turns": 0,
+    "loop_cutoffs": 0,
+    "candidate_calls": 2912,
+    "candidate_wall_seconds": 1.820528199430555,
+    "candidate_cpu_seconds": 1.859375,
+    "rollout_wall_seconds": 9.152332302299328,
+    "rollout_cpu_seconds": 8.90625,
+    "search_wall_seconds": 13.500195599975996,
+    "search_cpu_seconds": 13.421875,
+    "deadline_stops": 9,
+    "tree_depth_max": 5,
+    "rollout_depth_max": 6
+   },
+   "slow_decisions": []
+  }
+ }
+}

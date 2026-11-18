@@ -1,0 +1,12 @@
+{
+  "completed": 2,
+  "planned": 4,
+  "max_plies": 4,
+  "move_time": 0,
+  "opponent_iterations": 8,
+  "purpose": "checkpoint restart and recorded traces only, not performance",
+  "traces": [
+    "6974c5beb9417dc41e237d84f53e883dc722a717d621db570e7931d244bec24d",
+    "d12beb637f49ff06b6022c11711aa86733d3f72c74ec23ac3f0520764f16d743"
+  ]
+}

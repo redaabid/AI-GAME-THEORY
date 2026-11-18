@@ -1,0 +1,40 @@
+"""Full-game validation, separate from the short late-game probes."""
+from pathlib import Path
+import argparse,sys,hashlib,ctypes
+ROOT=Path(__file__).parent/"runtime"
+sys.path.insert(0,str(ROOT))
+import scripts.mcts_v6
+from campaign import make_plan,run_campaign
+from simulator import load_map
+
+def main():
+    p=argparse.ArgumentParser(description=__doc__)
+    p.add_argument("--maps",nargs="+",type=Path,required=True)
+    p.add_argument("--max-games",type=int,default=4,help="Maximum additional games per AB profile")
+    p.add_argument("--dry-run",action="store_true")
+    args=p.parse_args()
+    if args.max_games<1:p.error("--max-games must be positive")
+    paths=[f for item in args.maps for f in (sorted(item.glob("*.xml")) if item.is_dir() else [item])]
+    maps=[(f.stem,load_map(f)) for f in paths]
+    ctypes.windll.kernel32.SetThreadExecutionState(0x80000001)
+    try:
+        for name in ("ab2exp","ab2risk"):
+            spec=f"{name}:depth=1,max_depth=24,width=7,extra=0,tt_size=50000"
+            plan=make_plan([spec,"mcts-v6:iterations=100000"],maps,seed=20261112,workers=1,rounds=1,
+                           max_plies=200,move_time=2,margin=.5)
+            plan["extra_source_sha256"]={str(f.relative_to(ROOT)):hashlib.sha256(f.read_bytes()).hexdigest()
+                                        for f in sorted((ROOT/"scripts").rglob("*.py"))}
+            plan["launcher_sha256"]=hashlib.sha256(Path(__file__).read_bytes()).hexdigest()
+            print(f"{name}: {len(plan['jobs'])} planned; 1.5s thinking, cap200, one worker",flush=True)
+            if not args.dry_run:
+                def progress(done,total,result):
+                    if result:print(f"{done}/{total}: {result['map_name']} score {result['a_score']}",flush=True)
+                report,interrupted=run_campaign(plan,Path(__file__).parent/("full-"+name),
+                                                max_games=args.max_games,progress=progress)
+                print(report["status"],flush=True)
+                if interrupted:return 130
+    finally:ctypes.windll.kernel32.SetThreadExecutionState(0x80000000)
+    return 0
+
+if __name__=="__main__":raise SystemExit(main())
+

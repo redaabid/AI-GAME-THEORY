@@ -1,0 +1,34 @@
+{
+  "ab": {
+    "turns": 14,
+    "mean_seconds": 1.5018571428571428,
+    "max_seconds": 1.502,
+    "over18": 0,
+    "faults": 0,
+    "tracebacks": 0,
+    "session_finished": true,
+    "bootstrap": 0,
+    "fallback": 0
+  },
+  "mcts": {
+    "turns": 13,
+    "mean_seconds": 1.5035384615384615,
+    "max_seconds": 1.504,
+    "over18": 0,
+    "faults": 0,
+    "tracebacks": 0,
+    "session_finished": true,
+    "bootstrap": 0,
+    "fallback": 0
+  },
+  "winner": "AB-Endgame",
+  "final_populations": {
+    "AB-Endgame": 3,
+    "MCTS-V6": 0
+  },
+  "humans_left": 0,
+  "verdict_source": "WPF window: AB-Endgame wins / MCTS-V6 loses; progress bars 3 and 0",
+  "map": "thetrap.xml",
+  "max_plies": 200,
+  "max_play_seconds": 2
+}

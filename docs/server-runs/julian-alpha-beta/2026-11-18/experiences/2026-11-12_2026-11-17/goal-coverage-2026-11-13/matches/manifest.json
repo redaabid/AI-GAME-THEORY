@@ -1,0 +1,992 @@
+{
+ "created_utc": "2026-11-13T11:48:20.834388+00:00",
+ "plan": {
+  "schema_version": 1,
+  "agents": [
+   "ab2goals:depth=1,max_depth=24,width=7,extra=0,tt_size=50000",
+   "mcts-v6:iterations=100000"
+  ],
+  "workers": 2,
+  "python_version": "3.14.7",
+  "source_sha256": {
+   "agents/__init__.py": "99e7ad3c448aedf3fe5058170813a7d327b35366f6534691f96519912ae2f4b2",
+   "agents/ab2_experiments.py": "2415f39e97afd8008be9ed6c1b2f2b8c5ea07794b8ffdc250f00d549bd91d83a",
+   "agents/ab2_risk.py": "f4c0cf0338f0989126bed427e8bae3fc4dc53f46f6b9828d88fd7b72f44b723f",
+   "agents/ab2_routes.py": "46a9cc359130dbb407327f718fedd7e1dbf70a395701d475be6eec10782bc8ce",
+   "agents/ab2_tie.py": "6c9cc58114b1f010aee506043747665c995497d2d767ddce594323d31920086c",
+   "agents/ab_variants.py": "bed8077a39f16561f0cc666a007d19cfe92f2251559f33dbc7076f3415637ac8",
+   "agents/alphabeta.py": "18faf0e86cff7270d480d48f2986a342d1213fc9de8ee70979cad02afc27fadf",
+   "agents/builtin.py": "6a518ae464cdd0f093e00258ae24699385a0b97d7fab131285d31b9c2916e093",
+   "agents/mcts_memory.py": "6d43632147f476e9044c1d811f9f2cef83ce36269330f768cb1996ad68f2fdfa",
+   "agents/mcts_v2.py": "69f111e2720cf6f86cd7828a76ba9937faf5ac367ad8bc0c7aa984836eb387ba",
+   "agents/mcts_v3.py": "547a8366a25584556498c1245358e2265432da1c970afbded2190c457c69bfc8",
+   "agents/oep.py": "32881d91de6f00bd2e7c9abdd818a61003635fb4ff5a957e799398ec4477ab04",
+   "agents/portfolio.py": "04e3f46a3294ec15033eb83574bbc90adbc55e0c7aa3f1b459dbdc0b9ec41413",
+   "benchmark_mcts.py": "e85c7977dbeccf6075cec7ba4ea26ceda55272e33f378f3e451aa2fe2c4a7953",
+   "campaign.py": "9973d28588ebda037c8810b8846ea4e849b06b6047e18c85b9e8cb9972dc7b86",
+   "candidates.py": "e506d21f718778f9aabfe0700cab59d3994eef3f70fc93b0ac35ec61553a96c7",
+   "client.py": "0b34c450c8f5b50c17cb872b6bb31d1e5c2de840820076882a33c15a4106dbd5",
+   "combat.py": "7fb0c48bd796548593d91230a7f7422434cf597ac217ed296ff8f186456ab690",
+   "config.py": "fa7c79ddb6cbe5e5ed243f791e33db2074fd3fa0c7924937839f7d5b7c8d0218",
+   "demo_mcts_memory.py": "99370eebe58136496fcb9bc2fb3fa4f88e47cd4469245709b585fe50a10190ee",
+   "evaluate.py": "45168c7fc6603de739883d1ec94e91167f114a22b86e1a3fc32323181cb9ec24",
+   "evaluation.py": "4e6ab05321788a3be8f590b0eb1f31ebec5936b0c551b30b68794f10c8441c57",
+   "game.py": "8f96872880bfba67d1964f843f8dad257aa4ff992a851ce7c345ca09c4465fad",
+   "lookahead.py": "7ea2036f875c37a5bebd84ea4a8944e09b4ff55f92b986e9746be9f7132d270c",
+   "macro.py": "58f4e842e26647e965d644d658cae25fd2855b68f5ee1b27fc518c0936f348df",
+   "main.py": "e0a13a5afbbae435c98163ab7e46dc1690fdc8320278056c18181d38060d300f",
+   "mapgen.py": "6673ab53e1617de2fc2d08a6cb0aa34fe9782bd0f3ec294d845c9edd5cf0adf5",
+   "playbook.py": "471322171ac19114a74571ea100d5b0d1641a13dc4296f9367f84aaa0a701382",
+   "rollouts.py": "6e57615ab1bf8e3e9db22f23c092522c9840608ce040661c59d253a914549da2",
+   "search.py": "bde6405d95721cb946d3b84a663069e10afc457888040c82897aed501798857f",
+   "simulate.py": "a4fac93ce63e728e5ecd83c57a32786008ffc40728266dbf3d65611af55ea71c",
+   "simulator.py": "9af4d29a359132f3e9aadfa7291e2786d98af567ed730eeec4f056d104f4f81f",
+   "strategy.py": "66e9a8781887995bdcae942b5a5e71b7239be603c4ffe46fa89a991be10bce6e",
+   "tournament.py": "3b7c4679837cda55d2065598d6878c9a5ba78d462066ebbe411ed4519f4b9498",
+   "tune.py": "068c5e9958aa24e3d1a80ae532d95785d9f1be89a32a2855c078a3a5369a5111"
+  },
+  "jobs": [
+   {
+    "i": 0,
+    "j": 1,
+    "a": "ab2goals:depth=1,max_depth=24,width=7,extra=0,tt_size=50000",
+    "b": "mcts-v6:iterations=100000",
+    "map_name": "testmap2",
+    "map": {
+     "schema_version": 1,
+     "rows": 15,
+     "columns": 29,
+     "to_play": "vampires",
+     "ply": 0,
+     "rules_profile": "server-v3.2.1",
+     "cells": [
+      [
+       0,
+       0,
+       0,
+       0,
+       10
+      ],
+      [
+       0,
+       14,
+       2,
+       0,
+       0
+      ],
+      [
+       10,
+       3,
+       4,
+       0,
+       0
+      ],
+      [
+       14,
+       7,
+       20,
+       0,
+       0
+      ],
+      [
+       18,
+       11,
+       4,
+       0,
+       0
+      ],
+      [
+       28,
+       0,
+       2,
+       0,
+       0
+      ],
+      [
+       28,
+       14,
+       0,
+       10,
+       0
+      ]
+     ]
+    },
+    "round": 0,
+    "a_species": "vampires",
+    "first": "vampires",
+    "seed": 2026111301,
+    "settings": {
+     "max_plies": 200,
+     "move_time": 2,
+     "margin": 0.5,
+     "on_timeout": "skip"
+    }
+   },
+   {
+    "i": 0,
+    "j": 1,
+    "a": "ab2goals:depth=1,max_depth=24,width=7,extra=0,tt_size=50000",
+    "b": "mcts-v6:iterations=100000",
+    "map_name": "testmap2",
+    "map": {
+     "schema_version": 1,
+     "rows": 15,
+     "columns": 29,
+     "to_play": "vampires",
+     "ply": 0,
+     "rules_profile": "server-v3.2.1",
+     "cells": [
+      [
+       0,
+       0,
+       0,
+       0,
+       10
+      ],
+      [
+       0,
+       14,
+       2,
+       0,
+       0
+      ],
+      [
+       10,
+       3,
+       4,
+       0,
+       0
+      ],
+      [
+       14,
+       7,
+       20,
+       0,
+       0
+      ],
+      [
+       18,
+       11,
+       4,
+       0,
+       0
+      ],
+      [
+       28,
+       0,
+       2,
+       0,
+       0
+      ],
+      [
+       28,
+       14,
+       0,
+       10,
+       0
+      ]
+     ]
+    },
+    "round": 0,
+    "a_species": "werewolves",
+    "first": "vampires",
+    "seed": 2026111302,
+    "settings": {
+     "max_plies": 200,
+     "move_time": 2,
+     "margin": 0.5,
+     "on_timeout": "skip"
+    }
+   },
+   {
+    "i": 0,
+    "j": 1,
+    "a": "ab2goals:depth=1,max_depth=24,width=7,extra=0,tt_size=50000",
+    "b": "mcts-v6:iterations=100000",
+    "map_name": "testmap2",
+    "map": {
+     "schema_version": 1,
+     "rows": 15,
+     "columns": 29,
+     "to_play": "vampires",
+     "ply": 0,
+     "rules_profile": "server-v3.2.1",
+     "cells": [
+      [
+       0,
+       0,
+       0,
+       0,
+       10
+      ],
+      [
+       0,
+       14,
+       2,
+       0,
+       0
+      ],
+      [
+       10,
+       3,
+       4,
+       0,
+       0
+      ],
+      [
+       14,
+       7,
+       20,
+       0,
+       0
+      ],
+      [
+       18,
+       11,
+       4,
+       0,
+       0
+      ],
+      [
+       28,
+       0,
+       2,
+       0,
+       0
+      ],
+      [
+       28,
+       14,
+       0,
+       10,
+       0
+      ]
+     ]
+    },
+    "round": 0,
+    "a_species": "vampires",
+    "first": "werewolves",
+    "seed": 2026111303,
+    "settings": {
+     "max_plies": 200,
+     "move_time": 2,
+     "margin": 0.5,
+     "on_timeout": "skip"
+    }
+   },
+   {
+    "i": 0,
+    "j": 1,
+    "a": "ab2goals:depth=1,max_depth=24,width=7,extra=0,tt_size=50000",
+    "b": "mcts-v6:iterations=100000",
+    "map_name": "testmap2",
+    "map": {
+     "schema_version": 1,
+     "rows": 15,
+     "columns": 29,
+     "to_play": "vampires",
+     "ply": 0,
+     "rules_profile": "server-v3.2.1",
+     "cells": [
+      [
+       0,
+       0,
+       0,
+       0,
+       10
+      ],
+      [
+       0,
+       14,
+       2,
+       0,
+       0
+      ],
+      [
+       10,
+       3,
+       4,
+       0,
+       0
+      ],
+      [
+       14,
+       7,
+       20,
+       0,
+       0
+      ],
+      [
+       18,
+       11,
+       4,
+       0,
+       0
+      ],
+      [
+       28,
+       0,
+       2,
+       0,
+       0
+      ],
+      [
+       28,
+       14,
+       0,
+       10,
+       0
+      ]
+     ]
+    },
+    "round": 0,
+    "a_species": "werewolves",
+    "first": "werewolves",
+    "seed": 2026111304,
+    "settings": {
+     "max_plies": 200,
+     "move_time": 2,
+     "margin": 0.5,
+     "on_timeout": "skip"
+    }
+   },
+   {
+    "i": 0,
+    "j": 1,
+    "a": "ab2goals:depth=1,max_depth=24,width=7,extra=0,tt_size=50000",
+    "b": "mcts-v6:iterations=100000",
+    "map_name": "holdout-medium-20261113",
+    "map": {
+     "schema_version": 1,
+     "rows": 8,
+     "columns": 10,
+     "to_play": "vampires",
+     "ply": 0,
+     "rules_profile": "server-v3.2.1",
+     "cells": [
+      [
+       1,
+       1,
+       6,
+       0,
+       0
+      ],
+      [
+       1,
+       2,
+       9,
+       0,
+       0
+      ],
+      [
+       1,
+       5,
+       9,
+       0,
+       0
+      ],
+      [
+       2,
+       2,
+       7,
+       0,
+       0
+      ],
+      [
+       2,
+       5,
+       1,
+       0,
+       0
+      ],
+      [
+       2,
+       7,
+       8,
+       0,
+       0
+      ],
+      [
+       3,
+       2,
+       0,
+       8,
+       0
+      ],
+      [
+       6,
+       5,
+       0,
+       0,
+       8
+      ],
+      [
+       7,
+       0,
+       8,
+       0,
+       0
+      ],
+      [
+       7,
+       2,
+       1,
+       0,
+       0
+      ],
+      [
+       7,
+       5,
+       7,
+       0,
+       0
+      ],
+      [
+       8,
+       2,
+       9,
+       0,
+       0
+      ],
+      [
+       8,
+       5,
+       9,
+       0,
+       0
+      ],
+      [
+       8,
+       6,
+       6,
+       0,
+       0
+      ]
+     ]
+    },
+    "round": 0,
+    "a_species": "vampires",
+    "first": "vampires",
+    "seed": 2026211304,
+    "settings": {
+     "max_plies": 200,
+     "move_time": 2,
+     "margin": 0.5,
+     "on_timeout": "skip"
+    }
+   },
+   {
+    "i": 0,
+    "j": 1,
+    "a": "ab2goals:depth=1,max_depth=24,width=7,extra=0,tt_size=50000",
+    "b": "mcts-v6:iterations=100000",
+    "map_name": "holdout-medium-20261113",
+    "map": {
+     "schema_version": 1,
+     "rows": 8,
+     "columns": 10,
+     "to_play": "vampires",
+     "ply": 0,
+     "rules_profile": "server-v3.2.1",
+     "cells": [
+      [
+       1,
+       1,
+       6,
+       0,
+       0
+      ],
+      [
+       1,
+       2,
+       9,
+       0,
+       0
+      ],
+      [
+       1,
+       5,
+       9,
+       0,
+       0
+      ],
+      [
+       2,
+       2,
+       7,
+       0,
+       0
+      ],
+      [
+       2,
+       5,
+       1,
+       0,
+       0
+      ],
+      [
+       2,
+       7,
+       8,
+       0,
+       0
+      ],
+      [
+       3,
+       2,
+       0,
+       8,
+       0
+      ],
+      [
+       6,
+       5,
+       0,
+       0,
+       8
+      ],
+      [
+       7,
+       0,
+       8,
+       0,
+       0
+      ],
+      [
+       7,
+       2,
+       1,
+       0,
+       0
+      ],
+      [
+       7,
+       5,
+       7,
+       0,
+       0
+      ],
+      [
+       8,
+       2,
+       9,
+       0,
+       0
+      ],
+      [
+       8,
+       5,
+       9,
+       0,
+       0
+      ],
+      [
+       8,
+       6,
+       6,
+       0,
+       0
+      ]
+     ]
+    },
+    "round": 0,
+    "a_species": "werewolves",
+    "first": "vampires",
+    "seed": 2026211305,
+    "settings": {
+     "max_plies": 200,
+     "move_time": 2,
+     "margin": 0.5,
+     "on_timeout": "skip"
+    }
+   },
+   {
+    "i": 0,
+    "j": 1,
+    "a": "ab2goals:depth=1,max_depth=24,width=7,extra=0,tt_size=50000",
+    "b": "mcts-v6:iterations=100000",
+    "map_name": "holdout-medium-20261113",
+    "map": {
+     "schema_version": 1,
+     "rows": 8,
+     "columns": 10,
+     "to_play": "vampires",
+     "ply": 0,
+     "rules_profile": "server-v3.2.1",
+     "cells": [
+      [
+       1,
+       1,
+       6,
+       0,
+       0
+      ],
+      [
+       1,
+       2,
+       9,
+       0,
+       0
+      ],
+      [
+       1,
+       5,
+       9,
+       0,
+       0
+      ],
+      [
+       2,
+       2,
+       7,
+       0,
+       0
+      ],
+      [
+       2,
+       5,
+       1,
+       0,
+       0
+      ],
+      [
+       2,
+       7,
+       8,
+       0,
+       0
+      ],
+      [
+       3,
+       2,
+       0,
+       8,
+       0
+      ],
+      [
+       6,
+       5,
+       0,
+       0,
+       8
+      ],
+      [
+       7,
+       0,
+       8,
+       0,
+       0
+      ],
+      [
+       7,
+       2,
+       1,
+       0,
+       0
+      ],
+      [
+       7,
+       5,
+       7,
+       0,
+       0
+      ],
+      [
+       8,
+       2,
+       9,
+       0,
+       0
+      ],
+      [
+       8,
+       5,
+       9,
+       0,
+       0
+      ],
+      [
+       8,
+       6,
+       6,
+       0,
+       0
+      ]
+     ]
+    },
+    "round": 0,
+    "a_species": "vampires",
+    "first": "werewolves",
+    "seed": 2026211306,
+    "settings": {
+     "max_plies": 200,
+     "move_time": 2,
+     "margin": 0.5,
+     "on_timeout": "skip"
+    }
+   },
+   {
+    "i": 0,
+    "j": 1,
+    "a": "ab2goals:depth=1,max_depth=24,width=7,extra=0,tt_size=50000",
+    "b": "mcts-v6:iterations=100000",
+    "map_name": "holdout-medium-20261113",
+    "map": {
+     "schema_version": 1,
+     "rows": 8,
+     "columns": 10,
+     "to_play": "vampires",
+     "ply": 0,
+     "rules_profile": "server-v3.2.1",
+     "cells": [
+      [
+       1,
+       1,
+       6,
+       0,
+       0
+      ],
+      [
+       1,
+       2,
+       9,
+       0,
+       0
+      ],
+      [
+       1,
+       5,
+       9,
+       0,
+       0
+      ],
+      [
+       2,
+       2,
+       7,
+       0,
+       0
+      ],
+      [
+       2,
+       5,
+       1,
+       0,
+       0
+      ],
+      [
+       2,
+       7,
+       8,
+       0,
+       0
+      ],
+      [
+       3,
+       2,
+       0,
+       8,
+       0
+      ],
+      [
+       6,
+       5,
+       0,
+       0,
+       8
+      ],
+      [
+       7,
+       0,
+       8,
+       0,
+       0
+      ],
+      [
+       7,
+       2,
+       1,
+       0,
+       0
+      ],
+      [
+       7,
+       5,
+       7,
+       0,
+       0
+      ],
+      [
+       8,
+       2,
+       9,
+       0,
+       0
+      ],
+      [
+       8,
+       5,
+       9,
+       0,
+       0
+      ],
+      [
+       8,
+       6,
+       6,
+       0,
+       0
+      ]
+     ]
+    },
+    "round": 0,
+    "a_species": "werewolves",
+    "first": "werewolves",
+    "seed": 2026211307,
+    "settings": {
+     "max_plies": 200,
+     "move_time": 2,
+     "margin": 0.5,
+     "on_timeout": "skip"
+    }
+   }
+  ],
+  "experimental_sources_sha256": {
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\goal-coverage-2026-11-13\\goal_agent.py": "eaa6976175518c10b978c7eb274dd3ebcdbda01ddb94694b9480643503fc36d6",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\goal-coverage-2026-11-13\\validate_matches.py": "4ffc4c5e616fe8bfeccf260accdee1c3abd0594da5e80519c39c10782ea65a1d",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\combo_agents.py": "664dc971ca73ca880831d2d1f3f2afe97b39a3997b7918466d1e2ad433f45dea",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\recorded_comparison.py": "4f0d69706ca359b9160a461d4cce0d7c80396d4054115b0aafe6fd66d8bf628d",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\agents\\__init__.py": "2e8c273e83b18416d36db62400b9c2c344c4026e69a3fdf08f44023388716f83",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\agents\\ab2_experiments.py": "a3ea544c004f2cd1d2faabdb570b40d2551e6f418ee12e0e8d24f7a1ea80a7a5",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\agents\\ab2_risk.py": "f4c0cf0338f0989126bed427e8bae3fc4dc53f46f6b9828d88fd7b72f44b723f",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\agents\\ab2_routes.py": "685df41e5ccfc94229c0059bdbcda9ba118fb2f926ed63ee06d8fea8e2a3f73c",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\agents\\ab2_tie.py": "5208a69eb969305a062c0fe94993340f65ca417a96993b5ecd25a6dff55706da",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\agents\\ab_variants.py": "9e6e133d806dca69b9266b3e056a8bcc7dbae5600ac6afa89cb7be97aecf45da",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\agents\\alphabeta.py": "371f33ff98e4fb8c3301d7a16263218bdfed061b3312823e5c4404393126064a",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\agents\\builtin.py": "4271d4018df6c75f1865ed06fad60d777dc53250ddfc7d49b7c142e2c91c6b27",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\agents\\mcts_memory.py": "8c633efbea4ffdb8d324f514c3de2a2c2dd0789319328085dfda9040bbf8716a",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\agents\\mcts_v2.py": "7449ec6e8abd4e211f7b49a9d7d7490fda118f56561a24a4c22a0899fa338db0",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\agents\\mcts_v3.py": "a9637222200a71e7849e4ae3123fae5c484e0341f5338b6a885c4c49387d21cc",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\agents\\oep.py": "f45f2eb0ded9c236be065c84b2618b118cb7ea3dd6eb0e8210912d4b311e8d9a",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\agents\\portfolio.py": "87c4634e2cf3ae869ebd053e49c50a58283db2ce26b3eee40800a23c299797f9",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\benchmark_mcts.py": "84c4132d3793165019b8cff3d089bb433a59395d304a0778d00ca72a75698797",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\campaign.py": "702bd0cbc188d6b25e192bd76f6bd9e8f7a0a44a4b78a0ccfe91bf671b1c2ff8",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\candidates.py": "f258b3e11358041fc933f2569d904a365d988a1b9954fd2e569cfb5a75c045d1",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\client.py": "36547a20a1fc8a2df8c76f09f22c75e9fb84fe11594a9fcd30d8fa6282555022",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\combat.py": "40a299a1adde5e10ae4518ac655e0e0f18ebebc955ce46af45e931050a05ffed",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\config.py": "3d33255462d889107cb1415ac0e4946e79f2804311877ff40ae9dbcda144fbb3",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\demo_mcts_memory.py": "209885a7b648198ad4b9a1fafd2b5580eb0a362493e9a0989664af3a0b4d8832",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\docs\\server-runs\\julian-alpha-beta\\2026-10-26_2026-10-27\\checkpoints\\200-coups-12-verdicts\\campaign.py": "06421bc0804cb5cce06e9439957dceb461d3cf89100531d57759d467a2ae57df",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\docs\\server-runs\\julian-alpha-beta\\2026-10-26_2026-10-27\\checkpoints\\200-coups-12-verdicts\\live_summary.py": "d2061dabd9895a87c6e048271f8a221ca5de98fec186f0002364b84a6accaf48",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\docs\\server-runs\\julian-alpha-beta\\2026-10-26_2026-10-27\\checkpoints\\200-coups-12-verdicts\\publish_checkpoint.py": "498d9c09ae4c54de285af6cf3bb267abe3c86dce051caa6a2818ade919f0b971",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\docs\\server-runs\\julian-alpha-beta\\2026-10-26_2026-10-27\\tests-200-coups\\campaign.py": "06421bc0804cb5cce06e9439957dceb461d3cf89100531d57759d467a2ae57df",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\docs\\server-runs\\julian-alpha-beta\\2026-10-26_2026-10-27\\tests-200-coups\\live_summary.py": "d2061dabd9895a87c6e048271f8a221ca5de98fec186f0002364b84a6accaf48",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\docs\\server-runs\\julian-alpha-beta\\2026-10-26_2026-10-27\\tests-200-coups\\publish_checkpoint.py": "498d9c09ae4c54de285af6cf3bb267abe3c86dce051caa6a2818ade919f0b971",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\evaluate.py": "5042b3216c55c8a605757c51b2e7d8d38e34d7d777fa66e6fe486f748e473c14",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\evaluation.py": "905d02409dce55e9e93b44717fdb55221ab565ee31ba8534251c5841555f912e",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\game.py": "ad76e1c8b6ed11a85d93c45c687648fe11ee67006aae60b668f75adfde44f986",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\lookahead.py": "92e743c46168c2d70b11ea31794b5102dfacd5086bed82a3cd5feea2ef3dc09b",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\macro.py": "e7f51866d37cebed4d95e2e4ea845743c3b79d646bcd123c9335e93fffe3903a",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\main.py": "def55c460c2d9eadc0f9b5dadb45550f5cd37674f598ab0bbad71abc6ae3fa73",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\mapgen.py": "b4f6588f61ffa328bae945bc146179b2b8d53e8715c3a8a7f73c02adba6dbb0a",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\playbook.py": "c28508dd3c6549a2eb4d93d7c3941ddac258f3bc2eee2c83710e8f22c86ed761",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\rollouts.py": "e7e9f4d19c3d6c0b02077dbda69bd414fa1cc7be52a6bdfb8c708850c4354341",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\scripts\\__init__.py": "46f1730161c4d0b4799ccce9080dff5270878d2e7f58d117a809a72ebf6b0c5d",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\scripts\\benchmark_ab_variants.py": "7562a30a61d93ee61101bf504acc06a11d04e18c906dbf28c23e46136bd40f03",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\scripts\\compare_ab2_experiments.py": "63c9e726e6dc7a9e8dfb056c6db695f2089dd1721564d8691463194b89a743ed",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\scripts\\compare_ab_decisions.py": "0d7524dd5ad1364ef57c6510f12e09ac4f64ee4c0a49d14e54c2ad547f9f971a",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\scripts\\compare_mcts_julian.py": "88f54fdeb2e9ca235d99d4815d6fc65093cfecb91415adffcf0ab2f6f462f1a4",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\scripts\\compare_mcts_v4.py": "17c1188868524dc074f3e100066f1fab400958ceab5cb7e4e325b63960456cc4",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\scripts\\compare_mcts_v5.py": "6b800f82f203cd1e75f70609c11f912099ec7dd2abe36217fafc275416668dab",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\scripts\\compare_mcts_v6.py": "68b1bf57593b8b10a9a3a92315891e861d2a6fef4567a42352da2c9f66a9581c",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\scripts\\compare_mcts_v7.py": "a7ded97dda4d75a045c04ba7ffdfb2a78b523516a721498def1ef65bf0eb350f",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\scripts\\compare_mcts_v8.py": "9432af4528a0d636bf8d7f72a334b24f238ef4812864b578451b8321868117e4",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\scripts\\compare_mcts_v9.py": "e481157e4178e75ff713a6610cd49670f6e8249f20b22812820bc07363eb828a",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\scripts\\diagnose_ab_draws.py": "6fcce2fa1a299dc0edfd6a984771bae4824ceee01ccdf9d150e361987bc3820e",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\scripts\\diagnose_mcts_recruitment.py": "f5e6ee06057a8ccc4b9b7188a3227f3e65079a4652cafbaf0ad797c79c573cf0",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\scripts\\diagnose_mcts_v5.py": "0f4753181f10f10259adf1b3191e047525a6d8748f0d1a8161bc18ecfb23fbd9",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\scripts\\mcts_v4\\__init__.py": "9e7f042e967864698e5758aa2d4f414167c6658f87f6c91a07a5d81e470d17f9",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\scripts\\mcts_v4\\agent.py": "c6e4d8df9eaf89b3d776cab5b83bed2bd5649cb387d5a9a39d6fec6f33ee5ea5",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\scripts\\mcts_v4\\engine.py": "cdb2c07ffbb8561b643f0d4a4e2f21d1fce86d6b58b713054af3d50a1a43a59b",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\scripts\\mcts_v4\\tuning.py": "98d50c9375e8236b103a0a82c504156d78c7acfacafb0b55e0e855bd73d66d64",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\scripts\\mcts_v5\\__init__.py": "a46c0d8839b8f15d6f53231f8b8e84f451fed4d343838676c34cea8ae410dcbd",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\scripts\\mcts_v5\\agent.py": "f29105aa21bbdadb9b4ff4b5d4f675dcc75012c144279c7e3b9ffa7152089872",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\scripts\\mcts_v5\\value.py": "836628b51ce5591d4e0ebc60a3f9881f8845d3331c171904142a854f7c96c0a0",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\scripts\\mcts_v6\\__init__.py": "af50484a5aa193b8d4ed84057e3a03d8c9724fc8672ba5297f895968070fa459",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\scripts\\mcts_v6\\agent.py": "976dd9b3dcbc940077c829387e1cf62053b62ceea97a605ef91d36837ed58c68",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\scripts\\mcts_v6\\value.py": "7439c0e407ef7258766748126f00db959bdfe47136526afc112590c134da3478",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\scripts\\mcts_v7\\__init__.py": "c2455cd3b5ad81cfc24dde9d1a523aa1a6e56cfad309e5c6079458919a00f71d",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\scripts\\mcts_v7\\agent.py": "a00db93597c75850eec1bb0144b2fb8d5018c7265acf975622c0a5fecf413eda",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\scripts\\mcts_v7\\objectives.py": "edfc4c8ad43862681be50d6104bad8335373b027014a8edb6919eb38b3592929",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\scripts\\mcts_v7\\planning.py": "b17d806fd37c2a8b63e3068c4b3f53a409dfebaa194ccb472ff17541b6189704",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\scripts\\mcts_v8\\__init__.py": "408f4d9b916791cab4d91609bb28f01e786f347d18375e71c7e7fd45c1492faa",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\scripts\\mcts_v8\\agent.py": "3f324b37e1d25536abdee045609a3c4722aa141a7de875f1cdee3189fb872e45",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\scripts\\mcts_v8\\interception.py": "9d65b0e279f2638c2da0f6c539d6d0157df72d8d8860848a7a13535327afbca9",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\scripts\\mcts_v9\\__init__.py": "e1311e9d23221190d7c676078b7945092b6cff57cc5a868874fb689a6a00599f",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\scripts\\mcts_v9\\agent.py": "8dd63db63e9a67765a9ce79bf124703140a1e3344ecf11e741f8dee0dc326bd2",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\scripts\\mcts_v9\\campaign_metrics.py": "582079a03cead1b9555a8aa04e25843ed6f5a07b940a65e2cef4fff1f93b47eb",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\scripts\\mcts_v9\\planning.py": "a574d4ca54a96274fa36ca79b4f8d0a99531301b46f03423d758168fd0b10774",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\scripts\\play_mcts_v5.py": "715516ba7acfe9a8ebcd1d951611f969031bd9eff4dbbfe1ff8c786c4f023c56",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\scripts\\prepare_watch.py": "84d3bc5c20c576232f73172261a53ee747ce032450f720b6bd9429886da70e4b",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\scripts\\probe_mcts_v7.py": "5707c95803f0d72b47491279169a6346ec1f70663cc842ae7b34a7f730818abc",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\scripts\\render_mcts_trace.py": "2814d3006e245c4e0b8665bd34c5a68a9d4efbe6d7b539431bd751b60382f19c",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\scripts\\replay_ab2_tie.py": "d94599cbb044810383a9a0fab19d09f6204c60210c4c074e1e3c23be038914d3",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\scripts\\report_ab_followup.py": "e1fd60d8e6163a046d30b394be3d32598c3023b77253d73a5f46e22b560504f1",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\scripts\\run_ab_server.py": "68fc50a638be1bcbf207d5c5b2d9185fd52b7df676f3a6d0bab80c76a7316205",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\scripts\\screen_ab2_round_robin.py": "c73ad8a8ff3f232ff415ba6081cd322029c9b8a4eeb8508ae576863aaaf87ea7",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\scripts\\server-runs\\analyze.py": "e6ea5396e4dfa4ba0b8226fc073f19b76529cf28b5e40da98ab516396381e8d3",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\scripts\\server-runs\\compare.py": "acfe8ceddfca3466f41c4f8ad4cae323742cc47d1bef24caca43da08eccec9a0",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\scripts\\server-runs\\make_table.py": "8c96d6217854102d2cc1f187c6ef0b8145b22e06c3033d9fb72c445ffb581c5b",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\scripts\\server-runs\\oscillation.py": "4272d2a927110c5097b9ad643eed2832f7744391fabe2a506dfbcd7b2daa8911",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\scripts\\server-runs\\replay.py": "1aeb75b910758475b5caa160aff5004efc1628c04700c58c6f20c1c09bdda2e2",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\scripts\\server-runs\\set_config.py": "a22acf51881e8863ede320c11b06e445d349f0980a432500f1612170937fafa5",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\scripts\\setup_server.py": "833d30820902ee4c844868694466c29edfc149a6e18d5742def8595bfd746aff",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\scripts\\summarize_ab_server.py": "56fe04c59732c3987460c4aa0fbde76c79e019d67b93863890365fc17a7dab3f",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\scripts\\trace_mcts_v7.py": "5a22e9bdf675ea76ed2d1b3928e5d8da174858c4b09a9662fc3110b9bd97720a",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\scripts\\trace_mcts_v8.py": "57711ce6d441b9add220f63f4d7abe068c2f1f96bd479c047314261836b762a7",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\scripts\\trace_mcts_v9.py": "5df696df863937742524558528e31302b590d4e7945f5fdd70bac6430e6d9fb2",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\scripts\\tune_ab7_weights.py": "ca2decd6b1b4e02a7b31b481cc9c69b654afd0d38f344f259bf7797417529c64",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\search.py": "8a40016021fb895e632bee7899cd3fe1e9cc55e4dd12c70bfec0806f8868adbe",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\simulate.py": "744d2a3cce844838125a5d41e0e70d7ddb1197d59f3e923b6df63d523d17263a",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\simulator.py": "8115cab2e9621fcf52649eae57c5b8a2422908d0ad015969ee7fa84620ae85db",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\strategy.py": "69b362481ef9dc823a150e0dbd735d37c3300e00d472049e38f2ce8b984ba983",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\tests\\test_ab2_experiments.py": "0954f4629464a72e65953c712ba27be1ad22eead2fb290c2ecdab1fb62f09fb1",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\tests\\test_ab2_risk.py": "2243806bd52ad0c35a8840e319fc3aefd4fffb9486c45681e581b3416cd4cf81",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\tests\\test_ab2_routes.py": "be485b72cd10827d56bbbc4337935070bad810f27392cdc744c3b372b7be4899",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\tests\\test_ab2_tie.py": "ece0cff7aa38bdd3329934e417d63265abf8ee351b9c970e629ec0f0fd74f4a2",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\tests\\test_ab_variants.py": "17e75bcc3cbc4f1c6ca3d92454e264866551c7c03e42c32076c162c4d52617e3",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\tests\\test_bot.py": "aa1fb0602f43b4baa0658d505af81705e8c97e03599aa18beb950d8dbbde86a4",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\tests\\test_building_blocks.py": "41717598c515bee22906b5782513ea3f3710b3e78b29329a1521558d4918856f",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\tests\\test_campaign.py": "ceb98d9855f0570584a20a25fc97db862c76ba4f90eb85f66f2d98821803a447",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\tests\\test_compare_mcts_julian.py": "15c103c6c29152c71f465e6b4758ad3c33bc14ae91ee8e4aec0cb3add3573995",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\tests\\test_compare_mcts_v4.py": "fe7bdde56b62cf47f98a0812dca8e6aee67f3e6b414b4d6fa002e9051d6e3090",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\tests\\test_compare_mcts_v5.py": "588d7a0e4aff17053fa4cd05435c5a77842c74b8efb6846e18fff3caf8216970",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\tests\\test_compare_mcts_v6.py": "95ecb29add4abc3184fbaca9cdf84437bb4c4ae5d58fb0176d1fb3c851c3e421",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\tests\\test_compare_mcts_v7.py": "459eb3ce29654e3fe463b2c19bb4484bcf25385e3f6f29391404d7f37c78153f",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\tests\\test_compare_mcts_v8.py": "c350ec47d091bea16342c6988aa72767abc629233d5c85de299529a11274d662",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\tests\\test_compare_mcts_v9.py": "eca84f1efb5b2e81cef06fec31ec903c08a049efba70d33061f9d1e1c551d986",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\tests\\test_diagnose_mcts_recruitment.py": "09700e09413d1a71dab50069dc50bf071ea0914b756204a854e6aa06c20c00aa",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\tests\\test_diagnose_mcts_v5.py": "8a4be98e7ed0dcbbb8c6cb39ad433532be293a77a689701b23f6f90bbeb87b75",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\tests\\test_engines.py": "d1531d8870b3c189248321d06bb72c90d23cb80952ba10f15f4a5cbe6fdc4903",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\tests\\test_mcts_benchmark.py": "78f83b2d35f37a64f76074b31cb81ba3a630b7ba66e324514ec6922e1109e0dc",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\tests\\test_mcts_memory.py": "a5adab6f86033867af07c83c9bc646fd849eac8dc905d870fcf3bb88661768cb",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\tests\\test_mcts_v2.py": "470b54930cd7b8038134453d7a1de4f7b0d0edba8f02dd9936694dbdf7ed0431",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\tests\\test_mcts_v3.py": "6143c267a68c2d384feb31f4783255afcad38254852742afedd65e39b1002b4c",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\tests\\test_mcts_v4.py": "4ba08ebe70f5242542c630ad272b731ff1dd1a688350aa06fcf5a0a424522885",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\tests\\test_mcts_v5.py": "29b87d37bd617ada9e094ef79bd7ada4118eea8314abf7d3ca256facc700fb35",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\tests\\test_mcts_v6.py": "36952e5d687ff1788fd215c44c7ddaf3531a4937fc629f717186d1acc0d1d967",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\tests\\test_mcts_v7.py": "9b4651208c18959211013c1df8f7aedbb9a35e5567666756b1b2fa9e5b6fa2be",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\tests\\test_mcts_v8.py": "88399f095009ef3dbacf57184a556af7c5c655e99022321ad1d7b09d99528795",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\tests\\test_mcts_v9.py": "ab0279d2f2ab2948d19f996b98c1eea308ecbb681696d2ac8512c2579caf0349",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\tests\\test_play_mcts_v5.py": "ed84fd83d5fdaf532fe702568859fae7c60a3bc14d7d8b1176e64ba873c61f89",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\tests\\test_probe_mcts_v7.py": "990ac245ced6befef97f08fbb479b0a3f248cbe6ce52c1de4d5626dcd00d4ae5",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\tests\\test_search.py": "bf47a60565289277661a842358de9aec578d167f8413c2d4e6c5a08367956905",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\tests\\test_setup_server.py": "ff58734f26528307361c32da4346e39e5c0006e98ba4e65fcd5c7a9710e2815a",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\tests\\test_simulator.py": "5b931e81d7e0272395dd5fb8c4f15edb34625328e810842ff8252abc5f955c01",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\tests\\test_tournament.py": "8c6408045db6da40b3b02ada81f548eccf1ca9e5c48de447c0a59bb42b4d9686",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\tournament.py": "deb0e47998b3bcac24374e18d0f532ff1850be2b8cc1378b8ffddce1ee91dcfd",
+   "C:\\Users\\sebju\\Julian 2026\\Centrale 2026\\Ann\u00e9e scloaire 2026-2027\\S1\\Foundations of AI\\Project\\Github\\AI-GAME-THEORY\\.local\\worktrees\\server-runs\\.local\\research\\ab2-v6-investigation-2026-11-12\\runtime\\tune.py": "59269363f049c49a26569eabb7139e6a7b168d59d33e66de4aee04d01ebdec46"
+  },
+  "reference_report_sha256": "898cf517ed0d24eba74c3de7d7fde3f99e7c49472841cd681bace8f57a65f960"
+ }
+}

@@ -1,0 +1,41 @@
+{
+  "ab2exp": {
+    "games": 4,
+    "wins": 2,
+    "draws": 0,
+    "losses": 2,
+    "mean_seconds": 1.3914956708360007,
+    "max_seconds": 1.5048669000389054,
+    "mean_depth": 19.13425925925926,
+    "min_depth": 6,
+    "max_depth": 24,
+    "faults": 0,
+    "over_1_8": 0
+  },
+  "ab2tie": {
+    "games": 4,
+    "wins": 2,
+    "draws": 0,
+    "losses": 2,
+    "mean_seconds": 1.4938541654264554,
+    "max_seconds": 1.5003149000694975,
+    "mean_depth": 10.703703703703704,
+    "min_depth": 6,
+    "max_depth": 24,
+    "faults": 0,
+    "over_1_8": 0
+  },
+  "ab2risktie": {
+    "games": 8,
+    "wins": 8,
+    "draws": 0,
+    "losses": 0,
+    "mean_seconds": 1.4526578963585137,
+    "max_seconds": 1.5217823000857607,
+    "mean_depth": 13.721627408993577,
+    "min_depth": 4,
+    "max_depth": 24,
+    "faults": 0,
+    "over_1_8": 0
+  }
+}

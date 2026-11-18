@@ -1,0 +1,8 @@
+"""One isolated combination of two separately checked mechanisms."""
+from agents import register
+from agents.ab2_tie import AB2Tie
+from agents.ab2_risk import AB2Risk
+
+@register("ab2risktie")
+class AB2RiskTie(AB2Tie, AB2Risk):
+    """AB2 root tie policy plus exact stochastic combat values; no new weights."""

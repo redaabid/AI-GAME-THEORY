@@ -1,0 +1,79 @@
+# Bilan Alpha-Bêta — 17 novembre 2026
+
+## Résultat et candidat disponible
+Candidat **AB2-Replies** : même noyau Alpha-Bêta et optimisations précédentes, avec davantage de réponses adverses examinées au premier échange.
+[Archive portable](reply-coverage-2026-11-17/AB2-Replies-candidate-2026-11-17.zip).
+Après extraction : python -B run_bot.py IP PORT.
+Python 3.11+ et bibliothèque standard ; --max-plies N doit correspondre au vrai plafond serveur (200 par défaut). Budget de réflexion 1,5 s.
+
+| Carte | Contexte | V AB2 | N | D AB2 |
+|---|---|---:|---:|---:|
+| medium-20261113 | Développement, déjà connue | 1 | 1 | 2 |
+| medium-20261117 | Utilisée pour diagnostiquer les réponses adverses | 4 | 0 | 0 |
+| medium-20261119 | Confirmation, générée après gel du candidat | 2 | 0 | 2 |
+| Total descriptif | Cartes de développement et confirmation mélangées | 7 | 1 | 4 |
+
+Chaque carte a quatre rôles équilibrés (espèce et premier joueur).
+**Le vrai résultat indépendant est 2 victoires / 2 défaites sur la troisième carte**, pas un taux de victoire de tournoi garanti.
+La désignation 20261119 est un identifiant de graine ; cette carte a bien été testée le 17 novembre.
+Aucun réglage modifié après lecture de sa confirmation.
+MaxPlay allowance 2 s, réflexion 1,5 s, limite 200 demi-coups, deux workers.
+Aucune faute, aucun timeout, aucune décision au-dessus de 1,8 s sur les 12 parties de ce candidat.
+Temps maximum : **1,5294 s**. Les **1 600 transitions** de ces 12 parties ont été rejouées et vérifiées (1 018 + 582).
+MCTS V6 figé, issu du commit Reda 8888c096ff84ce4a0dceebe96647ba98e0d5b3fa.
+
+## Problèmes identifiés et changements
+1. **Groupes mal employés / oscillation avec humains accessibles** : la correction du 13 novembre préserve des propositions où le groupe assez nombreux va recruter au lieu de faire bouger uniquement un petit groupe incapable. Cas enregistré 40 contre objectifs 8/9, petit groupe de 7.
+2. **Fuite en étant derrière sans humains** : la fin de la dernière défaite montrait 32 contre 40 continuant à s'éloigner jusqu'à la limite. Le nouveau départage en fin de partie donne une préférence d'approche à la plus forte armée quand la valeur de recherche ne s'y oppose pas. Une valeur recherchée supérieure reste prioritaire.
+3. **Valeur d'attente en fin de partie** : sans humains, les feuilles se rapprochent progressivement du résultat de population à la limite, sur une fenêtre initiale de 40 demi-coups. Ce paramètre vient d'une hypothèse pratique comparable à V6 ; il n'est pas démontré optimal. Les terminaux restent exacts.
+4. **Réponses adverses éliminées trop tôt** : dans plusieurs défaites, V6 choisit des actions de rang 9 à 31 du générateur, hors des sept réponses considérées par AB2. AB2-Replies examine jusqu'à **32 candidats au premier tour adverse**, tout en conservant **7 candidats à notre racine et dans le reste de l'arbre**.
+5. **Cache cohérent** : les valeurs d'un nœud avec sept réponses et celles d'un nœud avec 32 ne doivent pas se mélanger. Deux tables séparées gèrent ces régimes, vidées lors des changements de régime de groupes. Chaque table est plafonnée à 50000 entrées ; la mémoire maximale peut donc dépasser celle de la référence.
+
+Le candidat ne représente pas tous les coups légaux : 32 reste une sélection du générateur, pas un adversaire optimal complet.
+Il peut chercher moins profondément dans le temps disponible en échange d'une meilleure couverture adverse.
+Aucun saut physique de cases, aucune nouvelle règle de déplacement, aucune bibliothèque d'IA externe, aucun changement du MCTS de Reda.
+
+## Tests
+**396 tests réussis**, dont :
+- régressions de groupes capables, captures sûres et contre-attaques ;
+- dernier pari 2 contre 10, protection d'une avance, victoire coordonnée ;
+- poursuite sur les cinq positions tardives réellement enregistrées ;
+- présence des réponses de V6 précédemment écartées ;
+- conformité à de petits oracles minimax/expectiminimax sans coupures sur les ensembles sélectionnés ;
+- contrôle désactivé équivalent au parent et légalité aux échéances courtes.
+
+Le bundle portable a en plus passé ses cinq tests ciblés et son lancement --help dans son dossier indépendant.
+Les corps des classes empaquetées ont été comparés par AST : logique identique, seuls les chemins d'import sont rendus portables.
+
+## Serveur Windows réel
+Deux candidats distincts, ne pas confondre leurs résultats :
+- **AB-Endgame** : victoire réelle observée **3 contre 0** face à V6 sur thetrap. 14 décisions AB, maximum 1,502 s ; zéro faute/exception/fallback observé.
+- **AB2-Replies** : essai réel complet de **200 demi-coups**, terminé normalement par les deux bots (codes de sortie 0).
+  Réflexion moyenne AB 1,4072 s, maximum **1,515 s** ; maximum V6 1,506 s ; zéro faute et zéro dépassement de 1,8 s.
+  **Son vainqueur n'a pas encore été relevé** : la fenêtre WPF finale est minimisée et doit être restaurée pour lire le verdict. Ne pas inférer une victoire depuis les scores de recherche ou des logs incomplets.
+- Une tentative antérieure de AB2-Replies a été invalidée : pause de 734,45 s côté V6, avec événements Windows de veille moderne et reprise liée au capot. Les logs sont conservés, exclus de la validation.
+- La répétition valide utilisait une inhibition temporaire de veille automatique et un arrêt de contrôle en cas de pause ou de temps anormal. Cela ne bloque pas une fermeture volontaire du capot.
+- Runtime court utilisé pour Windows, après échec du lancement depuis un chemin de 266 caractères. Configuration de la copie : 127.0.0.1:5555, deux joueurs, 200 demi-coups, 2 s par coup, 10 min maximum. Serveur original non modifié.
+
+## Ce qui n'est pas encore réglé
+- La supériorité générale face à V6 n'est pas établie ; les défaites et les nuls subsistent.
+- Une capture sûre différée dans une autre position n'a pas été résolue par le simple élargissement de racine testé.
+- Toutes les oscillations ne sont pas des bugs : en tête au plafond, éviter un combat aléatoire peut préserver une victoire. Les humains trop nombreux pour être convertis avec certitude ne justifient pas une attaque forcée.
+- Les expériences n'établissent pas un gain forcé dans chaque position, ni une résolution de la poursuite sur toutes les géométries.
+- Tests **H208** et réglages exacts du tournoi restent indispensables ; ce PC ne remplace pas les machines de l'école.
+- IP/port sont paramétrables. Le lanceur portable sélectionne explicitement le candidat ; le main.py partagé n'a pas été changé.
+- Tout reste local, aucun commit/push ni modification des anciens modèles.
+
+## Fichiers à relire
+- [Agent candidat](reply-coverage-2026-11-17/reply_agent.py) : _plans, search, choose_moves.
+- [Fin de partie](endgame-policy-2026-11-17/endgame_agent.py) : leaf et plans.
+- [Tests complets](reply-coverage-2026-11-17/tests-completed.json).
+- [Rapport développement](reply-coverage-2026-11-17/matches/report.md).
+- [Rapport confirmation](reply-coverage-2026-11-17/holdout/report.md).
+- [Contrôles et métriques confirmation](reply-coverage-2026-11-17/holdout/completed.json).
+- [Test réel valide](reply-coverage-2026-11-17/wpf-safe-run-2026-11-17/completed.json).
+- [Essai réel invalidé](reply-coverage-2026-11-17/wpf-run-2026-11-17/invalid_timing.json).
+- [Victoire réelle du parent](endgame-policy-2026-11-17/wpf-run-2026-11-17/metrics.json).
+
+Autres essais non promus : élargissement de notre seule racine (aucun changement démontré sur les positions sondées), et emprunt de l'heuristique lissée de V6 pour le recrutement (réintroduit le déplacement du petit groupe dans un cas ciblé). Sources/probes conservés, pas présentés comme des améliorations validées.
+

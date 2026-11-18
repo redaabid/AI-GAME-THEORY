@@ -1,0 +1,22 @@
+[
+  {
+    "TimeCreated": "2026-11-17T15:31:39.5104182+01:00",
+    "Id": 507,
+    "Message": "Le système quitte le mode de veille moderne \r\n\r\nmotif : Lid. "
+  },
+  {
+    "TimeCreated": "2026-11-17T15:18:18.180903+01:00",
+    "Id": 506,
+    "Message": "Le système est en veille moderne \r\n\r\nmotif : 16777220. "
+  },
+  {
+    "TimeCreated": "2026-11-17T15:18:18.1778778+01:00",
+    "Id": 507,
+    "Message": "Le système quitte le mode de veille moderne \r\n\r\nmotif : 16777220. "
+  },
+  {
+    "TimeCreated": "2026-11-17T15:18:16.3723334+01:00",
+    "Id": 506,
+    "Message": "Le système est en veille moderne \r\n\r\nmotif : 16777220. "
+  }
+]

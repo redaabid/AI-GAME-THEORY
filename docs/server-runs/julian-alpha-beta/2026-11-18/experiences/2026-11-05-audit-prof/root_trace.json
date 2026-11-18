@@ -1,0 +1,156 @@
+{
+  "position": {
+    "schema_version": 1,
+    "rows": 5,
+    "columns": 25,
+    "to_play": "vampires",
+    "ply": 58,
+    "rules_profile": "server-v3.2.1",
+    "cells": [
+      [
+        0,
+        0,
+        0,
+        18,
+        0
+      ],
+      [
+        11,
+        1,
+        0,
+        0,
+        12
+      ]
+    ]
+  },
+  "choices": [
+    {
+      "agent": "ab2exp",
+      "mode": "cold",
+      "chosen": [
+        [
+          0,
+          0,
+          18,
+          0,
+          1
+        ]
+      ],
+      "value": 582783
+    },
+    {
+      "agent": "ab2exp",
+      "mode": "warm",
+      "chosen": [
+        [
+          0,
+          0,
+          18,
+          0,
+          1
+        ]
+      ],
+      "value": 582783
+    },
+    {
+      "agent": "ab2exp",
+      "mode": "no_tt",
+      "chosen": [
+        [
+          0,
+          0,
+          18,
+          0,
+          1
+        ]
+      ],
+      "value": 582783
+    },
+    {
+      "agent": "ab2tie",
+      "mode": "cold",
+      "chosen": [
+        [
+          0,
+          0,
+          18,
+          1,
+          0
+        ]
+      ],
+      "value": 582783
+    },
+    {
+      "agent": "ab2tie",
+      "mode": "warm",
+      "chosen": [
+        [
+          0,
+          0,
+          18,
+          1,
+          0
+        ]
+      ],
+      "value": 582783
+    },
+    {
+      "agent": "ab2tie",
+      "mode": "no_tt",
+      "chosen": [
+        [
+          0,
+          0,
+          18,
+          1,
+          0
+        ]
+      ],
+      "value": 582783
+    }
+  ],
+  "baseline_order": [
+    {
+      "moves": [
+        [
+          0,
+          0,
+          18,
+          0,
+          1
+        ]
+      ],
+      "generator_rank": 2,
+      "static": 582783,
+      "depth4_value": 582783
+    },
+    {
+      "moves": [
+        [
+          0,
+          0,
+          18,
+          1,
+          0
+        ]
+      ],
+      "generator_rank": 0,
+      "static": 582783,
+      "depth4_value": 582783
+    },
+    {
+      "moves": [
+        [
+          0,
+          0,
+          18,
+          1,
+          1
+        ]
+      ],
+      "generator_rank": 1,
+      "static": 582783,
+      "depth4_value": 582783
+    }
+  ]
+}

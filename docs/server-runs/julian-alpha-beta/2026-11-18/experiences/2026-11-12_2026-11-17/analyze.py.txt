@@ -1,0 +1,62 @@
+from pathlib import Path
+import json,random,sys
+from collections import Counter
+ROOT=Path(__file__).parent/"runtime"
+sys.path.insert(0,str(ROOT))
+from simulator import Position,simulate_turn,get_outcome,opponent
+from game import distance
+from combat import win_probability
+def material(p,s):return sum(getattr(c,s) for c in p.cells.values())
+def analyze(path):
+    row=json.loads(path.read_text());job=row["job"];rng=random.Random(job["seed"])
+    totals={s:dict(turns=0,repeated=0,recruit_opportunities=0,declined_recruit=0,random_battles=0,depths=[],seconds=[])
+            for s in ("vampires","werewolves")}
+    checked=0;events=[];seen={s:Counter() for s in totals}
+    for i,t in enumerate(row["turns"]):
+        p=Position.from_dict(t["position"]);actor=p.to_play;stats=totals[actor];stats["turns"]+=1
+        key=tuple(sorted(p.cells.items()))
+        stats['repeated']+=seen[actor][key]>0
+        seen[actor][key]+=1
+        info=t["info"] or {}
+        if "depth" in info:stats["depths"].append(info["depth"])
+        if "seconds" in info:stats["seconds"].append(info["seconds"])
+        humans=[(q,c.humans) for q,c in p.cells.items() if c.humans]
+        enemies=[(q,getattr(c,opponent(actor))) for q,c in p.cells.items() if getattr(c,opponent(actor))]
+        safe=[]
+        for q,c in p.cells.items():
+            n=getattr(c,actor)
+            if not n:continue
+            for h,k in humans:
+                if distance(q,h)==1 and n>=k and all(distance(e,h)>1 for e,_ in enemies):safe.append(h)
+        arrival={}
+        for x,y,n,tx,ty in t["moves"]:arrival[(tx,ty)]=arrival.get((tx,ty),0)+n
+        did_recruit=any(p.cells.get(q) and p.cells[q].humans and n>=p.cells[q].humans for q,n in arrival.items())
+        stats["recruit_opportunities"]+=bool(safe)
+        stats["declined_recruit"]+=bool(safe) and not did_recruit
+        battles=[]
+        for q,n in arrival.items():
+            c=p.cells.get(q)
+            if c and getattr(c,opponent(actor)):
+                probability=win_probability(n,getattr(c,opponent(actor)),rules_profile=p.rules_profile)
+                battles.append(dict(attackers=n,defenders=getattr(c,opponent(actor)),probability=probability))
+                stats["random_battles"]+=0<probability<1
+        after=simulate_turn(p,t["moves"],rng)
+        if i+1<len(row["turns"]):
+            assert after.to_dict()==row["turns"][i+1]["position"],(path,i)
+        checked+=1
+        if did_recruit or battles:
+            events.append(dict(ply=p.ply,actor=actor,recruit=did_recruit,battles=battles,
+                               after={s:material(after,s) for s in totals}))
+    end=get_outcome(after,max_plies=200)
+    assert end and end.winner==row["result"]["winner"]
+    for species,field in ((job['a_species'],'a_stats'),(opponent(job['a_species']),'b_stats')):
+        assert totals[species]['repeated']==row['result'][field]['repeated_positions'],(path,species)
+    return dict(file=path.name,agent=job["a"],map=job["map_name"],species=job["a_species"],first=job["first"],
+      seed=job["seed"],score=row["result"]["a_score"],plies=row["result"]["plies"],
+      final=row["result"]["final_populations"],turns_verified=checked,stats=totals,events=events)
+if __name__=="__main__":
+    result=[analyze(p) for p in sorted((Path(__file__).parent/"traces").glob("*.json"))]
+    (Path(__file__).parent/"trace-analysis.json").write_text(json.dumps(result,indent=2))
+    for r in result:
+        print(json.dumps({k:r[k] for k in ("agent","map","species","first","score","plies","final","events")}))
+

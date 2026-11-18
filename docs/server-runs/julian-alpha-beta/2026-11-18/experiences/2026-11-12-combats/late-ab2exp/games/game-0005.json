@@ -1,0 +1,77 @@
+{
+ "game_index": 4,
+ "job_sha256": "ea5d69e8725f35e9061a729c372c3b6d4cad6f68a89b25b71db634e7d4b8b34c",
+ "result_sha256": "59013c8a7fb0ab970217b79432edb08007c593d103d1fabe37d0ba8bcc9cde45",
+ "saved_utc": "2026-11-12T20:43:24.549022+00:00",
+ "result": {
+  "i": 0,
+  "j": 1,
+  "map_name": "late-dominance-15v10",
+  "round": 0,
+  "a_species": "vampires",
+  "first": "vampires",
+  "seed": 20361115,
+  "a_score": 0.5,
+  "a_margin": 0,
+  "winner": null,
+  "termination": "elimination",
+  "plies": 200,
+  "final_populations": {
+   "vampires": 0,
+   "werewolves": 0
+  },
+  "a_stats": {
+   "moves": 3,
+   "seconds": [
+    0.21122509997803718,
+    0.022297900053672493,
+    0.002319799968972802
+   ],
+   "timeouts": 0,
+   "faults": [],
+   "repeated_positions": 0,
+   "behind_moves": 0,
+   "repeated_while_behind": 0,
+   "memory_interventions": 0,
+   "repeated_chosen_after_penalty": 0,
+   "search": {},
+   "slow_decisions": []
+  },
+  "b_stats": {
+   "moves": 3,
+   "seconds": [
+    1.5032056999625638,
+    1.5003256000345573,
+    1.500102199963294
+   ],
+   "timeouts": 0,
+   "faults": [],
+   "repeated_positions": 0,
+   "behind_moves": 3,
+   "repeated_while_behind": 0,
+   "memory_interventions": 0,
+   "repeated_chosen_after_penalty": 0,
+   "search": {
+    "decisions": 3,
+    "iterations": 31830,
+    "tree_depth_total": 56250,
+    "rollouts": 3423,
+    "rollout_plies": 2246,
+    "extension_plies": 0,
+    "coordinated_turns": 0,
+    "loop_cutoffs": 0,
+    "candidate_calls": 921,
+    "candidate_wall_seconds": 0.2652489983011037,
+    "candidate_cpu_seconds": 0.234375,
+    "rollout_wall_seconds": 0.33834609889891,
+    "rollout_cpu_seconds": 0.265625,
+    "search_wall_seconds": 4.500046200002544,
+    "search_cpu_seconds": 4.484375,
+    "deadline_stops": 3,
+    "tree_depth_max": 5,
+    "rollout_depth_max": 4
+   },
+   "slow_decisions": []
+  }
+ }
+}

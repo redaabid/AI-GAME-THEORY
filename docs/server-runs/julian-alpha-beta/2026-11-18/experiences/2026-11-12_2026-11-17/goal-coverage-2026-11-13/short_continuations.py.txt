@@ -1,0 +1,41 @@
+"""Short counterfactual continuations; observation cap is NOT the game cap."""
+import json,random,time
+from pathlib import Path
+from collections import Counter
+import goal_agent
+import scripts.mcts_v6
+from agents import make_agent,TurnContext,safe_choose
+from simulator import Position,simulate_turn,get_outcome,opponent
+HERE=Path(__file__).parent;BASE=HERE.parent
+def main():
+    summaries=[]
+    for f in (BASE/"traces").glob("*.json"):
+        source=json.loads(f.read_text())
+        if not source["job"]["map_name"].startswith("holdout") or source["result"]["a_score"]!=0:continue
+        actor=source["job"]["a_species"];startply=18 if actor=="werewolves" else 5
+        turn=next(t for t in source["turns"] if t["position"]["ply"]==startply)
+        start=Position.from_dict(turn["position"])
+        for label in ("ab2risktie","ab2goals"):
+            agents={actor:make_agent(f"{label}:depth=1,max_depth=24,width=7,extra=0"),opponent(actor):make_agent("mcts-v6:iterations=100000")}
+            seed=202611131; rng=random.Random(seed)
+            history={s:[(Position.from_dict(t["position"]),t["moves"]) for t in source["turns"]
+                         if t["position"]["ply"]<startply and t["position"]["to_play"]==s] for s in agents}
+            for i,(s,a) in enumerate(sorted(agents.items())):a.new_game(start,s,seed*2+i)
+            p=start;trace=[];seen=Counter();repeats=0;faults=[]
+            for _ in range(48):
+                if get_outcome(p,max_plies=200):break
+                s=p.to_play;before=time.perf_counter();moves,fault=safe_choose(agents[s],p,TurnContext(before+.15,200,history[s]))
+                if fault:faults.append(fault)
+                if s==actor:
+                    key=tuple(sorted(p.cells.items()));repeats+=seen[key]>0;seen[key]+=1
+                trace.append(dict(position=p.to_dict(),moves=moves,info=agents[s].info))
+                history[s].append((p,moves));p=simulate_turn(p,moves,rng)
+            totals={s:sum(getattr(c,s) for c in p.cells.values()) for s in agents}
+            end=get_outcome(p,max_plies=200)
+            row=dict(candidate=label,actor=actor,start_ply=startply,last_ply=p.ply,totals=totals,repetitions=repeats,
+                     faults=faults,termination=end.reason if end else "observation_limit",winner=end.winner if end else None)
+            summaries.append(row);print(json.dumps(row),flush=True)
+            (HERE/f"short-{label}-{actor}.json").write_text(json.dumps(dict(summary=row,turns=trace),indent=2))
+    (HERE/"short-summary.json").write_text(json.dumps(summaries,indent=2))
+if __name__=="__main__":main()
+

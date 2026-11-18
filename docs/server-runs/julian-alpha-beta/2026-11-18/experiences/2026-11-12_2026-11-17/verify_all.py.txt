@@ -1,0 +1,13 @@
+from pathlib import Path
+import sys,unittest,json
+sys.path.insert(0,str(Path(__file__).parent/"runtime"))
+import combo_agents,test_combined
+if __name__=="__main__":
+    suite=unittest.defaultTestLoader.discover(str(Path(__file__).parent/"runtime/tests"))
+    suite.addTests(unittest.defaultTestLoader.loadTestsFromModule(test_combined))
+    with (Path(__file__).parent/"all-tests-final.log").open("w",encoding="utf-8") as stream:
+        result=unittest.TextTestRunner(stream=stream,verbosity=2).run(suite)
+    (Path(__file__).parent/"tests-completed.json").write_text(json.dumps(dict(tests=result.testsRun,success=result.wasSuccessful(),failures=len(result.failures),errors=len(result.errors))),encoding="utf-8")
+    print("Tests:",result.testsRun,"success:",result.wasSuccessful())
+    raise SystemExit(not result.wasSuccessful())
+
